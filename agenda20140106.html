@@ -6,11 +6,11 @@
   <title>06Jan2014 Mon</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
   <script type="text/javascript" src="res/jquery/jquery.js">
-  </script>
+ </script>
   <script type="text/javascript" src="res/agenda.js">
-  </script>
+ </script>
   <script type="text/javascript" src="./res/tocBuilder.js">
-  </script>
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
   <script type="text/javascript">
       $(document).ready(function () {
@@ -46,21 +46,107 @@ alt="next" src="res/right.gif"></a>
 </div>
 
 <div id="agendaBody">
-<h3>SmartGit docs</h3>
+<h3>git struggle</h3>
+
+<p><a
+href="http://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide">Git
+for beginners: The definitive practical guide</a> </p>
 
 <p><a
 href="http://www.syntevo.com/smartgithg/documentation/5/show">http://www.syntevo.com/smartgithg/documentation/5/show</a>
 </p>
 
-<p> </p>
+<p><a href="https://help.github.com/articles/fork-a-repo">fork a repo</a> </p>
+
+<p></p>
+
+<p></p>
+<pre>agenda2014
+
+Pages for year 2014
+
+It contains HTML pages, one for each day of the year, and a "res" directory with resources.
+
+I use these pages to store daily notes and links, editing them with W3C's Amaya editor and browser. Amaya is good because it is so WYSIWYG, that is, there is no difference between the browse and the edit views, it's not plagued with editor tools. The downside is that Amaya development was stopped years ago ...
+
+The res directory contains a script that generates the pages after a model, it's a js program that runs in node.js. There is also an Excel file that might be used too. </pre>
 
 <p> </p>
 
-<p> </p>
+<p>Download the Windows key tool from <a
+href="http://windowsgit.com/keytool">URL here</a> and run it:  </p>
+<pre>juan.lanus@GLB-D1984 /c/w/2014 (master)
+$ <strong>c:/z/keytool.exe</strong>
+Looking for C:\Program Files (x86)\Git\bin\ssh-keygen.exe
+No key file was found. To create one, enter your primary e-mail address and hit enter.
+To quit, leave it blank and hit enter.
+Email address: juan.lanus@gmail.com
+
+Using C:\Program Files (x86)\Git\bin\ssh-keygen.exe
+
+When prompted, just hit enter to use the defaults (4 times)
+
+Press enter to execute 'ssh-keygen -t rsa -C juan.lanus@gmail.com
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/juan.lanus/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/juan.lanus/.ssh/id_rsa.
+Your public key has been saved in /c/Users/juan.lanus/.ssh/id_rsa.pub.
+The key fingerprint is:
+3c:bc:3b:4a:b3:c1:c9:28:43:ff:b4:4f:fa:3b:ca:fd juan.lanus@gmail.com
+Key file found.
+Key data (copied to your clipboard):
+
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA5tOb8H9/aZCWnTUwNyk8j7RX0rfAWKIm
+Ag7jNkzkZBwLe99v5R39ihDWo1d4KC4UVznojlY6RnpbpAmYR6mg1aZ6VSNZyLnEny49
+FVBoGwe10YK3vxotoQh0znz1mdT8nOVyb5eiTgDea3TWQ8W4eoXNAUfN2mqxI1aDydHb
+8DI6biBVhN31TNQ4cVfrTDxl9sRL1fZnY5NFg4UDwVWEkcfBd4zPWwkHyVFYjL1DZ538
+WIayIKafuxfdwnLTjLv59sd4BuHVc4Gmr8vj07zJrXOQS1VDsGx/WQIVC00i6F9DgISP
+oWwzVsyHfZV8ycNQ0PoKXQuJEvoJ00r0vaX+pQ== juan.lanus@gmail.com
+
+Press enter to exit
+
+juan.lanus@GLB-D1984 /c/w/2014 (master)</pre>
+
+<p>Another one, no download deeded:   </p>
+<pre>juan.lanus@GLB-D1984 /c/w/2014 (master)
+$ <strong>ssh-keygen -C "juan.lanus@gmail.com" -t rsa</strong>
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/juan.lanus/.ssh/id_rsa):
+/c/Users/juan.lanus/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in <code>/c/Users/juan.lanus/.ssh/id_rsa</code>.
+Your public key has been saved in /c/Users/juan.lanus/.ssh/id_rsa.pub.
+The key fingerprint is:
+45:c7:83:83:84:41:8e:45:3f:76:e9:c7:61:8f:0b:a5 juan.lanus@gmail.com
+
+juan.lanus@GLB-D1984 /c/w/2014 (master)</pre>
+
+<p>This created two files in my /c/Users/--me--/.ssh folder. These files are my
+private and public keys (id_rsa and id_rsa.pub). The public key is the one we
+will be moving to remote git repository servers. </p>
+
+<p>Explains how to paste the public key into the server:</p>
+
+<p><a
+href="http://lostechies.com/jasonmeridth/2009/06/04/git-for-windows-developers-git-series-part-2/">Git
+For Windows Developers &ndash; Git Series &ndash; Part 2</a> </p>
 
 <p> </p>
 
-<p> </p>
+<p>The steps are: </p>
+<ol>
+  <li>create the keys pair with <code>ssh-keygen -C "juan.lanus@gmail.com" -t
+    rsa</code> in directory <code>~/.ssh</code> </li>
+  <li>copy the content of the ...pub file in the clipboard </li>
+  <li>in github edit profile and choose "SSH Keys" </li>
+  <li>paste the previously copies key and accept</li>
+</ol>
+
+<p>After this the <code>git push origin master</code> command works fine. </p>
 
 <p> </p>
 
