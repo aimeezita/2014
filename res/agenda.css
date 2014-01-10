@@ -12,6 +12,8 @@
   #agendaHeader li img  { vertical-align:bottom; }
   #agendaHeader li      { margin-top:0px; margin-bottom:1px }
   #agendaHeader hr      { width:100%; height:4px; color:#c0c0c0; background-color:#e5e7bc; border:0px; }
+  #agendaLinks p        { color: #0000C0; font-size: 90%; line-height: 18px; margin: 0; padding: 0; }
+  #agendaLinks p a      { color: #0000C0; }
   
   .imgL                 { float:left; margin-right:2em; }
   .imgR                 { float:right; margin-left:2em; }
