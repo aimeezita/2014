@@ -1,53 +1,134 @@
-<!DOCTYPE html >
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-  <meta http-equiv="Content-Language" content="en">
+  <meta content="text/html; charset=iso-8859-1" http-equiv="content-type">
+  <meta content="en" http-equiv="Content-Language">
   <title>16Jan2014 Thu</title>
-  <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <link href="res/agenda.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140115.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140117.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 16Jan2014 Thu </h1>
-    </div>
+ï»¿<!DOCTYPE html>
+<html>
+<body>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a accesskey="-" href="agenda20140115.html"><img alt="prev"
+src="res/left.gif"></a><a accesskey="+" href="agenda20140117.html"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 16Jan2014 Thu</h1>
+</div>
+
+<div id="agendaLinks">
+
+<div class="tocContainer" id="tocContainer">
+<a class="tocBackTarget" id="tocContainertargetTOC"
+name="tocContainertargetTOC"></a> <a href="MOOC.html">MOOC</a>
+
+<div class="tocLevel3">
+<a class="tocLink" href="#toc_3_1"
+title="Make the Windows D: drive a Linux partition">Make the Windows D: drive a
+Linux partition</a></div>
+</div>
+
+<p> </p>
+
+<p><a
+href="http://www.maketecheasier.com/create-and-edit-web-pages-on-the-linux-desktop-with-bluegriffon/?utm_source=feedburner&amp;utm_medium=email&amp;utm_campaign=Feed%3A+MakeTechEasier+%28Make+Tech+Easier%29">Create
+and Edit Web Pages on the Linux Desktop with BlueGriffon</a>  </p>
+
+<p><a
+href="http://www.thesitewizard.com/bluegriffon/bluegriffon-1-tutorial-1.shtml">Bluegriffon
+tutorial</a> (How to Create a Website with the BlueGriffon Free Web Editor)</p>
+
+<p><a href="https://github.com/einars/js-beautify">js-beautify</a> installed
+<code>&gt; js-beautify [-css | -html] file </code></p>
+
+<p> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>Make the Windows D: drive a Linux partition<a class="tocBackLink"
+href="#tocContainertargetTOC" id="toc_3_1" name="toc_3_1"
+title="Go back to the table of contents">TOC</a></h3>
+
+<p><a
+href="http://www.techotopia.com/index.php/Adding_a_New_Disk_Drive_to_an_Ubuntu_Linux_System">Adding
+a New Disk Drive to an Ubuntu Linux System</a></p>
+<ol>
+  <li>Cleaned, copied all remaining content into T61-D in WD USB disk</li>
+  <li>Created ext4 file system and added label "D" 
+    <pre>sudo gparted</pre>
+  </li>
+  <li>Deleted old mount from /etc/fstab, the partition shows moounted 
+    <pre>/dev/sda2 on /media/jlanus/D type ext4 (rw,nosuid,nodev,uhelper=udisks2)</pre>
+  </li>
+  <li>Checked: 
+    <pre>jlanus@juan-T61:/$ sudo fdisk -l
+[sudo] password for jlanus: 
+
+Disk /dev/sda: 80.0 GB, 80026361856 bytes
+255 heads, 63 sectors/track, 9729 cylinders, total 156301488 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x47636eed
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *          63    57350159    28675048+   7  HPFS/NTFS/exFAT
+<strong>/dev/sda2        57350160   118782719    30716280   83  Linux</strong>
+/dev/sda3       118783998   156301311    18758657    5  Extended
+/dev/sda5       118784000   152193023    16704512   83  Linux
+/dev/sda6       152195072   156301311     2053120   82  Linux swap / Solaris
+    </pre>
+  </li>
+  <li>Changed the permissions to match / 
+    <pre>sudo chmod 750 D</pre>
+  </li>
+  <li>Created directory /D owned by root</li>
+  <li>Edit /etc/fstab to automount the partition</li>
+</ol>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
+
+<p> </p>
+</body>
+</html>
 </body>
 </html>
