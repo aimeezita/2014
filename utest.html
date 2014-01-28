@@ -48,6 +48,8 @@ UI</h1>
             <ul>
               <li><a href="#L464">Track: Web UI Certification / Level 1 - Track
                 1 - Introduction to Computer Programming</a></li>
+              <li><a href="#L892">Taking course: Web UI Certification / Level 1
+                - Track 2 - Web Development</a></li>
             </ul>
           </li>
         </ul>
@@ -811,8 +813,16 @@ are somehow outdated both regarding the content and also the approach. </p>
   <li>There must be a "next" button in each and every step</li>
   <li>Anyway, the hierarchy at the left panel has to highlight the currently
     selected item</li>
-  <li>The hierarchy at the left somehow has to covey information about which
-    items were already visited by the student</li>
+  <li>The hierarchy at the left somehow has to convey information about which
+    items were already visited by the student 
+    <p>Check the coursera videos listing below. The videos already seen have a
+    checkmark. </p>
+
+    <div class="framed">
+    <img style="width:100%; max-width:639px;" alt="coursera videos listing"
+    src="mooc/coursera-videoLectures.png" /></div>
+    <p></p>
+  </li>
   <li>Clicking compound items in the left hand hierarchy should display their
     sub-hierarchy in the content pane. </li>
   <li>There should be a set of back and forward buttons, for the student to
@@ -835,7 +845,98 @@ are somehow outdated both regarding the content and also the approach. </p>
   </li>
 </ol>
 
-<p></p>
+<h5 id="L892">Taking course: Web UI Certification / Level 1 - Track 2 - Web
+Development</h5>
+<ul>
+  <li>The enrollment passes the user through the sign in form, which is
+    implemented as a separate page. After signing in it takes the user back to
+    the courses listing, but not in the same scroll position. This forces the
+    user to search again for the course in irder to click its "Go to class"
+    button. 
+    <p>Suggestion: Replace the "Enroll" button by a "Go to course" that takes
+    the user to a "course's home page" with details about the course (like a
+    picture of the author, a related image or a screenshot) and put the
+    "Enroll" button in that course homa page and do the whole enroll thing
+    there, including abiding to the conduct code. Thus, if the action requires
+    signin in the user would be taken back to the exact place where she was
+    before. </p>
+    <p>As a temporary quick fix, take the student directly to the course
+    material at the end of the enrollment process. </p>
+  </li>
+  <li>The left-hand index starts with a root "Classes" item. This is pointless,
+    because it's not functional and thus only adds noise. 
+    <p>Suggestion: do not show the "Classes" item in the left-hand item. </p>
+  </li>
+  <li>The first element og the left-hand index is labeled "Program". This is
+    not good English. 
+    <p>Suggestion: Replace "Program" by "Syllabus". </p>
+  </li>
+  <li>The "Program" element is a 3-level structure thus: 
+    <ul>
+      <li>Classes 
+        <ul>
+          <li>Program 
+            <ul>
+              <li>Lecture 1 
+                <ul>
+                  <li>Video 1</li>
+                  <li>Document-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p>The only actionable item is "Document". There is no video, and this
+    doesn't qualify as a lecture, thus such labeling is misleading. </p>
+    <p>Suggestion: Link the "Document" to the first level and delete all the
+    other non-functional levels. </p>
+  </li>
+  <li>Section "Web Development Core Concepts"
+    <ul>
+      <li>The first videos give the student a historical review of the making
+        of the Internet and social media. This, albeit interesting, is not
+        essential knowledge for the developer to be, who might already know
+        most of it. Also, this poses a semantic layer while the student is
+        aiming at the underlaying technologies. 
+        <p>Suggestion: Take these videos from the mainstream course and tag
+        them as interesting optional material for the curious. </p>
+      </li>
+      <li>Video 5, about widgets, is a commercial from somewhere, that implies
+        a lot of the knowledge this course is supposed to provide. 
+        <p>Suggestion: Turn down this video. </p>
+      </li>
+      <li>Video 11 stops in error after a few minutes. Should be replaced by
+        this other version of itself: <a
+        href="http://www.youtube.com/watch?v=IDj983Ggjk8">http://www.youtube.com/watch?v=IDj983Ggjk8</a>.
+      </li>
+      <li>The whole "Web Development Core Concepts" lecture (11 videos) is not
+        about web development, but web history, usage and trends. </li>
+      <li>The "Document" link is void. </li>
+    </ul>
+  </li>
+  <li>Section "HTML Structure, Layouts, CSS": 
+    <ul>
+      <li>There is no "HTL Structure" content, right from the first video the
+        subject is CSS, and being that CSS is for HTML then HRML should have
+        been presented before. </li>
+      <li>The section starts with an enumeration of the different doctypes. The
+        student learns that HTML 3.2 does not support frames and style sheets
+        before being told what frames ans style sheets are. Additionally, for a
+        student starting today, the simple HTML5 doctype would be enough, at
+        least during quite a while. The doctype is the first line of the HTML
+        document, but need not be the first concept tossed to the student. </li>
+      <li>Video 2 stops in error at start. This seems the original one: <a
+        href="http://www.youtube.com/watch?v=Awmx8XlgcaE">http://www.youtube.com/watch?v=Awmx8XlgcaE</a>.
+      </li>
+      <li>Video 2 is a CSS primer, about how to add style to HTML elements that
+        haven't been introduced yet. Also, it's scope is too limited to be
+        presented as <em>the</em> education source: it merely walks the user
+        accross a few pointless color change examples. </li>
+    </ul>
+  </li>
+</ul>
 
 <p></p>
 
