@@ -1,0 +1,636 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="content-type">
+  <meta http-equiv="Content-Language" content="en">
+  <title>Binary number system</title>
+  <link rel="stylesheet" href="res/agenda.css" type="text/css">
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="res/tocBuilder.js">
+ </script>
+  <link href="res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+      $(document).ready(function () {
+      });
+  </script>
+</head>
+
+<body>
+<!DOCTYPE html>
+
+<div id="agendaHeader">
+
+<div class="fixedHeader">
+<h1 style="display: inline;" title="massive open online course">Binary number
+system</h1>
+</div>
+
+<div id="agendaLinks">
+
+<div class="toc">
+<ul>
+  <li><a href="#L366">MOOC </a></li>
+  <li><a href="#L115">MOOC at Globant</a> 
+    <ul>
+      <li><a href="#L409">Testing Globant U</a> 
+        <ul>
+          <li><a href="#L418">Login form comments</a></li>
+          <li><a href="#L526">Following the Web UI Certification track</a> 
+            <ul>
+              <li><a href="#L289">Track: Web UI Certification / Level 1 - Track
+                1 - Introduction to Computer Programming</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<p> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h2 id="L366">The decimal number system</h2>
+
+<p>According to several dictionaries, the decimal number system that we use so
+extensively is</p>
+
+<blockquote>
+  <p>&#x25b8; <strong>noun</strong>: a positional system of numeration that
+  uses decimal digits and a base of 10</p>
+</blockquote>
+
+<p>Notice that the definition correctly uses the article "a" accounting for the
+fact that there are <em>other</em> number systems, like for example the binary
+number system. </p>
+
+<p>We always use the decimal system in real life in such an exclusive fashion
+that we might end up thinking that it is the one and only number system, but in
+fact it's just one in the crowd. </p>
+
+<div class="imgR">
+<img alt="roman numers" src="mooc/AdmiraltyArchLondonCloseup.jpg"></div>
+
+<p>Like for example there is the Roman number system, that was used until
+recently.</p>
+
+<p>"Recently" is the 14th. century, when the Roman numbering system began to be
+replaced by the more convenient Hindu-Arabic numerals; however this process was
+gradual, and the use of Roman numerals in some minor applications continues to
+this day, for example in clock faces.</p>
+
+<p>Notice that the Roman numbering system does not have a zero. The zero is
+said to be invented by the Indians near yesr 500 A.D. and is essential to any
+modern number system, including the decimal and the binary systems.</p>
+
+<p>Obviously the decimal number systems (the Roman system is also decimal) were
+somehow natural for we humans because we have ten fingers in our hands (mostly
+everybody).</p>
+
+<p><img alt="Altamira hands" src="mooc/275823019_568ed233ab_z.jpg"> </p>
+
+<p>Some people think that if would have been better if we had twelve fingers,
+because this would have led to a 12-based number system, being the advantage
+that 12 is exactly divisible by 2, 3, 4 and 6, and that would have simplified
+many simple arithmatic problems. But we have ten fingers so we have to settle
+with a number base that's only divisible by 2 and 5.</p>
+
+<h3>Counting with fingers</h3>
+
+<p></p>
+
+<p>Lets imagine a method to count with our fingers. There are smarter methods,
+but this one is convenient for the explanation.</p>
+
+<div class="imgR">
+<img alt="tally counter" src="mooc/tally-counter.jpg"> </div>
+
+<p>We are purchasing cattle, sheep. As each animal passes through a narrow door
+we count it by extending another finger.</p>
+
+<p>After couting 10 sheep I run out of fingers but fortunately my brother is
+participating. He counts the number of times I run out of fingers, each time he
+extends one of his fingers.</p>
+
+<p>After counting 100 sheep bpth me and my brother have all our fingers
+commited, but fortunately the family is large and another sibling comes to the
+rescue counting the number of times my brother ran out of fingers and so we can
+count up to 999 which is enough.</p>
+
+<p>So we bought up to 999 sheep and it was possible to count them with the
+participation of only three people. Notice that if we had to count more sheep,
+say 9999, we would need only one additional brother (or the litle tally counter
+pictured above). </p>
+
+<h2 id="L3661">The binary number system</h2>
+
+<div class="imgR">
+<img alt="one-finger hand" src="mooc/Hands-One-finger-icon.png"></div>
+
+<p>If instead of having ten fingers we had only one, would be able to count
+that many sheep? </p>
+
+<p>Of course the answer is yes, but with a caveat: we would need more people
+beacuse each of us would run out of fingers sooner than if we had 10.</p>
+
+<p>Let's start counting. As the first sheep passes I extend my single finger.
+When the second sheep comes I tell brother B to extend his finger (I'm brother
+A) and I flex mine. Next sheep, the third, I extend my single finger and now me
+and my brother B both are out of fingers so brother C joins. C extends his
+finger and me and B close our's. And so on.</p>
+
+<p>If I represented a brother with an extended finger with the symbol "1" and a
+flexed finger with "0", then I would be able to represent the counting sequence
+thus:</p>
+<style>
+ .sheepCount { text-align:right; padding-right:12px; }</style>
+
+<table>
+  <col>
+  <col>
+  <col>
+  <col>
+  <col>
+  <col>
+  <col>
+  <col>
+  <col>
+  <tbody>
+    <tr>
+      <td class="sheepCount" style="text-align:right; color:#c0c0c0;">brother
+        name &rarr;</td>
+      <td>F</td>
+      <td>E</td>
+      <td>D</td>
+      <td>C</td>
+      <td>B</td>
+      <td>A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="sheepCount">no sheep</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td style="color: #c0c0c0;">none</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="sheepCount"><img alt="one sheep" src="mooc/sheep.png"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td style="color: #c0c0c0;">one</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="sheepCount"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>0</td>
+      <td style="color: #c0c0c0;">two</td>
+      <td>2<span
+      style="font-size: x-small; vertical-align: super;">1</span></td>
+    </tr>
+    <tr>
+      <td class="sheepCount"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>1</td>
+      <td style="color: #c0c0c0;">three</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="sheepCount"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"><img alt="one sheep" src="mooc/sheep.png"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td style="color: #c0c0c0;">four</td>
+      <td>2<span
+      style="font-size: x-small; vertical-align: super;">2</span></td>
+    </tr>
+    <tr>
+      <td class="sheepCount"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td style="color: #c0c0c0;">five</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="sheepCount"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td style="color: #c0c0c0;">six</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="sheepCount"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"><img alt="one sheep" src="mooc/sheep.png"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td style="color: #c0c0c0;">seven</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="sheepCount"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td style="color: #c0c0c0;">eight</td>
+      <td>2<span
+      style="font-size: x-small; vertical-align: super;">3</span></td>
+    </tr>
+    <tr>
+      <td class="sheepCount"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td style="color: #c0c0c0;">nine</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="sheepCount"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"><img alt="one sheep" src="mooc/sheep.png"><img
+        alt="one sheep" src="mooc/sheep.png"><img alt="one sheep"
+        src="mooc/sheep.png"><img alt="one sheep" src="mooc/sheep.png"></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td style="color: #c0c0c0;">ten</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="sheepCount">11 × <img style="vertical-align:middle;"
+        alt="one sheep" src="mooc/sheep.png"></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td style="color: #c0c0c0;">eleven</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="sheepCount">12 × <img style="vertical-align:middle;"
+        alt="one sheep" src="mooc/sheep.png"></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td style="color: #c0c0c0;">twelve</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="sheepCount">16 × <img style="vertical-align:middle;"
+        alt="one sheep" src="mooc/sheep.png"></td>
+      <td></td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td style="color: #c0c0c0;">sixteen</td>
+      <td>2<span style="font-size: x-small; vertical-align: super;">4</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="sheepCount">17 × <img style="vertical-align:middle;"
+        alt="one sheep" src="mooc/sheep.png"></td>
+      <td></td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td style="color: #c0c0c0;">seventeen</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="sheepCount">18 × <img style="vertical-align:middle;"
+        alt="one sheep" src="mooc/sheep.png"></td>
+      <td></td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td style="color: #c0c0c0;">eighteen</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="sheepCount">32 × <img style="vertical-align:middle;"
+        alt="one sheep" src="mooc/sheep.png"></td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td style="color: #c0c0c0;">thirtytwo</td>
+      <td>2<span style="font-size: x-small; vertical-align: super;">5</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As can be seen, to count more than 32 sheep we need six brothers, something
+that was possible with only two when we used decimal numbers. </p>
+
+<h3>Who would want to count in this contrived way?</h3>
+
+<p>Digital computers do. Their single digit hand is a type of circuit calles
+"flip-flop" that can be in one of two states: either "flipped" or "flopped",
+never an in-between state. </p>
+
+<p>It is easy and safe to implement a circuit or other devices that work like
+that.</p>
+
+<div class="imgR">
+<img alt="opened hard disk" src="mooc/320px-Apertura_hard_disk_04.jpg"></div>
+
+<p>For example in hard disks, that store information digitally in the form of
+extremely tiny magnetized regions on a spinning platter, each region represents
+a binary digit, a zero or a one, depending on the polarity of the magnetic
+field.</p>
+
+<p>Another use of these signals are the communication channels, like for
+example out domestic Internet connections, that transmit streams of electric
+signals representing binary digits. Millions per second, depending on the price
+of the connection.</p>
+
+<h3>bit</h3>
+
+<p>The word "bit" is used to designate these binary digits. It is "binary
+digit" without the stuffing: </p>
+
+<p
+style="margin:0; padding:0; font-size: 220%; font-weight:bold; text-align:center;"><span
+style="color: #000000;">b</span><span style="color: #c0c0c0;">inary
+dig</span><span style="color: #000000;">it</span> </p>
+
+<p>The start of the firat word and the end of the last one. Enough. </p>
+
+<h3>Binary numbers are horrible</h3>
+
+<p>As we saw in the sheep counting example, binary numbers (numbers expressed
+in base 2) get long very quickly. Another issue is that they are made only of
+zeros and ones and thus they are monotonous. </p>
+
+<p>It is almost impossible to remember or communicate binary numbers without
+making errors. For example a not-so-large number like one million expressed in
+binary is 11110100001001000000. How would you read this number to your aunt?
+</p>
+
+<p>In decimal notation sometimes we use thousand separators to ba able to read
+lengthy numbers more safely. For example a number like 340923476504734876 is
+easier to read it with separators 340,923,476,504,734,876 and with a bit of
+luck you could read it. </p>
+
+<p>Now, the same number in binary is this long string:</p>
+
+<p>10010111011001101000001100001111000101001111110110010011100</p>
+
+<p>In binary there is a sort of "thousand separators" with groups od four
+instead of three as in decimal.</p>
+
+<p>The long number would look like this: </p>
+<style>
+ .binHex    { margin-right:1.5em;}
+ .binHex td { text-align:center; padding-right:1.5em; line-height:75%; }
+</style>
+
+<table class="binHex">
+  <tbody>
+    <tr>
+      <td>0100</td>
+      <td>1011</td>
+      <td>1011</td>
+      <td>0011</td>
+      <td>0100</td>
+      <td>0001</td>
+      <td>1000</td>
+      <td>0111</td>
+      <td>1000</td>
+      <td>1010</td>
+      <td>0111</td>
+      <td>1110</td>
+      <td>1100</td>
+      <td>1001</td>
+      <td>1100</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>b</td>
+      <td>b</td>
+      <td>3</td>
+      <td>4</td>
+      <td>1</td>
+      <td>8</td>
+      <td>7</td>
+      <td>8</td>
+      <td>a</td>
+      <td>7</td>
+      <td>e</td>
+      <td>c</td>
+      <td>9</td>
+      <td>c</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>or 4bb341878a7ec9c, shorter then the decimal version. </p>
+
+<div class="imgR" style="padding:0 20px 0 50px; font-size:80%; font-family:Consolas, monospace; ">
+
+<table>
+  <tbody>
+    <tr>
+      <td>0000</td>
+      <td>0 </td>
+    </tr>
+    <tr>
+      <td>0001</td>
+      <td>1 </td>
+    </tr>
+    <tr>
+      <td>0010</td>
+      <td>2 </td>
+    </tr>
+    <tr>
+      <td>0011</td>
+      <td>3 </td>
+    </tr>
+    <tr>
+      <td>0100</td>
+      <td>4 </td>
+    </tr>
+    <tr>
+      <td>0101</td>
+      <td>5 </td>
+    </tr>
+    <tr>
+      <td>0110</td>
+      <td>6 </td>
+    </tr>
+    <tr>
+      <td>0111</td>
+      <td>7 </td>
+    </tr>
+    <tr>
+      <td>1000</td>
+      <td>8 </td>
+    </tr>
+    <tr>
+      <td>1001</td>
+      <td>9 </td>
+    </tr>
+    <tr>
+      <td>1010</td>
+      <td>a </td>
+    </tr>
+    <tr>
+      <td>1011</td>
+      <td>b </td>
+    </tr>
+    <tr>
+      <td>1100</td>
+      <td>c </td>
+    </tr>
+    <tr>
+      <td>1101</td>
+      <td>d </td>
+    </tr>
+    <tr>
+      <td>1110</td>
+      <td>e </td>
+    </tr>
+    <tr>
+      <td>1111</td>
+      <td>f </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>This is not a separation in fixed length groups of bits but a
+recodification. </p>
+
+<p>In binary each 4-bit goup can have one of 16 possible values, and each value
+is assigned a symbol according to the table at the right.</p>
+
+<p>The first 10 values, zero to 9, are conveniently assigned the symbols 0
+through 9. Once we run out of digits we start with the letters "a" through
+"f".</p>
+
+<p>Numbers expressed like this are called "hexadecimal numbers" because
+actually thay are not any more in base 2 but in base 16. Hence the need for 16
+symbols, the 10 digits and the first 6 letters of the alphabet.</p>
+
+<p> </p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p></p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
+</body>
+</html>
