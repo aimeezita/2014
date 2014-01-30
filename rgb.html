@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="content-type">
+  <meta http-equiv="Content-Language" content="en">
+  <title>RGB demo</title>
+  <link rel="stylesheet" href="res/agenda.css" type="text/css">
+  <script type="text/javascript" src="res/jquery/jquery.js"></script>
+  <script>
+    $(document).ready( function(){
+      $('#rgb-demo input[type=range]').change(function() {
+        $('#valueR').text( '' + $('#inputR').val() );
+        $('#valueG').text( '' + $('#inputG').val() );
+        $('#valueB').text( '' + $('#inputB').val() );
+        var theColor = 'rgb(' + $('#valueR').text() + ',' + $('#valueG').text() + ',' + $('#valueB').text() + ')';
+        $('#rgb-target').css( 'background-color', theColor );
+      });
+    });
+  </script>
+</head>
+ 
+<div id="rgb-demo"  style="border:2px solid silver; border-radius:6px; padding:8px; float:right; margin:1em;">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>R <input id="inputR" type="range" inputmode="numeric" max="255" min="0" step="1" value="0"></td>
+                <td id="valueR" style="width:2em; text-align:right;">0</td>
+              </tr>
+              <tr>
+                <td>G <input id="inputG" type="range" inputmode="numeric" max="255" min="0" step="1" value="0"></td>
+                <td id="valueG" style="width:2em; text-align:right;">0</td>
+              </tr>
+              <tr>
+                <td>B <input id="inputB" type="range" inputmode="numeric" max="255" min="0" step="1" value="0"></td>
+                <td id="valueB" style="width:2em; text-align:right;">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <div id="rgb-target" style="width:200px; height:120px; background-color:rgb(0,0,0);">
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</html>

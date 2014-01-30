@@ -32,20 +32,20 @@ system</h1>
 
 <div class="toc">
 <ul>
-  <li><a href="#L366">MOOC </a></li>
-  <li><a href="#L115">MOOC at Globant</a> 
+  <li><a href="#L366">The decimal number system</a> 
     <ul>
-      <li><a href="#L409">Testing Globant U</a> 
-        <ul>
-          <li><a href="#L418">Login form comments</a></li>
-          <li><a href="#L526">Following the Web UI Certification track</a> 
-            <ul>
-              <li><a href="#L289">Track: Web UI Certification / Level 1 - Track
-                1 - Introduction to Computer Programming</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+      <li><a href="#L113">Counting with fingers</a></li>
+    </ul>
+  </li>
+  <li><a href="#L3661">The binary number system</a> 
+    <ul>
+      <li><a href="#L764">Who would want to count in this contrived
+      way?</a></li>
+      <li><a href="#L778">bit</a></li>
+      <li><a href="#L1729">Binary numbers are horrible</a></li>
+      <li><a href="#L792">byte</a></li>
+      <li><a href="#L90612">Bytes and characters</a></li>
+      <li><a href="#L91654">Bytes and colors </a></li>
     </ul>
   </li>
 </ul>
@@ -102,7 +102,7 @@ that 12 is exactly divisible by 2, 3, 4 and 6, and that would have simplified
 many simple arithmatic problems. But we have ten fingers so we have to settle
 with a number base that's only divisible by 2 and 5.</p>
 
-<h3>Counting with fingers</h3>
+<h3 id="L113">Counting with fingers</h3>
 
 <p></p>
 
@@ -412,9 +412,9 @@ thus:</p>
 <p>As can be seen, to count more than 32 sheep we need six brothers, something
 that was possible with only two when we used decimal numbers. </p>
 
-<h3>Who would want to count in this contrived way?</h3>
+<h3 id="L764">Who would want to count in this contrived way?</h3>
 
-<p>Digital computers do. Their single digit hand is a type of circuit calles
+<p>Digital computers do. Their single finger hand is a type of circuit called
 "flip-flop" that can be in one of two states: either "flipped" or "flopped",
 never an in-between state. </p>
 
@@ -429,12 +429,15 @@ extremely tiny magnetized regions on a spinning platter, each region represents
 a binary digit, a zero or a one, depending on the polarity of the magnetic
 field.</p>
 
-<p>Another use of these signals are the communication channels, like for
-example out domestic Internet connections, that transmit streams of electric
+<p>Another example of binary signals are the communication channels, like for
+example our domestic Internet connections, that transmit streams of electric
 signals representing binary digits. Millions per second, depending on the price
-of the connection.</p>
+of the connection. A "6 mega internet connection" is capable of transmitting 6
+megabit per second. One megabit is 1,048,576 bits or 2<span
+style="font-size: x-small; vertical-align: super;">20</span> bits, one of the
+most famous powers of 2. </p>
 
-<h3>bit</h3>
+<h3 id="L778">bit</h3>
 
 <p>The word "bit" is used to designate these binary digits. It is "binary
 digit" without the stuffing: </p>
@@ -444,9 +447,9 @@ style="margin:0; padding:0; font-size: 220%; font-weight:bold; text-align:center
 style="color: #000000;">b</span><span style="color: #c0c0c0;">inary
 dig</span><span style="color: #000000;">it</span> </p>
 
-<p>The start of the firat word and the end of the last one. Enough. </p>
+<p>The start of the first word and the end of the last one. Enough.</p>
 
-<h3>Binary numbers are horrible</h3>
+<h3 id="L1729">Binary numbers are horrible</h3>
 
 <p>As we saw in the sheep counting example, binary numbers (numbers expressed
 in base 2) get long very quickly. Another issue is that they are made only of
@@ -459,21 +462,26 @@ binary is 11110100001001000000. How would you read this number to your aunt?
 
 <p>In decimal notation sometimes we use thousand separators to ba able to read
 lengthy numbers more safely. For example a number like 340923476504734876 is
-easier to read it with separators 340,923,476,504,734,876 and with a bit of
-luck you could read it. </p>
+easier to read it with thousand separators 340,923,476,504,734,876 and with a
+bit of luck you could read it correctly. </p>
 
 <p>Now, the same number in binary is this long string:</p>
 
 <p>10010111011001101000001100001111000101001111110110010011100</p>
 
-<p>In binary there is a sort of "thousand separators" with groups od four
-instead of three as in decimal.</p>
+<p>In binary there is a sort of "thousand separators" with groups of four
+instead of three as in decimal. Notice that four is a power of 2: <code> 4 =
+2<span style="font-size: x-small; vertical-align: super;">2</span> = 2 ×
+2 </code> and the powers of 2 always show up when there is digital stuff
+around. </p>
 
 <p>The long number would look like this: </p>
+
+<div>
 <style>
  .binHex    { margin-right:1.5em;}
- .binHex td { text-align:center; padding-right:1.5em; line-height:75%; }
-</style>
+ .binHex td { text-align:center; width:3em; line-height:75%; }</style>
+</div>
 
 <table class="binHex">
   <tbody>
@@ -516,9 +524,10 @@ instead of three as in decimal.</p>
 
 <p>or 4bb341878a7ec9c, shorter then the decimal version. </p>
 
-<div class="imgR" style="padding:0 20px 0 50px; font-size:80%; font-family:Consolas, monospace; ">
+<div class="imgR"
+style="padding:0 20px 0 50px; font-size:80%; font-family:Consolas, monospace; ">
 
-<table>
+<table class="binHex" style="margin-top:-1ex;" id="L90464">
   <tbody>
     <tr>
       <td>0000</td>
@@ -588,8 +597,8 @@ instead of three as in decimal.</p>
 </table>
 </div>
 
-<p>This is not a separation in fixed length groups of bits but a
-recodification. </p>
+<p>This is not a simple separation in fixed length groups of bits but a
+"recodification". </p>
 
 <p>In binary each 4-bit goup can have one of 16 possible values, and each value
 is assigned a symbol according to the table at the right.</p>
@@ -602,9 +611,525 @@ through 9. Once we run out of digits we start with the letters "a" through
 actually thay are not any more in base 2 but in base 16. Hence the need for 16
 symbols, the 10 digits and the first 6 letters of the alphabet.</p>
 
-<p> </p>
+<h3 id="L792">byte</h3>
+
+<blockquote>
+  &#x25b8; noun: a sequence of 8 bits (enough to represent one character of
+  alphanumeric data) </blockquote>
+
+<p>You might heve been told once and again that all digital information is made
+out of <em>bits</em>. </p>
+
+<p>But given how deadly simple a bit is, seems as if a lot of magic was needed
+between a set of bits and an watching an HD film in a notebook; the film
+obviously is made up of bits and only bits, because bits is the only thing any
+computer can handle and store.</p>
+
+<p>The key is organization, structure. When we were counting sheep with single
+fingers and we added more and more brothers to hold bits, those brothers were
+arranged in a certain order. Not respecting the order would have led to a count
+error and possibly a fight with the cattle sellers with eventual deadly
+consequences.</p>
+
+<p>A first organization level is lumping the bits in bytes. The capacities of
+the computer's data storage capacities are expressed in bytes. For example as
+of this writing hard disks tend to have capacities like 1,099,511,627,776
+bytes. Obviously we don't say such a number, we say "one terabyte". This numer
+is another power of 2, namely 2<span
+style="font-size: x-small; vertical-align: super;">40</span>, that is, a one
+followed by 40 zeros in binary notation, 10000000000 in hexadecimal.</p>
+
+<h3 id="L90612">Bytes and characters</h3>
+<style>
+#iso8859table    { border-collapse:collapse; }
+#iso8859table tr { line-height:85%;}
+#iso8859table th { width:1.2em; }
+#iso8859table td { text-align:center; }
+#iso8859table td.highlighted { background-color:rgb(248,248,248); }
+#iso8859table th.highlighted { background-color:rgb(255,255,0); }
+#iso8859table tr:hover { background-color:rgb(248,248,248); }
+#iso8859table tr:hover th { background-color:rgb(255,255,0); }</style>
+<script type="text/javascript">
+$(document).ready( function(){
+  $('#iso8859table td').hover(function() {
+    var t = parseInt($(this).index()) + 1;
+    $('td:nth-child(' + t + ')').addClass('highlighted');
+    $('th:nth-child(' + t + ')').addClass('highlighted');
+  },
+  function() {
+    var t = parseInt($(this).index()) + 1;
+    $('td:nth-child(' + t + ')').removeClass('highlighted');
+    $('th:nth-child(' + t + ')').removeClass('highlighted');
+});
+});</script>
+
+<div class="framed" style="float:right; margin-left:1em;">
+
+<table id="iso8859table" summary="iso-8859-1 encoding table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>-0</th>
+      <th>-1</th>
+      <th>-2</th>
+      <th>-3</th>
+      <th>-4</th>
+      <th>-5</th>
+      <th>-6</th>
+      <th>-7</th>
+      <th>-8</th>
+      <th>-9</th>
+      <th>-A</th>
+      <th>-B</th>
+      <th>-C</th>
+      <th>-D</th>
+      <th>-E</th>
+      <th>-F </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr title="these code positions don't have characters assigned">
+      <th>0-</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr title="these code positions don't have characters assigned">
+      <th>1-</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2-</th>
+      <td></td>
+      <td>!</td>
+      <td>"</td>
+      <td>#</td>
+      <td>$</td>
+      <td>%</td>
+      <td>&amp;</td>
+      <td>'</td>
+      <td>(</td>
+      <td>)</td>
+      <td>*</td>
+      <td>+</td>
+      <td>,</td>
+      <td>-</td>
+      <td>.</td>
+      <td>/ </td>
+    </tr>
+    <tr>
+      <th>3-</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>:</td>
+      <td>;</td>
+      <td>&lt;</td>
+      <td>=</td>
+      <td>&gt;</td>
+      <td>? </td>
+    </tr>
+    <tr>
+      <th>4-</th>
+      <td>@</td>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+      <td>E</td>
+      <td>F</td>
+      <td>G</td>
+      <td>H</td>
+      <td>I</td>
+      <td>J</td>
+      <td>K</td>
+      <td>L</td>
+      <td>M</td>
+      <td>N</td>
+      <td>O </td>
+    </tr>
+    <tr>
+      <th>5-</th>
+      <td>P</td>
+      <td>Q</td>
+      <td>R</td>
+      <td>S</td>
+      <td>T</td>
+      <td>U</td>
+      <td>V</td>
+      <td>W</td>
+      <td>X</td>
+      <td>Y</td>
+      <td>Z</td>
+      <td>[</td>
+      <td>\</td>
+      <td>]</td>
+      <td>^</td>
+      <td>_ </td>
+    </tr>
+    <tr>
+      <th>6-</th>
+      <td>`</td>
+      <td>a</td>
+      <td>b</td>
+      <td>c</td>
+      <td>d</td>
+      <td>e</td>
+      <td>f</td>
+      <td>g</td>
+      <td>h</td>
+      <td>i</td>
+      <td>j</td>
+      <td>k</td>
+      <td>l</td>
+      <td>m</td>
+      <td>n</td>
+      <td>o </td>
+    </tr>
+    <tr>
+      <th>7-</th>
+      <td>p</td>
+      <td>q</td>
+      <td>r</td>
+      <td>s</td>
+      <td>t</td>
+      <td>u</td>
+      <td>v</td>
+      <td>w</td>
+      <td>x</td>
+      <td>y</td>
+      <td>z</td>
+      <td>{</td>
+      <td>|</td>
+      <td>}</td>
+      <td title="non-breaking space">~</td>
+      <td></td>
+    </tr>
+    <tr title="these code positions don't have characters assigned">
+      <th>8-</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr title="these code positions don't have characters assigned">
+      <th>9-</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>A-</th>
+      <td></td>
+      <td>¡</td>
+      <td>¢</td>
+      <td>£</td>
+      <td>¤</td>
+      <td>¥</td>
+      <td>¦</td>
+      <td>§</td>
+      <td>¨</td>
+      <td>©</td>
+      <td>ª</td>
+      <td>«</td>
+      <td>¬</td>
+      <td>­</td>
+      <td>®</td>
+      <td>¯ </td>
+    </tr>
+    <tr>
+      <th>B-</th>
+      <td>°</td>
+      <td>±</td>
+      <td>²</td>
+      <td>³</td>
+      <td>´</td>
+      <td>µ</td>
+      <td>¶</td>
+      <td>·</td>
+      <td>¸</td>
+      <td>¹</td>
+      <td>º</td>
+      <td>»</td>
+      <td>¼</td>
+      <td>½</td>
+      <td>¾</td>
+      <td>¿ </td>
+    </tr>
+    <tr>
+      <th>C-</th>
+      <td>À</td>
+      <td>Á</td>
+      <td>Â</td>
+      <td>Ã</td>
+      <td>Ä</td>
+      <td>Å</td>
+      <td>Æ</td>
+      <td>Ç</td>
+      <td>È</td>
+      <td>É</td>
+      <td>Ê</td>
+      <td>Ë</td>
+      <td>Ì</td>
+      <td>Í</td>
+      <td>Î</td>
+      <td>Ï </td>
+    </tr>
+    <tr>
+      <th>D-</th>
+      <td>Ð</td>
+      <td>Ñ</td>
+      <td>Ò</td>
+      <td>Ó</td>
+      <td>Ô</td>
+      <td>Õ</td>
+      <td>Ö</td>
+      <td>×</td>
+      <td>Ø</td>
+      <td>Ù</td>
+      <td>Ú</td>
+      <td>Û</td>
+      <td>Ü</td>
+      <td>Ý</td>
+      <td>Þ</td>
+      <td>ß </td>
+    </tr>
+    <tr>
+      <th>E-</th>
+      <td>à</td>
+      <td>á</td>
+      <td>â</td>
+      <td>ã</td>
+      <td>ä</td>
+      <td>å</td>
+      <td>æ</td>
+      <td>ç</td>
+      <td>è</td>
+      <td>é</td>
+      <td>ê</td>
+      <td>ë</td>
+      <td>ì</td>
+      <td>í</td>
+      <td>î</td>
+      <td>ï </td>
+    </tr>
+    <tr>
+      <th>F-</th>
+      <td>ð</td>
+      <td>ñ</td>
+      <td>ò</td>
+      <td>ó</td>
+      <td>ô</td>
+      <td>õ</td>
+      <td>ö</td>
+      <td>÷</td>
+      <td>ø</td>
+      <td>ù</td>
+      <td>ú</td>
+      <td>û</td>
+      <td>ü</td>
+      <td>ý</td>
+      <td>þ</td>
+      <td>ÿ </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>The dictionary definition for "byte" given above is somehow wrong (grossly
+outdated) in the part that reads "enough". A byte, made of 8 bits, can hold
+exactly 2<span style="font-size: x-small; vertical-align: super;">8</span> or
+256 different values. This is not enough for the asian alphabets made of
+thousands of different characters, neither for the myriad of occidental
+characters and symbols needed, check the "<a
+href="http://copypastecharacter.com/all-characters">CopyPasteCharacter</a>"
+page to see for yourself. </p>
+
+<p>A byte was enough to represent the limited set of characters that was
+workable until computers turned really international.</p>
+
+<p>The <a href="http://old.no/charmap/iso-8859-1.html"
+target="_blank">table</a> shows a relationship between byte values and
+displayed or printed characters. This arrangement is one of the many possible
+"encodings#. This particular encoding is vastly used a gazillion web pages,
+millions of people aide by it, is known as "<a
+href="http://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO 8859/1</a>" and is an
+extension of the older ASCII encoding.</p>
+
+<p>To interpret the table remember that a byte can be expressed as 2
+hexadecimal digits. The table contains 256 calls (15 × 16) and maps from byte
+values to character symbols, for example the uppercase "W" is in the row with
+"5-" at the left and the column with "-7" at the top (try parking the mouse
+pointer over the "W" in the table). This means that the hexadecimal code for
+the "W" is 57. Checking <a href="#L90464">the binary to hex table above</a>,
+it's clear that the "W" in binary is 0101 0111, the equivalents of the hex
+digits 5 and 7.</p>
+
+<p>So this is how it works at its lowest level: a massive agreement on how to
+interpret a bit structure, in this case a simple set of 8 bits.</p>
+
+<h3 id="L91654">Bytes and colors </h3>
+
+<p>This section is another example of structure. You have heard of
+specifications for monitor screens that mention "24 bit color" or "16 million
+colors", or the acronym "RGB", or "screen resolution". This section is about
+it. </p>
+
+<p>In computer graphical output, like a screen or printed matter, the text and
+the images are made out of "<a href="http://en.wikipedia.org/wiki/Pixel"
+target="_blank">pixels</a>", tiny dots emitting light of a given color. If
+you'd look at the screen with a magnifying glass you would notice them. The
+pixels tidily aligned in an array. </p>
+
+<p>As technology progresses the pixels tend to become smaller and smaller. A
+rather recent breakthrough (as of this writing, Jan 2014) <a
+href="http://en.wikipedia.org/wiki/Retina_Display">the "Retina" class
+displays</a> exhibit the top pixel density at 200~300+ pixels per inch (ppi),
+about twice as before. </p>
+
+<p>With the pixel sizes shrinking, the number of pixels needed to put together
+a screen of the same size as before has to grow. Doubling the ppi means implies
+multiplying the number of pixels by 4, right? Because it affected both the
+vertical and the horizontal sizes.</p>
+
+<p>For example the first two generations of Apple iPads had screens made up of
+1024x768 pixels, and the following 3rd and 4th generations had 2048x1536
+resolutions, all with 9.7 inch screens (786,432 vs. 3,145,728 pixels). </p>
+
+<p>We have also witnessed the grow of the advertised number of pixels in
+digital photo cameras, from a few hundred thousands up to many millions. </p>
+
+<div class="imgR">
+<img alt="RG color wheel" src="mooc/rgb.png"></div>
+
+<p>Each pixel's color is encoded (most of the times) using 3 bytes, one for
+each of the three primary colors: <strong>R</strong>ed, <strong>G</strong>reen
+and <strong>B</strong>lue, thus the "RGB" acronym. </p>
+
+<p>So yes, rendering an iPad retina screen requires to calculate 3 x 3,145,728
+or about 9.5 million bytes. A film or a computer game at 24 frames per second
+displays 226,492,416 bytes per second on that devices.</p>
+
+<p>Each of the three bytes of a pixel's color is treated as a number between 0
+and 25 (binary 00000000 all the way through 11111111) signifying the amount of
+the associated color to be emitted by the pixel. If the three bytes contain
+zero the pixel will not emit any light of any color and the result will be
+black. On the other side, if all three contain the value 255 the pixel will
+fully emit all three colors and the outcome will be white. </p>
+
+<p>From the circles diagram it can be seen that full red, full green and zero
+blue renders pure yellow.</p>
 
 <p></p>
+
+<p>Using hexadecimal notation the color for that pixel will be quantified thus:
+ff ff 00, the three colors in the specified order. Using decimal numbers the
+yellow color would be rgb(255, 255, 0).</p>
+
+<p>All the possible colors are the combinations of 256 values taken 3 at a
+time, the number of which is 256 x 256 x 256 = 16,777,216 this the "16 million
+colors" meme. </p>
+
+<table border="1">
+  <tbody>
+    <tr>
+      <td>
+        <table border="1">
+          <tbody>
+            <tr>
+              <td>R <input type="text"></td>
+            </tr>
+            <tr>
+              <td>G</td>
+            </tr>
+            <tr>
+              <td>B</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>
+        <div style="width:200px; height:200px;">
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
 
 <p></p>
 
