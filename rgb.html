@@ -3,50 +3,90 @@
 <head>
   <meta content="text/html; charset=iso-8859-1" http-equiv="content-type">
   <meta http-equiv="Content-Language" content="en">
-  <title>RGB demo</title>
+  <title>RGB demo</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
   <script type="text/javascript" src="res/jquery/jquery.js"></script>
-  <script>
-    $(document).ready( function(){
-      $('#rgb-demo input[type=range]').change(function() {
-        $('#valueR').text( '' + $('#inputR').val() );
-        $('#valueG').text( '' + $('#inputG').val() );
-        $('#valueB').text( '' + $('#inputB').val() );
-        var theColor = 'rgb(' + $('#valueR').text() + ',' + $('#valueG').text() + ',' + $('#valueB').text() + ')';
-        $('#rgb-target').css( 'background-color', theColor );
-      });
-    });
-  </script>
 </head>
- 
-<div id="rgb-demo"  style="border:2px solid silver; border-radius:6px; padding:8px; float:right; margin:1em;">
-  <table>
-    <tbody>
-      <tr>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>R <input id="inputR" type="range" inputmode="numeric" max="255" min="0" step="1" value="0"></td>
-                <td id="valueR" style="width:2em; text-align:right;">0</td>
-              </tr>
-              <tr>
-                <td>G <input id="inputG" type="range" inputmode="numeric" max="255" min="0" step="1" value="0"></td>
-                <td id="valueG" style="width:2em; text-align:right;">0</td>
-              </tr>
-              <tr>
-                <td>B <input id="inputB" type="range" inputmode="numeric" max="255" min="0" step="1" value="0"></td>
-                <td id="valueB" style="width:2em; text-align:right;">0</td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-        <td>
-          <div id="rgb-target" style="width:200px; height:120px; background-color:rgb(0,0,0);">
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+
+<body>
+  <div id="rgb-demo" style="">
+    <script>
+      $(document).ready( function(){
+        // restore properties deleted by Amaya
+        $('#inputR').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
+        $('#inputG').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
+        $('#inputB').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
+
+        $('#rgb-demo input[type=range]').on('input change', function() {
+          // build the RGB color and set the target area
+          $('#valueR').text( '' + $('#inputR').val() );
+          $('#valueG').text( '' + $('#inputG').val() );
+          $('#valueB').text( '' + $('#inputB').val() );
+          var theColor = 'rgb(' + $('#valueR').text() + ',' + $('#valueG').text() + ',' + $('#valueB').text() + ')';
+          $('#rgb-target').css( 'background-color', theColor );
+
+          // display the RGB color in binary and hexadecinal
+          $('#rgb-binValue').text( 'bin: ' 
+            + document.getElementById('inputR').valueAsNumber.toString(2) + ' ' 
+            + document.getElementById('inputG').valueAsNumber.toString(2) + ' ' 
+            + document.getElementById('inputB').valueAsNumber.toString(2) 
+          );
+          $('#rgb-hexValue').text( 'hex: ' 
+            + document.getElementById('inputR').valueAsNumber.toString(16) + ' ' 
+            + document.getElementById('inputG').valueAsNumber.toString(16) + ' ' 
+            + document.getElementById('inputB').valueAsNumber.toString(16) 
+          );
+        }).trigger('change');
+      });       // this "trigger" is not working
+    </script>
+    <style>
+      #rgb-demo   { border:2px solid silver; border-radius:6px; padding:8px; float:right; margin:1em; }
+      .rgb-input  { width:13em; text-align:right; }
+      .rgb-value  { width:2em; text-align:right; font-family:Consolas, monospace; font-size:115%; }
+      .rgb-target { width:200px; height:140px; background-color:rgb(0,0,0); color:white; font-size:120%; padding:20px; }
+      .rgb-bin, .rgb-hex { font-size:90%; font-family:Consolas, monospace; }
+      .rgb-blah   { font-size:110%; }
+      .rgb-rgb    { font-size:150%; }
+    </style>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <table>
+              <tbody>
+                <tr>
+                  <td colspan="2" class="rgb-blah">Use the sliders to set the right area's RGB color</td>
+                </tr>
+                <tr>
+                  <td><span class="rgb-rgb">R</span><input id="inputR" class="rgb-input" type="range" inputmode="numeric" max="255" min="0" step="1" value="0"></td>
+                  <td id="valueR" class="rgb-value" class="rgb-input" style="">0</td>
+                </tr>
+                <tr>
+                  <td><span class="rgb-rgb">G</span><input id="inputG" class="rgb-input" type="range" inputmode="numeric" max="255" min="0" step="1" value="0"></td>
+                  <td id="valueG" class="rgb-value" style="">0</td>
+                </tr>
+                <tr>
+                  <!-- <td>B <input id="inputB" class="rgb-input" type="range" inputmode="numeric" max="255" min="0" step="1" value="0"></td> -->
+                  <td><span class="rgb-rgb">B</span><input id="inputB" class="rgb-input" type="range" inputmode="numeric" max="255" min="0" step="1" value="0"></td>
+                  <td id="valueB" class="rgb-value" style="">0</td>
+                </tr>
+                <tr>
+                  <td colspan="2" id="rgb-binValue" class="rgb-bin"></td>
+                </tr>
+                <tr>
+                  <td colspan="2" id="rgb-hexValue" class="rgb-hex"></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <div id="rgb-target" class="rgb-target" title="use the sliders to set this area's RGB color">
+              
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
 </html>

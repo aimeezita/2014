@@ -27,8 +27,8 @@
   .fixedHeader h1       { opacity:0.9; font-size:160%; vertical-align:20%; }
   .fixedHeader img      { opacity:0.85; }
   /************ table of contents ************/
-  .toc                  { font-size:85%; }
-  .toc a                { color:navy; }
+  .toc                  { font-size:85%; width:70%; margin:auto; }
+  .toc a                { color:navy; display:block; }
   .toc ul               { list-style-type:none; }
   .toc li               { margin-bottom:3px; }
   /************ glossary *********************/
@@ -92,7 +92,7 @@
   h4                    { font-size:120%; font-style:italic; font-weight:700; }
   h5                    { text-decoration:none; font-size:100%; font-weight:600; background-color:rgb(244,244,244); }
   h6                    { font-size:95%; font-style:italic; font-weight:600; }
-  h1, h2, h3, h4, h5, h6 { margin-top:.7em; margin-bottom:0px; padding-top:1px; clear:both; }
+  h1, h2, h3, h4, h5, h6 { margin-top:.2em; line-height:3.9em; margin-bottom:-28px; padding-top:1px; clear:both; }
   blockquote            { margin-top:4px; margin-bottom:2px; }
   ul                    { padding-left:1em; }
   li                    { margin-left:8px;margin-top:0px; margin-bottom:1px; }
