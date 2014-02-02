@@ -3,7 +3,7 @@
   body                  { margin:0px 8px; font-family:Calibri, helvetica, sans-serif; font-size:100%; background-color:#fffff8; }
   html,body             { height:100%; margin-top:0px; }
 
-  #agendaHeader h1      { margin:0px; }
+  #agendaHeader h1      { margin:0px; line-height:1em; margin-bottom:10px; }
   #agendaHeader         { max-width:50em; margin:0px; margin-top:48px; }
   #agendaHeader span#linkPER { margin-left:8em; }
   #agendaHeader ul      { width:100%; margin:0px; }
@@ -51,7 +51,7 @@
     .rt_TOC_H6            { margin-left:8em; line-height:100%; font-size:75%; list-style-type:none; } 
     .rt_TOC_H7            { margin-left:9em; line-height:100%; font-size:75%; list-style-type:none; } 
     .rt_TOCLabel          { display:block; float:left; margin-top:.5em; font-size:1.5em; color:#e5e7bc; -webkit-transform:rotate(-90deg); -moz-transform:rotate(-90deg); }
-  /*******************************************/
+  /************ tags *************************/
   .compactList li       { margin-top:0px; margin-bottom:1px; padding-top:2px; padding-bottom:2px; }
   .compactList          { margin-top:8px; margin-bottom:4px; } 
   .commandLine          { color:#ffffff; background-color:#400040; line-height:90%; font-weight:bold; margin-right:2em; 
@@ -79,7 +79,7 @@
   li                    { margin-left:8px; margin-top:2px; margin-bottom:8px; }
   li p                  { margin-top:1px; margin-bottom:2px; padding-top:0px; }
   table                 { border-collapse:collapse; empty-cells:show; }
-  dt                    { font-weight:600; }
+  dt                    { font-weight:bold; }
   dd                    { margin-left:2em; margin-top:0px; padding-top:0px; }
   th                    { font-size:85%; background-color:#f1f1f1; opacity:0.8; }
   td                    { vertical-align:top; padding-left:2px; padding-right:2px; padding-top:1px; padding-bottom:1px; }
@@ -90,10 +90,10 @@
   h2                    { font-size:160%; font-style:italic; font-weight:700; }
   h3                    { font-size:133%; }
   h4                    { font-size:120%; font-style:italic; font-weight:700; }
-  h5                    { text-decoration:none; font-size:100%; font-weight:600; background-color:rgb(244,244,244); }
+  h5                    { text-decoration:none; font-size:100%; font-weight:700; background-color:rgb(244,244,244); }
   h6                    { font-size:95%; font-style:italic; font-weight:600; }
-  h1, h2, h3, h4, h5, h6 { margin-top:.7em; margin-bottom:0px; padding-top:1px; clear:both; }
-  blockquote            { margin-top:4px; margin-bottom:2px; }
+  h1, h2, h3, h4, h5, h6 { margin-top:.7em; margin-bottom:0px; padding-top:1px; clear:both; line-height:1.1em; padding-bottom:14px; display:block; padding-top:2em; }
+  blockquote            { margin-top:4px; margin-bottom:2px; font-style:italic; }
   ul                    { padding-left:1em; }
   li                    { margin-left:8px;margin-top:0px; margin-bottom:1px; }
   img                   { border-width:0px 0px 0px 0px; }
@@ -101,7 +101,7 @@
 
 
 @media screen { 
-  #agendaBody           { max-width:55em; }
+  #agendaBody           { max-width:44em; }
   #agendaHeader h1      { text-shadow:0.15em 0.15em 4px #c0c0c0; }
   a                     { text-decoration:underline; color:#000040; }
   a:link                { text-decoration:underline; }

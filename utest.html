@@ -36,31 +36,37 @@
 <div id="agendaHeader">
 
 <div class="fixedHeader">
-<h1 style="display: inline;" title="massive open online course">Testing Globant
-UI</h1>
+<h1 style="display: inline;" title="massive open online course">Testing
+Globant-U's UI</h1>
 </div>
 
 <div id="agendaLinks">
 
 <div class="toc">
 <ul>
-  <li><a href="#L75">Test methodology</a> 
+  <li><a href="#L75">UI test methodology</a></li>
+  <li><a href="#L409">Testing Globant U</a> 
     <ul>
-      <li><a href="#L409">Testing Globant U</a> 
+      <li><a href="#L105">Entering: Sign in form sequence</a> 
         <ul>
-          <li><a href="#L105">Entering: Sign in form sequence</a> 
+          <li><a href="#L418">Sign in and registration form comments</a></li>
+          <li><a href="#L227">Courses listing</a></li>
+        </ul>
+      </li>
+      <li><a href="#L526">Following the Web UI Certification track</a> 
+        <ul>
+          <li><a href="#L4106">General comments</a></li>
+          <li><a href="#L464">Taking course: Web UI Certification / Level 1 -
+            Track 1 - Introduction to Computer Programming</a> 
             <ul>
-              <li><a href="#L418">Sign in and registration form
-              comments</a></li>
-              <li><a href="#L227">Courses listing</a></li>
+              <li><a href="#L4299">Content comments</a></li>
+              <li><a href="#L4398">UI &amp; interaction comments</a></li>
             </ul>
           </li>
-          <li><a href="#L526">Following the Web UI Certification track</a> 
+          <li><a href="#L892">Taking course: Web UI Certification / Level 1 -
+            Track 2 - Web Development</a> 
             <ul>
-              <li><a href="#L464">Track: Web UI Certification / Level 1 - Track
-                1 - Introduction to Computer Programming</a></li>
-              <li><a href="#L892">Taking course: Web UI Certification / Level 1
-                - Track 2 - Web Development</a></li>
+              <li><a href="#examComparison">Exam comparison</a></li>
             </ul>
           </li>
         </ul>
@@ -76,62 +82,66 @@ UI</h1>
 </div>
 
 <div id="agendaBody">
-<h2 id="L75">Test methodology</h2>
+<h2 id="L75">UI test methodology</h2>
 <ul>
   <li>The test is of the "<a
     href="http://en.wikipedia.org/wiki/Usability_testing#Expert_review">Expert
-    Review</a>" kind. It differs from the usual ER methodology in that it was
-    performed by a single <em>expert</em> while for expert reviews it's
-    normally recommended to gather several reviewers. </li>
-  <li>All usability reviews are dated, because the target UI is inevitably
-    compared to other state-of-the-art current UIs. As we progress in the
-    making of better and better UIs, what was good some time ago, tuenr sout to
-    be inacceptable according to current standards. This test is performed as
-    of January 2014 and the informal comparison is made against coursera MOOCs.
+    Review</a>" kind. HFI <a
+    href="http://www.humanfactors.com/services/expertreview.asp">describes
+    expert reviews s thus</a>: 
+
+    <div>
+
+    <blockquote>
+      Expert reviews are usability reality checks that result in immediate and
+      concrete fixes to improve your customers' or staffs' experience. Fresh
+      eyes review a design against industry standards and current research on
+      how humans think and interact with things. An Expert Review is an
+      important technique because it's often hard for designers to recognize
+      usability trouble spots in their own designs. They created the task flow.
+      They know how it works. When followed by Usability Testing, an Expert
+      Review ensures that an organization's usability investment is optimized.
+    </blockquote>
+    </div>
   </li>
-  <li>Caveat: These reports, because of their nature, are all about the UI
-    things that are not perfect. Less experienced developers who authored the
-    reviewed system tend to resent the comments, while the most evolved take is
-    the same as QC bug reports: great opportunities to get it better. </li>
+  <li>This test is performed as of January 2014 and the reference UI is
+    coursera MOOC's. </li>
+  <li>Caveat: The reports of this kind, because of their nature, are all about
+    the UI things that are not perfect. Less experienced developers who
+    authored the reviewed system tend to resent the comments, while the most
+    evolved take them as QC bug reports: great opportunities to get it better.
+  </li>
 </ul>
 
-<p>HFI <a
-href="http://www.humanfactors.com/services/expertreview.asp">describes ERs
-thus</a>: </p>
-
-<blockquote>
-  <p>Expert reviews are usability reality checks that result in immediate and
-  concrete fixes to improve your customers' or staffs' experience. Fresh eyes
-  review a design against industry standards and current research on how humans
-  think and interact with things. An Expert Review is an important technique
-  because it's often hard for designers to recognize usability trouble spots in
-  their own designs. They created the task flow. They know how it works. When
-  followed by Usability Testing, an Expert Review ensures that an
-  organization's usability investment is optimized.</p>
-</blockquote>
-
-<h3 id="L409">Testing Globant U</h3>
-
-<p>The test reports struggling against the register/login flow, and taking the
-"Web UI Certification / Level 1 - Track 1 - Introduction to Computer
-Programming" course. </p>
+<h2 id="L409">Testing Globant U</h2>
 
 <h4 id="L105">Entering: Sign in form sequence</h4>
+
+<p>This part of the test reports attempts to progress through the
+register/login flow, with the intention of taking a course. </p>
+
+<p>I entered the registration workflow without being informed how it worked, I
+was able to move on only after I routimely checked my email and found the
+enabling link. This is reflected in the report below and is an issue: any user
+should be able to sign on no matter the initial link. </p>
+
+<p>Later on I got an email that contained the instructions that I didn't have
+the first time. </p>
+
+<h5 id="L418">Sign in and registration form comments</h5>
 
 <p>The link to <a
 href="http://173.255.118.223:8080/globantu-web-1.0.0-SNAPSHOT/">Globant U
 courses</a> takes to a slightly non-standard login form. </p>
 
-<h5 id="L418">Sign in and registration form comments</h5>
-
 <p>This worked as if the registration part was not fully developed. Like for
 example, the landing page lacks a "Register" link for the newcomers. I liked
-the minimalist design, but it might convey a sense of rejections for those who
+the minimalist design, but it might convey a sense of rejection for those who
 come for the first time. </p>
 <ol>
   <li>There is a "Reset" button 
     <p>Reset buttons are not used any more. In the nineties it was customary to
-    set one in each and every form, and it was never used. Its function is to
+    set one in each and every form, that was never used. Its function is to
     reset all the form's input fields to their original values, usually empty.
     It's only useful for lengthy forms used repeately. </p>
     <p>In this particular case the presence of a button labeled "Reset" add a
@@ -146,34 +156,36 @@ come for the first time. </p>
     is seldom used because it requires the glober to enter Glow. </p>
     <p>Suggestion: Add a me <em>remember me</em> option that not only remembers
     the credentials but also takes the user immediately to the last page
-    accessed. Make the last page accessed thing so that it works even if the
-    user is accessing the site from another device. </p>
+    accessed. Make the last page accessed thing to work even if the user is
+    accessing the site from another device (like, starting the course in
+    Globant and continuing at home). </p>
   </li>
-  <li>An error message breaks the layout Defects of this type tend to erode the
-    user's trust on the site, conveying a sense of sloppyness that taints the
-    whole site including the quality of the content. 
-    <p>Suggestion: Add a <code>clear</code> to the Email label, or don't float
-    the message. </p>
+  <li>An error message breaks the layout. Defects of this type tend to erode
+    the user's trust on the site, conveying a sense of sloppyness that taints
+    the whole site including the quality of the content. 
+    <p>Suggestion: Add a CSS "clear" to the Email label, or don't float the
+    message. </p>
   </li>
-  <li>The input fields have proportional sizes 
+  <li>The input fields have widths proportional to the container 
     <p>When the form is displayed too wide these fields are set too long for
     the intended content. The size of the input should give the user a hint
     about the size of the expected content. </p>
     <p>Suggestion: Set the fields with a fixed-proportional size, like
     <code>18em</code>. Set it rather big to encourage the use of lengthy
     passwords. Note that there is no need for both fields to be equal in size,
-    but it's customary to do it so the user recognizes a login form
+    but it's customary to do it so the user recognizes a sign in form
     immediately. </p>
   </li>
-  <li>The links "Register" and "Reset password" are placed in opposition 
-    <p>As these two links are of the same class, they should be placed in
-    equivalent positions. The logical ordering is "Register" first because it
-    designates an action that happens before. </p>
+  <li>The links "Register" and "Reset password" are placed in opposite sides 
+    <p>Suggestion: As these two links are of the same class, they should be
+    placed in equivalent positions. The logical ordering is "Register" first
+    because it designates an action that happens before. </p>
   </li>
   <li>The form was built with a responsive layout 
-    <p>This is not apprppriate for login forms. Actually, was is not
-    appropriate is that a simple login form spanned widths in excess of 750px.
-    </p>
+    <p>This is not approppriate for sign in forms. Actually, it is not
+    appropriate that a simple login form spanned widths in excess of 750px.
+    Sign in forms are usually small, and showing a big one can make the user
+    doubt. </p>
     <p>Also, in a viewport width of about 760px the layout breaks when there is
     a 350px wide error message artifact displayed into a 240px wide container.
     </p>
@@ -185,7 +197,7 @@ come for the first time. </p>
     to be a Globant email. Actually, entering another domain's email brings up
     a "This email address is not allowed" error message. </p>
     <p>Suggestion: Change the "Email:" label in the login form to "Globant
-    email:". </p>
+    email:", or instead of email ask for the Globant user id. </p>
   </li>
   <li>There is no indication of the kind of email required 
     <p>In the first User Registration step, entering a non-Globant email brings
@@ -202,7 +214,8 @@ come for the first time. </p>
     site. Being that the identification is Globant's email the password might
     well be also Globant's. </p>
     <p>Suggestion: Make it clear, at least in the registration form, what is
-    the password expected. </p>
+    the password expected, or set a small help (?) button popping up this
+    information. </p>
   </li>
   <li>Dead end in user registration 
     <p>When the user tries to register the second time a "User already
@@ -211,6 +224,8 @@ come for the first time. </p>
     <p>Suggestion: Provide a link to move out, like "Back" or whatever. Also,
     don't erase the input so the user can see which is the email that is
     triggering the error. </p>
+    <p>It might have happened that I unknowingly had a confirmation email in my
+    inbox, there was no instructions in the screen. </p>
   </li>
   <li>The "Password Reset" dialog does not state the requirements 
     <p>Entering a short or a simple password triggers a message "Please, check
@@ -236,6 +251,12 @@ come for the first time. </p>
     <p>Suggestion: Always use "Sign in" in all pages. Not "Login" that is
     generally being phased out. </p>
   </li>
+  <li>The registration confirmation message was sent from an invividual's
+    account, it doesn't look like a system message and might stay unnoticed in
+    the inbox. 
+    <p>Suggestion: Change the "sender" name of the message to something
+    communicating where the message comes from. </p>
+  </li>
 </ol>
 
 <h5 id="L227">Courses listing</h5>
@@ -253,7 +274,8 @@ src="mooc/courses-listing.png"></p>
   </li>
   <li>The page is laid out with bootstrap, but it doesn't behave. The snapshot
     above is the narrowest possible in a notebook (1280 x 800). 
-    <p>Suggestion: Fix the layout so this page behaves in handheld devices. </p>
+    <p>Suggestion: Fix the layout so this page behaves in narrow windows, even
+    in wide screens. </p>
   </li>
   <li>The layout of the page is not scannable. The course names are crammed in
     cells of a too-narrow column and in general the layout is not readable
@@ -281,6 +303,30 @@ src="mooc/courses-listing.png"></p>
   <li>The courses list needs a "Search" function. This is not needed right now,
     but will be a must as soon as the list grows. Al alternative would be
     tagging the courses, and allowing the user to filter by tag. </li>
+  <li>The courses are not dated. Technical information gets outdated as
+    software versions change. In the near future some courses will be obsolete
+    and the student will not have a means to know it. If a student enters one
+    or two courses and after some effort he finds that are outdated, the
+    conclusion will be that <em>everything is outdated</em> ans will walk. 
+    <p>Suggestion: Add both the course development date and the related
+    software versions, if any. Also update this information whenever the course
+    is updated. </p>
+  </li>
+  <li>The enrollment passes the user through the sign in form, which is
+    implemented as a separate page. After signing in it takes the user back to
+    the courses listing, but not in the same scroll position. This forces the
+    user to search again for the course in order to click its "Go to class"
+    button. 
+    <p>Suggestion: Replace the "Enroll" button by a "Go to course" that takes
+    the user to a "course's home page" with details about the course (like a
+    picture of the author, a related image or a screenshot) and put the
+    "Enroll" button in that course homa page and do the whole enroll thing
+    there, including abiding to the conduct code. Thus, if the action requires
+    signin in the user would be taken back to the exact place where she was
+    before. </p>
+    <p>As a temporary quick fix, take the student directly to the course
+    material at the end of the enrollment process. </p>
+  </li>
 </ul>
 
 <p id="Alternate"><strong>Alternate layout</strong></p>
@@ -565,65 +611,97 @@ Understand responsibility over the frontend delivery. </div>
 
 <h4 id="L526">Following the Web UI Certification track</h4>
 
-<p>For this part of the report I took the first course of the track, a
-programming primer. During the course I took notes of the issues I found. </p>
+<p>For this part of the report I took the first courses of the track, a
+programming primer intitled "Introduction to Computer Programming" and another
+"Web Development". During the course I took notes of the issues I found. </p>
 
-<p>This is a subject I know in full and have taught in the past at university
+<p>This is a subject I know well and have taught in the past at university
 level. As I know the subject, I was enabled to detect issues about the content
 in addition to the UI issues. </p>
 
-<p>The content issues are specific of this course, while the UI issues might be
-applicable to other courses implemented with the same platform. </p>
+<p>The content issues are specific of this courses, while the UI issues might
+be applicable to other courses implemented on the same platform. </p>
 
-<p>In general terns, the platform looks as if it was not fully baked, with a
-plethora of tiny details to be fixed. Although each detail is a small issue by
+<h5 id="L4106">General comments</h5>
+
+<p>As an overarching comment I'd say that the users of these courses will pair
+the quality of the Globant provided material to the quality of the work Globant
+expects from them. To be able to ask them for top quality work we must show off
+Globant as a top quality organization, and these courses don't make it. </p>
+
+<p>In general terms, the platform looks as if it was not fully baked, with a
+plethora of details to be fixed. Although each detail is a small issue by
 itself, it is the sum of many small things what lowers the usability of a UI,
 and this is the case. </p>
 
-<p>As of the content, the course is made of a set of very well explained videos
-presenting programming in a rather outdated fashion. Eack lecture, comprised of
-several videos, contains a Powerpoint-type document that is not fully
-integrated with the related videos, and its quality is not high. </p>
+<p>The most significant issues are the lack of a "course home page" and a
+"student home page". The need for these pages arises repeatedly during the
+test. </p>
+
+<p>As of the content, this course is made of a set of very well explained
+videos presenting programming in a rather outdated fashion. Each lecture,
+comprised of several videos, contains a Powerpoint-type document that is not
+fully integrated with the related videos, and its quality is not high. </p>
+
+<p>The outdated-ness of the course stems from its content structure. The course
+poses the student upfront a lot of information that is not needed initially, if
+ever. Like for example the classification of languages in compiled or
+interpreted, typed or not, etc. These concepts are deadly simple for one that
+has been programming for years, while the starter doesn't need them right now
+and instead she wants to go straight to the beef, to coding. </p>
+
+<p>Another sign of aging is that the videos approach the Javascript language as
+a procedural language, while nowadays all code is object oriented. The step
+from procedural to OO is really very hard, and should be avoided by teaching OO
+from scratch. </p>
 
 <p>Additionally, it seems that we don't have legal rights to use these videos.
-The course has an additional section "Support information" that is of much
-lower quality. </p>
+</p>
 
-<p>Every person has only one opportunity to start learning about programming in
-their lives, and the quality of that experience will impact all their next
-steps. IMO this course is not the kind of experience that will not make the
-students love software development. </p>
+<p>The course has an additional section "Support information" that contains a
+hodgepodge of material of much lower quality than the lynda.com videos. </p>
+
+<p>As one has only one chance to give a first good impression, every person has
+only one opportunity to start learning about programming in their lives, and
+the quality of that experience will impact all their following steps. IMO this
+course is not the kind of experience that will make the students love software
+development like crazy for the rest of their lives. </p>
 
 <p>Developing a course for the purpose of priming totally non-programmers is a
 huge effort. On the other hand, such effort was already untertaken by a lot of
 others. </p>
 
 <p>I strongly suggest that we focus on new turf, and instead of running a
-homebrew course for a few hundred globers we think big and massively exhibit
-our real power. </p>
+homebrew starter course for a few globers we think big and massively exhibit
+our real power by showing off Globant's specific skills. I say "few globers"
+bacause I think that many of have already delved into the subject, deeply. </p>
 
-<p>If we could leverage other people's courses we could focus in Globant's
-reals strengths. The fact that in Globant there are many people who are great
-programmers doesn't mean that we have the required expertise. Introductory
-courses are most sensitive to the instructor's didactical abilities, which many
-(not to say most) hardcore geeks completely lack. </p>
+<p>The fact that in Globant there are many people who are great programmers
+doesn't mean that we have the required expertise to teach programming.
+Introductory courses are most sensitive to the instructor's didactical
+abilities, which many (not to say most) hardcore geeks completely lack. </p>
+
+<p>If we could leverage other people's courses for the simple stuff, then we
+could focus in Globant's real strengths. </p>
 
 <p>A quick search, only in the coursera archives, returned a course named "<a
 href="https://www.coursera.org/course/programming1">Learn to Program: The
 Fundamentals</a>" which is currently finished but open and I plan to evaluate
-because it can show interesting statistics: </p>
-<pre># users registered at close of course: 66,510
+because it shows interesting statistics: </p>
+<pre style="margin-left:2em;"># users registered at close of course: 66,510
 # users who watched the first video:   48,520
 # users who watched the last video:    10,935
 # users who submitted the final exam:   8,600
 # Statements of Accomplishment:         7,839 (11%)</pre>
 
-<p>This is a very good record for a MOOC. </p>
+<p>An 11% of graduated participants is an outstanding record for a MOOC. </p>
 
 <p>The course <a
 href="http://coursetalk.org/coursera/learn-to-program-the-fundamentals">has 141
 reviews</a> which might be useful for our purpose, with an average rating of
-4.6 stars out of 5. It links to other similar courses: </p>
+4.6 stars out of 5. </p>
+
+<p>It links to other similar courses: </p>
 
 <div class="framed">
 
@@ -642,7 +720,6 @@ reviews</a> which might be useful for our purpose, with an average rating of
         <div class="stars s8">
         <a
         href="/edx/600x-introduction-to-computer-science-and-programming-c2"></a></div>
-        <br>
         <b>21</b> Reviews 4 stars</td>
     </tr>
     <tr>
@@ -655,7 +732,6 @@ reviews</a> which might be useful for our purpose, with an average rating of
       <td>
         <div class="stars s8">
         <a href="/coursera/computer-science-101"></a></div>
-        <br>
         <b>6</b> Reviews 4 stars </td>
     </tr>
     <tr>
@@ -668,7 +744,6 @@ reviews</a> which might be useful for our purpose, with an average rating of
       <td>
         <div class="stars s9">
         <a href="/udacity/introduction-to-computer-science"></a></div>
-        <br>
         <b>28</b> Reviews 4.5 stars</td>
     </tr>
     <tr>
@@ -682,7 +757,6 @@ reviews</a> which might be useful for our purpose, with an average rating of
       <td>
         <div class="stars s9">
         <a href="/coursera/learn-to-program-crafting-quality-code"></a></div>
-        <br>
         <b>36</b> Reviews 4.5 stars </td>
     </tr>
     <tr>
@@ -698,46 +772,44 @@ reviews</a> which might be useful for our purpose, with an average rating of
         <div class="stars s10">
         <a
         href="/coursera/an-introduction-to-interactive-programming-in-python"></a></div>
-        <br>
         <b>593</b> Reviews 5 stars </td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<h5 id="L464">Track: Web UI Certification / Level 1 - Track 1 - Introduction to
-Computer Programming</h5>
+<h5 id="L464">Taking course: Web UI Certification / Level 1 - Track 1 -
+Introduction to Computer Programming</h5>
 
 <p>Turns out that instead of one single course we could offer the globers a
 wider choice so they can take the course that fits them better. </p>
 
-<p><strong>Content comments</strong></p>
+<p>What we can yes provide the learning globers is live coaching and mentoring,
+something that online courses lack. And this can make a significant difference.
+</p>
 
-<p>The course is based in a set of lynda.com videos, published in youTube, that
-are somehow outdated both regarding the content and also the approach. </p>
+<h6 id="L4299">Content comments</h6>
 <ol>
-  <li>This track, "Introduction to Programming", instead of being an integral
-    part of the Web UI course should be a separate course by itself, bacause
+  <li>This "Introduction to Programming" course, instead of being an integral
+    part of the Web UI course should be a separate course by itself, because
     it's also basic in other courses. Instead of being a part it should be a
     prerequisite. </li>
   <li>The lynda.com videos in Lecture 1 contain a lot of ancilliary information
     that the student doesn't need yet, like the differences between compiled or
     interpreted languages, or information about machine code. 
     <p>IMO having to process all this information up front, in the first 15
-    minutes, poses an arid landscape to the student who is eager to see some
-    real code once and for all. </p>
+    minutes, poses an arid landscape to the student who is eager to see how to
+    code. </p>
     <p>IMO it should start with something like the content of the video in
     Syntax &rarr; Lecture 1 &rarr; Video 2</p>
   </li>
   <li>There is an item in the left hand index labeled "Introduction to
-    Programming La" which is clearly wrong. It seems as if it was truncated,
-    but the complete last word (presumes "Languages") is never shown. Also,
-    this course is not an introduction to <em>programming languages</em>, but
-    to <em>programming</em>. </li>
-  <li>The slides in Lecture 1 have the same problem. I'd save the historical
-    background for an upcoming class. </li>
+    Programming La" which seems as if it had a truncated title, but the
+    complete last word (presumed "Languages") is never shown. </li>
+  <li>The slides in Lecture 1 have the same ancillyary information issue as the
+    videos. I'd save the historical background for an upcoming class. </li>
   <li>Slide 18 in Lecture 1 is misleading. </li>
-  <li>Slide 28 is a circular definition of OOP, smartes students will ignore
+  <li>Slide 28 is a circular definition of OOP, smarter students will ignore
     it. </li>
   <li>Slide 34, about OOP inheritance, introduces a bad practice which is using
     pluralized names for classes. Plural names are for collections. </li>
@@ -748,27 +820,31 @@ are somehow outdated both regarding the content and also the approach. </p>
     before being presented. And finally, there is no mention to function names
     as identifiers. </li>
   <li>In slide 45 "Structured Programming" is mentioned but was never defined
-    (and will never be, I guess for now). </li>
+    (and will never be, I guess for now). Being this course a primer, no
+    concept is a given. </li>
   <li>Slide 47, about passing parameters by value, mentions the parameter
     concept which is not yet defined. </li>
   <li>Many other slides display conflictive content. IMO exposing the students
     who have no idea about programming to this material might harm them in an
     irreversible way. </li>
-  <li>Syntax &rarr; Lecture 1 &rarr; Video 1, is severely outdated about the
-    usages of the JavaScript language. </li>
+  <li>Syntax &rarr; Lecture 1 &rarr; Video 1, is severely about the usages of
+    the JavaScript language. </li>
   <li>Syntax &rarr; Lecture 1 &rarr; Video 5 is very good in how it explains
     some concepts about numeric variables. </li>
-  <li>Sometimes there is no correlation between the laft hand pane and the
-    content pane, i.e., it's not possible to find out which of the elements of
-    the index is displayed as content. In the example, the title at the left
-    don't match the titles at the top of the right content pane. 
-    <p><img alt="not possible to relate index and content" style="width:100%; "
+  <li>Sometimes there is no correlation between the left hand panel and the
+    content panel, i.e., it's not possible to find out which of the elements of
+    the index is displayed by looking at the content panel. In the example, the
+    title at the left doesn't match the titles at the top of the right content
+    pane. 
+    <p><img alt="not possible to relate index and content"
+    style="width:100%; max-width:807px;"
     src="mooc/course-noLetfRightConnection.png"></p>
   </li>
   <li>The video at Classes &rarr; Functions &rarr; Lecture 1 &rarr; Video 4
     doesn't come up. </li>
-  <li>IMO the word "Document" is too generic. Yes, it is a document. But
-    designing it as "Document" is like to have a son and name him "Son". 
+  <li>IMO the word "Document" used in every course section is too generic. Yes,
+    it is a document. But naming it "Document" is like to have a son and name
+    him "Son". 
     <p>Suggestion: Instead of "Document" use the section names, like
     "Operators, If and Switch" or "Functions". </p>
   </li>
@@ -779,25 +855,24 @@ are somehow outdated both regarding the content and also the approach. </p>
     order would be to watch the videos and then open the "Document" that point
     to the same videos. 
     <p>Suggestion: If the "Document" has to be opened before in order to be led
-    to the videos then set the link to the "Document" before the video linls.
+    to the videos then set the link to the "Document" before the video links.
     </p>
     <p>Also, if the videos are subordinate to the "Document" then the video
     links should also appear as subordinates of the appropriate "Document"
     link. </p>
   </li>
-  <li>In Classes eee Iterations eee Lecture 1 eee Document eee Slide 16 the
-    name of the video is wrong, repeated from the previous video. 
+  <li>In Classes &rarr; Iterations &rarr; Lecture 1 &rarr; Document &rarr;
+    Slide 16 the name of the video is wrong, repeated from the previous video. 
     <p>It should be "Creating a for loop". </p>
   </li>
   <li>Given that the videos have their own descriptive names, those names
-    should be displayed in the left hand index, like "3 Creating a for loop".
-    This is helpful for the students, for example in case they wanted to review
-    a subject. With the current arrangement they must remember the correlation
-    between video numbers and subjects, or open videos until they see one that
-    has the right title. </li>
+    should be displayed in the left hand index, like "3 Creating a for loop"
+    instead of "Video 3". This is helpful for the students, for example in case
+    they wanted to review a subject. With the current arrangement they must
+    remember the correlation between video numbers and subjects, or open videos
+    one after the other until they find the seeked one. </li>
   <li>Each section should have a small assessment after if, for the students to
-    know that they understood the basics or that they should review the
-    subject. </li>
+    know if they understood the basics or they should review the subject. </li>
   <li>The lynda.com videos belong to lynda.com and one is supposed to pay for
     the right of using them. See <a
     href="https://www.google.com.ar/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;cad=rja&amp;ved=0CDQQtwIwAQ&amp;url=http%3A%2F%2Fwww.lynda.com%2FJavaScript-tutorials%2FWorking-operators%2F81266%2F87525-4.html&amp;ei=qJbiUtT8OIePkAeup4HAAw&amp;usg=AFQjCNEeXqS6lTGjoNFhdn3FYBSSPQzupw&amp;sig2=TKATzItvp016x0ZSoREuzQ&amp;bvm=bv.59930103,d.cWc">an
@@ -805,21 +880,25 @@ are somehow outdated both regarding the content and also the approach. </p>
   </li>
   <li>In Support information &rarr; Lecture 1 &rarr; Video 1, the code examples
     are written in MEL and Python, while all the previous examples are written
-    in JavaScript. IMO this is too bold for a forst contact with programming.
+    in JavaScript. IMO this is too bold for a first contact with programming.
   </li>
   <li>The "Support Information" section videos are of much less quality than
-    the previous ones. Also, these videos are focuse on startin programminf 4D
-    models with Blender, which is a good thing, but IMO falls out of bounds in
-    a course like this. </li>
+    the previous ones. Also, these videos are focused on programming 4D models
+    with Blender, which is a good thing, but IMO falls out of bounds in a
+    course like this. </li>
   <li>The "Exam" is void. </li>
 </ol>
 
-<p></p>
-
-<p><strong>UI &amp; interaction comments</strong></p>
+<h6 id="L4398">UI &amp; interaction comments</h6>
 <ol>
-  <li>Videos have to open in the course window</li>
-  <li>There must be a "next" button in each and every step</li>
+  <li>Videos have to open in the course window (this issue was solved for the
+    next lectures)</li>
+  <li>The video window is too small. As most videos in programming courses
+    contain code examples, the size must be enough for the student to be able
+    to read. Should use responsive layout, maxxing the video area. </li>
+  <li>There must be a "next" button in each and every step, to allow the
+    student to fast forward without resorting th the index. In a responsive
+    layout, the index might not even ba visible. </li>
   <li>Anyway, the hierarchy at the left panel has to highlight the currently
     selected item</li>
   <li>The hierarchy at the left somehow has to convey information about which
@@ -833,48 +912,37 @@ are somehow outdated both regarding the content and also the approach. </p>
     <p></p>
   </li>
   <li>Clicking compound items in the left hand hierarchy should display their
-    sub-hierarchy in the content pane. </li>
+    sub-hierarchy in the content pane, or at least the title, in order to
+    acknowledge the click. </li>
   <li>There should be a set of back and forward buttons, for the student to
     backtrack his progress. Alternatively, stack their movements in the
     browser's history. </li>
   <li>There are many "Lecture 1" sections. This difficults references in
-    questions. </li>
+    questions and when the student wants to review. . </li>
   <li>Getting back to the course doesn't open it in the last lesson accesed,
     neither the system remembers the state of the left hand side artifact
-    (should display as it was when the page last closed). </li>
-  <li>The "Documents" are written in different colors, several colors per
-    slide, that convey no apparent meaning. The software code is usually
+    (should display as it was when the page was last closed). </li>
+  <li>The "Documents" text is written ussing different colors, several colors
+    per slide, that convey no apparent meaning. The software code is usually
     displayed in different colors to highlight the syntax, but this is not the
     case. Reading text like this is distracting, as the mind automatically
     attempts to decypher the meaning of each color. 
     <p style="text-align:center;"><img alt="random text colors"
     style="width:100%; max-width:566px; "
     src="mooc/course-randomColors.png"></p>
-    <p>Suggestion: Do not use ramdon colors, stick to black or dark gray. </p>
+    <p>Suggestion: Do not use ramdon colors, stick to black or dark gray. Use
+    color only when needed, considering the color-blind users and the B&amp;W
+    laser printers. </p>
   </li>
 </ol>
 
 <h5 id="L892">Taking course: Web UI Certification / Level 1 - Track 2 - Web
 Development</h5>
 <ul>
-  <li>The enrollment passes the user through the sign in form, which is
-    implemented as a separate page. After signing in it takes the user back to
-    the courses listing, but not in the same scroll position. This forces the
-    user to search again for the course in irder to click its "Go to class"
-    button. 
-    <p>Suggestion: Replace the "Enroll" button by a "Go to course" that takes
-    the user to a "course's home page" with details about the course (like a
-    picture of the author, a related image or a screenshot) and put the
-    "Enroll" button in that course homa page and do the whole enroll thing
-    there, including abiding to the conduct code. Thus, if the action requires
-    signin in the user would be taken back to the exact place where she was
-    before. </p>
-    <p>As a temporary quick fix, take the student directly to the course
-    material at the end of the enrollment process. </p>
-  </li>
   <li>The left-hand index starts with a root "Classes" item. This is pointless,
     because it's not functional and thus only adds noise. 
-    <p>Suggestion: do not show the "Classes" item in the left-hand item. </p>
+    <p>Suggestion: do not show the "Classes" item in the left-hand item, make
+    it a set of unrooted lessons. </p>
   </li>
   <li>The first element og the left-hand index is labeled "Program". This is
     not good English. 
@@ -889,7 +957,7 @@ Development</h5>
               <li>Lecture 1 
                 <ul>
                   <li>Video 1</li>
-                  <li>Document-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</li>
+                  <li>Document </li>
                 </ul>
               </li>
             </ul>
@@ -900,21 +968,24 @@ Development</h5>
     <p>The only actionable item is "Document". There is no video, and this
     doesn't qualify as a lecture, thus such labeling is misleading. </p>
     <p>Suggestion: Link the "Document" to the first level and delete all the
-    other non-functional levels. </p>
+    other non-functional levels, label it "Syllabus". </p>
   </li>
   <li>Section "Web Development Core Concepts" 
     <ul>
       <li>The first videos give the student a historical review of the making
         of the Internet and social media. This, albeit interesting, is not
         essential knowledge for the developer to be, who might already know
-        most of it. Also, this poses a semantic layer while the student is
-        aiming at the underlaying technologies. 
+        most of it. Also, this poses a higher level semantic layer while the
+        student is aiming at the underlaying technologies, and still needs a
+        lot of knowledge before being able to connect the dots. Too much is
+        implied: there is sort of a jump from saying that facebook has millions
+        of users, to telling that HTML is tag-based. 
         <p>Suggestion: Take these videos from the mainstream course and tag
         them as interesting optional material for the curious. </p>
       </li>
       <li>Video 5, about widgets, is a commercial from somewhere, that implies
         a lot of the knowledge this course is supposed to provide. 
-        <p>Suggestion: Turn down this video. </p>
+        <p>Suggestion: Delete this video. </p>
       </li>
       <li>Video 11 stops in error after a few minutes. Should be replaced by
         this other version of itself: <a
@@ -927,16 +998,17 @@ Development</h5>
   </li>
   <li>Section "HTML Structure, Layouts, CSS": 
     <ul>
-      <li>There is no "HTL Structure" content, right from the first video the
-        subject is CSS, and being that CSS is for HTML then HRML should have
-        been presented before. </li>
+      <li>There is no "HTML Structure" content, right from the first video the
+        subject is CSS, and being that CSS is subordinate to HTML then HTML
+        should have been presented before. </li>
       <li>The section starts with an enumeration of the different doctypes. The
         student learns that HTML 3.2 does not support frames and style sheets
         before being told what frames ans style sheets are. Additionally, for a
         student starting today, the simple HTML5 doctype would be enough, at
         least during quite a while. The doctype is the first line of the HTML
         document, but need not be the first concept tossed to the student. </li>
-      <li>Video 2 stops in error at start. This seems the original one: <a
+      <li>Video 2 stops in error at start. This seems to be the original one:
+        <a
         href="http://www.youtube.com/watch?v=Awmx8XlgcaE">http://www.youtube.com/watch?v=Awmx8XlgcaE</a>.
       </li>
       <li>Video 2 is a CSS primer, about how to add style to HTML elements that
@@ -947,41 +1019,44 @@ Development</h5>
   </li>
   <li>Section "Support Information": 
     <ul>
-      <li>There is a "Lecture 1" tied "Vdeo 1" and "Document", all empty. 
-        <p>Suggestion: Delete empty sections. </p>
+      <li>There is a "Lecture 1" containing "Video 1" and "Document", all
+        empty. 
+        <p>Suggestion: Do not show empty sections. </p>
       </li>
     </ul>
   </li>
   <li>Section "Evaluation": 
     <ul>
-      <li>This section has visual design issues that make it look as a low
-        quality production. The issues I see are: 
+      <li>This section has visual design issues that make it look as an
+        unfinished work. The issues I see are: 
         <ul>
-          <li>Lack of a visual hierrchy. All text is set with the same font
+          <li>Lack of a visual hierarchy. All text is set with the same font
             size and weight. 
             <p>Suggestion: Highlight the exam title and the questions text.</p>
           </li>
           <li>In multiple choice questions, the buttons are set after their
-            labels. This is not the usual arrangement, and makes it look
-            untidy. Usually the buttons are set in a straight vertical column
-            and their labels after the buttons. 
+            labels. This is not the usual arrangement, and makes it look weird
+            and untidy. Usually the buttons are set in a straight vertical
+            column and their labels after the buttons. 
             <p>Suggestion: Set the buttons to the left of their corresponding
             labels. </p>
           </li>
-          <li>Technical: The id="question" is used in many places (23) which
-            makes this HTML invalid. </li>
+          <li>Technical: The HTML id="question" is used in many places (23)
+            which makes this HTML invalid. </li>
           <li>The word "Question:" in each and every question is obvious and
             redundant. 
-            <p>Suggestion: Delete "Question:" from each question. </p>
+            <p>Suggestion: Delete "Question:" from each question. The user
+            already knows it's a question. </p>
           </li>
-          <li>The labels and theit corresponding buttons are not linked. This
-            is both a usability and an accesibility issue. A lind user would be
-            uncomfortable filling this form, the other users cannot choose an
-            answer clicking its label, they are forced to click the (smaller)
-            button. All modern forms link the labels and their inputs. See the
-            <a href="#examComparison">comparison of the original exam vs. a
-            modified version</a>. 
-            <p>Suggestion: Link each label to its associated button. </p>
+          <li>The labels and their corresponding buttons are not linked. This
+            is both a usability and an accesibility issue. A disabled user
+            would be uncomfortable filling this form; the other users cannot
+            choose an answer by clicking its label, they are forced to click
+            the (smaller) button. All modern forms link the labels and their
+            inputs. See the <a href="#examComparison">comparison of the
+            original exam vs. a modified version</a>. 
+            <p>Suggestion: Link each label to its associated button using the
+            HTML label-for construct. </p>
           </li>
           <li>In the first question the name "Mozilla" is mispelled. 
             <p>Suggestion: Add the missing "L". </p>
@@ -989,6 +1064,8 @@ Development</h5>
           <li>The title "Exam Web Development" sounds strange in English. 
             <p>Suggestion: Switch to "Web Development Exam". </p>
           </li>
+          <li>The answer to the questions cannot be found in the lectures
+            content. </li>
         </ul>
       </li>
     </ul>
