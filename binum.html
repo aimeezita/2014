@@ -13,13 +13,15 @@
  </script>
   <link href="res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
   <script type="text/javascript">
-      $(document).ready(function () {
-      });
+    $(document).ready(function () {
+    });
   </script>
+  <style>
+    /* .onePage { border:4px solid blue; } */
+  </style>
 </head>
 
 <body>
-<!DOCTYPE html>
 
 <div id="agendaHeader">
 
@@ -38,12 +40,19 @@
   </li>
   <li><a href="#L3661">The binary number system</a> 
     <ul>
-      <li><a href="#L764">Who would want to count in this contrived
+      <li><a href="#L764">Who would want to count in such a contrived
       way?</a></li>
       <li><a href="#L778">bit</a></li>
       <li><a href="#L1729">Binary numbers are horrible</a></li>
       <li><a href="#L792">byte</a></li>
-      <li><a href="#L90612">Bytes and characters</a></li>
+      <li><a href="#L1106">Measures: kilo, mega, giga ...</a> 
+        <ul>
+          <li><a href="#L1294">Bytes</a></li>
+          <li><a href="#L1313">Hz</a></li>
+          <li><a href="#L1326">bit/sec </a></li>
+        </ul>
+      </li>
+      <li><a href="#L906121">Bytes and characters</a></li>
       <li><a href="#L91654">Bytes and colors </a></li>
       <li><a href="#L2139">Binary numbers</a></li>
       <li><a href="#L2511">Finally ...</a></li>
@@ -58,10 +67,12 @@
 </div>
 
 <div id="agendaBody">
+
+<div class="onePage">
 <h2 id="L366">The decimal number system</h2>
 
 <p>According to several dictionaries, the decimal number system that we use so
-extensively is ...</p>
+extensively is ...</p>
 
 <blockquote>
   <p>&#x25b8; <strong>noun</strong>: a positional system of numeration that
@@ -76,7 +87,7 @@ example the <em>binary number system</em>. </p>
 that we might end up thinking that it is the one and only number system, but in
 fact it's just one in the crowd. </p>
 
-<div class="imgR">
+<div class="imgR" style="margin:0 0 .5em 1em;">
 <img alt="roman numers" src="mooc/AdmiraltyArchLondonCloseup.jpg"></div>
 
 <p>Like for example there is the Roman number system, that was used until
@@ -85,15 +96,18 @@ began to be replaced by the more convenient Hindu-Arabic numerals; however this
 process was gradual, and the use of Roman numerals in some minor applications
 continues to this day, for example in clock faces.</p>
 
+  </div>
+
+  <div class="onePage">
 <p>Notice that the Roman numbering system does not have a zero. The zero is
 said to be invented by the Indians near yesr 500 A.D. and is essential to any
 modern number system, including the decimal and the binary systems.</p>
 
-<p>Obviously the decimal number systems are somehow natural for we humans
-because we have ten fingers in our hands (mostly everybody).</p>
+<div class="imgR" style="margin:0 0 .5em 1em;">
+<img alt="Altamira hands" src="mooc/275823019_568ed233ab_z.jpg"> </div>
 
-<p><img alt="Altamira hands" src="mooc/275823019_568ed233ab_z.jpg"
-style="width:100%; max-width:640px;"> </p>
+<p>Obviously a decimal number system is somehow natural for we humans because
+we have ten fingers in our hands (mostly everybody).</p>
 
 <p>Some people think that it would be better if we had twelve fingers, because
 this would have led to a 12-based number system, being the advantage that 12 is
@@ -101,23 +115,31 @@ exactly divisible by 2, 3, 4 and 6, and that would have simplified many
 arithmetic problems. But we have ten fingers so we have to settle with a number
 base that's only divisible by 2 and 5. Families should have either two or five
 children, not three. </p>
+</div>
 
+<div class="onePage">
 <h3 id="L113">Counting with fingers</h3>
-
-<p>Lets imagine a method to count with our fingers. There are smarter methods,
-but this one is convenient for the explanation.</p>
 
 <div class="imgR">
 <img alt="tally counter" src="mooc/tally-counter.jpg" style="width:200px;">
 </div>
 
-<p>We are purchasing cattle; sheep. As each animal passes through a narrow door
-we count it by extending another finger.</p>
+<p>Lets imagine a method to count with our fingers. There are smarter methods,
+but this one is convenient for the explanation.</p>
+
+<p>We are purchasing cattle; sheep. The tally counter, like the one in the
+picture, has not been invented yet, so we use our fingers. </p>
+
+<p>As each animal passes through a narrow aperture of the stone fence we count
+it by extending another finger.</p>
 
 <p>After counting 10 sheep I run out of fingers but fortunately my brother is
 participating. He counts the number of times I run out of fingers, using his
 fingers the same way I do.</p>
 
+  </div>
+
+  <div class="onePage">
 <p>After counting 99 sheep both me and my brother have all our fingers
 commited, but fortunately the family is large and another sibling comes to the
 rescue counting the number of times my brother ran out of fingers and so we can
@@ -128,10 +150,12 @@ sum in school. </p>
 
 <p>So we bought less than 1000 sheep and it was possible to count them with the
 participation of only three people. Notice that if we had to count more sheep,
-say 9999, we would need one additional brother (or the litle tally counter
-pictured above). Each time we add a brother the maximum number increments
+say 9999, we would need one additional brother or the litle tally counter
+pictured above. Each time we add a brother the maximum number increments
 tenfold. </p>
+</div>
 
+<div class="onePage">
 <h2 id="L3661">The binary number system</h2>
 
 <div class="imgR">
@@ -144,29 +168,23 @@ that many sheep? </p>
 because each of us would run out of fingers sooner than if we had 10.</p>
 
 <p>Let's start counting. As the first sheep passes I extend my single finger.
-When the second sheep comes I tell brother B to extend his finger (I'm brother
-A) and I flex mine. Next sheep, the third, I extend my single finger and now me
-and my brother B both are out of fingers so brother C joins. Another sheep
-comes, C extends his finger and me and B close our's. And so on.</p>
+When the second sheep comes I flex my finger and tell my brother B to extend
+his (I'm brother A). Next sheep, the third, I extend my single finger and now
+me and my brother B both are out of fingers so brother C joins. Another sheep
+comes, C extends his finger and me and B flex our's. And so on.</p>
 
-<p>If a brother with the finger extended was represented with the symbol "1"
+  </div>
+
+  <div class="onePage">
+<p>If a brother with his finger extended was represented with the symbol "1"
 and one with his finger flexed with "0", then the counting sequence would look
 thus:</p>
 <style>
  .sheepCount { text-align:right; padding-right:12px; }</style>
 
-<div style="width:80%; margin-left:auto; margin-right:auto;">
+<div style="width:80%; margin-left:auto; margin-right:auto; font-size:80%; line-height:90%; ">
 
 <table>
-  <col>
-  <col>
-  <col>
-  <col>
-  <col>
-  <col>
-  <col>
-  <col>
-  <col>
   <tbody>
     <tr>
       <td class="sheepCount" style="text-align:right; color:#c0c0c0;">brother
@@ -178,17 +196,6 @@ thus:</p>
       <td>B</td>
       <td>A</td>
       <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="sheepCount">no sheep yet</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>0</td>
-      <td style="color: #c0c0c0;">none</td>
       <td></td>
     </tr>
     <tr>
@@ -415,20 +422,23 @@ thus:</p>
 </table>
 </div>
 
-<p>As can be seen, to count more than 32 sheep we need six brothers, something
-that was possible with only two when we used decimal numbers.</p>
+<p>As can be seen in the last line, to count 32 or more sheep we need six brothers,
+something that was possible with only two when we used decimal numbers. Each time
+we add a brother the maximum number increments twofold. </p>
 
-<p>Also can be noticed that the base of the decimal system expressed in decimal
-numbers is written as 10, while the base of the binary system expressed as a
-base-2 number is also 10. This holds true for all bases. </p>
+<p>It can also be noticed that the base of the decimal system expressed as a
+decimal number is written as 10, while the base of the binary system expressed
+as a binary number is also 10. This holds true for all bases. </p>
+</div>
 
-<h3 id="L764">Who would want to count in this contrived way?</h3>
+<div class="onePage">
+<h3 id="L764">Who would want to count in such a contrived way?</h3>
 
-<p>Digital computers do. Their single finger hand is a type of circuit called
+<p>Digital devices do. Their single finger hand is a type of circuit called
 "flip-flop" that can be in one of two states: either "flipped" or "flopped",
 never an in-between state. </p>
 
-<p>It is easy and safe to implement a circuit or other device type that work
+<p>It is easy and safe to implement a circuit or other device type that works
 that way.</p>
 
 <div class="imgR">
@@ -446,7 +456,9 @@ connection. A "6 mega internet connection" is capable of transmitting 6 megabit
 per second. One megabit is 1,048,576 bits or 2<span
 style="font-size: x-small; vertical-align: super;">20</span> bits, one of the
 most famous powers of 2. </p>
+</div>
 
+<div class="onePage">
 <h3 id="L778">bit</h3>
 
 <p>The word "bit" is used to designate these binary digits. It is "binary
@@ -458,11 +470,13 @@ style="color: #000000;">b</span><span style="color: #c0c0c0;">inary
 dig</span><span style="color: #000000;">it</span> </p>
 
 <p>The start of the first word and the end of the last one. Enough.</p>
+</div>
 
+<div class="onePage">
 <h3 id="L1729">Binary numbers are horrible</h3>
 
 <p>As we saw in the sheep counting example, binary numbers (numbers expressed
-in base 2) get long very quickly. Another issue is that they are made only of
+in base 2) become very long quickly. Another issue is that they are made only of
 zeros and ones and thus they are monotonous. </p>
 
 <p>It is almost impossible to remember or communicate binary numbers without
@@ -470,9 +484,12 @@ making errors. For example a not-so-large number like one million expressed in
 binary is 11110100001001000000. How would you read this number over the phone
 to your rather-deaf aunt? </p>
 
-<p>In decimal notation sometimes we use thousand separators to be able to read
+  </div>
+
+  <div class="onePage">
+<p>In decimal notation we use thousand separators to be able to read
 lengthy numbers more safely. For example a long number like 340923476504734876
-is easier to grasp with thousand separators 340,923,476,504,734,876 and with a
+is easier to grasp with thousand separators: 340,923,476,504,734,876 and with a
 bit of luck one could read it correctly. </p>
 
 <p>Now, the same number in binary is this long string:</p>
@@ -484,13 +501,13 @@ of three as in decimal. Notice that four is a power of 2: <code> 4 = 2<span
 style="font-size: x-small; vertical-align: super;">2</span> = 2 × 2 </code> and
 the powers of 2 always show up when there is digital stuff around. </p>
 
-<p>The long number would look like this: </p>
+  </div>
 
-<div>
+  <div class="onePage">
+<p>The long number would look like this: </p>
 <style>
- .binHex    { margin-right:1.5em;}
- .binHex td { text-align:center; line-height:75%; }</style>
-</div>
+          .binHex    { margin-right:1.5em;}
+          .binHex td { text-align:center; line-height:75%; }</style>
 
 <div style="width:90%; margin:auto;">
 
@@ -625,7 +642,9 @@ symbols, the 10 digits and the first 6 letters of the alphabet. </p>
 
 <p>And again, the base of the base-16 numbering system expressed as a base-16
 number is 10. </p>
+</div>
 
+<div class="onePage">
 <h3 id="L792">byte</h3>
 
 <blockquote>
@@ -653,30 +672,211 @@ bytes. Obviously we don't say such a number, we say "one terabyte" and write
 "1TB". This numer is another power of 2, namely 2<span
 style="font-size: x-small; vertical-align: super;">40</span>, that is, a one
 followed by 40 zeros in binary notation, 10000000000 in hexadecimal.</p>
+</div>
 
-<h3 id="L90612">Bytes and characters</h3>
+<div class="onePage">
+<h3 id="L1106">Measures: kilo, mega, giga ...</h3>
+
+<div class="imgR framed" style="margin:0 0 .5em 1em;">
 <style>
-#iso8859table    { border-collapse:collapse; }
-#iso8859table tr { line-height:90%;}
-#iso8859table th { width:1.2em; }
-#iso8859table td { text-align:center; }
-#iso8859table td.highlighted { background-color:rgb(248,248,248); }
-#iso8859table th.highlighted { background-color:rgb(255,255,0); }
-#iso8859table tr:hover { background-color:rgb(248,248,248); }
-#iso8859table tr:hover th { background-color:rgb(255,255,0); }</style>
+  #binaryUnits td { vertical-align:bottom; text-align:center; }
+  #binaryUnits th { padding:0 .5em; }
+</style>
+
+<table id="binaryUnits">
+  <tbody>
+    <tr>
+      <th>prefix</th>
+      <th>symbol</th>
+      <th>power<br>of 10</th>
+      <th>power<br>of 2</th>
+    </tr>
+    <tr>
+      <td>kilo-</td>
+      <td>K</td>
+      <td>10<sup>3</sup></td>
+      <td>2<sup>10</sup></td>
+    </tr>
+    <tr>
+      <td>mega-</td>
+      <td>M</td>
+      <td>10<sup>6</sup></td>
+      <td>2<sup>20</sup></td>
+    </tr>
+    <tr>
+      <td>giga-</td>
+      <td>G</td>
+      <td>10<sup>9</sup></td>
+      <td>2<sup>30</sup></td>
+    </tr>
+    <tr>
+      <td>tera-</td>
+      <td>T</td>
+      <td>10<sup>12</sup></td>
+      <td>2<sup>40</sup></td>
+    </tr>
+    <tr>
+      <td>peta-</td>
+      <td>P</td>
+      <td>10<sup>15</sup></td>
+      <td>2<sup>50</sup></td>
+    </tr>
+    <tr>
+      <td>exa-</td>
+      <td>E</td>
+      <td>10<sup>18</sup></td>
+      <td>2<sup>60</sup></td>
+    </tr>
+    <tr>
+      <td>zetta-</td>
+      <td>Z</td>
+      <td>10<sup>21</sup></td>
+      <td>2<sup>70</sup></td>
+    </tr>
+    <tr>
+      <td>yotta-</td>
+      <td>Y</td>
+      <td>10<sup>24</sup></td>
+      <td>2<sup>80</sup></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>People talk about kilobytes and megabytes. If it seems as if as soon as one
+learns the dimension of one of these numbers, a new one arises.</p>
+
+<p>Actually it's not that "it seems", it's actually happening. </p>
+
+<p>These words are measure units, like the Kg (Kilogram) that is used to
+measure the weight of packed sugar. A Kilogram is named so because it's made of
+1,000g (a thousand grams) and "<a
+href="http://en.wikipedia.org/wiki/Kilo-">Kilo</a>" is derived from the Greek
+word &chi;&#x3af;&lambda;&iota;&omicron;&iota; (chilioi), meaning
+"thousand".</p>
+
+  </div>
+
+  <div class="onePage">
+<p>The table shows the commonly used prefixes and their meaning, together with
+the next generation prefixes that might be current in the future if the trend
+continues. </p>
+
+<p>Notice that the table is not about units but prefixes, hence the "-" at the
+end of each prefix denoting that the word is incomplete. One can only say "one
+mega" when it's implied what are you talking about. </p>
+
+<p>The prefixes are to be combined with unit names like "meter" making, for
+example, "kilometer". But we are interested in computer stuff, so we stick to
+computer related units and how to use them.</p>
+
+  </div>
+
+  <div class="onePage">
+<p>Notice in the table that, for example, in the "mega" row 10<sup>6</sup> is
+related to 2<sup>20</sup>. This is because 1,000,000 is close to 1,048,576
+albeit not exactly equal. Actually these units should refer to the decimal,
+slightly lower numbers. A new set of units is out there that refers to the 2's
+power numbers, like "mibi" that means exactly 1,048,576-whatever. The prefixes
+are "kibi", "mebi", "gibi", "tebi" and so on, seldom seen. </p>
+
+  </div>
+
+  <div class="onePage">
+<h4 id="L1294">Bytes</h4>
+
+<div class="imgR" style="margin:0 0 .5em 1em;">
+<img alt="512M memory modules"
+src="mooc/320px-Memory_module_DDRAM_20-03-2006.jpg"></div>
+
+<p>The first PCs had memory ("RAM" or "main memory") sizes of about 32
+Kilobytes or 64 Kilobytes (KB). Current computers have 2 gigabytes and more,
+about 100,000 times growth. </p>
+
+<p>When you purchase a new PC you want it to have as much RAM as possible, but
+over time it will not be enough and you will want to expand it by adding
+current versions of the memory modules shown in the picture (512MB each, year
+2006).</p>
+
+<p>So memory size was measured in KB (kilobytes), MB (megabytes), and is
+expressed GB (gigabytes) for now.</p>
+
+<p>Hard disks, used by the computer to store your files, had capacities
+measured in MB , then GB and currently TB.</p>
+
+<p>Both main memory and disk sizes are expressed as an ever-growing number of
+<em>bytes</em>. </p>
+
+  </div>
+
+  <div class="onePage">
+<h4 id="L1313">Hz</h4>
+
+<p>One "Hertz" is one cycle per second. It's a <em>frequency</em> unit. For
+example alternate current (the "AC" in "AC-DC") oscilates at 50Hz or 60Hz
+depending on the country. Sounds range from 20Hz bass to 20KHz (20,000Hz) high
+pitch. </p>
+
+<p>The speed of PCs is measured as the number of "cycles" per second they can
+perform, the number of Hz.</p>
+
+<p>The first PC micro processors ran at 8,66MHz, current PCs have speeds in the
+order of 2 to 3 GHz, 1,000 times faster. A few years ago the race for speed hit
+phisycal limits, so the microprocessor makers started to lump two or four
+processors in a single unit so the theoretical computing power is the number of
+GHz times the number of processors in the chip.</p>
+
+<p>To do their work the microprocessors need to fetch data from and store data
+into, the main memory. The memory speed needs to be in tune with the
+processor's speed else there might be a significant impact in overall
+throughput. That's why at some point in time the manufacturers started to
+advertise the memory speed - also measured in MHz, or GHz, in addition to the
+processor speed.</p>
+
+  </div>
+
+  <div class="onePage">
+<h4 id="L1326">bit/sec </h4>
+
+<p>Internet connection speeds are measured in bits per second. Bits, not
+bytes.</p>
+
+<p>Old telephone modems, used for dial-up connections to the Internet in the
+nineties, had speeds ranging from 14,4Kb/s (notice the lowercase "b" meaning
+"bit", not "Byte"). </p>
+
+<p>Current broadband connections are much faster, in the order of 10Mb/s or
+Mbps.</p>
+
+<p>That's why when you are downloading big files the number of bytes per second
+reported by the web browser is at best about one tenth of your nominal speed.
+</p>
+</div>
+
+<div class="onePage">
+<h3 id="L906121">Bytes and characters</h3>
+<style>
+        #iso8859table    { border-collapse:collapse; }
+        #iso8859table tr { line-height:90%;}
+        #iso8859table th { width:1.2em; }
+        #iso8859table td { text-align:center; }
+        #iso8859table td.highlighted { background-color:rgb(248,248,248); }
+        #iso8859table th.highlighted { background-color:rgb(255,255,0); }
+        #iso8859table tr:hover { background-color:rgb(248,248,248); }
+        #iso8859table tr:hover th { background-color:rgb(255,255,0); }</style>
 <script type="text/javascript">
-$(document).ready( function(){
-  $('#iso8859table td').hover(function() {
-    var t = parseInt($(this).index()) + 1;
-    $('td:nth-child(' + t + ')').addClass('highlighted');
-    $('th:nth-child(' + t + ')').addClass('highlighted');
-  },
-  function() {
-    var t = parseInt($(this).index()) + 1;
-    $('td:nth-child(' + t + ')').removeClass('highlighted');
-    $('th:nth-child(' + t + ')').removeClass('highlighted');
-});
-});</script>
+        $(document).ready( function(){
+          $('#iso8859table td').hover(function() {
+            var t = parseInt($(this).index()) + 1;
+            $('td:nth-child(' + t + ')').addClass('highlighted');
+            $('th:nth-child(' + t + ')').addClass('highlighted');
+          },
+          function() {
+          var t = parseInt($(this).index()) + 1;
+          $('td:nth-child(' + t + ')').removeClass('highlighted');
+            $('th:nth-child(' + t + ')').removeClass('highlighted');
+          });
+        });</script>
 
 <div class="framed" style="float:right; margin-left:1em;">
 
@@ -1021,6 +1221,9 @@ symbols needed, check the "<a
 href="http://copypastecharacter.com/all-characters"
 target="_blank">CopyPasteCharacter</a>" page to see for yourself. </p>
 
+  </div>
+
+  <div class="onePage">
 <p>A byte was enough to represent the limited set of characters that was
 workable until computers turned really international. Now the Unicode Character
 Standard defined more than 95,000 characters with 2 and 4 byte per character
@@ -1035,6 +1238,9 @@ href="http://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO 8859/1</a>" or "Latin 1"
 and is an extension of the older ASCII encoding. This is not Unicode, which is
 too complex for the purpose of this course. </p>
 
+  </div>
+
+  <div class="onePage">
 <p>To interpret the table remember that a byte has 8 bits and thus it can be
 expressed as 2 hexadecimal digits. The table contains 256 cells (16 × 16) and
 maps from byte values to character symbols, for example the uppercase "W" is in
@@ -1047,7 +1253,9 @@ in the table. This means that the hexadecimal code for the "W" is 57, or
 interpret a bit structure, in this case a simple set of 8 bits. Millions of
 computers displaying a "W" when there is a byte containing
 <code>01010111</code>. </p>
+</div>
 
+<div class="onePage">
 <h3 id="L91654">Bytes and colors </h3>
 
 <p>This section is another example of structure. You have heard of
@@ -1067,6 +1275,9 @@ href="http://en.wikipedia.org/wiki/Retina_Display">the "Retina" class
 displays</a> that exhibit the highest pixel densities at 200~300+ pixels per
 inch (ppi), about twice as before. </p>
 
+  </div>
+
+  <div class="onePage">
 <p>With the pixel sizes shrinking, the number of pixels needed to put together
 a screen of a given size has to grow. Doubling the ppi means multiplying the
 number of pixels by 4, right? Because it doubled both the vertical and the
@@ -1081,6 +1292,9 @@ resolutions (786,432 vs. 3,145,728 pixels), all of them with 9.7 inch screens.
 pixels in digital photo cameras, from a few hundred thousands up to many
 millions. </p>
 
+  </div>
+
+  <div class="onePage">
 <div class="imgR">
 <img alt="RG color wheel" src="mooc/rgb.png"></div>
 
@@ -1091,6 +1305,9 @@ behaves as three tiny lights tightly packed together: a red light, a green
 light and a blue one. Each byte controls the amount of light of each color that
 the pixel has to emit to render the desired color. </p>
 
+  </div>
+
+  <div class="onePage">
 <p>Each of the three bytes of a pixel's color is treated as a number between 0
 and 255 (binary 00000000 all the way through 11111111) meaning the amount of
 the associated color to be emitted by the pixel. If the three bytes contain
@@ -1100,58 +1317,43 @@ fully emit all three colors and the outcome will be white. The arrangement (0,
 0, 255) means no red, no green and full blue, so the pixel will render primary
 blue. </p>
 
-<p>From the circles diagram it can be seen that full red, full green and zero
-blue renders pure yellow.</p>
-
-<p>Using hexadecimal notation the color for that yellow pixel will be
-quantified thus: ff ff 00, the three colors in the specified order. Using
-decimal numbers the yellow color would be rgb(255, 255, 0).</p>
-
-<p>All the possible colors are the combinations of 256 values taken 3 at a
-time, the number of which is 256 x 256 x 256 = 16,777,216 which where the "16
-million colors" meme comes from.</p>
-
-<p>Check it yourself using the demo below. If the values are all zero the color
-is black, if all 255 then white. When the three values are equal the color is
-grey. Go on and move the values. </p>
-
 <div id="rgb-demo" style="">
 <script type="text/javascript">
-      $(document).ready( function(){
-        // restore properties deleted by Amaya
-        $('#inputR').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
-        $('#inputG').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
-        $('#inputB').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
+$(document).ready( function(){
+    // restore properties deleted by Amaya
+    $('#inputR').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
+    $('#inputG').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
+    $('#inputB').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
 
-        $('#rgb-demo input[type=range]').on('input change', function() {
-          // build the RGB color and set the target area
-          $('#valueR').text( '' + $('#inputR').val() );
-          $('#valueG').text( '' + $('#inputG').val() );
-          $('#valueB').text( '' + $('#inputB').val() );
-          var theColor = 'rgb(' + $('#valueR').text() + ',' + $('#valueG').text() + ',' + $('#valueB').text() + ')';
-          $('#rgb-target').css( 'background-color', theColor );
+    $('#rgb-demo input[type=range]').on('input change', function() {
+      // build the RGB color and set the target area
+      $('#valueR').text( '' + $('#inputR').val() );
+      $('#valueG').text( '' + $('#inputG').val() );
+      $('#valueB').text( '' + $('#inputB').val() );
+      var theColor = 'rgb(' + $('#valueR').text() + ',' + $('#valueG').text() + ',' + $('#valueB').text() + ')';
+        $('#rgb-target').css( 'background-color', theColor );
 
-          // display the RGB color in binary and hexadecinal
-          $('#rgb-binValue').text( 'bin: ' 
-            + document.getElementById('inputR').valueAsNumber.toString(2) + ' ' 
-            + document.getElementById('inputG').valueAsNumber.toString(2) + ' ' 
-            + document.getElementById('inputB').valueAsNumber.toString(2) 
+        // display the RGB color in binary and hexadecinal
+        $('#rgb-binValue').text( 'bin: ' 
+          + document.getElementById('inputR').valueAsNumber.toString(2) + ' ' 
+          + document.getElementById('inputG').valueAsNumber.toString(2) + ' ' 
+          + document.getElementById('inputB').valueAsNumber.toString(2) 
           );
-          $('#rgb-hexValue').text( 'hex: ' 
-            + document.getElementById('inputR').valueAsNumber.toString(16) + ' ' 
-            + document.getElementById('inputG').valueAsNumber.toString(16) + ' ' 
-            + document.getElementById('inputB').valueAsNumber.toString(16) 
+        $('#rgb-hexValue').text( 'hex: ' 
+          + document.getElementById('inputR').valueAsNumber.toString(16) + ' ' 
+          + document.getElementById('inputG').valueAsNumber.toString(16) + ' ' 
+          + document.getElementById('inputB').valueAsNumber.toString(16) 
           );
         }).trigger('change');
       });       // this "trigger" is not working</script>
 <style>
-      #rgb-demo   { border:2px solid silver; border-radius:6px; padding:8px; float:right; margin:1em; }
-      .rgb-input  { width:16em; display:inline; }
-      .rgb-value  { width:2em; text-align:right; font-family:Consolas, monospace; font-size:115%; }
-      .rgb-target { width:200px; height:140px; background-color:rgb(0,0,0); color:white; font-size:120%; padding:20px; }
-      .rgb-bin, .rgb-hex { font-size:90%; font-family:Consolas, monospace; }
-      .rgb-blah   { font-size:110%; }
-      .rgb-rgb    { font-size:150%; font-family:Consolas, monospace; }</style>
+#rgb-demo   { border:2px solid silver; border-radius:6px; padding:8px; float:right; margin:1em; }
+ .rgb-input  { width:16em; display:inline; }
+ .rgb-value  { width:2em; text-align:right; font-family:Consolas, monospace; font-size:115%; }
+ .rgb-target { width:100%; height:140px; background-color:rgb(0,0,0); color:white; font-size:120%; padding:20px; }
+ .rgb-bin, .rgb-hex { font-size:90%; font-family:Consolas, monospace; }
+ .rgb-blah   { font-size:110%; }
+ .rgb-rgb    { font-size:150%; font-family:Consolas, monospace; }</style>
 
 <table>
   <tbody>
@@ -1185,35 +1387,39 @@ grey. Go on and move the values. </p>
             <tr>
               <td colspan="2" id="rgb-hexValue" class="rgb-hex"></td>
             </tr>
+            <tr>
+              <td>
+                <div id="rgb-target" class="rgb-target"
+                title="use the sliders to set this area's RGB color">
+                </div>
+              </td>
+              <td></td>
+            </tr>
           </tbody>
         </table>
-      </td>
-      <td>
-        <div id="rgb-target" class="rgb-target"
-        title="use the sliders to set this area's RGB color">
-        </div>
       </td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<p></p>
+<p>From the circles diagram it can be seen that full red, full green and zero
+blue renders pure yellow.</p>
 
-<p></p>
+<p>Using hexadecimal notation the color for that yellow pixel will be
+quantified thus: ff ff 00, the three colors in the specified order. Using
+decimal numbers the yellow color would be rgb(255, 255, 0).</p>
 
-<p></p>
+<p>All the possible colors are the combinations of 256 values taken 3 at a
+time, the number of which is 256 x 256 x 256 = 16,777,216 which where the "16
+million colors" meme comes from.</p>
 
-<p></p>
+<p>Check it yourself using the demo below. If the values are all zero the color
+is black, if all 255 then white. When the three values are equal the color is
+grey. Go on and move the values. </p>
+</div>
 
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
+<div class="onePage">
 <h3 id="L2139">Binary numbers</h3>
 
 <p>We know that there are 32-bit computers and 64-bit computers. Previously
@@ -1237,7 +1443,10 @@ numbers are stored in a weird format called "<a
 href="http://en.wikipedia.org/wiki/Two%27s_complement">two's complement</a>".
 </p>
 
-<p>An application that uses a lot of unsigned binary integers is "address
+  </div>
+
+  <div class="onePage">
+<p>An application type that uses a lot of unsigned binary integers is "address
 arithmetic. </p>
 
 <p>Inside the computer the memory ("RAM" for Random Acces Memory) can be
@@ -1260,6 +1469,9 @@ the program would have to calculate its address, thus: </p>
 unsigned binary integer numbers because the byte addresses are positive, and
 because binary arithmetic is so fast.</p>
 
+  </div>
+
+  <div class="onePage">
 <p>Normal computers can't directly add or multiply two numbers stored in
 memory. The programs have to use "registers", thus (for the example just
 above): </p>
@@ -1280,6 +1492,9 @@ number of digits, and the computers are classified in terms of the size of
 their registers expressed as a number of bits. Thus the 16-bit, 32-bit and
 64-bit PCs.</p>
 
+  </div>
+
+  <div class="onePage">
 <p>Decades ago the computer operational circuits were very expensive. A 32-bit
 CPU's circuits are more complex that a 16-bit's so the 32-bit CPU was much more
 expensive. It's not only the registers that double their sizes, all the
@@ -1295,29 +1510,16 @@ but it will need at least two cycles if it was a 32-bit one. Think of the
 internal data paths as 32-lanes highways or 64-lanes super-highways. Both might
 have the same speed limit, but the wider one will be able to handle twice as
 much traffic per hour.</p>
+</div>
 
+<div class="onePage">
 <h3 id="L2511">Finally ...</h3>
 
 <p>There are 10 kind of men: those who understand the binary numbering system,
 and those who don't. </p>
 
 <p>If you got the geek joke above then we are done. </p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
+</div>
 
 <p> </p>
 
@@ -1325,43 +1527,49 @@ and those who don't. </p>
 
 <p> </p>
 
-<p></p>
+<p> </p>
 
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
+<p> </p>
 
 <p> </p>
 
 <p> </p>
 
-<p></p>
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
 
 <p> </p>
 
