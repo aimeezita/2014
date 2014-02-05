@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
+ï»¿<!DOCTYPE HTML>
 <html>
 <head>
-  <meta content="text/html; charset=iso-8859-1" http-equiv="content-type">
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
   <meta http-equiv="Content-Language" content="en">
   <title>Binary number system</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
@@ -61,7 +61,7 @@
 </ul>
 </div>
 
-<p> </p>
+<p>Â </p>
 <hr>
 </div>
 </div>
@@ -72,7 +72,7 @@
 <h2 id="L366">The decimal number system</h2>
 
 <p>According to several dictionaries, the decimal number system that we use so
-extensively is ...</p>
+extensively isÂ ...</p>
 
 <blockquote>
   <p>&#x25b8; <strong>noun</strong>: a positional system of numeration that
@@ -345,7 +345,7 @@ thus:</p>
       <td></td>
     </tr>
     <tr>
-      <td class="sheepCount">11 × <img style="vertical-align:middle;"
+      <td class="sheepCount">11 Ã— <img style="vertical-align:middle;"
         alt="one sheep" src="mooc/sheep.png"></td>
       <td></td>
       <td></td>
@@ -357,7 +357,7 @@ thus:</p>
       <td></td>
     </tr>
     <tr style="border-bottom:1px dotted silver;">
-      <td class="sheepCount">12 × <img style="vertical-align:middle;"
+      <td class="sheepCount">12 Ã— <img style="vertical-align:middle;"
         alt="one sheep" src="mooc/sheep.png"></td>
       <td></td>
       <td></td>
@@ -369,7 +369,7 @@ thus:</p>
       <td></td>
     </tr>
     <tr>
-      <td class="sheepCount">16 × <img style="vertical-align:middle;"
+      <td class="sheepCount">16 Ã— <img style="vertical-align:middle;"
         alt="one sheep" src="mooc/sheep.png"></td>
       <td></td>
       <td>1</td>
@@ -382,7 +382,7 @@ thus:</p>
       </td>
     </tr>
     <tr>
-      <td class="sheepCount">17 × <img style="vertical-align:middle;"
+      <td class="sheepCount">17 Ã— <img style="vertical-align:middle;"
         alt="one sheep" src="mooc/sheep.png"></td>
       <td></td>
       <td>1</td>
@@ -394,7 +394,7 @@ thus:</p>
       <td></td>
     </tr>
     <tr style="border-bottom:1px dotted silver;">
-      <td class="sheepCount">18 × <img style="vertical-align:middle;"
+      <td class="sheepCount">18 Ã— <img style="vertical-align:middle;"
         alt="one sheep" src="mooc/sheep.png"></td>
       <td></td>
       <td>1</td>
@@ -406,7 +406,7 @@ thus:</p>
       <td></td>
     </tr>
     <tr>
-      <td class="sheepCount">32 × <img style="vertical-align:middle;"
+      <td class="sheepCount">32 Ã— <img style="vertical-align:middle;"
         alt="one sheep" src="mooc/sheep.png"></td>
       <td>1</td>
       <td>0</td>
@@ -497,8 +497,8 @@ bit of luck one could read it correctly. </p>
 <p>10010111011001101000001100001111000101001111110110010011100</p>
 
 <p>In binary there is a sort of "thousand separators" in groups of four instead
-of three as in decimal. Notice that four is a power of 2: <code> 4 = 2<span
-style="font-size: x-small; vertical-align: super;">2</span> = 2 × 2 </code> and
+of three as in decimal. Notice that four is a power of 2: <code>Â 4 = 2<span
+style="font-size: x-small; vertical-align: super;">2</span> = 2 Ã— 2Â </code> and
 the powers of 2 always show up when there is digital stuff around. </p>
 
   </div>
@@ -812,7 +812,7 @@ measured in MB , then GB and currently TB.</p>
   <div class="onePage">
 <h4 id="L1313">Hz</h4>
 
-<p>One "Hertz" is one cycle per second. It's a <em>frequency</em> unit. For
+<p>One "Hertz" is one cycle per second. It's a <em>frequency</em>Â unit. For
 example alternate current (the "AC" in "AC-DC") oscilates at 50Hz or 60Hz
 depending on the country. Sounds range from 20Hz bass to 20KHz (20,000Hz) high
 pitch. </p>
@@ -862,21 +862,23 @@ reported by the web browser is at best about one tenth of your nominal speed.
         #iso8859table td { text-align:center; }
         #iso8859table td.highlighted { background-color:rgb(248,248,248); }
         #iso8859table th.highlighted { background-color:rgb(255,255,0); }
-        #iso8859table tr:hover { background-color:rgb(248,248,248); }
-        #iso8859table tr:hover th { background-color:rgb(255,255,0); }</style>
+</style>
 <script type="text/javascript">
         $(document).ready( function(){
           $('#iso8859table td').hover(function() {
             var t = parseInt($(this).index()) + 1;
             $('td:nth-child(' + t + ')').addClass('highlighted');
             $('th:nth-child(' + t + ')').addClass('highlighted');
+	    $(this.parentElement).children().addClass('highlighted');
           },
           function() {
-          var t = parseInt($(this).index()) + 1;
-          $('td:nth-child(' + t + ')').removeClass('highlighted');
+	    var t = parseInt($(this).index()) + 1;
+	    $('td:nth-child(' + t + ')').removeClass('highlighted');
             $('th:nth-child(' + t + ')').removeClass('highlighted');
+	    $(this.parentElement).children().removeClass('highlighted');
           });
-        });</script>
+        });
+</script>
 
 <div class="framed" style="float:right; margin-left:1em;">
 
@@ -1096,116 +1098,116 @@ reported by the web browser is at best about one tenth of your nominal speed.
     <tr>
       <th>A-</th>
       <td></td>
-      <td>¡</td>
-      <td>¢</td>
-      <td>£</td>
-      <td>¤</td>
-      <td>¥</td>
-      <td>¦</td>
-      <td>§</td>
-      <td>¨</td>
-      <td>©</td>
-      <td>ª</td>
-      <td>«</td>
-      <td>¬</td>
-      <td>­</td>
-      <td>®</td>
-      <td>¯ </td>
+      <td>Â¡</td>
+      <td>Â¢</td>
+      <td>Â£</td>
+      <td>Â¤</td>
+      <td>Â¥</td>
+      <td>Â¦</td>
+      <td>Â§</td>
+      <td>Â¨</td>
+      <td>Â©</td>
+      <td>Âª</td>
+      <td>Â«</td>
+      <td>Â¬</td>
+      <td>Â­</td>
+      <td>Â®</td>
+      <td>Â¯ </td>
     </tr>
     <tr>
       <th>B-</th>
-      <td>°</td>
-      <td>±</td>
-      <td>²</td>
-      <td>³</td>
-      <td>´</td>
-      <td>µ</td>
-      <td>¶</td>
-      <td>·</td>
-      <td>¸</td>
-      <td>¹</td>
-      <td>º</td>
-      <td>»</td>
-      <td>¼</td>
-      <td>½</td>
-      <td>¾</td>
-      <td>¿ </td>
+      <td>Â°</td>
+      <td>Â±</td>
+      <td>Â²</td>
+      <td>Â³</td>
+      <td>Â´</td>
+      <td>Âµ</td>
+      <td>Â¶</td>
+      <td>Â·</td>
+      <td>Â¸</td>
+      <td>Â¹</td>
+      <td>Âº</td>
+      <td>Â»</td>
+      <td>Â¼</td>
+      <td>Â½</td>
+      <td>Â¾</td>
+      <td>Â¿ </td>
     </tr>
     <tr>
       <th>C-</th>
-      <td>À</td>
-      <td>Á</td>
-      <td>Â</td>
-      <td>Ã</td>
-      <td>Ä</td>
-      <td>Å</td>
-      <td>Æ</td>
-      <td>Ç</td>
-      <td>È</td>
-      <td>É</td>
-      <td>Ê</td>
-      <td>Ë</td>
-      <td>Ì</td>
-      <td>Í</td>
-      <td>Î</td>
-      <td>Ï </td>
+      <td>Ã€</td>
+      <td>Ã</td>
+      <td>Ã‚</td>
+      <td>Ãƒ</td>
+      <td>Ã„</td>
+      <td>Ã…</td>
+      <td>Ã†</td>
+      <td>Ã‡</td>
+      <td>Ãˆ</td>
+      <td>Ã‰</td>
+      <td>ÃŠ</td>
+      <td>Ã‹</td>
+      <td>ÃŒ</td>
+      <td>Ã</td>
+      <td>ÃŽ</td>
+      <td>Ã </td>
     </tr>
     <tr>
       <th>D-</th>
-      <td>Ð</td>
-      <td>Ñ</td>
-      <td>Ò</td>
-      <td>Ó</td>
-      <td>Ô</td>
-      <td>Õ</td>
-      <td>Ö</td>
-      <td>×</td>
-      <td>Ø</td>
-      <td>Ù</td>
-      <td>Ú</td>
-      <td>Û</td>
-      <td>Ü</td>
-      <td>Ý</td>
-      <td>Þ</td>
-      <td>ß </td>
+      <td>Ã</td>
+      <td>Ã‘</td>
+      <td>Ã’</td>
+      <td>Ã“</td>
+      <td>Ã”</td>
+      <td>Ã•</td>
+      <td>Ã–</td>
+      <td>Ã—</td>
+      <td>Ã˜</td>
+      <td>Ã™</td>
+      <td>Ãš</td>
+      <td>Ã›</td>
+      <td>Ãœ</td>
+      <td>Ã</td>
+      <td>Ãž</td>
+      <td>ÃŸ </td>
     </tr>
     <tr>
       <th>E-</th>
-      <td>à</td>
-      <td>á</td>
-      <td>â</td>
-      <td>ã</td>
-      <td>ä</td>
-      <td>å</td>
-      <td>æ</td>
-      <td>ç</td>
-      <td>è</td>
-      <td>é</td>
-      <td>ê</td>
-      <td>ë</td>
-      <td>ì</td>
-      <td>í</td>
-      <td>î</td>
-      <td>ï </td>
+      <td>Ã </td>
+      <td>Ã¡</td>
+      <td>Ã¢</td>
+      <td>Ã£</td>
+      <td>Ã¤</td>
+      <td>Ã¥</td>
+      <td>Ã¦</td>
+      <td>Ã§</td>
+      <td>Ã¨</td>
+      <td>Ã©</td>
+      <td>Ãª</td>
+      <td>Ã«</td>
+      <td>Ã¬</td>
+      <td>Ã­</td>
+      <td>Ã®</td>
+      <td>Ã¯ </td>
     </tr>
     <tr>
       <th>F-</th>
-      <td>ð</td>
-      <td>ñ</td>
-      <td>ò</td>
-      <td>ó</td>
-      <td>ô</td>
-      <td>õ</td>
-      <td>ö</td>
-      <td>÷</td>
-      <td>ø</td>
-      <td>ù</td>
-      <td>ú</td>
-      <td>û</td>
-      <td>ü</td>
-      <td>ý</td>
-      <td>þ</td>
-      <td>ÿ </td>
+      <td>Ã°</td>
+      <td>Ã±</td>
+      <td>Ã²</td>
+      <td>Ã³</td>
+      <td>Ã´</td>
+      <td>Ãµ</td>
+      <td>Ã¶</td>
+      <td>Ã·</td>
+      <td>Ã¸</td>
+      <td>Ã¹</td>
+      <td>Ãº</td>
+      <td>Ã»</td>
+      <td>Ã¼</td>
+      <td>Ã½</td>
+      <td>Ã¾</td>
+      <td>Ã¿ </td>
     </tr>
   </tbody>
 </table>
@@ -1242,12 +1244,12 @@ too complex for the purpose of this course. </p>
 
   <div class="onePage">
 <p>To interpret the table remember that a byte has 8 bits and thus it can be
-expressed as 2 hexadecimal digits. The table contains 256 cells (16 × 16) and
+expressed as 2 hexadecimal digits. The table contains 256 cells (16 Ã— 16) and
 maps from byte values to character symbols, for example the uppercase "W" is in
 the row with "5-" at the left (first hex character) and in the column with "-7"
 at the top (second hex character) - try parking the mouse pointer over the "W"
 in the table. This means that the hexadecimal code for the "W" is 57, or
-0101 0111, the binary equivalents of the hex digits 5 and 7.</p>
+0101Â 0111, the binary equivalents of the hex digits 5 and 7.</p>
 
 <p>So this is how it works at its lowest level: a massive agreement on how to
 interpret a bit structure, in this case a simple set of 8 bits. Millions of
@@ -1284,7 +1286,7 @@ number of pixels by 4, right? Because it doubled both the vertical and the
 horizontal sizes.</p>
 
 <p>For example the first two generations of Apple iPads have screens displaying
-1024×768 pixels, and the following 3rd and 4th generations have 2048×1536
+1024Ã—768 pixels, and the following 3rd and 4th generations have 2048Ã—1536
 resolutions (786,432 vs. 3,145,728 pixels), all of them with 9.7 inch screens.
 </p>
 
@@ -1462,7 +1464,7 @@ contact's data as the number, name, and something else), and all contact's data
 was stored in consecutive memory "positions" then to access the 12th. contact
 the program would have to calculate its address, thus: </p>
 
-<p><code>    address of first contact + 120 × (contact number &minus;
+<p><code>Â Â Â Â address of first contact + 120 Ã— (contact number &minus;
 1)</code></p>
 
 <p>This is address arithmetic and it happens a lot of times. It is done with
@@ -1521,63 +1523,63 @@ and those who don't. </p>
 <p>If you got the geek joke above then we are done. </p>
 </div>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 
-<p> </p>
+<p>Â </p>
 </div>
 </body>
 </html>

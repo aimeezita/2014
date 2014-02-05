@@ -5,49 +5,229 @@
   <meta http-equiv="Content-Language" content="en">
   <title>05Feb2014 Wed</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+  </script>
+  <script type="text/javascript" src="res/agenda.js">
+  </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+  </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140204.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140206.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 05Feb2014 Wed </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140204.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140206.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 05Feb2014 Wed </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a href="http://jjasonclark.com/how-to-setup-node-behind-web-proxy">How to
+setup Node.js and Npm behind a corporate web proxy</a> </p>
+
+<p><a href="https://glow.corp.globant.com/glow/myInformation.do">Glow -
+personal info</a>  </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>configure npm proxy</h3>
+<pre>C:\Users\juan.lanus&gt;<strong>npm config set proxy http://proxy.corp.globant.com:3128</strong>
+
+C:\Users\juan.lanus&gt;<strong>npm config set https-proxy http://proxy.corp.globant.com:3128</strong>
+
+C:\Users\juan.lanus&gt;cd C:\w\2014
+
+C:\w\2014&gt;npm install -g express
+npm http GET https://registry.npmjs.org/express
+npm http 200 https://registry.npmjs.org/express
+npm http GET https://registry.npmjs.org/express/-/express-3.4.8.tgz
+npm http 200 https://registry.npmjs.org/express/-/express-3.4.8.tgz
+npm http GET https://registry.npmjs.org/connect/2.12.0
+npm http GET https://registry.npmjs.org/commander/1.3.2
+npm http GET https://registry.npmjs.org/range-parser/0.0.4
+npm http GET https://registry.npmjs.org/cookie/0.1.0
+npm http GET https://registry.npmjs.org/methods/0.1.0
+npm http GET https://registry.npmjs.org/mkdirp/0.3.5
+npm http GET https://registry.npmjs.org/fresh/0.2.0
+npm http GET https://registry.npmjs.org/buffer-crc32/0.2.1
+npm http GET https://registry.npmjs.org/send/0.1.4
+npm http GET https://registry.npmjs.org/cookie-signature/1.0.1
+npm http GET https://registry.npmjs.org/merge-descriptors/0.0.1
+npm http GET https://registry.npmjs.org/debug
+npm http 200 https://registry.npmjs.org/cookie/0.1.0
+npm http 200 https://registry.npmjs.org/buffer-crc32/0.2.1
+npm http GET https://registry.npmjs.org/cookie/-/cookie-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/connect/2.12.0
+npm http GET https://registry.npmjs.org/connect/-/connect-2.12.0.tgz
+npm http GET https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.1.tgz
+npm http 200 https://registry.npmjs.org/mkdirp/0.3.5
+npm http 200 https://registry.npmjs.org/methods/0.1.0
+npm http 200 https://registry.npmjs.org/cookie-signature/1.0.1
+npm http 200 https://registry.npmjs.org/range-parser/0.0.4
+npm http 200 https://registry.npmjs.org/fresh/0.2.0
+npm http 200 https://registry.npmjs.org/commander/1.3.2
+npm http GET https://registry.npmjs.org/methods/-/methods-0.1.0.tgz
+npm http GET https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz
+npm http GET https://registry.npmjs.org/mkdirp/-/mkdirp-0.3.5.tgz
+npm http GET https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz
+npm http GET https://registry.npmjs.org/commander/-/commander-1.3.2.tgz
+npm http GET https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.1.tgz
+npm http 200 https://registry.npmjs.org/send/0.1.4
+npm http 200 https://registry.npmjs.org/merge-descriptors/0.0.1
+npm http GET https://registry.npmjs.org/send/-/send-0.1.4.tgz
+npm http GET https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-0.0.1.tgz
+npm http 200 https://registry.npmjs.org/debug
+npm http GET https://registry.npmjs.org/debug/-/debug-0.7.4.tgz
+npm http 200 https://registry.npmjs.org/cookie/-/cookie-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz
+npm http 200 https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/commander/-/commander-1.3.2.tgz
+npm http 200 https://registry.npmjs.org/send/-/send-0.1.4.tgz
+npm http 200 https://registry.npmjs.org/mkdirp/-/mkdirp-0.3.5.tgz
+npm http 200 https://registry.npmjs.org/methods/-/methods-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.1.tgz
+npm http 200 https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-0.0.1.tgz
+npm http 200 https://registry.npmjs.org/connect/-/connect-2.12.0.tgz
+npm http 200 https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.1.tgz
+npm http 200 https://registry.npmjs.org/debug/-/debug-0.7.4.tgz
+npm http GET https://registry.npmjs.org/keypress
+npm http GET https://registry.npmjs.org/mime
+npm http GET https://registry.npmjs.org/batch/0.5.0
+npm http GET https://registry.npmjs.org/qs/0.6.6
+npm http GET https://registry.npmjs.org/bytes/0.2.1
+npm http GET https://registry.npmjs.org/pause/0.0.1
+npm http GET https://registry.npmjs.org/uid2/0.0.3
+npm http GET https://registry.npmjs.org/raw-body/1.1.2
+npm http GET https://registry.npmjs.org/negotiator/0.3.0
+npm http GET https://registry.npmjs.org/multiparty/2.2.0
+npm http 200 https://registry.npmjs.org/keypress
+npm http GET https://registry.npmjs.org/keypress/-/keypress-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/uid2/0.0.3
+npm http 200 https://registry.npmjs.org/bytes/0.2.1
+npm http 200 https://registry.npmjs.org/batch/0.5.0
+npm http 200 https://registry.npmjs.org/qs/0.6.6
+npm http 200 https://registry.npmjs.org/multiparty/2.2.0
+npm http 200 https://registry.npmjs.org/negotiator/0.3.0
+npm http GET https://registry.npmjs.org/uid2/-/uid2-0.0.3.tgz
+npm http GET https://registry.npmjs.org/batch/-/batch-0.5.0.tgz
+npm http GET https://registry.npmjs.org/qs/-/qs-0.6.6.tgz
+npm http GET https://registry.npmjs.org/bytes/-/bytes-0.2.1.tgz
+npm http GET https://registry.npmjs.org/multiparty/-/multiparty-2.2.0.tgz
+npm http GET https://registry.npmjs.org/negotiator/-/negotiator-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/mime
+npm http 200 https://registry.npmjs.org/pause/0.0.1
+npm http GET https://registry.npmjs.org/mime/-/mime-1.2.11.tgz
+npm http GET https://registry.npmjs.org/pause/-/pause-0.0.1.tgz
+npm http 200 https://registry.npmjs.org/raw-body/1.1.2
+npm http GET https://registry.npmjs.org/raw-body/-/raw-body-1.1.2.tgz
+npm http 200 https://registry.npmjs.org/keypress/-/keypress-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/bytes/-/bytes-0.2.1.tgz
+npm http 200 https://registry.npmjs.org/batch/-/batch-0.5.0.tgz
+npm http 200 https://registry.npmjs.org/multiparty/-/multiparty-2.2.0.tgz
+npm http 200 https://registry.npmjs.org/negotiator/-/negotiator-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/mime/-/mime-1.2.11.tgz
+npm http 200 https://registry.npmjs.org/pause/-/pause-0.0.1.tgz
+npm http 200 https://registry.npmjs.org/uid2/-/uid2-0.0.3.tgz
+npm http 200 https://registry.npmjs.org/qs/-/qs-0.6.6.tgz
+npm http 200 https://registry.npmjs.org/raw-body/-/raw-body-1.1.2.tgz
+npm http GET https://registry.npmjs.org/readable-stream
+npm http GET https://registry.npmjs.org/stream-counter
+npm http 200 https://registry.npmjs.org/stream-counter
+npm http GET https://registry.npmjs.org/stream-counter/-/stream-counter-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/readable-stream
+npm http GET https://registry.npmjs.org/readable-stream/-/readable-stream-1.1.10.tgz
+npm http 200 https://registry.npmjs.org/stream-counter/-/stream-counter-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/readable-stream/-/readable-stream-1.1.10.tgz
+npm http GET https://registry.npmjs.org/core-util-is
+npm http GET https://registry.npmjs.org/string_decoder
+npm http GET https://registry.npmjs.org/debuglog/0.0.2
+npm http 200 https://registry.npmjs.org/core-util-is
+npm http 200 https://registry.npmjs.org/string_decoder
+npm http GET https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.1.tgz
+npm http GET https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.25.tgz
+npm http 200 https://registry.npmjs.org/debuglog/0.0.2
+npm http GET https://registry.npmjs.org/debuglog/-/debuglog-0.0.2.tgz
+npm http 200 https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.25.tgz
+npm http 200 https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.1.tgz
+npm http 200 https://registry.npmjs.org/debuglog/-/debuglog-0.0.2.tgz
+C:\Users\juan.lanus\AppData\Roaming\npm\express -&gt; C:\Users\juan.lanus\AppData\Roaming\npm\node_modu
+les\express\bin\express
+express@3.4.8 C:\Users\juan.lanus\AppData\Roaming\npm\node_modules\express
+&#x251c;&#x2500;&#x2500; methods@0.1.0
+&#x251c;&#x2500;&#x2500; range-parser@0.0.4
+&#x251c;&#x2500;&#x2500; merge-descriptors@0.0.1
+&#x251c;&#x2500;&#x2500; fresh@0.2.0
+&#x251c;&#x2500;&#x2500; cookie-signature@1.0.1
+&#x251c;&#x2500;&#x2500; buffer-crc32@0.2.1
+&#x251c;&#x2500;&#x2500; debug@0.7.4
+&#x251c;&#x2500;&#x2500; cookie@0.1.0
+&#x251c;&#x2500;&#x2500; mkdirp@0.3.5
+&#x251c;&#x2500;&#x2500; commander@1.3.2 (keypress@0.1.0)
+&#x251c;&#x2500;&#x2500; send@0.1.4 (mime@1.2.11)
+&#x2514;&#x2500;&#x2500; connect@2.12.0 (uid2@0.0.3, pause@0.0.1, raw-body@1.1.2, qs@0.6.6, bytes@0.2.1, batch@0.5.0, neg
+otiator@0.3.0, multiparty@2.2.0)
+
+C:\w\2014&gt;</pre>
+
+<p> </p>
+
+<p> coderwall:</p>
+<pre>npm timeouted trying to install anything.  
+Turns out that it needs the system proxy to be configured, thus:   
+
+    $ npm config set proxy http://proxy.corp.mycorp.com:8888  
+    $ npm config set https-proxy http://proxy.corp.mycorp.com:8888  
+
+The information came from this useful blog post:  
+http://jjasonclark.com/how-to-setup-node-behind-web-proxy  </pre>
+
+<p>Using this method, you can create an DOM using a predefined object and stay
+away from nasty string concatenations. </p>
+<pre>var $elem = $('&lt;div/&gt;', {
+    "class" : "some-class",
+    "attr" : "value",
+    "text" : "text content",        // equivalent to .text()
+    "html" : "&lt;h3&gt;title&lt;/h3&gt;",    // equivalent to .html()
+    "click" : function() { }          // click event
+});</pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
