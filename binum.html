@@ -3,6 +3,7 @@
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="content-type">
   <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Binary number system</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
   <script type="text/javascript" src="res/jquery/jquery.js">
@@ -100,13 +101,13 @@ continues to this day, for example in clock faces.</p>
 
   <div class="onePage">
 <p>Notice that the Roman numbering system does not have a zero. The zero is
-said to be invented by the Indians near yesr 500 A.D. and is essential to any
+said to be invented by the Indians near year 500 A.D. and is essential to any
 modern number system, including the decimal and the binary systems.</p>
 
 <div class="imgR" style="margin:0 0 .5em 1em;">
 <img alt="Altamira hands" src="mooc/275823019_568ed233ab_z.jpg"> </div>
 
-<p>Obviously a decimal number system is somehow natural for we humans because
+<p>A decimal number system is somehow natural for we humans because
 we have ten fingers in our hands (mostly everybody).</p>
 
 <p>Some people think that it would be better if we had twelve fingers, because
@@ -114,7 +115,11 @@ this would have led to a 12-based number system, being the advantage that 12 is
 exactly divisible by 2, 3, 4 and 6, and that would have simplified many
 arithmetic problems. But we have ten fingers so we have to settle with a number
 base that's only divisible by 2 and 5. Families should have either two or five
-children, not three. </p>
+children, but not three. </p>
+
+<p>The idea is that there is nothing special or magic in the number 10 in
+addition to it's fit to human anatomy. </p>
+
 </div>
 
 <div class="onePage">
@@ -424,11 +429,11 @@ thus:</p>
 
 <p>As can be seen in the last line, to count 32 or more sheep we need six brothers,
 something that was possible with only two when we used decimal numbers. Each time
-we add a brother the maximum number increments twofold. </p>
+we add a brother the maximum number doubles. </p>
 
-<p>It can also be noticed that the base of the decimal system expressed as a
-decimal number is written as 10, while the base of the binary system expressed
-as a binary number is also 10. This holds true for all bases. </p>
+<p>It can also be noticed that two, the base of the binary system, expressed as a
+binary number is written 10, while the base of the decimal system expressed
+as a decimal number is also 10. This holds true for all bases. </p>
 </div>
 
 <div class="onePage">
@@ -445,29 +450,48 @@ that way.</p>
 <img alt="opened hard disk" src="mooc/320px-Apertura_hard_disk_04.jpg"></div>
 
 <p>For example in hard disks, that store information digitally in the form of
-extremely tiny magnetized regions on a spinning platter, each region represents
+extremely tiny magnetized dots on a spinning platter, each dot represents
 a binary digit, a zero or a one, depending on the polarity of the magnetic
 field.</p>
 
-<p>Another example of binary signals are the communication channels, like for
+<p>Another example of binary signals is a communication channels, like for
 example our domestic Internet connections, that transmit streams of electric
 signals representing bits. Millions per second, depending on the price of the
-connection. A "6 mega internet connection" is capable of transmitting 6 megabit
-per second. One megabit is 1,048,576 bits or 2<span
-style="font-size: x-small; vertical-align: super;">20</span> bits, one of the
-most famous powers of 2. </p>
+connection. A "6 mega internet connection" is capable of transmitting 6 
+million bits per second. </p>
 </div>
 
 <div class="onePage">
 <h3 id="L778">bit</h3>
 
-<p>The word "bit" is used to designate these binary digits. It is "binary
+<p>The word "bit" is used to designate a binary digit. It's the words "binary
 digit" with the stuffing removed: </p>
 
+
+<script type="text/javascript">
+  $(document).ready( function(){
+    $('#bitStuffing').hover(
+      function() {
+	var $this = $(this);
+	$this.css('background', 'yellow');
+	$this.animate(
+	  // animated properties
+	  { 
+	    'font-size': '0px'
+	  },
+	  // duration
+	  1500
+	);
+      }
+    );
+  });
+</script>
+
+
 <p
-style="margin:0; padding:0; font-size: 220%; font-weight:bold; text-align:center;"><span
-style="color: #000000;">b</span><span style="color: #c0c0c0;">inary
-dig</span><span style="color: #000000;">it</span> </p>
+style="margin:0; padding:0; font-size: 2em; font-weight:bold; text-align:center;"><span
+style="color: #000000;">b</span><span id="bitStuffing" style="display:inline-block; 
+color: #c0c0c0;">inary dig</span><span style="color: #000000;">it</span> </p>
 
 <p>The start of the first word and the end of the last one. Enough.</p>
 </div>
@@ -751,7 +775,7 @@ learns the dimension of one of these numbers, a new one arises.</p>
 <p>These words are measure units, like the Kg (Kilogram) that is used to
 measure the weight of packed sugar. A Kilogram is named so because it's made of
 1,000g (a thousand grams) and "<a
-href="http://en.wikipedia.org/wiki/Kilo-">Kilo</a>" is derived from the Greek
+href="http://en.wikipedia.org/wiki/Kilo-" target="_blank">Kilo</a>" is derived from the Greek
 word &chi;&#x3af;&lambda;&iota;&omicron;&iota; (chilioi), meaning
 "thousand".</p>
 
@@ -1236,7 +1260,7 @@ target="_blank">table</a> shows a relationship between byte values and
 displayed or printed characters. This arrangement is one of the many possible
 "encodings". This particular encoding is vastly used in a gazillion web pages,
 millions of people abide by it, is known as "<a
-href="http://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO 8859/1</a>" or "Latin 1"
+href="http://en.wikipedia.org/wiki/ISO/IEC_8859-1" target="_blank">ISO 8859/1</a>" or "Latin 1"
 and is an extension of the older ASCII encoding. This is not Unicode, which is
 too complex for the purpose of this course. </p>
 
@@ -1273,7 +1297,7 @@ pixels tidily aligned in rows and columns of an array. </p>
 
 <p>As technology progresses the pixels tend to become smaller and smaller. A
 rather recent breakthrough (as of this writing, Jan 2014) are <a
-href="http://en.wikipedia.org/wiki/Retina_Display">the "Retina" class
+href="http://en.wikipedia.org/wiki/Retina_Display" target="_blank">the "Retina" class
 displays</a> that exhibit the highest pixel densities at 200~300+ pixels per
 inch (ppi), about twice as before. </p>
 
@@ -1323,30 +1347,54 @@ blue. </p>
 <script type="text/javascript">
 $(document).ready( function(){
     // restore properties deleted by Amaya
-    $('#inputR').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
-    $('#inputG').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
-    $('#inputB').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
+    // $('#inputR').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
+    // $('#inputG').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
+    // $('#inputB').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
 
-    $('#rgb-demo input[type=range]').on('input change', function() {
+    $('#rgb-demo input').on('input change', function() {
       // build the RGB color and set the target area
       $('#valueR').text( '' + $('#inputR').val() );
       $('#valueG').text( '' + $('#inputG').val() );
       $('#valueB').text( '' + $('#inputB').val() );
       var theColor = 'rgb(' + $('#valueR').text() + ',' + $('#valueG').text() + ',' + $('#valueB').text() + ')';
-        $('#rgb-target').css( 'background-color', theColor );
+      $('#rgb-target').css( 'background-color', theColor );
 
-        // display the RGB color in binary and hexadecinal
-        $('#rgb-binValue').text( 'bin: ' 
-          + document.getElementById('inputR').valueAsNumber.toString(2) + ' ' 
-          + document.getElementById('inputG').valueAsNumber.toString(2) + ' ' 
-          + document.getElementById('inputB').valueAsNumber.toString(2) 
-          );
-        $('#rgb-hexValue').text( 'hex: ' 
-          + document.getElementById('inputR').valueAsNumber.toString(16) + ' ' 
-          + document.getElementById('inputG').valueAsNumber.toString(16) + ' ' 
-          + document.getElementById('inputB').valueAsNumber.toString(16) 
-          );
-        }).trigger('change');
+      // display the RGB color in binary and hexadecimal
+      function editColorComponent( theInputId, theRadix ) {
+        // return the R/G/B input value in binary or decimal, prune the value within range 0~255
+	// gets a reference to the input
+        var theInput = document.getElementById( theInputId );
+	// get the value as a number
+	var theValue = parseInt( theInput.value, 10);
+	if( theValue == NaN ) {
+	  // not numeric: clear it
+	  theInput.value = ''; 
+	  theValue = 0;
+	} else if( theValue < 0 ) {
+	  // numeric: check boundaries
+	  theInput.value = ''; 
+	  theValue = 0;
+	} else if( theValue > 255 ) {
+	  theInput.value = '255'; 
+	  theValue = 255;
+	};
+	// finally make a string thth the value in the equired radix
+	return theValue.toString( theRadix );
+	// initially was: 
+	// return parseInt( document.getElementById( theInputId ).value, 10 ).toString( theRadix );
+      };
+
+      $('#rgb-binValue').text( 'bin: ' 
+	+ editColorComponent('inputR', 2 ) + ' ' 
+	+ editColorComponent('inputG', 2 ) + ' ' 
+	+ editColorComponent('inputB', 2 ) 
+	);
+      $('#rgb-hexValue').text( 'hex: ' 
+	+ editColorComponent('inputR', 16) + ' ' 
+	+ editColorComponent('inputG', 16) + ' ' 
+	+ editColorComponent('inputB', 16) 
+	);
+      }).trigger('change');
       });       // this "trigger" is not working</script>
 <style>
 #rgb-demo   { border:2px solid silver; border-radius:6px; padding:8px; float:right; margin:1em; }
@@ -1369,18 +1417,18 @@ $(document).ready( function(){
             </tr>
             <tr>
               <td><span class="rgb-rgb">R</span><input id="inputR"
-                class="rgb-input" value="0" type="text"></td>
+                class="rgb-input" value="0" type="text" maxLength="3"></td>
               <td id="valueR" class="rgb-value" style="">0</td>
             </tr>
             <tr>
               <td><span class="rgb-rgb">G</span><input id="inputG"
-                class="rgb-input" value="0" type="text"></td>
+                class="rgb-input" value="0" type="text" maxLength="3"></td>
               <td id="valueG" class="rgb-value" style="">0</td>
             </tr>
             <tr>
               <!-- <td>B <input id="inputB" class="rgb-input" type="range" inputmode="numeric" max="255" min="0" step="1" value="0"></td> -->
               <td><span class="rgb-rgb">B</span><input id="inputB"
-                class="rgb-input" value="0" type="text"></td>
+                class="rgb-input" value="0" type="text" maxLength="3"></td>
               <td id="valueB" class="rgb-value" style="">0</td>
             </tr>
             <tr>
@@ -1409,8 +1457,8 @@ $(document).ready( function(){
 blue renders pure yellow.</p>
 
 <p>Using hexadecimal notation the color for that yellow pixel will be
-quantified thus: ff ff 00, the three colors in the specified order. Using
-decimal numbers the yellow color would be rgb(255, 255, 0).</p>
+quantified thus: ff ff 00, the three color components in the specified order.
+Using decimal numbers the yellow color would be written as rgb(255, 255, 0).</p>
 
 <p>All the possible colors are the combinations of 256 values taken 3 at a
 time, the number of which is 256 x 256 x 256 = 16,777,216 which where the "16
@@ -1442,7 +1490,7 @@ negative numbers and in this case half of the values are zero or positive, and
 the other half are negative. The first bit of the first byte is designated to
 contain the sign, a "1" for negative numbers and a "0" for the others. Negative
 numbers are stored in a weird format called "<a
-href="http://en.wikipedia.org/wiki/Two%27s_complement">two's complement</a>".
+href="http://en.wikipedia.org/wiki/Two%27s_complement" target="_blank">two's complement</a>".
 </p>
 
   </div>
