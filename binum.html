@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Binary number system</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script type="text/javascript" src="res/jquery/jquery.js">
+  <script type="text/javascript" src="res/jquery.js">
  </script>
   <script type="text/javascript" src="res/agenda.js">
  </script>
   <script type="text/javascript" src="res/tocBuilder.js">
  </script>
-  <link href="res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
+  <link href="res/tocBuilder.css" rel="stylesheet" type="text/css">
   <script type="text/javascript">
     $(document).ready(function () {
     });
@@ -1347,9 +1347,9 @@ blue. </p>
 <script type="text/javascript">
 $(document).ready( function(){
     // restore properties deleted by Amaya
-    // $('#inputR').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
-    // $('#inputG').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
-    // $('#inputB').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
+    $('#inputR').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
+    $('#inputG').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
+    $('#inputB').attr( { type: 'range', inputmode: 'numeric', max: '255', min: '0', step: '1', value: '0' } );
 
     $('#rgb-demo input').on('input change', function() {
       // build the RGB color and set the target area
