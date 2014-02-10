@@ -47,27 +47,8 @@ alt="next" src="res/right.gif"></a>
 
 <div id="agendaBody">
 <h3>binary numbers course</h3>
-<ul>
-  <li>Add a declaration of the purpose of the course, at the beginning</li>
-  <li>TOC backlinks are wrong: <code>href="#undefinedtargetTOC" </code></li>
-  <li>finally: Add a recap of what was achieved </li>
-  <li>The RGB demo doesn't work in IE8</li>
-  <li>The version
-    http://ec2-54-227-184-202.compute-1.amazonaws.com:8080/binum.html throws
-    errors: 
-    <ul>
-      <li>"NetworkError: 404 Not Found -
-        http://ec2-54-227-184-202.compute-1.amazonaws.com:8080/res/jquery/tocBuilder.css"
-      </li>
-      <li>"NetworkError: 404 Not Found -
-        http://ec2-54-227-184-202.compute-1.amazonaws.com:8080/res/jquery/jquery.js"</li>
-    </ul>
-  </li>
-  <li></li>
-</ul>
 
-<p></p>
-
+<div>
 <h4>upload files</h4>
 <pre>example:
 scp ./qqq.txt startup:qqq.txt
@@ -75,8 +56,88 @@ scp ./qqq.txt startup:qqq.txt
 scp -p ~/Dropbox/2014/binum.html startup:/home/ubuntu/bitstarter/binum.html
 scp -p ~/Dropbox/2014/res/jquery/jquery.js startup:/home/ubuntu/bitstarter/res/jquery.js
 scp -p ~/Dropbox/2014/res/jquery/tocBuilder.css startup:/home/ubuntu/bitstarter/res/jquery/tocBuilder.css
+scp -p startup:/home/ubuntu/bitstarter/tlotfc2.html ~/reading/doc/tlotfc2_EC2.html
+scp -p ~/reading/doc/tlotfc2.html startup:/home/ubuntu/bitstarter/tlotfc2.html
 
 </pre>
+
+<h4>tasks</h4>
+</div>
+<ul>
+  <li>&#x2714; Add a declaration of the purpose of the course, at the
+  beginning</li>
+  <li>&#x2714; TOC backlinks are wrong: <code>href="#undefinedtargetTOC"
+    </code>(the rt thing will fix this) </li>
+  <li>&#x2714; finally: Add a recap of what was achieved </li>
+  <li>&#x2714; finally: add contact information</li>
+  <li>&#x2714; The RGB demo doesn't work in IE8 (pls test)</li>
+  <li>&#x2714; The version
+    http://ec2-54-227-184-202.compute-1.amazonaws.com:8080/binum.html throws
+    errors: 
+    <ul>
+      <li>&#x2714; "NetworkError: 404 Not Found -
+        http://ec2-54-227-184-202.compute-1.amazonaws.com:8080/res/jquery/tocBuilder.css"
+      </li>
+      <li>&#x2714; "NetworkError: 404 Not Found -
+        http://ec2-54-227-184-202.compute-1.amazonaws.com:8080/res/jquery/jquery.js"</li>
+    </ul>
+  </li>
+  <li>Add the rt reading tools thing</li>
+</ul>
+
+<h5>adding tr</h5>
+<ul>
+  <li>&#x2714; Add the css and js references in &lt;head&gt;: 
+    <pre>  &lt;script src="res/jquery.js"&gt;&lt;/script&gt; 
+  &lt;script src="res/rt.js"&gt;&lt;/script&gt;
+  &lt;script src="res/toc.js"&gt;&lt;/script&gt;
+  &lt;script src="res/rangy/uncompressed/rangy-core.js"&gt;&lt;/script&gt;
+  &lt;script src="res/rangy/uncompressed/rangy-cssclassapplier.js"&gt;&lt;/script&gt;
+  &lt;script src="res/animatescroll.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="res/rt.css"&gt;</pre>
+  </li>
+  <li>&#x2714; Add the ignition script:
+    <pre>  &lt;script&gt; 
+    $(document).ready(function() {
+      // activate reading control (pass a selector to the function)
+      rt('#containerOuter', 1);
+    });
+  &lt;/script&gt; </pre>
+  </li>
+  <li><code>&#x2714; RT.displayProgress()</code> fails because there is no
+    <code>RT.elementAtTop.offsetTop;</code> add logic to make it point to the
+    first element. </li>
+  <li>The progress display does not advance: maybe there is no valid
+    <code>elementAtTop</code> during the whole performance 
+    <ul>
+      <li>The PI is initialized at top albeit the document is scrolled a
+      bit</li>
+    </ul>
+  </li>
+  <li>&#x2714; Add left margin or padding to account for the left panel
+    (padding-left:86px in the inner container) </li>
+  <li>&#x2714; Make a new version of rt.js to be able to change it without
+    breaking tlotfc (tlotfc now point to old versions in toltfc_files, can
+    change versions in doc/res)</li>
+  <li>&#x2714; The TOC has only two instances of (empty node) </li>
+  <li>Don't show "(empty node)" in TOC</li>
+  <li>Update the [End] button target with an appropriate feedback page </li>
+  <li>SmartScroll not working, scrolls by the page </li>
+  <li>&#x2714; There is no inner container immediately inside the outer
+    container </li>
+  <li>&#x2714; The RGB demo stopped working (apparently the value=0 properties
+    anchored the values to zero</li>
+  <li>All the docpaths start with too many zeros:
+    <code>docpath="0,0,0,0,0,0,0,26,2,3,1,1,1,1,1,1,1"</code> maybe because the
+    first element is not a heading? </li>
+  <li>&#x2714; RGB inputs are of type text: 
+    <pre>&lt;td docpath="0,0,0,0,0,0,0,26,2,3,1,1,1,1,1,2,1"&gt;&lt;span class="rgb-rgb" docpath="0,0,0,0,0,0,0,26,2,3,1,1,1,1,1,2,1,1"&gt;R&lt;/span&gt;&lt;input id="inputR" class="rgb-input" value="0" <strong>type="text"</strong> maxlength="3" docpath="0,0,0,0,0,0,0,26,2,3,1,1,1,1,1,2,1,2"&gt;&lt;/td&gt;</pre>
+  </li>
+  <li>In localStorage there are many end-of-session entries at the end of the
+    RT- entries, seemd like it was not recording scrolls </li>
+</ul>
+
+<p></p>
 
 <p></p>
 <hr>
