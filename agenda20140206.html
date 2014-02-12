@@ -140,6 +140,12 @@ scp -p ~/reading/doc/tlotfc2.html startup:/home/ubuntu/bitstarter/tlotfc2.html</
     RT- entries, seemd like it was not recording scrolls </li>
   <li>Move the igniter code to an external js file, in the html only have a
     &lt;script&gt; tag referencing that external js file </li>
+  <li>When rt.js starts calls TR.scrollToPosition() with scrollData from a
+    different document (found in localStorage) and @443 the getElementById()
+    fails: 
+    <pre>Object {endSession: "1", dp: "0,0,1,0,0,0,0", id: "RT-0-0-1-0-0-0-0", text: "CA-Ideal Procedure Language IDLB22PR.boo"}</pre>
+    <p>Must identify the document in the localStorage records</p>
+  </li>
 </ul>
 
 <p></p>
