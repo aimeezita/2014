@@ -35,7 +35,7 @@ web</h1>
 
 <div class="toc">
 <ul>
-  <li><a href="#L49">1 - La Internet</a>
+  <li><a href="#L49">1 - La Internet</a> 
     <ul>
       <li><a href="#L100">La Internet</a></li>
       <li><a href="#L117">El browser</a></li>
@@ -218,7 +218,7 @@ sobre la IP 211.127.173.50</a>. </p>
 <p>El browser averigua la IP de la radio fácilmente, consultando un servidor
 "DNS", un diccionario gigante que dice cuál es la IP de cada DNS. Entonces
 cuando el browser manda el request lo dirige a la dirección IP, no al domain
-name. Nosotros podemos ver la IP usando el comando ping: </p>
+name. Nosotros podemos averiguar la IP usando el comando ping: </p>
 
 <p><img alt="ping Ichikawa" src="res/pingIchikawa.png" width="677"
 height="342"></p>
@@ -231,7 +231,7 @@ averigua cuál router le conviene para IPs 211.127... y así sucesivamente.</p>
 
 <p>La ruta desde donde estoy ahora (206.123.64.46) hasta la radio de Ichikawa
 pasa por una cantidad de routers, como se puede apreciar en el <a
-href="http://network-tools.com/default.asp?prog=trace&amp;host=211.127.173.50">trace
+href="http://network-tools.com/default.asp?prog=trace&amp;host=211.127.173.50">"trace"
 (rastreo)</a> de 16 hops: </p>
 
 <div style="font-size:80%; margin:0 auto;">
@@ -466,9 +466,10 @@ href="http://network-tools.com/default.asp?prog=trace&amp;host=211.127.173.50">t
 <p>Trace complete</p>
 </div>
 
-<p>Se vé que pasa por 8 routers de us.above.net presumiblemente en USA
-(teniendo la IP podríamos averiguar dónde están) antes de llegar a Japón.
-En Japón paa por 6 routera antes de llegar a la radio. </p>
+<p>Se vé que en menos de 50 milisegundos pasa por 8 routers de us.above.net
+presumiblemente en USA (teniendo la IP podríamos averiguar dónde están)
+antes de llegar a Japón. En Japón paa por 6 routera antes de llegar a la
+radio. </p>
 
 <p>De la <a
 href="http://www.dnsstuff.com/tools#ipInformation|type=ipv4&amp;&amp;value=211.127.173.50">consulta
@@ -479,7 +480,9 @@ habitantes.</p>
 
 <h3 id="L982">Resumiendo</h3>
 
-<p>La Internet es pura magia  :-)</p>
+<p>Aquí termina la información técnica sobre la Internet, algunos conceptos
+básicos necesarios para entender lo que viene. Sin esa información, la
+Internet es pura magia  :-)</p>
 
 <h2>Las páginas</h2>
 
@@ -512,6 +515,31 @@ habitantes.</p>
 </ul>
 
 <h3>El lenguaje</h3>
+
+<p>Cuando un web server recibe un request responde normalmente devolviendo un
+texto que está escrito en un lenguaje llamado "<a
+href="http://en.wikipedia.org/wiki/HTML">HTML</a>". Empezamos ahora a aprender
+cómo usarlo.</p>
+
+<p></p>
+
+<p>El web server que recibe el request responde enviando HTML que está en un
+archivo, o HTML que arma con información de una base de datos. </p>
+
+<p>Por ejemplo si consultamos twitter para ver lo que hay relacionado con un
+tag cualquiera, por ejemplo <a
+href="https://twitter.com/search?q=%23pizza&amp;src=typd">#pizza</a>, el server
+hace una consulta a una base de datos y arma una página especial para cada
+request: páginas dinámicas. </p>
+
+<p>Nosotros vamos a hacer páginas estáticas para empezar, páginas que están
+registradas en un archivo.</p>
+
+<h3>Primera página</h3>
+
+<p></p>
+
+<p></p>
 
 <p></p>
 
