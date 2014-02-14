@@ -35,18 +35,456 @@ web</h1>
 
 <div class="toc">
 <ul>
+  <li><a href="#L49">1 - La Internet</a>
+    <ul>
+      <li><a href="#L100">La Internet</a></li>
+      <li><a href="#L117">El browser</a></li>
+      <li><a href="#L149">El server</a></li>
+      <li><a href="#L183">¿Cómo funciona?</a></li>
+      <li><a href="#L982">Resumiendo</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<div class="toc">
+<ul>
   <li>...</li>
 </ul>
 </div>
 <hr>
 </div>
 
-<h2>1 - La Internet</h2>
+<h2 id="L49">1 - La Internet</h2>
 <ul>
   <li>Concepto de browser</li>
   <li>Concepto de web server</li>
   <li>Interacción entre browser y server, introducción de los términos
     "protocolo" y "HTTP"</li>
+</ul>
+
+<h3 id="L100">La Internet</h3>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="cloud = nube" src="res/cloud.png" style="width:222px;"></div>
+
+<div class="imgR" style="padding-left:1em;">
+<p></p>
+</div>
+
+<p>La "internet" es una "red" (en inglés "net") de conexiones de datos.
+Tenemos otras redes que nos proveen otros servicios, como la red eléctrica que
+conecta una usina donde se genera la electricidad con las casas de la gente, o
+la red telefónica que conecta a las personas entre sí a través de una
+central y les permite hablar. </p>
+
+<p>En el caso de la red eléctrica existe la usina, la línea de transmisión
+que lleva la electricidad de un lado al otro, y la casa donde la electricidad
+se usa. </p>
+
+<p>La Internet es algo similar. Existen los "web servers" donde viven los
+datos, la red de transmisión, y la computadora donde usamos los datos. </p>
+
+<p>Visualizamos la red como una nube: no vemos lo que tiene adentro (ni nos
+interesa normalmente), y cualquier parte donde nos conectemos da igual.
+Ultimemente ni siquiera es necesario un cable para hacer conexión. </p>
+
+<h3 id="L117">El browser</h3>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="browser logos" src="res/browsers.png" width="443" height="192"></div>
+
+<p>Es el programa instalado en la PC que usamos para entrar a la Internet. </p>
+
+<p>Hay varios, los más usados son</p>
+<ol>
+  <li>Google Chrome</li>
+  <li>Mozilla Firefox</li>
+  <li>Opera</li>
+  <li>Microsoft Internet Explorer</li>
+  <li>Safari</li>
+</ol>
+
+<p>Se supone que todos hacen lo mismo, que muestran las "páginas" exactamente
+de la misma manera. En la realidad hay pequeñas diferencias que se van
+reduciendo paulatinamente.</p>
+
+<p>Hay una institucion llamada "World Wide Web Consortium" o "W3C" (3 letras
+"w" y una "c") que trabaja definiendo "standadrs", definiciones detalladas de
+cómo debe aparecer cada cosa en la pantalla (en el curso iremos viendo qué
+cosas).</p>
+
+<p>Las páginas web son "archivos de texto", es decir, contienen solamente
+letras, números y símbolos (lo que hay en un teclado de PC), y se pueden
+editar con programas como Notepad o vim. El browser interpreta ese texto según
+las normas del W3C, lo combina com imágenes (también videos y otros tipos de
+material) y lo despliega en la pantalla.</p>
+
+<h3 id="L149">El server</h3>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="server in cloud" src="res/cloud-server.png"
+style="width:222px;"></div>
+
+<p>El server es una computadora que "está en la Internet". Lo que hace que sea
+un "web server" y no una computadora cualquiera es que siempre está ejecutando
+un programa que se llama "web server" (también). </p>
+
+<p>La función del web server es recibir los pedidos de páginas "requests" de
+los browsers y despachar las páginas que corraspondan. </p>
+
+<p>Los requests de los browsers tienen un formato especial (también definido
+por el W3C) y se llaman "URLs". Por ejemplo para ver la página de búsqueda en
+Google el URL es:</p>
+<pre>https://www.google.com/</pre>
+
+<p></p>
+
+<p>El web server de google recibe ese request y envía la respuesta o
+"response", que se vé más o menos así: </p>
+
+<p><img alt="google search start page" src="res/googleSearch.png"
+style="width:100%; height:auto; max-width:700px;"></p>
+
+<p>En realidad lo que envía es un archivo de texto  que se puede ver picando
+la página con el botón derecho del mouse y seleccionando "view page source" o
+algo similar dependiendo del browser instalado.</p>
+
+<p>Por ejemplo la parte donde uno escribe las palabras que quiere buscar vista
+por el browser es así: </p>
+<pre>&lt;input id=gbqfq class=gbqfif name=q type=text autocomplete=off value=""&gt;</pre>
+
+<p>El browser interpreta ese texto y otros, los combina, y muestra esto en la
+página: </p>
+
+<p style="text-align:center;margin-left:auto;margin-right:auto;"><img
+alt="search input box" src="res/googleSearchInput.png"></p>
+
+<p>En este curso aprendemos a entender y hacer este tipo de cosas. </p>
+
+<h3 id="L183">¿Cómo funciona?</h3>
+
+<p>El browser y el web server se comunican usando la Internet. Para eso usan
+unos "protocolos" que se llaman HTTP o HTTPS. Un protocolo es una serie de
+reglas detalladas de qué hacer en todas las situaciones de una relación entre
+personas, países, o computadoras.</p>
+
+<p>En la imagen se vé al comienzo del URL, el protocolo "https": </p>
+
+<p style="text-align:center;margin-left:auto;margin-right:auto;"><img
+alt="https protocol in URL" src="res/httpsProtocol.png" width="513"
+height="108"></p>
+
+<p>El protocolo HTTP es para comunicaciones comunes, y el HTTPS para
+comunicaciones encriptadas, mensajes en código, casi imposibles de descifrar.
+Y el protocolo TCP/IP para que las diversas computadoras puedan hablar HTTP
+entre sí. </p>
+
+<p>Los protocolos de Internet son los que hacen la magia de conectar vía
+Internet un browser de un lugar con un server que puede estar en el otro lado
+del mundo. </p>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="Ichikawa radio logo" src="res/logo-ichikawafm.gif"></div>
+
+<p>Por ejemplo <a
+href="http://www.ichikawafm.co.jp/">http://www.ichikawafm.co.jp</a> es la radio
+de <a href="http://en.wikipedia.org/wiki/Ichikawa,_Chiba">Ichikawa</a> en
+Japón. El URL termina con ".jp" en vez de ".ar" como los de Agentina.</p>
+
+<p>Si ponemos el URL de la home page de la radio, la página aparece en el
+browser! ¿Cómo es posible, cómo funciona, si hay millones y millones de
+servidores web en la Internet, cómo va justo al que uno quiere?</p>
+
+<p>No es magia. Vamos a ver una explicación simple. </p>
+
+<p></p>
+
+<p>Nosotros, los humanos, entendemos nombres de servidores web como por ejemplo
+el de Google (google.com) o el de facebook (facebook.com).</p>
+
+<p>Estos nombres de servidores se llaman "domains" (dominios). Los humanos
+hablamos entre nosotros usando los "domain names", por ejemplo decimos "entré
+a facebook". </p>
+
+<p>Los programas de computadora usan en vez las direcciones "IP" de los
+servidores, que son unos números. Por ejemplo la dirección IP del server de
+la radio de Ichikawa es <code>211.127.173.50</code>. </p>
+
+<p>Esto se puede comprobar consultando la <a
+href="http://www.dnsstuff.com/tools#ipInformation|type=ipv4&amp;&amp;value=211.127.173.50">información
+sobre la IP 211.127.173.50</a>. </p>
+
+<p>El browser averigua la IP de la radio fácilmente, consultando un servidor
+"DNS", un diccionario gigante que dice cuál es la IP de cada DNS. Entonces
+cuando el browser manda el request lo dirige a la dirección IP, no al domain
+name. Nosotros podemos ver la IP usando el comando ping: </p>
+
+<p><img alt="ping Ichikawa" src="res/pingIchikawa.png" width="677"
+height="342"></p>
+
+<p>Hay otro diccionario, no tan gigante, que dice para dónde ir. El request va
+de "hop" en "hop" (un "hop" es un salto) saltando de un "router" a otro y
+aproximándose así a destino. Primero averigua cuál router le conviene para
+una IP que comienza con 211, el request salta a ese router. Una vez ahí
+averigua cuál router le conviene para IPs 211.127... y así sucesivamente.</p>
+
+<p>La ruta desde donde estoy ahora (206.123.64.46) hasta la radio de Ichikawa
+pasa por una cantidad de routers, como se puede apreciar en el <a
+href="http://network-tools.com/default.asp?prog=trace&amp;host=211.127.173.50">trace
+(rastreo)</a> de 16 hops: </p>
+
+<div style="font-size:80%; margin:0 auto;">
+211.127.173.50 is from Japan(JP) in region Southern and Eastern Asia <br>
+<br>
+<strong>TraceRoute from Network-Tools.com to 211.127.173.50
+[dns.ichikawafm.co.jp]</strong> <br>
+
+
+<table width="100%" cellspacing="0" cellpadding="3" border="0">
+  <tbody>
+    <tr>
+      <td width="22" valign="bottom" align="right"><strong>Hop</strong></td>
+      <td width="65" valign="bottom" align="right"><strong>(ms)</strong></td>
+      <td width="65" valign="bottom" align="right"><strong>(ms)</strong></td>
+      <td width="65" valign="bottom" align="right"><strong>(ms)</strong></td>
+      <td width="4" valign="bottom"></td>
+      <td width="130" valign="bottom"><strong>     IP Address</strong></td>
+      <td valign="bottom"><strong>Host name</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">1 </td>
+      <td width="65" align="right">  0 </td>
+      <td width="65" align="right">  0 </td>
+      <td width="65" align="right">  0 </td>
+      <td width="130">     206.123.64.46</td>
+      <td>  -  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">2 </td>
+      <td width="65" align="right">  0 </td>
+      <td width="65" align="right">  0 </td>
+      <td width="65" align="right">  0 </td>
+      <td width="130">     64.124.196.225</td>
+      <td> xe-4-2-0.er2.dfw2.us.above.net  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">3 </td>
+      <td width="65" align="right">  0 </td>
+      <td width="65" align="right">  0 </td>
+      <td width="65" align="right">  0 </td>
+      <td width="130">     64.125.27.81</td>
+      <td> ae2.cr2.dfw2.us.above.net  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">4 </td>
+      <td width="65" align="right">  8 </td>
+      <td width="65" align="right">  8 </td>
+      <td width="65" align="right">  8 </td>
+      <td width="130">     64.125.21.138</td>
+      <td> ae3.cr2.iah1.us.above.net  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">5 </td>
+      <td width="65" align="right">  43 </td>
+      <td width="65" align="right">  43 </td>
+      <td width="65" align="right">  43 </td>
+      <td width="130">     64.125.25.53</td>
+      <td> ae2.cr2.lax112.us.above.net  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">6 </td>
+      <td width="65" align="right">  66 </td>
+      <td width="65" align="right">  93 </td>
+      <td width="65" align="right">  66 </td>
+      <td width="130">     64.125.31.233</td>
+      <td> ae1.cr2.sjc2.us.above.net  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">7 </td>
+      <td width="65" align="right">  73 </td>
+      <td width="65" align="right">  48 </td>
+      <td width="65" align="right">  49 </td>
+      <td width="130">     64.125.25.118</td>
+      <td> xe-3-2-1.mpr2.pao1.us.above.net  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">8 </td>
+      <td width="65" align="right">  52 </td>
+      <td width="65" align="right">  51 </td>
+      <td width="65" align="right">  51 </td>
+      <td width="130">     64.125.31.61</td>
+      <td> xe-1-0-0.mpr1.pao1.us.above.net  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">9 </td>
+      <td width="65" align="right">  49 </td>
+      <td width="65" align="right">  49 </td>
+      <td width="65" align="right">  49 </td>
+      <td width="130">     64.125.13.74</td>
+      <td> above-jptelecom.pao1.us.above.net  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">10 </td>
+      <td width="65" align="right">  162 </td>
+      <td width="65" align="right">  162 </td>
+      <td width="65" align="right">  162 </td>
+      <td width="130">     210.142.163.205</td>
+      <td> stoac-02-te0-2-0-3.gw.odn.ad.jp  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">11 </td>
+      <td width="65" align="right">  160 </td>
+      <td width="65" align="right">  160 </td>
+      <td width="65" align="right">  160 </td>
+      <td width="130">     143.90.33.202</td>
+      <td> cbcrk-05g3-0-0.nw.odn.ad.jp  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">12 </td>
+      <td width="65" align="right">  149 </td>
+      <td width="65" align="right">  149 </td>
+      <td width="65" align="right">  149 </td>
+      <td width="130">     143.90.192.218</td>
+      <td> cbcrw-01g1-1.nw.odn.ad.jp  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">13 </td>
+      <td width="65" align="right">  147 </td>
+      <td width="65" align="right">  147 </td>
+      <td width="65" align="right">  146 </td>
+      <td width="130">     211.127.123.133</td>
+      <td> fnafr-01a.nw.odn.ad.jp  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">14 </td>
+      <td width="65" align="right">  176 </td>
+      <td width="65" align="right">  162 </td>
+      <td width="65" align="right">  162 </td>
+      <td width="130">     211.127.123.55</td>
+      <td> fnafx-05.nw.odn.ad.jp  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">15 </td>
+      <td width="65" align="right">  149 </td>
+      <td width="65" align="right">  149 </td>
+      <td width="65" align="right">  149 </td>
+      <td width="130">     211.127.173.49</td>
+      <td>  -  </td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="4" border="0">
+  <tbody>
+    <tr>
+      <td width="22" align="right">16 </td>
+      <td width="65" align="right">  165 </td>
+      <td width="65" align="right">  165 </td>
+      <td width="65" align="right">  165 </td>
+      <td width="130">     211.127.173.50</td>
+      <td> dns.ichikawafm.co.jp  </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Trace complete</p>
+</div>
+
+<p>Se vé que pasa por 8 routers de us.above.net presumiblemente en USA
+(teniendo la IP podríamos averiguar dónde están) antes de llegar a Japón.
+En Japón paa por 6 routera antes de llegar a la radio. </p>
+
+<p>De la <a
+href="http://www.dnsstuff.com/tools#ipInformation|type=ipv4&amp;&amp;value=211.127.173.50">consulta
+sobre la IP</a> surge que todos los números de IP desde 211.120.0.0 hasta
+211.127.255.255 están en Japón. También surge que este rango de 520280
+direcciones IP es uno de los 3026 que tiene Japón para sus 127 millones de
+habitantes.</p>
+
+<h3 id="L982">Resumiendo</h3>
+
+<p>La Internet es pura magia  :-)</p>
+
+<h2>Las páginas</h2>
+
+<p></p>
+<ul>
   <li>Introducción del término "HTML" </li>
   <li>Escritura de una página HTML elemental y su despliegue en el browser,
     conteniendo (aunque sin explicar totalmente en detalle) los elementos: 
@@ -73,64 +511,85 @@ web</h1>
     Internet </li>
 </ul>
 
-<h3>La Internet</h3>
-
-<p>La "internet" es una "red" (en inglés "net") de conexiones de datos.
-Tenemos otras redes que nos proveen otros servicios, como la red eléctrica que
-conecta una usina donde se genera la electricidad con las casas de la gente, o
-la red telefónica que conecta a las personas entre sí a través de una
-central y les pemite hablar. </p>
-
-<p>En el caso de la red eléctrica existe la usina, la línea de transmisión
-que lleva la electricidad de un lado al otro, y la casa donde la electricidad
-se usa. </p>
-
-<p>La Internet es algo similar. Existen los "web servers" donde viven los
-datos, la red de transmisión, y la computadora donde usamos los datos. </p>
-
-<h3>El browser</h3>
+<h3>El lenguaje</h3>
 
 <p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
 
 <p> </p>
 
