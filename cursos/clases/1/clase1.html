@@ -5,6 +5,8 @@
   <meta http-equiv="Content-Language" content="en">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>web dev intro</title>
+  <style>
+  .imgR { float:right; margin-left:2em; }</style>
   <link rel="stylesheet" href="../../../res/agenda.css" type="text/css">
   <script type="text/javascript" src="../../../res/jquery.js">
  </script>
@@ -44,17 +46,18 @@ web</h1>
       <li><a href="#L982">Resumiendo</a></li>
     </ul>
   </li>
-</ul>
-</div>
-
-<div class="toc">
-<ul>
-  <li>...</li>
+  <li><a href="#L876">Las páginas</a> 
+    <ul>
+      <li><a href="#L920">El lenguaje</a></li>
+      <li><a href="#L938">Primera página</a></li>
+    </ul>
+  </li>
 </ul>
 </div>
 <hr>
 </div>
 
+<div class="section">
 <h2 id="L49">1 - La Internet</h2>
 <ul>
   <li>Concepto de browser</li>
@@ -63,7 +66,7 @@ web</h1>
     "protocolo" y "HTTP"</li>
 </ul>
 
-<h3 id="L100">La Internet</h3>
+<h3 id="L100">La red ("net")</h3>
 
 <div class="imgR" style="padding-left:1em;">
 <img alt="cloud = nube" src="res/cloud.png" style="width:222px;"></div>
@@ -75,50 +78,50 @@ web</h1>
 <p>La "internet" es una "red" (en inglés "net") de conexiones de datos.
 Tenemos otras redes que nos proveen otros servicios, como la red eléctrica que
 conecta una usina donde se genera la electricidad con las casas de la gente, o
-la red telefónica que conecta a las personas entre sí a través de una
-central y les permite hablar. </p>
+la red telefónica que conecta a las personas a través de una central y les
+permite comunicarse a distancia. </p>
 
 <p>En el caso de la red eléctrica existe la usina, la línea de transmisión
-que lleva la electricidad de un lado al otro, y la casa donde la electricidad
-se usa. </p>
+que lleva la electricidad de la usina a donde se usa, y el lugar donde la
+electricidad se usa - por ejemplo nuestra casa. </p>
 
-<p>La Internet es algo similar. Existen los "web servers" donde viven los
-datos, la red de transmisión, y la computadora donde usamos los datos. </p>
+<p>La Internet es algo similar. Existen los "web servers" de donde provienen
+los datos, la red de transmisión, y la computadora donde usamos los datos. </p>
 
-<p>Visualizamos la red como una nube: no vemos lo que tiene adentro (ni nos
-interesa normalmente), y cualquier parte donde nos conectemos da igual.
-Ultimemente ni siquiera es necesario un cable para hacer conexión. </p>
+<p>Visualizamos la red como una nube: no vemos lo que tiene adentro
+(normalmente no nos interesa), y cualquier parte donde nos conectemos da igual.
+Ultimamente ni siquiera es necesario un cable para hacer conexión. </p>
 
 <h3 id="L117">El browser</h3>
 
 <div class="imgR" style="padding-left:1em;">
 <img alt="browser logos" src="res/browsers.png" width="443" height="192"></div>
 
-<p>Es el programa instalado en la PC que usamos para entrar a la Internet. </p>
-
-<p>Hay varios, los más usados son</p>
+<p>Es el programa instalado en la PC que usamos para entrar a la Internet. Hay
+varios, los más conocidos son</p>
 <ol>
-  <li>Google Chrome</li>
-  <li>Mozilla Firefox</li>
-  <li>Opera</li>
-  <li>Microsoft Internet Explorer</li>
-  <li>Safari</li>
+  <li>Google Chrome </li>
+  <li>Mozilla Firefox </li>
+  <li>Opera </li>
+  <li>Microsoft Internet Explorer </li>
+  <li>Safari </li>
 </ol>
 
-<p>Se supone que todos hacen lo mismo, que muestran las "páginas" exactamente
-de la misma manera. En la realidad hay pequeñas diferencias que se van
-reduciendo paulatinamente.</p>
+<p>Idealmente todos hacen lo mismo, muestran las "páginas" exactamente de la
+misma manera. En la realidad hay pequeñas diferencias que se van reduciendo
+paulatinamente.</p>
 
-<p>Hay una institucion llamada "World Wide Web Consortium" o "W3C" (3 letras
-"w" y una "c") que trabaja definiendo "standadrs", definiciones detalladas de
-cómo debe aparecer cada cosa en la pantalla (en el curso iremos viendo qué
+<p>Hay una institucion llamada "World Wide Web Consortium" o "W3C" ( "w" 3
+veces y una "c") que trabaja definiendo "standadrs", normas detalladas de cómo
+debe aparecer cada cosa en la pantalla (en el curso iremos viendo qué
 cosas).</p>
 
 <p>Las páginas web son "archivos de texto", es decir, contienen solamente
 letras, números y símbolos (lo que hay en un teclado de PC), y se pueden
-editar con programas como Notepad o vim. El browser interpreta ese texto según
-las normas del W3C, lo combina com imágenes (también videos y otros tipos de
-material) y lo despliega en la pantalla.</p>
+editar con programas como Notepad o <a href="http://www.vim.org/">vim</a>. El
+browser interpreta ese texto según las normas del W3C, lo combina com
+imágenes (también videos y otros tipos de material) y lo despliega en la
+pantalla.</p>
 
 <h3 id="L149">El server</h3>
 
@@ -128,10 +131,10 @@ style="width:222px;"></div>
 
 <p>El server es una computadora que "está en la Internet". Lo que hace que sea
 un "web server" y no una computadora cualquiera es que siempre está ejecutando
-un programa que se llama "web server" (también). </p>
+un programa que también se llama "web server". </p>
 
-<p>La función del web server es recibir los pedidos de páginas "requests" de
-los browsers y despachar las páginas que corraspondan. </p>
+<p>La función del web server es recibir los pedidos de páginas ("requests")
+de los browsers y despachar las páginas que correspondan. </p>
 
 <p>Los requests de los browsers tienen un formato especial (también definido
 por el W3C) y se llaman "URLs". Por ejemplo para ver la página de búsqueda en
@@ -146,12 +149,12 @@ Google el URL es:</p>
 <p><img alt="google search start page" src="res/googleSearch.png"
 style="width:100%; height:auto; max-width:700px;"></p>
 
-<p>En realidad lo que envía es un archivo de texto  que se puede ver picando
+<p>Lo que el web server envía es un archivo de texto que se puede ver picando
 la página con el botón derecho del mouse y seleccionando "view page source" o
 algo similar dependiendo del browser instalado.</p>
 
-<p>Por ejemplo la parte donde uno escribe las palabras que quiere buscar vista
-por el browser es así: </p>
+<p>Por ejemplo la parte donde uno escribe las palabras que quiere buscar, vista
+por el browser, es así: </p>
 <pre>&lt;input id=gbqfq class=gbqfif name=q type=text autocomplete=off value=""&gt;</pre>
 
 <p>El browser interpreta ese texto y otros, los combina, y muestra esto en la
@@ -165,9 +168,10 @@ alt="search input box" src="res/googleSearchInput.png"></p>
 <h3 id="L183">¿Cómo funciona?</h3>
 
 <p>El browser y el web server se comunican usando la Internet. Para eso usan
-unos "protocolos" que se llaman HTTP o HTTPS. Un protocolo es una serie de
-reglas detalladas de qué hacer en todas las situaciones de una relación entre
-personas, países, o computadoras.</p>
+unos "protocolos" que se llaman HTTP o HTTPS y <a
+href="http://en.wikipedia.org/wiki/Internet_protocol_suite">TCP/IP</a>. Un
+protocolo es una serie de reglas detalladas de qué hacer en todas las
+situaciones de una relación entre personas, países, o computadoras.</p>
 
 <p>En la imagen se vé al comienzo del URL, el protocolo "https": </p>
 
@@ -223,11 +227,15 @@ name. Nosotros podemos averiguar la IP usando el comando ping: </p>
 <p><img alt="ping Ichikawa" src="res/pingIchikawa.png" width="677"
 height="342"></p>
 
-<p>Hay otro diccionario, no tan gigante, que dice para dónde ir. El request va
-de "hop" en "hop" (un "hop" es un salto) saltando de un "router" a otro y
-aproximándose así a destino. Primero averigua cuál router le conviene para
-una IP que comienza con 211, el request salta a ese router. Una vez ahí
-averigua cuál router le conviene para IPs 211.127... y así sucesivamente.</p>
+<p>Hay <a href="http://en.wikipedia.org/wiki/Routing_table">otro diccionario,
+una especia de mapa de la red, que dice quién está conectado con cuál</a>.
+El request va de "hop" en "hop" (un "hop" es un salto) saltando de un "router"
+a otro y aproximándose así a destino. Primero averigua cuál router le
+conviene para una IP que comienza con 211 y salta a ese router. Una vez ahí
+averigua cuál router le conviene para IPs 211.127... y así sucesivamente. Un
+<a href="http://en.wikipedia.org/wiki/Router_(computing)">router</a> es otra
+computadora, con programación especializada para "rutear" mensajes en la red.
+</p>
 
 <p>La ruta desde donde estoy ahora (206.123.64.46) hasta la radio de Ichikawa
 pasa por una cantidad de routers, como se puede apreciar en el <a
@@ -466,10 +474,10 @@ href="http://network-tools.com/default.asp?prog=trace&amp;host=211.127.173.50">"
 <p>Trace complete</p>
 </div>
 
-<p>Se vé que en menos de 50 milisegundos pasa por 8 routers de us.above.net
-presumiblemente en USA (teniendo la IP podríamos averiguar dónde están)
-antes de llegar a Japón. En Japón paa por 6 routera antes de llegar a la
-radio. </p>
+<p>Se vé que en menos de 50 milisegundos pasa por 8 routers de
+<code>us.above.net</code> presumiblemente en USA (teniendo la IP podríamos
+averiguar dónde están) antes de llegar a Japón. En Japón pasa por 6 routera
+antes de llegar a la radio. </p>
 
 <p>De la <a
 href="http://www.dnsstuff.com/tools#ipInformation|type=ipv4&amp;&amp;value=211.127.173.50">consulta
@@ -483,8 +491,10 @@ habitantes.</p>
 <p>Aquí termina la información técnica sobre la Internet, algunos conceptos
 básicos necesarios para entender lo que viene. Sin esa información, la
 Internet es pura magia  :-)</p>
+</div>
 
-<h2>Las páginas</h2>
+<div>
+<h2 id="L876">2 - Las páginas</h2>
 
 <p></p>
 <ul>
@@ -514,28 +524,62 @@ Internet es pura magia  :-)</p>
     Internet </li>
 </ul>
 
-<h3>El lenguaje</h3>
+<h3 id="L920">El lenguaje</h3>
 
-<p>Cuando un web server recibe un request responde normalmente devolviendo un
-texto que está escrito en un lenguaje llamado "<a
-href="http://en.wikipedia.org/wiki/HTML">HTML</a>". Empezamos ahora a aprender
-cómo usarlo.</p>
+<p>Cuando un web server recibe un request, elabora y devuelve un "response"
+(respuesta), un texto que está escrito en lenguaje "<a
+href="http://en.wikipedia.org/wiki/HTML">HTML</a>". Vamos a ver cómo es ese
+lenguaje, para aprender a usarlo.</p>
 
-<p></p>
-
-<p>El web server que recibe el request responde enviando HTML que está en un
-archivo, o HTML que arma con información de una base de datos. </p>
+<p>El response en HTML que el web server manda, puede ser HTML que está en un
+archivo en el server, o HTML que el server arma con información de una base de
+datos. Se trata de una página "estática". </p>
 
 <p>Por ejemplo si consultamos twitter para ver lo que hay relacionado con un
-tag cualquiera, por ejemplo <a
+tag cualquiera como <a
 href="https://twitter.com/search?q=%23pizza&amp;src=typd">#pizza</a>, el server
-hace una consulta a una base de datos y arma una página especial para cada
-request: páginas dinámicas. </p>
+hace una consulta a una base de datos y arma una página especial para el
+request: una página "dinámica". </p>
 
 <p>Nosotros vamos a hacer páginas estáticas para empezar, páginas que están
 registradas en un archivo.</p>
 
-<h3>Primera página</h3>
+<h3 id="L938">Primera página</h3>
+
+<p>Una página mínima es: </p>
+<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+    &lt;meta http-equiv="Content-Language" content="es"&gt;
+    &lt;title&gt;J Doe - index&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    &lt;p&gt;Indice de las páginas de John Doe en este web server.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt; </pre>
+
+<p>que grabamos en un archivo C:\paginas\index.html en Windows, o
+~/paginas/index.html en Linux. </p>
+
+<p>Para abrirla con el browser le aplicamos un doble click y la página se
+despliega, en Chrome se ve así: </p>
+
+<p><img alt="index.html screenshot" src="res/index.html.png"></p>
+
+<p>y en Firefox:</p>
+
+<p><img alt="index.html rendered by ff" src="res/index.html.ff.png" width="493"
+height="269"></p>
+
+<h3>Tags</h3>
+
+<p></p>
+
+<h3>El protocolo "file"</h3>
+
+<p><code>file:///.../cursos/clases/1/res/index.html</code></p>
 
 <p></p>
 
@@ -544,10 +588,7 @@ registradas en un archivo.</p>
 <p></p>
 
 <p></p>
-
-<p></p>
-
-<p></p>
+</div>
 
 <p></p>
 
