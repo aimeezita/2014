@@ -29,27 +29,60 @@
 <div id="agendaHeader">
 
 <div class="fixedHeader">
-<h1 style="display:inline; line-height:1em; ">Introducción al desarrollo
-web</h1>
+<h1 style="display:inline; line-height:1em; " id="L41">Introducción al
+desarrollo web</h1>
 </div>
 
 <div id="agendaBody">
 
 <div class="toc">
 <ul>
-  <li><a href="#L49">1 - La Internet</a> 
+  <li><a href="#L41">Introducción al desarrollo web</a>
     <ul>
-      <li><a href="#L100">La Internet</a></li>
-      <li><a href="#L117">El browser</a></li>
-      <li><a href="#L149">El server</a></li>
-      <li><a href="#L183">¿Cómo funciona?</a></li>
-      <li><a href="#L982">Resumiendo</a></li>
+      <li><a href="#L49">1 - La Internet</a>
+        <ul>
+          <li><a href="#L100">La red ("net")</a></li>
+          <li><a href="#L117">El browser</a></li>
+          <li><a href="#L149">El server</a></li>
+          <li><a href="#L183">¿Cómo funciona?</a></li>
+          <li><a href="#L982">Resumiendo</a></li>
+        </ul>
+      </li>
+      <li><a href="#L876">2 - Las páginas</a>
+        <ul>
+          <li><a href="#L920">El lenguaje</a></li>
+          <li><a href="#L938">Primera página</a></li>
+          <li><a href="#L980">Tags</a>
+            <ul>
+              <li><a href="#L10501">&lt;p&gt;</a></li>
+              <li><a href="#L1060">&lt;h1&gt;</a>
+                <p><a href="#L1123">&lt;body&gt;</a></p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </ul>
   </li>
-  <li><a href="#L876">2 - Las páginas</a> 
-    <ul>
-      <li><a href="#L920">El lenguaje</a></li>
-      <li><a href="#L938">Primera página</a></li>
+  <li><ul>
+      <li><ul>
+          <li><a href="#L1099">El protocolo "file"</a></li>
+          <li><a href="#L1143">Display mode</a></li>
+        </ul>
+      </li>
+      <li><a href="#L1198">3 - Más detalles de la página ejemplo</a>
+        <ul>
+          <li><a href="#L1213">doctype</a></li>
+          <li><a href="#L1234">&lt;html&gt;</a></li>
+          <li><a href="#L1241">&lt;head&gt;</a>
+            <ul>
+              <li><a href="#L1245">content-type</a></li>
+              <li><a href="#L1269">title</a></li>
+            </ul>
+          </li>
+          <li><a href="#L1572">&lt;body&gt;</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -224,8 +257,8 @@ sobre la IP 211.127.173.50</a>. </p>
 cuando el browser manda el request lo dirige a la dirección IP, no al domain
 name. Nosotros podemos averiguar la IP usando el comando ping: </p>
 
-<p><img alt="ping Ichikawa" src="res/pingIchikawa.png" width="677"
-height="342"></p>
+<p><img alt="ping Ichikawa" src="res/pingIchikawa.png"
+style="width:100%; max-width:677px;"></p>
 
 <p>Hay <a href="http://en.wikipedia.org/wiki/Routing_table">otro diccionario,
 una especia de mapa de la red, que dice quién está conectado con cuál</a>.
@@ -493,7 +526,7 @@ básicos necesarios para entender lo que viene. Sin esa información, la
 Internet es pura magia  :-)</p>
 </div>
 
-<div>
+<div class="section">
 <h2 id="L876">2 - Las páginas</h2>
 
 <p></p>
@@ -551,12 +584,11 @@ registradas en un archivo.</p>
 &lt;html&gt;
   &lt;head&gt;
     &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
-    &lt;meta http-equiv="Content-Language" content="es"&gt;
     &lt;title&gt;J Doe - index&lt;/title&gt;
   &lt;/head&gt;
-  &lt;body&gt;
+  &lt;body lang="es"&gt;
     &lt;h1&gt;John Doe&lt;/h1&gt;
-    &lt;p&gt;Indice de las páginas de John Doe en este web server.&lt;/p&gt;
+    &lt;p&gt;Indice de las páginas de &lt;strong&gt;John Doe&lt;/strong&gt; en este web server.&lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt; </pre>
 
@@ -573,7 +605,7 @@ despliega, en Chrome se ve así: </p>
 <p><img alt="index.html rendered by ff" src="res/index.html.ff.png" width="493"
 height="269"></p>
 
-<h3>Tags</h3>
+<h3 id="L980">Tags</h3>
 
 <p>El HTML define "elements" como "h1" y "p", delimitándolos con "tags"
 (etiquetas). En el listado de abajo, el mismo de la primera página, los tags
@@ -582,100 +614,304 @@ están resaltados con amarillo. </p>
 <span style="background-color:#ffff00">&lt;html&gt;</span>
   <span style="background-color:#ffff00">&lt;head&gt;</span>
     &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
-    &lt;meta http-equiv="Content-Language" content="es"&gt;
     <span style="background-color:#ffff00">&lt;title&gt;</span>J Doe - index<span style="background-color:#ffff00">&lt;/title&gt;</span>
   <span style="background-color:#ffff00">&lt;/head&gt;</span>
-  <span style="background-color:#ffff00">&lt;body&gt;</span>
+  <span style="background-color:#ffff00">&lt;body lang="es"&gt;</span>
     <span style="background-color:#ffff00">&lt;h1&gt;</span>John Doe<span style="background-color:#ffff00">&lt;/h1&gt;</span>
     <span style="background-color:#ffff00">&lt;p&gt;</span>Indice de las páginas de John Doe en este web server.<span style="background-color:#ffff00">&lt;/p&gt;</span>
   <span style="background-color:#ffff00">&lt;/body&gt;</span>
 <span style="background-color:#ffff00">&lt;/html&gt;</span> </pre>
 
-<p>El elemento "p" (llamado "paragraph" = párrafo) está delimitado por el tag
-inicial (start tag) <code>&lt;p&gt;</code> y su correspondiente end tag
+<p>Se ve que los tags empiezan y terminan, como <code>&lt;p&gt;</code> y
+<code>&lt;/p&gt;</code>, or <code>&lt;html&gt;</code> y
+<code>&lt;/html&gt;</code>. El tag de cierre lleva una "/" delante del tag
+name. </p>
+
+<h4 id="L10501">&lt;p&gt;</h4>
+
+<p>El elemento "p" (llamado "paragraph" = párrafo) está delimitado por el
+start tag <code>&lt;p&gt;</code> y su correspondiente end tag
 <code>&lt;/p&gt;</code>. Los &lt;p&gt; son para contener texto, similares a los
 párrafos de un libro. </p>
 
+<h4 id="L1060">&lt;h1&gt;</h4>
+
 <p>El elemento "h1", llamado "heading 1" (título 1 ó encabezado 1) también
 contiene texto, como un paragraph, pero está concebido para contener un
-título de mayor importancia. Existen además elementos h2, h3, h4, h5, h6 que
-son títulos de importancia decreciente. En el ejemplo se ve una jerarquía de
+título importante. Existen además elementos h2, h3, h4, h5, h6 que son
+títulos de importancia decreciente. En el ejemplo se ve una jerarquía de
 títulos de secciones de importancia decreciente: </p>
+<style>
+  .headingExamples td { vertical-align:middle; }
+  .headingExamples h1 { margin:0; padding:2px 20px; }
+  .headingExamples h2 { margin:0; padding:2px 20px; }
+  .headingExamples h3 { margin:0; padding:2px 20px; }
+  .headingExamples h4 { margin:0; padding:2px 20px; }
+  .headingExamples h5 { margin:0; padding:2px 20px; }
+  .headingExamples h6 { margin:0; padding:2px 20px; }</style>
 
-<table border="1">
+<table class="headingExamples" style="margin:auto;">
   <col>
   <col>
   <tbody>
     <tr>
-      <td>h1</td>
-      <td><h1>El mundo</h1>
+      <td style="line-height:1.5em;">h1:</td>
+      <td><h1 id="L1043" class="TOCIgnore">Planeta Tierra</h1>
       </td>
     </tr>
     <tr>
-      <td>h2</td>
-      <td><h2>América del Sur</h2>
+      <td style="line-height:1.5em;">h2: </td>
+      <td><h2 id="L1050" class="TOCIgnore">América del Sur</h2>
       </td>
     </tr>
     <tr>
-      <td>h3</td>
-      <td><h2>Argentina</h2>
+      <td style="line-height:1.5em;">h3:</td>
+      <td><h3 id="L1057" class="TOCIgnore">Argentina</h3>
       </td>
     </tr>
     <tr>
-      <td>h4</td>
-      <td><h3>Santa Cruz</h3>
+      <td style="line-height:1.5em;">h4:</td>
+      <td><h4 id="L1064" class="TOCIgnore">Santa Cruz</h4>
       </td>
     </tr>
     <tr>
-      <td>h5</td>
-      <td><h5>Caleta Olivia</h5>
+      <td style="line-height:1.5em;">h5:</td>
+      <td><h5 id="L1071" class="TOCIgnore">Caleta Olivia</h5>
       </td>
     </tr>
     <tr>
-      <td>h6</td>
-      <td><h6>Barrio Perito Moreno</h6>
+      <td style="line-height:1.5em;">h6:</td>
+      <td><h6 class="TOCIgnore">Barrio Perito Moreno</h6>
       </td>
     </tr>
   </tbody>
 </table>
 
-<p>El tag <code>&lt;body&gt;</code> y su correspondiente end tag
-<code>&lt;/body&gt;</code> no contienen texto, como p y h1, sino que contienen
-otros tags. </p>
+<h4 id="L1123">&lt;body&gt;</h4>
 
-<p>Decimos entonces que el elemento body es un "container" (contenedor en mal
-castellano). </p>
+<p>El tag <code>&lt;body&gt;</code>  no contiene texto directamente, como p y
+h1, sino que contiene otros tags. Decimos entonces que el elemento body es un
+"container" (contenedor, en mal castellano). </p>
 
-<h3>El protocolo "file"</h3>
+<h3 id="L1099">El protocolo "file"</h3>
 
-<p>¿Dónde está el web server? Bueno, en este caso no es necesario. De hecho,
-la paginita no está publicada en la Internet sino en nuestra PC y el browser
-en vez de accederla vía Internet la accedió a través del sistema de archivos
-de la PV. </p>
+<p>Pudimos abrir una página en el browser, pero ¿dónde está el web server?
+Bueno, en este caso la paginita no está publicada en la Internet sino en
+nuestra PC y el browser en vez de accederla vía Internet la accedió a través
+del sistema de archivos de la PC. </p>
 
 <p>En este caso el URL no especifica el protocolo HTTP (no comienza con
-"http://") sino que especifica el protocolo file (comienza con "file:///"). </p>
+"http://") sino que especifica el protocolo file (comienza con "file:///") y el
+URL del archivo es: <code>file:///C:/paginas/index.html</code>. </p>
 
-<p>En este ejemplo el URL del archivo es
-<code>file:///.../cursos/1/res/index.html</code> cambiando algunos niveles de
-directorios por "...". </p>
+<p>Para que el archivo se abra en el browser con potocolo file solo es
+necesario darle doble-click, como cualquier otro tipo de archivo. El sistema
+operativo (Windows, Linux) sabe con qué programa abrir los tipos de archivo
+conocidos como este, que es .html. </p>
 
-<p>Para que el archivo se abra en el browser solo es necesario darle
-doble-click, como cualquier otro tipo de archivo. El sistema operativo
-(Windows, Linux) sabe con qué programa abrir los tipos de archivo conocidos
-como este, que es .html. </p>
+<p>El protocolo file se puede usar para pruebas hasta cierto punto, luego es
+necesario usar un web server. Es posible ejecutar un web server de prueba en la
+propia PC, y más adelante vamos a hacerlo. </p>
 
-<p>Se puede usar el protocolo file para pruebas hasta cierto punto, luego es
-necesario usar un web server. También para pruebas, es posible ejecutar un web
-server en la propia PC, y tendremos que hacerlo más adelante. </p>
+<h3 id="L1143">Display mode</h3>
+
+<p>Los tags delimitan elementos, que son las piezas de la página. </p>
+
+<p>El browse lee el HTML, lo interpreta, y construye internamente una
+estructura de datos que se llama "<a
+href="http://en.wikipedia.org/wiki/Document_Object_Model">DOM</a>" (por
+Document Object Model) y se usa intensamente en el desarrollo de la
+interacción de las páginas modernas. </p>
+
+<p>Además de construír el DOM, al browser "renderiza" la página en el
+viewport, el espacio que queda para la página en la ventana del browser luego
+de quitar las barras de herramientas, los bordes y la barra de título. </p>
+
+<p>Cada tipo de elemento se renderiza con el estilo que le corresponde, por
+ejemplo para el h1 se usa una tipografía (font) más grande que para un p. </p>
+
+<p>Dentro de los estilos posibles uno importante es "display mode", que tiene
+dos modos principales: "block" e "inline". </p>
+
+<p>La diferencia es que los block elements se renderizan "en una nueva línea",
+mientras que los inline elements se renderizan a continuación del anterior en
+la misma línea. </p>
+
+<p>La página ejemplo contiene dos block elements visibles, h1 y p. Se vé que
+el p se renderiza debajo del h1 aunque haya espacio en el viewport para
+renderizarlo a continuación. </p>
+
+<p>Se modifica el ejemplo para que contenga un elemento inline, cambiando una
+línea: </p>
+<pre>&lt;p&gt;Indice de las páginas de <span style="background-color:#ffff80">&lt;strong&gt;John Doe&lt;/strong&gt;</span> en este web server.&lt;/p&gt;<span style="background-color:#ffff80"></span></pre>
+
+<p>y desplegamos la página en el browser, que ahora se vé así: </p>
+
+<p><img alt="index2.html in ff" src="res/index2.html.png"></p>
+
+<p>El elemento <code>strong</code> (fuerte) es un inline element, que el
+firefox renderiza mostrándolo en negrita (bold). </p>
+
+<p>Se observa que el hombre John Doe aparece como parte del texto, solo cambia
+el tipo de letra. </p>
+
+<p>Hay muchos otros <a
+href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">display</a>
+modes, pero "block" e "inline" son los básicos que es necesario comprender.
+</p>
+
+<p>Por último, si hiciéramos que cada elemento de la paginita anterior
+tuviera un borde azul, esto es lo que se vería: </p>
+
+<p><img alt="index2.html with borders" src="res/index2border.html.png"></p>
+
+<p>El borde más externo es el del elemento &lt;html&gt;. Dentro de éste hay
+un poco de margen y está el borde del &lt;body&gt;, que contiene el &lt;h1&gt;
+y el &lt;p&gt; abajo, separados por algo de margen. </p>
+
+<p>Dentro del &lt;p&gt; está el borde del &lt;strong&gt;, en la misma línea
+por que está renderizado con modo inline. </p>
+</div>
+
+<div class="section">
+<h2 id="L1198">3 - Más detalles de la página ejemplo</h2>
+
+<p>Considerando nuestra página ejemplo: </p>
+<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+    &lt;title&gt;J Doe - index&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body lang="es"&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    &lt;p&gt;Indice de las páginas de &lt;strong&gt;John Doe&lt;/strong&gt; en este web server.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt; </pre>
+
+<p>vamos a ver un poco los elementos doctype, html, head y body que quedaron
+sin explicar. </p>
+
+<p>Estos elementos van en todas las páginas correctamente codificadas, que son
+las que pasan <a href="http://validator.w3.org/check">el test de validación
+del W3C</a>. </p>
+
+<p>Los browsers perdonan errores en el HTML que digieren, por ejemplo páginas
+que les falta alguno de estos elementos, o que no tienen ninguno. Pero los
+ponemos por que queremos tener control sobre cómo se va a renderizar nuestra
+página en el browser. </p>
+
+<h4 id="L1213">doctype</h4>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="HTMK5 logo" src="res/HTML5_Logo.png"></div>
+
+<p>Históricamente, hubo HTML2, HTML 3, HTML 4, y ahora hay HTML 5 o
+simplemente HTML (no más números). </p>
+
+<p>El doctype le dice al browser cómo queremos que interprete nuestra página.
+</p>
+
+<p><em>Siempre</em> queremos que nuestras páginas sean HTML 5, el más
+poderoso, el más simple. </p>
+
+<p>Si falta el doctype en broeser funciona en "quirks mode" , que se podría
+traducir "modo caprichos" o "modo extravagancias". Resulta que los primeros
+browsers intentaban corregir los defectos de las páginas, pero cada browser lo
+hacía a su manera por que no hay una norma para esto. El resultado es que los
+distintos browsers mostraban las páginas de maneras variadas. Poniendo el
+doctype obligamos al browser a portarse de una manera conocida, y todos los
+fabricantes de browsers se ponen de acuerdo para hacer algo coherente liderados
+por el W3C y los developers de Mozilla (los que hacen el Firefox).</p>
+
+<p>Y como nuestras páginas son nuevas no queremos tener nada que ver con
+versiones antiguas de HTML, así que siempre ponemos<code></code>&lt;!doctype
+html&gt;. </p>
+
+<h4 id="L1234">&lt;html&gt;</h4>
+
+<p>A continuación del doctype empieza el HTML y lo marcamos abriendo el tag
+<code>&lt;html&gt;</code> aquí y cerrándolo al final. </p>
+
+<h4 id="L1241">&lt;head&gt;</h4>
+
+<p>Esta parte de la página contiene información sobre la página pero que no
+es la página. No es contenido que se muestra sino información sobre cómo
+tratar el contenido que viene en el &lt;body&gt;. </p>
+
+<h5 id="L1245">content-type</h5>
+
+<p>Por ejemplo </p>
+<pre>&lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;</pre>
+
+<p>dice que se trata de texto en lenguaje HTML
+(<code>content="text/html</code>) y que la codificación del texto es utf-8.</p>
+
+<p>Existen unos cuantos "<a
+href="http://en.wikipedia.org/wiki/Character_encoding#Common_character_encodings">character
+encodings</a>". Tienen que ver con la relación entre lo que tienen los bytes
+de un texto y cuáles caracteres se muestran a partir de esos bytes.</p>
+
+<p>Por ejemplo un byte con <code>01000001</code> en sus 8 bits <a
+href="http://en.wikipedia.org/wiki/UTF-8#Codepage_layout">se representa
+como</a> una "A" mayúscula, pero esto no es una cualidad inherente a esa
+configuracíon de bits. Hay una especie de acuerdo gigante entre millones de
+personas de todos los países para relacionar el contenido de los bytes con los
+caracteres que se muestran en el monitor o la impresora. En este momento UTF-8
+es la codificación más usada, tanto por los occidentales que tenemos
+alfabetos con unos pocos caracteres, sino también por los orientales que usan
+alfabetos de miles de caracteres.</p>
+
+<h5 id="L1269">title</h5>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="page title" src="res/pageTitle.png"></div>
+
+<p>Es el título de la página, que se muestra en la pestaña del browser, y
+también cuando la página aparece en alguna lista.</p>
+
+<p>Como a veces hay muchas pestañas abiertas, y entonces el espacio en cada
+una solo permite mostrar un texto cortito, escribimos el title poniendo lo más
+relevante al principio.</p>
+
+<p>En el caso del ejemplo un título válido podría haber sido "Indice de las
+páginas de John Doe", pero si tuviéramos abiertas las páginas índice de
+diez personas distintas solo veríamos algo como "Indice de..." diez veces, que
+no es útil. En cambio en la forma en que este title está redactado veríamos
+la inicial y las primeras letras del apellido de las die personas. Como "Doe"
+es un apellido cortito posiblemente se vería completo.</p>
+
+<h4 id="L1572">&lt;body&gt;</h4>
+
+<p>Finalmente el body tag contiene el contenido de la página, lo que se
+muestra. La forma recomendada de escribir el tag es con una property
+(propiedad) lang, así: </p>
+<pre>&lt;body lang="es"&gt;</pre>
+
+<p>Esto le dice al browser que el contenido está en español: <a
+href="http://msdn.microsoft.com/en-us/library/ms533052%28v=vs.85%29.aspx">"es"
+es el código para español en general, "es-ar" sería español de
+Agentina</a>. Obviamente para páginas en otro idioma usamos el código que
+corresponda. </p>
+
+<p>Siempre queremos que se sepa en qué idioma está escrita la página. Es
+especialmente importante para las búsquedas con Google u otro: si elegimos
+"ver las páginas en español" vamos a ver las páginas que tienen
+<code>&lt;body lang="es"&gt;</code> o algo equivalente, las demás se omiten. 
+</p>
+
+<p>Los buscadores tienen un tipo de browser especial que se llama "<a
+href="http://en.wikipedia.org/wiki/Web_crawler">web crawler</a>" (rastreador
+web) y recorre la Internet haciendo un índice de todas las páginas. En ese
+índice anota el idioma, pero si "lang=" no figura puede que el crawler no sea
+capaz de identificarlo. Esto es muy malo. Imaginemos que se trata de la página
+de una pizzería online y alguien quiere hacer un pedido. Hace una búsqueda de
+pizzerías de la zona, solo las páginas en español: nuestra pizzería no va a
+figurar y se va a perder muchas ventas. </p>
 
 <p></p>
 
-<p></p>
-
-<p></p>
-
-<p></p>
+<p>---</p>
 </div>
 
 <p></p>

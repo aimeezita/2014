@@ -6,6 +6,7 @@
   var defaultProps = {
     backLinkText: 'TOC &rarr;',
     backLinkClass: 'ssIgnore',
+    ignoreHeaderClass: 'TOCIgnore',
     startLevel: 1,
     endLevel: 6,
     targetElement: null
@@ -37,7 +38,7 @@
         }).appendTo($that);
 
       // select all Hx elements
-      $( ':header' ).each( function (index) {
+      $( ':header' ).not('.TOCIgnore').each( function (index) {
         var $this = $(this);
         var level = 1;
         // HTML4: use the number from the tag: h1, h2 ... as level
