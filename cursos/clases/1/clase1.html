@@ -46,7 +46,7 @@ web</h1>
       <li><a href="#L982">Resumiendo</a></li>
     </ul>
   </li>
-  <li><a href="#L876">Las páginas</a> 
+  <li><a href="#L876">2 - Las páginas</a> 
     <ul>
       <li><a href="#L920">El lenguaje</a></li>
       <li><a href="#L938">Primera página</a></li>
@@ -575,11 +575,99 @@ height="269"></p>
 
 <h3>Tags</h3>
 
-<p></p>
+<p>El HTML define "elements" como "h1" y "p", delimitándolos con "tags"
+(etiquetas). En el listado de abajo, el mismo de la primera página, los tags
+están resaltados con amarillo. </p>
+<pre>&lt;!doctype html&gt;
+<span style="background-color:#ffff00">&lt;html&gt;</span>
+  <span style="background-color:#ffff00">&lt;head&gt;</span>
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+    &lt;meta http-equiv="Content-Language" content="es"&gt;
+    <span style="background-color:#ffff00">&lt;title&gt;</span>J Doe - index<span style="background-color:#ffff00">&lt;/title&gt;</span>
+  <span style="background-color:#ffff00">&lt;/head&gt;</span>
+  <span style="background-color:#ffff00">&lt;body&gt;</span>
+    <span style="background-color:#ffff00">&lt;h1&gt;</span>John Doe<span style="background-color:#ffff00">&lt;/h1&gt;</span>
+    <span style="background-color:#ffff00">&lt;p&gt;</span>Indice de las páginas de John Doe en este web server.<span style="background-color:#ffff00">&lt;/p&gt;</span>
+  <span style="background-color:#ffff00">&lt;/body&gt;</span>
+<span style="background-color:#ffff00">&lt;/html&gt;</span> </pre>
+
+<p>El elemento "p" (llamado "paragraph" = párrafo) está delimitado por el tag
+inicial (start tag) <code>&lt;p&gt;</code> y su correspondiente end tag
+<code>&lt;/p&gt;</code>. Los &lt;p&gt; son para contener texto, similares a los
+párrafos de un libro. </p>
+
+<p>El elemento "h1", llamado "heading 1" (título 1 ó encabezado 1) también
+contiene texto, como un paragraph, pero está concebido para contener un
+título de mayor importancia. Existen además elementos h2, h3, h4, h5, h6 que
+son títulos de importancia decreciente. En el ejemplo se ve una jerarquía de
+títulos de secciones de importancia decreciente: </p>
+
+<table border="1">
+  <col>
+  <col>
+  <tbody>
+    <tr>
+      <td>h1</td>
+      <td><h1>El mundo</h1>
+      </td>
+    </tr>
+    <tr>
+      <td>h2</td>
+      <td><h2>América del Sur</h2>
+      </td>
+    </tr>
+    <tr>
+      <td>h3</td>
+      <td><h2>Argentina</h2>
+      </td>
+    </tr>
+    <tr>
+      <td>h4</td>
+      <td><h3>Santa Cruz</h3>
+      </td>
+    </tr>
+    <tr>
+      <td>h5</td>
+      <td><h5>Caleta Olivia</h5>
+      </td>
+    </tr>
+    <tr>
+      <td>h6</td>
+      <td><h6>Barrio Perito Moreno</h6>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>El tag <code>&lt;body&gt;</code> y su correspondiente end tag
+<code>&lt;/body&gt;</code> no contienen texto, como p y h1, sino que contienen
+otros tags. </p>
+
+<p>Decimos entonces que el elemento body es un "container" (contenedor en mal
+castellano). </p>
 
 <h3>El protocolo "file"</h3>
 
-<p><code>file:///.../cursos/clases/1/res/index.html</code></p>
+<p>¿Dónde está el web server? Bueno, en este caso no es necesario. De hecho,
+la paginita no está publicada en la Internet sino en nuestra PC y el browser
+en vez de accederla vía Internet la accedió a través del sistema de archivos
+de la PV. </p>
+
+<p>En este caso el URL no especifica el protocolo HTTP (no comienza con
+"http://") sino que especifica el protocolo file (comienza con "file:///"). </p>
+
+<p>En este ejemplo el URL del archivo es
+<code>file:///.../cursos/1/res/index.html</code> cambiando algunos niveles de
+directorios por "...". </p>
+
+<p>Para que el archivo se abra en el browser solo es necesario darle
+doble-click, como cualquier otro tipo de archivo. El sistema operativo
+(Windows, Linux) sabe con qué programa abrir los tipos de archivo conocidos
+como este, que es .html. </p>
+
+<p>Se puede usar el protocolo file para pruebas hasta cierto punto, luego es
+necesario usar un web server. También para pruebas, es posible ejecutar un web
+server en la propia PC, y tendremos que hacerlo más adelante. </p>
 
 <p></p>
 
