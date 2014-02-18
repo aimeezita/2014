@@ -20,6 +20,8 @@
     });
   </script>
   <style>
+    .section { width:100%; }
+    .imgContainer { margin:1em auto; }
     /* .onePage { border:4px solid blue; } */
   </style>
 </head>
@@ -37,9 +39,9 @@ desarrollo web</h1>
 
 <div class="toc">
 <ul>
-  <li><a href="#L41">Introducción al desarrollo web</a>
+  <li><a href="#L41">Introducción al desarrollo web</a> 
     <ul>
-      <li><a href="#L49">1 - La Internet</a>
+      <li><a href="#L49">1 - La Internet</a> 
         <ul>
           <li><a href="#L100">La red ("net")</a></li>
           <li><a href="#L117">El browser</a></li>
@@ -48,14 +50,14 @@ desarrollo web</h1>
           <li><a href="#L982">Resumiendo</a></li>
         </ul>
       </li>
-      <li><a href="#L876">2 - Las páginas</a>
+      <li><a href="#L876">2 - Las páginas</a> 
         <ul>
           <li><a href="#L920">El lenguaje</a></li>
           <li><a href="#L938">Primera página</a></li>
-          <li><a href="#L980">Tags</a>
+          <li><a href="#L980">Tags</a> 
             <ul>
               <li><a href="#L10501">&lt;p&gt;</a></li>
-              <li><a href="#L1060">&lt;h1&gt;</a>
+              <li><a href="#L1060">&lt;h1&gt;</a> 
                 <p><a href="#L1123">&lt;body&gt;</a></p>
               </li>
             </ul>
@@ -70,11 +72,11 @@ desarrollo web</h1>
           <li><a href="#L1143">Display mode</a></li>
         </ul>
       </li>
-      <li><a href="#L1198">3 - Más detalles de la página ejemplo</a>
+      <li><a href="#L1198">3 - Más detalles de la página ejemplo</a> 
         <ul>
           <li><a href="#L1213">doctype</a></li>
           <li><a href="#L1234">&lt;html&gt;</a></li>
-          <li><a href="#L1241">&lt;head&gt;</a>
+          <li><a href="#L1241">&lt;head&gt;</a> 
             <ul>
               <li><a href="#L1245">content-type</a></li>
               <li><a href="#L1269">title</a></li>
@@ -598,12 +600,13 @@ registradas en un archivo.</p>
 <p>Para abrirla con el browser le aplicamos un doble click y la página se
 despliega, en Chrome se ve así: </p>
 
-<p><img alt="index.html screenshot" src="res/index.html.png"></p>
+<div class="imgContainer" style="width:494px;">
+<img alt="index.html screenshot" src="res/index.html.png"></div>
 
 <p>y en Firefox:</p>
 
-<p><img alt="index.html rendered by ff" src="res/index.html.ff.png" width="493"
-height="269"></p>
+<div class="imgContainer" style="width:493px;">
+<img alt="index.html rendered by ff" src="res/index.html.ff.png"></div>
 
 <h3 id="L980">Tags</h3>
 
@@ -625,7 +628,8 @@ están resaltados con amarillo. </p>
 <p>Se ve que los tags empiezan y terminan, como <code>&lt;p&gt;</code> y
 <code>&lt;/p&gt;</code>, or <code>&lt;html&gt;</code> y
 <code>&lt;/html&gt;</code>. El tag de cierre lleva una "/" delante del tag
-name. </p>
+name. En HTML los tags se pueden escribir en mayúsculas o minúsculas, es lo
+mismo, pero escribirlos en mayúsculas hace que el HTML parezca antiguo. </p>
 
 <h4 id="L10501">&lt;p&gt;</h4>
 
@@ -715,7 +719,7 @@ propia PC, y más adelante vamos a hacerlo. </p>
 
 <h3 id="L1143">Display mode</h3>
 
-<p>Los tags delimitan elementos, que son las piezas de la página. </p>
+<p>Los tags definen elementos, que son las piezas de la página. </p>
 
 <p>El browse lee el HTML, lo interpreta, y construye internamente una
 estructura de datos que se llama "<a
@@ -730,47 +734,47 @@ de quitar las barras de herramientas, los bordes y la barra de título. </p>
 <p>Cada tipo de elemento se renderiza con el estilo que le corresponde, por
 ejemplo para el h1 se usa una tipografía (font) más grande que para un p. </p>
 
-<p>Dentro de los estilos posibles uno importante es "display mode", que tiene
-dos modos principales: "block" e "inline". </p>
+<p>Dentro de las características de los elementos una importante es "display
+mode", que tiene dos modos principales: "block" e "inline" (bloque y en
+línea). </p>
 
-<p>La diferencia es que los block elements se renderizan "en una nueva línea",
+<p>La diferencia es que los block elements se renderizan "en su propia línea",
 mientras que los inline elements se renderizan a continuación del anterior en
 la misma línea. </p>
 
-<p>La página ejemplo contiene dos block elements visibles, h1 y p. Se vé que
-el p se renderiza debajo del h1 aunque haya espacio en el viewport para
-renderizarlo a continuación. </p>
+<p>La página ejemplo contiene dos block elements visibles, h1 y p. El p se
+renderiza abajo del h1 aunque haya espacio en el viewport para renderizarlo a
+continuación. </p>
 
-<p>Se modifica el ejemplo para que contenga un elemento inline, cambiando una
-línea: </p>
+<p>Agregamos un elemento inline modificando ésta línea, así: </p>
 <pre>&lt;p&gt;Indice de las páginas de <span style="background-color:#ffff80">&lt;strong&gt;John Doe&lt;/strong&gt;</span> en este web server.&lt;/p&gt;<span style="background-color:#ffff80"></span></pre>
 
-<p>y desplegamos la página en el browser, que ahora se vé así: </p>
+<p>y desplegamos la página en el browser, que ahora se vé con el nombre de
+abajo resaltado: </p>
 
-<p><img alt="index2.html in ff" src="res/index2.html.png"></p>
+<div class="imgContainer" style="width:406px;">
+<img alt="index2.html in ff" src="res/index2.html.png"></div>
 
 <p>El elemento <code>strong</code> (fuerte) es un inline element, que el
-firefox renderiza mostrándolo en negrita (bold). </p>
-
-<p>Se observa que el hombre John Doe aparece como parte del texto, solo cambia
-el tipo de letra. </p>
+Firefox renderiza mostrando el texto que contiene en negrita (bold). </p>
 
 <p>Hay muchos otros <a
-href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">display</a>
-modes, pero "block" e "inline" son los básicos que es necesario comprender.
-</p>
+href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">display
+modes</a>, pero "block" e "inline" son los más importantes que es necesario
+comprender. </p>
 
 <p>Por último, si hiciéramos que cada elemento de la paginita anterior
 tuviera un borde azul, esto es lo que se vería: </p>
 
-<p><img alt="index2.html with borders" src="res/index2border.html.png"></p>
+<div class="imgContainer" style="width:394px;">
+<img alt="index2.html with borders" src="res/index2border.html.png"></div>
 
-<p>El borde más externo es el del elemento &lt;html&gt;. Dentro de éste hay
-un poco de margen y está el borde del &lt;body&gt;, que contiene el &lt;h1&gt;
-y el &lt;p&gt; abajo, separados por algo de margen. </p>
+<p>El borde más externo es el elemento &lt;html&gt;. Dentro de éste hay un
+poco de margen y está el del &lt;body&gt;, que contiene el &lt;h1&gt; y el
+&lt;p&gt; abajo, separados por algo de margen. </p>
 
 <p>Dentro del &lt;p&gt; está el borde del &lt;strong&gt;, en la misma línea
-por que está renderizado con modo inline. </p>
+por que strong es un inline element. </p>
 </div>
 
 <div class="section">
@@ -789,7 +793,7 @@ por que está renderizado con modo inline. </p>
   &lt;/body&gt;
 &lt;/html&gt; </pre>
 
-<p>vamos a ver un poco los elementos doctype, html, head y body que quedaron
+<p>vamos a ver en detalle los elementos doctype, html, head y body que quedaron
 sin explicar. </p>
 
 <p>Estos elementos van en todas las páginas correctamente codificadas, que son
@@ -809,20 +813,21 @@ página en el browser. </p>
 <p>Históricamente, hubo HTML2, HTML 3, HTML 4, y ahora hay HTML 5 o
 simplemente HTML (no más números). </p>
 
-<p>El doctype le dice al browser cómo queremos que interprete nuestra página.
-</p>
+<p>El doctype le dice al browser como cuál versión de HTML queremos que
+interprete nuestra página. </p>
 
 <p><em>Siempre</em> queremos que nuestras páginas sean HTML 5, el más
 poderoso, el más simple. </p>
 
-<p>Si falta el doctype en broeser funciona en "quirks mode" , que se podría
+<p>Si falta el doctype el browser funciona en "quirks mode" , que se podría
 traducir "modo caprichos" o "modo extravagancias". Resulta que los primeros
-browsers intentaban corregir los defectos de las páginas, pero cada browser lo
-hacía a su manera por que no hay una norma para esto. El resultado es que los
-distintos browsers mostraban las páginas de maneras variadas. Poniendo el
-doctype obligamos al browser a portarse de una manera conocida, y todos los
-fabricantes de browsers se ponen de acuerdo para hacer algo coherente liderados
-por el W3C y los developers de Mozilla (los que hacen el Firefox).</p>
+browsers intentaban corregir los defectos del HTML que procesaban, pero cada
+browser lo hacía a su manera por que no hay una norma para eso. El resultado
+es que los distintos browsers mostraban las páginas con errores de maneras
+variadas. Haciendo páginas correctas (validadas) y poniéndoles el doctype
+obligamos al browser a portarse de una manera conocida, y todos los fabricantes
+de browsers están de acuerdo para hacer algo coherente liderados por el W3C y
+los developers de Mozilla (los que hacen el Firefox).</p>
 
 <p>Y como nuestras páginas son nuevas no queremos tener nada que ver con
 versiones antiguas de HTML, así que siempre ponemos<code></code>&lt;!doctype
@@ -836,21 +841,29 @@ html&gt;. </p>
 <h4 id="L1241">&lt;head&gt;</h4>
 
 <p>Esta parte de la página contiene información sobre la página pero que no
-es la página. No es contenido que se muestra sino información sobre cómo
-tratar el contenido que viene en el &lt;body&gt;. </p>
+es la página (metadata). No es contenido que se muestra sino información
+sobre cómo tratar el contenido que viene en el &lt;body&gt;. </p>
 
 <h5 id="L1245">content-type</h5>
 
-<p>Por ejemplo </p>
+<p>La especificación </p>
 <pre>&lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;</pre>
 
 <p>dice que se trata de texto en lenguaje HTML
 (<code>content="text/html</code>) y que la codificación del texto es utf-8.</p>
 
 <p>Existen unos cuantos "<a
+href="http://en.wikipedia.org/wiki/Internet_media_type">content-type</a>"
+diferentes, que se usan para identificar el tipo de contenido que se está
+comunicando. Es algo parecido a la extensión de los archivos en Windows: la
+extensión dice qué es lo que hay dentro del archivo, el content-type dice
+cuál es el formato de los datos que el browser está recibiendo (o enviando).
+</p>
+
+<p>También hay unos cuantos "<a
 href="http://en.wikipedia.org/wiki/Character_encoding#Common_character_encodings">character
-encodings</a>". Tienen que ver con la relación entre lo que tienen los bytes
-de un texto y cuáles caracteres se muestran a partir de esos bytes.</p>
+encoding</a>". Tienen que ver con la relación entre lo que tienen los bytes
+del texto y cuáles caracteres se muestran a partir de esos bytes.</p>
 
 <p>Por ejemplo un byte con <code>01000001</code> en sus 8 bits <a
 href="http://en.wikipedia.org/wiki/UTF-8#Codepage_layout">se representa
@@ -859,8 +872,8 @@ configuracíon de bits. Hay una especie de acuerdo gigante entre millones de
 personas de todos los países para relacionar el contenido de los bytes con los
 caracteres que se muestran en el monitor o la impresora. En este momento UTF-8
 es la codificación más usada, tanto por los occidentales que tenemos
-alfabetos con unos pocos caracteres, sino también por los orientales que usan
-alfabetos de miles de caracteres.</p>
+alfabetos con unos pocos caracteres, como también por los orientales que usan
+alfabetos de miles de caracteres. </p>
 
 <h5 id="L1269">title</h5>
 
@@ -868,7 +881,7 @@ alfabetos de miles de caracteres.</p>
 <img alt="page title" src="res/pageTitle.png"></div>
 
 <p>Es el título de la página, que se muestra en la pestaña del browser, y
-también cuando la página aparece en alguna lista.</p>
+también cuando la página aparece en una lista.</p>
 
 <p>Como a veces hay muchas pestañas abiertas, y entonces el espacio en cada
 una solo permite mostrar un texto cortito, escribimos el title poniendo lo más
@@ -878,38 +891,298 @@ relevante al principio.</p>
 páginas de John Doe", pero si tuviéramos abiertas las páginas índice de
 diez personas distintas solo veríamos algo como "Indice de..." diez veces, que
 no es útil. En cambio en la forma en que este title está redactado veríamos
-la inicial y las primeras letras del apellido de las die personas. Como "Doe"
+la inicial y las primeras letras del apellido de las diez personas. Como "Doe"
 es un apellido cortito posiblemente se vería completo.</p>
 
 <h4 id="L1572">&lt;body&gt;</h4>
 
-<p>Finalmente el body tag contiene el contenido de la página, lo que se
-muestra. La forma recomendada de escribir el tag es con una property
-(propiedad) lang, así: </p>
+<p>Finalmente el body tag contiene el contenido de la página, lo que se va a
+desplegar en el viewport. La forma recomendada de escribir el tag es con una
+property (propiedad) lang, así: </p>
 <pre>&lt;body lang="es"&gt;</pre>
 
-<p>Esto le dice al browser que el contenido está en español: <a
+<p>Esto le dice al browser que comienza un body en español: <a
 href="http://msdn.microsoft.com/en-us/library/ms533052%28v=vs.85%29.aspx">"es"
 es el código para español en general, "es-ar" sería español de
 Agentina</a>. Obviamente para páginas en otro idioma usamos el código que
-corresponda. </p>
+corresponda, como "en" para English. </p>
 
-<p>Siempre queremos que se sepa en qué idioma está escrita la página. Es
+<p>Nos importa que se sepa en qué idioma está escrita la página. Es
 especialmente importante para las búsquedas con Google u otro: si elegimos
 "ver las páginas en español" vamos a ver las páginas que tienen
-<code>&lt;body lang="es"&gt;</code> o algo equivalente, las demás se omiten. 
+<code>&lt;body lang="es"&gt;</code> o algo equivalente, las demás se omiten.
 </p>
 
 <p>Los buscadores tienen un tipo de browser especial que se llama "<a
 href="http://en.wikipedia.org/wiki/Web_crawler">web crawler</a>" (rastreador
-web) y recorre la Internet haciendo un índice de todas las páginas. En ese
-índice anota el idioma, pero si "lang=" no figura puede que el crawler no sea
-capaz de identificarlo. Esto es muy malo. Imaginemos que se trata de la página
-de una pizzería online y alguien quiere hacer un pedido. Hace una búsqueda de
-pizzerías de la zona, solo las páginas en español: nuestra pizzería no va a
-figurar y se va a perder muchas ventas. </p>
+web), que permanentemente recorre la Internet haciendo un índice de todas las
+páginas, el índice gigante que se usa para las búsquedas. En ese índice el
+crawler anota el idioma de la página, pero si no figura explícitamente puede
+que el crawler no sea capaz de identificar el idioma de la página. Esto es muy
+malo. Imaginemos que se trata de la página de una pizzería online y alguien
+quiere hacer un pedido. Hace una búsqueda de pizzerías de la zona, solo las
+páginas en español: nuestra pizzería no va a figurar y se va a perder muchas
+ventas. </p>
+</div>
+
+<div class="section">
+<h2>4 - Imágenes</h2>
+
+<h3>&lt;img&gt;</h3>
+
+<p>El tag para desplegar imágenes en HTML es <code>&lt;img&gt;</code>. Su
+display mode no es block sino inline, por eso podemos <img alt="fb"
+src="res/iconFacebook20x20.png"> insertar <img alt="info"
+src="res/iconInfo20x20.png"> imágenes <img alt="LinkedIn"
+src="res/iconLinkedin20x20.png"> en <img alt="smiley"
+src="res/iconSmiley20x20.gif"> el <img alt="twitter"
+src="res/iconTwitter20x20.png"> texto. </p>
+
+<p>Además, img es un "empty tag" (tag vacío). Esto significa que no tiene
+"contenido" como el h1 y el p que contienen texto, y por lo tanto img no lleva
+tag de cierre <code style="text-decoration: line-through;">&lt;/img&gt;</code>.
+</p>
+
+<p>Hay unos pocos empty tags, por ejemplo <code>&lt;br&gt;</code> y
+<code>&lt;hr&gt;</code> que veremos más adelante. Son pocos. En XHTML, una
+variante de HTML que exige que todo tag se cierre, se usa una barra así:
+<code>&lt;img ... /&gt;</code> para cerrarlo. Si se pone no hace daño aunque
+solo es necesaria en XHTML. </p>
+
+<h4>href</h4>
+
+<p>El tag img no tiene contenido, pero tiene "attributes". El más básico es
+href, que ćontiene la referencia al archivo a la imagen que queremos desplegar
+con este tag: </p>
+<pre>&lt;img src="res/iconLinkedin20x20.png" ...&gt;</pre>
+
+<p>Es una referencia a un archivo. Hay que tener en cuenta algunas cosas. </p>
+
+<p>Primero, los directorios se separan con "forward slashes" en vez de "back
+slashes" como en Windows, se usa "/" en vez de "\" como en Linux y Unix. </p>
+
+<p>Segundo, la referencia del ejemplo es "relativa" respecto de la página
+donde está en tag. Por ejemplo si la página estuviera en una PC con Linux (la
+gran mayoría de las páginas de la Internet están en máquinas Linux), en el
+archivo:</p>
+<pre>/webPages/examples/index.html</pre>
+
+<p>entonces la imagen esta en: </p>
+<pre>/webPages/examples/res/iconLinkedin20x20.png</pre>
+
+<p>En Windows los archivos serían, por ejemplo: </p>
+<pre><span style="color:#bfbfbf">C:\webPages\examples\</span>index.html
+<span style="color:#bfbfbf">C:\webPages\examples\</span>res\iconLinkedin20x20.png</pre>
+
+<p>La parte grisada de las direcciones se puede cambiar, los archivos pueden
+estar en cualquier otra ubicación dentro del sistema de archivos de la PC. Lo
+importante es que la imagen esté en un subdirectorio res debajo del directorio
+donde está la página html. </p>
+
+<h4>alt</h4>
+
+<p>Hay personas que no pueden ver las imágenes, tampoco pueden verlas los
+crawlers. </p>
+
+<p>Pensando en la gente que no puede verlas, cada imagen en nuestras páginas
+lleva un atributo "alt" que significa algo así como una alternativa del
+información. </p>
+
+<p>Ejemplo de atributo alt: </p>
+<pre>&lt;img src="res/iconLinkedin20x20.png" <span style="background-color:#ffff00">alt="carita feliz"</span>&gt;</pre>
+
+<p>Si el href no apunta a un archivo con una imagen que el browser pueda
+mostrar, en vez de la imagen muestra el texto alt, así:   <img
+href="noExiste.png" alt="imagen que no está"></p>
+
+<p>En este caso el HTML fué: </p>
+<pre> IsMarkup="Yes_"&lt;img IsMarkup="Yes_" href= IsString="Yes_""noExiste.png" IsMarkup="Yes_" alt= IsString="Yes_""imagen que no está" IsMarkup="Yes_"&gt; IsMarkup="Yes_"
+</pre>
+
+<h4>Más atributos de &lt;img&gt;</h4>
+
+<p>El tag img tiene una cantidad de atributos, como se puede ver en la <a
+href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img">documentación
+publicada por MDN</a>. De todos estos atributos algunos están en estado
+"deprecated" u "obsolete". "<a
+href="http://onelook.com/?w=Deprecated">Deprecated</a>" se aplica, en
+programación, a un feature que si bien está disponible, en el futuro no va a
+estar más. "Obsolete" significa que ya no está más. </p>
+<ul>
+  <li><span style="color:#bfbfbf">align Deprecated since HTML4.01, Obsolete
+    since HTML5</span></li>
+  <li>alt</li>
+  <li><span style="color:#bfbfbf">border Deprecated since HTML4.01, Obsolete
+    since HTML5</span></li>
+  <li>crossorigin HTML5</li>
+  <li>height</li>
+  <li><span style="color:#bfbfbf">hspace Deprecated since HTML4.01, Obsolete
+    since HTML5</span></li>
+  <li>ismap</li>
+  <li><span style="color:#bfbfbf">longdesc HTML 4 only</span></li>
+  <li><span style="color:#bfbfbf">name Deprecated since HTML4.01, Obsolete
+    since HTML5</span></li>
+  <li>src</li>
+  <li>width</li>
+  <li>usemap</li>
+  <li><span style="color:#bfbfbf">vspace Deprecated since HTML4.01, Obsolete
+    since HTML5</span></li>
+</ul>
+
+<p>Así que quedan siete, de los cuales ya vimos dos. </p>
+
+<p>"<strong>Crossorigin</strong>" es nuevo en HTML5 y lo veremos oportunamente.
+Tiene que ver con una restricción de seguridad que obliga a que todos los
+archivos que el browser usa en una página provengan del mismo dominio web. Es
+para protección contra virus. </p>
+
+<p>"<strong>Height</strong>" y "<strong>width</strong>" (alto y ancho) informan
+al browser de las medidas de la imagen. Cada imagen tiene sus medidas, se
+pueden ver picando la imagen con el otro botón del mouse y eligiendo verla en
+otro tab: usualmente el title del nuevo tab contiene las medidas de la imagen.
+</p>
+
+<p>Si no especificamos medidas el browser va a desplegar la imagen en su
+tamaño original. </p>
+
+<p>Cuando el browser conoce las medidas de las imágenes puede prever los
+espacios que van a usar y reservarlos anticipadamente. Si la imagen tarda un
+poco en bajar ya tiene su lugar y no se mueve todo el contenido de la página
+cuando llega. </p>
+
+<p>Si se especifican dimensiones diferentes de las de la imagen el browser
+cambia el tamaño de la imagen para que ocupe todo el espacio definido. Una
+imagen de 1000x800px (pixels) se puede mostrar en un tag img con dimensiones
+menores en una página índice con versiones pequeñas de las imágenes. El
+HTML pra la versión full-size y la muestra puede ser así: </p>
+<pre>&lt;img href="paisaje.png" alt="paisaje" width="1000" height="800"&gt;
+&lt;img href="paisaje.png" alt="paisaje" width="100" height="80"&gt;</pre>
+
+<p>En el ejemplo de la imagen chica en vez de height="80" se puede poner
+height="auto" para que el browser calcule la altura manteniendo las
+proporciones del formato original, obviamente 80 en este caso. </p>
+
+<p>Abajo se ve una misma imagen desplegada en diferentes tamaños: </p>
+
+<table   style="margin:1em auto; width:555px;">
+  <col>
+  <col>
+  <col>
+  <col>
+  <tbody>
+    <tr>
+      <td style="text-align:center;margin-left:auto;margin-right:auto;"><img
+        width="auto" height="32" alt="HTMK5 logo" src="res/HTML5_Logo.png"></td>
+      <td style="text-align:center;margin-left:auto;margin-right:auto;"><img
+        width="auto" height="64" alt="HTML5 logo" src="res/HTML5_Logo.png"></td>
+      <td style="text-align:center;margin-left:auto;margin-right:auto;"><img
+        width="auto" height="128" alt="HTML5 logo"
+      src="res/HTML5_Logo.png"></td>
+      <td style="text-align:center;margin-left:auto;margin-right:auto;"><img
+        alt="HTML5 logo" src="res/HTML5_Logo.png"></td>
+    </tr>
+    <tr>
+      <th
+        style="text-align:center;margin-left:auto;margin-right:auto;"><p>width=auto<br>
+        height=32</p>
+      </th>
+      <th
+        style="text-align:center;margin-left:auto;margin-right:auto;"><p>width=auto<br>
+        height=64</p>
+      </th>
+      <th
+        style="text-align:center;margin-left:auto;margin-right:auto;"><p>width=auto<br>
+        height=128</p>
+      </th>
+      <th style="text-align:center;margin-left:auto;margin-right:auto;"><p>sin
+        medidas (182 x 256)</p>
+      </th>
+    </tr>
+  </tbody>
+</table>
+
+<p>"<strong>Ismap</strong>" y "<strong>usemap</strong>" tienen que ver una
+imagen que, según dónde se pica, muestra un resultado diferente. No lo vemos
+en detalle por ahora. </p>
+
+<h4>Formatos</h4>
+
+<p>Hay una variedad de tipos de archivo que contienen imágenes. En HTML se
+puede usar los más comunes: </p>
+<ul>
+  <li><a title="http://en.wikipedia.org/wiki/JPEG"
+    href="http://en.wikipedia.org/wiki/JPEG" class="external">JPEG</a></li>
+  <li><a title="http://en.wikipedia.org/wiki/Graphics_Interchange_Format"
+    href="http://en.wikipedia.org/wiki/Graphics_Interchange_Format"
+    class="external">GIF</a>, including animated GIFs</li>
+  <li><a title="http://en.wikipedia.org/wiki/Portable_Network_Graphics"
+    href="http://en.wikipedia.org/wiki/Portable_Network_Graphics"
+    class="external">PNG</a></li>
+  <li><a title="Animated PNG graphics"
+    href="https://developer.mozilla.org/en-US/docs/Animated_PNG_graphics">APNG</a>
+  </li>
+  <li><a title="SVG"
+    href="https://developer.mozilla.org/en-US/docs/SVG">SVG</a> </li>
+  <li><a title="http://en.wikipedia.org/wiki/BMP_file_format"
+    href="http://en.wikipedia.org/wiki/BMP_file_format"
+  class="external">BMP</a></li>
+  <li><a title="http://en.wikipedia.org/wiki/ICO_%28file_format%29"
+    href="http://en.wikipedia.org/wiki/ICO_%28file_format%29"
+    class="external">BMP ICO</a></li>
+  <li><a title="http://en.wikipedia.org/wiki/ICO_%28file_format%29"
+    href="http://en.wikipedia.org/wiki/ICO_%28file_format%29"
+    class="external">PNG ICO</a> </li>
+</ul>
+
+<p>El uso del formato GIF está desaconsejaod por que es un formato propiedad
+de una empresa. </p>
+
+<p>El uso de GIFs animados está más desaconsejado todavía por que son
+molestos. Hace unos 15 años estuvieron de moda, en las páginas todo titilaba
+o se movía, y por clamor general de dejó de usar. Mejor sigamos así :-) </p>
 
 <p></p>
+
+<p></p>
+
+<h4>Figure</h4>
+
+<p>En HTML5 hay un nuevo tag "<a
+href="http://dev.w3.org/html5/markup/figure.html">figure</a>" que eventualmente
+reemplazará a img para algunos usos, pero que por el momento no se usa mucho
+por que hay mucha gente que todavía tiene <a
+href="http://caniuse.com/html5semantic">browsers que no soportan este tag</a>.
+</p>
+
+<p>---</p>
+</div>
+
+<div class="section">
+<h2>5 - Estilos</h2>
+
+<p>---</p>
+</div>
+
+<div class="section">
+<h2>6 - Links</h2>
+
+<p>---</p>
+</div>
+
+<div class="section">
+<h2>7 - Listas</h2>
+
+<p>---</p>
+</div>
+
+<div class="section">
+<h2>8 - Tablas</h2>
+
+<p>---</p>
+</div>
+
+<div class="section">
+<h2>9 - Más estilos</h2>
 
 <p>---</p>
 </div>
