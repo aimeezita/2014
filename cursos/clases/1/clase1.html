@@ -183,7 +183,7 @@ cosas).</p>
 <p>Las páginas web son "archivos de texto", es decir, contienen solamente
 letras, números y símbolos (lo que hay en un teclado de PC), y se pueden
 editar con programas como Notepad o <a href="http://www.vim.org/">vim</a>. El
-browser interpreta ese texto según las normas del W3C, lo combina com
+browser interpreta ese texto según las normas del W3C, lo combina con
 imágenes (también videos y otros tipos de material) y lo despliega en la
 pantalla.</p>
 
@@ -194,31 +194,29 @@ pantalla.</p>
 style="width:222px;"></div>
 
 <p>El server es una computadora que "está en la Internet". Lo que hace que sea
-un "web server" y no una computadora cualquiera es que siempre está ejecutando
+un "web server" y no una computadora cualquiera es que ejecuta permanentemente
 un programa que también se llama "web server". </p>
 
 <p>La función del web server es recibir los pedidos de páginas ("requests")
 de los browsers y despachar las páginas que correspondan. </p>
 
 <p>Los requests de los browsers tienen un formato especial (también definido
-por el W3C) y se llaman "URLs". Por ejemplo para ver la página de búsqueda en
+por el W3C) y se llaman "URL". Por ejemplo para ver la página de búsqueda en
 Google el URL es:</p>
 <pre>https://www.google.com/</pre>
 
-<p></p>
-
-<p>El web server de google recibe ese request y envía la respuesta o
-"response", que se vé más o menos así: </p>
+<p>El web server de Google recibe ese request y envía la respuesta o
+"response", que se vé más o menos así (todos la conocemos): </p>
 
 <p><img alt="google search start page" src="res/googleSearch.png"
 style="width:100%; height:auto; max-width:700px;"></p>
 
-<p>Lo que el web server envía es un archivo de texto que se puede ver picando
-la página con el botón derecho del mouse y seleccionando "view page source" o
-algo similar dependiendo del browser instalado.</p>
+<p>Lo que el web server envía es una cantidad de texto que se puede ver
+picando la página con el botón derecho del mouse y seleccionando "View Page
+Source" o algo similar dependiendo del browser instalado.</p>
 
-<p>Por ejemplo la parte donde uno escribe las palabras que quiere buscar, vista
-por el browser, es así: </p>
+<p>Por ejemplo la parte de ese texto que especifica el espacio donde uno
+escribe las palabras que quiere buscar es así: </p>
 <pre>&lt;input id=gbqfq class=gbqfif name=q type=text autocomplete=off value=""&gt;</pre>
 
 <p>El browser interpreta ese texto y otros, los combina, y muestra esto en la
@@ -231,13 +229,13 @@ alt="search input box" src="res/googleSearchInput.png"></p>
 
 <h3 id="L183">¿Cómo funciona?</h3>
 
-<p>El browser y el web server se comunican usando la Internet. Para eso usan
-unos "protocolos" que se llaman HTTP o HTTPS y <a
+<p>El browser y el web server se comunican a través de la Internet. Para eso
+usan unos "protocolos" que se llaman HTTP o HTTPS y <a
 href="http://en.wikipedia.org/wiki/Internet_protocol_suite">TCP/IP</a>. Un
 protocolo es una serie de reglas detalladas de qué hacer en todas las
 situaciones de una relación entre personas, países, o computadoras.</p>
 
-<p>En la imagen se vé al comienzo del URL, el protocolo "https": </p>
+<p>En la imagen se vé el protocolo "https" al comienzo del URL: </p>
 
 <p style="text-align:center;margin-left:auto;margin-right:auto;"><img
 alt="https protocol in URL" src="res/httpsProtocol.png" width="513"
@@ -245,7 +243,7 @@ height="108"></p>
 
 <p>El protocolo HTTP es para comunicaciones comunes, y el HTTPS para
 comunicaciones encriptadas, mensajes en código, casi imposibles de descifrar.
-Y el protocolo TCP/IP para que las diversas computadoras puedan hablar HTTP
+Y el protocolo TCP/IP es para que las diversas computadoras puedan hablar HTTP
 entre sí. </p>
 
 <p>Los protocolos de Internet son los que hacen la magia de conectar vía
@@ -292,17 +290,19 @@ name. Nosotros podemos averiguar la IP usando el comando ping: </p>
 style="width:100%; max-width:677px;"></p>
 
 <p>Hay <a href="http://en.wikipedia.org/wiki/Routing_table">otro diccionario,
-una especia de mapa de la red, que dice quién está conectado con cuál</a>.
-El request va de "hop" en "hop" (un "hop" es un salto) saltando de un "router"
-a otro y aproximándose así a destino. Primero averigua cuál router le
-conviene para una IP que comienza con 211 y salta a ese router. Una vez ahí
-averigua cuál router le conviene para IPs 211.127... y así sucesivamente. Un
-<a href="http://en.wikipedia.org/wiki/Router_(computing)">router</a> es otra
+una especia de mapa de la red, que dice qué IPs está conectado con cuales
+otras</a>. El request consulta ese diccionario de conexiones o rutas y va de
+"hop" en "hop" (un "hop" es un salto) saltando de un "router" a otro y
+aproximándose así a su destino final. Por ejemplo primero averigua cuál
+router le conviene para una IP que comienza con 211 y salta a ese router. Una
+vez ahí averigua cuál router le conviene para IPs 211.127... y así
+sucesivamente. Un <a
+href="http://en.wikipedia.org/wiki/Router_(computing)">router</a> es otra
 computadora, con programación especializada para "rutear" mensajes en la red.
 </p>
 
-<p>La ruta desde donde estoy ahora (206.123.64.46) hasta la radio de Ichikawa
-pasa por una cantidad de routers, como se puede apreciar en el <a
+<p>La ruta desde el servicio Network-Tools.com (206.123.64.46) hasta la radio
+de Ichikawa pasa por una cantidad de routers, como se puede apreciar en el <a
 href="http://network-tools.com/default.asp?prog=trace&amp;host=211.127.173.50">"trace"
 (rastreo)</a> de 16 hops: </p>
 
@@ -453,13 +453,11 @@ href="http://network-tools.com/default.asp?prog=trace&amp;host=211.127.173.50">"
     </tr>
   </tbody>
 </table>
-
-<p>Trace complete</p>
 </div>
 
 <p>Empieza desde la IP de Network-Tools.com 206.123.64.46 en St Louis, USA. Se
 vé que en menos de 50 milisegundos pasa por 8 routers de
-<code>us.above.net</code> en USA también (teniendo la IP podemos averiguar
+<code>us.above.net</code> también en USA (teniendo la IP podemos averiguar
 dónde están) antes de llegar al Pacífico (las IPs "143" y "211"). Pasó por
 6 routers de Australia y Japón antes de llegar a la radio. </p>
 
@@ -470,63 +468,44 @@ sobre la IP</a> surge que todos los números de IP desde 211.120.0.0 hasta
 direcciones IP es uno de los 3026 que tiene Japón para sus 127 millones de
 habitantes.</p>
 
+<p>Hay solamente 4000 millones de direcciones IP, o sea muy pocas. Estás
+asignadas por bloques de números consecutivos, como las 211.12x que
+corresponden a Japón. Suponiendo que todos los bloques de asignaciones son
+como este, de medio millón de direcciones, entonces habría unos 8000 bloques
+y se necesitaría un índice de 8000 direcciones, que para una computadora no
+es un número impresionante. </p>
+
 <h3 id="L982">Resumiendo</h3>
 
-<p>Aquí termina la información técnica sobre la Internet, algunos conceptos
-básicos necesarios para entender lo que viene. Sin esa información, la
-Internet es pura magia  :-)</p>
+<p>Aquí terminó la información técnica inicial sobre la Internet, algunos
+conceptos básicos necesarios para entender lo que viene. Sin esa información,
+la Internet es pura magia  :-)</p>
+
+<p>Ahora pasamos a ver cómo son las páginas. </p>
 </div>
 
 <div class="section">
 <h2 id="L876">2 - Las páginas</h2>
 
-<p></p>
-<ul>
-  <li>Introducción del término "HTML" </li>
-  <li>Escritura de una página HTML elemental y su despliegue en el browser,
-    conteniendo (aunque sin explicar totalmente en detalle) los elementos: 
-    <ol>
-      <li>doctype</li>
-      <li>head 
-        <ul>
-          <li>content</li>
-          <li>language</li>
-          <li>title</li>
-        </ul>
-      </li>
-      <li>body 
-        <ul>
-          <li>heading</li>
-          <li>paragraphs</li>
-        </ul>
-      </li>
-    </ol>
-  </li>
-  <li>Publicación de la página en el server del colegio con URL tipo
-    http://codedco.com.ar/~/jose.estudiante/primera.html </li>
-  <li>Primera serie de recomendaciones sobre prudencia para publicar en la
-    Internet </li>
-</ul>
-
 <h3 id="L920">El lenguaje</h3>
 
 <p>Cuando un web server recibe un request, elabora y devuelve un "response"
-(respuesta), un texto que está escrito en lenguaje "<a
+(respuesta), un texto en lenguaje "<a
 href="http://en.wikipedia.org/wiki/HTML">HTML</a>". Vamos a ver cómo es ese
 lenguaje, para aprender a usarlo.</p>
 
-<p>El response en HTML que el web server manda, puede ser HTML que está en un
-archivo en el server, o HTML que el server arma con información de una base de
-datos. Se trata de una página "estática". </p>
+<p>El response que el web server manda puede ser HTML que está en un archivo
+en el server. Se trata de una página "estática". </p>
 
-<p>Por ejemplo si consultamos twitter para ver lo que hay relacionado con un
-tag cualquiera como <a
+<p>También puede ser HTML que el server arma con información de una base de
+datos, por ejemplo si consultamos twitter para ver lo que hay relacionado con
+un tag cualquiera como <a
 href="https://twitter.com/search?q=%23pizza&amp;src=typd">#pizza</a>, el server
 hace una consulta a una base de datos y arma una página especial para el
-request: una página "dinámica". </p>
+request. En este caso se trata de una página "dinámica". </p>
 
 <p>Nosotros vamos a hacer páginas estáticas para empezar, páginas que están
-registradas en un archivo.</p>
+registradas en archivos. </p>
 
 <h3 id="L938">Primera página</h3>
 
@@ -547,7 +526,7 @@ registradas en un archivo.</p>
 ~/paginas/index.html en Linux. </p>
 
 <p>Para abrirla con el browser le aplicamos un doble click y la página se
-despliega, en Chrome se ve así: </p>
+despliega; en Chrome se ve así: </p>
 
 <div class="imgContainer" style="width:494px;">
 <img alt="index.html screenshot" src="res/index.html.png"></div>
@@ -560,8 +539,8 @@ despliega, en Chrome se ve así: </p>
 <h3 id="L980">Tags</h3>
 
 <p>El HTML define "elements" como "h1" y "p", delimitándolos con "tags"
-(etiquetas). En el listado de abajo, el mismo de la primera página, los tags
-están resaltados con amarillo. </p>
+(etiquetas). En el listado de abajo (que es igual al anterior) los tags están
+resaltados con amarillo. </p>
 <pre>&lt;!doctype html&gt;
 <span style="background-color:#ffff00">&lt;html&gt;</span>
   <span style="background-color:#ffff00">&lt;head&gt;</span>
@@ -574,26 +553,28 @@ están resaltados con amarillo. </p>
   <span style="background-color:#ffff00">&lt;/body&gt;</span>
 <span style="background-color:#ffff00">&lt;/html&gt;</span> </pre>
 
-<p>Se ve que los tags empiezan y terminan, como <code>&lt;p&gt;</code> y
-<code>&lt;/p&gt;</code>, or <code>&lt;html&gt;</code> y
+<p>Se ve que hay tags de apertura y de cierre, como <code>&lt;p&gt;</code> y
+<code>&lt;/p&gt;</code>, o <code>&lt;html&gt;</code> y
 <code>&lt;/html&gt;</code>. El tag de cierre lleva una "/" delante del tag
-name. En HTML los tags se pueden escribir en mayúsculas o minúsculas, es lo
+name. </p>
+
+<p>En HTML los tags se pueden escribir en mayúsculas o minúsculas, es lo
 mismo, pero escribirlos en mayúsculas hace que el HTML parezca antiguo. </p>
 
 <h4 id="L10501">&lt;p&gt;</h4>
 
 <p>El elemento "p" (llamado "paragraph" = párrafo) está delimitado por el
 start tag <code>&lt;p&gt;</code> y su correspondiente end tag
-<code>&lt;/p&gt;</code>. Los &lt;p&gt; son para contener texto, similares a los
-párrafos de un libro. </p>
+<code>&lt;/p&gt;</code>. Los elementos &lt;p&gt; son para contener texto,
+similares a los párrafos de un libro. </p>
 
 <h4 id="L1060">&lt;h1&gt;</h4>
 
 <p>El elemento "h1", llamado "heading 1" (título 1 ó encabezado 1) también
 contiene texto, como un paragraph, pero está concebido para contener un
-título importante. Existen además elementos h2, h3, h4, h5, h6 que son
+título importante. Existen además elementos h2, h3, h4, h5 y h6 que son
 títulos de importancia decreciente. En el ejemplo se ve una jerarquía de
-títulos de secciones de importancia decreciente: </p>
+títulos de secciones cada vez menos abarcativos:  </p>
 <style>
   .headingExamples td { vertical-align:middle; }
   .headingExamples h1 { margin:0; padding:2px 20px; }
@@ -645,6 +626,9 @@ títulos de secciones de importancia decreciente: </p>
 <p>El tag <code>&lt;body&gt;</code>  no contiene texto directamente, como p y
 h1, sino que contiene otros tags. Decimos entonces que el elemento body es un
 "container" (contenedor, en mal castellano). </p>
+
+<p>"Body" quiere decir cuerpo, y este tag contiene todo el cuerpo de la
+página, completa. </p>
 
 <h3 id="L1099">El protocolo "file"</h3>
 
