@@ -148,8 +148,12 @@ scp -p ~/reading/doc/tlotfc2.html startup:/home/ubuntu/bitstarter/tlotfc2.html</
     RT- entries, seems like it was not recording scrolls, only EOSs</li>
   <li>@826: scrollData is defined in the global nameSpace: oops! missing RT.
     namespace, added</li>
-  <li>Must identify the document in the localStorage records so a new doc
-    doesn't try to open in the previous' last position </li>
+  <li>&#x2714; Must identify the document in the localStorage records so a new
+    doc doesn't try to open in the previous' last position: @231
+    RT.writeScrollRecord writes scrollData with key 
+    <p><code>RT-nnnn-xxxx</code> where "nnnn" is the document number encoded
+    and "xxxx" the time</p>
+  </li>
   <li>When rt.js starts calls RT.scrollToPosition() with scrollData from a
     different document (found in localStorage) and @443 the getElementById()
     fails: 
