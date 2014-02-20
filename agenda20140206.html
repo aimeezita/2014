@@ -115,37 +115,51 @@ scp -p ~/reading/doc/tlotfc2.html startup:/home/ubuntu/bitstarter/tlotfc2.html</
     <ul>
       <li>The PI is initialized at top albeit the document is scrolled a
       bit</li>
+      <li>&#x2714; The elementAtTop is the h1, which is out of the container:
+        maybe the construction of the index has to be constrained to the inner
+        container @778 RT.buildDocMap() is OK, check @463 RT.buildTopsMap():
+        reprogrammed buildTopsMap() not to use the iterator and rooted on
+        $content </li>
     </ul>
   </li>
   <li>&#x2714; Add left margin or padding to account for the left panel
     (padding-left:86px in the inner container) </li>
+  <li>Add left margin or padding to account for the left panel to the sliding
+    panels (padding-left:86px as the inner container?)</li>
   <li>&#x2714; Make a new version of rt.js to be able to change it without
     breaking tlotfc (tlotfc now point to old versions in toltfc_files, can
     change versions in doc/res)</li>
   <li>&#x2714; The TOC has only two instances of (empty node) </li>
   <li>Don't show "(empty node)" in TOC</li>
-  <li>Update the [End] button target with an appropriate feedback page </li>
+  <li>There is an extra TOC at the start of the document </li>
+  <li>Redirect the [End] button target with an appropriate feedback page </li>
   <li>SmartScroll not working, scrolls by the page </li>
   <li>&#x2714; There is no inner container immediately inside the outer
     container </li>
   <li>&#x2714; The RGB demo stopped working (apparently the value=0 properties
     anchored the values to zero</li>
-  <li>All the docpaths start with too many zeros:
+  <li>&#x2714; All the docpaths start with too many zeros:
     <code>docpath="0,0,0,0,0,0,0,26,2,3,1,1,1,1,1,1,1"</code> maybe because the
     first element is not a heading? </li>
   <li>&#x2714; RGB inputs are of type text: 
     <pre>&lt;td docpath="0,0,0,0,0,0,0,26,2,3,1,1,1,1,1,2,1"&gt;&lt;span class="rgb-rgb" docpath="0,0,0,0,0,0,0,26,2,3,1,1,1,1,1,2,1,1"&gt;R&lt;/span&gt;&lt;input id="inputR" class="rgb-input" value="0" <strong>type="text"</strong> maxlength="3" docpath="0,0,0,0,0,0,0,26,2,3,1,1,1,1,1,2,1,2"&gt;&lt;/td&gt;</pre>
   </li>
   <li>In localStorage there are many end-of-session entries at the end of the
-    RT- entries, seemd like it was not recording scrolls </li>
-  <li>Move the igniter code to an external js file, in the html only have a
-    &lt;script&gt; tag referencing that external js file </li>
-  <li>When rt.js starts calls TR.scrollToPosition() with scrollData from a
+    RT- entries, seems like it was not recording scrolls, only EOSs</li>
+  <li>@826: scrollData is defined in the global nameSpace: oops! missing RT.
+    namespace, added</li>
+  <li>Must identify the document in the localStorage records so a new doc
+    doesn't try to open in the previous' last position </li>
+  <li>When rt.js starts calls RT.scrollToPosition() with scrollData from a
     different document (found in localStorage) and @443 the getElementById()
     fails: 
     <pre>Object {endSession: "1", dp: "0,0,1,0,0,0,0", id: "RT-0-0-1-0-0-0-0", text: "CA-Ideal Procedure Language IDLB22PR.boo"}</pre>
-    <p>Must identify the document in the localStorage records</p>
   </li>
+  <li>Move the igniter code to an external js file, in the html only have a
+    &lt;script&gt; tag referencing that external js file </li>
+  <li>&#x2714; The character table under "Bytes and characters" is broken by
+    encoding</li>
+  <li>Clicking the TOC links does not work: the content doesn't move </li>
 </ul>
 
 <p></p>
