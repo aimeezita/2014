@@ -46,7 +46,7 @@ alt="next" src="res/right.gif"></a>
 </div>
 
 <div id="agendaBody">
-<h3>binary numbers course</h3>
+<h3 id="binary">binary numbers course</h3>
 
 <div>
 <h4>upload files</h4>
@@ -120,6 +120,8 @@ scp -p ~/reading/doc/tlotfc2.html startup:/home/ubuntu/bitstarter/tlotfc2.html</
         container @778 RT.buildDocMap() is OK, check @463 RT.buildTopsMap():
         reprogrammed buildTopsMap() not to use the iterator and rooted on
         $content </li>
+      <li>&#x2714; The keyboard event is not triggered: this was solved by
+        moving the fixed heading into the content</li>
     </ul>
   </li>
   <li>&#x2714; Add left margin or padding to account for the left panel
@@ -131,9 +133,21 @@ scp -p ~/reading/doc/tlotfc2.html startup:/home/ubuntu/bitstarter/tlotfc2.html</
     change versions in doc/res)</li>
   <li>&#x2714; The TOC has only two instances of (empty node) </li>
   <li>Don't show "(empty node)" in TOC</li>
-  <li>There is an extra TOC at the start of the document </li>
+  <li>&#x2714; There is an extra TOC at the start of the document </li>
   <li>Redirect the [End] button target with an appropriate feedback page </li>
-  <li>SmartScroll not working, scrolls by the page </li>
+  <li>&#x2714; SmartScroll not working, scrolls by the page: specifying the
+    element parameter to the animateScroll function (OK) </li>
+  <li><img alt="!" src="res/caramba_yellow.gif"> SmartScroll goes back to the
+    top every other time</li>
+  <li>After having reached the end of the document, or when the spacebar is
+    held down (many rapid scroll events) an error happens: 
+    <pre>Uncaught TypeError: Cannot read property 'top' of undefined  rt.js:672
+RT.smartScrollGetNextTopElement                              rt.js:672
+RT.smartScrollToNextElement                                  rt.js:717
+(anonymous function)                                         rt.js:888
+jQuery.event.dispatch                                    jquery.js:5095
+jQuery.event.add.elemData.handle</pre>
+  </li>
   <li>&#x2714; There is no inner container immediately inside the outer
     container </li>
   <li>&#x2714; The RGB demo stopped working (apparently the value=0 properties
@@ -164,6 +178,19 @@ scp -p ~/reading/doc/tlotfc2.html startup:/home/ubuntu/bitstarter/tlotfc2.html</
   <li>&#x2714; The character table under "Bytes and characters" is broken by
     encoding</li>
   <li>Clicking the TOC links does not work: the content doesn't move </li>
+  <li>The document id comes with the document, set by the server </li>
+  <li>Store a session start event </li>
+  <li>Wrap all the even handler settings at the start and move them each one to
+    its own litle function </li>
+  <li>&#x2714; RT.topsMap has only 2 items: the fixedHeader and the h1 because
+    RT.$content is [&lt;div
+    id=&#x200b;"agendaHeader"&gt;&#x200b;&hellip;&#x200b;&lt;/div&gt;] <br>
+    This was the main problem: moving the fixed header into the inner content
+    it started working better </li>
+  <li>When looking for the scroll target the function chooses the next element
+    that exceeds the threshold, without checking if the excess is huge. Must
+    throttle the scroll amount and write a scroll function capable of scrolling
+    elements partially </li>
 </ul>
 
 <p></p>
