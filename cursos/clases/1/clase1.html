@@ -574,7 +574,7 @@ similares a los párrafos de un libro. </p>
 contiene texto, como un paragraph, pero está concebido para contener un
 título importante. Existen además elementos h2, h3, h4, h5 y h6 que son
 títulos de importancia decreciente. En el ejemplo se ve una jerarquía de
-títulos de secciones cada vez menos abarcativos:  </p>
+títulos de secciones cada vez menos abarcativos: </p>
 <style>
   .headingExamples td { vertical-align:middle; }
   .headingExamples h1 { margin:0; padding:2px 20px; }
@@ -1071,11 +1071,11 @@ puede usar los más comunes: </p>
     class="external">PNG ICO</a> </li>
 </ul>
 
-<p>JPEG es un formato para fotos. Las cámaras digitales producen imágenes en
-este formato. Las imágenes almacenadas en archivos .jpg están comprimidas,
-usando una técnica que reduce la calidad de la foto cuanto más se comprime.
-Se puede elegir entre alta calidad y alto tamaño, o menor calidad y tamaño
-que puede llegar a ser muy chico. </p>
+<p><strong>JPEG</strong> es un formato para fotos. Las cámaras digitales
+producen imágenes en este formato. Las imágenes almacenadas en archivos .jpg
+están comprimidas, usando una técnica que reduce la calidad de la foto cuanto
+más se comprime. Se puede elegir entre alta calidad y alto tamaño, o menor
+calidad y tamaño que puede llegar a ser muy chico. </p>
 
 <p>Abajo hay tres JPEGs de una misma imagen con niveles de calidad 100, 50 y
 1:</p>
@@ -1100,29 +1100,37 @@ pero en cambio el tamaño del archivo se redujo a menos de un sexto,
 aproximadamente. La tercera imagen es de mala calidad, con una reducción de
 tamaño de 84 veces. </p>
 
-<p>El uso del formato GIF está desaconsejado por que es un formato propiedad
-de una empresa, y por que solo maneja 256 colores. </p>
+<p><strong>GIF</strong>: El uso del formato GIF está desaconsejado por que es
+un formato propiedad de una empresa, y por que solo maneja 256 colores. </p>
+
+<p>Uno de esos colores puede ser "transparente", esto le dió al formato GIF
+una ventaja sobre otros formatos contemporáneos. </p>
 
 <p>El uso de GIFs animados está más desaconsejado todavía por que son
 molestos. Hace unos 15 años estuvieron de moda, en las páginas todo titilaba
 o se movía, y por clamor general de dejó de usar. Mejor sigamos así :-) </p>
 
-<p>PNG es un buen formato, libre. Soporta transparencia. </p>
+<p><strong>PNG</strong> es un buen formato, libre. Soporta transparencia. A
+diferencia del GIF que puede tener pixels 100% transparentes o 100% opacas, el
+formato PNG soporta un "<a
+href="http://en.wikipedia.org/wiki/RGBA_color_space">alpha channel</a>" que
+permite aplicar niveles de transparencia particulares a cada pixel. </p>
 
-<p>SVG (Scalable Vector Graphics) es un formato vectorial en dos dimensiones.
-Los gráficos se definen usando un programa gráfico como <a
-href="http://www.inkscape.org/">Inkskape</a> y se graban en archivos de texto.
-"Scalable" quiere decir que los gráficos se pueden ampliar indefinidamente sin
-que pierdan calidad. No es para paisajes o retratos. El auto de aajo es una
-imagen generada con SVG: </p>
+<p><strong>SVG</strong> (Scalable Vector Graphics) es un formato vectorial en
+dos dimensiones. Los gráficos se crean usando un programa gráfico como <a
+href="http://www.inkscape.org/">Inkskape</a> y se graban en archivos de texto
+que, en vez de pixels, tienen descripciones de formas y colores. "Scalable"
+quiere decir que los gráficos se pueden ampliar indefinidamente sin que
+pierdan calidad. No es para paisajes o retratos. El auto de abajo es una imagen
+generada con SVG: </p>
 
 <div class="imgContainer" style="width:100; max-width:615px;">
 <img alt="SVG example" title="SVG example" src="res/SVGSample.png"></div>
 
-<p>BMP es un formato antiguo de Windows, sin compresión: los archivos son
-enormes. Nadie lo usa. </p>
+<p><strong>BMP</strong> es un formato antiguo de Windows, sin compresión: los
+archivos son enormes. Nadie lo usa. </p>
 
-<h4 id="L6036">Figure</h4>
+<h4 id="L6036">&lt;figure&gt;</h4>
 
 <p>En HTML5 hay un nuevo tag "<a
 href="http://dev.w3.org/html5/markup/figure.html">figure</a>" que eventualmente
@@ -1137,10 +1145,38 @@ href="http://caniuse.com/html5semantic">browsers que no soportan este tag</a>.
 <div class="section">
 <h2 id="L6164">5 - Links</h2>
 
-<p>Se puede afirmar que la magia de la Internet se apoya principalmente en los
-links</p>
+<div class="imgR" style="padding-left:1em;">
+<img alt="link hand pointer" src="res/linkHandPointer.png"></div>
 
-<p>[manito]</p>
+<p>Se puede afirmar que la magia de la Internet se apoya principalmente en los
+links. El HTML tiene la "H" en su nombre por "hyperlink", la característica
+que lo hace especial.</p>
+
+<p>Los links se definen con el tag <code>&lt;a&gt;</code>. Por ejemplo un link
+elemental, a la página inicial de twitter es así: </p>
+<pre>&lt;a href="http://twitter.com"&gt;twitter&lt;/a&gt;</pre>
+
+<p>Este mismísimo link en una página se vé así: <a
+href="http://twitter.com">twitter</a>, de donde se deduce que es no es un
+elemento block sino inline y por lo tanto es posible insertar links en el texto
+normal de una página.</p>
+
+<p>No es un empty element, por lo tanto requiere tag inicial y de cierre. El
+texto que se muestra en la página es el contenido que está entre los tags de
+cierre y apertura. </p>
+
+<p>Al poner el cursor del mouse sobre el texto del link, la flechita default se
+convierte en una manito, y al picar sobre el link la página que está
+mostrando el browser se reemplaza por la página de la dirección del link,
+tomada del atributo <code>href</code>. </p>
+
+<p>Tradicionalmente los links se muestran </p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
 
 <p>---</p>
 </div>
