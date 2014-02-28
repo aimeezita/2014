@@ -75,6 +75,15 @@ href="https://class.stanford.edu/courses/Engineering/Networking/Winter2014/info"
 </p>
 
 <p>Nuance.com - scan post-processing tool kits / check scannerdrivers.com </p>
+
+<p><a
+href="http://docs.moodle.org/26/en/Complete_install_packages_for_Windows">moodle
+Complete install packages for Windows</a> </p>
+
+<p><a href="http://bitnami.org/stack/moodle">Amazon moodle installers</a> </p>
+
+<p><a href="http://en.wikipedia.org/wiki/Open_University">moodle: Open
+University (UK)</a> </p>
 <hr>
 </div>
 </div>
@@ -118,7 +127,7 @@ href="https://class.stanford.edu/courses/Engineering/Networking/Winter2014/info"
   <li><a href="http://docs.moodle.org/26/en/About_Moodle">About Moodle</a> </li>
   <li><a href="http://docs.moodle.org/26/en/Installing_Moodle">Installing
     Moodle</a> <a
-    href="http://docs.moodle.org/26/en/Complete_install_packages_for_Windows"></a>
+    href="http://docs.moodle.org/26/en/Complete_install_packages_for_Windows"></a> 
     <ul>
       <li><a
         href="http://docs.moodle.org/26/en/Complete_install_packages_for_Windows">Complete
@@ -142,11 +151,36 @@ href="https://class.stanford.edu/courses/Engineering/Networking/Winter2014/info"
     MOOC?</a> </li>
 </ul>
 
-<p> </p>
+<p></p>
 
 <p>install &amp; test</p>
 <ul>
-  <li>Can't reach the server as GLB-D1984.globant.com
+  <li>What you enter in the "Web Address" field depends on what you intend to
+    use the new Moodle installation for. 
+    <p>If you are just going to use it for local testing, then use
+    'http://localhost'. </p>
+    <p>If you are going to test the new installation on a LAN, and will be
+    accessing it from other machines on that LAN, then put the private IP
+    address or network name of the serving machine, followed by a forward slash
+    and moodle: Web Address -
+    <strong>http://GLB-D1984.globant.com/moodle</strong> </p>
+    <p>If you are going to test the installation on the internet, then you will
+    need to put the public ip address followed by a forward slash and moodle:
+    http://your_ip_address/moodle or you can put your domain name here instead.
+    </p>
+  </li>
+  <li>Under 
+    <pre>&lt;IfModule alias_module&gt;</pre>
+    <p>add the following: </p>
+    <pre>    Alias /doc C:/w/doc
+    &lt;Directory C:/w/doc&gt;
+        Options -FollowSymLinks -SymLinksIfOwnerMatch -Indexes
+        Order deny,allow
+        deny from all
+        allow from all
+    &lt;/Directory&gt;</pre>
+  </li>
+  <li>Can't reach the server as GLB-D1984.globant.com 
     <p>It says: incorrect access detected, this server may be accessed only
     through "http://localhost" address, sorry. Please notify server
     administrator. </p>
