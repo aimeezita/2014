@@ -31,13 +31,20 @@
 <div id="agendaHeader">
 
 <div class="fixedHeader">
-<h1 style="display:inline; line-height:1em; " id="L41">Introducción al
-desarrollo web</h1>
+
+<div
+style="float:right; color:rgb(40,40,155); font-size:50%; padding-right:1em; ">
+© Juan Lanus</div>
+
+<h1 style="display:inline; line-height:1em; clear:none;" id="L41">Introducción
+al desarrollo web</h1>
 </div>
 
 <div id="agendaBody">
 
-<div class="toc">
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc" id="docTOC">
 <ul>
   <li><a href="#L41">Introducción al desarrollo web</a> 
     <ul>
@@ -58,23 +65,6 @@ desarrollo web</h1>
             <ul>
               <li><a href="#L10501">&lt;p&gt;</a></li>
               <li><a href="#L1060">&lt;h1&gt;</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#L1043">Planeta Tierra</a> 
-    <ul>
-      <li><a href="#L1050">América del Sur</a> 
-        <ul>
-          <li><a href="#L1057">Argentina</a> 
-            <ul>
-              <li><a href="#L1064">Santa Cruz</a> 
-                <ul>
-                  <li><a href="#L1071">Caleta Olivia</a></li>
-                </ul>
-              </li>
               <li><a href="#L1123">&lt;body&gt;</a></li>
             </ul>
           </li>
@@ -113,22 +103,74 @@ desarrollo web</h1>
       <li><a href="#L6054">Más tags</a></li>
       <li><a href="#L6059">Listas</a></li>
       <li><a href="#L6064">Tablas</a></li>
-      <li><a href="#L6069">Más estilos</a></li>
+      <li><a href="#L6069">Más estilos ZZZ</a></li>
     </ul>
   </li>
 </ul>
+</div>
 </div>
 <hr>
 </div>
 
 <div class="section">
-<h2 id="L49">1 - La Internet</h2>
-<ul>
-  <li>Concepto de browser</li>
-  <li>Concepto de web server</li>
-  <li>Interacción entre browser y server, introducción de los términos
-    "protocolo" y "HTTP"</li>
-</ul>
+<h2 id="L49">Presentación</h2>
+
+<h3>Requisitos previos</h3>
+
+<p>Si bien es un curso inicial, que no requiere de conocimientos previos sobre
+el tema, los temas se presentan en profundidad desde el principio, evitando las
+introducciones demasiado simples que ofenden la inteligencia del alumno.</p>
+
+<p>Para este curso solo se requiere que los estudiantes puedan usar la
+Internet: navegar páginas, mandar email, ese tipo de cosas. </p>
+
+<p>Adicionalmente, es necesario poder usar el sistema de archivos de la PC y
+editar archivos de texto, aunque sea con un editor tan elemental como el
+Notepad de Windows.</p>
+
+<p></p>
+
+<h3>Qué se aprende</h3>
+
+<p>El curso trata sobre las tres tecnologías sobre las cuales se basa toda la
+Internet (en realidad, la World Wide Web), que son HTML, CSS y JavaScript. </p>
+
+<p>Si bien son tecnologías separadas, se las trata más o menos en conjunto,
+por que la realidad de las páginas web es así. Tratar de aprenderlas por
+separado es mucho menos eficiente, por la forma en que se relacionan entre sí.
+</p>
+
+<p>El curso presenta una breve introducción (aunque no trivial) de cómo
+funciona la Internet. A continuación se presenta rápidamente los elelemtnso
+básicos de HTML y enseguida se incorporan los otros temas: CSS y JavaScript,
+para continuar avanzando con los tres en conjunto. De esta forma se pueden
+plantear ejemplos y trabajos más realistas, con mayor valor de aprendizaje.
+</p>
+
+<p>Al terminar el curso exitosamente el estudiante pasa a ser una persona que
+"entiende" las tecnologías involucradas y ya puede usarlas en escenarios
+simples. Como son temas vastísimos, no es práctico intentar enseñar todo de
+una vez, pero luego de este curso el estudiante puede continuar aprendiendo con
+cursos adicionales o por cuenta propia, sobre una base firme.</p>
+
+<h3>Extras</h3>
+
+<p></p>
+
+<p>Además de las tres tecnologías básicas, en el desarrollo de páginas para
+la Internet entran en juego muchísimos otros factores, como por ejemplo
+accesibilidad, usabilidad, seguridad, que si bien no se desarrollan en
+profundidad, están presentes donde corresponde por que son esenciales.
+También hayinformación, sugerencias y advertencias, sobre una cantidad de
+otros temas que no son parte de los lenguajes objeto del curso pero sí son
+partes de la cultura de la internet y es mejor tenerlos en cuenta desde el
+principio. </p>
+
+<h2 id="L491">1 - La Internet</h2>
+
+<p>Esta sección es una introducción a las tecnologías que soportan la
+Internet. Se explica como funciona la Internet sin entrar demasiado en el
+detalle de esas tecnologías, pero sin que sea una explicacíon trivial. </p>
 
 <h3 id="L100">La red ("net")</h3>
 
@@ -139,30 +181,65 @@ desarrollo web</h1>
 <p></p>
 </div>
 
-<p>La "internet" es una "red" (en inglés "net") de conexiones de datos.
-Tenemos otras redes que nos proveen otros servicios, como la red eléctrica que
-conecta una usina donde se genera la electricidad con las casas de la gente, o
-la red telefónica que conecta a las personas a través de una central y les
-permite comunicarse a distancia. </p>
+<p>La "internet" es una "red" (en inglés "net") que nos provee servicio de
+conexiones de datos. No es la única red que nos provee servicios, existen la
+red eléctrica que conecta una usina donde se genera la electricidad con las
+casas de la gente, la red telefónica que conecta a las personas a través de
+una central y les permite comunicarse a distancia. Agua y gas son otros
+ejemplos, en los lugares donde están disponibles. También la televisión, por
+cable o de aire. </p>
 
-<p>En el caso de la red eléctrica existe la usina, la línea de transmisión
-que lleva la electricidad de la usina a donde se usa, y el lugar donde la
-electricidad se usa - por ejemplo nuestra casa. </p>
+<div class="imgR" style="padding-left:1em; clear:both;">
+<img alt="producción de energía: generadores eólicos"
+src="res/320px-GreenMountainWindFarm_Fluvanna_2004.jpg"
+style="width:320px;"></div>
+
+<p>En el caso de la red eléctrica existe una fuente de energía electrica, en
+cualquiera de sus formas: usina, represa hidroeléctrica, generaodres eólicos,
+planta atómica. </p>
+
+<div style="clear:both;">
+
+<div class="imgR" style="padding-left:1em; clear:both;">
+<img alt="línea de transmisión de energía"
+src="res/electricPowerNetwork.jpg" style="width:320px;"> </div>
+
+<p style="">Luego debe haber una línea de transmisión que lleve la
+electricidad de la usina donde se la produjo hasta el lugar donde se usa,
+generalmente una ciudad. </p>
+</div>
+
+<p style="clear:both;">Y finalmente existen los lugares donde la energía
+eléctrica se consume, por ejemplo nuestra casa, donde la usamos para hacer
+funcionar las computadoras y algunos artefactos más. </p>
 
 <p>La Internet es algo similar. Existen los "web servers" de donde provienen
-los datos, la red de transmisión, y la computadora donde usamos los datos. </p>
+los datos que son análogos a las usinas, la red de transmisión que es lo que
+llamamos "Internet", y nuestra computadora donde usamos los datos. </p>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="wi-fi logo" src="res/wifiLogo.jpg" style="width:200px;"></div>
 
 <p>Visualizamos la red como una nube: no vemos lo que tiene adentro
-(normalmente no nos interesa), y cualquier parte donde nos conectemos da igual.
-Ultimamente ni siquiera es necesario un cable para hacer conexión. </p>
+(normalmente no nos interesa), y en cualquier parte donde nos conectemos da
+igual. Ultimamente ni siquiera es necesario un cable para hacer conexión: en
+muchos lugares la Internet <em>está en el aire</em>. </p>
+
+<p>En las redes de energía eléctrica, agua, gas, televisión, hay un lugar
+donde se produce el contenido del servicio y otro lugar (nuestra casa, por
+ejemplo) donde se lo consume. Lo que esas redes llevan circula exclusivamente
+desde la fuente hacia el consumidor. La Internet es diferente: cualquier
+computadora que esté conectada puede ser a la vez proveedor y consumidor. El
+ejemplo más claro es el protocolo P2P de <a
+href="http://en.wikipedia.org/wiki/BitTorrent">BitTorrent</a>. </p>
 
 <h3 id="L117">El browser</h3>
 
 <div class="imgR" style="padding-left:1em;">
 <img alt="browser logos" src="res/browsers.png" width="443" height="192"></div>
 
-<p>Es el programa instalado en la PC que usamos para entrar a la Internet. Hay
-varios, los más conocidos son</p>
+<p>Es el programa de la PC o smartphone que usamos para "navegar" la Internet.
+Hay varios, los más conocidos son</p>
 <ol>
   <li>Google Chrome </li>
   <li>Mozilla Firefox </li>
@@ -175,10 +252,12 @@ varios, los más conocidos son</p>
 misma manera. En la realidad hay pequeñas diferencias que se van reduciendo
 paulatinamente.</p>
 
-<p>Hay una institucion llamada "World Wide Web Consortium" o "W3C" ( "w" 3
-veces y una "c") que trabaja definiendo "standadrs", normas detalladas de cómo
-debe aparecer cada cosa en la pantalla (en el curso iremos viendo qué
-cosas).</p>
+<p>Hay una institucion llamada "<a href="http://www.w3.org/">World Wide Web
+Consortium</a>" o "W3C" ( "w" 3 veces y una "c") que trabaja definiendo
+"standards", normas detalladas de cómo debe aparecer cada elemento en la
+pantalla (en el curso iremos viendo qué elementos). Y hay además un liderazgo
+de los developers de Mozilla tendiente a que todos los browsers se ajusten
+rigurosamente a las normas del W3C. </p>
 
 <p>Las páginas web son "archivos de texto", es decir, contienen solamente
 letras, números y símbolos (lo que hay en un teclado de PC), y se pueden
@@ -194,33 +273,39 @@ pantalla.</p>
 style="width:222px;"></div>
 
 <p>El server es una computadora que "está en la Internet". Lo que hace que sea
-un "web server" y no una computadora cualquiera es que ejecuta permanentemente
-un programa que también se llama "web server". </p>
+un "web server" y no simplemente otra computadora más es que ejecuta
+permanentemente un programa que también se llama "web server". </p>
 
-<p>La función del web server es recibir los pedidos de páginas ("requests")
-de los browsers y despachar las páginas que correspondan. </p>
+<p>La función del web server es recibir de los browsers los pedidos de
+páginas ("requests") y en respuesta, despachar las páginas que correspondan
+("responses"). </p>
 
 <p>Los requests de los browsers tienen un formato especial (también definido
-por el W3C) y se llaman "URL". Por ejemplo para ver la página de búsqueda en
-Google el URL es:</p>
+por el W3C) y se llaman "<a href="http://www.w3.org/TR/url/">URL</a>s". Por
+ejemplo el URL de la página de búsqueda en Google es:</p>
 <pre>https://www.google.com/</pre>
 
+<p>Todo lo que hay en la Internet tiene su URL particular: cada página, cada
+imagen, todo. No hay dos URLs iguales. </p>
+
 <p>El web server de Google recibe ese request y envía la respuesta o
-"response", que se vé más o menos así (todos la conocemos): </p>
+"response", que en firefox se vé más o menos así (todos conocemos esta
+página): </p>
 
 <p><img alt="google search start page" src="res/googleSearch.png"
 style="width:100%; height:auto; max-width:700px;"></p>
 
-<p>Lo que el web server envía es una cantidad de texto que se puede ver
-picando la página con el botón derecho del mouse y seleccionando "View Page
-Source" o algo similar dependiendo del browser instalado.</p>
+<p>Lo que el web server envía es una cantidad de texto en lenguaje HTML, que
+se puede ver picando la página con el botón derecho del mouse y seleccionando
+"View Page Source" o algo similar dependiendo del browser que se está
+usando.</p>
 
-<p>Por ejemplo la parte de ese texto que especifica el espacio donde uno
-escribe las palabras que quiere buscar es así: </p>
+<p>Por ejemplo la parte de ese texto de la página de Google que define el
+espacio donde uno escribe las palabras que quiere buscar es así: </p>
 <pre>&lt;input id=gbqfq class=gbqfif name=q type=text autocomplete=off value=""&gt;</pre>
 
-<p>El browser interpreta ese texto y otros, los combina, y muestra esto en la
-página: </p>
+<p>El browser interpreta ese texto y otros, los combina, y muestra en la
+página el input donde se escribe el texto patsa la búsqueda: </p>
 
 <p style="text-align:center;margin-left:auto;margin-right:auto;"><img
 alt="search input box" src="res/googleSearchInput.png"></p>
@@ -229,42 +314,46 @@ alt="search input box" src="res/googleSearchInput.png"></p>
 
 <h3 id="L183">¿Cómo funciona?</h3>
 
-<p>El browser y el web server se comunican a través de la Internet. Para eso
-usan unos "protocolos" que se llaman HTTP o HTTPS y <a
+<p>El browser y el web server se comunican a través de la Internet usando unos
+"protocolos" que se llaman <a href="http://www.w3.org/Protocols/">HTTP</a> o
+HTTPS y <a
 href="http://en.wikipedia.org/wiki/Internet_protocol_suite">TCP/IP</a>. Un
-protocolo es una serie de reglas detalladas de qué hacer en todas las
-situaciones de una relación entre personas, países, o computadoras.</p>
+protocolo es una serie de reglas detalladas sobre qué hacer en todas y cada
+una de las situaciones de una relación entre personas, países, o
+computadoras.</p>
 
-<p>En la imagen se vé el protocolo "https" al comienzo del URL: </p>
+<p>En la imagen se vé el protocolo "https" especificado al comienzo del URL:
+</p>
 
 <p style="text-align:center;margin-left:auto;margin-right:auto;"><img
 alt="https protocol in URL" src="res/httpsProtocol.png" width="513"
 height="108"></p>
 
-<p>El protocolo HTTP es para comunicaciones comunes, y el HTTPS para
-comunicaciones encriptadas, mensajes en código, casi imposibles de descifrar.
-Y el protocolo TCP/IP es para que las diversas computadoras puedan hablar HTTP
-entre sí. </p>
+<p>El protocolo HTTP es para comunicaciones normales, y el HTTPS para
+comunicaciones encriptadas, en código, casi imposibles de descifrar. El
+protocolo TCP/IP es para que las diversas computadoras puedan hablar HTTP entre
+sí y se usa tanto para HTTP como para otros protocolos asociados a diferentes
+tipos de comunicaciones. </p>
 
-<p>Los protocolos de Internet son los que hacen la magia de conectar vía
-Internet un browser de un lugar con un server que puede estar en el otro lado
-del mundo. </p>
+<p>Los protocolos TCP/IP son los que hacen la magia de conectar vía Internet
+un browser de un lugar con un server que puede estar en el otro lado del mundo.
+</p>
 
 <div class="imgR" style="padding-left:1em;">
 <img alt="Ichikawa radio logo" src="res/logo-ichikawafm.gif"></div>
 
 <p>Por ejemplo <a
 href="http://www.ichikawafm.co.jp/">http://www.ichikawafm.co.jp</a> es la radio
-de <a href="http://en.wikipedia.org/wiki/Ichikawa,_Chiba">Ichikawa</a> en
-Japón. El URL termina con ".jp" en vez de ".ar" como los de Agentina.</p>
+de <a href="http://en.wikipedia.org/wiki/Ichikawa,_Chiba">Ichikawa</a>, una
+localidad cualquiera de Japón en el otro lado del mundo. El URL termina con
+".jp" en vez de ".ar" como los de Agentina.</p>
 
 <p>Si ponemos el URL de la home page de la radio, la página aparece en el
 browser! ¿Cómo es posible, cómo funciona, si hay millones y millones de
-servidores web en la Internet, cómo va justo al que uno quiere?</p>
+servidores web en la Internet, cómo hace para ir justo al que contiene la
+página que uno quiere?</p>
 
-<p>No es magia. Vamos a ver una explicación simple. </p>
-
-<p></p>
+<p>No es magia. Vamos a ver una explicación un simplificada. </p>
 
 <p>Nosotros, los humanos, entendemos nombres de servidores web como por ejemplo
 el de Google (google.com) o el de facebook (facebook.com).</p>
@@ -274,39 +363,48 @@ hablamos entre nosotros usando los "domain names", por ejemplo decimos "entré
 a facebook". </p>
 
 <p>Los programas de computadora usan en vez las direcciones "IP" de los
-servidores, que son unos números. Por ejemplo la dirección IP del server de
-la radio de Ichikawa es <code>211.127.173.50</code>. </p>
+servidores, que son unos números. Una computadora diría "entré a
+173.252.110.27" (una IP de facebook). </p>
 
-<p>Esto se puede comprobar consultando la <a
+<p>La dirección IP del server de la radio de Ichikawa es
+<code>211.127.173.50</code>. Esto se puede comprobar consultando la <a
 href="http://www.dnsstuff.com/tools#ipInformation|type=ipv4&amp;&amp;value=211.127.173.50">información
 sobre la IP 211.127.173.50</a>. </p>
 
-<p>El browser averigua la IP de la radio fácilmente, consultando un servidor
-"DNS", un diccionario gigante que dice cuál es la IP de cada DNS. Entonces
-cuando el browser manda el request lo dirige a la dirección IP, no al domain
-name. Nosotros podemos averiguar la IP usando el comando ping: </p>
+<p>El browser averigua la IP de la radio consultando un servidor "DNS", un
+diccionario gigante que dice cuál es la IP de cada DNS. Entonces cuando el
+browser manda el request lo dirige a la dirección IP, no al domain name. Cada
+persona o empresa que publica una página tiene su domain name registrado en la
+red mundial de servidores DNS. </p>
+
+<p>Nosotros podemos averiguar fácilmente la IP de un dominio usando el comando
+ping. Por ejemplo la IP de la radio de Ichikawa: </p>
 
 <p><img alt="ping Ichikawa" src="res/pingIchikawa.png"
 style="width:100%; max-width:677px;"></p>
 
 <p>Hay <a href="http://en.wikipedia.org/wiki/Routing_table">otro diccionario,
-una especia de mapa de la red, que dice qué IPs está conectado con cuales
-otras</a>. El request consulta ese diccionario de conexiones o rutas y va de
-"hop" en "hop" (un "hop" es un salto) saltando de un "router" a otro y
-aproximándose así a su destino final. Por ejemplo primero averigua cuál
-router le conviene para una IP que comienza con 211 y salta a ese router. Una
-vez ahí averigua cuál router le conviene para IPs 211.127... y así
+una especie de mapa de la red, que dice qué IPs están conectadas con cuales
+otras</a>. La implementación del protocolo TCP/IP que se está ocupando de
+hacer progresar el request consulta ese diccionario de conexiones o rutas y va
+de "hop" en "hop" (un "hop" es un salto) saltando de un "router" a otro y
+aproximándose así a su destino final. Podríamos pensar que primero averigua
+cuál router le conviene para una IP que comienza con 211 y salta a ese router.
+Una vez ahí averigua cuál router le conviene para IPs 211.127... y así
 sucesivamente. Un <a
 href="http://en.wikipedia.org/wiki/Router_(computing)">router</a> es otra
 computadora, con programación especializada para "rutear" mensajes en la red.
 </p>
 
+<h4>Ejemplo de la ruta de un request</h4>
+
 <p>La ruta desde el servicio Network-Tools.com (206.123.64.46) hasta la radio
-de Ichikawa pasa por una cantidad de routers, como se puede apreciar en el <a
-href="http://network-tools.com/default.asp?prog=trace&amp;host=211.127.173.50">"trace"
+de Ichikawa pasa por una cantidad de routers, como se puede apreciar en el
+siguiente <a
+href="http://network-tools.com/default.asp?prog=trace&amp;host=211.127.173.50">"traceroute"
 (rastreo)</a> de 16 hops: </p>
 
-<div style="font-size:80%; margin:0 auto;">
+<div style="font-size:80%; margin:0 auto;" class="framed">
 211.127.173.50 is from Japan(JP) in region Southern and Eastern Asia <br>
 <br>
 <strong>TraceRoute from Network-Tools.com to 211.127.173.50
@@ -456,24 +554,27 @@ href="http://network-tools.com/default.asp?prog=trace&amp;host=211.127.173.50">"
 </div>
 
 <p>Empieza desde la IP de Network-Tools.com 206.123.64.46 en St Louis, USA. Se
-vé que en menos de 50 milisegundos pasa por 8 routers de
-<code>us.above.net</code> también en USA (teniendo la IP podemos averiguar
-dónde están) antes de llegar al Pacífico (las IPs "143" y "211"). Pasó por
-6 routers de Australia y Japón antes de llegar a la radio. </p>
+vé que en menos de 50 milisegundos pasa por 8 routers del dominio
+<code>us.above.net</code> también en USA (teniendo la IP podemos averiguar que
+todos están cerca de New York) antes de llegar al Pacífico (se nota por las
+las IPs "143" y "211"). Una vez allí pasa por 6 routers de Australia y Japón
+antes de llegar a la radio de Ichikawa. </p>
 
 <p>De la <a
 href="http://www.dnsstuff.com/tools#ipInformation|type=ipv4&amp;&amp;value=211.127.173.50">consulta
 sobre la IP</a> surge que todos los números de IP desde 211.120.0.0 hasta
 211.127.255.255 están en Japón. También surge que este rango de 520280
-direcciones IP es uno de los 3026 que tiene Japón para sus 127 millones de
-habitantes.</p>
+direcciones IP es uno de los 3026 rangos que tiene Japón para sus 127 millones
+de habitantes.</p>
 
-<p>Hay solamente 4000 millones de direcciones IP, o sea muy pocas. Estás
-asignadas por bloques de números consecutivos, como las 211.12x que
-corresponden a Japón. Suponiendo que todos los bloques de asignaciones son
-como este, de medio millón de direcciones, entonces habría unos 8000 bloques
-y se necesitaría un índice de 8000 direcciones, que para una computadora no
-es un número impresionante. </p>
+<p>Hay solamente 4000 millones de direcciones IP, o sea muy pocas. Están
+asignadas por bloques de números consecutivos, como las 211.12x.xxx.xxx que
+corresponden a Japón. Suponiendo que todos los bloques de asignaciones fueran
+como este, de medio millón de direcciones, entonces para el total de 4000
+millones de IPs habría unos 8000 bloques de medio millón de IPs cada uno y se
+necesitaría un índice de 8000 direcciones para saber dónde se encuentra cada
+bloque, un tamaño que para una computadora no es ni remotamente impresionante.
+</p>
 
 <h3 id="L982">Resumiendo</h3>
 
@@ -481,25 +582,46 @@ es un número impresionante. </p>
 conceptos básicos necesarios para entender lo que viene. Sin esa información,
 la Internet es pura magia  :-)</p>
 
-<p>Ahora pasamos a ver cómo son las páginas. </p>
+<p>Ahora sí pasamos a ver cómo son las páginas. </p>
+
+<h3>Actividades</h3>
+<ol>
+  <li>Averiguar la dirección IP del sitio www.taringa.net</li>
+  <li>Averiguar la dirección IP del sitio taringa.net</li>
+  <li>Usando http://www.dnsstuff.com/tools: 
+    <ul>
+      <li>averiguar el límite inferior del rango de IPs del bloque al que
+        pertenece la IP 201.212.0.6 (IP Range - Start) </li>
+      <li>Averiguar el límite superior del rango de IPs del bloque al que
+        pertenece la IP 201.212.0.6 (IP Range - End) </li>
+      <li>Averiguar a qué país está asociada la IP 201.212.0.6 </li>
+    </ul>
+  </li>
+</ol>
+
+<p>IP Range - Start 201.212.0.0 - IP Range - End 201.212.127.255</p>
+
+<p></p>
+
+<p></p>
 </div>
 
 <div class="section">
-<h2 id="L876">2 - Las páginas</h2>
+<h2 id="L876">2 - Las páginas web</h2>
 
-<h3 id="L920">El lenguaje</h3>
+<h3 id="L920">El lenguaje HTML</h3>
 
-<p>Cuando un web server recibe un request, elabora y devuelve un "response"
-(respuesta), un texto en lenguaje "<a
+<p>Cuando un web server recibe un request de un browser, elabora y devuelve un
+"response" (respuesta), que es un texto en lenguaje "<a
 href="http://en.wikipedia.org/wiki/HTML">HTML</a>". Vamos a ver cómo es ese
 lenguaje, para aprender a usarlo.</p>
 
 <p>El response que el web server manda puede ser HTML que está en un archivo
-en el server. Se trata de una página "estática". </p>
+en el server y en ese caso se trata de una página "estática". </p>
 
-<p>También puede ser HTML que el server arma con información de una base de
-datos, por ejemplo si consultamos twitter para ver lo que hay relacionado con
-un tag cualquiera como <a
+<p>También puede ser HTML que el server arma en ese momento con información
+de una base de datos. Por ejemplo si consultamos twitter para ver lo que hay
+relacionado con un tag cualquiera como <a
 href="https://twitter.com/search?q=%23pizza&amp;src=typd">#pizza</a>, el server
 hace una consulta a una base de datos y arma una página especial para el
 request. En este caso se trata de una página "dinámica". </p>
@@ -509,7 +631,7 @@ registradas en archivos. </p>
 
 <h3 id="L938">Primera página</h3>
 
-<p>Una página mínima es: </p>
+<p>Una página mínima es, por ejemplo: </p>
 <pre>&lt;!doctype html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -518,12 +640,13 @@ registradas en archivos. </p>
   &lt;/head&gt;
   &lt;body lang="es"&gt;
     &lt;h1&gt;John Doe&lt;/h1&gt;
-    &lt;p&gt;Indice de las páginas de &lt;strong&gt;John Doe&lt;/strong&gt; en este web server.&lt;/p&gt;
+    &lt;p&gt;Indice de las páginas de John Doe en este web server.&lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt; </pre>
 
-<p>que grabamos en un archivo C:\paginas\index.html en Windows, o
-~/paginas/index.html en Linux. </p>
+<p>Usando un editor de texto la grabamos en un archivo
+<code>C:\paginas\index.html</code> en Windows, o
+<code>~/paginas/index.html</code> en Linux. </p>
 
 <p>Para abrirla con el browser le aplicamos un doble click y la página se
 despliega; en Chrome se ve así: </p>
@@ -553,13 +676,15 @@ resaltados con amarillo. </p>
   <span style="background-color:#ffff00">&lt;/body&gt;</span>
 <span style="background-color:#ffff00">&lt;/html&gt;</span> </pre>
 
-<p>Se ve que hay tags de apertura y de cierre, como <code>&lt;p&gt;</code> y
-<code>&lt;/p&gt;</code>, o <code>&lt;html&gt;</code> y
+<p>Se observa que hay tags de apertura y de cierre, como <code>&lt;p&gt;</code>
+y <code>&lt;/p&gt;</code>, o <code>&lt;html&gt;</code> y
 <code>&lt;/html&gt;</code>. El tag de cierre lleva una "/" delante del tag
-name. </p>
+name. Lo que se encuentra entre el tag de apertura y el de cierre es el
+"contenido". </p>
 
-<p>En HTML los tags se pueden escribir en mayúsculas o minúsculas, es lo
-mismo, pero escribirlos en mayúsculas hace que el HTML parezca antiguo. </p>
+<p>En HTML los tags se pueden escribir en mayúsculas o minúsculas, el efecto
+es el mismo, pero escribirlos en mayúsculas hace que el HTML parezca
+anticuado. </p>
 
 <h4 id="L10501">&lt;p&gt;</h4>
 
@@ -644,7 +769,8 @@ URL del archivo es: <code>file:///C:/paginas/index.html</code>. </p>
 <p>Para que el archivo se abra en el browser con potocolo file solo es
 necesario darle doble-click, como cualquier otro tipo de archivo. El sistema
 operativo (Windows, Linux) sabe con qué programa abrir los tipos de archivo
-conocidos como este, que es .html. </p>
+conocidos como este, que es .html. También se puede escribir el path del
+archivo en la dirección del browser. </p>
 
 <p>El protocolo file se puede usar para pruebas hasta cierto punto, luego es
 necesario usar un web server. Es posible ejecutar un web server de prueba en la
@@ -661,8 +787,9 @@ Document Object Model) y se usa intensamente en el desarrollo de la
 interacción de las páginas modernas. </p>
 
 <p>Además de construír el DOM, al browser "renderiza" la página en el
-viewport, el espacio que queda para la página en la ventana del browser luego
-de quitar las barras de herramientas, los bordes y la barra de título. </p>
+"viewport", el espacio que queda para la página en la ventana del browser
+luego de quitar las barras de herramientas, los bordes y la barra de título.
+</p>
 
 <p>Cada tipo de elemento se renderiza con el estilo que le corresponde, por
 ejemplo para el h1 se usa una tipografía (font) más grande que para un p. </p>
@@ -673,7 +800,7 @@ línea). </p>
 
 <p>La diferencia es que los block elements se renderizan "en su propia línea",
 mientras que los inline elements se renderizan a continuación del anterior en
-la misma línea. </p>
+la misma línea (si hay espacio). </p>
 
 <p>La página ejemplo contiene dos block elements visibles, h1 y p. El p se
 renderiza abajo del h1 aunque haya espacio en el viewport para renderizarlo a
@@ -682,8 +809,8 @@ continuación. </p>
 <p>Agregamos un elemento inline modificando ésta línea, así: </p>
 <pre>&lt;p&gt;Indice de las páginas de <span style="background-color:#ffff80">&lt;strong&gt;John Doe&lt;/strong&gt;</span> en este web server.&lt;/p&gt;<span style="background-color:#ffff80"></span></pre>
 
-<p>y desplegamos la página en el browser, que ahora se vé con el nombre de
-abajo resaltado: </p>
+<p>y desplegamos la página en el browser, que ahora se vé con el nombre
+resaltado en el elemento p: </p>
 
 <div class="imgContainer" style="width:406px;">
 <img alt="index2.html in ff" src="res/index2.html.png"></div>
@@ -693,8 +820,8 @@ Firefox renderiza mostrando el texto que contiene en negrita (bold). </p>
 
 <p>Hay muchos otros <a
 href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">display
-modes</a>, pero "block" e "inline" son los más importantes que es necesario
-comprender. </p>
+modes</a>, pero "block" e "inline" son los más importantes y es necesario
+comprenderlos bien. </p>
 
 <p>Por último, si hiciéramos que cada elemento de la paginita anterior
 tuviera un borde azul, esto es lo que se vería: </p>
@@ -703,11 +830,11 @@ tuviera un borde azul, esto es lo que se vería: </p>
 <img alt="index2.html with borders" src="res/index2border.html.png"></div>
 
 <p>El borde más externo es el elemento &lt;html&gt;. Dentro de éste hay un
-poco de margen y está el del &lt;body&gt;, que contiene el &lt;h1&gt; y el
-&lt;p&gt; abajo, separados por algo de margen. </p>
+poco de margen y está el borde del &lt;body&gt;, que contiene el &lt;h1&gt; y
+el &lt;p&gt; abajo, separados por algo de margen. </p>
 
-<p>Dentro del &lt;p&gt; está el borde del &lt;strong&gt;, en la misma línea
-por que strong es un inline element. </p>
+<p>Dentro del &lt;p&gt; está el borde del elemento &lt;strong&gt;, en la misma
+línea por que strong es un inline element. </p>
 </div>
 
 <div class="section">
@@ -746,21 +873,23 @@ página en el browser. </p>
 <p>Históricamente, hubo HTML2, HTML 3, HTML 4, y ahora hay HTML 5 o
 simplemente HTML (no más números). </p>
 
-<p>El doctype le dice al browser como cuál versión de HTML queremos que
-interprete nuestra página. </p>
+<p>La declaración "doctype" le dice al browser con cuál versión de HTML
+queremos que interprete nuestra página. </p>
 
-<p><em>Siempre</em> queremos que nuestras páginas sean HTML 5, el más
+<p><em>Siempre</em> queremos que nuestras páginas sean HTML5, el más
 poderoso, el más simple. </p>
 
-<p>Si falta el doctype el browser funciona en "quirks mode" , que se podría
+<p>Si falta el doctype el browser funciona en "quirks mode", que se podría
 traducir "modo caprichos" o "modo extravagancias". Resulta que los primeros
 browsers intentaban corregir los defectos del HTML que procesaban, pero cada
 browser lo hacía a su manera por que no hay una norma para eso. El resultado
-es que los distintos browsers mostraban las páginas con errores de maneras
-variadas. Haciendo páginas correctas (validadas) y poniéndoles el doctype
-obligamos al browser a portarse de una manera conocida, y todos los fabricantes
-de browsers están de acuerdo para hacer algo coherente liderados por el W3C y
-los developers de Mozilla (los que hacen el Firefox).</p>
+es que los distintos browsers mostraban las páginas defectuosas de maneras
+diversas. </p>
+
+<p>Haciendo páginas correctas (validadas) y poniéndoles el doctype obligamos
+al browser a portarse de una manera conocida, y todos los fabricantes de
+browsers están de acuerdo para hacer algo coherente liderados por el W3C y los
+developers de Mozilla (los que hacen el Firefox).</p>
 
 <p>Y como nuestras páginas son nuevas no queremos tener nada que ver con
 versiones antiguas de HTML, así que siempre ponemos<code></code>&lt;!doctype
@@ -769,7 +898,10 @@ html&gt;. </p>
 <h4 id="L1234">&lt;html&gt;</h4>
 
 <p>A continuación del doctype empieza el HTML y lo marcamos abriendo el tag
-<code>&lt;html&gt;</code> aquí y cerrándolo al final. </p>
+<code>&lt;html&gt;</code> aquí y cerrándolo al final. El contenido del tag
+html es toda la página.</p>
+
+<p>El html tiene dos partes, "head" (encabezado) y "body" (cuerpo). </p>
 
 <h4 id="L1241">&lt;head&gt;</h4>
 
@@ -783,7 +915,8 @@ sobre cómo tratar el contenido que viene en el &lt;body&gt;. </p>
 <pre>&lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;</pre>
 
 <p>dice que se trata de texto en lenguaje HTML
-(<code>content="text/html</code>) y que la codificación del texto es utf-8.</p>
+(<code>content="text/html</code>) y que la codificación del texto es <a
+href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a>.</p>
 
 <p>Existen unos cuantos "<a
 href="http://en.wikipedia.org/wiki/Internet_media_type">content-type</a>"
@@ -856,6 +989,14 @@ malo. Imaginemos que se trata de la página de una pizzería online y alguien
 quiere hacer un pedido. Hace una búsqueda de pizzerías de la zona, solo las
 páginas en español: nuestra pizzería no va a figurar y se va a perder muchas
 ventas. </p>
+
+<h4>Actividades</h4>
+<ol>
+  <li>Grabar un archivo con la página ejemplo</li>
+  <li>Abrir la página ejemplo en todos los browsers que hata en la PC</li>
+  <li>Modificar la página ejemplo para reemplazar el nombre "John Doe" por el
+    propio del estudiante y abrirla en un browser</li>
+</ol>
 </div>
 
 <div class="section">
@@ -918,21 +1059,28 @@ donde está la página html. </p>
 crawlers. </p>
 
 <p>Pensando en la gente que no puede verlas, cada imagen en nuestras páginas
-lleva un atributo "alt" que significa algo así como una alternativa del
-información. </p>
+lleva un atributo "alt" que significa algo así como una alternativa a la
+información de la imagen. Se trata de hacer que la página sea accesible
+también para las personas que no pueden ver. </p>
+
+<p>Se aconseja redactar el texto del atributo alt como si uno estuviera
+explicándole la imagen a otra persona, por teléfono. </p>
+
+<div class="imgR">
+<p><img alt="carita feliz" src="res/320px-Smiley_Face.png"></p>
+</div>
 
 <p>Ejemplo de atributo alt: </p>
-<pre>&lt;img src="res/iconLinkedin20x20.png" <span style="background-color:#ffff00">alt="carita feliz"</span>&gt;</pre>
+<pre style="display:inline-block;">&lt;img src="res/320px-Smiley_Face.png" alt="carita feliz"&gt;</pre>
 
-<p>Si el href no apunta a un archivo con una imagen que el browser pueda
-mostrar, en vez de la imagen muestra el texto alt, así:   <img
-href="noExiste.png" alt="imagen que no está"></p>
+<p>Si el atributo href no apunta a un archivo con una imagen que el browser
+pueda mostrar, en vez de la imagen muestra el texto alt. El el siguiente tag
+img:</p>
+<pre style="display:inline-block;">&lt;img href="noExiste.png" alt="imagen que no está"&gt;</pre>
 
-<p>En este caso el HTML fué: </p>
-<pre> IsMarkup="Yes_"&lt;img IsMarkup="Yes_" href= IsString="Yes_""noExiste.png" IsMarkup="Yes_" alt= IsString="Yes_""imagen que no está" IsMarkup="Yes_"&gt; IsMarkup="Yes_"
-</pre>
+<p>se vé así:   <img href="noExiste.png" alt="imagen que no está"></p>
 
-<h4 id="L5789">Más atributos de &lt;img&gt;</h4>
+<h4 id="L5789">Más atributos del tag &lt;img&gt;</h4>
 
 <p>El tag img tiene una cantidad de atributos, como se puede ver en la <a
 href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img">documentación
@@ -1040,9 +1188,9 @@ proporciones del formato original, obviamente 80 en este caso. </p>
 
 <p>"<strong>Ismap</strong>" y "<strong>usemap</strong>" tienen que ver una
 imagen que, según dónde se pica, muestra un resultado diferente. No lo vemos
-en detalle por ahora. </p>
+en detalle. </p>
 
-<h4 id="L5942">Formatos</h4>
+<h4 id="L5942">Formatos de archivos que contienen imágenes</h4>
 
 <p>Hay una variedad de tipos de archivo que contienen imágenes. En HTML se
 puede usar los más comunes: </p>
@@ -1051,7 +1199,7 @@ puede usar los más comunes: </p>
     href="http://en.wikipedia.org/wiki/JPEG" class="external">JPEG</a></li>
   <li><a title="http://en.wikipedia.org/wiki/Graphics_Interchange_Format"
     href="http://en.wikipedia.org/wiki/Graphics_Interchange_Format"
-    class="external">GIF</a>, including animated GIFs</li>
+    class="external">GIF</a>, incluyendo animated GIFs</li>
   <li><a title="http://en.wikipedia.org/wiki/Portable_Network_Graphics"
     href="http://en.wikipedia.org/wiki/Portable_Network_Graphics"
     class="external">PNG</a></li>
@@ -1070,6 +1218,12 @@ puede usar los más comunes: </p>
     href="http://en.wikipedia.org/wiki/ICO_%28file_format%29"
     class="external">PNG ICO</a> </li>
 </ul>
+
+<p>Independientemente del formato del archivo de donde proviene, cuando la
+imagen se despliega en la página, consiste en un arreglo de "pixels", puntos
+luminosos de colores. Las diferencias entre los diferentes los formatos están
+en la compresión, la cantidad de colores y la posibilidad de transparencia.
+</p>
 
 <p><strong>JPEG</strong> es un formato para fotos. Las cámaras digitales
 producen imágenes en este formato. Las imágenes almacenadas en archivos .jpg
@@ -1095,29 +1249,45 @@ calidad y tamaño que puede llegar a ser muy chico. </p>
 1%: 1666 bytes </div>
 </div>
 
-<p>No hay una pérdida de calidad en la segunda imagen respecto de la primera,
-pero en cambio el tamaño del archivo se redujo a menos de un sexto,
+<p>No hay una gran pérdida de calidad en la segunda imagen respecto de la
+primera, pero en cambio el tamaño del archivo se redujo a menos de un sexto,
 aproximadamente. La tercera imagen es de mala calidad, con una reducción de
 tamaño de 84 veces. </p>
 
-<p><strong>GIF</strong>: El uso del formato GIF está desaconsejado por que es
-un formato propiedad de una empresa, y por que solo maneja 256 colores. </p>
+<div class="imgR">
+<img alt="Netscape animated logo" src="res/NetscapeAnimatedLogo.gif"></div>
+
+<p><strong>GIF</strong>: El GIF es un formato que solo puede manejar 256
+colores diferentes en cada imagen. </p>
 
 <p>Uno de esos colores puede ser "transparente", esto le dió al formato GIF
 una ventaja sobre otros formatos contemporáneos. </p>
 
-<p>El uso de GIFs animados está más desaconsejado todavía por que son
-molestos. Hace unos 15 años estuvieron de moda, en las páginas todo titilaba
-o se movía, y por clamor general de dejó de usar. Mejor sigamos así :-) </p>
+<p>Otro factor de éxito de este formato fueron los GIFs animados. </p>
 
-<p><strong>PNG</strong> es un buen formato, libre. Soporta transparencia. A
-diferencia del GIF que puede tener pixels 100% transparentes o 100% opacas, el
-formato PNG soporta un "<a
+<p>El uso de GIFs animados está más desaconsejado todavía por que son
+molestos. A fines de los años '90 estuvieron de moda; en las páginas todo
+titilaba o se movía, y por clamor general de dejó de usar. Mejor sigamos así
+:-) </p>
+
+<p>Estaba patentado por compuserve. Por esta razon muchos sitios evitaban
+usarlo, ante el peligro de que el dueño de la patente les reclame el pago de
+derechos. Actualmente la patente está vencida y el formato pasó a ser del
+dominio público. </p>
+
+<p><strong>PNG</strong> (Portable Netwoks Graphics) es un buen formato, libre,
+diseñado para la Internet. Lo de "portable" se refiere a la posibilidad usarlo
+en cualquier sistema operativo (no como el formato BMP que es de Windows). </p>
+
+<p>Soporta transparencia. A diferencia del GIF que puede tener pixels 100%
+transparentes o 100% opacas, el formato PNG soporta un "<a
 href="http://en.wikipedia.org/wiki/RGBA_color_space">alpha channel</a>" que
-permite aplicar niveles de transparencia particulares a cada pixel. </p>
+permite aplicar niveles de transparencia particulares a cada pixel de la
+imagen. Se puede hacer imágenes translúcidas. </p>
 
 <p><strong>SVG</strong> (Scalable Vector Graphics) es un formato vectorial en
-dos dimensiones. Los gráficos se crean usando un programa gráfico como <a
+dos dimensiones, para crear imágenes sintéticas. Los gráficos se crean
+usando un programa gráfico como <a
 href="http://www.inkscape.org/">Inkskape</a> y se graban en archivos de texto
 que, en vez de pixels, tienen descripciones de formas y colores. "Scalable"
 quiere decir que los gráficos se pueden ampliar indefinidamente sin que
@@ -1127,8 +1297,9 @@ generada con SVG: </p>
 <div class="imgContainer" style="width:100; max-width:615px;">
 <img alt="SVG example" title="SVG example" src="res/SVGSample.png"></div>
 
-<p><strong>BMP</strong> es un formato antiguo de Windows, sin compresión: los
-archivos son enormes. Nadie lo usa. </p>
+<p><strong>BMP</strong> es un formato antiguo de Windows, frecuentemente sin
+compresión: los archivos suelen ser enormes. Actualmente casi no se lo usa.
+</p>
 
 <h4 id="L6036">&lt;figure&gt;</h4>
 
@@ -1140,6 +1311,15 @@ href="http://caniuse.com/html5semantic">browsers que no soportan este tag</a>.
 </p>
 
 <p>---</p>
+
+<h4>Actividades</h4>
+<ol>
+  <li>Agregarle a la página ejemplo una imagen, debajo del tag h1, por ejemplo
+    una foto de uno mismo</li>
+  <li>Abrir la página modificada con la imagen en algún browser</li>
+  <li>Insertar en el encabezado de la página la misma imagen de la actividad
+    anterior, pero de tamaño chico</li>
+</ol>
 </div>
 
 <div class="section">
@@ -1148,29 +1328,178 @@ href="http://caniuse.com/html5semantic">browsers que no soportan este tag</a>.
 <div class="imgR" style="padding-left:1em;">
 <img alt="link hand pointer" src="res/linkHandPointer.png"></div>
 
-<p>Se puede afirmar que la magia de la Internet se apoya principalmente en los
-links. El HTML tiene la "H" en su nombre por "hyperlink", la característica
-que lo hace especial.</p>
+<p>La magia de la Internet se apoya principalmente en los links. El HTML tiene
+la "H" en su nombre por "hyperlink", la característica que lo hace
+especial.</p>
 
-<p>Los links se definen con el tag <code>&lt;a&gt;</code>. Por ejemplo un link
-elemental, a la página inicial de twitter es así: </p>
-<pre>&lt;a href="http://twitter.com"&gt;twitter&lt;/a&gt;</pre>
+<p>En HTML los links se definen con el tag <code>&lt;a&gt;</code>. Por ejemplo
+un link elemental, a la página inicial de twitter, es así: </p>
+<pre style="display:inline-block;">&lt;a href="http://twitter.com"&gt;twitter&lt;/a&gt;</pre>
+<style>
+  .simpleLinks a[href^="http:"]      { padding-left:inherit; }
+  .simpleLinks a[href^="https:"]     { padding-left:inherit; }
+  .simpleLinks a                     { background:transparent; color:blue; text-decoration:underline; }</style>
 
-<p>Este mismísimo link en una página se vé así: <a
+<p class="simpleLinks">Este mismísimo link en una página se vería así: <a
 href="http://twitter.com">twitter</a>, de donde se deduce que es no es un
 elemento block sino inline y por lo tanto es posible insertar links en el texto
 normal de una página.</p>
 
 <p>No es un empty element, por lo tanto requiere tag inicial y de cierre. El
-texto que se muestra en la página es el contenido que está entre los tags de
-cierre y apertura. </p>
+texto que se despliega en la página (en este caso solo la palabra "twitter")
+es el contenido que está entre los tags de cierre y apertura. </p>
 
 <p>Al poner el cursor del mouse sobre el texto del link, la flechita default se
 convierte en una manito, y al picar sobre el link la página que está
 mostrando el browser se reemplaza por la página de la dirección del link,
 tomada del atributo <code>href</code>. </p>
 
-<p>Tradicionalmente los links se muestran </p>
+<p>Tradicionalmente los links se muestran con texto azul y subrayados, pero la
+mayor parte de las páginas web aplican estilos a los links para cambiarles la
+apariencia, usando CSS que se va a presentar más adelante en este curso. </p>
+
+<h3>href</h3>
+
+<p>El link del ejemplo: </p>
+<pre style="display:inline-block;">&lt;a href="http://twitter.com"&gt;twitter&lt;/a&gt;</pre>
+
+<p>contiene el atributo "href" que le informa al browser el terget (objetivo)
+del link. El nombre "href" significa "hyperlink reference" y es un URL (Uniforn
+Resource Locator). </p>
+
+<p>Según como sea el URL del link, el resultado será diferente. Vamos a ver
+cómo es un URL y luego vemos las variantes de links. </p>
+
+<h4>Anatomía de un URL</h4>
+
+<p>Un URL más completo sería así: </p>
+<pre>http://productos.ejemplo.com.ar/seccion12/lista.html#item14</pre>
+
+<p>No todas las partes del URL deben aparecer en todos los links, y dependiendo
+de cuáles figuran en link funciona de manera diferente. </p>
+
+<p>Veamos cada una de las partes: </p>
+
+<table class="borderTable">
+  <col>
+  <col>
+  <col>
+  <tbody>
+    <tr>
+      <th>protocol</th>
+      <td><code>http://</code></td>
+      <td>"scheme name" es el nombre, pero normalmente se lo llama "protocolo",
+        puede ser "http://", "https://" para cominicaciones encriptadas (como
+        cuando se hace un pago con tarjeta de crédito), "mailto:" cuando es un
+        link para enviar email, "ftp://" para FTP, un protocolo para
+        transferencia de archivos, "file:///" y otros. </td>
+    </tr>
+    <tr>
+      <th>domain</th>
+      <td><code>productos.<br>
+        ejemplo.<br>
+        com.ar</code> </td>
+      <td>"ejemplo.com.ar" es el nombre del dominio, que en los casos de
+        empresas tiende a ser igual al nombre de la empresa. La terminación
+        ".ar" indica que es un dominio comercial de Argentina. 
+
+        <p>"productos" es el "hostname", el nombre de un servidor dentro de
+        ejemplo.com.</p>
+      </td>
+    </tr>
+    <tr>
+      <th>path</th>
+      <td><code>seccion12/<br>
+        lista.html</code></td>
+      <td>La ubicación del target dentro del dominio. Es un "path", con
+        directorios y sub-directorios como en el sistema de archivos de una PC.
+      </td>
+    </tr>
+    <tr>
+      <th>fragment</th>
+      <td><p><code>#item14</code></p>
+      </td>
+      <td>Se llama "fragment" y especifica una ubicación dentro del archivo
+        "lista.html". </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Un <a href="http://en.wikipedia.org/wiki/Uniform_resource_locator">URL</a>
+completo tiene más partes, pero por ahora tenemos suficiente. Volvemos al tema
+de los links. </p>
+
+<p>Según qué partes del URL figuran en el atributo href del link, el
+comportamiento será diferente. </p>
+
+<h4>fragment</h4>
+<pre>&lt;a href="#item14"&gt;Item n° 14&lt;/a&gt;</pre>
+
+<p>Este es un link a otra parte de la misma página donde está el link. Es el
+caso cuando la página tiene un índice con una lista de ítems y picando el
+nombre de un ítem la página se reposiciona para ver la información de ese
+ítem, sin recargarla. </p>
+
+<p>El nombre "item14" que figura en el atributo href link debe coincidir con el
+atributo "id" del link target. Por ejemplo si el target fuera un encabezado h5
+podría ser: </p>
+<pre>&lt;h5 id="item14"&gt;El ítem 14&lt;/h5&gt;</pre>
+
+<p>Dos consideraciones: </p>
+<ul>
+  <li>El id no lleva el hash "#" adelante. </li>
+  <li>El id es case-sensitive: deben coincidir las mayúsculas y minúsculas
+    exactamente. No es lo mismo "#Item14" que "#item14".</li>
+  <li>No debe haber dos elementos en la página que tengan el mismo id. </li>
+  <li>El id se escribe con letras, números y underscore "_", no debe comenzar
+    con un número. </li>
+</ul>
+
+<p>El caso extremo de link mínimo es solamente un hash: <code>href="#"</code>.
+Es un link a ninguna parte, un link no operativo. Se suele usar cuando se está
+escribiendo una página mientras no se sabe exactamente el target real:
+inicialmente todos los attributos href son href="#" y a medida que el trabajo
+progresa se reemplaza el hash por el URL que corresponde. Al picar en un link
+con este href la misma página se vuelve a cargar. </p>
+
+<h4>path</h4>
+
+<p>Un link con solo el path en una página apunta a otra página dentro del
+mismo sitio. </p>
+
+<p>Ejemplo: </p>
+<pre>&lt;a href="otraPagina.html"&gt;Link a otra página&lt;/a&gt;</pre>
+
+<p>El browser arma un link completo sustituyendo las partes que faltan con lo
+de la página actual. Eso se puede comprobar estacionando el cursor sobre el
+link: en la status bar del browser se vé el link compuesto. </p>
+
+<p>Si la página actual es </p>
+<pre>http://www.ejemplo.com/curso1/ejemplos/estaPagina.html</pre>
+
+<p>el URL compuesto sería </p>
+<pre>http://www.ejemplo.com/curso1/ejemplos/<strong>otraPagina.html</strong>
+</pre>
+
+<p>Este es un "relative link" por que el URL es relativo a la página actual.
+Una variante muy similar, que suele confundirse, es el "absolute link", que
+comienza con una "/". </p>
+
+<p>La "/" inicial significa que el link no es relativo a la página actual sino
+al inicio del sitio. El mismo link del ejemplo anterior sería: </p>
+<pre>&lt;a href="/curso1/ejemplos/otraPagina.html"&gt;Link a otra página&lt;/a&gt;</pre>
+
+<p>El link relativo supone que estaPagina.html y otraPagina.html están en el
+mismo diretctorio en el server. Si una de las dos páginas se cambiara de lugar
+el link dejaría de funcionar, se convertiría en un "dead link", un defecto de
+las páginas que siempre se trata de evitar por que le transmite al usuario una
+sensación de sitio de mala calidad, descuidado, y necesariamente le hace
+pensar que los productos de esa empresa también deben ser de calidad dudosa.
+</p>
+
+<p></p>
+
+<p></p>
 
 <p></p>
 

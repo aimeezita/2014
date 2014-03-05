@@ -4,7 +4,7 @@
   var props = {};
 
   var defaultProps = {
-    backLinkText: 'TOC &rarr;',
+    backLinkText: 'TOC',
     backLinkClass: 'ssIgnore',
     ignoreHeaderClass: 'TOCIgnore',
     startLevel: 1,
@@ -63,7 +63,7 @@
         // if the heading text is empty, skip this heading.
         if (!headingText || headingText.length === 0) return true;
 
-        // create an anchor and append it to the target heading
+        // backlink: create an anchor and append it to the target heading
         var backLink = $("<a>" + props.backLinkText + "</a>")
           .attr({
             'class': 'tocBackLink' + ' ' + props.backLinkClass,
@@ -80,16 +80,20 @@
           .attr( 'id', linkBackId );                
 
         // create a TOC entry and append it to the toc line div
-        var $entry = $("<a>" + headingText + "</a>")
-          .attr({
+        var $entry = $("<a>" + 'eee' + "</a>")
+        $entry[0].textContent = headingText;
+        $entry.attr({
             'title': headingText,
             'href': '#' + targetId,
             'class': 'tocLink'
           })
+
         // append the new TOC line to the toc div
         .appendTo($TOCLine)
           .parent()
           .appendTo($that);
+        // text content assigned later to circumvent char entities issues
+        // $entry.innerText() = headingText;
       });
 
       return this.show();

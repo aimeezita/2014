@@ -4,7 +4,7 @@
 .tocEntry { } /* a marker for anything that wants to be a tocEntry */
 .tocContainer a.tocLink { color:#00c; }
 .tocContainer a.tocLink:visited { color:#088; }
-a.tocBackLink, a.tocBackLink:visited { display:block; float:right; font-size:12px; font-style:normal; text-decoration:none !important; padding-left:0.5em; font-weight:normal; color:rgb(192,192,192); }
+a.tocBackLink, a.tocBackLink:visited { display:block; float:right; font-size:12px; font-style:normal; text-decoration:none !important; padding-left:0.5em; font-weight:normal; color:rgb(192,192,192); outline:none; }
 .tocBackTarget { }
 .tocContainer div.tocLevel1 { padding-top:0.3em; font-size:100%; font-weight:bold; }
 .tocContainer div.tocLevel2 { padding-left:2em; font-size:90%; font-weight:bold; }
