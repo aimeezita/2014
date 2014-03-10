@@ -5,49 +5,141 @@
   <meta http-equiv="Content-Language" content="en">
   <title>08Mar2014 Sat</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js"> </script>
+  <script type="text/javascript" src="res/agenda.js"> </script>
+  <script type="text/javascript" src="./res/tocBuilder.js"> </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
-      $(document).ready(function () {
-      });
-      </script>
-
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140307.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140309.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 08Mar2014 Sat </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140307.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140309.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 08Mar2014 Sat </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a href="http://www.youtube.com/watch?v=6x__NthInRs">How To Make Your Voice Sound Better (Secrets Revealed)</a>  </p> 
+<p><a href="http://www.youtube.com/watch?v=UTeUeRxAS7M">DIY $23.00 Mini Sound Booth build in under an hour</a> </p> 
+<p><a href="https://www.google.com.ar/search?q=Blue+Yeti+USB+Microphone&amp;oq=Blue+Yeti+USB+Microphone&amp;aqs=chrome..69i57j0l5.3038j0j7&amp;sourceid=chrome&amp;espv=2&amp;es_sm=125&amp;ie=UTF-8#newwindow=1&amp;q=Blue%20Yeti%20USB%20Microphone&amp;safe=off">Blue Yeti USB Microphone</a> </p> 
+<p><a href="https://www.google.com.ar/search?q=sudio+click&amp;oq=sudio+click&amp;aqs=chrome..69i57j0l5.4022j0j8&amp;sourceid=chrome&amp;espv=2&amp;es_sm=125&amp;ie=UTF-8#newwindow=1&amp;q=download+sound+effects+free&amp;safe=off&amp;tbm=vid">Search for free sound effects</a> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>CSS transitions</h3>
+
+<!-- binary abacus -->
+<p>The abacus ball, formated as sprite: <img alt="ball" src="../Public/reading/doc/res/black_ball.png"></p>
+<!-- set the animation end event to hake the click sound -->
+<audio id="ba_clickSound" preload="auto" volume="0.3" style="display:none">
+  <source src="res/192278_3509815-lq.mp3" type="audio/mp3">
+  <!-- <source src="res/192278_3509815-lq.ogg" type="audio/ogg"> -->
+</audio>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('.ba_bit').on(
+      'transitionend', 
+      function(e) {
+        // play the click sound
+        document.getElementById('ba_clickSound').cloneNode(true).play();
+      }
+    )
+  });
+</script>
+<style>
+  .ba_bit { border:8px solid black;
+            border-top:1px solid white;
+            border-bottom:1px solid white;
+            border-collapse:collapse;
+            height:19px;
+            width:90px;
+            font-size:33%; 
+            background-image:url(res/black_ball.png);  
+            background-repeat:no-repeat; 
+  }
+  .ba_0   { background-position: 0% 0%;
+            transition: background-position .4s ease-in ; 
+  }
+  .ba_1   { background-position: -75px 0%; 
+            transition: background-position ease-in .4s;
+  }
+
+</style>
+
+<table id="binAbacus">
+  <tbody>
+    <tr>
+      <td id="bit_1" class="ba_bit ba_0" onclick="$(this).toggleClass('ba_1 ba_0');">eee</td>
+    </tr>
+    <tr>
+      <td id="bit_0" class="ba_bit"><p>eee</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions">MDN docs here</a>
+and the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">list of animatable props</a>. </p>
+
+<p>The transition CSS property is a shorthand property for <a
+href="http://docs.webplatform.org/wiki/css/properties/transition-property">transition-property</a>,
+transition-duration, transition-timing-function, and transition-delay.</p>
+<pre>selector { transition: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt;; }</pre>
+
+<p>There is a single event that is fired when transitions complete. In all
+standard-compliant browser, the event is transitionend, in WebKit it is
+webkitTransitionEnd. See the compatibility table at the bottom for more. The
+transitionend event offers two properties:</p>
+<dl>
+  <dt>propertyName</dt>
+    <dd>A string indicating the name of the CSS property whose transition
+      completed.</dd>
+  <dt>elapsedTime </dt>
+    <dd>A float indicating the number of seconds the transition had been
+      running at the time the event fired. This value isn't affected by the
+      value of transition-delay. </dd>
+</dl>
+
+<p>As usual, you can use the element.addEventListener() method to monitor for
+this event:</p>
+<pre>el.addEventListener("transitionend", updateTransition, true);</pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
