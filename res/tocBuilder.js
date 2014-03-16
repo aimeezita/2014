@@ -23,6 +23,7 @@
       if (typeof (props.endLevel) !== 'number' || props.endLevel < 1) { props.endLevel = 6; }
       if (props.startLevel > props.endLevel) { return null; }
 
+      // reference the target, bind the props as data, and empty it
       props.targetElement = $that;
       $that.data('props', props); 
       $that.empty();
@@ -38,10 +39,11 @@
         }).appendTo($that);
 
       // select all Hx elements
+      // TODO: instead of "all" allow the specification of a subset
       $( ':header' ).not('.TOCIgnore').each( function (index) {
         var $this = $(this);
         var level = 1;
-        // HTML4: use the number from the tag: h1, h2 ... as level
+        // HTML4: use as level the number from the tag: h1, h2 ...
         level = parseInt(this.tagName.substring(1));
 
         // only process entries whose level is in range
@@ -92,8 +94,6 @@
         .appendTo($TOCLine)
           .parent()
           .appendTo($that);
-        // text content assigned later to circumvent char entities issues
-        // $entry.innerText() = headingText;
       });
 
       return this.show();
