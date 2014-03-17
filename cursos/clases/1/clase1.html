@@ -195,7 +195,7 @@ src="res/320px-GreenMountainWindFarm_Fluvanna_2004.jpg"
 style="width:320px;"></div>
 
 <p>En el caso de la red eléctrica existe una fuente de energía electrica, en
-cualquiera de sus formas: usina, represa hidroeléctrica, generaodres eólicos,
+cualquiera de sus formas: usina, represa hidroeléctrica, generadores eólicos,
 planta atómica. </p>
 
 <div style="clear:both;">
@@ -204,19 +204,19 @@ planta atómica. </p>
 <img alt="línea de transmisión de energía"
 src="res/electricPowerNetwork.jpg" style="width:320px;"> </div>
 
-<p style="">Luego debe haber una línea de transmisión que lleve la
-electricidad de la usina donde se la produjo hasta el lugar donde se usa,
-generalmente una ciudad. </p>
+<p>También hay una línea de transmisión que lleve la energía de la
+usina donde se la produce hasta el lugar donde se usa, generalmente una ciudad.
+</p>
 </div>
 
 <p style="clear:both;">Y finalmente existen los lugares donde la energía
-eléctrica se consume, por ejemplo nuestra casa, donde la usamos para hacer
+eléctrica se consume, por ejemplo nuestras casas, donde la usamos para hacer
 funcionar las computadoras y algunos artefactos más. </p>
 
-<p>La Internet es algo similar. Existen los "web servers" de donde provienen
-los datos que son análogos a las usinas, la red de transmisión que es lo que
-llamamos "Internet", y nuestra computadora donde usamos los datos. </p>
-
+<p>La Internet tiene una configuración similar. Existen los "web servers" de
+donde provienen los datos que son análogos a las usinas, la red de
+transmisión que es lo que llamamos "Internet", y nuestra computadora donde
+usamos los datos. </p>
 <div class="imgR" style="padding-left:1em;">
 <img alt="wi-fi logo" src="res/wifiLogo.jpg" style="width:200px;"></div>
 
@@ -231,7 +231,9 @@ ejemplo) donde se lo consume. Lo que esas redes llevan circula exclusivamente
 desde la fuente hacia el consumidor. La Internet es diferente: cualquier
 computadora que esté conectada puede ser a la vez proveedor y consumidor. El
 ejemplo más claro es el protocolo P2P de <a
-href="http://en.wikipedia.org/wiki/BitTorrent">BitTorrent</a>. </p>
+href="http://en.wikipedia.org/wiki/BitTorrent">BitTorrent</a> donde todos los
+que están conectados bajando un archivo a la vez también están oficiando de
+servers hacia sus pares. </p>
 
 <h3 id="L117">El browser</h3>
 
@@ -255,16 +257,45 @@ paulatinamente.</p>
 <p>Hay una institucion llamada "<a href="http://www.w3.org/">World Wide Web
 Consortium</a>" o "W3C" ( "w" 3 veces y una "c") que trabaja definiendo
 "standards", normas detalladas de cómo debe aparecer cada elemento en la
-pantalla (en el curso iremos viendo qué elementos). Y hay además un liderazgo
+pantalla (en el curso iremos viendo qué elementos). Hay además un liderazgo
 de los developers de Mozilla tendiente a que todos los browsers se ajusten
 rigurosamente a las normas del W3C. </p>
 
+<p>Es solo recientemente que se están alineando los planetas: todos los
+browsers tienden a funcionar de la misma manera, respetando las normas. Eso no
+fué así en los primeros años de la WWW. No había normas tan claras como las
+que existen ahora, y a la vez Microsoft intentaba diferenciar el Internet
+Explorer introduciéndole caracteríasticas incompatibles de manera de obligar
+a la gente a usarlo en vez de los otros.</p>
+
+<p>Esas caracteríasticas diferentes, sumadas a los defectos de programación
+(bugs) que introducían sin proponérselo, hacían que fuera necesario un
+esfuerzo adicional de desarrollo muy significativo para que las páginas
+funcionaran en Internet Explorer. La imagen de abajo, del año 2006, lo explica
+claramente: </p>
+
+<div>
+<img alt="time breakdown alloting lots of time to make a page work in IE"
+style="width:100%; max-width:550px; margin:auto;"
+src="res/ModernWebDevelopmentTimeBreakdown.png"></div>
+
+<p></p>
+
+<p>En particular, el IE6 fué en máximo exponente de estas dificultades, al
+punto que desde hace años hay <a href="http://www.modern.ie/ie6countdown">una
+página dedicada a observar la declinción del uso del IE6 en el mundo</a>,
+esperando a que llegue a un porcentaje tan bajo (&lt; 1%) que no sea necesario
+tenerlo en cuenta.</p>
+
+<p>Microsoft comenzó a tratar de hacer sus browsers compliant con las normas
+del W3C a partir del IE7; en 2014 el IE10 ya se puede decir que está bien. </p>
+
 <p>Las páginas web son "archivos de texto", es decir, contienen solamente
-letras, números y símbolos (lo que hay en un teclado de PC), y se pueden
-editar con programas como Notepad o <a href="http://www.vim.org/">vim</a>. El
-browser interpreta ese texto según las normas del W3C, lo combina con
-imágenes (también videos y otros tipos de material) y lo despliega en la
-pantalla.</p>
+letras, números y símbolos (lo que hay en el teclado de una PC), y se pueden
+editar con editores de texto como Notepad o <a
+href="http://www.vim.org/">vim</a>. El browser interpreta ese texto según las
+normas del W3C, lo combina con imágenes, videos y otros tipos de material y lo
+despliega en la pantalla.</p>
 
 <h3 id="L149">El server</h3>
 
@@ -285,8 +316,8 @@ por el W3C) y se llaman "<a href="http://www.w3.org/TR/url/">URL</a>s". Por
 ejemplo el URL de la página de búsqueda en Google es:</p>
 <pre>https://www.google.com/</pre>
 
-<p>Todo lo que hay en la Internet tiene su URL particular: cada página, cada
-imagen, todo. No hay dos URLs iguales. </p>
+<p>Todo lo que hay en la Internet tiene su URL particular, <em>absolutamente
+todo</em>: cada página, cada imagen, ... No hay dos URLs iguales. </p>
 
 <p>El web server de Google recibe ese request y envía la respuesta o
 "response", que en firefox se vé más o menos así (todos conocemos esta
@@ -305,12 +336,10 @@ espacio donde uno escribe las palabras que quiere buscar es así: </p>
 <pre>&lt;input id=gbqfq class=gbqfif name=q type=text autocomplete=off value=""&gt;</pre>
 
 <p>El browser interpreta ese texto y otros, los combina, y muestra en la
-página el input donde se escribe el texto patsa la búsqueda: </p>
+página el input donde se escribe el texto para la búsqueda: </p>
 
 <p style="text-align:center;margin-left:auto;margin-right:auto;"><img
 alt="search input box" src="res/googleSearchInput.png"></p>
-
-<p>En este curso aprendemos a entender y hacer este tipo de cosas. </p>
 
 <h3 id="L183">¿Cómo funciona?</h3>
 
@@ -586,7 +615,8 @@ la Internet es pura magia  :-)</p>
 
 <h3>Actividades</h3>
 <ol>
-  <li>Averiguar la dirección IP del sitio www.taringa.net</li>
+  <li>Averiguar la dirección IP del sitio www.taringa.net &lt;&lt;&lt;
+    BLOCKED!!!!</li>
   <li>Averiguar la dirección IP del sitio taringa.net</li>
   <li>Usando http://www.dnsstuff.com/tools: 
     <ul>
