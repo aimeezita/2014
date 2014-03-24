@@ -49,6 +49,11 @@ as Root in Ubuntu 12.04</a> </p>
 
 <div id="agendaBody">
 <h3>moving /home to D</h3>
+<pre>sudo rsync -v --archive --temp-dir=/D/. -XS /home/. "/media/jlanus/WD Passport/home_1/."  2 &gt;&gt; ~/rsyncHome.txt &gt;&gt; ~/rsyncHome.txt</pre>
+
+<p></p>
+
+<p></p>
 
 <p><a href="https://help.ubuntu.com/community/Partitioning/Home/Moving">Ubuntu:
 Partitioning/Home/Moving</a> </p>
@@ -143,7 +148,7 @@ mount(8)</a> </p>
 
 <p></p>
 
-<p>Attempted a backup with:</p>
+<p>Attempted a backup with: </p>
 <pre>sudo rsync  -XS /home/. "/media/jlanus/WD Passport/home/." &gt; ~/rsyncHome.txt
 sudo rsync -vv --archive -XS /home/. "/media/jlanus/WD Passport/home/."  2&gt;&amp;1 &gt; ~/rsyncHome.txt</pre>
 
