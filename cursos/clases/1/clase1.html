@@ -130,6 +130,11 @@ al desarrollo web</h1>
       <li><a href="#L6049">6 - Estilos</a> 
         <ul>
           <li><a href="#L180488">Browser default style</a></li>
+          <li><a href="#L180519">CSS</a></li>
+          <li><a href="#L180539">Sintaxis del lenguage CSS</a></li>
+          <li><a href="#L180590">Selectores</a></li>
+          <li><a href="#L180629">Atributos <code>id</code> y
+            <code>class</code></a></li>
         </ul>
       </li>
       <li><a href="#L60541">7 - Box model &amp; tools</a></li>
@@ -138,15 +143,6 @@ al desarrollo web</h1>
       <li><a href="#L6059">10 - Listas</a></li>
     </ul>
   </li>
-</ul>
-<ul>
-  <li><a href="#L180519">CSS</a></li>
-  <li><a href="#L180539">Sintaxis del lenguage CSS</a></li>
-</ul>
-<ul>
-  <li><a href="#L180590">Selectores</a></li>
-  <li><a href="#L180629">Atributos <code>id</code> y
-  <code>class</code></a></li>
 </ul>
 </div>
 <hr>
@@ -2133,12 +2129,10 @@ cantidad de elementos similares. Por ejemplo una lista de frutas: </p>
   <li>strawberry</li>
 </ol>
 
-<p>o desplegada horizontalmente: </p>
+<p>o desplegada horizontalmente (cambiándole el estilo con CSS): </p>
 <style>
   .HList ul { }
-  .HList li { display:inline-block; border:1px solid silver; border-left:0; 
-padding:0px 12px; margin:0; background-color:rgb(240,240,240); }
-  .HList ul li:first-child { border:1px solid silver; }
+  .HList li { display:inline-block; border:1px solid silver; padding:0px 12px; margin:0; background-color:rgb(240,240,240); }
   .HList li:hover { background-color:rgb(248,248,240);}
   ul.openClose li ul { display:none; }
   ul.openClose li:hover ul { display:block; }</style>
@@ -2149,6 +2143,24 @@ padding:0px 12px; margin:0; background-color:rgb(240,240,240); }
   <li>banana</li>
   <li>strawberry</li>
 </ul>
+
+<p>El HTML del primer ejemplo es así: </p>
+<pre>&lt;ul&gt;
+  &lt;li&gt;apple&lt;/li&gt;
+  &lt;li&gt;orange&lt;/li&gt;
+  &lt;li&gt;pear&lt;/li&gt;
+  &lt;li&gt;banana&lt;/li&gt;
+  &lt;li&gt;strawberry&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+<p>El tag <code>ul</code> significa <em>unordered list</em>. Las listas sin
+números se llaman <em>unordered</em>, aunque estén ordenadas. Las numeradas
+se definen con el tag <code>ol</code> por <em>ordered list</em>, en vez de
+<code>ul</code>. </p>
+
+<p>En ambos tipos de lista el tag <code>li</code> define un <em>list
+item</em>. La estructura de una lista es el container <code>ul</code> u
+<code>ol</code>, que contiene una cantidad de elementos <code>li</code>. </p>
 
 <p>Es posible hacer listas jerárquicas, definiendo listas dentro de listas:
 </p>
@@ -2203,11 +2215,16 @@ sumamente precario de menú jerárquico): </p>
   <li>strawberry</li>
 </ul>
 
-<p>Veamos en detalle el último caso. El CSS y el HTML son así: </p>
-<pre> IsMarkup="Yes_"&lt;style&gt;  
+<p>La jerarquía se implementa insertando una lista conpleta dentro de un
+elemento <code>li</code>.</p>
+
+<p>Veamos en detalle el último caso, que despliega listas ocultas usando CSS.
+El CSS y el HTML son así: </p>
+<pre>&lt;style&gt;
   ul.openClose li ul { display:none; }
-  ul.openClose li:hover ul { display:block; } IsMarkup="Yes_"
+  ul.openClose li:hover ul { display:block; }
 &lt;/style&gt;
+ 
 &lt;<strong>ul</strong> class="<strong>openClose</strong>"&gt;
   &lt;<strong>li</strong>&gt;apples ...
     &lt;<strong>ul</strong>&gt;
@@ -2232,29 +2249,139 @@ sumamente precario de menú jerárquico): </p>
   &lt;li&gt;strawberry&lt;/li&gt;
 &lt;/ul&gt;</pre>
 
-<p>El tag <code>ul</code> significa <em>unordered list</em>. Las listas sin
-números se llaman <em>unordered</em>, aunque estén ordenadas. Las numeradas
-se definen con el tag <code>ol</code> por <em>ordered list</em>. </p>
+<p>El CSS: </p>
+<pre>ul.openClose li ul { display:none; }</pre>
 
-<p>En ambos tipos de lista el tag <code>li</code> es <em>list item</em>. La
-estructura de una lista es el container <code>ul</code> u <code>ol</code>, que
-contiene una cantidad de elementos <code>li</code>. La jerarquía se implementa
-insertando un tal <code>ul</code> dentro de un elemento <code>li</code>. </p>
-
-<p>El CSS <code>ul.openClose li ul { display:none; }</code> significa
-seleccionar los elementos <code>ul</code> que están dentro de un
+<p>significa seleccionar los elementos <code>ul</code> que están dentro de un
 <code>li</code> dentro de un <code>ul</code> con clase <code>openClose</code>
-y ocultarlos con <code>display:none;</code>. Hace que las listas interiores no
-se vean. </p>
+y ocultarlos con <code>display:none;</code> (hay que leerlo de derecha a
+izquierda). Hace que las listas interiores no se vean. </p>
 
-<p>El CSS <code>ul.openClose li:hover ul { display:block; }</code> es igual al
-anterior, con la única diferencia de la
-<em>pseudoclass</em> <code>:hover</code> que selecciona los mismos elementos
-pero solamente mientras el cursor del mouse está sobrevolando el elemento
+<p>El CSS </p>
+<pre>ul.openClose li:hover ul { display:block; }</pre>
+
+<p>es igual al anterior, con la única diferencia de la
+<em>pseudoclass</em> <code>:hover</code>. Selecciona los mismos elementos pero
+solamente mientras el cursor del mouse está sobrevolando el elemento
 <code>li</code> que contiene la lista oculta, y la muestra con
-<code>displpay:block;</code>. </p>
+<code>display:block;</code>. <br>
+Significa aplicarle <code>display:block;</code> a los
+<code>ul</code> contenidos por un <code>li</code> que tiene el cursor encima,
+que son parte de un <code>ul</code> con <code>class:openClose</code>. </p>
 
 <p></p>
+</div>
+
+<div class="section" style="display:block;">
+<h2 id="L6064">JavaScript, jQuery y el DOM</h2>
+
+<p>Esto es un tema inmenso. </p>
+
+<p><a href="http://en.wikipedia.org/wiki/JavaScript">JavaScript</a> (o JS) es
+un lenguaje de programación que se implementó el los browsers de Netscape en
+el año 1995 y ahora, casi 10 años después, hay indicios de que va a ser el
+próximo Gran Lenguaje de Programmación Mundial. </p>
+
+<p><a href="http://en.wikipedia.org/wiki/JQuery">jQuery</a> es una librería de
+funciones para JS que se usa en muchísimos sitios web. Facilita mucho la
+programación con una cantidad de funciones de conveniencia, pero muy
+especialmente <em>nivelando los browsers</em>. Muchas funciones del JS
+funcionan distinto en los diferentes browsers, especialmente el MSIE. jQuery
+ofrece una única función alternativa que además de alguna ventaja de
+conveniencia, se ocupa de detectar el browser donde se está ejecutando
+producir el mismo resultado en todos los casos, incluso con el infame IE6.
+jQuery facilitó enormemente el trabajo con JS. Eventualmente se va a
+extinguir, cuando dejen de existir los problemas que resuelve, pero por el
+momento es fundamental. </p>
+
+<p><a href="http://en.wikipedia.org/wiki/Document_Object_Model">DOM</a> es el
+Document Object Model, la organización de los elementos de una página vistos
+por el JS. Se puede considerar que es una API. Está estandarizado por el W3C
+bajo el título "<a
+href="http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/">DOM Level 3
+Core Specification</a>" y otros documentos. El DOM es una estructura
+jerárquica del contenido de una página, el elemento root es el tag
+<code>html</code> que tiene dos <em>children</em>: <code>head</code> y
+<code>body</code>, y así sucesivamente. Una página elaborada puede tener
+muchísimos niveles dentro de niveles. </p>
+
+<h4>Objetos</h4>
+
+<p>El DOM, o sea todo lo que contiene la página, es una jerarquía de
+elementos que programáticamente se implementa como una jerarquía de
+<em>objetos</em> y los atributos de los elementos HTML, como por ejemplo
+<code>id</code> o <code>class</code> son properties de esos objetos.  </p>
+
+<p>Con programmación JS+jQ lo que se hace es modificar el DOM. Se agregan o
+eliminan elementos, y se cambian las propiedades de los elementos existentes.
+</p>
+
+<p>Estos cambios se realizan en respuesta a acciones del usuario o del
+ambiente, hay una cantidad de acciones bien tipificadas que para el browser son
+<em>eventos</em>. Un ejemplo típico de evento es <em>mouse click</em>. La
+programación implica crear <em>event handlers</em>, funciones que están
+esperando que un evento suceda (por ejemplo esperando que el usuario pique en
+un botón, o que un timer llegue a cero) y se ejecutan en ese momento.  </p>
+
+<p>Empecemos a ver ejemplos concretos. La páginita de los ejemplos ahora tiene
+un <code>id</code>. </p>
+<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+    &lt;title&gt;J Doe - index&lt;/title&gt;
+    &lt;style&gt;
+      h1 { color:gray; text-align:center; }
+      .urgent { background-color:yellow; } 
+      <span style="background-color:#f0f0f0">div.content { background-color:rgb(240,240,240); border:4px solid silver;</span> 
+      <span style="background-color:#f0f0f0">border-radius:8px; padding:1em; }</span>
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body lang="es"&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    <span style="background-color:#f0f0f0">&lt;div <span style="background-color:#ffff80">id="pageContent"</span> div class="content"&gt;</span>
+      &lt;p&gt;Indice de las páginas de John Doe en este web server.&lt;/p&gt;
+      &lt;p&gt;&lt;span class="urgent"&gt;Bring some beer to the location.&lt;/span&gt;&lt;/p&gt; 
+    <span style="background-color:#f0f0f0">&lt;/div&gt;</span>
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>Para operar programáticamente sobre el elemento <code>div</code> con
+<code>id="pageContent"</code> se necesita una referencia a ese objeto, que se
+puede obtener así: </p>
+<pre>    var contentDiv = document.getElementById('pageContent');</pre>
+
+<p>Esa línea define una variable ("<code>var</code>"), la nombra
+<code>contentDiv</code> y le asigna como valor una referencia a un objeto que
+ya existe usando el método <code>getElementById()</code> del objeto
+<code>document</code> que representa el DOM completo de la página. </p>
+
+<p>Vamos por partes. La parte <code>var</code> crea una variable. En JS las
+variables no tienen tipos fijos, adoptan el tipo del valor que les asignemos,
+si hiciéramos <code>var contentDiv = 5;</code> la variable sería tipo
+<code>number</code>, asi que solo ponemos el nombre. </p>
+
+<p>El lado derecho de la asignación es la ejecución de un método de un
+objeto, en particular <a
+href="https://developer.mozilla.org/en-US/docs/Web/API/document.getElementById">el
+método <code>getElementById()</code></a> del objeto
+<code>document</code> que retorna una referencia a un elemento o
+<code>null</code>. </p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+<pre>{
+  handleContent: function() {
+    var contentDiv = document.getElementById('pageContent');
+  }
+}</pre>
+
+<p></p>
+
+<p>---</p>
 </div>
 
 <div class="section" style="display:none;">
