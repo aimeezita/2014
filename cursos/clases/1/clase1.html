@@ -1466,20 +1466,20 @@ texto que se despliega en la página (en este caso solo la palabra "twitter")
 es el contenido que está entre los tags de cierre y apertura. </p>
 
 <p>Al poner el cursor del mouse sobre el texto del link, la flechita default se
-convierte en una manito, y al picar sobre el link la página que está
-mostrando el browser se reemplaza por la página de la dirección del link,
-tomada del atributo <code>href</code>. </p>
+convierte en una manito. Al picar sobre el link la página que está mostrando
+el browser se reemplaza por la página donde apunta el link, tomada del
+atributo <code>href</code>. </p>
 
 <p>Tradicionalmente los links se muestran con texto azul y subrayados, pero la
 mayor parte de las páginas web aplican estilos a los links para cambiarles la
-apariencia, usando CSS que se va a presentar más adelante en este curso. </p>
+apariencia, usando CSS, que se va a presentar más adelante en este curso. </p>
 
 <h3 id="L1697">href</h3>
 
 <p>El link del ejemplo: </p>
 <pre style="display:inline-block;">&lt;a href="http://twitter.com"&gt;twitter&lt;/a&gt;</pre>
 
-<p>contiene el atributo "href" que le informa al browser el terget (objetivo)
+<p>contiene el atributo "href" que le informa al browser el target (objetivo)
 del link. El nombre "href" significa "hyperlink reference" y es un URL (Uniforn
 Resource Locator). </p>
 
@@ -1488,13 +1488,14 @@ cómo es un URL y luego vemos las variantes de links. </p>
 
 <h4 id="L1707">Anatomía de un URL</h4>
 
-<p>Un URL más completo sería así: </p>
+<p>Un URL más completo puede ser así: </p>
 <pre>http://productos.ejemplo.com.ar/seccion12/lista.html#item14</pre>
 
-<p>No todas las partes del URL deben aparecer en todos los links, y dependiendo
-de cuáles figuran en link funciona de manera diferente. </p>
+<p>No todas las partes del URL aparecen en todos los links, y dependiendo de
+cuáles partes figuran en link, éste funciona de maneras diferentes. </p>
 
-<p>Veamos cada una de las partes: </p>
+<p>Veamos cada una de las partes. El "target" (donde apunta el link) es el
+"item14" de una lista que pertenece a la "seccion12": </p>
 
 <table class="borderTable">
   <col>
@@ -1504,20 +1505,20 @@ de cuáles figuran en link funciona de manera diferente. </p>
     <tr>
       <th>protocol</th>
       <td><code>http://</code></td>
-      <td>"scheme name" es el nombre, pero normalmente se lo llama "protocolo",
-        puede ser "http://", "https://" para cominicaciones encriptadas (como
-        cuando se hace un pago con tarjeta de crédito), "mailto:" cuando es un
-        link para enviar email, "ftp://" para FTP, un protocolo para
-        transferencia de archivos, "file:///" y otros. </td>
+      <td>El nombre de esta parte es "scheme name", pero normalmente se lo
+        llama "protocolo", puede ser "http://", "https://" para comunicaciones
+        encriptadas (como cuando se hace un pago con tarjeta de crédito),
+        "mailto:" cuando es un link para enviar email, "ftp://" para FTP (un
+        protocolo de transferencia de archivos), "file:///" y otros. </td>
     </tr>
     <tr>
       <th>domain</th>
       <td><code>productos.<br>
         ejemplo.<br>
         com.ar</code> </td>
-      <td>"ejemplo.com.ar" es el nombre del dominio, que en los casos de
-        empresas tiende a ser igual al nombre de la empresa. La terminación
-        ".ar" indica que es un dominio comercial de Argentina. 
+      <td>La parte "ejemplo.com.ar" es el nombre del dominio, que en los casos
+        de empresas tiende a ser igual al nombre de la empresa. La terminación
+        "com.ar" indica que es un dominio comercial de Argentina. 
 
         <p>"productos" es el "hostname", el nombre de un servidor dentro de
         ejemplo.com.</p>
