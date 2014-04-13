@@ -1,0 +1,2489 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>web dev intro</title>
+  <link href="res/favicon.ico" type="image/x-icon" rel="shortcut icon">
+  <style>
+  .imgR { float:right; margin-left:2em; }</style>
+  <link rel="stylesheet" href="../../../res/agenda.css" type="text/css">
+  <script type="text/javascript" src="../../../res/jquery.js">
+ </script>
+  <script type="text/javascript" src="../../../res/agenda.js">
+ </script>
+  <script type="text/javascript" src="../../../res/tocBuilder.js">
+ </script>
+  <link href="../../../res/tocBuilder.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+    $(document).ready(function () {
+    });
+  </script>
+  <style>
+    .section { width:100%; }
+    .imgContainer { margin:1em auto; }
+    /* .onePage { border:4px solid blue; } */
+  </style>
+</head>
+
+<body>
+
+<div id="agendaHeader">
+
+<div class="fixedHeader" style="overflow-x:hidden;">
+
+<div
+style="float:right; color:rgb(40,40,155); font-size:50%; padding-right:1em; ">
+© Juan Lanus</div>
+
+<h1 style="display:inline; line-height:1em; clear:none;" id="L41">Introducción
+al desarrollo web</h1>
+</div>
+
+<div id="agendaBody">
+
+<div class="toc">
+<ul>
+  <li><a href="#L41">Introducción al desarrollo web</a> 
+    <ul>
+      <li><a href="#L49">Presentación</a> 
+        <ul>
+          <li><a href="#L217">Requisitos previos</a></li>
+          <li><a href="#L227">Qué se aprende</a></li>
+          <li><a href="#L237">Extras</a></li>
+        </ul>
+      </li>
+      <li><a href="#L491">1 - La Internet</a> 
+        <ul>
+          <li><a href="#L100">La red ("net")</a></li>
+          <li><a href="#L290">Variedad de servicios vía Internet</a></li>
+          <li><a href="#L117">El browser</a></li>
+          <li><a href="#L149">El server</a></li>
+          <li><a href="#L383">URL</a></li>
+          <li><a href="#L408">Query</a></li>
+          <li><a href="#L418">Response</a></li>
+          <li><a href="#L183">¿Cómo funciona?</a> 
+            <ul>
+              <li><a href="#L495">Ejemplo de la ruta de un request</a></li>
+            </ul>
+          </li>
+          <li><a href="#L982">Resumiendo</a></li>
+          <li><a href="#L872">Actividades</a></li>
+        </ul>
+      </li>
+      <li><a href="#L876">2 - Las páginas web</a> 
+        <ul>
+          <li><a href="#L920">El lenguaje HTML</a></li>
+          <li><a href="#L938">Primera página</a></li>
+          <li><a href="#L980">Tags</a> 
+            <ul>
+              <li><a href="#L10501">&lt;p&gt;</a></li>
+              <li><a href="#L1060">&lt;h1&gt;</a></li>
+              <li><a href="#L1123">&lt;body&gt;</a></li>
+            </ul>
+          </li>
+          <li><a href="#L1099">El protocolo "file"</a></li>
+          <li><a href="#L1143">Display mode</a></li>
+        </ul>
+      </li>
+      <li><a href="#L1198">3 - Más detalles de la página ejemplo</a> 
+        <ul>
+          <li><a href="#L1213">doctype</a></li>
+          <li><a href="#L1234">&lt;html&gt;</a></li>
+          <li><a href="#L1241">&lt;head&gt;</a> 
+            <ul>
+              <li><a href="#L1245">content-type</a></li>
+              <li><a href="#L1269">title</a></li>
+            </ul>
+          </li>
+          <li><a href="#L1572">&lt;body&gt;</a></li>
+          <li><a href="#L12691">Actividades</a></li>
+        </ul>
+      </li>
+      <li><a href="#L5699">4 - Imágenes</a> 
+        <ul>
+          <li><a href="#L5701">&lt;img&gt;</a> 
+            <ul>
+              <li><a href="#L5739">href</a></li>
+              <li><a href="#L5768">alt</a></li>
+              <li><a href="#L5789">Más atributos del tag &lt;img&gt;</a></li>
+              <li><a href="#L5942">Formatos de archivos que contienen
+                imágenes</a></li>
+              <li><a href="#L6036">&lt;figure&gt;</a></li>
+              <li><a href="#L1653">Actividades</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#L6164">5 - Links</a> 
+        <ul>
+          <li><a href="#L1697">href</a> 
+            <ul>
+              <li><a href="#L1707">Anatomía de un URL</a></li>
+              <li><a href="#fragment">fragment</a></li>
+              <li><a href="#L1829">path</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#L6049">6 - Estilos</a> 
+        <ul>
+          <li><a href="#L180488">Browser default style</a></li>
+          <li><a href="#L180519">CSS</a></li>
+          <li><a href="#L180539">Sintaxis del lenguage CSS</a></li>
+          <li><a href="#L180590">Selectores</a></li>
+          <li><a href="#L180629">Atributos <code>id</code> y
+            <code>class</code></a></li>
+        </ul>
+      </li>
+      <li><a href="#L60541">7 - Box model &amp; tools</a></li>
+      <li><a href="#L60542">8 - CSS units</a></li>
+      <li><a href="#L6054">9 - Más tags</a></li>
+      <li><a href="#L6059">10 - Listas</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+<hr>
+</div>
+
+<div class="section">
+<h2 id="L49">Presentación</h2>
+
+<h3 id="L217">Requisitos previos</h3>
+
+<p>Si bien es un curso inicial, que no requiere de conocimientos previos sobre
+el tema, los temas se presentan en profundidad desde el principio, evitando las
+introducciones demasiado simples que ofenden la inteligencia del alumno.</p>
+
+<p>Para este curso solo se requiere que los estudiantes puedan usar la
+Internet: navegar páginas, mandar email, ese tipo de cosas. </p>
+
+<p>Adicionalmente, es necesario poder usar el sistema de archivos de la PC y
+editar archivos de texto, aunque sea con un editor tan elemental como el
+Notepad de Windows.</p>
+
+<p></p>
+
+<h3 id="L227">Qué se aprende</h3>
+
+<p>El curso trata sobre las tres tecnologías sobre las cuales se basa toda la
+Internet (en realidad, la World Wide Web), que son HTML, CSS y JavaScript. </p>
+
+<p>Si bien son tecnologías separadas, se las trata más o menos en conjunto,
+por que la realidad de las páginas web es así. Tratar de aprenderlas por
+separado es mucho menos eficiente, por la forma en que se relacionan entre sí.
+</p>
+
+<p>El curso presenta una breve introducción (aunque no trivial) de cómo
+funciona la Internet. A continuación se presenta rápidamente los elelemtnso
+básicos de HTML y enseguida se incorporan los otros temas: CSS y JavaScript,
+para continuar avanzando con los tres en conjunto. De esta forma se pueden
+plantear ejemplos y trabajos más realistas, con mayor valor de aprendizaje.
+</p>
+
+<p>Al terminar el curso exitosamente el estudiante pasa a ser una persona que
+"entiende" las tecnologías involucradas y ya puede usarlas en escenarios
+simples. Como son temas vastísimos, no es práctico intentar enseñar todo de
+una vez, pero luego de este curso el estudiante puede continuar aprendiendo con
+cursos adicionales o por cuenta propia, sobre una base firme.</p>
+
+<h3 id="L237">Extras</h3>
+
+<p></p>
+
+<p>Además de las tres tecnologías básicas, en el desarrollo de páginas para
+la Internet entran en juego muchísimos otros factores, como por ejemplo
+accesibilidad, usabilidad, seguridad, que si bien no se desarrollan en
+profundidad, están presentes donde corresponde por que son esenciales.
+También hay información, sugerencias y advertencias, sobre una cantidad de
+otros temas que no son parte de los lenguajes objeto del curso pero sí son
+partes de la cultura de la internet y es mejor tenerlos en cuenta desde el
+principio. </p>
+
+<h2 id="L491">1 - La Internet</h2>
+
+<p>Esta sección es una introducción a las tecnologías que soportan la
+Internet. Se explica como funciona la Internet sin entrar demasiado en el
+detalle de esas tecnologías, pero sin que sea una explicacíon trivial. </p>
+
+<h3 id="L100">La red ("net")</h3>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="cloud = nube" src="res/cloud.png" style="width:222px;"></div>
+
+<div class="imgR" style="padding-left:1em;">
+<p></p>
+</div>
+
+<p>La "internet" es una "red" (en inglés "net") que nos provee servicio de
+conexiones de datos. No es la única red que nos provee servicios, existen la
+red eléctrica que conecta una usina donde se genera la electricidad con las
+casas de la gente, la red telefónica que conecta a las personas a través de
+una central y les permite comunicarse a distancia. Agua y gas son otros
+ejemplos, en los lugares donde están disponibles. También la televisión, por
+cable o de aire. </p>
+
+<div class="imgR" style="padding-left:1em; clear:both;">
+<img alt="producción de energía: generadores eólicos"
+src="res/320px-GreenMountainWindFarm_Fluvanna_2004.jpg"
+style="width:320px;"></div>
+
+<p>En el caso de la red eléctrica existe una fuente de energía electrica, en
+cualquiera de sus formas: usina, represa hidroeléctrica, generadores eólicos,
+planta atómica. </p>
+
+<div style="clear:both;">
+
+<div class="imgR" style="padding-left:1em; clear:both;">
+<img alt="línea de transmisión de energía"
+src="res/electricPowerNetwork.jpg" style="width:320px;"> </div>
+
+<p>También hay una línea de transmisión que lleva la energía de la usina
+donde se la produce hasta el lugar donde se usa, generalmente una ciudad. </p>
+</div>
+
+<p style="clear:both;">Y finalmente existen los lugares donde la energía
+eléctrica se consume, por ejemplo nuestras casas, donde la usamos para hacer
+funcionar las computadoras y algunos artefactos más. </p>
+
+<p>La Internet tiene una configuración similar. Existen los "web servers" de
+donde provienen los datos que son análogos a las usinas, la red de
+transmisión que es lo que llamamos "Internet", y nuestra computadora donde
+usamos los datos. </p>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="wi-fi logo" src="res/wifiLogo.jpg" style="width:200px;"></div>
+
+<p>Visualizamos la red como una nube: no vemos lo que tiene adentro
+(normalmente no nos interesa), y en cualquier parte donde nos conectemos da
+igual. Ultimamente ni siquiera es necesario un cable para hacer conexión: en
+muchos lugares la Internet <em>está en el aire</em>. </p>
+
+<p>En las redes de energía eléctrica, agua, gas, televisión, hay un lugar
+donde se produce el contenido del servicio y otro lugar (nuestra casa, por
+ejemplo) donde se lo consume. Lo que esas redes llevan circula exclusivamente
+desde la fuente hacia el consumidor. La Internet es diferente: cualquier
+computadora que esté conectada puede ser a la vez proveedor y consumidor. El
+ejemplo más claro es el protocolo P2P de <a
+href="http://en.wikipedia.org/wiki/BitTorrent">BitTorrent</a> donde todos los
+que están conectados bajando un archivo a la vez también están oficiando de
+servers hacia sus pares. </p>
+
+<h3 id="L290">Variedad de servicios vía Internet</h3>
+
+<p>La Internet es un canal de comunicación versátil que transmite una
+variedad de servicios. El más conocido es la "Web" o WWW por "World Wide Web",
+pero no es el único. </p>
+
+<p>Hay otros servicios que usan la Internet como canal de comunicaciones: </p>
+<ul>
+  <li>email, el correo electrónico</li>
+  <li>instant messaging</li>
+  <li>telefonía, especialmente en empresas</li>
+  <li>juegos en línea</li>
+  <li>varias formas de transferencia de archivos, incluído bit torrents</li>
+  <li>VPN Virtual Private Networks, comunicaciones privadas a través de la red
+    pública</li>
+  <li>operación remota de computadoras usando SSH o Telnet. </li>
+</ul>
+
+<p>Este cursito se refiere exclusivamente a la WWW por que es el servicio más
+usado, el que todos conocen, tanto que cuendo hablamos de buscar algo en la
+Internet en realidad nos referimos a la WWW. </p>
+
+<h3 id="L117">El browser</h3>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="browser logos" src="res/browsers.png" width="443" height="192"></div>
+
+<p>Es el programa de la PC o smartphone que usamos para "navegar" la Internet.
+Hay varios, los más conocidos son</p>
+<ol>
+  <li>Google Chrome </li>
+  <li>Mozilla Firefox </li>
+  <li>Opera </li>
+  <li>Microsoft Internet Explorer </li>
+  <li>Safari </li>
+</ol>
+
+<p>Idealmente todos hacen lo mismo, muestran las "páginas" exactamente de la
+misma manera. En la realidad hay pequeñas diferencias que se van reduciendo
+paulatinamente.</p>
+
+<p>Hay una institucion llamada "<a href="http://www.w3.org/">World Wide Web
+Consortium</a>" o "W3C" ( "w" 3 veces y una "c") que trabaja definiendo
+"standards", normas detalladas de cómo debe aparecer cada elemento en la
+pantalla (en el curso iremos viendo qué elementos). Hay además un liderazgo
+de los developers de Mozilla tendiente a que todos los browsers se ajusten
+rigurosamente a las normas del W3C. </p>
+
+<p>Es solo recientemente que se están alineando los planetas: todos los
+browsers tienden a funcionar de la misma manera, respetando las normas. Eso no
+fué así en los primeros años de la WWW. No había normas tan claras como las
+que existen ahora, y a la vez Microsoft intentaba diferenciar el Internet
+Explorer introduciéndole caracteríasticas incompatibles de manera de obligar
+a la gente a usarlo en vez de los otros.</p>
+
+<p>Esas caracteríasticas diferentes, sumadas a los defectos de programación
+(bugs) que introducían sin proponérselo, hacían que fuera necesario un
+esfuerzo adicional de desarrollo muy significativo para que las páginas
+funcionaran en Internet Explorer. La imagen de abajo, del año 2006, lo explica
+claramente: </p>
+
+<div>
+<img alt="time breakdown alloting lots of time to make a page work in IE"
+style="width:100%; max-width:550px; margin:auto;"
+src="res/ModernWebDevelopmentTimeBreakdown.png"></div>
+
+<p></p>
+
+<p>En particular, el IE6 fué en máximo exponente de estas dificultades, al
+punto que desde hace años hay <a href="http://www.modern.ie/ie6countdown">una
+página dedicada a observar la declinación del uso del IE6 en el mundo</a>,
+esperando a que llegue a un porcentaje tan bajo (&lt; 1%) que no sea necesario
+tenerlo en cuenta.</p>
+
+<p>Microsoft comenzó a tratar de hacer sus browsers compliant con las normas
+del W3C a partir del IE7; en 2014 el IE10 ya se puede decir que está bien. </p>
+
+<p>Las páginas web son "archivos de texto", es decir, contienen solamente
+letras, números y símbolos (lo que hay en el teclado de una PC), y se pueden
+editar con editores de texto como Notepad o <a
+href="http://www.vim.org/">vim</a>. El browser interpreta ese texto según las
+normas del W3C, lo combina con imágenes, videos y otros tipos de material y lo
+despliega en la pantalla.</p>
+
+<h3 id="L149">El server</h3>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="server in cloud" src="res/cloud-server.png"
+style="width:222px;"></div>
+
+<p>El server es una computadora que "está en la Internet". Lo que hace que sea
+un "web server" y no simplemente otra computadora más es que ejecuta
+permanentemente un programa que también se llama "web server". </p>
+
+<p>La función del web server es recibir de los browsers los pedidos de
+páginas ("requests") y en respuesta, despachar las páginas que correspondan
+("responses"). </p>
+
+<h3 id="L383">URL</h3>
+
+<p></p>
+
+<p>Los requests de los browsers tienen un formato especial (también definido
+por el W3C) y se llaman "<a href="http://www.w3.org/TR/url/">URL</a>s". Por
+ejemplo el URL de la página de búsqueda en Google es:</p>
+<pre>https://www.google.com/</pre>
+
+<p>El web server de Google recibe ese request y envía la respuesta o
+"response", que en firefox se vé más o menos así (todos conocemos esta
+página): </p>
+
+<p><img alt="google search start page" src="res/googleSearch.png"
+style="width:100%; height:auto; max-width:700px;"></p>
+
+<p>Todo lo que hay en la Internet tiene su URL particular, <em>absolutamente
+todo</em>: cada página, cada imagen, ... No hay dos URLs iguales.</p>
+
+<p>Además del URL, un request contiene "headers" que aportan información
+adicional.Hay headers para distintos datos, por ejemplo el formato de datos que
+espera el browser, el idioma, la codificación del texto (ej. Latin-1, UTF-8,
+...), las cookies, el "referer", el "User-Agent" que identifica el browser, y
+más.</p>
+
+<p>El header "referer" frecuentemente aparece como "Referer [sic]" por que
+tiene una falta de ortografía (la palabra correcta es "referrer" con doble
+"r"). Es la dirección (URL) de la página web anterior, donde se encuentra el
+link actual.</p>
+
+<h3 id="L408">Query</h3>
+
+<p>En inglés, "query" significa "consulta". Un URL puede tener información
+adicional, llamada "query string", que comienza con un signo de interrogación.
+Por ejemplo para buscar "http request query" en Google el URL con query puede
+ser así: </p>
+<pre>https://www.google.com.ar/search<strong>?hl=en&amp;noj=1&amp;q=http+request+query</strong></pre>
+
+<p>Lo que está antes del "?" es la dirección de la página o del servicio que
+debe procesar el request, lo que está a continuación es información
+adicional que se provee a esa página o servicio para especificar el resultado
+esperado. </p>
+
+<h3 id="L418">Response</h3>
+
+<p>Lo que el web server envía es una cantidad de texto en lenguaje HTML, que
+se puede ver picando la página con el botón derecho del mouse y seleccionando
+"View Page Source" o algo similar, según el browser que se está usando.</p>
+
+<p>Por ejemplo la parte de ese texto de la página de busqueda de Google que
+define el espacio donde uno escribe el texto de la consulta es así: </p>
+<pre>&lt;input id=gbqfq class=gbqfif name=q type=text autocomplete=off value=""&gt;</pre>
+
+<p>El browser interpreta ese texto y otros, los combina, y muestra en la
+página el input donde se escribe el texto para la búsqueda: </p>
+
+<p style="text-align:center;margin-left:auto;margin-right:auto;"><img
+alt="search input box" src="res/googleSearchInput.png"></p>
+
+<h3 id="L183">¿Cómo funciona?</h3>
+
+<p>El browser y el web server se comunican a través de la Internet usando unos
+"protocolos" que se llaman <a href="http://www.w3.org/Protocols/">HTTP</a> o
+HTTPS y <a
+href="http://en.wikipedia.org/wiki/Internet_protocol_suite">TCP/IP</a>. Un
+protocolo es una serie de reglas detalladas sobre qué hacer en todas y cada
+una de las situaciones de una relación entre personas, países, o
+computadoras.</p>
+
+<p>En la imagen se vé el protocolo "https" especificado al comienzo del URL:
+</p>
+
+<p style="text-align:center;margin-left:auto;margin-right:auto;"><img
+alt="https protocol in URL" src="res/httpsProtocol.png" width="513"
+height="108"></p>
+
+<p>El protocolo HTTP es para comunicaciones normales, y el HTTPS para
+comunicaciones encriptadas, en código, casi imposibles de descifrar. El
+protocolo TCP/IP es para que las diversas computadoras puedan hablar HTTP entre
+sí y se usa tanto para HTTP como para otros protocolos asociados a diferentes
+tipos de comunicaciones. </p>
+
+<p>Los protocolos TCP/IP son los que hacen la magia de conectar vía Internet
+un browser de un lugar con un server que puede estar en el otro lado del mundo.
+</p>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="Ichikawa radio logo" src="res/logo-ichikawafm.gif"></div>
+
+<p>Por ejemplo <a
+href="http://www.ichikawafm.co.jp/">http://www.ichikawafm.co.jp</a> es la radio
+de <a href="http://en.wikipedia.org/wiki/Ichikawa,_Chiba">Ichikawa</a>, una
+localidad cualquiera de Japón en el otro lado del mundo. El URL termina con
+".jp" en vez de ".ar" como los de Agentina.</p>
+
+<p>Si ponemos el URL de la home page de la radio, la página aparece en el
+browser! ¿Cómo es posible, cómo funciona, si hay millones y millones de
+servidores web en la Internet, cómo hace para ir justo al que contiene la
+página que uno quiere?</p>
+
+<p>No es magia. Vamos a ver una explicación un simplificada. </p>
+
+<p>Nosotros, los humanos, entendemos nombres de servidores web como por ejemplo
+el de Google (google.com) o el de facebook (facebook.com).</p>
+
+<p>Estos nombres de servidores se llaman "domains" (dominios). Los humanos
+hablamos entre nosotros usando los "domain names", por ejemplo decimos "entré
+a facebook". </p>
+
+<p>Los programas de computadora usan en vez las direcciones "IP" de los
+servidores, que son unos números. Una computadora diría "entré a
+173.252.110.27" (una IP de facebook). </p>
+
+<p>La dirección IP del server de la radio de Ichikawa es
+<code>211.127.173.50</code>. Esto se puede comprobar consultando la <a
+href="http://www.dnsstuff.com/tools#ipInformation|type=ipv4&amp;&amp;value=211.127.173.50">información
+sobre la IP 211.127.173.50</a>. </p>
+
+<p>El browser averigua la IP de la radio consultando un servidor "DNS", un
+diccionario gigante que dice cuál es la IP de cada DNS. Entonces cuando el
+browser manda el request lo dirige a la dirección IP, no al domain name. Cada
+persona o empresa que publica una página tiene su domain name registrado en la
+red mundial de servidores DNS. </p>
+
+<p>Nosotros podemos averiguar fácilmente la IP de un dominio usando el comando
+ping. Por ejemplo la IP de la radio de Ichikawa: </p>
+
+<p><img alt="ping Ichikawa" src="res/pingIchikawa.png"
+style="width:100%; max-width:677px;"></p>
+
+<p>Hay <a href="http://en.wikipedia.org/wiki/Routing_table">otro diccionario,
+una especie de mapa de la red, que dice qué IPs están conectadas con cuales
+otras</a>. La implementación del protocolo TCP/IP que se está ocupando de
+hacer progresar el request consulta ese diccionario de conexiones o rutas y va
+de "hop" en "hop" (un "hop" es un salto) saltando de un "router" a otro y
+aproximándose así a su destino final. Podríamos pensar que primero averigua
+cuál router le conviene para una IP que comienza con 211 y salta a ese router.
+Una vez ahí averigua cuál router le conviene para IPs 211.127... y así
+sucesivamente. Un <a
+href="http://en.wikipedia.org/wiki/Router_(computing)">router</a> es otra
+computadora, con programación especializada para "rutear" mensajes en la red.
+</p>
+
+<h4 id="L495">Ejemplo de la ruta de un request</h4>
+
+<p>La ruta desde el servicio Network-Tools.com (206.123.64.46) hasta la radio
+de Ichikawa pasa por una cantidad de routers, como se puede apreciar en el
+siguiente <a
+href="http://network-tools.com/default.asp?prog=trace&amp;host=211.127.173.50">"traceroute"
+(rastreo)</a> de 16 hops: </p>
+
+<div style="font-size:80%; margin:0 auto;" class="framed">
+211.127.173.50 is from Japan(JP) in region Southern and Eastern Asia <br>
+<br>
+<strong>TraceRoute from Network-Tools.com to 211.127.173.50
+[dns.ichikawafm.co.jp]</strong> <br>
+
+
+<table>
+  <tbody>
+    <tr>
+      <th>Hop</th>
+      <th>(ms)</th>
+      <th>(ms)</th>
+      <th>(ms)</th>
+      <th>IP Address</th>
+      <th>Host name</th>
+    </tr>
+    <tr>
+      <td align="right">1</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td>206.123.64.46</td>
+      <td>- </td>
+    </tr>
+    <tr>
+      <td align="right">2</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td>64.124.196.225</td>
+      <td>xe-4-2-0.er2.dfw2.us.above.net </td>
+    </tr>
+    <tr>
+      <td align="right">3</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td>64.125.27.81</td>
+      <td>ae2.cr2.dfw2.us.above.net </td>
+    </tr>
+    <tr>
+      <td align="right">4</td>
+      <td align="right">8</td>
+      <td align="right">8</td>
+      <td align="right">8</td>
+      <td>64.125.21.138</td>
+      <td>ae3.cr2.iah1.us.above.net </td>
+    </tr>
+    <tr>
+      <td align="right">5</td>
+      <td align="right">43</td>
+      <td align="right">43</td>
+      <td align="right">43</td>
+      <td>64.125.25.53</td>
+      <td>ae2.cr2.lax112.us.above.net </td>
+    </tr>
+    <tr>
+      <td align="right">6</td>
+      <td align="right">66</td>
+      <td align="right">93</td>
+      <td align="right">66</td>
+      <td>64.125.31.233</td>
+      <td>ae1.cr2.sjc2.us.above.net </td>
+    </tr>
+    <tr>
+      <td align="right">7</td>
+      <td align="right">73</td>
+      <td align="right">48</td>
+      <td align="right">49</td>
+      <td>64.125.25.118</td>
+      <td>xe-3-2-1.mpr2.pao1.us.above.net </td>
+    </tr>
+    <tr>
+      <td align="right">8</td>
+      <td align="right">52</td>
+      <td align="right">51</td>
+      <td align="right">51</td>
+      <td>64.125.31.61</td>
+      <td>xe-1-0-0.mpr1.pao1.us.above.net </td>
+    </tr>
+    <tr>
+      <td align="right">9</td>
+      <td align="right">49</td>
+      <td align="right">49</td>
+      <td align="right">49</td>
+      <td>64.125.13.74</td>
+      <td>above-jptelecom.pao1.us.above.net </td>
+    </tr>
+    <tr>
+      <td align="right">10</td>
+      <td align="right">162</td>
+      <td align="right">162</td>
+      <td align="right">162</td>
+      <td>210.142.163.205</td>
+      <td>stoac-02-te0-2-0-3.gw.odn.ad.jp </td>
+    </tr>
+    <tr>
+      <td align="right">11</td>
+      <td align="right">160</td>
+      <td align="right">160</td>
+      <td align="right">160</td>
+      <td>143.90.33.202</td>
+      <td>cbcrk-05g3-0-0.nw.odn.ad.jp </td>
+    </tr>
+    <tr>
+      <td align="right">12</td>
+      <td align="right">149</td>
+      <td align="right">149</td>
+      <td align="right">149</td>
+      <td>143.90.192.218</td>
+      <td>cbcrw-01g1-1.nw.odn.ad.jp </td>
+    </tr>
+    <tr>
+      <td align="right">13</td>
+      <td align="right">147</td>
+      <td align="right">147</td>
+      <td align="right">146</td>
+      <td>211.127.123.133</td>
+      <td>fnafr-01a.nw.odn.ad.jp </td>
+    </tr>
+    <tr>
+      <td align="right">14</td>
+      <td align="right">176</td>
+      <td align="right">162</td>
+      <td align="right">162</td>
+      <td>211.127.123.55</td>
+      <td>fnafx-05.nw.odn.ad.jp </td>
+    </tr>
+    <tr>
+      <td align="right">15</td>
+      <td align="right">149</td>
+      <td align="right">149</td>
+      <td align="right">149</td>
+      <td>211.127.173.49</td>
+      <td>- </td>
+    </tr>
+    <tr>
+      <td align="right">16</td>
+      <td align="right">165</td>
+      <td align="right">165</td>
+      <td align="right">165</td>
+      <td>211.127.173.50</td>
+      <td>dns.ichikawafm.co.jp </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Empieza desde la IP de Network-Tools.com 206.123.64.46 en St Louis, USA. Se
+vé que en menos de 50 milisegundos pasa por 8 routers del dominio
+<code>us.above.net</code> también en USA (teniendo la IP podemos averiguar que
+todos están cerca de New York) antes de llegar al Pacífico (se nota por las
+las IPs "143" y "211"). Una vez allí pasa por 6 routers de Australia y Japón
+antes de llegar a la radio de Ichikawa. </p>
+
+<p>De la <a
+href="http://www.dnsstuff.com/tools#ipInformation|type=ipv4&amp;&amp;value=211.127.173.50">consulta
+sobre la IP</a> surge que todos los números de IP desde 211.120.0.0 hasta
+211.127.255.255 están en Japón. También surge que este rango de 520280
+direcciones IP es uno de los 3026 rangos que tiene Japón para sus 127 millones
+de habitantes.</p>
+
+<p>Hay solamente 4000 millones de direcciones IP, o sea muy pocas. Están
+asignadas por bloques de números consecutivos, como las 211.12x.xxx.xxx que
+corresponden a Japón. Suponiendo que todos los bloques de asignaciones fueran
+como este, de medio millón de direcciones, entonces para el total de 4000
+millones de IPs habría unos 8000 bloques de medio millón de IPs cada uno y se
+necesitaría un índice de 8000 direcciones para saber dónde se encuentra cada
+bloque, un tamaño que para una computadora no es ni remotamente impresionante.
+</p>
+
+<h3 id="L982">Resumiendo</h3>
+
+<p>Aquí terminó la información técnica inicial sobre la Internet, algunos
+conceptos básicos necesarios para entender lo que viene. Sin esa información,
+la Internet es pura magia  :-)</p>
+
+<p>Ahora sí pasamos a ver cómo son las páginas. </p>
+
+<h3 id="L872">Actividades</h3>
+<ol>
+  <li>Averiguar la dirección IP del sitio wikipedia.org</li>
+  <li>Averiguar la dirección IP del sitio </li>
+  <li>Usando http://www.dnsstuff.com/tools: 
+    <ul>
+      <li>averiguar el límite inferior del rango de IPs del bloque al que
+        pertenece la IP 201.212.0.6 (IP Range - Start) </li>
+      <li>Averiguar el límite superior del rango de IPs del bloque al que
+        pertenece la IP 201.212.0.6 (IP Range - End) </li>
+      <li>Averiguar a qué país está asociada la IP 201.212.0.6 </li>
+    </ul>
+  </li>
+</ol>
+
+<p>IP Range - Start 201.212.0.0 - IP Range - End 201.212.127.255</p>
+
+<p></p>
+
+<p></p>
+</div>
+
+<div class="section">
+<h2 id="L876">2 - Las páginas web</h2>
+
+<h3 id="L920">El lenguaje HTML</h3>
+
+<p>Cuando un web server recibe un request de un browser, elabora y devuelve un
+"response" (respuesta), que es un texto en lenguaje "<a
+href="http://en.wikipedia.org/wiki/HTML">HTML</a>". Vamos a ver cómo es ese
+lenguaje, para aprender a usarlo.</p>
+
+<p>El response que el web server manda puede ser HTML que está en un archivo
+en el server y en ese caso se trata de una página "estática". </p>
+
+<p>También puede ser HTML que el server arma en ese momento con información
+de una base de datos. Por ejemplo si consultamos twitter para ver lo que hay
+relacionado con un tag cualquiera como <a
+href="https://twitter.com/search?q=%23pizza&amp;src=typd">#pizza</a>, el server
+hace una consulta a una base de datos y arma una página especial para el
+request. En este caso se trata de una página "dinámica". </p>
+
+<p>Nosotros vamos a hacer páginas estáticas para empezar, páginas que están
+registradas en archivos. </p>
+
+<h3 id="L938">Primera página</h3>
+
+<p>Una página mínima es, por ejemplo: </p>
+<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+    &lt;title&gt;J Doe - index&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body lang="es"&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    &lt;p&gt;Indice de las páginas de John Doe en este web server.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt; </pre>
+
+<p>Usando un editor de texto la grabamos en un archivo
+<code>C:\paginas\index.html</code> en Windows, o
+<code>~/paginas/index.html</code> en Linux. </p>
+
+<p>Para abrirla con el browser le aplicamos un doble click y la página se
+despliega; en Chrome se ve así: </p>
+
+<div class="imgContainer" style="width:494px;">
+<img alt="index.html screenshot" src="res/index.html.png"></div>
+
+<p>y en Firefox:</p>
+
+<div class="imgContainer" style="width:493px;">
+<img alt="index.html rendered by ff" src="res/index.html.ff.png"></div>
+
+<h3 id="L980">Tags</h3>
+
+<p>El HTML define "elements" como "h1" y "p", delimitándolos con "tags"
+(etiquetas). En el listado de abajo (que es igual al anterior) los tags están
+resaltados con amarillo. </p>
+<pre>&lt;!doctype html&gt;
+<span style="background-color:#ffff00">&lt;html&gt;</span>
+  <span style="background-color:#ffff00">&lt;head&gt;</span>
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+    <span style="background-color:#ffff00">&lt;title&gt;</span>J Doe - index<span style="background-color:#ffff00">&lt;/title&gt;</span>
+  <span style="background-color:#ffff00">&lt;/head&gt;</span>
+  <span style="background-color:#ffff00">&lt;body lang="es"&gt;</span>
+    <span style="background-color:#ffff00">&lt;h1&gt;</span>John Doe<span style="background-color:#ffff00">&lt;/h1&gt;</span>
+    <span style="background-color:#ffff00">&lt;p&gt;</span>Indice de las páginas de John Doe en este web server.<span style="background-color:#ffff00">&lt;/p&gt;</span>
+  <span style="background-color:#ffff00">&lt;/body&gt;</span>
+<span style="background-color:#ffff00">&lt;/html&gt;</span> </pre>
+
+<p>Se observa que hay tags de apertura y de cierre, como <code>&lt;p&gt;</code>
+y <code>&lt;/p&gt;</code>, o <code>&lt;html&gt;</code> y
+<code>&lt;/html&gt;</code>. El tag de cierre lleva una "/" delante del tag
+name. Lo que se encuentra entre el tag de apertura y el de cierre es el
+"contenido". </p>
+
+<p>En HTML los tags se pueden escribir en mayúsculas o minúsculas, el efecto
+es el mismo, pero escribirlos en mayúsculas hace que el HTML parezca
+anticuado. </p>
+
+<h4 id="L10501">&lt;p&gt;</h4>
+
+<p>El elemento "p" (llamado "paragraph" = párrafo) está delimitado por el
+start tag <code>&lt;p&gt;</code> y su correspondiente end tag
+<code>&lt;/p&gt;</code>. Los elementos &lt;p&gt; son para contener texto,
+similares a los párrafos de un libro. </p>
+
+<h4 id="L1060">&lt;h1&gt;</h4>
+
+<p>El elemento "h1", llamado "heading 1" (título 1 ó encabezado 1) también
+contiene texto, como un paragraph, pero está concebido para contener un
+título importante. Existen además elementos h2, h3, h4, h5 y h6 que son
+títulos de importancia decreciente. En el ejemplo se ve una jerarquía de
+títulos de secciones cada vez menos abarcativos: </p>
+<style>
+  .headingExamples td { vertical-align:middle; }
+  .headingExamples h1 { margin:0; padding:2px 20px; }
+  .headingExamples h2 { margin:0; padding:2px 20px; }
+  .headingExamples h3 { margin:0; padding:2px 20px; }
+  .headingExamples h4 { margin:0; padding:2px 20px; }
+  .headingExamples h5 { margin:0; padding:2px 20px; }
+  .headingExamples h6 { margin:0; padding:2px 20px; }</style>
+
+<table class="headingExamples" style="margin:auto;">
+  <col>
+  <col>
+  <tbody>
+    <tr>
+      <td style="line-height:1.5em;">h1:</td>
+      <td><h1 id="L1043" class="TOCIgnore">Planeta Tierra</h1>
+      </td>
+    </tr>
+    <tr>
+      <td style="line-height:1.5em;">h2: </td>
+      <td><h2 id="L1050" class="TOCIgnore">América del Sur</h2>
+      </td>
+    </tr>
+    <tr>
+      <td style="line-height:1.5em;">h3:</td>
+      <td><h3 id="L1057" class="TOCIgnore">Argentina</h3>
+      </td>
+    </tr>
+    <tr>
+      <td style="line-height:1.5em;">h4:</td>
+      <td><h4 id="L1064" class="TOCIgnore">Santa Cruz</h4>
+      </td>
+    </tr>
+    <tr>
+      <td style="line-height:1.5em;">h5:</td>
+      <td><h5 id="L1071" class="TOCIgnore">Caleta Olivia</h5>
+      </td>
+    </tr>
+    <tr>
+      <td style="line-height:1.5em;">h6:</td>
+      <td><h6 class="TOCIgnore">Barrio Perito Moreno</h6>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="L1123">&lt;body&gt;</h4>
+
+<p>El tag <code>&lt;body&gt;</code>  no contiene texto directamente, como p y
+h1, sino que contiene otros tags. Decimos entonces que el elemento body es un
+"container" (contenedor, en mal castellano). </p>
+
+<p>"Body" quiere decir cuerpo, y este tag contiene todo el cuerpo de la
+página, completa. </p>
+
+<h3 id="L1099">El protocolo "file"</h3>
+
+<p>Pudimos abrir una página en el browser, pero ¿dónde está el web server?
+Bueno, en este caso la paginita no está publicada en la Internet sino en
+nuestra PC y el browser en vez de accederla vía Internet la accedió a través
+del sistema de archivos de la PC. </p>
+
+<p>En este caso el URL no especifica el protocolo HTTP (no comienza con
+"http://") sino que especifica el protocolo file (comienza con "file:///") y el
+URL del archivo es: <code>file:///C:/paginas/index.html</code>. </p>
+
+<p>Para que el archivo se abra en el browser con potocolo file solo es
+necesario darle doble-click, como cualquier otro tipo de archivo. El sistema
+operativo (Windows, Linux) sabe con qué programa abrir los tipos de archivo
+conocidos como este, que es .html. También se puede escribir el path del
+archivo en la dirección del browser. </p>
+
+<p>El protocolo file se puede usar para pruebas hasta cierto punto, luego es
+necesario usar un web server. Es posible ejecutar un web server de prueba en la
+propia PC, y más adelante vamos a hacerlo. </p>
+
+<h3 id="L1143">Display mode</h3>
+
+<p>Los tags definen elementos, que son las piezas de la página. </p>
+
+<p>El browse lee el HTML, lo interpreta, y construye internamente una
+estructura de datos que se llama "<a
+href="http://en.wikipedia.org/wiki/Document_Object_Model">DOM</a>" (por
+Document Object Model) y se usa intensamente en el desarrollo de la
+interacción de las páginas modernas. </p>
+
+<p>Además de construír el DOM, al browser "renderiza" la página en el
+"viewport", el espacio que queda para la página en la ventana del browser
+luego de quitar las barras de herramientas, los bordes y la barra de título.
+</p>
+
+<p>Cada tipo de elemento se renderiza con el estilo que le corresponde, por
+ejemplo para el h1 se usa una tipografía (font) más grande que para un p. </p>
+
+<p>Dentro de las características de los elementos una importante es "display
+mode", que tiene dos modos principales: "block" e "inline" (bloque y en
+línea). </p>
+
+<p>La diferencia es que los block elements se renderizan "en su propia línea",
+mientras que los inline elements se renderizan a continuación del anterior en
+la misma línea (si hay espacio). </p>
+
+<p>La página ejemplo contiene dos block elements visibles, h1 y p. El p se
+renderiza abajo del h1 aunque haya espacio en el viewport para renderizarlo a
+continuación. </p>
+
+<p>Agregamos un elemento inline modificando ésta línea, así: </p>
+<pre>&lt;p&gt;Indice de las páginas de <span style="background-color:#ffff80">&lt;strong&gt;John Doe&lt;/strong&gt;</span> en este web server.&lt;/p&gt;<span style="background-color:#ffff80"></span></pre>
+
+<p>y desplegamos la página en el browser, que ahora se vé con el nombre
+resaltado en el elemento p: </p>
+
+<div class="imgContainer" style="width:406px;">
+<img alt="index2.html in ff" src="res/index2.html.png"></div>
+
+<p>El elemento <code>strong</code> (fuerte) es un inline element, que el
+Firefox renderiza mostrando el texto que contiene en negrita (bold). </p>
+
+<p>Hay muchos otros <a
+href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">display
+modes</a>, pero "block" e "inline" son los más importantes y es necesario
+comprenderlos bien. </p>
+
+<p>Por último, si hiciéramos que cada elemento de la paginita anterior
+tuviera un borde azul, esto es lo que se vería: </p>
+
+<div class="imgContainer" style="width:394px;">
+<img alt="index2.html with borders" src="res/index2border.html.png"></div>
+
+<p>El borde más externo es el elemento &lt;html&gt;. Dentro de éste hay un
+poco de margen y está el borde del &lt;body&gt;, que contiene el &lt;h1&gt; y
+el &lt;p&gt; abajo, separados por algo de margen. </p>
+
+<p>Dentro del &lt;p&gt; está el borde del elemento &lt;strong&gt;, en la misma
+línea por que strong es un inline element. </p>
+</div>
+
+<div class="section">
+<h2 id="L1198">3 - Más detalles de la página ejemplo</h2>
+
+<p>Considerando nuestra página ejemplo: </p>
+<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+    &lt;title&gt;J Doe - index&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body lang="es"&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    &lt;p&gt;Indice de las páginas de &lt;strong&gt;John Doe&lt;/strong&gt; en este web server.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt; </pre>
+
+<p>vamos a ver en detalle los elementos doctype, html, head y body que quedaron
+sin explicar. </p>
+
+<p>Estos elementos van en todas las páginas correctamente codificadas, que son
+las que pasan <a href="http://validator.w3.org/check">el test de validación
+del W3C</a>. </p>
+
+<p>Los browsers perdonan errores en el HTML que digieren, por ejemplo páginas
+que les falta alguno de estos elementos, o que no tienen ninguno. Pero los
+ponemos por que queremos tener control sobre cómo se va a renderizar nuestra
+página en el browser. </p>
+
+<h4 id="L1213">doctype</h4>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="HTMK5 logo" src="res/HTML5_Logo.png"></div>
+
+<p>Históricamente, hubo HTML2, HTML 3, HTML 4, y ahora hay HTML 5 o
+simplemente HTML (no más números). </p>
+
+<p>La declaración "doctype" le dice al browser con cuál versión de HTML
+queremos que interprete nuestra página. </p>
+
+<p><em>Siempre</em> queremos que nuestras páginas sean HTML5, el más
+poderoso, el más simple. </p>
+
+<p>Si falta el doctype el browser funciona en "quirks mode", que se podría
+traducir "modo caprichos" o "modo extravagancias". Resulta que los primeros
+browsers intentaban corregir los defectos del HTML que procesaban, pero cada
+browser lo hacía a su manera por que no hay una norma para eso. El resultado
+es que los distintos browsers mostraban las páginas defectuosas de maneras
+diversas. </p>
+
+<p>Haciendo páginas correctas (validadas) y poniéndoles el doctype obligamos
+al browser a portarse de una manera conocida, y todos los fabricantes de
+browsers están de acuerdo para hacer algo coherente liderados por el W3C y los
+developers de Mozilla (los que hacen el Firefox).</p>
+
+<p>Y como nuestras páginas son nuevas no queremos tener nada que ver con
+versiones antiguas de HTML, así que siempre ponemos<code></code>&lt;!doctype
+html&gt;. </p>
+
+<h4 id="L1234">&lt;html&gt;</h4>
+
+<p>A continuación del doctype empieza el HTML y lo marcamos abriendo el tag
+<code>&lt;html&gt;</code> aquí y cerrándolo al final. El contenido del tag
+html es toda la página.</p>
+
+<p>El html tiene dos partes, "head" (encabezado) y "body" (cuerpo). </p>
+
+<h4 id="L1241">&lt;head&gt;</h4>
+
+<p>Esta parte de la página contiene información sobre la página pero que no
+es la página (metadata). No es contenido que se muestra sino información
+sobre cómo tratar el contenido que viene en el &lt;body&gt;. </p>
+
+<h5 id="L1245">content-type</h5>
+
+<p>La especificación </p>
+<pre>&lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;</pre>
+
+<p>dice que se trata de texto en lenguaje HTML
+(<code>content="text/html</code>) y que la codificación del texto es <a
+href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a>.</p>
+
+<p>Existen unos cuantos "<a
+href="http://en.wikipedia.org/wiki/Internet_media_type">content-type</a>"
+diferentes, que se usan para identificar el tipo de contenido que se está
+comunicando. Es algo parecido a la extensión de los archivos en Windows: la
+extensión dice qué es lo que hay dentro del archivo, el content-type dice
+cuál es el formato de los datos que el browser está recibiendo (o enviando).
+</p>
+
+<p>También hay unos cuantos "<a
+href="http://en.wikipedia.org/wiki/Character_encoding#Common_character_encodings">character
+encoding</a>". Tienen que ver con la relación entre lo que tienen los bytes
+del texto y cuáles caracteres se muestran a partir de esos bytes.</p>
+
+<p>Por ejemplo un byte con <code>01000001</code> en sus 8 bits <a
+href="http://en.wikipedia.org/wiki/UTF-8#Codepage_layout">se representa
+como</a> una "A" mayúscula, pero esto no es una cualidad inherente a esa
+configuracíon de bits. Hay una especie de acuerdo gigante entre millones de
+personas de todos los países para relacionar el contenido de los bytes con los
+caracteres que se muestran en el monitor o la impresora. En este momento UTF-8
+es la codificación más usada, tanto por los occidentales que tenemos
+alfabetos con unos pocos caracteres, como también por los orientales que usan
+alfabetos de miles de caracteres. </p>
+
+<h5 id="L1269">title</h5>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="page title" src="res/pageTitle.png"></div>
+
+<p>Es el título de la página, que se muestra en la pestaña del browser, y
+también cuando la página aparece en una lista.</p>
+
+<p>Como a veces hay muchas pestañas abiertas, y entonces el espacio en cada
+una solo permite mostrar un texto cortito, escribimos el title poniendo lo más
+relevante al principio.</p>
+
+<p>En el caso del ejemplo un título válido podría haber sido "Indice de las
+páginas de John Doe", pero si tuviéramos abiertas las páginas índice de
+diez personas distintas solo veríamos algo como "Indice de..." diez veces, que
+no es útil. En cambio en la forma en que este title está redactado veríamos
+la inicial y las primeras letras del apellido de las diez personas. Como "Doe"
+es un apellido cortito posiblemente se vería completo.</p>
+
+<h4 id="L1572">&lt;body&gt;</h4>
+
+<p>Finalmente el body tag contiene el contenido de la página, lo que se va a
+desplegar en el viewport. La forma recomendada de escribir el tag es con una
+property (propiedad) lang, así: </p>
+<pre>&lt;body lang="es"&gt;</pre>
+
+<p>Esto le dice al browser que comienza un body en español: <a
+href="http://msdn.microsoft.com/en-us/library/ms533052%28v=vs.85%29.aspx">"es"
+es el código para español en general, "es-ar" sería español de
+Agentina</a>. Obviamente para páginas en otro idioma usamos el código que
+corresponda, como "en" para English. </p>
+
+<p>Nos importa que se sepa en qué idioma está escrita la página. Es
+especialmente importante para las búsquedas con Google u otro: si elegimos
+"ver las páginas en español" vamos a ver las páginas que tienen
+<code>&lt;body lang="es"&gt;</code> o algo equivalente, las demás se omiten.
+</p>
+
+<p>Los buscadores tienen un tipo de browser especial que se llama "<a
+href="http://en.wikipedia.org/wiki/Web_crawler">web crawler</a>" (rastreador
+web), que permanentemente recorre la Internet haciendo un índice de todas las
+páginas, el índice gigante que se usa para las búsquedas. En ese índice el
+crawler anota el idioma de la página, pero si no figura explícitamente puede
+que el crawler no sea capaz de identificar el idioma de la página. Esto es muy
+malo. Imaginemos que se trata de la página de una pizzería online y alguien
+quiere hacer un pedido. Hace una búsqueda de pizzerías de la zona, solo las
+páginas en español: nuestra pizzería no va a figurar y se va a perder muchas
+ventas. </p>
+
+<h4 id="L12691">Actividades</h4>
+<ol>
+  <li>Grabar un archivo con la página ejemplo</li>
+  <li>Abrir la página ejemplo en todos los browsers que hata en la PC</li>
+  <li>Modificar la página ejemplo para reemplazar el nombre "John Doe" por el
+    propio del estudiante y abrirla en un browser</li>
+</ol>
+</div>
+
+<div class="section">
+<h2 id="L5699">4 - Imágenes</h2>
+
+<h3 id="L5701">&lt;img&gt;</h3>
+
+<p>El tag para desplegar imágenes en HTML es <code>&lt;img&gt;</code>. Su
+display mode no es block sino inline, por eso podemos <img alt="fb"
+src="res/iconFacebook20x20.png"> insertar <img alt="info"
+src="res/iconInfo20x20.png"> imágenes <img alt="LinkedIn"
+src="res/iconLinkedin20x20.png"> en <img alt="smiley"
+src="res/iconSmiley20x20.gif"> el <img alt="twitter"
+src="res/iconTwitter20x20.png"> texto. </p>
+
+<p>Además, img es un "empty tag" (tag vacío). Esto significa que no tiene
+"contenido" como el h1 y el p que contienen texto, y por lo tanto img no lleva
+tag de cierre <code style="text-decoration: line-through;">&lt;/img&gt;</code>.
+</p>
+
+<p>Hay unos pocos empty tags, por ejemplo <code>&lt;br&gt;</code> y
+<code>&lt;hr&gt;</code> que veremos más adelante. Son pocos. En XHTML, una
+variante de HTML que exige que todo tag se cierre, se usa una barra así:
+<code>&lt;img ... /&gt;</code> para cerrarlo. Si se pone no hace daño aunque
+solo es necesaria en XHTML. </p>
+
+<h4 id="L5739">href</h4>
+
+<p>El tag img no tiene contenido, pero tiene "attributes". El más básico es
+href, que ćontiene la referencia al archivo a la imagen que queremos desplegar
+con este tag: </p>
+<pre>&lt;img src="res/iconLinkedin20x20.png" ...&gt;</pre>
+
+<p>Es una referencia a un archivo. Hay que tener en cuenta algunas cosas. </p>
+
+<p>Primero, los directorios se separan con "forward slashes" en vez de "back
+slashes" como en Windows, se usa "/" en vez de "\" como en Linux y Unix. </p>
+
+<p>Segundo, la referencia del ejemplo es "relativa" respecto de la página
+donde está en tag. Por ejemplo si la página estuviera en una PC con Linux (la
+gran mayoría de las páginas de la Internet están en máquinas Linux), en el
+archivo:</p>
+<pre>/webPages/examples/index.html</pre>
+
+<p>entonces la imagen esta en: </p>
+<pre>/webPages/examples/res/iconLinkedin20x20.png</pre>
+
+<p>En Windows los archivos serían, por ejemplo: </p>
+<pre><span style="color:#bfbfbf">C:\webPages\examples\</span>index.html
+<span style="color:#bfbfbf">C:\webPages\examples\</span>res\iconLinkedin20x20.png</pre>
+
+<p>La parte grisada de las direcciones se puede cambiar, los archivos pueden
+estar en cualquier otra ubicación dentro del sistema de archivos de la PC. Lo
+importante es que la imagen esté en un subdirectorio res debajo del directorio
+donde está la página html. </p>
+
+<h4 id="L5768">alt</h4>
+
+<p>Hay personas que no pueden ver las imágenes, tampoco pueden verlas los
+crawlers. </p>
+
+<p>Pensando en la gente que no puede verlas, cada imagen en nuestras páginas
+lleva un atributo "alt" que significa algo así como una alternativa a la
+información de la imagen. Se trata de hacer que la página sea accesible
+también para las personas que no pueden ver. </p>
+
+<p>Se aconseja redactar el texto del atributo alt como si uno estuviera
+explicándole la imagen a otra persona, por teléfono. </p>
+
+<div class="imgR">
+<p><img alt="carita feliz" src="res/320px-Smiley_Face.png"></p>
+</div>
+
+<p>Ejemplo de atributo alt: </p>
+<pre style="display:inline-block;">&lt;img src="res/320px-Smiley_Face.png" alt="carita feliz"&gt;</pre>
+
+<p>Si el atributo href no apunta a un archivo con una imagen que el browser
+pueda mostrar, en vez de la imagen muestra el texto alt. El el siguiente tag
+img:</p>
+<pre style="display:inline-block;">&lt;img href="noExiste.png" alt="imagen que no está"&gt;</pre>
+
+<p>se vé así:   <img href="noExiste.png" alt="imagen que no está"></p>
+
+<h4 id="L5789">Más atributos del tag &lt;img&gt;</h4>
+
+<p>El tag img tiene una cantidad de atributos, como se puede ver en la <a
+href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img">documentación
+publicada por MDN</a>. De todos estos atributos algunos están en estado
+"deprecated" u "obsolete". "<a
+href="http://onelook.com/?w=Deprecated">Deprecated</a>" se aplica, en
+programación, a un feature que si bien está disponible, en el futuro no va a
+estar más. "Obsolete" significa que ya no está más. </p>
+<ul>
+  <li><span style="color:#bfbfbf">align Deprecated since HTML4.01, Obsolete
+    since HTML5</span></li>
+  <li>alt</li>
+  <li><span style="color:#bfbfbf">border Deprecated since HTML4.01, Obsolete
+    since HTML5</span></li>
+  <li>crossorigin HTML5</li>
+  <li>height</li>
+  <li><span style="color:#bfbfbf">hspace Deprecated since HTML4.01, Obsolete
+    since HTML5</span></li>
+  <li>ismap</li>
+  <li><span style="color:#bfbfbf">longdesc HTML 4 only</span></li>
+  <li><span style="color:#bfbfbf">name Deprecated since HTML4.01, Obsolete
+    since HTML5</span></li>
+  <li>src</li>
+  <li>width</li>
+  <li>usemap</li>
+  <li><span style="color:#bfbfbf">vspace Deprecated since HTML4.01, Obsolete
+    since HTML5</span></li>
+</ul>
+
+<p>Así que quedan siete, de los cuales ya vimos dos. </p>
+
+<p>"<strong>Crossorigin</strong>" es nuevo en HTML5 y lo veremos oportunamente.
+Tiene que ver con una restricción de seguridad que obliga a que todos los
+archivos que el browser usa en una página provengan del mismo dominio web. Es
+para protección contra virus. </p>
+
+<p>"<strong>Height</strong>" y "<strong>width</strong>" (alto y ancho) informan
+al browser de las medidas de la imagen. Cada imagen tiene sus medidas, se
+pueden ver picando la imagen con el otro botón del mouse y eligiendo verla en
+otro tab: usualmente el title del nuevo tab contiene las medidas de la imagen.
+</p>
+
+<p>Si no especificamos medidas el browser va a desplegar la imagen en su
+tamaño original. </p>
+
+<p>Cuando el browser conoce las medidas de las imágenes puede prever los
+espacios que van a usar y reservarlos anticipadamente. Si la imagen tarda un
+poco en bajar ya tiene su lugar y no se mueve todo el contenido de la página
+cuando llega. </p>
+
+<p>Si se especifican dimensiones diferentes de las de la imagen el browser
+cambia el tamaño de la imagen para que ocupe todo el espacio definido. Una
+imagen de 1000x800px (pixels) se puede mostrar en un tag img con dimensiones
+menores en una página índice con versiones pequeñas de las imágenes. El
+HTML pra la versión full-size y la muestra puede ser así: </p>
+<pre>&lt;img href="paisaje.png" alt="paisaje" width="1000" height="800"&gt;
+&lt;img href="paisaje.png" alt="paisaje" width="100" height="80"&gt;</pre>
+
+<p>En el ejemplo de la imagen chica en vez de height="80" se puede poner
+height="auto" para que el browser calcule la altura manteniendo las
+proporciones del formato original, obviamente 80 en este caso. </p>
+
+<p>Abajo se ve una misma imagen desplegada en diferentes tamaños: </p>
+
+<table style="margin:1em auto; width:555px;">
+  <col>
+  <col>
+  <col>
+  <col>
+  <tbody>
+    <tr>
+      <td
+      style="vertical-align: middle; text-align: center; margin-left: auto; margin-right: auto;"><img
+        width="auto" height="32" alt="HTMK5 logo" src="res/HTML5_Logo.png"></td>
+      <td
+      style="vertical-align: middle; text-align: center; margin-left: auto; margin-right: auto;"><img
+        width="auto" height="64" alt="HTML5 logo" src="res/HTML5_Logo.png"></td>
+      <td
+      style="vertical-align: middle; text-align: center; margin-left: auto; margin-right: auto;"><img
+        width="auto" height="128" alt="HTML5 logo"
+      src="res/HTML5_Logo.png"></td>
+      <td
+      style="vertical-align: middle; text-align: center; margin-left: auto; margin-right: auto;"><img
+        alt="HTML5 logo" src="res/HTML5_Logo.png"></td>
+    </tr>
+    <tr>
+      <th
+        style="text-align:center;margin-left:auto;margin-right:auto;"><p>width=auto<br>
+        height=32</p>
+      </th>
+      <th
+        style="text-align:center;margin-left:auto;margin-right:auto;"><p>width=auto<br>
+        height=64</p>
+      </th>
+      <th
+        style="text-align:center;margin-left:auto;margin-right:auto;"><p>width=auto<br>
+        height=128</p>
+      </th>
+      <th style="text-align:center;margin-left:auto;margin-right:auto;"><p>sin
+        medidas (182 x 256)</p>
+      </th>
+    </tr>
+  </tbody>
+</table>
+
+<p>"<strong>Ismap</strong>" y "<strong>usemap</strong>" tienen que ver una
+imagen que, según dónde se pica, muestra un resultado diferente. No lo vemos
+en detalle. </p>
+
+<h4 id="L5942">Formatos de archivos que contienen imágenes</h4>
+
+<p>Hay una variedad de tipos de archivo que contienen imágenes. En HTML se
+puede usar los más comunes: </p>
+<ul>
+  <li><a title="http://en.wikipedia.org/wiki/JPEG"
+    href="http://en.wikipedia.org/wiki/JPEG" class="external">JPEG</a></li>
+  <li><a title="http://en.wikipedia.org/wiki/Graphics_Interchange_Format"
+    href="http://en.wikipedia.org/wiki/Graphics_Interchange_Format"
+    class="external">GIF</a>, incluyendo animated GIFs</li>
+  <li><a title="http://en.wikipedia.org/wiki/Portable_Network_Graphics"
+    href="http://en.wikipedia.org/wiki/Portable_Network_Graphics"
+    class="external">PNG</a></li>
+  <li><a title="Animated PNG graphics"
+    href="https://developer.mozilla.org/en-US/docs/Animated_PNG_graphics">APNG</a>
+  </li>
+  <li><a title="SVG"
+    href="https://developer.mozilla.org/en-US/docs/SVG">SVG</a> </li>
+  <li><a title="http://en.wikipedia.org/wiki/BMP_file_format"
+    href="http://en.wikipedia.org/wiki/BMP_file_format"
+  class="external">BMP</a></li>
+  <li><a title="http://en.wikipedia.org/wiki/ICO_%28file_format%29"
+    href="http://en.wikipedia.org/wiki/ICO_%28file_format%29"
+    class="external">BMP ICO</a></li>
+  <li><a title="http://en.wikipedia.org/wiki/ICO_%28file_format%29"
+    href="http://en.wikipedia.org/wiki/ICO_%28file_format%29"
+    class="external">PNG ICO</a> </li>
+</ul>
+
+<p>Independientemente del formato del archivo de donde proviene, cuando la
+imagen se despliega en la página, consiste en un arreglo de "pixels", puntos
+luminosos de colores. Las diferencias entre los diferentes los formatos están
+en la compresión, la cantidad de colores y la posibilidad de transparencia.
+</p>
+
+<p><strong>JPEG</strong> es un formato para fotos. Las cámaras digitales
+producen imágenes en este formato. Las imágenes almacenadas en archivos .jpg
+están comprimidas, usando una técnica que reduce la calidad de la foto cuanto
+más se comprime. Se puede elegir entre alta calidad y alto tamaño, o menor
+calidad y tamaño que puede llegar a ser muy chico. </p>
+
+<p>Abajo hay tres JPEGs de una misma imagen con niveles de calidad 100, 50 y
+1:</p>
+
+<div>
+
+<div style="">
+<img alt="La Gioconda - calidad 100%" src="res/LaGioconda100.jpg"><br>
+100%: 140120 bytes</div>
+
+<div style="">
+<img alt="La Gioconda - calidad 50%" src="res/LaGioconda50.jpg"><br>
+50%: 21633 bytes</div>
+
+<div style="">
+<img alt="La Gioconda - calidad 1%" src="res/LaGioconda1.jpg"><br>
+1%: 1666 bytes </div>
+</div>
+
+<p>No hay una gran pérdida de calidad en la segunda imagen respecto de la
+primera, pero en cambio el tamaño del archivo se redujo a menos de un sexto,
+aproximadamente. La tercera imagen es de mala calidad, con una reducción de
+tamaño de 84 veces. </p>
+
+<div class="imgR">
+<img alt="Netscape animated logo" src="res/NetscapeAnimatedLogo.gif"></div>
+
+<p><strong>GIF</strong>: El GIF es un formato que solo puede manejar 256
+colores diferentes en cada imagen. </p>
+
+<p>Uno de esos colores puede ser "transparente", esto le dió al formato GIF
+una ventaja sobre otros formatos contemporáneos. </p>
+
+<p>Otro factor de éxito de este formato fueron los GIFs animados. </p>
+
+<p>El uso de GIFs animados está más desaconsejado todavía por que son
+molestos. A fines de los años '90 estuvieron de moda; en las páginas todo
+titilaba o se movía, y por clamor general de dejó de usar. Mejor sigamos así
+:-) </p>
+
+<p>Estaba patentado por compuserve. Por esta razon muchos sitios evitaban
+usarlo, ante el peligro de que el dueño de la patente les reclame el pago de
+derechos. Actualmente la patente está vencida y el formato pasó a ser del
+dominio público. </p>
+
+<p><strong>PNG</strong> (Portable Netwoks Graphics) es un buen formato, libre,
+diseñado para la Internet. Lo de "portable" se refiere a la posibilidad usarlo
+en cualquier sistema operativo (no como el formato BMP que es de Windows). </p>
+
+<p>Soporta transparencia. A diferencia del GIF que puede tener pixels 100%
+transparentes o 100% opacas, el formato PNG soporta un "<a
+href="http://en.wikipedia.org/wiki/RGBA_color_space">alpha channel</a>" que
+permite aplicar niveles de transparencia particulares a cada pixel de la
+imagen. Se puede hacer imágenes translúcidas. </p>
+
+<p><strong>SVG</strong> (Scalable Vector Graphics) es un formato vectorial en
+dos dimensiones, para crear imágenes sintéticas. Los gráficos se crean
+usando un programa gráfico como <a
+href="http://www.inkscape.org/">Inkskape</a> y se graban en archivos de texto
+que, en vez de pixels, tienen descripciones de formas y colores. "Scalable"
+quiere decir que los gráficos se pueden ampliar indefinidamente sin que
+pierdan calidad. No es para paisajes o retratos. El auto de abajo es una imagen
+generada con SVG: </p>
+
+<div class="imgContainer" style="width:100; max-width:615px;">
+<img alt="SVG example" title="SVG example" src="res/SVGSample.png"></div>
+
+<p><strong>BMP</strong> es un formato antiguo de Windows, frecuentemente sin
+compresión: los archivos suelen ser enormes. Actualmente casi no se lo usa.
+</p>
+
+<h4 id="L6036">&lt;figure&gt;</h4>
+
+<p>En HTML5 hay un nuevo tag "<a
+href="http://dev.w3.org/html5/markup/figure.html">figure</a>" que eventualmente
+reemplazará a img para algunos usos, pero que por el momento no se usa mucho
+por que hay mucha gente que todavía tiene <a
+href="http://caniuse.com/html5semantic">browsers que no soportan este tag</a>.
+</p>
+
+<p>---</p>
+
+<h4 id="L1653">Actividades</h4>
+<ol>
+  <li>Agregarle a la página ejemplo una imagen, debajo del tag h1, por ejemplo
+    una foto de uno mismo</li>
+  <li>Abrir la página modificada con la imagen en algún browser</li>
+  <li>Insertar en el encabezado de la página la misma imagen de la actividad
+    anterior, pero de tamaño chico</li>
+</ol>
+</div>
+
+<div class="section">
+<h2 id="L6164">5 - Links</h2>
+
+<div class="imgR" style="padding-left:1em;">
+<img alt="link hand pointer" src="res/linkHandPointer.png"></div>
+
+<p>La magia de la Internet se apoya principalmente en los links. El HTML tiene
+la "H" en su nombre por "hyperlink", la característica que lo hace
+especial.</p>
+
+<p>En HTML los links se definen con el tag <code>&lt;a&gt;</code>. Por ejemplo
+un link elemental, a la página inicial de twitter, es así: </p>
+<pre style="display:inline-block;">&lt;a href="http://twitter.com"&gt;twitter&lt;/a&gt;</pre>
+<style>
+  .simpleLinks a[href^="http:"]      { padding-left:inherit; }
+  .simpleLinks a[href^="https:"]     { padding-left:inherit; }
+  .simpleLinks a                     { background:transparent; color:blue; text-decoration:underline; }</style>
+
+<p class="simpleLinks">Este mismísimo link en una página se vería así: <a
+href="http://twitter.com">twitter</a>, de donde se deduce que es no es un
+elemento block sino inline y por lo tanto es posible insertar links en el texto
+normal de una página.</p>
+
+<p>No es un empty element, por lo tanto requiere tag inicial y de cierre. El
+texto que se despliega en la página (en este caso solo la palabra "twitter")
+es el contenido que está entre los tags de cierre y apertura. </p>
+
+<p>Al poner el cursor del mouse sobre el texto del link, la flechita default se
+convierte en una manito. Al picar sobre el link la página que está mostrando
+el browser se reemplaza por la página donde apunta el link, tomada del
+atributo <code>href</code>. </p>
+
+<p>Tradicionalmente los links se muestran con texto azul y subrayados, pero la
+mayor parte de las páginas web aplican estilos a los links para cambiarles la
+apariencia, usando CSS, que se va a presentar más adelante en este curso. </p>
+
+<h3 id="L1697">href</h3>
+
+<p>El link del ejemplo: </p>
+<pre style="display:inline-block;">&lt;a href="http://twitter.com"&gt;twitter&lt;/a&gt;</pre>
+
+<p>contiene el atributo "href" que le informa al browser el target (objetivo)
+del link. El nombre "href" significa "hyperlink reference" y es un URL (Uniforn
+Resource Locator). </p>
+
+<p>Según como sea el URL del link, el resultado será diferente. Vamos a ver
+cómo es un URL y luego vemos las variantes de links. </p>
+
+<h4 id="L1707">Anatomía de un URL</h4>
+
+<p>Un URL más completo puede ser así: </p>
+<pre>http://productos.ejemplo.com.ar/seccion12/lista.html#item14</pre>
+
+<p>No todas las partes del URL aparecen en todos los links, y dependiendo de
+cuáles partes figuran en link, éste funciona de maneras diferentes. </p>
+
+<p>Veamos cada una de las partes. El "target" (donde apunta el link) es el
+"item14" de una lista que pertenece a la "seccion12": </p>
+
+<table class="borderTable">
+  <col>
+  <col>
+  <col>
+  <tbody>
+    <tr>
+      <th>protocol</th>
+      <td><code>http://</code></td>
+      <td>El nombre de esta parte es "scheme name", pero normalmente se lo
+        llama "protocolo", puede ser "http://", "https://" para comunicaciones
+        encriptadas (como cuando se hace un pago con tarjeta de crédito),
+        "mailto:" cuando es un link para enviar email, "ftp://" para FTP (un
+        protocolo de transferencia de archivos), "file:///" y otros. </td>
+    </tr>
+    <tr>
+      <th>domain</th>
+      <td><code>productos.<br>
+        ejemplo.<br>
+        com.ar</code> </td>
+      <td>La parte "ejemplo.com.ar" es el nombre del dominio, que en los casos
+        de empresas tiende a ser igual al nombre de la empresa. La terminación
+        "com.ar" indica que es un dominio comercial de Argentina. 
+
+        <p>"productos" es el "hostname", el nombre de un servidor dentro de
+        ejemplo.com.</p>
+      </td>
+    </tr>
+    <tr>
+      <th>path</th>
+      <td><code>seccion12/<br>
+        lista.html</code></td>
+      <td>La ubicación del target dentro del dominio. Es un "path", con
+        directorios y sub-directorios como en el sistema de archivos de una PC.
+      </td>
+    </tr>
+    <tr>
+      <th>fragment</th>
+      <td><p><code>#item14</code></p>
+      </td>
+      <td>Se llama "fragment" y especifica una ubicación dentro del archivo
+        "lista.html". </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Un <a href="http://en.wikipedia.org/wiki/Uniform_resource_locator">URL</a>
+completo tiene más partes, pero por ahora tenemos suficiente. Volvemos al tema
+de los links. </p>
+
+<p>Según qué partes del URL figuran en el atributo href del link, el
+comportamiento será diferente. </p>
+
+<h4 id="fragment">fragment</h4>
+<pre>&lt;a href="#item14"&gt;Item n° 14&lt;/a&gt;</pre>
+
+<p>Este es un link a otra parte de la misma página donde está el link. Es el
+caso cuando la página tiene un índice con una lista de ítems y picando el
+nombre de un ítem la página se reposiciona para ver la información de ese
+ítem, sin recargarla. </p>
+
+<p>El nombre "item14" que figura en el atributo href link debe coincidir con el
+atributo "id" del link target. Por ejemplo si el target fuera un encabezado h5
+podría ser: </p>
+<pre>&lt;h5 id="item14"&gt;El ítem 14&lt;/h5&gt;</pre>
+
+<p>Dos consideraciones: </p>
+<ul>
+  <li>El id no lleva el hash "#" adelante. </li>
+  <li>El id es case-sensitive: deben coincidir las mayúsculas y minúsculas
+    exactamente. No es lo mismo "#Item14" que "#item14".</li>
+  <li>No debe haber dos elementos en la página que tengan el mismo id. </li>
+  <li>El id se escribe con letras, números y underscore "_", no debe comenzar
+    con un número. </li>
+</ul>
+
+<p>El caso extremo de link mínimo es solamente un hash: <code>href="#"</code>.
+Es un link a ninguna parte, un link no operativo. Se suele usar cuando se está
+escribiendo una página mientras no se sabe exactamente el target real:
+inicialmente todos los attributos href son href="#" y a medida que el trabajo
+progresa se reemplaza el hash por el URL que corresponde. Al picar en un link
+con este href la misma página se vuelve a cargar. </p>
+
+<h4 id="L1829">path</h4>
+
+<p>Un link con solo el path en una página apunta a otra página dentro del
+mismo sitio. </p>
+
+<p>Ejemplo: </p>
+<pre>&lt;a href="otraPagina.html"&gt;Link a otra página&lt;/a&gt;</pre>
+
+<p>El browser arma un link completo sustituyendo las partes que faltan con lo
+de la página actual. Eso se puede comprobar estacionando el cursor sobre el
+link: en la status bar del browser se vé el link compuesto. </p>
+
+<p>Si la página actual es </p>
+<pre>http://www.ejemplo.com/curso1/ejemplos/estaPagina.html</pre>
+
+<p>el URL compuesto sería </p>
+<pre>http://www.ejemplo.com/curso1/ejemplos/<strong>otraPagina.html</strong></pre>
+
+<p>Este es un "relative link" por que el URL es relativo a la página actual.
+Una variante muy similar, que suele confundirse, es el "absolute link", que
+comienza con una "/". </p>
+
+<p>La "/" inicial significa que el link no es relativo a la página actual sino
+al inicio del sitio. El mismo link del ejemplo anterior sería: </p>
+<pre>&lt;a href="/curso1/ejemplos/otraPagina.html"&gt;Link a otra página&lt;/a&gt;</pre>
+
+<p>El link relativo supone que estaPagina.html y otraPagina.html están en el
+mismo diretctorio en el server. Si una de las dos páginas se cambiara de lugar
+el link dejaría de funcionar, se convertiría en un "dead link", un defecto de
+las páginas que siempre se trata de evitar por que le transmite al usuario una
+sensación de sitio de mala calidad, descuidado, y necesariamente le hace
+pensar que los productos de esa empresa también deben ser de calidad dudosa.
+</p>
+
+<p></p>
+
+<p>---</p>
+</div>
+
+<div class="section">
+<h2 id="L6049">6 - Estilos</h2>
+
+<p>Nuestra página ejemplo no tiene <em>estilo</em>. Hasta ahora solo contiene
+HTML, y el HTML aporta estructura que soporta el contenido. </p>
+
+<p>La estructura se expresa vía los tags de encabezados (<code>h1</code>,
+<code>h2</code>, ...), párrafos (<code>p</code>), y otros que veremos más
+adelante. </p>
+
+<p>El contenido, obviamente, es el texto contenido por esos tags. </p>
+
+<p>Pero tal como está ahora hay una cierta monotonía. Si agregáramos más
+párrafos todos lucirían igual, tendrían el mismo aspecto visual, como en una
+novela. </p>
+
+<h3 id="L180488">Browser default style</h3>
+
+<p>De hecho, <a
+href="http://stackoverflow.com/questions/6867254/browsers-default-css-for-html-elements">cada
+browser viene con una definición del estilo</a> que usa para desplegar cada
+tipo de tag. Por ejemplo todos los browsers despliegan los elementos
+<code>h1</code> con una tipografía grande y pesada, los
+<code>h2</code> menos grandes y pesados, etc. Los elementos
+<code>p</code> aparecen desplegados con la tipografía que podría
+considerarse "normal", algo así como el texto ingresado en un procesador de
+texto antes de cambiarle nada. </p>
+
+<p>Además de la tipografía, el estilo default del browser incluye márgenes,
+"paddings" y otros como el "display mode" que sabemos que puede ser "block" o
+"inline" y que hay otras opciones, o la dirección de lectura de izquierda a
+derecha común en los países occidentales. </p>
+
+<p>Nuestra página ejemplo, versión inicial, contiene el siguiente HTML: </p>
+<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+    &lt;title&gt;J Doe - index&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body lang="es"&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    &lt;p&gt;Indice de las páginas de John Doe en este web server.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt; </pre>
+
+<p>La página se ve así: </p>
+
+<div class="examplePage"
+style="width:555px; border:8px solid silver; border-radius:8px;">
+<iframe width="555px" style="width=555px; border:0;" src="res/example-01.html">
+</iframe>
+</div>
+
+<p>Tradicionalmente, desde los comienzos de la web, si no se especifica una
+tipografía el browser usa "Times New Roman" o alguna similar. </p>
+
+<h3 id="L180519">CSS</h3>
+
+<p>El estilo de las páginas se define usando el lenguage llamado CSS por
+"Cascading Style Sheets": hojas de estilo en cascada. </p>
+
+<p>Lo de "cascada" se refiere a que el browser especifica su estilo default,
+como vimos recién. Es posible cambiarlo agregando un archivo CSS con
+especificaciones que se superponen a las del browser y las reemplazan. </p>
+
+<p>Todavía es posible agregar tags <code>style</code> dentro de la página
+HTML con nuevas especificaciones que anulan y reemplazan a las anteriores. </p>
+
+<p>Y por último a nivel de tag se puede aplicar estilos que tienen prioridad
+sobre los anteriores. </p>
+
+<p>Esto que parece una idea buenísima que aporta un montón de flexibilidad,
+en la práctica termina siendo una pesadilla y los que saben recomiendan no
+incluír CSS dentro de los archivos HTML. </p>
+
+<p>Nosotros vamos a desoír esa recomendación, por razones prácticas: la
+comodidad de poder ver el HTML y el CSS juntos, y por que nuestra página
+ejemplo es microscópica. Cada nuevo ejemplo será un nuevo archivo con el CSS
+y el HTML juntos, con la salvedad de que todas las especificaciones CSS
+estarás aborregadas en un único tag <code>style</code> como estarían en el
+archivo separado que recomendamos para páginas de verdad. Y la recomendación
+incluye el tradicional "chicos, no intenten hacer esto en casa!". </p>
+
+<h3 id="L180539">Sintaxis del lenguage CSS</h3>
+
+<p>Una especificación CSS consta de selectores y reglas. Así: </p>
+<pre>h1 { color:gray; text-align:center; }</pre>
+
+<p>El selector es <code>h1</code>. Todas las reglas enumeradas entre el par de
+llaves {} se aplican a los elementos seleccionados por el selector, que en este
+caso son los elementos <code>h1</code>. </p>
+
+<p>Al final de cada regla va un "<code>;</code>" que no es obligatorio al final
+de la última regla. </p>
+
+<p>Cuando hay repetición la regla que aparece última gana, por ejemplo en el
+caso: </p>
+<pre>p { color:green; }
+p { color:blue; }</pre>
+
+<p>los elementos <code>p</code> se van a desplegar de color azul. </p>
+<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+    &lt;title&gt;J Doe - index&lt;/title&gt;
+    <span style="background-color:#ffff00">&lt;style&gt;</span>
+      <span style="background-color:#ffff00">h1 { color:gray; text-align:center; }</span>
+    <span style="background-color:#ffff00">&lt;/style&gt;</span>
+  &lt;/head&gt;
+  &lt;body lang="es"&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    &lt;p&gt;Indice de las páginas de John Doe en este web server.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt; </pre>
+
+<p></p>
+
+<div class="examplePage"
+style="width:555px; border:8px solid silver; border-radius:8px;">
+<iframe width="555px" style="width=555px; border:0;" src="res/example-02.html">
+</iframe>
+</div>
+
+<p>Como era de esperar, todos los elelemtos <code>h1</code> se despliegan en
+color gris y centrados. Es así de sencillo, solo que no es tan sencillo. En la
+práctica las páginas "de verdad" terminan teniendo archivos CSS con miles de
+registros, de una complejidad abrumadora. Pero la idea es simple: seleccionamos
+elementos y les aplicamos reglas. Es un lenguaje declarativo. </p>
+
+<h3 id="L180590">Selectores</h3>
+
+<p>En el primer ejemplo de CSS vimos un selector que selecciona los elementos
+por tipo y se llama <em>type selector</em>. Hay muchos otros tipos de
+selectores, que se usan para seleccionar por una importante diversidad de
+criterios. </p>
+
+<p>La autoridad que define el lenguaje CSS es el W3C. El nivel del lenguaje CSS
+puede ser 2.1 o 3, este último está asociado al HTML5 que está cundiendo
+rápidamente. El nivel 3 incluye lo del nivel 2.1 y lo aumenta. </p>
+
+<p>El documento donde definen esta versión del lenguaje es "<a
+href="http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#contents">Selectors
+Level 3</a>". En ese documento, complejo y extenso, hay una sección "<a
+href="http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#selectors">2.
+Selectors</a>" donde resumen la sintaxis de los selectores. El selector
+genérico "E" que usan es cualquier <em>type selector</em>, como el
+<code>h1</code> de nuestro primer ejemplo. </p>
+
+<p>Los tipos de selectores que más se usan son los de clase
+(<code>E.warning</code> en el documento del W3C) y los de id
+(<code>E#myid</code> en el documento). </p>
+
+<p>Los selectores se pueden combinar, por ejemplo
+<code>h1.urgent</code> selects the <code>h1</code> elements that have scall
+"Urgent". </p>
+
+<h3 id="L180629">Atributos <code>id</code> y <code>class</code></h3>
+
+<p>En la sección <a href="#fragment">fragment</a> del tema URL vimos cómo se
+podía asignar un atributo <code>id</code> a un elemento y usarlo para linkear
+exactamente a ese fragmento de la página. </p>
+
+<p>El <code>id</code> es la identificación del elemento y se usa también en
+los selectores CSS. El <code>id</code> tiene la restricción de que no puede
+haber dos iguales en una página, por eso es un buen selector, por que es muy
+selectivo. </p>
+
+<p>Como su uso es tan común los selectores de <code>id</code> tienen una
+abreviatura tan conocida y usada que pocos recuerdan la forma no abreviada. La
+abreviarura consiste an anteponer un "<code>#</code>" al id. Por ejemplo
+<code>#errorMsg</code> selecciona el elemento con <code>id</code> "errorMsg",
+y <code>#errorMsg p</code> selecciona todos los párrafos contenidos por ese
+elemento. </p>
+
+<p>El atributo <code>class</code> es como un tag. Funciona como el
+<code>id</code> pero puede haber más de un elemento con una misma
+<code>class</code>. Ejemplo: el selector <code>.urgent</code> selecciona todos
+los elementos con <em>class</em> <code>urgent</code>. Para desplegar esos
+elementos con fondo amarillo el CSS sería: </p>
+<pre>.urgent { background-color:yellow; }</pre>
+
+<p>y uno de los elementos seleccionados podría ser así:</p>
+<pre>&lt;p class="urgent"&gt;Bring some beer to the location.&lt;/p&gt;</pre>
+
+<p>Si lo agregamos a la página ejemplo en código quedaría así:</p>
+<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+    &lt;title&gt;J Doe - index&lt;/title&gt;
+    &lt;style&gt;
+      h1 { color:gray; text-align:center; }
+      p.urgent { background-color:yellow; } 
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body lang="es"&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    &lt;p&gt;Indice de las páginas de John Doe en este web server.&lt;/p&gt;
+    &lt;p class="urgent"&gt;Bring some beer to the location.&lt;/p&gt; 
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<div class="examplePage"
+style="width:555px; border:8px solid silver; border-radius:8px;">
+<iframe width="555px" style="width=555px; border:0;" src="res/example-03.html">
+</iframe>
+</div>
+
+<p>Se observa que el elemento <code>p</code> se despliega con fondo amarillo
+como lo especificó la regla, y que como su <code>display mode</code> es
+<code>block</code> ocupa todo el ancho del container. </p>
+
+<p>Si quisiéramos que solo el texto tuviera fondo amarillo, entonces
+deberíamos aplicar la regla a un elemento con <em>display
+mode</em> <code>inline</code>, como por ejemplo el elemento
+<code>span</code> que se represente como una porción de texto. </p>
+<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+    &lt;title&gt;J Doe - index&lt;/title&gt;
+    &lt;style&gt;
+      h1 { color:gray; text-align:center; }
+      .urgent { background-color:yellow; } 
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body lang="es"&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    &lt;p&gt;Indice de las páginas de John Doe en este web server.&lt;/p&gt;
+    &lt;p&gt;&lt;span class="urgent"&gt;Bring some beer to the location.&lt;/span&gt; Several bottles.&lt;/p&gt; 
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<div class="examplePage"
+style="width:555px; border:8px solid silver; border-radius:8px;">
+<iframe width="555px" style="width=555px; border:0;" src="res/example-04.html">
+</iframe>
+</div>
+
+<p>Ahora el color de fondo está aplicado solo al texto, no al bloque conpleto
+del elemento. El elemento <code>span</code> en este caso abarca todo el texto
+del <code>p</code>, pero podría abarcar solo una parte. O podría haber varios
+elementos <code>span</code> en un mismo párrafo con diferentes clases. </p>
+
+<p>De lo anterior se desprende que dentro de un elemento con
+<code>display:block;</code> puede haber partes que lo componen. De hecho, el
+simple block de HTML consta de una cantidad d partes que hay que conocer. </p>
+
+<p>---</p>
+
+<div class="section">
+<h2 id="L60541">7 - Box model &amp; tools</h2>
+
+<p>Un elemento con <code>display:block;</code> explícito o implícito tiene
+una cantidad de partes. La explicación oficial está el en W3C bajo el título
+"<a href="http://www.w3.org/TR/CSS21/box.html">8 Box model</a>". </p>
+
+<p>Hay un documento descriptivo eee. </p>
+
+<p>En síntesis, un elemento block siempre tiene todas estas partes: </p>
+
+<p><img alt="CSS3 box model" src="res/CSS3BoxModel.png"></p>
+
+<p>En los ejemplos hasta ahora solo teníamos <em>content</em>, las otras
+áreas del block no estaban definidas, es decir, tenían el ancho definido en
+el estilo default del browser. Por ejemplo el estilo default especifica (o
+implica) un <em>border</em> de ancho cero. </p>
+
+<p>En nuestra página ejemplo el elemento <code>h1</code> tiene
+<em>margin</em>. Se lo puede ver usando las "Developer Tools" de Chrome, o el
+"<a href="https://addons.mozilla.org/en-US/firefox/addon/firebug/">Firebug</a>"
+de Firefox. </p>
+
+<p>En cualquiera de los browsers se pica sobre el elemento con el botón
+derecho y se elige "Inspect element" en el menú contextual. Se despliega una
+nueva ventana, o se abre en la parte inferior de la página. </p>
+
+<p><img alt="inspectinf example H1" src="res/InspectH1.png"></p>
+
+<p>Cuando está seleccionado "Elements" en la barra de menú el panel de la
+izquierda muestra la estructura del HTML de la página. Como es una estructura
+arborescente hay posibilidad de desplegar u ocultar los subtrees picando en los
+íconitos triángulo. </p>
+
+<p>En el arbol de <em>elements</em> hay uno seleccionado (a veces es necesario
+desplazar el contenido hacia arriba para que quede a la vista), que en nuestro
+caso es el <code>h1</code>. Si no está seleccionado hay que picarlo
+simplemente. </p>
+
+<p>Con el <code>h1</code> seleccionado el panel de la derecha muestra los
+estilos del elemento, y abajo de la lista de estilos un diagrama con las
+medidas de las areas. Se ve que tiene un <em>margin</em> de 21.440 pixels
+arriba y abajo, y nada a los costados. No <code>border</code> ni
+<code>padding</code>. </p>
+
+<p>Al comienso del panel derecho están los estilos aplicados al elemento
+<code>h1</code>, separados según su origen (la parte "cascading" en CSS). Al
+final aparecen los estilos default, bajo el título <em>user agent
+stylesheet</em>, "user agent" es el nombre que el W3C le da a los programas que
+acceden la web; entre ellos están los browsers. </p>
+
+<p>Estacionando el cursor sobre la definición del elemento
+<code>h1</code> del panel izquierdo el propio elemento en el panel superior se
+transforma para mostrar sus areas con diferentes colores, con sus tamaños
+exactos. Se puede apreciar el <em>margin top</em>, el <em>margin bottom</em>, y
+el area de <em>content</em>. También se muestran las medidas del elemento en
+pixels. </p>
+
+<p>Tocando F12 la pantalla de developer tools se cierra (F12 también la abre).
+</p>
+
+<p>Un detalle muy simpático es que los estilos que se muestran el el panel
+derecho se pueden modificar. </p>
+
+<p>En nuestro ejemplo modifiqué el <em>element style</em> agregándole
+<code>padding</code>, <code>background-color</code> y <code>border</code>. El
+resultado se ve inmediatamente en el panel superior. Para introducir
+modificaciones de estilo simplemente hay que picar con el mouse debajo de la
+lista, escribir al nombre del estilo ("padding") y tabular para escribir el
+valor ("20 px"). </p>
+
+<p>También se modificó el diagrama de abajo: ahora las areas
+<em>border</em> y <em>padding</em> tienen valores acordes con las
+modificaciones introducidas. </p>
+
+<p><img alt="H1 inspected with modified styles"
+src="res/InspectH1Modif.png"></p>
+
+<p>Un punto interesante es que el color del fondo abarca las areas de
+<em>padding</em> y <em>content</em> pero no el <em>margin</em> que siempre es
+transparente (deja ver el color del fondo de su container). El <em>border</em>
+separa <em>padding</em> de <em>margin</em>. </p>
+
+<p>Las modificaciones introducidas se pierden al recargar la página. Es
+posible seleccionarlas y copiarlas para pegarlas en el archivo CSS persistente.
+</p>
+
+<p>Se puede especificar las medidas de los elementos de block con las
+propiedades <code>width</code> y <code>height</code>, en diversas unidades.
+Estas medidas se refieren en principio al area de <em>content</em>, excluyendo
+las demás. Esto era el standard del W3C, poco conveniente. El IE incluía
+<em>padding</em> y <em>border</em> en las medidas dando lugar a una
+significativa incompatibilidad: las medidas especificadas para un browser no
+funcionaban el otros. El standard actual, llamado CSS3, mantiene el original
+<code>content-box</code> por default pero permite optar por el de IE llamado
+<code>border-box</code>. Por ejemplo así: </p>
+<pre>* {
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box
+}</pre>
+
+<p>El "<code>*</code>" es el selector universal: esta regla se aplica a todos
+los elementos de la página. </p>
+
+<p>Las tres reglas significan lo mismo. Pero sucede que antes de que una regla
+sea standard los distintos browsers la implementan con "prefijo", una especie
+de beta testing. Cuando se oficializa se puede usar sin prefijo. El ejemplo
+incluye los tres casos para atender los browsers que no entienden la regla sin
+prefijo. </p>
+
+<p>El sitio <a href="http://caniuse.com/#search=box-sizing">caniuse.com</a>
+muestra la compatibilidad de cada regla con las sucesivas versiones de los
+distintos browsers y si se debe especificar prefijo o no. </p>
+
+<div class="section">
+<h2 id="L60542">8 - CSS units</h2>
+
+<p>Muchas propiedades del CSS requieren la especificación de un valor, por
+ejemplo <code>padding-top:20px;</code> y ese valor se puede especificar en
+pixels como en el ejemplo, o usando otras unidades que pueden ser más
+convenientes an algunos casos. </p>
+
+<p>Muy sintéticamente, algunas de las unidades son: </p>
+<dl>
+  <dt>px</dt>
+    <dd><em>pixels</em> El tamaño de uno de los puntitos físicos que componen
+      la imagen en la pantalla. </dd>
+  <dt>em</dt>
+    <dd><em>ems</em> El ancho de la letra "M" en el font del elemento. Es una
+      unidad proporcional que se adapta al tamaño del texto. </dd>
+  <dt>%</dt>
+    <dd><em>percent</em> Porcentaje de la medida correspondiente del container
+      (ancho o alto). Es también proporcional, y requiere tener en cuenta los
+      márgenes según el modelo de <code>box-sizing</code> elegido. </dd>
+</dl>
+</div>
+
+<p>Hay un documento del W3C "<a
+href="http://www.w3.org/TR/2001/WD-css3-values-20010713/#lengths">CSS3 module:
+Values and Units</a>" que define las unidades en detalle, para tamaños como
+las mencionadas, y para otros casos menos usados en CSS como intervalos de
+tiempo, ángulos, ...</p>
+</div>
+</div>
+
+<div class="section">
+<h2 id="L6054">9 - Más tags</h2>
+
+<p>Hay tags <em>semánticos</em> y tags <em>formales</em>. La tendencia es
+hacia el lado semántico, desalentando el uso de tags de apariencia. </p>
+
+<p>Por ejemplo inicialmente el HTML contenía el tag <code>b</code> para
+despelgar texto en negrita ("bold"). Eso nos dice cómo quiere el autor que se
+vea esa parte del texto, pero no nos dice por qué. Hay browsers que no
+despliegan el texto visualmente sino que lo leen, son especialmente para
+personas que no pueden ver, el más famoso es <a
+href="http://www.freedomscientific.com/products/fs/jaws-product-page.asp">Jaws</a>.
+En el contexto de un <em>screen reader</em> como Jaws, "bold" no tiene
+sentido. En vez del tag <code>b</code> ahora usamos <code>strong</code> que
+tiene más significado. En vez de <code>i</code> para mostrar el texto en
+itálicas ahora usamos <em>em</em> para émfasis. En los browsers de pantalla
+el resultado del nuevo tag es el mismo que el del anterior, solo que ahora el
+tag comunica la intención del autor. Si quisiera solo resaltar el texto
+haciéndolo más pesado entonces podría usar una regla de CSS así: <code>{
+font-weight:700; }</code> o <code>{ font-weight:200; }</code> para hacerlo
+muy liviano, usando un font habilitado para mostrar texto de distinto peso. </p>
+
+<p>Un tag que se usa muchísimo es <acronym><code>div</code></acronym>, es una
+división dentro de la página con alguna característica. El tag en sí no
+hace nada, no tiene márgenes, ni ocupa espacio. Es un <em>container</em> para
+los tags que le pongamos adentro. </p>
+
+<p>En nuestra página ejemplo agrego un <code>div</code> para agrupar el
+contenido, distinguiéndolo del encabezado. </p>
+
+<p></p>
+<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+    &lt;title&gt;J Doe - index&lt;/title&gt;
+    &lt;style&gt;
+      h1 { color:gray; text-align:center; }
+      .urgent { background-color:yellow; } 
+      <span style="background-color:#ffff00">div.content { background-color:rgb(240,240,240); border:4px solid silver;</span> 
+      <span style="background-color:#ffff00">border-radius:8px; padding:1em; }</span>
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body lang="es"&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    <span style="background-color:#ffff00">&lt;div div class="content"&gt;</span>
+      &lt;p&gt;Indice de las páginas de John Doe en este web server.&lt;/p&gt;
+      &lt;p&gt;&lt;span class="urgent"&gt;Bring some beer to the location.&lt;/span&gt;&lt;/p&gt; 
+    <span style="background-color:#ffff00">&lt;/div&gt;</span>
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<div class="examplePage"
+style="width:555px; border:8px solid silver; border-radius:8px;">
+<iframe width="555px" style="width=555px; height:222px;  border:0;"
+src="res/example-05.html">
+</iframe>
+</div>
+
+<p>El <code>div</code> se usa como container para todos los párrafos, que
+componen el contenido de la página. Si bien <code>div</code> no es un tag
+semántico, la clase <em>content</em>  comunica cual es su función. </p>
+
+<p>La nueva norma de <a
+href="http://diveintohtml5.info/semantics.html#new-elements">HTML presenta una
+cantidad de nuevos tags semánticos</a>, para documentar mejor la estructura
+del documento. Dentro de este grupo se encuentran: </p>
+<ul>
+  <li><code>section</code></li>
+  <li><code>nav</code></li>
+  <li><code>article</code></li>
+  <li><code>aside</code></li>
+  <li><code>hgroup</code></li>
+  <li><code>header</code></li>
+  <li><code>footer</code></li>
+  <li><code>time</code></li>
+  <li><code>mark. </code></li>
+</ul>
+
+<p>Tradicionalmente las páginas tienen artefactos de navegación, por ejemplo
+menús - algunos despelgables. Observando la página se identifica fácilmente
+los elementos para navegación, pero un screen reader no "ve" y no puede hacer
+las asociaciones mentales que una persona hace al ver una página para
+identificar la navegación instantáneamente. El screen reader, en cambio,
+cuando encuentra un tag <code>nav</code> ya sabe que contiene artefactos de
+navegación y se lo dice al usuario dándole la opción de saltearlo
+inmediatamente o escuchar las opciones. </p>
+
+<p>De manera similar, los demás tags tienen cada uno su función. </p>
+</div>
+
+<div class="section">
+<h2 id="L6059">10 - Listas</h2>
+
+<p>En HTML las listas tienen varios usos, toda vez que se quiere agrupar una
+cantidad de elementos similares. Por ejemplo una lista de frutas: </p>
+<ul>
+  <li>apple</li>
+  <li>orange</li>
+  <li>pear</li>
+  <li>banana</li>
+  <li>strawberry</li>
+</ul>
+
+<p>o la misma lista pero numerada: </p>
+<ol>
+  <li>apple</li>
+  <li>orange</li>
+  <li>pear</li>
+  <li>banana</li>
+  <li>strawberry</li>
+</ol>
+
+<p>o desplegada horizontalmente (cambiándole el estilo con CSS): </p>
+<style>
+  .HList ul { }
+  .HList li { display:inline-block; border:1px solid silver; padding:0px 12px; margin:0; background-color:rgb(240,240,240); }
+  .HList li:hover { background-color:rgb(248,248,240);}
+  ul.openClose li ul { display:none; }
+  ul.openClose li:hover ul { display:block; }</style>
+<ul class="HList">
+  <li style="border:1px solid silver;">apple</li>
+  <li>orange</li>
+  <li>pear</li>
+  <li>banana</li>
+  <li>strawberry</li>
+</ul>
+
+<p>El HTML del primer ejemplo es así: </p>
+<pre>&lt;ul&gt;
+  &lt;li&gt;apple&lt;/li&gt;
+  &lt;li&gt;orange&lt;/li&gt;
+  &lt;li&gt;pear&lt;/li&gt;
+  &lt;li&gt;banana&lt;/li&gt;
+  &lt;li&gt;strawberry&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+<p>El tag <code>ul</code> significa <em>unordered list</em>. Las listas sin
+números se llaman <em>unordered</em>, aunque estén ordenadas. Las numeradas
+se definen con el tag <code>ol</code> por <em>ordered list</em>, en vez de
+<code>ul</code>. </p>
+
+<p>En ambos tipos de lista el tag <code>li</code> define un <em>list
+item</em>. La estructura de una lista es el container <code>ul</code> u
+<code>ol</code>, que contiene una cantidad de elementos <code>li</code>. </p>
+
+<p>Es posible hacer listas jerárquicas, definiendo listas dentro de listas:
+</p>
+<ul>
+  <li>apples 
+    <ul>
+      <li>red delicious</li>
+      <li>granny smith</li>
+      <li>adams</li>
+      <li>allington pippin</li>
+      <li>ambrosia</li>
+      <li>grimes golden</li>
+    </ul>
+  </li>
+  <li>citrics 
+    <ul>
+      <li>orange</li>
+      <li>lemon</li>
+      <li>grapefruit</li>
+      <li>tangerine</li>
+    </ul>
+  </li>
+  <li>pear</li>
+  <li>banana</li>
+  <li>strawberry</li>
+</ul>
+
+<p>y es posible hacer que las listas se abran y cierren, en este caso
+estacionando el cursor sobre el nombre de la categoría (en un ejemplo
+sumamente precario de menú jerárquico): </p>
+<ul class="openClose">
+  <li>apples ... 
+    <ul>
+      <li>red delicious</li>
+      <li>granny smith</li>
+      <li>adams</li>
+      <li>allington pippin</li>
+      <li>ambrosia</li>
+      <li>grimes golden</li>
+    </ul>
+  </li>
+  <li>citrics ... 
+    <ul>
+      <li>orange</li>
+      <li>lemon</li>
+      <li>grapefruit</li>
+      <li>tangerine</li>
+    </ul>
+  </li>
+  <li>pear</li>
+  <li>banana</li>
+  <li>strawberry</li>
+</ul>
+
+<p>La jerarquía se implementa insertando una lista conpleta dentro de un
+elemento <code>li</code>.</p>
+
+<p>Veamos en detalle el último caso, que despliega listas ocultas usando CSS.
+El CSS y el HTML son así: </p>
+<pre>&lt;style&gt;
+  ul.openClose li ul { display:none; }
+  ul.openClose li:hover ul { display:block; }
+&lt;/style&gt;
+ 
+&lt;<strong>ul</strong> class="<strong>openClose</strong>"&gt;
+  &lt;<strong>li</strong>&gt;apples ...
+    &lt;<strong>ul</strong>&gt;
+      &lt;li&gt;red delicious&lt;/li&gt;
+      &lt;li&gt;granny smith&lt;/li&gt;
+      &lt;li&gt;adams&lt;/li&gt;
+      &lt;li&gt;allington pippin&lt;/li&gt;
+      &lt;li&gt;ambrosia&lt;/li&gt;
+      &lt;li&gt;grimes golden&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;<strong>li</strong>&gt;citrics ...
+    &lt;<strong>ul</strong>&gt;
+      &lt;li&gt;orange&lt;/li&gt;
+      &lt;li&gt;lemon&lt;/li&gt;
+      &lt;li&gt;grapefruit&lt;/li&gt;
+      &lt;li&gt;tangerine&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;pear&lt;/li&gt;
+  &lt;li&gt;banana&lt;/li&gt;
+  &lt;li&gt;strawberry&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+<p>El CSS: </p>
+<pre>ul.openClose li ul { display:none; }</pre>
+
+<p>significa seleccionar los elementos <code>ul</code> que están dentro de un
+<code>li</code> dentro de un <code>ul</code> con clase <code>openClose</code>
+y ocultarlos con <code>display:none;</code> (hay que leerlo de derecha a
+izquierda). Hace que las listas interiores no se vean. </p>
+
+<p>El CSS </p>
+<pre>ul.openClose li:hover ul { display:block; }</pre>
+
+<p>es igual al anterior, con la única diferencia de la
+<em>pseudoclass</em> <code>:hover</code>. Selecciona los mismos elementos pero
+solamente mientras el cursor del mouse está sobrevolando el elemento
+<code>li</code> que contiene la lista oculta, y la muestra con
+<code>display:block;</code>. <br>
+Significa aplicarle <code>display:block;</code> a los
+<code>ul</code> contenidos por un <code>li</code> que tiene el cursor encima,
+que son parte de un <code>ul</code> con <code>class:openClose</code>. </p>
+
+<p></p>
+</div>
+
+<div class="section" style="display:block;">
+<h2 id="L6064">JavaScript, jQuery y el DOM</h2>
+
+<p>Esto es un tema inmenso. </p>
+
+<p><a href="http://en.wikipedia.org/wiki/JavaScript">JavaScript</a> (o JS) es
+un lenguaje de programación que se implementó el los browsers de Netscape en
+el año 1995 y ahora, casi 10 años después, hay indicios de que va a ser el
+próximo Gran Lenguaje de Programmación Mundial. </p>
+
+<p><a href="http://en.wikipedia.org/wiki/JQuery">jQuery</a> es una librería de
+funciones para JS que se usa en muchísimos sitios web. Facilita mucho la
+programación con una cantidad de funciones de conveniencia, pero muy
+especialmente <em>nivelando los browsers</em>. Muchas funciones del JS
+funcionan distinto en los diferentes browsers, especialmente el MSIE. jQuery
+ofrece una única función alternativa que además de alguna ventaja de
+conveniencia, se ocupa de detectar el browser donde se está ejecutando
+producir el mismo resultado en todos los casos, incluso con el infame IE6.
+jQuery facilitó enormemente el trabajo con JS. Eventualmente se va a
+extinguir, cuando dejen de existir los problemas que resuelve, pero por el
+momento es fundamental. </p>
+
+<p><a href="http://en.wikipedia.org/wiki/Document_Object_Model">DOM</a> es el
+Document Object Model, la organización de los elementos de una página vistos
+por el JS. Se puede considerar que es una API. Está estandarizado por el W3C
+bajo el título "<a
+href="http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/">DOM Level 3
+Core Specification</a>" y otros documentos. El DOM es una estructura
+jerárquica del contenido de una página, el elemento root es el tag
+<code>html</code> que tiene dos <em>children</em>: <code>head</code> y
+<code>body</code>, y así sucesivamente. Una página elaborada puede tener
+muchísimos niveles dentro de niveles. </p>
+
+<h4>Objetos</h4>
+
+<p>El DOM, o sea todo lo que contiene la página, es una jerarquía de
+elementos que programáticamente se implementa como una jerarquía de
+<em>objetos</em> y los atributos de los elementos HTML, como por ejemplo
+<code>id</code> o <code>class</code> son properties de esos objetos. </p>
+
+<p>Con programmación JS+jQ lo que se hace es modificar el DOM. Se agregan o
+eliminan elementos, y se cambian las propiedades de los elementos existentes.
+</p>
+
+<p>Estos cambios se realizan en respuesta a acciones del usuario o del
+ambiente, hay una cantidad de acciones bien tipificadas que para el browser son
+<em>eventos</em>. Un ejemplo típico de evento es <em>mouse click</em>. La
+programación implica crear <em>event handlers</em>, funciones que están
+esperando que un evento suceda (por ejemplo esperando que el usuario pique en
+un botón, o que un timer llegue a cero) y se ejecutan en ese momento. </p>
+
+<p>Empecemos a ver ejemplos concretos. La páginita de los ejemplos ahora tiene
+un <code>id</code>. </p>
+<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt;
+    &lt;title&gt;J Doe - index&lt;/title&gt;
+    &lt;style&gt;
+      h1 { color:gray; text-align:center; }
+      .urgent { background-color:yellow; } 
+      <span style="background-color:#f0f0f0">div.content { background-color:rgb(240,240,240); border:4px solid silver;</span> 
+      <span style="background-color:#f0f0f0">border-radius:8px; padding:1em; }</span>
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body lang="es"&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    <span style="background-color:#f0f0f0">&lt;div <span style="background-color:#ffff80">id="pageContent"</span> div class="content"&gt;</span>
+      &lt;p&gt;Indice de las páginas de John Doe en este web server.&lt;/p&gt;
+      &lt;p&gt;&lt;span class="urgent"&gt;Bring some beer to the location.&lt;/span&gt;&lt;/p&gt; 
+    <span style="background-color:#f0f0f0">&lt;/div&gt;</span>
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>Para operar programáticamente sobre el elemento <code>div</code> con
+<code>id="pageContent"</code> se necesita una referencia a ese objeto, que se
+puede obtener así: </p>
+<pre>    var contentDiv = document.getElementById('pageContent');</pre>
+
+<p>Esa línea define una variable ("<code>var</code>"), la nombra
+<code>contentDiv</code> y le asigna como valor una referencia a un objeto que
+ya existe usando el método <code>getElementById()</code> del objeto
+<code>document</code> que representa el DOM completo de la página. </p>
+
+<p>Vamos por partes. La parte <code>var</code> crea una variable. En JS las
+variables no tienen tipos fijos, adoptan el tipo del valor que les asignemos,
+si hiciéramos <code>var contentDiv = 5;</code> la variable sería tipo
+<code>number</code>, asi que solo ponemos el nombre. </p>
+
+<p>El lado derecho de la asignación es la ejecución de un método de un
+objeto, en particular <a
+href="https://developer.mozilla.org/en-US/docs/Web/API/document.getElementById">el
+método <code>getElementById()</code></a> del objeto
+<code>document</code> que retorna una referencia a un elemento o
+<code>null</code>. </p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+<pre>{
+  handleContent: function() {
+    var contentDiv = document.getElementById('pageContent');
+  }
+}</pre>
+
+<p></p>
+
+<p>---</p>
+</div>
+
+<div class="section" style="display:block;">
+<h2 id="L6064">Recursos</h2>
+<dl>
+  <dt>fiddle</dt>
+    <dd><a href="http://jsfiddle.net/">http://jsfiddle.net/</a> 
+      <p>Sirve para hacer ejemplos y pruebas. En una página deja escribir
+      HTML, CSS y JavaScript, y picando en un botón [Run] muestra el
+      resultado. A los usuarios registrados les permite guardarlos
+      <em>fiddles</em> que hagan. </p>
+    </dd>
+</dl>
+
+<p>---</p>
+</div>
+
+<div class="section" style="display:none;">
+<h2 id="L6064">Tablas</h2>
+
+<p>---</p>
+</div>
+
+<div class="section" style="display:none;">
+<h2 id="L6069">Más estilos</h2>
+
+<p>---</p>
+</div>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p> </p>
+
+<p> </p>
+</div>
+</body>
+</html>

@@ -5,49 +5,95 @@
   <meta http-equiv="Content-Language" content="en">
   <title>12Apr2014 Sat</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+  </script>
+  <script type="text/javascript" src="res/agenda.js">
+  </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+  </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140411.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140413.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 12Apr2014 Sat </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140411.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140413.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 12Apr2014 Sat </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a href="http://www.marzocca.net/linux/bum.html">Installed Boot-up manager
+Bum</a> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>Apache service disabled</h3>
+<pre>jlanus@juan-T61:~$ <strong>sudo update-rc.d apache2 disable</strong>
+update-rc.d: warning:  start runlevel arguments (none) do not match apache2 Default-Start values (2 3 4 5)
+update-rc.d: warning:  stop runlevel arguments (none) do not match apache2 Default-Stop values (0 1 6)
+ Disabling system startup links for /etc/init.d/apache2 ...
+ Removing any system startup links for /etc/init.d/apache2 ...
+   /etc/rc0.d/K09apache2
+   /etc/rc1.d/K09apache2
+   /etc/rc2.d/S91apache2
+   /etc/rc3.d/S91apache2
+   /etc/rc4.d/S91apache2
+   /etc/rc5.d/S91apache2
+   /etc/rc6.d/K09apache2
+ Adding system startup for /etc/init.d/apache2 ...
+   /etc/rc0.d/K09apache2 -&gt; ../init.d/apache2
+   /etc/rc1.d/K09apache2 -&gt; ../init.d/apache2
+   /etc/rc6.d/K09apache2 -&gt; ../init.d/apache2
+   /etc/rc2.d/K09apache2 -&gt; ../init.d/apache2
+   /etc/rc3.d/K09apache2 -&gt; ../init.d/apache2
+   /etc/rc4.d/K09apache2 -&gt; ../init.d/apache2
+   /etc/rc5.d/K09apache2 -&gt; ../init.d/apache2
+jlanus@juan-T61:~$ sudo service apache2 stop
+ * Stopping web server apache2                                                                       * 
+jlanus@juan-T61:~$ </pre>
+
+<p>Reinstate with <code><strong>sudo update-rc.d apache2
+enable</strong></code>. </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
