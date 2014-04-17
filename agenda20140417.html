@@ -5,49 +5,103 @@
   <meta http-equiv="Content-Language" content="en">
   <title>17Apr2014 Thu</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140416.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140418.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 17Apr2014 Thu </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140416.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140418.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 17Apr2014 Thu </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a
+href="http://supportline.microfocus.com/Documentation/books/sx51/sx51indx.htm">MF
+Server Express 5.1 reference</a>  </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>zzz</h3>
+<ol>
+  <li>0000-PROGRAMA-PRINCIPAL.</li>
+  <li>1000-ABRIR-ARCHIVOS.
+    <ol>
+      <li>1001-INICIAR-BASEDEDATOS. 
+        <ol>
+          <li>declare vcurs cursor for dynamic_sql</li>
+          <li>PERFORM 1000-BUSCA-USUPASS. 
+            <ol>
+              <li>MOVE "lstxclde" TO WS-USR</li>
+              <li>MOVE "LstxcD8" TO WS-PASS</li>
+              <li>MOVE "LIST_DL1" TO WS-ALIAS</li>
+              <li>PERFORM 1000-BIND-RUTSQL. 
+                <p>Bind local a la base de datos elegida</p>
+              </li>
+            </ol>
+          </li>
+          <li>1000-CONECTARSE-A-LAS-BDS.
+            <ol>
+              <li>1000-CONECTAR-XXXX-DL1.
+                <ol>
+                  <li>CONNECT TO :WS-ALIAS USER :WS-USR USING :WS-PASS</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
