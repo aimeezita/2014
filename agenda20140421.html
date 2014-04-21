@@ -5,49 +5,563 @@
   <meta http-equiv="Content-Language" content="en">
   <title>21Apr2014 Mon</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140420.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140422.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 21Apr2014 Mon </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140420.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140422.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 21Apr2014 Mon </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>ejecución del TSTDB2</h3>
+
+<p></p>
+<pre>$ x TSTDB2
+
+************************************************
+* Prueba de performance de lectura de la tabla *
+* REGISTRO.SCORE usando cursores con claves    *
+* parciales aleatorias                         *
+************************************************
+*                                              *
+*           PROGRAMA : TSTDB2.CBL              *
+*                                              *
+************************************************
+
+ Inicio Proceso : 2014/04/21 18:25:52
+
+   Database Connection Information
+
+ Database server        = DB2/LINUXX8664 9.7.7
+ SQL authorization ID   = LSTXCLDE
+ Local database alias   = LIST_DL1
+
+
+LINE    MESSAGES FOR TSTDB2.bnd
+------  --------------------------------------------------------------------
+        SQL0061W  The binder is in progress.
+        SQL0719N  Bind error for user "LSTXCLDE". Package
+                  "COBOLAPP.TSTDB2.V8" already exists.  SQLSTATE=42710
+        SQL0082C  An error has occurred which has terminated
+                  processing.
+        SQL0092N  No package was created because of previous errors.
+        SQL0091N  Binding was ended with "3" errors and "0" warnings.
+DB20000I  The QUIT command completed successfully.
+SQL0752N  Connecting to a database is not permitted within a logical unit of
+work when the CONNECT type 1 setting is in use.  SQLSTATE=0A001
+
+LINE    MESSAGES FOR TSTDB2.bnd
+------  --------------------------------------------------------------------
+        SQL0061W  The binder is in progress.
+        SQL0091N  Binding was ended with "0" errors and "0" warnings.
+DB20000I  The QUIT command completed successfully.
+Claves leídas .........         238,603
+Cursores creados .............         238,603
+Filas de SCORE leídas ........         238,603
+ Fin Proceso : 2014/04/21 18:31:09
+Error: cannot disconnect LIST_DL1           -1328                                                  
+
+real    5m17.80s
+user    0m53.40s
+sys     0m9.16s
+
+Inicio de Programa:  2014/04/21 18:25:52
+Fin de Programa:     2014/04/21 18:31:09
+
+icdgd@codes /d/iccol/desarrollo/temporales
+</pre>
+
+<p>Dirley 46556 </p>
+
+<p>entrega 16 dias, pasaron 3 </p>
+
+<h4>Compilar máquina desarrollo Experian</h4>
+
+<p></p>
+<pre>Aqui tienen que abrir una sesión con putty a la ip 172.24.2.206 puerto 22. Pueden ingresar con mi usuario mientras nos asignan los otros:
+usuario: icdgd
+password: clave123
+des-c-cobdb2--&gt;  compilar db2
+des-c-v         --&gt;  compilar programas normales
+sources: /d/iccol/desarrollo/fuentes/* TSTDB2.cbl
+ . sh-camamb prunovedat (este cambio de ambiente se debe realizar cuando ingresamos)</pre>
+
+<p></p>
+<pre>
+Offline
+Dirley García
+ 
+ This chat is off the record 
+ Dirley:  Juan voy en camino para experian
+ Sent at 12:02 PM on Monday
+ Dirley:  Cualquier duda por este medio
+Cualquier duda por este medio
+ me:  OK, yo ahora me voy a SouthPark a almorzar con Darío y Natanael, hablaremos del proyecto, estaré son PC durnate un buen rato así que tranqui ...
+Cuendo vuelva posiblemente te pida ayuditas para compilar
+:-)
+ Sent at 12:04 PM on Monday
+ Dirley:  Ok
+ Sent at 12:05 PM on Monday
+ Dirley:  Hola Juan
+ me:  :-)
+estoy en el UNIX per no se qué hacer ...
+ Dirley:  ok, te voy indicando
+ me:  estoy en  /d/iccol/desarrollo
+tengo un programa source en mi PC
+¿dónde lo pongo?
+ This chat is no longer off the record
+ Sent at 5:33 PM on Monday
+ me:  le dije: sh-camamb prunovedat
+ Dirley:  un momento me conecto
+ me:  ok
+ Sent at 5:36 PM on Monday
+ Dirley:  el programa se debe copiar en este directorio
+ me:  ¿cuál directorio?
+no lo veo ...
+ Dirley:  /d/iccol/desarrollo/fuentes
+ Sent at 5:38 PM on Monday
+ me:  ya lo puse
+/d/iccol/desarrollo/fuentes/TSTDB2.cbl
+ Dirley:  como ya le hiciste . sh-camamb prunovedat
+ me:  des-c-cobdb2 ?
+ Dirley:  entonces ahora des-c.cobdb2 TSTDB2
+y con eso ya queda compilado
+ me:  $ des-c-cobdb2 TSTDB2
+ERROR: no se encuentra archivo de configuraci&#x2592;n /d/iccol/desarrollo/DB2_SSO.cfg para BD
+icdgd@codes /d/iccol/desarrollo
+ Dirley:  como escribiste el . sh-camamb?
+ me:  sin ounto
+ Dirley:  es así
+ . sh-camamb prunovedat
+ me:  ahora sí!
+escribió cosas ...
+dice: Total Messages:     0
+¿eso es que no tiene errores de compilación?
+ Dirley:  te debe decir q la compilación esta ok
+y q no hay errores
+ me:  ** TERMINO OK COMPILACION DE TSTDB2.cbl
+¿eso?
+me parece raro que no haya errores
+ Dirley:  si
+ me:  bien, ahora cómo lo hago andar?
+ Sent at 5:47 PM on Monday
+ Dirley:  en el directorio $TEMPORALES, el cual se puede ingresar así: cd /d/iccol/desarrollo/temporales
+o se puede entrar escribiendo solo te
+allí se debe colocar el archivo de entrada que se llama SCOREENT
+dile a Angy q te haga el favor de colocarlo
+ella lo tiene listo
+y una vez lo tengas para ejecutar
+solo escribes x TSTDB2
+ me:  OK, gracias - la llamo a Angy
+este chat quedó registrado, así luego paso lo relevante a un documentito para todos
+:-)
+ Dirley:  si claro, no prob
+ me:  no dijimos nada comprometedor...
+ Dirley:  no, nada
+ Sent at 5:51 PM on Monday
+ 
+
+Pop-in
+</pre>
+
+<p>  </p>
+
+<p></p>
+
+<p></p>
+
+<h4>"/d/iccol/desarrollo/macros/sh-camamb"</h4>
+<pre># MACRO REVISADA PARA MILENIO -VHF
+# MAC008.v.0001
+# Se cambia el ambiente Datacredito en el directorio designado por el
+# parametro bajo $DATABASE, con base en los maestros extraidos mediante
+# el programa EXTRAE.CBL.
+if [ ! -d $DATABASE/$1 ]; then
+   echo "ERROR:  Directorio ($DATABASE/$1) para nuevo ambiente no existe"
+else
+   if [ "$1" = "desnovedat" ]; then
+      export AMBIENTE="desarrollo"
+   else
+      if [ "$1" = "prunovedat" ]; then
+         export AMBIENTE="pruebas"
+      fi
+   fi
+   NUM_EJEC="002"
+   export NUM_EJEC
+   DBSUPER=$DATABASE/$1
+   export DBSUPER
+   dd_CEDULAS=$DATABASE/$1/CEDULAS
+   export dd_CEDULAS
+   dd_ICDAS=$DATABASE/$1/ICDAS
+   export dd_ICDAS
+   dd_ICDIAN=$DATABASE/$1/ICDIAN
+   export dd_ICDIAN
+   dd_REG01=$DATABASE/$1/REG01
+   export dd_REG01
+   dd_REG02=$DATABASE/$1/REG02
+   export dd_REG02
+   dd_REG03=$DATABASE/$1/REG03
+   export dd_REG03
+   dd_REG04=$DATABASE/$1/REG04
+   export dd_REG04
+   ICREGIS=$DATABASE/$1
+   export ICREGIS
+   AUDITOR=$DATABASE/$1
+   export AUDITOR
+   EXTFH=$DATABASE/$1/extfh.cfg
+   export EXTFH
+   SERV_CCI=DES-$1
+   Export SERV_CCI
+   BD_NOVEDAT=$DATABASE/$1/BD_NOVEDAT.cfg
+   export BD_NOVEDAT
+   BD_SSO=$DATABASE/$1/BD_SSO.cfg
+   export BD_SSO
+   BD_EXTRACUPOS=$DATABASE/$1/BD_EXTRACUPOS.cfg
+   export BD_EXTRACUPOS
+   DB2_NOVEDAT=$DATABASE/$1/DB2_NOVEDAT_97.cfg
+   export DB2_NOVEDAT
+   DB2_EXTRACUPOS=$DATABASE/$1/DB2_EXTRACUPOS_97.cfg
+   export DB2_EXTRACUPOS
+   DB2_DATACIU2=$DATABASE/$1/DB2_DATACIU2_97.cfg
+   export DB2_DATACIU2
+   DIRECCIONES=$DATABASE/$1
+   export DIRECCIONES
+   DB2_SSO=$DATABASE/$1/DB2_SSO_97.cfg
+   export DB2_SSO
+   DB2_CONSUMIDOR=$DATABASE/$1/DB2_CONSUMIDOR_97.cfg
+   export DB2_CONSUMIDOR
+   export DB2_MOVILES=$DATABASE/$1/DB2_MOVILES_97.cfg
+   export DB2_ADMSSO=$DATABASE/$1/DB2_ADMSSO.cfg
+   export DB2_LISEXC=$DATABASE/$1/DB2_LISEXC.cfg
+   VALORES=$DATABASE/$1
+   export VALORES
+   SCORES=$DATABASE/$1
+   export SCORES
+   FRABDUVAL=$DATABASE/$1
+   export FRABDUVAL
+   FRABDUACT=$DATABASE/$1
+   export FRABDUACT
+   DATABASE=$DATABASE/$1
+   export DATABASE
+   export LOGS=$DATABASE
+   COBDB2=97
+   export COBDB2
+   sh-arma-classpath
+   . sh-classpath
+fi</pre>
+
+<p></p>
+
+<p></p>
+<pre>login as: icdgd
+Using keyboard-interactive authentication.
+Password:
+Last login: Mon Apr 21 10:25:22 2014 from 172.16.10.4
+Sun Microsystems Inc.   SunOS 5.10      Generic January 2005
+COBJVM=sun_142
+JAVA_HOME=/usr/j2se
+LD_LIBRARY_PATH=/usr/j2se/jre/lib/sparc:/usr/j2se/jre/lib/sparc/client:/usr/j2se/jre/lib/sparc/native_threads:/usr/j2se/jre/lib/sparc:/opt/mfocus/des/cobol/lib:/opt/IBM/db2/V9.7/lib:/export/home/db2inst1/sqllib/lib64:/export/home/db2inst1/sqllib/lib32
+PATH=/usr/j2se/jre/sh:/usr/j2se/sh:/usr/j2se/bin:/usr/j2se/jre/bin:/opt/mfocus/des/cobol/lib:/opt/mfocus/des/cobol/bin:/usr/bin:/bin:/usr/bin:/d/iccol/desarrollo/macros:/d/iccol/desarrollo/utiles:/opt/bin:/usr/sbin:/usr/lib:/usr/ccs/bin:/opt/SUNWspro/bin:/usr/jdk/latest/bin:/usr/local/bin:/usr/j2se/bin:/usr/openwin/bin:.:/export/home/db2inst1/sqllib/bin:/export/home/db2inst1/sqllib/adm:/export/home/db2inst1/sqllib/misc
+CLASSPATH=/opt/mfocus/des/cobol/lib/mfcobol.jar:.:/usr/j2se/jre/lib/rt.jar:/opt/mfocus/des/cobol/lib/mfimtk.jar:/opt/mfocus/des/cobol/lib/xerces.jar:/opt/mfocus/des/cobol/lib/castor-0_9_4_1-xml.jar:/opt/mfocus/des/cobol/lib/mfcobol.jar:/usr/j2se/jre/lib/dt.jar:/usr/j2se/jre/lib/rt.jar:/d/iccol/desarrollo/java/server:/export/home/db2inst1/sqllib/java/db2java.zip:/export/home/db2inst1/sqllib/java/db2jcc.jar:/export/home/db2inst1/sqllib/java/sqlj.zip:/export/home/db2inst1/sqllib/function:/export/home/db2inst1/sqllib/java/db2jcc_license_cu.jar:.
+COBCPY=/opt/mfocus/des/cobol/cpylib:/opt/mfocus/des/cobol/cpylib:/d/iccol/desarrollo/copys/pais:/d/iccol/desarrollo/copys
+Java version = 1.4.2_19
+Java vendor = Sun Microsystems Inc.
+Java OS name = SunOS
+Java OS arch = sparc
+Java OS version = 5.10
+
+  ####    ####   #####   ######   ####
+ #    #  #    #  #    #  #       #
+ #       #    #  #    #  #####    ####
+ #       #    #  #    #  #            #
+ #    #  #    #  #    #  #       #    #
+  ####    ####   #####   ######   ####
+
+ #####
+#     #   ####   #        ####   #    #  #####      #      ##
+#        #    #  #       #    #  ##  ##  #    #     #     #  #
+#        #    #  #       #    #  # ## #  #####      #    #    #
+#        #    #  #       #    #  #    #  #    #     #    ######
+#     #  #    #  #       #    #  #    #  #    #     #    #    #
+ #####    ####   ######   ####   #    #  #####      #    #    #
+
+ #####
+#     #   ####   #    #  #####      #    #         ##     ####      #     ####
+#        #    #  ##  ##  #    #     #    #        #  #   #    #     #    #    #
+#        #    #  # ## #  #    #     #    #       #    #  #          #    #    #
+#        #    #  #    #  #####      #    #       ######  #          #    #    #
+#     #  #    #  #    #  #          #    #       #    #  #    #     #    #    #
+ #####    ####   #    #  #          #    ######  #    #   ####      #     ####
+
+ #####                                           #####  #         ###
+#     #  #    #  #    #          #    #         #     # #    #   #   #
+#        #    #  ##   #          #    #               # #    #  #     #
+ #####   #    #  # #  #          #    #          #####  #    #  #     #
+      #  #    #  #  # #          #    #   ###   #       ####### #     #
+#     #  #    #  #   ##           #  #    ###   #            #   #   #
+ #####    ####   #    # #######    ##     ###   #######      #    ###
+
+icdgd@codes /d/iccol/desarrollo
+$
+icdgd@codes /d/iccol/desarrollo
+$   ####    ####   #####   ######   ####
+icdgd@codes /d/iccol/desarrollo
+$  #    #  #    #  #    #  #       #
+icdgd@codes /d/iccol/desarrollo
+$  #       #    #  #    #  #####    ####
+ #       #    #  #    #  #            #
+icdgd@codes /d/iccol/desarrollo
+$  #       #    #  #    #  #            #
+icdgd@codes /d/iccol/desarrollo
+$  #    #  #    #  #    #  #       #    #
+  ####    ####   #####   ######   ####
+icdgd@codes /d/iccol/desarrollo
+$   ####    ####   #####   ######   ####
+icdgd@codes /d/iccol/desarrollo
+$
+ #####
+icdgd@codes /d/iccol/desarrollo
+$  #####
+icdgd@codes /d/iccol/desarrollo
+$ #     #   ####   #        ####   #    #  #####      #      ##
+#        #    #  #       #    #  ##  ##  #    #     #     #  #
+icdgd@codes /d/iccol/desarrollo
+$ #        #    #  #       #    #  ##  ##  #    #     #     #  #
+icdgd@codes /d/iccol/desarrollo
+$ #        #    #  #       #    #  # ## #  #####      #    #    #
+#        #    #  #       #    #  #    #  #    #     #    ######
+#     #  #    #  #       #    #  #    #  #    #     #    #    #
+icdgd@codes /d/iccol/desarrollo
+$ #        #    #  #       #    #  #    #  #    #     #    ######
+icdgd@codes /d/iccol/desarrollo
+$ #     #  #    #  #       #    #  #    #  #    #     #    #    #
+icdgd@codes /d/iccol/desarrollo
+$  #####    ####   ######   ####   #    #  #####      #    #    #
+
+ #####
+icdgd@codes /d/iccol/desarrollo
+$ icdgd@codes /d/iccol/desarrollo
+$  #####
+icdgd@codes /d/iccol/desarrollo
+$ #     #   ####   #    #  #####      #    #         ##     ####      #     ####
+#        #    #  ##  ##  #    #     #    #        #  #   #    #     #    #    #
+icdgd@codes /d/iccol/desarrollo
+$ #        #    #  ##  ##  #    #     #    #        #  #   #    #     #    #    #
+icdgd@codes /d/iccol/desarrollo
+$ #        #    #  # ## #  #    #     #    #       #    #  #          #    #    #
+#        #    #  #    #  #####      #    #       ######  #          #    #    #
+#     #  #    #  #    #  #          #    #       #    #  #    #     #    #    #
+icdgd@codes /d/iccol/desarrollo
+$ #        #    #  #    #  #####      #    #       ######  #          #    #    #
+icdgd@codes /d/iccol/desarrollo
+$ #     #  #    #  #    #  #          #    #       #    #  #    #     #    #    #
+icdgd@codes /d/iccol/desarrollo
+$  #####    ####   #    #  #          #    ######  #    #   ####      #     ####
+
+ #####                                           #####  #         ###
+icdgd@codes /d/iccol/desarrollo
+$ icdgd@codes /d/iccol/desarrollo
+$  #####                                           #####  #         ###
+icdgd@codes /d/iccol/desarrollo
+$ #     #  #    #  #    #          #    #         #     # #    #   #   #
+#        #    #  ##   #          #    #               # #    #  #     #
+ #####   #    #  # #  #          #    #          #####  #    #  #     #
+icdgd@codes /d/iccol/desarrollo
+$ #        #    #  ##   #          #    #               # #    #  #     #
+icdgd@codes /d/iccol/desarrollo
+$  #####   #    #  # #  #          #    #          #####  #    #  #     #
+icdgd@codes /d/iccol/desarrollo
+$       #  #    #  #  # #          #    #   ###   #       ####### #     #
+#     #  #    #  #   ##           #  #    ###   #            #   #   #
+ #####    ####   #    # #######    ##     ###   #######      #    ###
+
+icdgd@codes /d/iccol/desarrollo
+icdgd@codes /d/iccol/desarrollo
+$ #     #  #    #  #   ##           #  #    ###   #            #   #   #
+icdgd@codes /d/iccol/desarrollo
+$  #####    ####   #    # #######    ##     ###   #######      #    ###
+icdgd@codes /d/iccol/desarrollo
+$ icdgd@codes /d/iccol/desarrollo
+$ icdgd@codes /d/iccol/desarrollo
+ksh: icdgd@codes:  not found
+icdgd@codes /d/iccol/desarrollo
+$</pre>
+
+<p> </p>
+<pre>ICREGIS=/d/iccol/desarrollo/icregis
+FECHA_AMNI=20090111
+LC_MONETARY=en_US.ISO8859-15
+JH=/usr/j2se
+DB2_ADMSSO=/d/iccol/desarrollo/DB2_ADMSSO.cfg
+LC_TIME=en_US.ISO8859-15
+DB2_LISEXC=/d/iccol/desarrollo/DB2_LISEXC.cfg
+DATOS=/d/iccol/desarrollo/datos
+VISUAL=vi
+VALORES=/despeciales/valores
+DBSUPER=/d/iccol/icsuper/DESARROLLO/DATABASE
+SSH_TTY=/dev/pts/33
+ARCHTEMP=/d/iccol/desarrollo/archtemp
+CAL_ENT=/d/iccol/desarrollo/trabajo/calidad/entrada
+PATH=/usr/j2se/jre/sh:/usr/j2se/sh:/usr/j2se/bin:/usr/j2se/jre/bin:/opt/mfocus/des/cobol/lib:/opt/mfocus/des/cobol/bin:/usr/bin:/bin:/usr/bin:/d/iccol/desarrollo/macros:/d/iccol/desarrollo/utiles:/opt/bin:/usr/sbin:/usr/lib:/usr/ccs/bin:/opt/SUNWspro/bin:/usr/jdk/latest/bin:/usr/local/bin:/usr/j2se/bin:/usr/openwin/bin:.:/export/home/db2inst1/sqllib/bin:/export/home/db2inst1/sqllib/adm:/export/home/db2inst1/sqllib/misc
+normal=
+COBIDY=/d/iccol/desarrollo/animator
+JAVA_HOME_5=/usr/jdk/latest
+COLUMNS=80
+TEMPORALES=/d/iccol/desarrollo/temporales
+NUM_EJEC=006
+dd_ERROR_ICBNAP=/d/iccol/desarrollo/temporales/ERROR_ICBNAP
+DIRECCIONES=/d/iccol/desarrollo/direcciones
+MAESTROS_ACT=/d/iccol/desarrollo/actualizacion/maestros-act
+HISTFILE=/d/iccol/desarrollo/.history.icdgd
+CLASSPATH=/opt/mfocus/des/cobol/lib/mfcobol.jar:.:/usr/j2se/jre/lib/rt.jar:/opt/mfocus/des/cobol/lib/mfimtk.jar:/opt/mfocus/des/cobol/lib/xerces.jar:/opt/mfocus/des/cobol/lib/castor-0_9_4_1-xml.jar:/opt/mfocus/des/cobol/lib/mfcobol.jar:/usr/j2se/jre/lib/dt.jar:/usr/j2se/jre/lib/rt.jar:/d/iccol/desarrollo/java/server:/export/home/db2inst1/sqllib/java/db2java.zip:/export/home/db2inst1/sqllib/java/db2jcc.jar:/export/home/db2inst1/sqllib/java/sqlj.zip:/export/home/db2inst1/sqllib/function:/export/home/db2inst1/sqllib/java/db2jcc_license_cu.jar:.
+COBPATH=/d/iccol/desarrollo/objetos
+LOGNAME=icdgd
+PRESP_ENT=//d/iccol/desarrollo/especiales/entrada
+SORTCOMPRESS=5
+SORTSPACE=128M
+FRABDUACT=/d/iccol/desarrollo/actualizacion/actualizacion/fraude
+LISTADOS=/d/iccol/desarrollo/listados
+SCORES=/d/iccol/desarrollo/database
+AUDITOR=/d/iccol/desarrollo/auditor
+MAIL=/usr/mail/icdgd
+COBSW=
+MACROS=/d/iccol/desarrollo/macros
+COBCPY=/opt/mfocus/des/cobol/cpylib:/opt/mfocus/des/cobol/cpylib:/d/iccol/desarrollo/copys/pais:/d/iccol/desarrollo/copys
+COBDIR=/opt/mfocus/des/cobol
+dd_ICDAS=/d/iccol/desarrollo/database/ICDAS
+COBOPT=
+PS1=$LOGNAME@${rev}$maquina${normal} $PWD
+$
+FUENTES=/d/iccol/desarrollo/fuentes
+maquina=codes
+DATABASE=/d/iccol/desarrollo/database
+DB2_EXTRACUPOS=/d/iccol/desarrollo/DB2_EXTRACUPOS.cfg
+MF=Compilacion
+ACTREG=/d/iccol/actreg
+TERMINALES=/d/iccol/desarrollo/terminales
+DB2_NOVEDAT=/d/iccol/desarrollo/DB2_NOVEDAT.cfg
+USER=icdgd
+FACTURACION=/d/iccol/desarrollo/temporales/facturacion
+dd_CEDULAS=/d/iccol/desarrollo/temporales/CEDULAS
+rev=
+des=       1
+LC_MESSAGES=C
+HCOBND=/d/iccol/desarrollo/binds
+MFPLI_PRODUCT_DIR=/opt/mfocus/des/cobol
+LC_CTYPE=en_US.ISO8859-15
+JAR=/d/iccol/desarrollo/jars
+PRESP_SAL=//d/iccol/desarrollo/especiales/salida
+ICDB_AUX=/d/iccol/icdb_aux
+con=       0
+CVSROOT=:pserver:icdgd@localhost:/usr/local/cvsroot
+COBJVM=sun_142
+MBOX=/d/iccol/desarrollo/mbox.icdgd
+SHELL=/bin/ksh
+ICBAK=/d/iccol/icbak
+CALIFICACION=/d/iccol/desarrollo/actualizacion/calificacion
+dd_ICDIAN=/d/iccol/desarrollo/database/ICDIAN
+JAVA_HOME=/usr/j2se
+EXTFH=/d/iccol/desarrollo/extfh.cfg
+BD_EXTRACUPOS=/d/iccol/desarrollo/temporales/BD_EXTRACUPOS.cfg
+HISTSIZE=400
+LOGDIR=/d/iccol/desarrollo/database/logs
+run=       0
+TMOUT=1800
+DB2_DATACIU2=/d/iccol/desarrollo/DB2_DATACIU2.cfg
+path_text=/opt/mfocus/des/cobol/lib:/opt/mfocus/des/cobol/bin:/usr/bin:/bin:/usr/bin:/d/iccol/desarrollo/macros:/d/iccol/desarrollo/utiles:/opt/bin:/usr/sbin:/usr/lib:/usr/ccs/bin:/opt/SUNWspro/bin:/usr/jdk/latest/bin:/usr/local/bin:/usr/jdk/latest/bin:/usr/openwin/bin:.:/export/home/db2inst1/sqllib/bin:/export/home/db2inst1/sqllib/adm:/export/home/db2inst1/sqllib/misc
+BD_NOVEDAT=/d/iccol/desarrollo/BD_NOVEDAT.cfg
+HOME=/d/iccol/desarrollo
+LC_COLLATE=en_US.ISO8859-15
+FRABDUVAL=/d/iccol/desarrollo/actualizacion/validacion/fraude
+COPYS=/d/iccol/desarrollo/copys
+dd_REG02=/d/iccol/desarrollo/database/REG02
+dd_REG03=/d/iccol/desarrollo/database/REG03
+LC_NUMERIC=en_US.ISO8859-15
+DB2INSTANCE=db2inst1
+dd_REG01=/d/iccol/desarrollo/database/REG01
+BDU=/d/iccol/desarrollo/database
+DB2_SSO=/d/iccol/desarrollo/DB2_SSO.cfg
+MAESTROS_VAL=/d/iccol/desarrollo/actualizacion/validacion/maestros-val
+SSH_CONNECTION=172.16.10.14 11985 172.24.2.206 22
+SSH_CLIENT=172.16.10.14 11985 22
+TERM=vt220
+LD_LIBRARY_PATH=/usr/j2se/jre/lib/sparc:/usr/j2se/jre/lib/sparc/client:/usr/j2se/jre/lib/sparc/native_threads:/usr/j2se/jre/lib/sparc:/opt/mfocus/des/cobol/lib:/opt/IBM/db2/V9.7/lib:/export/home/db2inst1/sqllib/lib64:/export/home/db2inst1/sqllib/lib32
+dd_REG04=/d/iccol/desarrollo/database/REG04
+COBMODE=32
+TTY=/dev/pts/33
+THREADS_FLAG=native
+UTILES=/d/iccol/desarrollo/utiles
+PWD=/d/iccol/desarrollo
+SERV_CCI=DES
+OBJETOS=/d/iccol/desarrollo/objetos
+bold=
+TZ=America/Bogota
+VALIDACION=/d/iccol/desarrollo/actualizacion/validacion
+ENV=/d/iccol/desarrollo/.aliases
+CAL_SAL=/d/iccol/desarrollo/trabajo/calidad/salida
+COBCONFIG=/d/iccol/desarrollo/cobconfig
+GRUPOS=icdatacr descob cvs cvsproydocs
+BD_SSO=/d/iccol/desarrollo/BD_SSO.cfg
+ACTUALIZACION=/d/iccol/desarrollo/actualizacion/actualizacion
+TRABAJO=/d/iccol/desarrollo/trabajo
+JH_5=/usr/jdk/latest
+A__z="*TMOUT
+icdgd@codes /d/iccol/desarrollo
+$ 
+$</pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
