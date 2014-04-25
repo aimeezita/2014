@@ -5,49 +5,147 @@
   <meta http-equiv="Content-Language" content="en">
   <title>24Apr2014 Thu</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+  </script>
+  <script type="text/javascript" src="res/agenda.js">
+  </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+  </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140423.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140425.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 24Apr2014 Thu </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140423.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140425.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 24Apr2014 Thu </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p>vim: <a href="http://vim.wikia.com/wiki/Installing_on_Solaris">Installing on
+Solaris</a>  </p>
+<pre>$ uname -a
+SunOS codes 5.10 Generic_148888-05 sun4u sparc SUNW,SPARC-Enterprise
+$ uname -X
+System = SunOS
+Node = codes
+Release = 5.10
+KernelID = Generic_148888-05
+Machine = sun4u
+BusType = &lt;unknown&gt;
+Serial = &lt;unknown&gt;
+Users = &lt;unknown&gt;
+OEM# = 0
+Origin# = 1
+NumCPU = 4</pre>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>01NUM996R1029 consultas</h3>
+
+<p></p>
+
+<p>1- En el COPY CARACTPER-029.PROC ya hay una característica 01NUM996R1029 que
+alude a Falabella: </p>
+<pre>R18908*** 01NUM996R1029 *** Num TDC abiertas Falabella
+R18908       IF COD-CTA-ABD07 = 02                    
+R18908          MOVE COD-SUS-ABD07 TO WS-SUS-057      
+R18908          IF COD-FALA-057                       
+R18908             IF REG-ABIERTO-CARACT = 1          
+R18908                MOVE 1 TO 01NUM996R1029         
+R18908             END-IF                             
+R18908          END-IF                                
+R18908       END-IF                                   </pre>
+
+<p>¿Qué hacer, reemplazamos este código? Parece ser algo incompleto o un error.
+ </p>
+
+<p></p>
+
+<p>2- En el mismo COPY hay una característica definida con la misma descripción
+que la del requerimiento actual. Pero tiene una diferencia: filtra los casos en
+que el individuo es garante. </p>
+<pre>R12047*** 00NUM997RO029 *** Num TDC abiertas RIPLEY           
+R12047       IF COD-CTA-ABD07 = 02  AND  COD-SUS-RPL          
+R12047         MOVE ZEROS    TO   00NUM997RO029               
+R12047         IF REG-ABIERTO-CARACT = 1 AND GARANTE-ABD07 = 0
+R12047           MOVE 1   TO   00NUM997RO029                  
+R12047         END-IF                                         
+R12047       END-IF                                           </pre>
+
+<p>Hay dos preguntas: </p>
+<ol>
+  <li>Lo que debemos agregar es muy igual a esto, ¿es correcto?</li>
+  <li>La nueva característica no verifica si el individuo es titular o garante,
+    ¿es correcto, o es una omisión? </li>
+</ol>
+
+<p> </p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<h3>compilando con listado</h3>
+
+<p>Creado el programa <code>CARACTPER-029-TEST.CBL</code> con <code>$SET
+LIST()</code> </p>
+
+<p></p>
+<pre>des-c-v CARACTPER-029-TEST
+vi CARACTPER-029-TEST.CBL.err
+
+# compilación con listado, programa CARACTPER-029-TEST.CBL: 
+# cob64 lstpath"/d/iccol/desarrollo/temporales" -uv -g -P -C sourceasm $FUENTES/CARACTPER-029-TEST.CBL
+
+# /d/iccol/desarrollo/fuentes/CARACTPER-029-TEST.lst
+</pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>

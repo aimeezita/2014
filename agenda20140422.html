@@ -5,49 +5,142 @@
   <meta http-equiv="Content-Language" content="en">
   <title>22Apr2014 Tue</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+  </script>
+  <script type="text/javascript" src="res/agenda.js">
+  </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+  </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140421.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140423.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 22Apr2014 Tue </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140421.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140423.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 22Apr2014 Tue </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>DB2</h3>
+
+<p></p>
+<pre>db2 =&gt; connect to LIST_DL1 user lstxclde using LstxcD8
+db2 =&gt; set schema REGISTRO
+db2expln -database LIST_DL1 -user lstxclde LstxcD8 -terminal -statement "select FECHA, SCORE, EXCLUSION, SEGMENTO from REGISTRO.SCORE where TIPOID = 2 and NUMID = 12345678 order by FECHA"
+
+   Database Connection Information
+
+ Database server        = DB2/LINUXX8664 9.7.7
+ SQL authorization ID   = LSTXCLDE
+ Local database alias   = LIST_DL1
+
+db2 =&gt; set schema REGISTRO
+create unique index ZZ_score on SCORE (TIPOID, NUMID, FECHA) include (SCORE, EXCLUSION, SEGMENTO) collect detailed statistics
+
+db2 runstats on table REGISTRO.SCORE for indexes all with distribution </pre>
+
+<p></p>
+
+<h3>directories </h3>
+
+<p></p>
+<pre>icdgd@codes /d/iccol/desarrollo
+$ ls -l | grep ^d
+drwxrwxr-x   2 icrgd    icdatacr     512 Jul 15  2013 20130715Formulario_0004
+drwxrwxr-x   2 icjfvd   icdatacr    1024 Apr 22 08:30 27
+drwxrwxr-x   7 iccavd   icdatacr     512 Mar  3 17:17 actualizacion
+drwxrwxrwx   3 icrgd    icdatacr     512 Feb 23 23:33 analistas
+drwxrwxr-x   2 iccavd   icdatacr     512 Feb 11 08:54 animator
+drwxrwxr-x   2 iccavd   icdatacr     512 Apr 22 16:52 archtemp
+drwxrwxr-x   2 iccavd   icdatacr     512 Mar 20 11:30 auditor
+drwxrwxr-x   2 icgjcd   icdatacr    4096 Apr 22 15:51 binds
+drwxrwxr-x  10 icgjcd   icdatacr   92160 Apr 22 16:38 copys
+drwxrwxr-x   5 iccavd   icdatacr    7168 Apr 22 08:09 database
+drwxrwxr-x   4 iccavd   icdatacr    8704 Apr 21 09:57 datos
+drwxr-xr-x  22 icbuild  icprodd     2560 Nov 25 10:57 Desinstalar
+drwxrwxr-x 175 icbuild  icprodd    20480 Apr 21 17:49 Desplegar
+drwxrwxr-x   5 icbuild  icprodd      512 Jun 11  2013 Desplegar_pruebas
+drwxr-xr-x  19 icbuild  icprodd     1024 Apr 21 17:23 Despliegue_Fallido
+drwxrwxr-x   3 iccavd   icdatacr     512 Apr 14 16:27 direcciones
+drwxrwxr-x   2 iccavd   icdatacr     512 Feb 11 08:58 especiales
+drwxrwxr-x  18 icgjcd   icdatacr  303104 Apr 22 16:53 fuentes
+drwxr-xr-x   7 icbuild  icprodd      512 Apr 10 17:33 Hello_Word
+drwxrwxr-x   2 iccavd   icdatacr     512 Feb 12 11:08 icregis
+drwxr-sr-x   2 1473     icdatacr     512 Dec 19 13:43 icrpgd
+drwxrwxr-x  12 icgjcd   icdatacr    2560 Apr 22 11:07 jars
+drwxrwxr-x   2 iccavd   icdatacr    3584 Apr  4 09:27 listados
+drwxrwxr-x   7 icgjcd   icdatacr  105472 Apr 22 14:38 macros
+drwxr-xr-x   2 icjapd   root         512 Mar 17  2012 monitoreo
+drwxrwxr-x   5 iccavd   icdatacr   78848 Apr 22 16:53 objetos
+drwxrwxr-x   6 icgjcd   icdatacr    1024 Apr  8 13:50 rai
+drwxr-xr-x   2 icgjcd   icdatacr     512 Feb 10 19:19 restore20140210
+drwxrwxr-x   9 icfactur icdatacr     512 Nov  6  2012 sf
+drwx------   6 icjcld   icdatacr     512 Mar 16 19:23 stt
+drwxr-xr-x  24 icbuild  icprodd     1536 Apr  1  2013 Tablas_Parametros
+drwxr-xr-x   6 icbuild  icprodd      512 Aug  1  2013 Tablas_Parametros_Produccion
+drwxrwxr-x 163 iccavd   icdatacr   28672 Apr 22 16:45 temporales
+drwxrwxr-x   2 iccavd   icdatacr    1536 Apr 22 16:52 terminales
+drwxrwxr-x   7 iccavd   icdatacr     512 Mar 31 10:47 trabajo
+drwxrwxr-x   2 iccavd   icdatacr     512 Feb 11 10:25 usuarios
+drwxrwxr-x   3 icgjcd   icdatacr    4608 Mar 13 15:24 utiles</pre>
+
+<p>En dir copys:  </p>
+<pre>-rw-rw-r--   1 icjcad   icdatacr    2058 Jun  7  2012 CARACTPER-029-JCHA.PROC
+-rw-rw-r--   1 icjcad   icdatacr     623 Jun  7  2012 CARACTPER-029-JCHA.WS
+-rw-rw-r--   1 icimsd   icdatacr     457 May 21  2013 CARACTPER-029-V01.WS
+-rw-rw-r--   1 icimsd   icdatacr    7354 May 21  2013 CARACTPER-029-V02.PROC
+-rw-rw-r--   1 icimsd   icdatacr   86915 Apr 20 11:39 CARACTPER-029.PROC
+-rw-rw-r--   1 iclagd   icdatacr   85291 Apr 20 10:26 CARACTPER-029.PROC-V03
+-rw-rw-r--   1 icimsd   icdatacr    5546 Apr 20 11:24 CARACTPER-029.WS
+-rw-rw-r--   1 iclagd   icdatacr    5174 Apr 20 10:26 CARACTPER-029.WS-V02</pre>
+
+<p> </p>
+<pre>LIST NOFORM LISTPATH"/d/iccol/desarrollo/temporales" LISTWIDTH"100"</pre>
+
+<p>CARACTPER-PER29-18908.CBL copied as "CARACTPER029.cbl"</p>
+
+<p>des-c-v CARACTPER029.cbl</p>
+
+<p>/d/iccol/desarrollo/macros/des-c-v</p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
