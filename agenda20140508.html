@@ -5,49 +5,730 @@
   <meta http-equiv="Content-Language" content="en">
   <title>08May2014 Thu</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140507.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140509.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 08May2014 Thu </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140507.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140509.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 08May2014 Thu </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a href="http://www.coolutils.com/Online/Mail-Converter/">Free Online Mail
+Converter</a> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>Jurad</h3>
+<dl>
+  <dt>ALE1.RF.012</dt>
+    <dd>Archivo de Jurad. Se debe cargar el archivo en una estructura de datos
+      de tal forma que quede disponible para las alertas del sistema en línea y
+      para Triggers (alertas implementadas en Teradata). 
+      <p>Nota: El motor de alertas se especializó para generar todas las
+      alertas.</p>
+    </dd>
+  <dt>ALE1.RF.013</dt>
+    <dd>El archivo suministrado se actualizará periódicamente, con una
+      frecuencia que puede ser diaria, semanal o mensual. 
+      <p>La actualización de la información debe poder hacerse en caliente de
+      tal forma que no se requiera bajar los servicios para que la nueva
+      información sea tenida en cuenta </p>
+    </dd>
+  <dt>ALE.RNF.002</dt>
+    <dd>Desarrollar un programa de Cargue universal para los archivos como
+      Jurad y otras fuentes externas </dd>
+</dl>
+
+<p></p>
+
+<h3>Alertas en línea</h3>
+
+<p>El arhcivo BDIIALE contiene información para consultar online, vía web o
+webservice. </p>
+
+<h4>Información a registrar en el BDIIALE</h4>
+
+<p></p>
+
+<table class="borderTable">
+  <tbody>
+    <tr class="odd">
+      <th>Campo</th>
+      <th>Detalle</th>
+    </tr>
+    <tr>
+      <td>COD-ALERTA-BDIIALE</td>
+      <td>Se dejará para las nuevas alertas el valor 000</td>
+    </tr>
+    <tr class="odd">
+      <td>LLASEC-BDIIALE</td>
+      <td>Se dejará en este campo el código de la alerta de 4 posiciones </td>
+    </tr>
+    <tr>
+      <td>INF-DATAHOST-BDIIALE</td>
+      <td>Se colocará: <br>
+        3 posiciones para demandas vigentes <br>
+        3 posiciones para demandas terminadas <br>
+        8 posiciones para fecha última demanda</td>
+    </tr>
+    <tr class="odd">
+      <td>FEC-REP-BDIIALE</td>
+      <td>Fecha de creación de la alerta</td>
+    </tr>
+    <tr>
+      <td>FEC-NOV-BDIIALE</td>
+      <td>Fecha de modificación de la alerta</td>
+    </tr>
+    <tr class="odd">
+      <td>FEC-VEN-BDIIALE</td>
+      <td>Fecha de vencimiento <br>
+        **** Falta especificar si tiene vencimiento, si no se dejará con fecha
+        de 50 años más</td>
+    </tr>
+    <tr>
+      <td>FILLER-BDIIALE</td>
+      <td>Debe ser 0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p></p>
+
+<h4>preguntas</h4>
+
+<p></p>
+<ol>
+  <li>Qué es "HC+" 
+    <p>Historia de Crédito+</p>
+  </li>
+  <li>Qué es SMMLV? 
+    <p>Salario mínimo ... ? </p>
+  </li>
+  <li>Cómo determinar la condición "cuando el deudor figure como
+  principal"?</li>
+  <li>Cúales son los valores de "código alerta"? 
+    <p>Dice: "Los códigos de las alertas actuales no se van a cambiar nunca"</p>
+  </li>
+  <li>Cuando dicen "la entidad", se refiere al cliente de DC? </li>
+  <li>Qué son DHWS y DHWS3? Programas? </li>
+  <li>La validación de nombres y apellidos dice "Los mismos algoritmos de
+    validación que se utilizan para cargar información en la Base de
+    DataCredito", ¿cuáles son esos algoritmos?
+    <ul>
+      <li>BDIIVIDE.PROC Rutina de validacion de identificaciones</li>
+      <li>VALNOM.PROC Rutina creada para hacer la validacion de nombres contra
+        los archivos de la Registraduria, DIAN Y DAS, dependiendo del tipo de
+        identificacion
+        <p></p>
+      </li>
+    </ul>
+    <p></p>
+  </li>
+</ol>
+
+<h4>notas</h4>
+<ol>
+  <li>Actualmente se cargan archivos de Jurad en Teradata ***Carlos Mejia
+    conoce el proceso, pendiente por ocmplementar. </li>
+  <li>Se debe poder hacer un cargue Falso y uno Real, el Falso es para generar
+    el resultado que se enviará a Calidad para que aprueben o rechazen el
+    cargue, si lo aprueban se realiza nuavemente pero Real. <a
+    href="Ejemplo mail cargue CC.pdf">Ejemplo</a> </li>
+</ol>
+
+<p> </p>
+
+<h3>códigos de producto por alerta</h3>
+
+<table class="borderTable">
+  <tbody>
+    <tr class="odd">
+      <th>Fase</th>
+      <th>Grupo</th>
+      <th>Detalle</th>
+      <th>Código</th>
+    </tr>
+    <tr>
+      <td>FASE 1 </td>
+      <td>G0</td>
+      <td>Alertas de Servicios: Alertas de ley que se enviarán por default.
+        (BD: grupo.tipo = "OBL")</td>
+      <td>E001,<br>
+        E002,<br>
+        E003,<br>
+        E004</td>
+    </tr>
+    <tr class="odd">
+      <td>FASE 1 </td>
+      <td>G1</td>
+      <td>Alertas de Buro: Alertas basados en la información de historia de
+        Crédito.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>FASE 1 </strong></td>
+      <td><strong>G2</strong></td>
+      <td><strong>Alertas Judiciales: Alertas basadas en la información de
+        demandas judiciales</strong></td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td></td>
+      <td>G3</td>
+      <td>Alertas Sarlaft : Alertas basadas en la información de Listas
+        Sarlaft, Lista Clinton, Personas Públicas (PEP). Las alertas Sarlaft
+        involucran varías listas de lavados de activo.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>G4</td>
+      <td>Alertas Suscriptor: Alertas basadas en información reportada por el
+        suscriptor distinta a la del bureau, por ejemplo, devolución de
+        correspondencia, excepción del 4xmil, cheques devueltos, fraudes
+        realizados al suscriptor.</td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td>FASE 1 </td>
+      <td>G5</td>
+      <td>Alertas Verticales: Alertas basadas en la información de
+        Microcrédito, Libranzas y Siniestros. Cada uno de estos tipos de
+        información constituye una vertical.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>G6</td>
+      <td>Alertas Otras Listas: Alertas basadas en la información de otras
+        listas que ayudan a mitigar el riego operativo, crediticio y de fraude.
+        En este grupo de Alertas se van a incluir listas que generen
+        información de valor agregado para el control del riesgo operativo,
+        crédito y riesgo</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p> </p>
+
+<h4>Nemotécnico de las Alertas</h4>
+
+<table class="borderTable">
+  <tbody>
+    <tr class="odd">
+      <th>COD</th>
+      <th>Grupo Alerta</th>
+      <th>Tipo Riesgo</th>
+      <th>Nemo-<br>
+        técnico Lista</th>
+      <th>N°se<br>
+        cuen<br>
+        cia</th>
+      <th>Codigo Fuente</th>
+      <th>Descripción de la Alerta</th>
+      <th>Nit Fuente</th>
+      <th>Entidad Informante</th>
+      <th>G1</th>
+      <th>G2</th>
+      <th>G3</th>
+      <th>G4</th>
+      <th>G5</th>
+      <th>G6</th>
+      <th>Calculo</th>
+      <th>Precalculo</th>
+      <td></td>
+    </tr>
+    <tr>
+      <td>E001</td>
+      <td>B</td>
+      <td>OP</td>
+      <td>MDC</td>
+      <td>1</td>
+      <td>990003**</td>
+      <td>El documento de identidad fue extraviado</td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>BDIALE</td>
+      <td>S</td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td>E002</td>
+      <td>B</td>
+      <td>OP</td>
+      <td>MDC</td>
+      <td>2</td>
+      <td>990003**</td>
+      <td>El documento de identidad fue robado</td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td>BDIALE</td>
+      <td>S</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>E003</td>
+      <td>B</td>
+      <td>OP</td>
+      <td>MDC</td>
+      <td>3</td>
+      <td>990003**</td>
+      <td>Actualmente reside fuera del país</td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>BDIALE</td>
+      <td>S</td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td>E004</td>
+      <td>B</td>
+      <td>FR</td>
+      <td>MDC</td>
+      <td>4</td>
+      <td>990003**</td>
+      <td>Ha sido objeto de varios intentos de suplantación de identidad</td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td>BDIALE</td>
+      <td>S</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>I001</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>5</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td>I002</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>6</td>
+      <td></td>
+      <td>XXXXXXXXXXXX (CARTERA BLOQUEADA POR CODIGO=XX) </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>I003</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>7</td>
+      <td></td>
+      <td>XXXXXXXXXXXX (CTACORR BLOQUEADA POR CODIGO=XX) </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td>I004</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>8</td>
+      <td></td>
+      <td>- LA CEDULA TIENE HISTORIA DE CREDITO COMO NIT<br>
+        - EL CLIENTE TIENE ACTIVIDAD REPORTADA COMO TITULAR CON ESTABLECIMIENTO
+        DE COMERCIO<br>
+        - EL NIT TIENE HISTORIA DE CREDITO COMO CEDULA<br>
+        - EL CLIENTE TIENE ACTIVIDAD REPORTADA COMO TITULAR CON ESTABLECIMIENTO
+        DE COMERCIO</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>I005 </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>9</td>
+      <td></td>
+      <td>PERDIDA DE DERECHOS POLITICOS</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td>I006 </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>10</td>
+      <td></td>
+      <td>TIPO 7 , SIN INFORMACION EN REGIS,DAS,DIAN &hellip;&hellip;.</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>I007 </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>11</td>
+      <td></td>
+      <td>Consultado con apellido diferente</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td>I008 </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>12</td>
+      <td></td>
+      <td>EL CLIENTE NO TIENE ACTIVIDAD REPORTADA COMO TITULAR CON
+        ESTABLECIMIENTO DE COMERCIO</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>OPBRO6</td>
+      <td>B</td>
+      <td>OP</td>
+      <td>BRO</td>
+      <td>6</td>
+      <td>990001*</td>
+      <td>Sin información en archivo de extranjeros</td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>BDIALE</td>
+      <td>S</td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td>OPBRO7</td>
+      <td>B</td>
+      <td>OP</td>
+      <td>BRO</td>
+      <td>7</td>
+      <td>990001*</td>
+      <td>El apellido con el que se vuelve a consultar es diferente</td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>BDIALE</td>
+      <td>S</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>B</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>La cedula pertence a Titular con Establecimiento Público</td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>S</td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td>OPBRO20</td>
+      <td>B</td>
+      <td>OP</td>
+      <td>BRO</td>
+      <td>20</td>
+      <td>990001*</td>
+      <td>Si el registro consultado está solicitando a su entidad un
+        microcrédito, tenga en cuenta que el saldo de endeudamiento del deudor
+        ha alcanzado el tope máximo señalado por el Decreto 919 de 2008 para la
+        adquisición de este tipo de crédito</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td>Pseudocodigo</td>
+      <td>S</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CRBRO21 </td>
+      <td>B</td>
+      <td>CR</td>
+      <td>BRO</td>
+      <td>21</td>
+      <td>990001*</td>
+      <td>El registro consultado ha presentado moras de 60 días o más en los
+        últimos 6 meses</td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Pseudocodigo</td>
+      <td>S</td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td>CRBRO22 </td>
+      <td>B</td>
+      <td>CR</td>
+      <td>BRO</td>
+      <td>22</td>
+      <td>990001*</td>
+      <td>El registro consultado presentó consultas de solicitud de productos
+        hace 3 meses y a la fecha no presenta obligaciones </td>
+      <td>abiertas por las entidades que consultaron el registro</td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td>Pseudocodigo</td>
+      <td>S</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>OPBRO23 </td>
+      <td>B</td>
+      <td>OP</td>
+      <td>BRO</td>
+      <td>23</td>
+      <td>990001*</td>
+      <td>Más de 3 consultas de diferentes entidades en los últimos 60 días</td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Pseudocodigo</td>
+      <td>N</td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td>CRJUD001 </td>
+      <td>J</td>
+      <td>CR</td>
+      <td>JUD</td>
+      <td>001</td>
+      <td></td>
+      <td>La cedula tiene demandas judiciales</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Base Alertas Jurad</td>
+      <td>S</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+<pre># Archivo por juan.lanus@globant.com
+# instrucciones:
+#  1- ejecutar al inicio de la sesión con "punto", asi:
+#     . viset
+#  2- efectos:
+#     -establece la variable de entorno EXINIT (solamente mientras dure la sesioon
+#      con algunas opciones de conveniencia para el editor vi
+#     -algunas de las opciones, (casi) todas las "map", no funcionan todavia
+#     -ejecuta el comando sh-cambamb prunovedat
+#     -escribe "viset running"
+#
+
+# si falta el "." al comienzo del comando escribe un banner y termina
+if [ `echo $0` != "-ksh" ]
+then
+  banner "falta el ."
+else
+  echo viset running
+  # establece opciones de vi
+  EXINIT="set ignorecase nowrapscan showmode showmatch tabstop=4 shiftwidth=4 | map ^? ^H | map ^[[4~ $ |
+map ^[[1~ 0 | map ^[[6~ ^F^F | map ^[[5~ ^B^B "
+  export EXINIT
+  # setea el ambiente de desarrollo
+  . sh-camamb prunovedat
+  # Achica el prompt a solo el directorio actual (OK mientras no cambio
+  # de máquina o de usuario):
+  PS1="$PWD $" export PS1
+fi</pre>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
