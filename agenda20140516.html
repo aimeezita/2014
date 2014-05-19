@@ -408,7 +408,104 @@ Fin de Programa:     2014/05/16 13:59:43
 
 <p> </p>
 
+<h3>Subprograma para procesar totales de control</h3>
+
+<p></p>
+
 <p> </p>
+<pre class="small70">      ******************************************************************
+      ******************************************************************
+
+ABANDONADO: 
+      /
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CHECKTOTAL.
+      ******************************************************************
+      * Rutina de conveniencia para controlar la coincidencia de los
+      * totales de control y denunciar las diferencias
+      * Recibe la descripcion del par de totales a controlar, el total
+      * informado, y el total calculado.
+      * Compara los dos valores, y si no coinciden muestra un mensaje
+      * y retorna una senial. 
+      ******************************************************************
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+      ******************************************************************
+      * Edicion de los totales
+       01  T-infoX                      pic x(12).
+       01  T-info                       redefines T-infoX
+                                        pic 9(12).
+       01  T-calcX                      pic x(12).
+       01  T-calc                       redefines T-calcX
+                                        pic 9(12).
+      * Edicion del texto
+       01  T-nombre                     pic x(100).
+       01  T-mensaje                    pic x(100).
+      ******************************************************************
+
+       LINKAGE SECTION.
+      ******************************************************************
+      * Nombre del total
+       01 TOTAL-nombre                  pic x(100).
+       01 TOTAL-nombre-L                pic S9(9) comp-5.
+      ******************************************************************
+      * Totales informado y calculado
+       01 TOTAL-informado               pic x(12).
+       01 TOTAL-informado-L             pic S9(9) comp-5.
+       01 TOTAL-calculado               pic 9(8).
+      ******************************************************************
+      * call CHECKTOTAL using "Cant de registros" JURADT-registros
+      * length of JURADT-registros N-registros-leidos
+      ******************************************************************
+
+       PROCEDURE DIVISION using 
+           delimited TOTAL-nombre 
+           TOTAL-informado by value TOTAL-informado-L
+           TOTAL-calculado.
+       00.
+      *    long del texto
+           inspect TOTAL-nombre-L
+      *    total informado
+           if TOTAL-informado-L &gt; 12 stop run.
+           move zeros to T-info
+           move TOTAL-informado(1:TOTAL-informado-L) 
+           to T-infox(12 - TOTAL-informado-L:TOTAL-informado-L)
+           if T-info not numeric
+               string T-nombre delimited by low-value " no numerico"
+               delimited size into T-mensaje
+               display T-mensaje
+           end-if
+      *    total calculado - no se controla
+           move zeros to T-calc
+           move TOTAL-calculado(1:TOTAL-calculado-L) 
+           to T-calcx(12 - TOTAL-calculado-L:TOTAL-calculado-L)
+      *    control
+           if T-calc = T-info 
+               goback returning 0
+           else
+               display T-nombre
+               display "Calculado:" T-calc "   Informado:" T-info
+               goback returning 1
+           end-if.
+
+
+           
+      *    descripcion (nombre del total)
+           if TOTAL-nombre-L &gt; 100 
+               move 100 to TOTAL-nombre-L
+           end-if
+           move TOTAL-nombre(1:TOTAL-nombre-L) to T-nombre
+           inspect T-nombre replacing trailing spaces by low-values
+           inspect T-nombre replacing first low-value by space
+
+
+
+           exit program.
+
+
+       end program CHECKTOTAL.
+</pre>
 
 <p> </p>
 
