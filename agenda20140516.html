@@ -53,8 +53,30 @@ alt="next" src="res/right.gif"></a>
 
 <h4>Código en mayúsculas</h4>
 
-<p>Para seleccionar texto entre literales: </p>
-<pre>^[^"]*"[^"]*"\zs\([^"]*\)"</pre>
+<p>Se convierte el texto que está fuera de los literales (antes, entre, o
+después) a mayúsculas. </p>
+
+<p>Se seleccionan las líneas de código que no son comentarios, es decir, que
+tienen la col 7 en blanco. </p>
+<pre>texto antes del primer literal:
+^[^"]*"
+
+texto a continuación del último literal:
+"[^"]*$
+
+texto entre literales (no anda en vi): 
+^[^"]*"[^"]*"\zs\([^"]*\)"
+
+primer texto entre literales:
+:%s/^\([^"]*"[^"]*"\)\([^"]*\)/\1\U\2
+
+tres comandos de la forma:
+:g/^...... /s/&lt;selección&gt;/\U$/g
+
+el comando: 
+:g/^...... /s/^[^"]*"/\U$/g
+:g/^...... /s/"[^"]*$/\U$/g
+:g/^...... /s/^[^"]*"[^"]*"\zs\([^"]*\)"/\U$/g</pre>
 
 <h4>El contenido del archivo no coincide</h4>
 
