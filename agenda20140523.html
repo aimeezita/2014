@@ -40,15 +40,360 @@ alt="next" src="res/right.gif"></a>
 
 <p> </p>
 
-<p> </p>
+<p><a href="https://www.youtube.com/watch?v=YW1yZPflIXY">Galaxy 11 - The
+training</a>  </p>
 <hr>
 </div>
 </div>
 
 <div id="agendaBody">
-<h3>zzz</h3>
+<h3>VAP Ripley</h3>
 
-<p> </p>
+<h4>del requerimiento de Experian CQ18765</h4>
+<ul>
+  <li>Proceso en Batch</li>
+  <li>Debe tener la funcionalidad para correr con información actual o
+  histórica</li>
+  <li>Debe funcionar con base interna o con base cliente.</li>
+  <li>La extracción se debe poder hacer por nit o por código de suscriptor.</li>
+  <li>Debe funcionar con base interna o con base cliente. 
+    <p>La extracción se debe poder hacer por nit o por código de suscriptor.</p>
+  </li>
+  <li>El archivo de entrada es 1-11 o 1-11-45. En cualquiera de los casos debe
+    validar con el nuevo esquema del PESVNO </li>
+  <li>El separador de campos de la salida es &ldquo;;&rdquo;</li>
+  <li>La información numérica no tiene mascara</li>
+  <li>Si hay decimales el separador decimal es &ldquo;,&rdquo;</li>
+  <li>Si los parámetros de la macro exceden 5; la macro debe manejarlo con
+    valores default, opción de cambio selectivo por parámetro y archivo de
+    parámetros en $DATOS</li>
+  <li>[?] Las identificaciones de entrada deben quedar debidamente repartidas
+    en c/u de las salidas</li>
+  <li>Mensajes de salida: 
+    <ol>
+      <li>Estadísticas de validación.</li>
+      <li>Estadísticas score.</li>
+      <li>Nombres de archivos de salida.</li>
+    </ol>
+  </li>
+</ul>
+
+<h4>de CQ18765 - Proceso Especial Batch Ripley</h4>
+
+<p>Objetivo: Generar un proceso (macro y programas COBOL)
+<strong><code>sh-PE-Ripley</code></strong> que para un set de identificaciones
+("base") genere un archivo de salida con campos adicionales relacionados con
+cada Id. </p>
+
+<p>La base para generar el informe por identificaciones puede realizarse de la
+extracción de datos internos o de datos proporcionados por el cliente.</p>
+
+<p>Si el cliente manda la base, o sea Base Externa de ID. Se procesa y no hay
+ningún suscriptor de referencia, simplemente se refleja lo que se pide. </p>
+
+<p>Si es con base interna debe aplicarse el estándar de extracción por NIT o
+Suscriptor de identificaciones del ICMCRECOPY.DAT</p>
+
+<p>El proceso a crear debe tomar como proceso guia el icestd81.cbl </p>
+
+<p>Se lee un archivo de ids con una de las estructuras siguientes:</p>
+<ol>
+  <li>Archivo 1-11: Tipo ID (1) y Número ID (11) </li>
+  <li>Archivo 1-11-45: Tipo ID (1) , Número ID (11), Nombres y Apellidos o
+    Razón Social (45) </li>
+</ol>
+
+<p>Se procesan con el PESVNO, que genera un archivo de ids válidas y otro de
+incosistentes. El proceso PESVNO ya existe. </p>
+
+<h5>Parámetros</h5>
+
+<p></p>
+
+<table class="borderTable">
+  <tbody>
+    <tr>
+      <th>Nombre Parámetro </th>
+      <th>Valores </th>
+      <th>Longitud </th>
+      <th>Valor por Defecto </th>
+    </tr>
+    <tr>
+      <td>BASE </td>
+      <td>=I cuando la extracción de la identificaciones se realiza con datos
+        Internos de Experian 
+
+        <div>
+
+        <div>
+        =C cuando la extracción de las identificaciones se realiza con datos
+        del cliente 
+
+        <div>
+
+        <div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </td>
+      <td>1 </td>
+      <td>C </td>
+    </tr>
+    <tr>
+      <th colspan="4">... cuando BASE="C"</th>
+    </tr>
+    <tr>
+      <td>NOM-ARCHIVO </td>
+      <td>Nombre del archivo de identificaciones 
+
+        <div>
+
+        <div>
+        </div>
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>TIPO-ARCHIVO </td>
+      <td>=0 para archivos de estructura 1-11 
+
+        <div>
+
+        <div>
+        =1 para archivos de estructura 1-11-45 </div>
+        </div>
+      </td>
+      <td>1 </td>
+      <td>1 </td>
+    </tr>
+    <tr>
+      <th colspan="4">... cuando BASE="I"</th>
+    </tr>
+    <tr>
+      <td>ID-EXTRAC 
+
+        <div>
+
+        <div>
+        </div>
+        </div>
+      </td>
+      <td>NIT (TIPO-EXTRAC=N)<br>
+
+
+        <div>
+
+        <div>
+        Codigo Suscriptor (TIPO-EXTRAC=C)</div>
+        </div>
+      </td>
+      <td>9 
+
+        <div>
+
+        <div>
+        6 </div>
+        </div>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>TIPO-EXTRAC 
+
+        <div>
+
+        <div>
+        (BASE=I) </div>
+        </div>
+      </td>
+      <td>=N cuando se extrae por NIT 
+
+        <div>
+
+        <div>
+        =C cuando se extrae por Código Suscriptor </div>
+        </div>
+      </td>
+      <td>1 </td>
+      <td>N </td>
+    </tr>
+    <tr>
+      <th colspan="4">... en todos los casos</th>
+    </tr>
+    <tr>
+      <td>TIPO-PROC </td>
+      <td>=A Procesos Actuales <br>
+        =H Procesos Historicos </td>
+      <td>1 </td>
+      <td>A </td>
+    </tr>
+    <tr>
+      <th colspan="4">... cuando TIPO-PROC="H"</th>
+    </tr>
+    <tr>
+      <td>
+        <div>
+
+        <div>
+        FECHA-PROC  </div>
+        </div>
+      </td>
+      <td>Fecha del periodo en formato AAAAMMDD </td>
+      <td>8 </td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<ol>
+  <li><code>BASE</code> 
+    <p>Debe solicitarse antes que los demás. </p>
+    <ul>
+      <li>"<code>I</code>": base interna, el archivo 1:11 de IDs se extrae a
+        partir de info de Experian (<code>ICMCRECOPY.DAT</code>) para un
+        suscriptor [? cuál] </li>
+      <li>"<code>C</code>": el archivo de IDS es suministrado por el cliente, y
+        se debe solicitar la estructura del archivo de entrada y el nombre del
+        archivo</li>
+    </ul>
+  </li>
+  <li>Cuando <code>BASE</code> = "<code>C</code>": 
+    <ul>
+      <li><code>NOM-ARCHIVO</code> 
+        <p>Nombre del archivo de IDs</p>
+      </li>
+      <li><code>TIPO-ARCHIVO</code> 
+        <ul>
+          <li>=<code>0</code> para archivos de estructura 1-11 </li>
+          <li>=<code>1</code> para archivos de estructura 1-11-45</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Cuando <code>BASE</code> = "<code>I</code>": 
+    <ul>
+      <li><code>TIPO-EXTRAC</code>: 
+        <ul>
+          <li>=<code>N</code> cuando se extrae por NIT </li>
+          <li>=<code>C</code> cuando se extrae por Código Suscriptor</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code>TIPO-PROC</code>
+    <p>Tipo de proceso: </p>
+    <ul>
+      <li>"<code>A</code>" Procesos Actuales </li>
+      <li>"<code>H</code>" Procesos Historicos</li>
+    </ul>
+  </li>
+  <li>Cuando <code>TIPO-PROC</code>="<code>H</code>"
+    <ul>
+      <li><code>FECHA-PROC</code>
+        <p>Fecha del periodo en formato AAAAMMDD</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h5>Valores por defecto</h5>
+
+<p>Se deben definir los valores por defecto por cada uno de los parámetros
+listados, cada parámetro puede ser cambiado y los parámetros usados se deben
+guardar en un archivo de parámetros de mantenimiento en $DATOS</p>
+
+<h5>Salidas</h5>
+
+<p>El proceso batch debe incluir como mensajes de salida:</p>
+<ul>
+  <li>Estadísticas de Validación (PESVNO)</li>
+  <li>Estadísticas de cálculo de Score (SCOTBATCH)</li>
+  <li>Nombres de los archivos generados</li>
+</ul>
+
+<h5>Archivo log</h5>
+
+<p>Por cada procedimiento se debe registrar la siguiente información:</p>
+<ul>
+  <li>Parámetros Procesamiento
+    <ul>
+      <li>Archivo de parámetros</li>
+    </ul>
+  </li>
+  <li>Hora de inicio de procesamiento</li>
+  <li>Hora de fin de procesamiento</li>
+  <li>Número de identificaciones de entrada</li>
+  <li>Número de registros procesados</li>
+  <li>Número de registros no procesados</li>
+  <li>Errores
+    <ul>
+      <li>Id procesado</li>
+      <li>Descripción del error</li>
+    </ul>
+  </li>
+</ul>
+
+<h5>Criterios de Aceptación</h5>
+<ul>
+  <li>El proceso batch usa el validador PESVNO para el archivo de
+    identificaciones de entrada</li>
+  <li>El número de registros generados en el archivo de salida sumado al número
+    de registros inconsistentes generado por PESVNO debe ser igual al número de
+    registros del archivo de entrada.</li>
+  <li>Los valores numéricos decimales usan el caracter decimal coma (,)</li>
+  <li>Los campos del archivo de salida están separados por punto y coma(;)</li>
+  <li>El cálculo de los campos esta basado en el proceso guia icest81.cbl</li>
+</ul>
+
+<p></p>
+<pre>/d/iccol/desarrollo/macros/sh-PE-Falabella-semestral
+/d/iccol/desarrollo/macros/sh-PE-Ripley
+/d/iccol/desarrollo/copys/ICMCREH.FD
+/d/iccol/desarrollo/copys/ICMCREH.FS
+
+shtest:
+BACK="$(tput cub1)"
+export BACK
+wot=""
+echo "wot:y$BACK\c"
+read wot
+if [ -z wot ]
+then
+    wot="y"
+fi
+echo "wot:"$wot
+</pre>
+
+<p></p>
+
+<p></p>
+
+<p>Juan:</p>
+
+<p>La macro que tenemos como ejemplo se llama sh-PE-Falabella-semestral.</p>
+
+<p>Para acceder el programa SCOTBATC puedes tomar como ejemplo sh-score-std,
+para la lectura del programa PEVSNO y SCOTBATC también te puedes guiar con la
+shell sh-vectores-especial.</p>
+
+<p>Para la validación del código de suscriptor con la lectura en el archivo
+ICMCRECOPY.DAT se puede tomar como ejemplo la shell sh-ventacruzada y para la
+validación del nit en el mismo archivo se puede tomar como ejemplo la shell
+sh-visor-compartidos.</p>
+
+<p>Te envío la shell sh-PE-Ripley que había comenzado a hacer para este tema ya
+tiene las validaciones del codsus y nitsus y está basada en la de Falabella.</p>
+
+<p>Con estos ejemplos y con el documento que se encuentra en el drive puedes
+hacer la shell.</p>
+
+<p></p>
+
+<h3>Horas semanales</h3>
+
+<p></p>
 
 <table border="1">
   <col>
@@ -81,7 +426,7 @@ alt="next" src="res/right.gif"></a>
     <tr>
       <th>mon</th>
       <td>19</td>
-      <td></td>
+      <td>8</td>
       <td><ul>
           <li>CARGAJUR: agregado proceso del registro de totales de control
           </li>
@@ -93,7 +438,7 @@ alt="next" src="res/right.gif"></a>
     <tr>
       <th>tue</th>
       <td>20</td>
-      <td></td>
+      <td>9</td>
       <td><ul>
           <li>Manual de operación de JURAD</li>
         </ul>
@@ -103,25 +448,38 @@ alt="next" src="res/right.gif"></a>
     <tr>
       <th>wed</th>
       <td>21</td>
-      <td></td>
-      <td></td>
+      <td>10</td>
+      <td><ul>
+          <li>JURAD: refactoring del comando de shell según las observaciones
+            de G Segura</li>
+          <li>JURAD: adaptación del programa CARGAJUR según las observaciones
+            de G Segura</li>
+          <li>JURAD: agregado de pendientes al programa CARGAJUR</li>
+        </ul>
+      </td>
       <td></td>
     </tr>
     <tr>
       <th>thu</th>
       <td>22</td>
-      <td></td>
-      <td></td>
+      <td>8</td>
+      <td><ul>
+          <li>JURAD: testing del comando de shell refactoreado</li>
+          <li>Manual de operación de JURAD: actualización para el nuevo comando
+            de shell</li>
+        </ul>
+      </td>
       <td></td>
     </tr>
     <tr>
       <th>fri</th>
       <td>23</td>
-      <td>9 
-
-        <p></p>
+      <td><p></p>
       </td>
-      <td></td>
+      <td><ul>
+          <li>VAP Ripley: estudio de requerimientos y ejemplos</li>
+        </ul>
+      </td>
       <td></td>
     </tr>
   </tbody>
