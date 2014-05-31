@@ -5,49 +5,139 @@
   <meta http-equiv="Content-Language" content="en">
   <title>27May2014 Tue</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+  </script>
+  <script type="text/javascript" src="res/agenda.js">
+  </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+  </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140526.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140528.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 27May2014 Tue </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140526.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140528.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 27May2014 Tue </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a
+href="https://class.stanford.edu/courses/Engineering/Networking/Winter2014/courseware/bff423e2620c462897a0de4746d22a73/2c9493ef730049eaa053369600a058de/">Networking:
+start unit 6</a> </p>
+
+<p><a
+href="http://www2.research.att.com/sw/download/man/man1/ksh.html#Functions">KSH
+manual page: functions</a>  </p>
+
+<p><a
+href="http://www.ibm.com/developerworks/aix/library/au-learningtput/">IBM:
+Discover tput</a> </p>
+
+<p><a href="http://www.cs.utah.edu/dept/old/texinfo/tput/tput.html">The GNU
+@code{tput} Command</a> </p>
+
+<p><a
+href="http://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_1.html">tput:
+Portable Terminal Control</a> </p>
+
+<p><a href="http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html">Colours and
+Cursor Movement With tput</a> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>shell Ripley</h3>
+
+<p></p>
+<pre> printf "\033[8a" not working from script (OK interactively)</pre>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+<hr>
+
+<h3>viset</h3>
+
+<p></p>
+<pre>/d/iccol/desarrollo&gt;cat viset
+# Archivo por juan.lanus@globant.com
+# instrucciones:
+#  1- ejecutar al inicio de la sesión con "punto", asi:
+#     . viset
+#  2- efectos:
+#     -establece la variable de entorno EXINIT (solamente mientras dure la sesión
+#      con algunas opciones de conveniencia para el editor vi
+#     -algunas de las opciones, (casi) todas las "map", no funcionan todavia, y
+#      si alguien sabe cómo escribirlas correctamente se aceptan aportes
+#     -ejecuta el comando sh-cambamb prunovedat
+#     -escribe "viset running"
+#
+
+# si falta el "." al comienzo del comando escribe un banner y termina
+if [ `echo $0` != "-ksh" ]
+then
+  banner "falta el ."
+  exit
+fi
+echo viset running
+# cambia la tecla de retroceso
+stty erase ^?
+
+# establece opciones de vi
+EXINIT="set ignorecase nowrapscan showmode showmatch tabstop=4 shiftwidth=4 autoindent | map ^? ^H | map ^[[4~ $ | map ^[[1~ 0 | map ^[[6~ ^F^F | map ^[[5~ ^B^B "
+export EXINIT
+# setea el ambiente de desarrollo
+ . sh-camamb prunovedat
+# Achica el prompt a solo el directorio actual (OK mientras no cambio
+# de máquina o de usuario):
+export PS1='${PWD}&gt;'
+/d/iccol/desarrollo&gt;</pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
