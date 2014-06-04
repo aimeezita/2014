@@ -5,49 +5,93 @@
   <meta http-equiv="Content-Language" content="en">
   <title>02Jun2014 Mon</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140601.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140603.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 02Jun2014 Mon </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140601.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140603.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 02Jun2014 Mon </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a
+href="http://brikis98.blogspot.com.ar/2014/05/must-see-tech-talks-for-every-programmer.html">Must-See
+Tech Talks for Every Programmer</a>  </p>
+
+<p>Bruce Johnson: <a href="https://homebase.io/">homebase.io</a> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>Ripley</h3>
+
+<p></p>
+
+<h4>Control del cod de suscriptor:</h4>
+
+<p></p>
+<pre>   do
+     echo "     Digite Codigo Suscriptor  ---&gt; \c"
+     read numsus
+     cd $DATABASE
+     nomsus=`grep "^$numsus" ICBSUS | cut -c9-48`
+     echo "Codigo suscriptor: " $numsus  "   Suscriptor: " $nomsus
+     if test -z "$nomsus"
+     then
+       echo "\tSuscriptor Errado"
+     else
+       loop=1
+     fi
+   done</pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>

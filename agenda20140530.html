@@ -72,7 +72,7 @@ is printf better than echo?</a> </p>
     <p>exigir 9 como mínimo</p>
   </li>
   <li>Busca SANATA incluso para proceso "A" actual y protesta por que no hay de
-    los últimos meses.
+    los últimos meses. 
     <p>Saltear el control si ep proceso es "A". </p>
   </li>
   <li>SANATA: ¿hay instrucciones? Se exportan unas variables EXTFH y DATABASE,
@@ -91,6 +91,7 @@ is printf better than echo?</a> </p>
     </ol>
   </li>
   <li>SCOTBATCH: agregar output al archivo .log </li>
+  <li>Probar extracción por cod subscriptor</li>
 </ol>
 
 <p></p>
@@ -141,10 +142,11 @@ is printf better than echo?</a> </p>
     dice que estrae por NIT y 1 no es NIT? 
     <p>Es el NIT del suscriptor, no el del individuo</p>
   </li>
-  <li>En el ingreso del NIT, debo pedit 11 dígitos o 9 dígitos?
-    <p>El script pide 11, pero deben ser 9. </p>
+  <li class="doneItem">En el ingreso del NIT, debo pedir 11 dígitos o 9
+    dígitos? 
+    <p>El script pide 11, pero talvez deben ser 9. </p>
   </li>
-  <li>¿Cuáles opciones de scoring debo seleccionar? 
+  <li class="doneItem">¿Cuáles opciones de scoring debo seleccionar? 
     <p>En principio voy con las mismas del script ejemplo: </p>
     <p><code>$SCO41$SCO45$SCO47$SCO48$SCO49$SCO62$SCO67$SCO95$SCO99</code></p>
     <p>aunque hay dudas: </p>
@@ -159,13 +161,44 @@ is printf better than echo?</a> </p>
         +  [  ] codeudores
         no       [62] QUANTO                     
         no       [67] ACIERTA+                   
-        no       [99] CARACTERISTICAS            </pre>
-    <p>El req menciona "rotativo" y "codeudores" qne no está en la lista. La
+        no       [99] CARACTERISTICAS </pre>
+    <p>El req menciona "rotativo" y "codeudores" que no está en la lista. La
     lista tiene QUANTO, ACIERTA+ y CARACTERISTICAS que no identifico en el
     requerimiento, aunque CARACTERISTICAS creo que se incluye por defecto. </p>
     <p>La opción "STABILITY" está off en todos los casos. </p>
   </li>
-  <li> </li>
+  <li class="doneItem">Programa nuevo: 
+    <pre>x iceprerip01-test prueba200.val prueba200.inc 2 A 20140530</pre>
+    <pre>archivo de entrada, archivo de entrada de inconsistencias, estructura del archivo, tipo de proceso, fecha del periodo</pre>
+  </li>
+  <li class="doneItem">Cuando la base es interna el script arma el nombre del
+    archivo por ejemplo "PERipley20140522" con la fecha del día. Es simple y
+    fácil de recordar, pero no deja ejecutar dos procesos distintos en el mismo
+    día. 
+    <p>Como el proceso ejemplo dice ser semestral, no parecería haber una
+    necesidad de múltiples procesos en un día. </p>
+    <p>El nombre de archivo es OK. </p>
+  </li>
+  <li>Uso unas regex para la extracción que no sé bien lo que hacen: 
+    <pre>    if [[ $TIPO_EXTRACT = "N" ]]
+    then
+        grepRegex="^A......[14].*"$ID_EXTRACT".P$" (el id es de 11 dígitos)
+    else
+        grepRegex="^A$ID_EXTRACT[14].*.P$"         (el id es de 6 dígitos)
+    fi</pre>
+    <p>La duda es esa "A" al comienzo del registro, y la "P" al final. </p>
+    <p>No encontré un COPY con el nombre de este archivo. </p>
+    <p>A: activo, P: principal, no codeudor (C)</p>
+    <p>[14]: personas </p>
+    <p>buscar ICMCRECOPY </p>
+  </li>
+  <li class="doneItem">No tengo claro el tema de SANATA y si el script debería
+    hacer algo especial, aparte de setear variables de entorno. 
+    <p>Aparentemente está bien con lo que hay. </p>
+  </li>
+  <li>Cuando la base es externa, y el nombre del archivo tiene extensión, hay
+    que quitársela, caso contrario se generan archivos que no se listan con el
+    ls final. </li>
 </ol>
 
 <p> </p>
@@ -216,7 +249,8 @@ salida sea igual a la cantidad de registros del archivo de entrada. </p>
     scores a calcular. El programa genera un archivo de salida por cada score,
     cada archivo de salida tiene el nombre del score en la extensión (ver en el
     programa). </li>
-  <li><code>$formato</code> </li>
+  <li><code>$formato</code>: "VAL" significa el formato de salida del archivo
+    .val del PESVNO</li>
   <li><code>$cadena04</code> </li>
   <li><code>$mnto</code> </li>
   <li><code>$nitsus</code> (cero si no se sabe) </li>
