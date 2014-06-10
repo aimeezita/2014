@@ -97,7 +97,14 @@ ajustes a realizar al cargador antes de su liberación:</p>
 
 <h4>80100-VALIDAR-IDENTIFICACION</h4>
 <ol>
-  <li></li>
+  <li>Inicializa y valida los parámetros de la llamada</li>
+  <li>Según diversos switches, deduce el tipo de ID a partir del número, valida
+    el tipo de ID según el número, ...</li>
+  <li>Valida el número de identificación contra los archivos de REGISTRADURIA,
+    DIAN y DAS. Si es una persona calcula un nombre armado a partir de los info
+    de la base de datos. </li>
+  <li>Si SW-VERIFNOM-BDIIVIDE = 1 hace el matching de nombres usando
+    10000-MATCH-NOMBRES-VALNOM y si no es OK retorna SW-NOMBRES-BDIIVIDE</li>
 </ol>
 
 <p></p>
