@@ -5,49 +5,339 @@
   <meta http-equiv="Content-Language" content="en">
   <title>10Jun2014 Tue</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140609.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140611.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 10Jun2014 Tue </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140609.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140611.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 10Jun2014 Tue </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>JURAD</h3>
+
+<p></p>
+
+<p>duditas: </p>
+<ol>
+  <li>Qué poner en los bloques, por ejemplo en NUM-BLOQUES-BDIIVIDE (2)</li>
+  <li>En SW-DIGCHEQUEO-BDIIVIDE pongo 1 cuando TIP-IDE-BDIIVIDE = 2 OR 3 </li>
+  <li>Hay un control de válidos repetidos, que implica que el archivo de
+    entrada esté ordenado por tipo y n° de id, ¿es legal hacer un sort del
+    archivo de input?</li>
+  <li>Qué es W-DERECHOS en el PESVNO?
+    <pre>IF TIPOID-E = 1                              
+   IF ESTADO-VIG-BDIIREGI = 12 AND           
+      W-DERECHOS = 1                         
+      MOVE  07   TO  CODIGO-ERROR CODERR-INC 
+      MOVE   1   TO  SW-ERROR                
+      MOVE "00"  TO  VIG-INC                 
+      PERFORM 510-ESCRIBIR-INCONS            
+ ...</pre>
+  </li>
+  <li>Cuando el nombre no coincide, ¿cuál se pone en la alerta?</li>
+</ol>
+
+<p>Programas que usan 513- ...</p>
+<pre class="small70">     895    3326   41114 PESVNO-V02.CBL         -rw-rw-r--   1 icjdld   icdatacr   41114 Mar 11  2010 PESVNO-V02.CBL
+     899    3336   41287 P_PESVNOCSVPLUS.CBL    -rw-rw-r--   1 1360     icdatacr   41287 Jul 13  2010 P_PESVNOCSVPLUS.CBL
+     899    3346   41290 PESVNOGJ.CBL           -rw-rw-r--   1 icjdld   icdatacr   41290 Mar 11  2010 PESVNOGJ.CBL
+     903    3381   41902 PESVNO-V03.CBL         -rw-rw-r--   1 icjdld   icdatacr   41902 Mar 11  2010 PESVNO-V03.CBL
+     917    3447   42753 PESVNOCSVPLUSv06.CBL   -rw-rw-r--   1 1395     icdatacr   42753 Jun 11  2013 PESVNOCSVPLUSv06.CBL
+     917    3462   42689 PESVNO0504.CBL         -rw-rw-r--   1 icehad   icdatacr   42689 May  5  2010 PESVNO0504.CBL
+     919    3467   42879 P_PESVNO.CBL           -rw-rw-r--   1 1360     icdatacr   42879 Jul 13  2010 P_PESVNO.CBL
+     923    3455   43051 PESVNOCSV-V05.CBL      -rw-rw-r--   1 iccigd   icdatacr   43051 May  3  2011 PESVNOCSV-V05.CBL
+     929    3490   43503 PESVNOCSV_cg.CBL       -rw-rw-r--   1 1395     icdatacr   43503 Jul  9  2012 PESVNOCSV_cg.CBL
+     934    4489   58108 P_PESVNOCITI.CBL       -rw-rw-r--   1 1360     icdatacr   58108 Jul 13  2010 P_PESVNOCITI.CBL
+     939    3530   44191 PESVNOCSVv06.CBL       -rw-rw-r--   1 1395     icdatacr   44191 Jun 11  2013 PESVNOCSVv06.CBL
+     946    3422   43437 P_PESVNOCSVFNG.CBL     -rw-rw-r--   1 1360     icdatacr   43437 Jul 13  2010 P_PESVNOCSVFNG.CBL
+     946    3615   44911 PESVNO-CV.CBL          -rw-rw-r--   1 iccavd   icdatacr   44911 Jul 11  2012 PESVNO-CV.CBL
+     951    4565   59253 PESVNOCITI.CBL         -rw-rw-r--   1 1395     icdatacr   59253 Sep 10  2012 PESVNOCITI.CBL
+     952    3658   45379 PESVNO64.CBL           -rw-rw-r--   1 1395     icdatacr   45379 Jul 12  2012 PESVNO64.CBL
+     952    3658   45379 PESVNOpv.CBL           -rw-rw-r--   1 1395     icdatacr   45379 Aug 14  2012 PESVNOpv.CBL
+     952    3658   45386 PESVNO-DIGITO.CBL      -rw-rw-r--   1 iccavd   icdatacr   45386 Jul 10  2012 PESVNO-DIGITO.CBL
+     953    3466   43920 PESVNOCSVFNG.CBL       -rw-rw-r--   1 1395     icdatacr   43920 Jul  9  2012 PESVNOCSVFNG.CBL
+     956    3677   45526 PES.CBL                -rw-rw-r--   1 icrmbd   icdatacr   45526 Aug  6  2012 PES.CBL
+     983    3857   47985 PESVNOPEO.CBL          -rw-rw-r--   1 icrmbd   icdatacr   47985 Aug 15  2012 PESVNOPEO.CBL
+     983    3857   47985 PESVNOv09.CBL          -rw-rw-r--   1 1395     icdatacr   47985 Sep  4  2012 PESVNOv09.CBL
+     987    3828   47865 PESVNO-AVV.CBL         -rw-rw-r--   1 1395     icdatacr   47865 Sep 10  2012 PESVNO-AVV.CBL
+     989    3817   48311 PESVNOCSVPLUSc.CBL     -rw-rw-r--   1 1395     icdatacr   48311 Jun 25  2013 PESVNOCSVPLUSc.CBL
+     998    3932   49201 PESVNOv10.CBL          -rw-rw-r--   1 1395     icdatacr   49201 Apr  2  2013 PESVNOv10.CBL
+    1011    3900   49725 PESVNOCSVc.CBL         -rw-rw-r--   1 1395     icdatacr   49725 Jun 25  2013 PESVNOCSVc.CBL
+    1065    4266   54157 PESVNO.CBL             -rw-rw-r--   1 1395     icdatacr   54157 Apr  4  2013 PESVNO.CBL
+    1065    4266   54157 pesvnormb.cbl          -rw-rw-r--   1 1381     icdatacr   54157 Jul 19  2013 pesvnormb.cbl
+    1066    4270   54196 PESVNOZZ.cbl           -rw-rw-r--   1 icjlud   icdatacr   54196 Jun  9 19:31 PESVNOZZ.cbl
+    1069    4306   54743 PESVNOCSV.CBL          -rw-rw-r--   1 1395     icdatacr   54743 Jun 25  2013 PESVNOCSV.CBL
+    1070    4318   54855 PESVNOCSVPLUS.CBL      -rw-rw-r--   1 1395     icdatacr   54855 Sep 24  2013 PESVNOCSVPLUS.CBL
+    1134    4631   66170 icestd12.cbl           -rw-rw-r--   1 iclagd   icdatacr   66170 Mar 13 08:26 icestd12.cbl
+    1134    4631   66170 icestd12v09.cbl        -rw-rw-r--   1 1395     icdatacr   66170 Nov 24  2011 icestd12v09.cbl
+    1694    7549  109933 P_PESVNOCSVBCS.CBL     -rw-rw-r--   1 1360     icdatacr  109933 Jul 13  2010 P_PESVNOCSVBCS.CBL
+    2283   10232  133784 pesvnotest.cbl         -rw-rw-r--   1 icrmbd   icdatacr  133784 Aug  7  2010 pesvnotest.cbl
+    2413   10821  139052 PESVNOTEST.CBL         -rw-rw-r--   1 icrmbd   icdatacr  139052 Aug  7  2010 PESVNOTEST.CBL
+    2708   11391  135767 PESVNOCSVBCS_CAL.CBL   -rw-rw-r--   1 1395     icdatacr  135767 Dec 15  2011 PESVNOCSVBCS_CAL.CBL
+    2795   10563  161516 PESVNOCSVTMX.CBL       -rw-rw-r--   1 1381     icdatacr  161516 Jun 24  2011 PESVNOCSVTMX.CBL
+    2853   12239  145451 PESVNOCSVBCS_p.CBL     -rw-rw-r--   1 1395     icdatacr  145451 Jan 17  2012 PESVNOCSVBCS_p.CBL
+    2874   12348  146988 PESVNOCSVBCSv06.CBL    -rw-rw-r--   1 1395     icdatacr  146988 Mar  4  2013 PESVNOCSVBCSv06.CBL
+    3238   14622  182955 PESVNORMB.CBL          -rw-rw-r--   1 1381     icdatacr  182955 Aug  8  2010 PESVNORMB.CBL
+    3242   14640  183121 PESVNONW1.CBL          -rw-rw-r--   1 icrmbd   icdatacr  183121 Aug  9  2010 PESVNONW1.CBL
+    3275   14781  184036 PESVNORMBNW-EHA.CBL    -rw-rw-r--   1 icehad   icdatacr  184036 Aug 12  2010 PESVNORMBNW-EHA.CBL
+    3374   15105  188406 PESVNORMBNW.CBL        -rw-rw-r--   1 1381     icdatacr  188406 Sep  9  2010 PESVNORMBNW.CBL
+    3619   16002  207161 PESVNOCSVBCS.CBL       -rw-rw-r--   1 1395     icdatacr  207161 May 28  2013 PESVNOCSVBCS.CBL
+    3728   16478  203565 xxxxxxxxxxx.cbl        -rw-rw-r--   1 1381     icdatacr  203565 Oct 19  2010 xxxxxxxxxxx.cbl
+    4735   17588  277169 PESVNOSEGE2.CBL        -rw-rw-r--   1 1381     icdatacr  277169 Oct 27  2010 PESVNOSEGE2.CBL
+    4954   18356  287300 PESVNOCSVSEGE-V02.CBL  -rw-rw-r--   1 1381     icdatacr  287300 Jan 24  2011 PESVNOCSVSEGE-V02.CBL
+    5534   21248  329808 PESVNOCSVSEGE-V03.CBL  -rw-rw-r--   1 1381     icdatacr  329808 Feb 24  2011 PESVNOCSVSEGE-V03.CBL
+    5681   22063  340872 PESVNOCSVSEGE-V04.CBL  -rw-rw-r--   1 1381     icdatacr  340872 Mar 14  2011 PESVNOCSVSEGE-V04.CBL
+    5773   22407  345546 PESVNOCSVSEGElag.CBL   -rw-rw-r--   1 1395     icdatacr  345546 Oct 21  2011 PESVNOCSVSEGElag.CBL
+    5977   23427  361326 PESVNOCSVSEGE.CBL      -rw-rw-r--   1 1395     icdatacr  361326 Sep 10  2012 PESVNOCSVSEGE.CBL
+</pre>
+
+<p></p>
+
+<p></p>
+<pre>     170     530    8018 CTLIDXTDC.CBL      2010
+     277     830   15847 BDACSVEXTRAE.CBL   2012
+     282     965   13039 CTL113.CBL         2010
+     295    1017   16487 CTL103.CBL         2010
+     297    1003   14539 CTLUTL25.CBL       2010
+     304     998   13124 CARACTCOL.CBL      2011
+     306    1004   13181 CARACTPER.CBL      2011
+     306    1004   13181 CARPER-ND.CBL      2011
+     310    1145   13494 CARACTBC.CBL       2010
+     319     922   13871 CTLUTL21.CBL       2010
+     332    1107   16271 CTLUTL19.CBL       2010
+     402    1427   19605 CTLCOPYMES.CBL     2011
+     413    1449   20397 CTLCOPYBNK.CBL     2013
+     446    1765   21531 CTLUTL24.CBL       2010
+     453    1791   21952 CTLUTL01.CBL       2010
+     479    1547   21197 CTLACT34.CBL       2010
+     507    2029   26493 CTLCOPYCRE.CBL     2012
+     508    1619   30592 CTLACT16.CBL       2013
+     536    1754   24694 CTLUTL02.CBL       2010
+     539    1827   33892 CTLPRSCCN.CBL      2010
+     541    1778   24912 CTLACT24.CBL       2010
+     559    2046   28395 CTLACT14.CBL       2012
+     608    2532   35019 CTLACT13.CBL       2010
+     619    2285   33028 CARACTDIR.CBL      2010
+     620    2439   29933 CTLUTL66.CBL       2010
+     622    2095   26428 COLASCOHQ.CBL      <strong>2014</strong>
+     631    2495   30641 CTLUTL18.CBL       2010
+     636    2124   31381 BDLSTR.CBL         2010
+     641    2268   34970 BDLPLANOS.CBL      2012
+     724    2514   33231 BDIEREEST.CBL      2010
+     764    2947   41027 ACTBIGID.CBL       <strong>2014</strong>
+     773    3137   43770 CTLACT12.CBL
+     809    3173   42810 CTLACT41.CBL
+     819    3472   53184 CTLACT09.CBL
+     852    2969   37388 caract-icjvlr.CBL
+     990    3867   48956 CTL003.CBL
+    1027    4025   48410 BDIPROBINC.CBL
+    1067    4000   48848 CARACTBD.CBL
+    1124    3862   54039 CARACTBDLNEW.CBL
+    1183    3976   56396 CARACTBDL.CBL
+    1389    4545   61978 CTLACT40.CBL
+    1396    5623   59160 CARGAJUR.CBL
+    1413    6135   92259 CTLACT55.CBL
+    1490    6455   94996 CARACTUSA.CBL
+    1498    5671   78194 ACTCAMPLEY.CBL
+    1697    8223  106038 ACTAREV.CBL
+    1706    5381   79743 ACTMDIDE.CBL
+    1723    7016  102312 CARACTNEWRMB.CBL
+    1814    6877   93361 DTCABD.CBL
+    1841    7540  110927 CARACTNEW.CBL
+    1884    8959  132326 CTLN97.CBL
+    1973    6707   88645 ACTESTLEY.CBL
+    2053    6764  140475 CTLACT49.CBL
+    2276   10400  152185 CTLACT45.CBL
+    2466   10466  126977 CASOSMER.CBL
+    1814    6877   93361 DTCABD.CBL
+    1841    7540  110927 CARACTNEW.CBL
+    1884    8959  132326 CTLN97.CBL
+    1973    6707   88645 ACTESTLEY.CBL
+    2053    6764  140475 CTLACT49.CBL
+    2276   10400  152185 CTLACT45.CBL
+    2466   10466  126977 CASOSMER.CBL
+    2615   11765  152396 ACTEUNILG.CBL
+    2711   10259  121235 CALIDBDSS.CBL
+    2727   10276  153150 CERTCARDEC.CBL
+    2779   14151  205945 ACTMIGRAC.CBL
+    2804   11536  157200 DEBS18.CBL
+    2930   13638  185586 ACTMFRE.CBL
+    2950   11358  170941 ACTVLESP.CBL
+    2979   14061  189857 ACTEUNINW.CBL
+    4230   14243  200767 CITSELPS.CBL
+    4230   14243  200767 CITSELPSv02.CBL
+    4982   23794  352126 ACTEUNI.CBL
+    6842   27485  492817 DD3VHF.CBL
+    7095   26771  456770 ACTVLCT.CBL
+    9039   44327  583589 ACTAVAL.CBL
+   12194   62286  836410 ACTVLCR.CBL
+
+
+-rw-rw-r--   1 icjdld   icdatacr  106038 Mar 11  2010 ACTAREV.CBL
+-rw-rw-r--   1 iccavd   icdatacr  583589 Jul  6  2011 ACTAVAL.CBL
+-rw-rw-r--   1 icjjmd   icdatacr   41027 Apr 28 17:33 ACTBIGID.CBL
+-rw-rw-r--   1 icgjcd   icdatacr   78194 Jul 18  2010 ACTCAMPLEY.CBL
+-rw-rw-r--   1 icgjcd   icdatacr   88645 Dec 28  2010 ACTESTLEY.CBL
+-rw-rw-r--   1 iccavd   icdatacr  352126 Oct 15  2013 ACTEUNI.CBL
+-rw-rw-r--   1 icjdld   icdatacr  152396 Mar 11  2010 ACTEUNILG.CBL
+-rw-rw-r--   1 icjdld   icdatacr  189857 Mar 11  2010 ACTEUNINW.CBL
+-rw-rw-r--   1 icjdld   icdatacr   79743 Mar 11  2010 ACTMDIDE.CBL
+-rw-rw-r--   1 iccavd   icdatacr  185586 Sep 19  2012 ACTMFRE.CBL
+-rw-rw-r--   1 iccavd   icdatacr  205945 May  9  2013 ACTMIGRAC.CBL
+-rw-rw-r--   1 iccavd   icdatacr  836410 Jun 27  2013 ACTVLCR.CBL
+-rw-rw-r--   1 iccavd   icdatacr  456770 Jun 27  2013 ACTVLCT.CBL
+-rw-rw-r--   1 icjdld   icdatacr  170941 Mar 11  2010 ACTVLESP.CBL
+-rw-rw-r--   1 icgjcd   icdatacr   15847 Apr 11  2012 BDACSVEXTRAE.CBL
+-rw-rw-r--   1 icjdld   icdatacr   33231 Mar 11  2010 BDIEREEST.CBL
+-rw-rw-r--   1 icjdld   icdatacr   48410 Mar 11  2010 BDIPROBINC.CBL
+-rw-rw-r--   1 iclagd   icdatacr   34970 Jun 28  2012 BDLPLANOS.CBL
+-rw-rw-r--   1 1395     icdatacr   31381 Nov 17  2010 BDLSTR.CBL
+-rw-rw-r--   1 227      icdatacr  121235 Jun  4  2010 CALIDBDSS.CBL
+-rw-rw-r--   1 icjdld   icdatacr   37388 Mar 11  2010 caract-icjvlr.CBL
+-rw-rw-r--   1 icjdld   icdatacr   13494 Jul 30  2010 CARACTBC.CBL
+-rw-rw-r--   1 icjdld   icdatacr   48848 Mar 11  2010 CARACTBD.CBL
+-rw-rw-r--   1 icrmbd   icdatacr   56396 Jan 28 14:44 CARACTBDL.CBL
+-rw-rw-r--   1 icrmbd   icdatacr   54039 Nov 21  2013 CARACTBDLNEW.CBL
+-rw-rw-r--   1 icrmbd   icdatacr   13124 Sep 13  2011 CARACTCOL.CBL
+-rw-rw-r--   1 icrmbd   icdatacr   33028 Sep 29  2010 CARACTDIR.CBL
+-rw-rw-r--   1 iclagd   icdatacr  110927 May 12 17:01 CARACTNEW.CBL
+-rw-rw-r--   1 icrmbd   icdatacr  102312 Oct  4  2012 CARACTNEWRMB.CBL
+-rw-rw-r--   1 icrmbd   icdatacr   13181 Sep 20  2011 CARACTPER.CBL
+-rw-rw-r--   1 iccavd   icdatacr   94996 Feb 25 10:56 CARACTUSA.CBL
+-rw-rw-r--   1 icdgd    icdatacr   59160 Jun  9 19:27 CARGAJUR.CBL
+-rw-rw-r--   1 icnudd   icdatacr   13181 Aug  4  2011 CARPER-ND.CBL
+-rw-r--r--   1 icfard   icdatacr  126977 Sep 20  2012 CASOSMER.CBL
+-rw-rw-r--   1 icehad   icdatacr  153150 Jul  6  2011 CERTCARDEC.CBL
+-rw-rw-r--   1 icjdld   icdatacr  200767 Oct 24  2011 CITSELPS.CBL
+-rw-rw-r--   1 icjdld   icdatacr  200767 Oct 24  2011 CITSELPSv02.CBL
+-rw-rw-r--   1 icdgd    icdatacr   26428 Jun  6 18:53 COLASCOHQ.CBL
+-rw-rw-r--   1 icjdld   icdatacr   48956 Mar 11  2010 CTL003.CBL
+-rw-rw-r--   1 icjdld   icdatacr   16487 Mar 11  2010 CTL103.CBL
+-rw-rw-r--   1 icjdld   icdatacr   13039 Mar 11  2010 CTL113.CBL
+-rw-rw-r--   1 icgjcd   icdatacr   53184 Sep 27  2012 CTLACT09.CBL
+-rw-rw-r--   1 iccavd   icdatacr   43770 Apr 30 17:39 CTLACT12.CBL
+-rw-rw-r--   1 iccavd   icdatacr   35019 Sep  1  2010 CTLACT13.CBL
+-rw-rw-r--   1 iccavd   icdatacr   28395 Sep 14  2012 CTLACT14.CBL
+-rw-rw-r--   1 icgjcd   icdatacr   30592 Jan 10  2013 CTLACT16.CBL
+-rw-rw-r--   1 icjdld   icdatacr   24912 Mar 11  2010 CTLACT24.CBL
+-rw-rw-r--   1 icjdld   icdatacr   21197 Mar 11  2010 CTLACT34.CBL
+-rw-rw-r--   1 icjdld   icdatacr   61978 Mar 11  2010 CTLACT40.CBL
+-rw-rw-r--   1 icjdld   icdatacr   42810 Mar 11  2010 CTLACT41.CBL
+-rw-rw-r--   1 iccavd   icdatacr  152185 Aug 23  2012 CTLACT45.CBL
+-rw-rw-r--   1 iccavd   icdatacr  140475 Feb  8  2012 CTLACT49.CBL
+-rw-rw-r--   1 iccavd   icdatacr   92259 Sep 23  2011 CTLACT55.CBL
+-rw-rw-r--   1 1381     icdatacr   20397 Jan 25  2013 CTLCOPYBNK.CBL
+-rw-rw-r--   1 1395     icdatacr   26493 Feb  6  2012 CTLCOPYCRE.CBL
+-rw-rw-r--   1 1215     icdatacr   19605 Nov 25  2011 CTLCOPYMES.CBL
+-rw-rw-r--   1 1396     icdatacr    8018 Jul 31  2010 CTLIDXTDC.CBL
+-rw-rw-r--   1 iccavd   icdatacr  132326 Oct 16  2013 CTLN97.CBL
+-rw-rw-r--   1 icjdld   icdatacr   33892 Mar 11  2010 CTLPRSCCN.CBL
+-rw-rw-r--   1 icjdld   icdatacr   21952 Mar 11  2010 CTLUTL01.CBL
+-rw-rw-r--   1 icjdld   icdatacr   24694 Mar 11  2010 CTLUTL02.CBL
+-rw-rw-r--   1 icjdld   icdatacr   30641 Mar 11  2010 CTLUTL18.CBL
+-rw-rw-r--   1 icjdld   icdatacr   16271 Mar 11  2010 CTLUTL19.CBL
+-rw-rw-r--   1 icjdld   icdatacr   13871 Mar 11  2010 CTLUTL21.CBL
+-rw-rw-r--   1 icjdld   icdatacr   21531 Mar 11  2010 CTLUTL24.CBL
+-rw-rw-r--   1 icjdld   icdatacr   14539 Mar 11  2010 CTLUTL25.CBL
+-rw-rw-r--   1 icjdld   icdatacr   29933 Mar 11  2010 CTLUTL66.CBL
+-rw-rw-r--   1 icvhfd   icdatacr  492817 Oct 29  2011 DD3VHF.CBL
+-rw-rw-r--   1 227      icdatacr  157200 Apr  6  2011 DEBS18.CBL
+-rw-rw-r--   1 icvhfd   icdatacr   93361 Nov 26  2012 DTCABD.CBL</pre>
+
+<p></p>
+
+<p></p>
+
+<p> </p>
+
+<p> </p>
+<pre>juan.lanus@GLB-D2025 /c/w/2014 (master)
+$ git push origin master
+To git@github.com:juanlanus/2014.git
+ ! [rejected]        master -&gt; master (fetch first)
+error: failed to push some refs to 'git@github.com:juanlanus/2014.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+juan.lanus@GLB-D2025 /c/w/2014 (master)
+$ git pull origin master
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 5 (delta 1), reused 1 (delta 0)
+Unpacking objects: 100% (5/5), done.
+From github.com:juanlanus/2014
+ * branch            master     -&gt; FETCH_HEAD
+   db6c9b7..de20d21  master     -&gt; origin/master
+Auto-merging agenda20140530.html
+CONFLICT (content): Merge conflict in agenda20140530.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+juan.lanus@GLB-D2025 /c/w/2014 (master|MERGING)
+$ git push origin master
+To git@github.com:juanlanus/2014.git
+ ! [rejected]        master -&gt; master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:juanlanus/2014.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+juan.lanus@GLB-D2025 /c/w/2014 (master|MERGING)
+$</pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
