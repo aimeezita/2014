@@ -39,6 +39,11 @@ alt="next" src="res/right.gif"></a>
 </div>
 
 <p> </p>
+<pre>Like a web browser, you can go back, then forward:
+    Press Ctrl-O to jump back to the previous (older) location.
+    Press Ctrl-I (same as Tab) to jump forward to the next (newer) location. 
+Display the jump list for the current window with:
+:jumps</pre>
 
 <p> </p>
 <hr>
@@ -47,6 +52,28 @@ alt="next" src="res/right.gif"></a>
 
 <div id="agendaBody">
 <h3>JURAD</h3>
+
+<p></p>
+
+<p></p>
+
+<p>lógica: </p>
+<ol>
+  <li>4000-PROCESAR-REGISTRO y ...2 tiene un registro leído y lo valida</li>
+  <li>El tipo de movimiento es OK</li>
+  <li>have 4100-VALIDACION-FORMAL a ver si los datos contienen números y
+  eso</li>
+  <li>si E-hay-error = "SI" algo está mal: 
+    <ul>
+      <li>graba un reg de error</li>
+      <li>ELIMINADO: hace 4240-CONTAR-TIPO-CUENTA erróneamente aquí, por que
+        todavía no ejecutó toda la validación de inválidos</li>
+    </ul>
+  </li>
+  <li>hace 4200-VALIDACION-SEMANTICA</li>
+</ol>
+
+<p></p>
 
 <p></p>
 
