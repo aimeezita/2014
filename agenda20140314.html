@@ -5,16 +5,22 @@
   <meta http-equiv="Content-Language" content="en">
   <title>14Mar2014 Fri</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script type="text/javascript" src="res/jquery/jquery.js">
- </script>
-  <script type="text/javascript" src="res/agenda.js">
- </script>
-  <script type="text/javascript" src="./res/tocBuilder.js">
- </script>
+  <script type="text/javascript" src="res/jquery/jquery.js"></script>
+  <script type="text/javascript" src="res/agenda.js"></script>
+  <script type="text/javascript" src="./res/tocBuilder.js"></script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
   <script type="text/javascript">
       $(document).ready(function () {
       });
+
+      function replacePluginName() {
+        var nameInstances = $('.nameInstance');
+        nameInstances.each(
+          function( i ) {
+            this.innerText = $('#newName').val();
+          }
+        );
+      };
   </script>
 </head>
 
@@ -22,118 +28,142 @@
 
 <div id="agendaHeader">
 
-<div class="fixedHeader">
-<a href="agenda20140313.html" accesskey="-"><img alt="prev"
-src="res/left.gif"></a><a href="agenda20140315.html" accesskey="+"><img
-alt="next" src="res/right.gif"></a> 
+  <div class="fixedHeader">
+    <a href="agenda20140313.html" accesskey="-"><img alt="prev"
+      src="res/left.gif"></a><a href="agenda20140315.html" accesskey="+"><img
+      alt="next" src="res/right.gif"></a> 
 
-<h1 style="display: inline; ">agenda 14Mar2014 Fri </h1>
-</div>
+    <h1 style="display: inline; ">agenda 14Mar2014 Fri </h1>
+  </div>
 
-<div id="agendaLinks">
+  <div id="agendaLinks">
 
-<div id="tocContainer" class="tocContainer">
+    <div id="tocContainer" class="tocContainer">
 
-<div class="toc">
-</div>
-</div>
+      <div class="toc">
+      </div>
+    </div>
 
-<p> </p>
+    <p> </p>
 
-<p><a href="http://tutorialzine.com/2010/11/jquery-data-method/">jQuery&rsquo;s
-Data Method &ndash; How and Why to Use It</a>  </p>
-<hr>
-</div>
+    <p><a href="http://tutorialzine.com/2010/11/jquery-data-method/">jQuery&rsquo;s
+      Data Method &ndash; How and Why to Use It</a>  </p>
+    <hr>
+  </div>
 </div>
 
 <div id="agendaBody">
-<h3>Using jQuery plugin boilerplate</h3>
+  <h3>Using jQuery plugin boilerplate</h3>
 
-<p>I developed, for fun, a didactic binary abacus as HTML + CSS + JS in a page.
-Now I'm turning it into a jQuery plugin in order to learn to make a plugin. </p>
+  <p>I developed, for fun, a didactic binary abacus as HTML + CSS + JS in an HTML
+  page.  Now I'm turning it into a jQuery plugin in order to learn how to make 
+  jQuery plugins, something I think every developer should know. </p>
 
-<p>After looking around I choose <a href="http://jqueryboilerplate.com">jQuery
-Boilerplate</a>, mainly because it's the usual JS file but with the plus of a
-complete project structure. Also, one of the authors is Addy Osmani who wrote
-many interesting JS articles I have read. </p>
+  <p>After looking around I choose to build it using the
+  <a href="http://jqueryboilerplate.com">jQuery Boilerplate</a> scaffolding, mainly
+  because it's the usual JS file but with the plus of a complete project structure.
+  Also, one of the authors is Addy Osmani who wrote many interesting JS articles I
+  have read. </p>
 
-<p>I evaluated and discarded the jQuery UI Widget Factory because, although my
-work <em>is</em> a widget, this track meant too much involvement. In
-particular, it requires some js in addition to jQuery itself. And it seems that
-the advantages it offers are not that huge, that programming them myself is not
-going to be such a burden. </p>
+  <p>Notice that I avoided the dreaded <em>framework</em> word. We are overwhelmed
+  by the proliferation of frameworks that offer possibly less development work and 
+  other advantages, at the cost of resigning the good parts of programming and 
+  re-learning lots of things in order to be aligned with the framework author's 
+  way to do the things. <br>
+  Why should we developers would want not to program, one of the activities we
+  enjoy the most? No answer ... </p>
 
-<p>I use a TOC plugin since years ago: </p>
-<pre>// jQuery tocBuilder plugin - Copyright (c) 2011 Rob Kent 
+  <p>I evaluated and discarded the jQuery UI Widget Factory because, although my
+  work <em>is</em> a widget, this track meant too much involvement, it's turning
+  our to be sort of a framework. <br>
+  Something is a <em>framework</em> if you need to learn a lot of stuff up front,
+  before jotting your first line of code. <br>
+  In particular, this one requires some js in addition to jQuery itself, maybe thousands 
+  of lines. And it seems that the advantages it offers for this particular task are
+  not that huge, and that programming them myself is not going to be such a burden. </p>
+
+  <!--
+  <p>I use a TOC plugin since years ago: </p>
+  <pre>// jQuery tocBuilder plugin - Copyright (c) 2011 Rob Kent 
 // &lt;rob.kent at proofbydesign.com&gt; http://proofbydesign.com/Resources/</pre>
+  <p>that inplements some of </p>
+  -->
 
-<p>that inplements some of </p>
-
-<p>So here are the steps I'm following: </p>
-<style>
-  #steps > li { margin-top:2em; margin-bottom:1em; }
-  #steps pre  { font-size:90%; }
-  #steps code { font-size:90%; }</style>
-<ol id="steps">
-  <li>Go to the <a
-    href="https://github.com/jquery-boilerplate/jquery-boilerplate/">boilerplate
-    github page</a> and chose the [Download ZIP] option. </li>
-  <li>Read the project's <a
-    href="https://github.com/jquery-boilerplate/jquery-boilerplate#readme">README</a>,
+  <p>So here are the steps I followed to move from js code in the page to same
+  functionality encapsulated into a jQuery plugin: </p>
+  <style>
+#steps > li { margin-top:2em; margin-bottom:1em; }
+#steps pre  { font-size:90%; }
+#steps code { font-size:90%; }</style>
+  <ol id="steps">
+    <li>Go to the <a
+      href="https://github.com/jquery-boilerplate/jquery-boilerplate/">boilerplate
+      github page</a> and chose the [Download ZIP] option. </li>
+    <li>Read the project's <a
+      href="https://github.com/jquery-boilerplate/jquery-boilerplate#readme">README</a>,
     learning about all the tools involved. </li>
-  <li>Create a directory named binabacus (after my plugin) and expand the ZIP
+    <li>Choose a name for your plugin, mine is "binabacus" (for binary abacus), and
+    write it here: <input id="newName" type="text" value="binabacus" onchange="replacePluginName();"> to see in in the remaining 
+    steps text.  
+    </li>
+    <li>Create a directory named <span class="nameInstance">binabacus</span> (after the plugin name) and expand the ZIP
     there. Skip the <code>jquery-boilerplate-master</code> directory level from
     the ZIP and end up with structure thus: 
     <ul>
-      <li><strong>binabacus</strong> 
+      <li><strong><span class="nameInstance">binabacus</span></strong> 
+      <ul>
+        <li><strong>demo</strong> 
         <ul>
-          <li><strong>demo</strong> 
-            <ul>
-              <li>index.html</li>
-            </ul>
-          </li>
-          <li><strong>dist</strong> 
-            <ul>
-              <li>2 generated js files</li>
-            </ul>
-          </li>
-          <li><strong>src</strong> 
-            <ul>
-              <li>jquery.boilerplate.coffee</li>
-              <li>jquery.boilerplate.js</li>
-            </ul>
-          </li>
-          <li>.editorconfig</li>
-          <li>.gitignore</li>
-          <li>.jshintrc</li>
-          <li>.travis.yml</li>
-          <li>CONTRIBUTING.md</li>
-          <li>Gruntfile.js</li>
-          <li>README.md</li>
-          <li>boilerplate.jquery.json</li>
-          <li>bower.json</li>
-          <li>package.json</li>
+          <li>index.html</li>
         </ul>
+        </li>
+        <li><strong>dist</strong> 
+        <ul>
+          <li>2 generated js files</li>
+        </ul>
+        </li>
+        <li><strong>src</strong> 
+        <ul>
+          <li>jquery.boilerplate.coffee</li>
+          <li>jquery.boilerplate.js</li>
+        </ul>
+        </li>
+        <li>.editorconfig</li>
+        <li>.gitignore</li>
+        <li>.jshintrc</li>
+        <li>.travis.yml</li>
+        <li>CONTRIBUTING.md</li>
+        <li>Gruntfile.js</li>
+        <li>README.md</li>
+        <li>boilerplate.jquery.json</li>
+        <li>bower.json</li>
+        <li>package.json</li>
+      </ul>
       </li>
     </ul>
-  </li>
-  <li>Edit and rename all files replacing "boilerplate" by "binabacus". </li>
-  <li>This relies on Node.js, which I happen to have installed, just check the
-    version (I have v0.10.20). </li>
-  <li>Initialize the ~/binabacus directory as a git repo: 
-    <pre>git init</pre>
-  </li>
-  <li>Edit the project's <code>.gitignore</code> file so git doesn't want
+    </li>
+    <li>Edit and rename all files replacing "boilerplate" by "<span class="nameInstance">binabacus</span>". </li>
+    <li>This relies on 
+    <a href="http://nodejs.org/">Node.js</a> , which I happen to have installed,
+    just check the version (I used v0.10.20). </li>
+    <li>Initialize the <code>~/<span class="nameInstance">binabacus</span></code>
+    directory as a git repo: 
+    <pre>cd ~/<span class="nameInstance">binabacus</span>
+git init</pre>
+    </li>
+    <li>Edit the project's <code>.gitignore</code> file so git doesn't want
     commit vim's backup and work files (their names end with ~ or have .swX
-    extensions) from any directory. 
+    extensions) from any directory, or any other files littered by your tools. 
     <pre>.DS_Store
 node_modules
 **/*~
 **/*.swp
 **/*.swo</pre>
-  </li>
-  <li>Edit <code>.jshintrc</code> according to <a
-    href="http://jshint.com/docs/options/">the JSHint options page</a>, here is
+    <p>Remember that the "**" here means "in any directory inside the repo
+    hierarchy". </p>
+    </li>
+    <li>Edit <code>.jshintrc</code> according to <a
+      href="http://jshint.com/docs/options/">the JSHint options page</a>, here is
     the outcome, not yet tested: 
     <pre>{
   "bitwise": true,      // prohibits the use of bitwise operators
@@ -157,9 +187,9 @@ node_modules
   "unused": true,       // warns when there are defined and never used variables
   "node": false         // defines globals available when running inside of Node.js
 }</pre>
-  </li>
-  <li>Go to JSHint "<a href="http://jshint.com/install/">Download and
-    Install</a>" page and get the software. It's a Node.js module, so it's
+    </li>
+    <li>Go to JSHint "<a href="http://jshint.com/install/">Download and
+      Install</a>" page and get the software. It's a Node.js module, so it's
     easily installed with: 
     <pre>sudo npm install -g jshint
 
@@ -174,27 +204,27 @@ jshint@2.4.4 /usr/lib/node_modules/jshint
 &#x2514;&#x2500;&#x2500; htmlparser2@3.3.0 (domelementtype@1.1.1, domutils@1.1.6, domhandler@2.1.0, readable-stream@1.0.26-2)</pre>
     <p>They should add the <code>-g</code> in the sample command, so everybody
     installs and updates a single version per computer. </p>
-  </li>
-  <li>Take note of the JSLint stuff related to vim, the editor I use, to check
+    </li>
+    <li>Take note of the JSLint stuff related to vim, the editor I use, to check
     it later: 
     <ul>
       <li><a href="https://github.com/walm/jshint.vim">jshint.vim</a>, VIM
-        plugin and command line tool for running JSHint.</li>
+      plugin and command line tool for running JSHint.</li>
       <li><a href="https://github.com/Shutnik/jshint2.vim">jshint2.vim</a>,
-        modern VIM plugin with extra features for running JSHint.</li>
+      modern VIM plugin with extra features for running JSHint.</li>
       <li><a href="https://github.com/scrooloose/syntastic">Syntastic</a>,
-        supports JSHint both older/newer than 1.1.0.</li>
+      supports JSHint both older/newer than 1.1.0.</li>
     </ul>
-  </li>
-  <li>Install grunt-cli with the command: 
+    </li>
+    <li>Install grunt-cli with the command: 
     <pre>sudo npm install -g grunt-cli
 /usr/bin/grunt -&gt; /usr/lib/node_modules/grunt-cli/bin/grunt
 grunt-cli@0.1.13 /usr/lib/node_modules/grunt-cli
 &#x251c;&#x2500;&#x2500; resolve@0.3.1
 &#x251c;&#x2500;&#x2500; nopt@1.0.10 (abbrev@1.0.4)
 &#x2514;&#x2500;&#x2500; findup-sync@0.1.3 (lodash@2.4.1, glob@3.2.9)</pre>
-  </li>
-  <li>Now, to <em>really install grunt</em>, go to the project directory and
+    </li>
+    <li>Now, to <em>really install grunt</em>, go to the project directory and
     run: 
     <pre>sudo npm install</pre>
     <p>so all dependencies are satisfied. This installs grunt and some
@@ -239,33 +269,33 @@ grunt@0.4.4 node_modules/grunt
 &#x251c;&#x2500;&#x2500; findup-sync@0.1.3 (glob@3.2.9, lodash@2.4.1)
 &#x251c;&#x2500;&#x2500; glob@3.1.21 (inherits@1.0.0, graceful-fs@1.2.3)
 &#x2514;&#x2500;&#x2500; js-yaml@2.0.5 (esprima@1.0.4, argparse@0.1.15)</pre>
-  </li>
-  <li>A grunt smoke test fails, it seems it wants to be configured more
+    </li>
+    <li>A grunt smoke test fails, it seems it wants to be configured more
     seriously: 
-    <pre>jlanus@juan-T61:~/binabacus$ grunt
+    <pre>jlanus@juan-T61:~/<span class="nameInstance">binabacus</span>$ grunt
 Loading "Gruntfile.js" tasks...ERROR
-&gt;&gt; Error: Unable to parse "binabacus.jquery.json" file (Unexpected token 
+&gt;&gt; Error: Unable to parse "<span class="nameInstance">binabacus</span>.jquery.json" file (Unexpected token 
 &gt;&gt; ).
 Warning: Task "default" not found. Use --force to continue.
 
 Aborted due to warnings.</pre>
     <p>After fixing a couple of typos in the config files, JSHint does its
     thing: </p>
-    <pre>jlanus@juan-T61:~/binabacus$ grunt
+    <pre>jlanus@juan-T61:~/<span class="nameInstance">binabacus</span>$ grunt
 Loading "Gruntfile.js" tasks...ERROR
-&gt;&gt; Error: Unable to parse "binabacus.jquery.json" file (Unexpected token 
+&gt;&gt; Error: Unable to parse "<span class="nameInstance">binabacus</span>.jquery.json" file (Unexpected token 
 &gt;&gt; ).
 Warning: Task "default" not found. Use --force to continue.
 
 Aborted due to warnings.
-jlanus@juan-T61:~/binabacus$ vim binabacus.jquery.json
-jlanus@juan-T61:~/binabacus$ grunt
+jlanus@juan-T61:~/<span class="nameInstance">binabacus</span>$ vim <span class="nameInstance">binabacus</span>.jquery.json
+jlanus@juan-T61:~/<span class="nameInstance">binabacus</span>$ grunt
 Running "jshint:files" (jshint) task
 ERROR: Can't parse config file: .jshintrc
-jlanus@juan-T61:~/binabacus$ vim .jshintrc
-jlanus@juan-T61:~/binabacus$ grunt
+jlanus@juan-T61:~/<span class="nameInstance">binabacus</span>$ vim .jshintrc
+jlanus@juan-T61:~/<span class="nameInstance">binabacus</span>$ grunt
 Running "jshint:files" (jshint) task
-Linting src/jquery.binabacus.js ...ERROR
+Linting src/jquery.<span class="nameInstance">binabacus</span>.js ...ERROR
 [L3:C2] W015: Expected '(' to have an indentation at 1 instead at 2.
 ;(function ( $, window, document, undefined ) {
 [L15:C41] W109: Strings must use singlequote.
@@ -292,27 +322,27 @@ Aborted due to warnings.</pre>
     <code>grunt --force</code> creates the output files in /dist, with the
     right banners. Good! </p>
     <p>After adapting to the tool the aouput is lean: </p>
-    <pre>jlanus@juan-T61:~/binabacus/dist$ grunt
+    <pre>jlanus@juan-T61:~/<span class="nameInstance">binabacus</span>/dist$ grunt
 Running "jshint:files" (jshint) task
 &gt;&gt; 1 file lint free.
 
 Running "concat:dist" (concat) task
-File "dist/jquery.binabacus.js" created.
+File "dist/jquery.<span class="nameInstance">binabacus</span>.js" created.
 
 Running "uglify:my_target" (uglify) task
-File dist/jquery.binabacus.min.js created.
+File dist/jquery.<span class="nameInstance">binabacus</span>.min.js created.
 
 Done, without errors.</pre>
-  </li>
-  <li>At this point I don't have any excuses left, it comes the programming of
+    </li>
+    <li>At this point I don't have any excuses left, it comes the programming of
     the plugin itself and its test. It should work quickly since I already have
     a non-plugin version up and running. 
-    <pre>gvim ~/binabacus/src/jquery.binabacus.js</pre>
+    <pre>gvim ~/<span class="nameInstance">binabacus</span>/src/jquery.<span class="nameInstance">binabacus</span>.js</pre>
     <p>It comes out easy: I can replicate the original behavior in no time, by
     cutting and pasting the initialization code from the POC page into the
     plugin js. . </p>
-  </li>
-  <li>Next step is to <em>pluginze</em> the code. For example, as it's going to
+    </li>
+    <li>Next step is to <em>pluginze</em> the code. For example, as it's going to
     be encapsulated I'd like to provide a set of options for the user
     (actually, me) to be able to control the widget. Like, the number of bits,
     or the animation time. The original was hardcoded at 8 bits, and I want the
@@ -327,7 +357,7 @@ Done, without errors.</pre>
     thus: </p>
     <pre>$.data( this, 'plugin_' + pluginName, new Plugin( this, settings ) );</pre>
     <p>It is accessible with code like this: </p>
-    <pre>$( "thecontainer" ).data( "plugin_binabacus" ).settings.oneOption )</pre>
+    <pre>$( "thecontainer" ).data( "plugin_<span class="nameInstance">binabacus</span>" ).settings.oneOption )</pre>
     <p>The data thing is binded to the container, and my events are binded to
     elements that are desdendants of the container so I have to either blaze a
     path upwards from the clicked event several levels up to the container, or
@@ -335,69 +365,69 @@ Done, without errors.</pre>
     the first option, using jQuery's closest() method. After a while I end up
     with this: </p>
     <pre>          // get a reference to the settings object
-          var theSettings = $(this).closest( '.ba_abacus' ).data('plugin_binabacus').settings;</pre>
+          var theSettings = $(this).closest( '.ba_abacus' ).data('plugin_<span class="nameInstance">binabacus</span>').settings;</pre>
     <p>Placed into an event handler, this line provides access to the settings
     object. </p>
-  </li>
-  <li>In the process of <em>pluginizing</em> the code I needed to replace all
+    </li>
+    <li>In the process of <em>pluginizing</em> the code I needed to replace all
     jQuery id selectors, like <code>$( '#theElementId' )</code> with something
     else. I realized that if somebody instantiated more then one instance of
     the widget in a page the id references would be invalid. Instead of id
     selectors I used DOM tree traversing functions, like the
     <code>closest()</code> method example shown above. </li>
-  <li>Next step is to generate the HTML. I didn't tell before, but this plugin
+    <li>Next step is to generate the HTML. I didn't tell before, but this plugin
     relies on the existence of very exact HTML in the page, and the only way to
     ensure that is to clean the target element and build there a subtree from
     the ground up. 
     <p>I build all the HTML in a string and surface it in a single operation,
     to avoid annoying multiple page reflows. </p>
-  </li>
-  <li>Now the plugin works. It's not finished, I still have to implement
+    </li>
+    <li>Now the plugin works. It's not finished, I still have to implement
     several options, but anyway I grunt, commit the work in the local repo and
-    create a remote one on GitHub aptly named <code>binabacus</code>. 
-    <pre>jlanus@juan-T61:~/binabacus$ <strong>git remote add origin https://github.com/juanlanus/binabacus.git</strong>
-jlanus@juan-T61:~/binabacus$ <strong>git push origin master</strong>
+    create a remote one on GitHub aptly named <code><span class="nameInstance">binabacus</span></code>. 
+    <pre>jlanus@juan-T61:~/<span class="nameInstance">binabacus</span>$ <strong>git remote add origin https://github.com/juanlanus/<span class="nameInstance">binabacus</span>.git</strong>
+jlanus@juan-T61:~/<span class="nameInstance">binabacus</span>$ <strong>git push origin master</strong>
 Username for 'https://github.com': (concealed)
-Password for 'https://juan.lanus@gmail.com@github.com': (even more concealed)
+Password for '(the username not shown above)': (even more concealed)
 Counting objects: 22, done.
 Delta compression using up to 2 threads.
 Compressing objects: 100% (19/19), done.
 Writing objects: 100% (22/22), 39.92 KiB | 0 bytes/s, done.
 Total 22 (delta 2), reused 0 (delta 0)
-To <strong>https://github.com/juanlanus/binabacus.git</strong>
+To <strong>https://github.com/juanlanus/<span class="nameInstance">binabacus</span>.git</strong>
  * [new branch]      master -&gt; master</pre>
     <p>Now anyone can reach the project here: <a
-    href="https://github.com/juanlanus/binabacus.git">https://github.com/juanlanus/binabacus.git</a>
+      href="https://github.com/juanlanus/<span class="nameInstance">binabacus</span>.git">https://github.com/juanlanus/<span class="nameInstance">binabacus</span>.git</a>
     </p>
-  </li>
-  <li>At this point I can say the plugin is finished. Committing and pushing. 
+    </li>
+    <li>At this point I can say the plugin is finished. Committing and pushing. 
     <p>Now it's bug time ... :-) </p>
-  </li>
-</ol>
+    </li>
+  </ol>
 
-<p></p>
+  <p></p>
 
-<p> </p>
+  <p> </p>
 
-<p> </p>
+  <p> </p>
 
-<p> </p>
+  <p> </p>
 
-<p> </p>
+  <p> </p>
 
-<p> </p>
+  <p> </p>
 
-<p> </p>
+  <p> </p>
 
-<p> </p>
+  <p> </p>
 
-<p> </p>
+  <p> </p>
 
-<p> </p>
+  <p> </p>
 
-<p> </p>
+  <p> </p>
 
-<p> </p>
+  <p> </p>
 </div>
 </body>
 </html>
