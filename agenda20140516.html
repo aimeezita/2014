@@ -40,7 +40,7 @@ alt="next" src="res/right.gif"></a>
 
 <p> </p>
 
-<p> </p>
+<p><a href="agenda20140314.html">jQuery plugins</a>  </p>
 <hr>
 </div>
 </div>
@@ -49,7 +49,11 @@ alt="next" src="res/right.gif"></a>
 <h3>ACTALEJUR testing</h3>
 
 <p></p>
-<pre>cob64 lstpath"/d/iccol/desarrollo/temporales" -uv -g -P -C sourceasm $FUENTES/CARGAJUR.CBL</pre>
+<pre>cob64 lstpath"/d/iccol/desarrollo/temporales" -uv -g -P -C sourceasm $FUENTES/CARGAJUR.CBL
+
+sdiff -w 170 JURADCAR.CBL CARGAJUR.CBL
+
+[^ a-zA-Z0-9*$="}{\][|#%/?&gt;&lt;,.;:\-_áéíóúñÑ+&amp;)(] </pre>
 
 <h4>Código en mayúsculas</h4>
 
@@ -89,6 +93,9 @@ commit.</p>
 <p>En los registros que contienen "Ñ" se producen problemas con los DBCS.
 Cambiadas las "Ñ" por "n" para continuar la prueba. Se necesita una definición
 sobre cuál encoding usar, y adaptar el programa. </p>
+
+<p>La máaquina de Experian opera con ISO-8859-1. Los problemas se resuelven
+configurando la terminal (PuTTY). </p>
 
 <p></p>
 
@@ -526,8 +533,7 @@ ABANDONADO:
            exit program.
 
 
-       end program CHECKTOTAL.
-</pre>
+       end program CHECKTOTAL.</pre>
 
 <p> </p>
 
