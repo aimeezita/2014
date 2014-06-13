@@ -5,16 +5,21 @@
   <meta http-equiv="Content-Language" content="en">
   <meta name="description" content="Detailed instructions and insights on how to build jQuery plugins using jquery-boilerplate." >
   <title>14Mar2014 Fri</title>
-  <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script type="text/javascript" src="res/jquery/jquery.js"></script>
-  <script type="text/javascript" src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
-  <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
+  <script src="res/jquery/jquery.js"></script>
+  <script src="res/agenda.js"></script>
+  <script src="./res/tocBuilder.js"></script>
+  <link href="./res/jquery/tocBuilder.css" rel="stylesheet">
+  <script src="res/jquery.binabacus.js"></script>
+  <link href="res/agenda.css" rel="stylesheet">
+  <link href="res/binabacus.css" rel="stylesheet">
   <script type="text/javascript">
       $(document).ready(function () {
+	  $('#newName').change(); 
       });
 
       function replacePluginName() {
+      // replaces the reader's plugin name all around the text, in
+      // spans with class "nameInstance"
         var nameInstances = $('.nameInstance');
         nameInstances.each(
           function( i ) {
@@ -23,7 +28,23 @@
         );
       };
   </script>
+
+  <script>
+    $(function() {
+      // create a binabacus widget
+      $("#binAbacus").binabacus({
+	numBits: 10    
+	// ,
+	// silent: true,
+	// clickVolume: '0.1',
+	// ballTravelTime: '0.9s',               // ball travel time (default 0.3s)
+	// ballEasing: 'linear'                  // easing function (default 'ease-in')
+      });
+    });
+  </script>
+
   <style>
+/* tutorial own styles */
 #steps > li { margin-top:2em; margin-bottom:1em; }
 #steps pre  { font-size:90%; }
 #steps code { font-size:90%; }
@@ -42,18 +63,14 @@ ul.directoryTree  { list-style-type:none; background-color:#F8F8EC; padding:.5em
     <a href="agenda20140313.html" accesskey="-"><img alt="prev"
       src="res/left.gif"></a><a href="agenda20140315.html" accesskey="+"><img
       alt="next" src="res/right.gif"></a>
-
     <h1 style="display: inline; ">agenda 14Mar2014 Fri </h1>
   </div>
 
   <div id="agendaLinks">
-
     <div id="tocContainer" class="tocContainer">
-
       <div class="toc">
       </div>
     </div>
-
     <p> </p>
 
     <p><a href="http://tutorialzine.com/2010/11/jquery-data-method/">jQuery&rsquo;s
@@ -66,6 +83,9 @@ ul.directoryTree  { list-style-type:none; background-color:#F8F8EC; padding:.5em
   <h3>How to build a jQuery plugin using boilerplate</h3>
 
   <h4>jquery-boilerplate</h4>
+
+  <div class="imgR framed" id="binAbacus" style="margin:1em; margin-left:2em; padding:1em; background-color:transparent;">
+  </div>
 
   <p>I developed, for fun, a didactic binary abacus as HTML + CSS + JS in an HTML
   page.  Now I'm turning it into a jQuery plugin in order to learn how to make
@@ -105,11 +125,12 @@ ul.directoryTree  { list-style-type:none; background-color:#F8F8EC; padding:.5em
   // &lt;rob.kent at proofbydesign.com&gt; http://proofbydesign.com/Resources/</pre>
   -->
 
-  <p>So here are the steps I followed to move from js code in the page to same
-  functionality encapsulated into a jQuery plugin: </p>
+  <p>So here are the steps I followed to move from js code in the POC (Proof Of Concept)
+  page to the same functionality encapsulated into a jQuery plugin: </p>
   <ol id="steps">
 
-    <li>Go to the <a target="_other"
+    <li><h5>get boilerplate</h5>
+    Go to the <a target="_other"
       href="https://github.com/jquery-boilerplate/jquery-boilerplate/">boilerplate
       github page</a> and chose the
       [<a href="https://github.com/jquery-boilerplate/jquery-boilerplate/archive/master.zip"
@@ -117,18 +138,21 @@ ul.directoryTree  { list-style-type:none; background-color:#F8F8EC; padding:.5em
       You get the <code>jquery-boilerplate-master.zip</code> file.
     </li>
 
-    <li>Read the project's <a target="_other"
+    <li><h5>learn something about boilerplate</h5>
+      Read the project's <a target="_other"
       href="https://github.com/jquery-boilerplate/jquery-boilerplate#readme">README</a>
       and learn about all the tools involved.
     </li>
 
-    <li>Choose a name for your plugin, mine is "binabacus" (for binary abacus), and
+    <li><h5>give your plugin a name</h5>
+    Choose a name for your plugin, mine is "binabacus" (for binary abacus), and
     write it here: <input id="newName" type="text" value="binabacus"
     onchange="replacePluginName();"> to see it displayed in the text of the remaining
     steps.
     </li>
 
-    <li>Create a directory named <code><span class="nameInstance">binabacus</span></code> (after the
+    <li><h5>set the project structure</h5>
+    Create a directory named <code><span class="nameInstance">binabacus</span></code> (after the
     plugin name) and expand the ZIP there. <br>
     Skip the <code>jquery-boilerplate-master</code> directory level from the ZIP and end
     up with a structure thus:
@@ -164,27 +188,28 @@ ul.directoryTree  { list-style-type:none; background-color:#F8F8EC; padding:.5em
       </ul>
       </li>
     </ul>
+
+    <p>Edit and rename all files replacing "<code>boilerplate</code>" by
+    "<code><span class="nameInstance">binabacus</span></code>". </p>
     </li>
 
-    <li>Edit and rename all files replacing "<code>boilerplate</code>" by "<code><span class="nameInstance">binabacus</span></code>".
-    </li>
-
-    <li>The operation of jquery-boilerplate relies on
+    <li><h5>ensure you have Node.js</h5>
+    The operation of jquery-boilerplate relies on
     <a target="_other" href="http://nodejs.org/">Node.js</a>, which you need to have
     have installed, just check the version with <code>node --version</code>, it should
     be 0.10.xxx.
     </li>
 
-    <li>Initialize the <code>~/<span class="nameInstance">binabacus</span></code>
+    <li><h5>set the git repo</h5>
+    Initialize the <code>~/<span class="nameInstance">binabacus</span></code>
     directory as a git repo:
     <pre>cd ~/<span class="nameInstance">binabacus</span>
 git init</pre>
-    </li>
 
-    <li>Edit the project's <code>.gitignore</code> file so git doesn't want to
+    <p>Edit the project's <code>.gitignore</code> file so git doesn't want to
     commit vim's backup and work files (their names end with ~ or have .swX
     extensions), or any other files littered by your tools. <br>
-    For example .bak files written by WinMerge and the like.
+    For example .bak files written by WinMerge and the like. </p>
     <pre>.DS_Store
 node_modules
 **/[._]*.s[a-w][a-z]
@@ -197,7 +222,8 @@ node_modules
     hierarchy". </p>
     </li>
 
-    <li>Edit <code>.jshintrc</code> according to <a target="_other"
+    <li><h5>tame JSHint</h5>
+      Edit <code>.jshintrc</code> according to <a target="_other"
       href="http://jshint.com/docs/options/">the JSHint options page</a>, here is
     the outcome:
     <pre>{
@@ -225,11 +251,10 @@ node_modules
     This will make the interaction with JSHint easier and more useful, by supressing
     some error classes that are not relevant for this particular purpose. <br>
     Of course, some choices are a matter of taste, and none has impact on the final result.
-    </li>
 
-    <li>Go to JSHint "<a target="_other" href="http://jshint.com/install/">Download and
+    <p>Go to JSHint "<a target="_other" href="http://jshint.com/install/">Download and
     Install</a>" page and get the software. It's a Node.js module, so it's easily installed
-    (globally) with:
+    (globally) with: </p>
     <pre>sudo npm install -g jshint
 
 /usr/bin/jshint -&gt; /usr/lib/node_modules/jshint/bin/jshint
@@ -246,7 +271,8 @@ jshint@2.4.4 /usr/lib/node_modules/jshint
     installs and updates a single version per computer.
     </li>
 
-    <li>Take note of the JSLint stuff related to vim, the editor I use, to check
+    <li><h5>notice potentially useful plugins</h5>
+    Take note of the JSLint stuff related to vim, the editor I use, to check
     it later:
     <ul>
       <li><a target="_other" href="https://github.com/walm/jshint.vim">jshint.vim</a>, VIM
@@ -258,7 +284,8 @@ jshint@2.4.4 /usr/lib/node_modules/jshint
     </ul>
     </li>
 
-    <li>Install grunt-cli with the command:
+    <li><h5>grunt</h5>
+    Install grunt-cli with the command:
     <pre>sudo npm install -g grunt-cli
 
 /usr/bin/grunt -&gt; /usr/lib/node_modules/grunt-cli/bin/grunt
@@ -268,7 +295,8 @@ grunt-cli@0.1.13 /usr/lib/node_modules/grunt-cli
 &#x2514;&#x2500;&#x2500; findup-sync@0.1.3 (lodash@2.4.1, glob@3.2.9)</pre>
     </li>
 
-    <li>Now, to <em>really install grunt</em>, go to the project directory and
+    <li><h5>grunt again</h5>
+    Now, to <em>really install grunt</em>, go to the project directory and
     run:
     <pre>sudo npm install</pre>
     <p>so all dependencies are satisfied. This installs grunt and some
@@ -317,9 +345,8 @@ grunt@0.4.4 node_modules/grunt
     the dependencies. <br>
     <code>npm</code> installs all the packages listed there, and the packages
     listed in the package file of each package. </p>
-    </li>
 
-    <li>A grunt smoke test fails, it seems it wants to be configured more
+    <p>A grunt smoke test fails, it seems it wants to be configured more
     seriously:
     <pre>$ ~/<span class="nameInstance">binabacus</span>$ grunt
 Loading "Gruntfile.js" tasks...ERROR
@@ -384,7 +411,8 @@ File dist/jquery.<span class="nameInstance">binabacus</span>.min.js created.
 Done, without errors.</pre>
     </li>
 
-    <li>At this point there are no excuses left, it comes the programming of
+    <li><h5>finally, the plugin</h5>
+    At this point there are no excuses left, it comes the programming of
     the plugin itself and its test. In my case it should work quickly since I
     already have a non-plugin version up and running (it did).
     <pre>gvim ~/<span class="nameInstance">binabacus</span>/src/jquery.<span class="nameInstance">binabacus</span>.js</pre>
@@ -393,7 +421,8 @@ Done, without errors.</pre>
     into the plugin js. </p>
     </li>
 
-    <li>Next step is to <em>pluginize</em> the code. For example, as it's going to
+    <li><h5>pluginize your js</h5>
+    Next step is to <em>pluginize</em> the code. For example, as it's going to
     be encapsulated I'd like to provide a set of options for the user
     (actually, me) to be able to control the widget. <br>
     For my binary abacus it seems a must to be able to control the number of bits,
@@ -428,7 +457,8 @@ Done, without errors.</pre>
     initials of the words that make its name. </p>
     </li>
 
-    <li>In the process of <em>pluginizing</em> the code I needed to replace all
+    <li><h5></h5>
+    In the process of <em>pluginizing</em> the code I needed to replace all
     jQuery id selectors, like <code>$( '#theElementId' )</code> with something
     else. <br>
     I realized that if somebody instantiated more then one instance of
@@ -437,7 +467,8 @@ Done, without errors.</pre>
     <code>closest()</code> method example shown above.
     </li>
 
-    <li>Next step is to generate the HTML. I didn't tell before, but this plugin
+    <li><h5>no #id selectors</h5>
+    Next step is to generate the HTML. I didn't tell before, but this plugin
     relies on the existence of very exact HTML in the page, and the only way to
     ensure this is to clean the target element and build there a subtree from
     the ground up.
@@ -445,7 +476,8 @@ Done, without errors.</pre>
     to avoid the annoyance of multiple page reflows. </p>
     </li>
 
-    <li>Now the plugin works. It's not finished, I still have to implement
+    <li><h5>commit to GitHub</h5>
+    Now the plugin works. It's not finished, I still have to implement
     several options, but anyway I grunt, commit the work in the local repo and
     create a remote one on GitHub aptly named <code><span class="nameInstance">binabacus</span></code>.
     <pre>$ ~/<span class="nameInstance">binabacus</span>$ <strong>git remote add origin https://github.com/juanlanus/<span class="nameInstance">binabacus</span>.git</strong>
@@ -464,15 +496,14 @@ To <strong>https://github.com/juanlanus/<span class="nameInstance">binabacus</sp
     </p>
     </li>
 
-    <li>At this point I can say the plugin is complete but not finished. Committing
+    <li><h5>now come the bugs</h5>
+    At this point I can say the plugin is complete but not finished. Committing
     and pushing.
     <p>Now it's bug time ... :-) </p>
     </li>
 
   </ol>
 
-  <p></p>
-
   <p> </p>
   <p> </p>
   <p> </p>
@@ -488,25 +519,15 @@ To <strong>https://github.com/juanlanus/<span class="nameInstance">binabacus</sp
   <p> </p>
   <p> </p>
   <p> </p>
-
   <p> </p>
-
   <p> </p>
-
   <p> </p>
-
   <p> </p>
-
   <p> </p>
-
   <p> </p>
-
   <p> </p>
-
   <p> </p>
-
   <p> </p>
-
   <p> </p>
 </div>
 </body>
