@@ -125,8 +125,24 @@ ul.directoryTree  { list-style-type:none; background-color:#F8F8EC; padding:.5em
   // &lt;rob.kent at proofbydesign.com&gt; http://proofbydesign.com/Resources/</pre>
   -->
 
-  <p>So here are the steps I followed to move from js code in the POC (Proof Of Concept)
-  page to the same functionality encapsulated into a jQuery plugin: </p>
+  <p>Below are the steps I followed to move from js code in the POC (Proof Of Concept)
+  page to the same functionality encapsulated into a jQuery plugin, learning how to do
+  it along the journey. </p>
+
+  <p>In the POC page I developed and tested the functionality, and wrote the JS that 
+  animated my binary abacus. <br>
+  The POC outcome was a functional prototype, very much like the one displayed in this
+  page (albeit this one is the jQuery plugin version). <br>
+  The resulting code was coupled to the page and was made out of several parts that had
+  to be collected and reviewed in order to make them work somewhere else. <br>
+  Making a plugin out of that stuff would encapsulate it so that it would be easy and 
+  safe to replicate the outcome anywhere else, no need to even glance at the code. <br>
+  Actually, this is the whole idea of a <em>plugin</em>, isn't it? <br>
+  if you need to know about the inner pinnings of a plugin to use it, then it's not a
+  <em>plugin</em> but sort of a cut &amp; paste code reuse. </p>
+
+  <p>So here are the steps of my enlightment journey: </p>
+
   <ol id="steps">
 
     <li><h5>get boilerplate</h5>
@@ -223,34 +239,6 @@ node_modules
     </li>
 
     <li><h5>tame JSHint</h5>
-      Edit <code>.jshintrc</code> according to <a target="_other"
-      href="http://jshint.com/docs/options/">the JSHint options page</a>, here is
-    the outcome:
-    <pre>{
-  "bitwise": true,      // prohibits the use of bitwise operators
-  "boss": false,        // suppress warnings about assignments where comparisons are expected
-  "browser": true,      // defines globals exposed by modern browsers
-  "curly": true,        // always put curly braces around blocks in loops and conditional
-  "eqeqeq": true,       // prohibits the use of == and != in favor of === and !==
-  "eqnull": true,       // enforces the use '===' to compare with 'null'
-  "expr": true,         // suppresses warnings about the use of expressions
-  "immed": true,        // prohibits immediate function invocations not wrapped in parentheses
-  "indent": 2,          // enforces specific tab width
-  "jquery": true,       // defines globals exposed by jQuery
-  "maxlen";140,         // max length of a code line
-  "newcap": true,       // capitalize names of constructor functions
-  "noarg": true,        // prohibits the use of arguments.caller and arguments.callee
-  "onevar": true,       // allows only one var statement per function
-  "quotmark": "single", // enforces the consistency of quotation marks
-  "smarttabs": true,    // suppresses warnings about mixed tabs and spaces
-  "trailing": true,     // makes it an error to leave a trailing whitespace
-  "undef": true,        // prohibits the use of explicitly undeclared variables
-  "unused": true,       // warns when there are defined and never used variables
-  "node": false         // defines globals available when running inside of Node.js
-}</pre>
-    This will make the interaction with JSHint easier and more useful, by supressing
-    some error classes that are not relevant for this particular purpose. <br>
-    Of course, some choices are a matter of taste, and none has impact on the final result.
 
     <p>Go to JSHint "<a target="_other" href="http://jshint.com/install/">Download and
     Install</a>" page and get the software. It's a Node.js module, so it's easily installed
@@ -269,6 +257,37 @@ jshint@2.4.4 /usr/lib/node_modules/jshint
     For this to work you need to have Node.js installed. <br>
     They should add the <code>-g</code> in the sample command, so everybody
     installs and updates a single version per computer.
+
+    <p>To tame JSHint, edit <code>.jshintrc</code> according to <a target="_other"
+      href="http://jshint.com/docs/options/">the JSHint options page</a>, to fit it to your
+      coding style and preferences, here is the outcome in my case: </p>
+    <pre>{
+  "bitwise": true,      // prohibits the use of bitwise operators
+  "boss": false,        // suppress warnings about assignments where comparisons are expected
+  "browser": true,      // defines globals exposed by modern browsers
+  "curly": true,        // always put curly braces around blocks in loops and conditional
+  "eqeqeq": true,       // prohibits the use of == and != in favor of === and !==
+  "eqnull": true,       // enforces the use '===' to compare with 'null'
+  "expr": true,         // suppresses warnings about the use of expressions 
+  "immed": true,        // prohibits immediate function invocations not wrapped in parentheses
+  "indent": 2,          // enforces specific tab width
+  "jquery": true,       // defines globals exposed by jQuery
+  "laxbreak": true,     // suppresses warnings about possibly unsafe line breakings
+  "maxlen":140,         // max length of a code line
+  "newcap": true,       // capitalize names of constructor functions
+  "noarg": true,        // prohibits the use of arguments.caller and arguments.callee
+  "onevar": false,      // allows only one var statement per function
+  "quotmark": "single", // enforces the consistency of quotation marks
+  "smarttabs": true,    // suppresses warnings about mixed tabs and spaces
+  "trailing": true,     // makes it an error to leave a trailing whitespace
+  "undef": true,        // prohibits the use of explicitly undeclared variables
+  "unused": true,       // warns when there are defined and never used variables
+  "node": false         // defines globals available when running inside of Node.js
+}</pre>
+    <p>This will make the interaction with JSHint easier and more useful, by supressing
+      some error classes that are not relevant for this particular purpose. <br>
+      Of course, some choices are a matter of taste, and none has impact on the the functionality
+      of the final result. </p>
     </li>
 
     <li><h5>notice potentially useful plugins</h5>
