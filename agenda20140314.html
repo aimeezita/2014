@@ -89,34 +89,34 @@ ul.directoryTree  { list-style-type:none; background-color:#F8F8EC; padding:.5em
 
   <p>I developed, for fun, a didactic binary abacus as HTML + CSS + JS in an HTML
   page.  Now I'm turning it into a jQuery plugin in order to learn how to make
-  jQuery plugins, something I think every developer should know. </p>
+  jQuery plugins, something I think is valuable for any developer. </p>
 
   <p>After looking around I choose to build it using the
   <a target="_other" href="http://jqueryboilerplate.com">jQuery Boilerplate</a> scaffolding, mainly
-  because it's the usual JS file but with the plus of a complete project structure.
-  Also, it was (and still is) authored by <a href="https://twitter.com/zenorocha/"
-  target="_other" >Zeno Rocha</a> with the help of
+  because it's the usual JS file but with the plus of a complete project structure and 
+  guidance coming from the masters. <br>
+  It was (and still is) authored by the great <a href="https://twitter.com/zenorocha/"
+  target="_other" >Zeno Rocha</a> with the collaboration of
   <a href="https://twitter.com/addyosmani/" target="_other">Addy Osmani</a>
-  who is known to be an active JS evangelist. </p>
+  who is known to be an active JS evangelist and addict. </p>
 
   <h4>not a framework, please</h4>
 
-  <p>Notice that I avoided the dreaded <em>framework</em> word. We are overwhelmed
+  <p>Notice that I'm avoiding the dreaded <em>framework</em> word. We are overwhelmed
   by the proliferation of frameworks that offer possibly less development work and
   other advantages, at the cost of resigning the good parts of programming and
-  re-learning lots of things in order to be aligned with the framework author's
-  way to do the things. <br>
-  Why should we developers would want not to program, one of the activities we
-  enjoy the most? No answer ... </p>
+  having to re-learn lots of things in order to be aligned with the 
+  author's way to do the things. <br>
+  Why should we developers would want give up programming, one of the activities we
+  enjoy the most, the one that defines us? No answer ... </p>
 
   <p>I evaluated and discarded the jQuery UI Widget Factory because, although my
   work <em>is</em> a widget, this track meant too much involvement, it's turning
   our to be sort of a framework. <br>
   Something is a <em>framework</em> if you need to learn a lot of stuff up front,
-  before jotting your first line of code. <br>
-  In particular, this one requires some js in addition to jQuery itself, maybe thousands
-  of lines. And it seems that the advantages it offers for this particular task are
-  not that huge, and that programming them myself is not going to be such a burden. </p>
+  before jotting your first line of code. </p>
+
+  <p>Other offerings were IMO not as good as the boilerplate. </p>
 
   <h4>step by step, instructions and insight</h4>
 
@@ -125,25 +125,34 @@ ul.directoryTree  { list-style-type:none; background-color:#F8F8EC; padding:.5em
   // &lt;rob.kent at proofbydesign.com&gt; http://proofbydesign.com/Resources/</pre>
   -->
 
-  <p>Below are the steps I followed to move from js code in the POC (Proof Of Concept)
-  page to the same functionality encapsulated into a jQuery plugin, learning how to do
-  it along the journey. </p>
+  <p>Below are the steps I followed to move from js code in the <span title="Proof Of
+  Concept">POC</span> page to the same functionality encapsulated into a jQuery plugin,
+  learning how to do it along the journey. </p>
 
   <p>In the POC page I developed and tested the functionality, and wrote the JS that 
-  animated my binary abacus. <br>
+  animated my binary abacus. For ease, I stuffed the HTML, the CSS and the JS, all 
+  into the single HTML file, because it was a prototype. <br>
   The POC outcome was a functional prototype, very much like the one displayed in this
-  page (albeit this one is the jQuery plugin version). <br>
+  page. <br>
   The resulting code was coupled to the page and was made out of several parts that had
   to be collected and reviewed in order to make them work somewhere else. <br>
-  Making a plugin out of that stuff would encapsulate it so that it would be easy and 
-  safe to replicate the outcome anywhere else, no need to even glance at the code. <br>
+  Making a plugin out of that stuff means to encapsulate it so that it would be easy
+  and safe to put it to work anywhere else, no need to even glance at the code. <br>
   Actually, this is the whole idea of a <em>plugin</em>, isn't it? <br>
-  if you need to know about the inner pinnings of a plugin to use it, then it's not a
-  <em>plugin</em> but sort of a cut &amp; paste code reuse. </p>
+  If you need to know about the inner pinnings of a plugin to use it, then it's not a
+  <em>plugin</em> but sort of a primitive cut &amp; paste code reuse. </p>
 
   <p>So here are the steps of my enlightment journey: </p>
 
   <ol id="steps">
+
+    <li><h5>learn something about boilerplate</h5>
+      <p>Read the project's <a target="_other"
+      href="https://github.com/jquery-boilerplate/jquery-boilerplate#readme">README</a>
+      and learn about the boilerplate and some of the tools involved. <br>
+      Don't trust the tutorials that offer the ease of not having to learn anything. 
+      Actually, it's somehow true, in that you wont learn nothing. </p>
+    </li>
 
     <li><h5>get boilerplate</h5>
     Go to the <a target="_other"
@@ -154,23 +163,16 @@ ul.directoryTree  { list-style-type:none; background-color:#F8F8EC; padding:.5em
       You get the <code>jquery-boilerplate-master.zip</code> file.
     </li>
 
-    <li><h5>learn something about boilerplate</h5>
-      Read the project's <a target="_other"
-      href="https://github.com/jquery-boilerplate/jquery-boilerplate#readme">README</a>
-      and learn about all the tools involved.
-    </li>
-
     <li><h5>give your plugin a name</h5>
-    Choose a name for your plugin, mine is "binabacus" (for binary abacus), and
-    write it here: <input id="newName" type="text" value="binabacus"
-    onchange="replacePluginName();"> to see it displayed in the text of the remaining
-    steps.
+    Choose a name for your plugin, mine is "binabacus" (for binary abacus), write it here:
+    <input id="newName" type="text" value="binabacus" onchange="replacePluginName();">
+    and hit enter to see it displayed in the text of the remaining steps.
     </li>
 
     <li><h5>set the project structure</h5>
     Create a directory named <code><span class="nameInstance">binabacus</span></code> (after the
     plugin name) and expand the ZIP there. <br>
-    Skip the <code>jquery-boilerplate-master</code> directory level from the ZIP and end
+    Skip the <code>jquery-boilerplate-master</code> directory level from the ZIP to end
     up with a structure thus:
     <ul class="directoryTree">
       <li><strong><span class="nameInstance">binabacus</span></strong>
@@ -205,26 +207,26 @@ ul.directoryTree  { list-style-type:none; background-color:#F8F8EC; padding:.5em
       </li>
     </ul>
 
-    <p>Edit and rename all files replacing "<code>boilerplate</code>" by
-    "<code><span class="nameInstance">binabacus</span></code>". </p>
+    <p>Edit and rename files replacing "<code>boilerplate</code>" by
+    "<code><span class="nameInstance">binabacus</span></code>" where appropriate. </p>
     </li>
 
     <li><h5>ensure you have Node.js</h5>
-    The operation of jquery-boilerplate relies on
+    <p>The operation of jquery-boilerplate relies on
     <a target="_other" href="http://nodejs.org/">Node.js</a>, which you need to have
-    have installed, just check the version with <code>node --version</code>, it should
-    be 0.10.xxx.
+    installed, just check the version with the command: <pre>node --version</pre>
+    <p>It should be 0.10.xxx or higher.</p>
     </li>
 
     <li><h5>set the git repo</h5>
-    Initialize the <code>~/<span class="nameInstance">binabacus</span></code>
-    directory as a git repo:
+    <p>Initialize the <code>~/<span class="nameInstance">binabacus</span></code>
+    directory as a git repo:</p>
     <pre>cd ~/<span class="nameInstance">binabacus</span>
 git init</pre>
 
     <p>Edit the project's <code>.gitignore</code> file so git doesn't want to
-    commit vim's backup and work files (their names end with ~ or have .swX
-    extensions), or any other files littered by your tools. <br>
+    commit files like vim's backup and work files (their names end with ~ or have
+    .swX extensions), or any other files littered by your tools. <br>
     For example .bak files written by WinMerge and the like. </p>
     <pre>.DS_Store
 node_modules
@@ -300,6 +302,8 @@ jshint@2.4.4 /usr/lib/node_modules/jshint
       modern VIM plugin with extra features for running JSHint.</li>
       <li><a target="_other" href="https://github.com/scrooloose/syntastic">Syntastic</a>,
       supports JSHint both older/newer than 1.1.0.</li>
+      <li><a target="_other" href="http://editorconfig.org/">EditorConfig</a>, tells my
+      favorite editor enforce some format rules. </li>
     </ul>
     </li>
 
@@ -409,13 +413,22 @@ Linting src/jquery.<span class="nameInstance">binabacus</span>.js ...ERROR
 Warning: Task "jshint:files" failed. Use --force to continue.
 
 Aborted due to warnings.</pre>
-    <p>This happened in March 2014; when your time comes you might find that
-    everything is OK, or that there are different issues. </p>
+
     <p>You have to edit the plugin source, which, BTW, still consists only in
     the template code. After edition it still complains about the starting
-    semicolon (which has to be deleted) and spots console as undefined. Running
-    <code>grunt --force</code> creates the output files in /dist, with the
-    right banners. Good! </p>
+    semicolon (which has to be deleted) and spots console as undefined. <br>
+    Running </p>
+    <pre>grunt --force</pre>
+    <p>creates the output files in /dist, with the right banners. Good! </p>
+
+    <p>"Only the template code" is a way to mean that the js file still does
+    not contain your code. <br>
+    In fact, <a target="_other" 
+    ref="https://raw.githubusercontent.com/jquery-boilerplate/jquery-boilerplate/master/src/jquery.boilerplate.js"
+    >this file</a> alone is worth all the positive feedback that the
+    boilerplate is getting. It is full of enlightening comments, placed in 
+    the right place, that are quite a useful guide. </p>
+
     <p>After adapting to the tool the ouput is lean: </p>
     <pre>$ ~/<span class="nameInstance">binabacus</span>/dist$ grunt
 Running "jshint:files" (jshint) task
@@ -429,15 +442,68 @@ File dist/jquery.<span class="nameInstance">binabacus</span>.min.js created.
 
 Done, without errors.</pre>
     </li>
+ 
+    <li><h5>iife</h5>
+    <p>The plugin module structure proposed is of the <span title=
+    "Immediately-invoked function expression">IIFE kind</span>. <p>
+    Those of us who are not familiar with this way to package js modules
+    should do something about it, ASAP. <br>
 
+    <p>The whole module is an anonimous function, a function expression or 
+    literal, contained within the first opening parenthesis of the first line, 
+    and ending with the first closing parenthesis in the last line. <br>
+    The parenthesized expression <code>( jQuery, window, document )a</code>
+    are the arguments passed to the IIFE. </p>
+
+    <p>The IIFE is written so it builds and returns a js object with members,
+    values and functions, as usual. <br>
+    The functions it returns comprise the plugin functionality. </p>
+ 
     <li><h5>finally, the plugin</h5>
-    At this point there are no excuses left, it comes the programming of
-    the plugin itself and its test. In my case it should work quickly since I
-    already have a non-plugin version up and running (it did).
+    <p>At this point there are no excuses left, it comes the programming of
+    the plugin itself and its test. In my case it should be working quickly
+    since I already have a non-plugin version up and running. </p>
+
     <pre>gvim ~/<span class="nameInstance">binabacus</span>/src/jquery.<span class="nameInstance">binabacus</span>.js</pre>
     <p>It came out easy: I was able to replicate the original behavior in no
     time, by cutting and pasting the initialization code from the POC page
     into the plugin js. </p>
+
+    <p>But it was not quite a plugin yet. It worked, but still lacking some
+    of the characteristics that make a proper jQuery plugin. </p>
+
+    <p>Firstly, my plugin relies on a specific HTML structure being laid out
+    in the page's DOM, like this: <br>
+<pre>&lt;tr&gt;
+  &lt;td id="bit_ball_7" title="128" class="ba_bit ba_0"&gt;&nbsp;&lt;/td&gt;
+  &lt;td id="bit_ball_6" title="64" class="ba_bit ba_0"&gt;&nbsp;&lt;/td&gt;
+  &lt;td id="bit_ball_5" title="32" class="ba_bit ba_0"&gt;&nbsp;&lt;/td&gt;
+  &lt;td id="bit_ball_4" title="16" class="ba_bit ba_0"&gt;&nbsp;&lt;/td&gt;
+  &lt;td id="bit_ball_3" title="8" class="ba_bit ba_0"&gt;&nbsp;&lt;/td&gt;
+  &lt;td id="bit_ball_2" title="4" class="ba_bit ba_0"&gt;&nbsp;&lt;/td&gt;
+  &lt;td id="bit_ball_1" title="2" class="ba_bit ba_0"&gt;&nbsp;&lt;/td&gt;
+  &lt;td id="bit_ball_0" title="1" class="ba_bit ba_0"&gt;&nbsp;&lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+    <p>To clear this dependency I will set the initialization of the plugin 
+    to generate the DOM elements. <br>
+    It turns out that the plugin architecture includes an <code>init</code> 
+    method that is executed once, when the plugin is initialized. <br>
+    So I wrote a <code>buildAbacus()</code> function that builds the table
+    from where the code above comes, with a twist: instead of statically 
+    creating 8 cells (an 8-bit abacus), the code loops a number of times, where
+    that number is a parameter aptly named <code>numBits</code>, thus: </p>
+
+<pre>      // build the &lt;td&gt;s of the table rows, one cell per bit, from right to left
+      for( i = 0; i &lt; this.settings.numBits; i++ ) {
+        row0.push( '&lt;td class="ba_bit ba_0" title="' + Math.pow(2, i ) + '"&gt;&nbsp;&lt;/td&gt;' );
+        row1.push( '&lt;td class="ba_digit" title="x' + Math.pow(2, i ) + '"&gt;0&lt;/td&gt;' );
+      }</pre>
+
+    <p>This brings up the need to pass parameters to the plugin, and to know 
+    how to query their values in the code, especially within event hadlers. <br>
+    For now, <code>numBits</code> returns only its default value. </p>
+
     </li>
 
     <li><h5>pluginize your js</h5>
