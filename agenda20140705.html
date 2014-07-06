@@ -48,17 +48,47 @@ alt="next" src="res/right.gif"></a>
 <div id="agendaBody">
 <h3>HTML edition</h3>
 <ul>
+  <li><a href="http://jsfiddle.net/jlanus/Lce62/">fiddle</a> </li>
   <li><a href="http://html5demos.com/contenteditable">ContentEditable demo</a>
   </li>
-  <li><a href="http://methvin.com/splitter/">a splitter</a> </li>
+  <li><a href="http://methvin.com/splitter/"><span
+    style="text-decoration: line-through;">a splitter</span></a> <a
+    href="http://dreamchain.com/static/split-pane/percent-vertical.html">a
+    better splitter</a> <a href="https://github.com/shagstrom/split-pane">in
+    GitHub</a> </li>
   <li><a
     href="http://benalman.com/code/projects/jquery-resize/examples/resize/">Ben
     Alman on resize</a> </li>
+  <li>check: <a
+    href="http://api.jquery.com/jquery.parsehtml/">jQuery.parseHTML()</a> </li>
+  <li>MSIE <a
+    href="http://msdn.microsoft.com/en-us/library/ie/ms533897(v=vs.85).aspx">innerHTML
+    property</a> </li>
+  <li>MDN: <a
+    href="https://developer.mozilla.org/en-US/docs/Web/API/DOMParser#DOMParser_HTML_extension_for_other_browsers">DOMParser</a>
+  </li>
+  <li><a href="https://www.npmjs.org/package/htmlparser">Forgiving HTML/XML/RSS
+    Parser in JS for *both* Node and Browsers</a> </li>
+  <li><a
+    href="https://github.com/austincheney/Pretty-Diff">austincheney/Pretty-Diff</a>
+    (for HTML) </li>
+  <li><a
+    href="http://code.google.com/p/google-code-prettify/">google-code-prettify</a>
+  </li>
+  <li><a
+    href="http://stackoverflow.com/questions/10026626/check-if-html-snippet-is-valid-with-javascript">check
+    HTML</a>: returns true is an HTML string is correct
+    <pre>var checkHTML = function(html) {
+  var doc = document.createElement('div');
+  doc.innerHTML = html;
+  return ( doc.innerHTML === html );
+}</pre>
+  </li>
 </ul>
 
-<div style="border:1px solid silver;width:100%; height:100%;">
-<textarea style="height:calc(100% - 2px); width:calc(100% - 2px); border:0;"
-rows="4" cols="20">eee</textarea></div>
+<div style="border:1px solid silver;width:100%; height:100%;"><iframe width="100%" height="300" src="http://jsfiddle.net/jlanus/Lce62/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+</div>
 
 <p> </p>
 
