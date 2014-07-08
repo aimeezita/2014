@@ -77,17 +77,36 @@ alt="next" src="res/right.gif"></a>
   </li>
   <li><a
     href="http://stackoverflow.com/questions/10026626/check-if-html-snippet-is-valid-with-javascript">check
-    HTML</a>: returns true is an HTML string is correct
+    HTML</a>: returns true is an HTML string is correct 
     <pre>var checkHTML = function(html) {
   var doc = document.createElement('div');
   doc.innerHTML = html;
   return ( doc.innerHTML === html );
 }</pre>
   </li>
+  <li>Try to syncronize the preview with the editor position. </li>
+  <li>The splitter fails if it's not set directly on the
+    <code>&lt;body&gt;</code> of the page. Even when it works, there is an
+    error: 
+    <pre>jQuery.event.handle.apply(element, arguments);
+Uncaught TypeError: Cannot call method 'apply' of undefined</pre>
+    <p>in line 40 of  <code>split-pane.js</code>. <code>event</code> is
+    defined, <code>handle</code> is not. </p>
+    <p>Changing thus: <code>jQuery.event.handle =
+    jQuery.event.dispatch;</code> clears the error, but the plugin will still
+    only work when the target is the bare <code>&lt;body&gt;</code>. </p>
+  </li>
+  <li>Must indent the code, try <a
+    href="http://code.google.com/p/jquery-clean/downloads/list"><code>jquery-clean</code></a>.
+     </li>
+  <li><a href="https://github.com/knockout/knockout/issues/503">jQuery.clean()
+    is not a documented, public API</a> </li>
 </ul>
 
-<div style="border:1px solid silver;width:100%; height:100%;"><iframe width="100%" height="300" src="http://jsfiddle.net/jlanus/Lce62/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
+<div style="border:1px solid silver;width:100%; height:100%;">
+<iframe width="100%" height="300"
+src="http://jsfiddle.net/jlanus/Lce62/embedded/" frameborder="0">
+</iframe>
 </div>
 
 <p> </p>
