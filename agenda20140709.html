@@ -5,49 +5,156 @@
   <meta http-equiv="Content-Language" content="en">
   <title>09Jul2014 Wed</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140708.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140710.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 09Jul2014 Wed </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140708.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140710.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 09Jul2014 Wed </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>Anchos CMS &amp; HTML input</h3>
+
+<p>Files containig "parse" or "_html" or "html_":</p>
+<pre>jlanus@juan-T61:~/anchor-cms-0.9.2/anchor$ grep -ilR "parse" *
+functions/<strong>pages.php</strong>
+  function page_content() {
+    return parse(Registry::prop('page', 'content'));
+  }
+functions/<strong>articles.php</strong>
+  function article_html() {
+    return parse(Registry::prop('article', 'html'), false);
+  }
+
+  function article_markdown() {
+    return parse(Registry::pop('article', 'html'));
+  }
+<strong>helpers.php</strong>
+function parse($str, $markdown = true) { 
+  // process tags
+  $pattern = '/[\{\{]{1}([a-z]+)[\}\}]{1}/i';
+
+  if(preg_match_all($pattern, $str, $matches)) {
+    list($search, $replace) = $matches;
+
+    foreach($replace as $index =&gt; $key) {
+      $replace[$index] = Config::meta($key);
+    }
+
+    $str = str_replace($search, $replace, $str);
+  }
+&gt;&gt;&gt; next two lines moved inside next if: 
+<span style="background-color:#ffff00">  // Convert all HTML entities to their applicable characters
+  $str = <strong>html_entity_decode</strong>($str, ENT_NOQUOTES, System\Config::app('encoding'));</span>
+
+  //  Parse Markdown as well?
+  if($markdown === true) {
+    $md = new Markdown;
+    $str = $md-&gt;transform($str);
+  }
+
+  return $str;
+}
+libraries/events.php
+public static function bind($page, $fn) {
+  list($page, $name) = static::<strong>parse</strong>($page);
+  if(!isset(static::$stack[$page])) {
+    static::$stack[$page] = array();
+  }
+  static::$stack[$page][$name] = $fn;
+}
+
+libraries/themes.php
+libraries/markdown.php
+run.php
+views/assets/js/zepto.js
+jlanus@juan-T61:~/anchor-cms-0.9.2/anchor$ grep -ilR "_html" *
+functions/articles.php
+models/extend.php
+jlanus@juan-T61:~/anchor-cms-0.9.2/anchor$ grep -ilR "html_" *
+helpers.php
+libraries/html.php
+libraries/markdown.php</pre>
+
+<h5> <br>
+Database: </h5>
+<pre>tecnosol_anchor
+Users in anchor
+tecnosol_anchor (Privileges: )  
+Connection Strings
+Perl$dbh = DBI-&gt;connect("DBI:mysql:tecnosol_anchor:localhost",
+"tecnosol_anchor","&lt;PASSWORD HERE&gt;");
+PHP$dbh=mysql_connect ("localhost", "tecnosol_anchor",
+"&lt;PASSWORD HERE&gt;") or die('Cannot connect to the database because: ' . mysql_error());
+mysql_select_db ("tecnosol_anchor");
+
+Checking Database tecnosol_anchor:
+[tecnosol_anchor.anchor_categories]  status: OK
+[tecnosol_anchor.anchor_comments]    status: OK
+[tecnosol_anchor.anchor_extend]      status: OK
+[tecnosol_anchor.anchor_meta]        status: OK
+[tecnosol_anchor.anchor_page_meta]   status: OK
+[tecnosol_anchor.anchor_pages]       status: OK
+[tecnosol_anchor.anchor_post_meta]   status: OK
+[tecnosol_anchor.anchor_posts]       status: OK
+[tecnosol_anchor.anchor_sessions]    status: OK
+[tecnosol_anchor.anchor_users]       status: OK
+Check Complete </pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
