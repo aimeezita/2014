@@ -1,0 +1,26 @@
+      .ba_abacus { font-family:Andale Mono, Consolas, monospace; }
+      .ba_abacus > div { display:inline-block; position:relative; }
+      .ba_abacus table { border-right:8px solid black; border-left:8px solid black; border-collapse:collapse; }
+      .ba_bit { border-top:8px solid black;
+                border-left:0px solid white;
+                border-right:0px solid white;
+                border-collapse:collapse;
+                height:82px;
+                width:19px;
+                font-size:33%; 
+                background-repeat:no-repeat; 
+                /* background-image:url(res/black_ball.png); */
+                background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAACnCAYAAAAR13zWAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAB3RJTUUH3gMKEiAcUtpCuAAAAiJJREFUaN7t1stqFFEQgOGve2KixBuJblQUooIQXLgUFPe+hxt9AB/DB9CFiBtFEMSFboKgIILulIgIXsCFinfxlszETbUcD5Pxihvrh6Knp0/VqVO3bpIkSZIkSZIkSZIkSZIkSZKgCflrtH/bwzT454z9xJqlIZXxywY7IxPYi63o4yFuYHGU8aaSFttxPows4h3e4zMGOIstsbbW/664G5zGh5A3Ie/i+gqv8Tbuj9eOlcbW4BY2V0dqwlPhXZfMfjy7jwP4WGZ5CeewKe57xbNB5cVCSC/0duFkF/deLDyKQ6GwNCKJz3ANtzGF1aGzM8Jxs8V6HI5j9iuDTfW7j3mcwBy+xAkGOII1Y9gRZbFQxGxQhKJM2BT2RTjWFmvayPrMGA4WCu0QI2UiJrEHM3E/XqyZwP4x7C4UhhVst0knq7Cyiu0gwjHbYuNv9HYzZNM+pls8r4w1P2msqVp1BV61uFM86OqvLWJaSm+IZ50jKzDf4lKV0Vq5WWbslX08HiV0pcU9PC7qqRnS3+2I2hTJfIoHLV7i1JCj9AovVNduk0Gsm8SxGBjfdp+LTHWedmXSjbCFGF+fCvkQay+Wm3Y7TuNJKJWGS1mMWH0uDN7FuuXm4TguVIVcS9m/Z4bVZj2te5jF1RFGL0eH9eqJvVxZdBNnQ7xTtsV/j3AdL5Zrgh992yyN6Jb8WPpvDSZJkiRJkiRJkiRJkiRJkvwzvgKllJDBGsNAqQAAAABJRU5ErkJggg==);  
+      }
+      .ba_0   { background-position:0% -10px;
+                transition:background-position .3s ease-in ; 
+      }
+      .ba_1   { background-position:0% -75px; 
+                transition:background-position ease-in .3s;
+      }
+      .ba_digit { color:white; background-color:black; font-weight:bold; text-align:center; }
+      .ba_numValue { position:absolute; top:35px; z-index:-1; font-size:250%; color:rgb(128,128,128);
+                    width:100%; text-align:center; line-height:80%; }
+      .ba_addOne   { position:absolute; left:2px; top:30%; z-order:99; font-size:125%; color:rgb(128,128,128);
+                    font-weight:100; text-align:center; line-height:100%; }
+

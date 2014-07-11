@@ -1,0 +1,14 @@
+﻿.tocContainer { font-size:110%; margin-top:0.5em; margin-bottom:0.5em; padding:0.5em; padding-top:0px; }
+.tocContainer a { text-decoration:none; }
+.tocContainer a:hover { text-decoration:underline; }
+.tocEntry { } /* a marker for anything that wants to be a tocEntry */
+.tocContainer a.tocLink { color:#00c; }
+.tocContainer a.tocLink:visited { color:#088; }
+a.tocBackLink, a.tocBackLink:visited { display:block; float:right; font-size:12px; font-style:normal; text-decoration:none !important; padding-left:0.5em; font-weight:normal; color:rgb(192,192,192); }
+.tocBackTarget { }
+.tocContainer div.tocLevel1 { padding-top:0.3em; font-size:100%; font-weight:bold; }
+.tocContainer div.tocLevel2 { padding-left:2em; font-size:90%; font-weight:bold; }
+.tocContainer div.tocLevel3 { padding-left:4em; font-size:80%; }
+.tocContainer div.tocLevel4 { padding-left:6em; font-size:70%; }
+.tocContainer div.tocLevel5 { padding-left:8em; font-size:65%; solid blue; }
+.tocContainer div.tocLevel6 { padding-left:10em; font-size:65%; }
