@@ -46,7 +46,7 @@ alt="next" src="res/right.gif"></a>
 </div>
 
 <div id="agendaBody">
-<h3>Anchos CMS &amp; HTML input</h3>
+<h3>Anchor CMS &amp; HTML input</h3>
 
 <p>Files containig "parse" or "_html" or "html_":</p>
 <pre>jlanus@juan-T61:~/anchor-cms-0.9.2/anchor$ grep -ilR "parse" *
@@ -109,7 +109,7 @@ helpers.php
 libraries/html.php
 libraries/markdown.php</pre>
 
-<h5> <br>
+<h5><br>
 Database: </h5>
 <pre>tecnosol_anchor
 Users in anchor
@@ -134,7 +134,71 @@ Checking Database tecnosol_anchor:
 [tecnosol_anchor.anchor_users]       status: OK
 Check Complete </pre>
 
-<p> </p>
+<p>Searching for files with "<code>parse</code>" or "<code>_html</code>": </p>
+<pre>jlanus@juan-T61:~/anchor-cms-0.9.2/anchor$ grep -ilR "parse" *
+functions/pages.php
+functions/articles.php
+helpers.php
+libraries/events.php
+libraries/themes.php
+libraries/markdown.php
+run.php
+views/assets/js/zepto.js
+jlanus@juan-T61:~/anchor-cms-0.9.2/anchor$ grep -ilR "html" *
+functions/menus.php
+functions/articles.php
+helpers.php
+language/en_GB/extend.php
+libraries/html.php
+libraries/markdown.php
+libraries/form.php
+libraries/paginator.php
+libraries/notify.php
+migrations/30_create_extend_table.php
+models/comment.php
+models/extend.php
+routes/posts.php
+routes/pages.php
+routes/metadata.php
+views/extend/variables/index.php
+views/extend/variables/edit.php
+views/extend/fields/add.php
+views/extend/fields/edit.php
+views/users/index.php
+views/users/edit.php
+views/error/404.php
+views/error/500.php
+views/posts/index.php
+views/posts/add.php
+views/posts/edit.php
+views/intro.php
+views/pages/index.php
+views/pages/add.php
+views/pages/edit.php
+views/comments/index.php
+views/comments/edit.php
+views/partials/header.php
+views/partials/footer.php
+views/categories/index.php
+views/categories/edit.php
+views/upgrade.php
+views/assets/js/sortable.js
+views/assets/js/upload-fields.js
+views/assets/js/zepto.js
+views/assets/js/focus-mode.js
+views/assets/js/dragdrop.js
+views/assets/css/admin.css
+views/assets/css/small.css
+jlanus@juan-T61:~/anchor-cms-0.9.2/anchor$ grep -ilR "_html" *
+functions/articles.php
+models/extend.php
+jlanus@juan-T61:~/anchor-cms-0.9.2/anchor$ grep -ilR "html_" *
+helpers.php
+libraries/html.php
+libraries/markdown.php
+jlanus@juan-T61:~/anchor-cms-0.9.2/anchor$ vi functions/pages.php
+jlanus@juan-T61:~/anchor-cms-0.9.2/anchor$ 
+</pre>
 
 <p> </p>
 

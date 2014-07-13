@@ -5,49 +5,135 @@
   <meta http-equiv="Content-Language" content="en">
   <title>11Jul2014 Fri</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140710.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140712.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 11Jul2014 Fri </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140710.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140712.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 11Jul2014 Fri </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>Setting a local Anchor CMS</h3>
+<ul>
+  <li>Download jl theme</li>
+  <li>Check Apache</li>
+  <li>Check PHP</li>
+  <li>Check mySQL</li>
+  <li>Created db anchor, user anchor pw marakuta with custom privileges </li>
+  <li><pre>Anchor local version: 
+database: 
+anchor  mkt
+publisher:
+admin  mkt</pre>
+  </li>
+</ul>
+
+<p></p>
+
+<h3>Apache: mod_rewrite enabled</h3>
+
+<p><a href="../2013/agenda20130511.html">Apache2 initial installation</a> </p>
+
+<p>Config: <code>vi /etc/apache2/apache2.conf</code> </p>
+
+<p>Checked with <code>/var/www/html/checkApacheMod.php</code>:</p>
+<pre>&lt;?php
+ if(!function_exists('apache_get_modules') ){ phpinfo(); exit; }
+ $res = 'Module Unavailable';
+ if(in_array('mod_rewrite',apache_get_modules())) 
+ $res = 'Module Available';
+?&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;A mod_rewrite availability check !&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;&lt;?php echo apache_get_version(),"&lt;/p&gt;&lt;p&gt;mod_rewrite $res"; ?&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p></p>
+
+<p>Enabled with: </p>
+<pre>a2enmod rewrite
+service apache2 restart</pre>
+
+<p> </p>
+<pre># Sets the default security model of the Apache2 HTTPD server. It does
+# not allow access to the root filesystem outside of /usr/share and /var/www.
+# The former is used by web applications packaged in Debian,
+# the latter may be used for local directories served by the web server. If
+# your system is serving content from a sub-directory in /srv you must allow
+# access here, or in any related virtual host.
+&lt;Directory /&gt;
+    Options FollowSymLinks
+    AllowOverride None
+    Require all denied
+&lt;/Directory&gt;
+
+&lt;Directory /usr/share&gt;
+    AllowOverride None
+    Require all granted
+&lt;/Directory&gt;
+
+&lt;Directory /var/www/&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+&lt;/Directory&gt;
+
+#&lt;Directory /srv/&gt;
+#   Options Indexes FollowSymLinks
+#   AllowOverride None
+#   Require all granted
+#&lt;/Directory&gt;
+
+</pre>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p> </p>
+</div>
 </body>
 </html>
