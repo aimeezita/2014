@@ -40,12 +40,99 @@ alt="next" src="res/right.gif"></a>
 
 <p> </p>
 
-<p> </p>
+<p><a href="jsfiddle.net/jlanus/8tJav/23/">super-simple splitter</a>  </p>
 <hr>
 </div>
 </div>
 
 <div id="agendaBody">
+<h3>binacacus tuto</h3>
+<ol>
+  <li>No TOC </li>
+  <li>The TOC backlinks appear twice </li>
+  <li>The title appears twice, as h1 and also h2 </li>
+  <li>All CSS rules appear twice, as if the doc.css file was linked twice: 
+    <pre>&lt;article&gt;
+  &lt;link rel="stylesheet" href="/a/themes/jl/res/doc.css"&gt;
+  &lt;script src="/a/themes/jl/res/doc.js"&gt;
+  &lt;link rel="stylesheet" href="/a/themes/jl/res/doc.css"&gt;</pre>
+  </li>
+  <li>The abacus doesn't show ==&gt; it appeared after a while </li>
+  <li>The local version is not working any more </li>
+  <li>It reads "it was gonig to be valuable" </li>
+  <li>Typo: "but dicn't download anything" </li>
+  <li>When the window is narrow, reduce the margin (width:85% in reset.css)
+  </li>
+  <li>Syntax: "and it might be somebody else still not knowing" </li>
+  <li>Syntax: " it's somehow true, in that you wont learn anything" replace by
+    "... they are being honest ..." </li>
+  <li>In "Went to the boilerplate github page" delete "page" </li>
+  <li>In "and expand the ZIP there" use past tense </li>
+  <li>In "Actually the jquery-boilerplate-master " use &lt;code&gt; </li>
+  <li>In "I use a sloppier naming schema because this is such a simple
+    project." use past tense </li>
+  <li>Typo: "which I <strong>knwew</strong> it was installed" </li>
+  <li>Code below incorrectly indented: 
+    <pre>cd ~/oiuyoiuy
+  git init</pre>
+  </li>
+  <li>Replace &lt;div&gt;s by HTML5 semantic tags, see <a
+    href="http://html5doctor.com/">HTML5 Doctor</a> </li>
+  <li>In "It's a Node.js module, so it's installed (globally)" change verb
+    tense like "... can be installed" </li>
+  <li>The http://gruntjs.com/ link has to target </li>
+  <li>Just above "grunt again" explain what is Grunt for in this project </li>
+  <li>In "grunt again", change "so all dependencies are satisfied." by "so all
+    dependencies listed in the <code>package.json</code> file are satisfied."
+    and delete "The package.json file in the project top directory states the
+    dependencies. ". </li>
+  <li>In "I edited the plugin source, which still consisted only" tell that it
+    was in order to silence JsHint errors. </li>
+  <li>In "I made the plugin work, almost without changing the original code."
+    add "cutting and pasting from the test page into the plugin js. </li>
+  <li>In the code page, "var" shows underlined, because it's inside &lt;a
+    id="var"&gt; tag. </li>
+  <li>In "So I wrote a buildAbacus() function that builds a table" the funcion
+    name should be linked to the code page. </li>
+  <li>In "a parameter aptly named numBits, thus: " the "thus" part is not
+    functional. </li>
+  <li>In "// build the &lt;td&gt;s of the table rows, one cell per bit, from
+    right to left" outdent the code to avoid wrap, also above and below </li>
+  <li>Replace "query their values in the code" by "... from within the code"
+  </li>
+  <li>Link " is created by the plugin js like so: " not working (id missing)
+  </li>
+  <li>" lengthy string variables (audioMP3 and audioOGG)" not linked to code
+  </li>
+  <li>Replace " the user doesn't have to remember to copy the sound files" by
+    "... doesn't need to care about" </li>
+  <li>Link "I built the data URIs using one of the many services available
+    online" to a google search </li>
+  <li>In "// get a reference to the settings object" explain more how the code
+    works: 
+    <p>"In the click event handlers, <code>this</code> references the clicked
+    element. The <code>closest('.ba_abacus')</code> function checks
+    <code>this</code>, it's parent, it's grandparent, etc, until it finds an
+    element that matched the selector, that is, an element with class
+    <code>ba_abacus</code>. This element happens to be the widget container,
+    that that class applied be the initialization code. [[ link to the code
+    line: $(this.element).addClass( 'ba_abacus' ); ]] </p>
+    <p>The container's <code>data</code> property has the settings under the
+    <code>'plugin_binabacus'</code> key, in the <code>.settings</code> member.
+    </p>
+  </li>
+  <li>Replace " I also created a remote one on GitHub" by "... remote repo"
+  </li>
+  <li>Check the indent of the GitHub transcript </li>
+  <li>Display the StackOverflow icon before SO links </li>
+  <li>The widget shows a bit crammed in width, add a couple pixels per ball
+    width </li>
+</ol>
+
+<p></p>
+
+<p></p>
+
 <h3>Installing Anchor</h3>
 <pre>Options -indexes
 
@@ -64,7 +151,6 @@ RewriteRule ^(.*)$ index.php/$1 [L]
 &lt;IfModule !mod_rewrite.c&gt;
 ErrorDocument 404 index.php
 &lt;/IfModule&gt;
-
 </pre>
 
 <p></p>

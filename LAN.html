@@ -1,0 +1,174 @@
+<!DOCTYPE html >
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta http-equiv="Content-Language" content="en">
+  <title>LAN</title>
+  <link rel="stylesheet" href="res/agenda.css" type="text/css">
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="res/tocBuilder.js">
+ </script>
+  <link href="res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+      $(document).ready(function () {
+      });
+  </script>
+</head>
+
+<body>
+
+<div id="agendaHeader">
+
+<div class="fixedHeader">
+<h1 style="display: inline; ">LAN </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>Comentarios y sugerencias sobre la UI</h3>
+
+<p> </p>
+
+<h5>Menú instantáneo</h5>
+
+<p>Al pasar por encima del menú horizontal, las opciones se despliegan muy
+rápido y un usuario que está en la posición [1] y quiere picar en la [2] puede
+terminar seleccionando la "<em>Guía de destinos LAN / Lonely Planet</em>". </p>
+
+<p><img alt="menú que se interpone" src="lan04.png"></p>
+
+<p>Al desplegarse el menú, la "<em>Guía de destinos LAN / Lonely Planet</em>"
+ocupa la posición donde el usuario quiere picar, y la testaña
+"<em>Check-in</em>" desciende. </p>
+
+<p>El resultado es inquietante para el usuario, por que la página se refresca y
+vuelve la misma, un poquito después. </p>
+
+<p><strong>Sugerencia</strong>: No desplegar el menú cuando el usuario pasa el
+cursor por encima (hover), sino cuando lo pica. </p>
+
+<p><strong>Sugerencia 2</strong>: Solo desplegar el menú cuando el usuario
+estacionó el cursor encima por una fracción de segundo, por ejemplo usando la
+técnica "<a
+href="http://cherne.net/brian/resources/jquery.hoverIntent.html">hoverintent</a>"
+para demorar el evento <em>hover</em> unos milisegundos. </p>
+
+<p></p>
+
+<h5>Fecha invisible</h5>
+
+<p>En la versión ancha la fecha tiene el mismo valor visual que los links
+"Anterior" y "Siguiente". </p>
+
+<p><strong>Dónde</strong>: Inicio &rarr; Estado de vuelo &rarr; elegir fecha,
+origen y destino &rarr; [Ver estado del vuelo] </p>
+
+<p><img alt="estado de vuelos" src="lan01.png"
+style="width:100%; max-width:785px;"></p>
+
+<p>En cambio las horas de partida y llegada son mucho más visibles. </p>
+
+<p>De hecho, la fecha tal como está resulta un poco "invisible" y un usuario
+podría no darse cuenta de que eligió una fecha incorrecta e ir a Ezeiza a la
+hora del vuelo del día anterior o el siguiente. </p>
+
+<p><strong>Sugerencia</strong>: Mostrar la fecha con la misma tipografía que
+las horas. Eso la haría más visible, y además expresaría mejor la relación que
+hay entre ambos datos, que en última instancia los dos son componentes de un
+horario. </p>
+
+<p><strong>Sugerencia 2</strong>: No está claro inicialmente si los links
+"Anterior" y "Siguiente" se refieren a páginas, fechas, o algo más. Serían más
+explícitos si en vez estuvieran rotulados "Domingo" y "Martes" (en el ejemplo).
+</p>
+
+<p><strong>Sugerencia 3</strong>: En la selección de fecha, origen y destino la
+fecha del día está resaltada. También se podría preseleccionar el aeropuerto de
+destino más cercano a la ubicación geográfica del usuario. En Buenos Aires,
+Ezeiza es la opción obvia. Pero para un extranjero podría ser una ayuda. Y, en
+todo caso, si el aeropuerto ofrecido tiende a ser el correcto las más de als
+veces, le ahorra un trabajito al usuario. </p>
+
+<p><strong>Sugerencia 4</strong>: Es posible que un usuario que está esperando
+la llegada de un viajero controle el estado de los vuelos varias veces. Cada
+vez debe elegir los aeropuertos de salida y llegada. Si se persistiera esta
+información entre sesiones (cookie) se le ahorraría al usuario el odio de tener
+que entrar los mismos datos una y otra vez. </p>
+
+<p></p>
+
+<h5>Inconsistencia en el trato</h5>
+
+<p>En formulario de evaluación tutea al usuario en los labels, pero lo trata de
+usted dentro de los inputs. </p>
+
+<p><strong>Dónde</strong>: Inicio &rarr; Pestaña "EVALÚE NUESTRO SITIO" que
+aparece por el margen derecho. </p>
+
+<p><img alt="form de evaluación" src="lan02.png"></p>
+
+<p>Por ejemplo la última pregunta "<em>¿Cuál es el principal motivo por el que
+viajas en avión?</em>" ofrece una lista de respuestas encabezada con "<em>Elija
+una opción</em>". El tratamiento es inconsistente. </p>
+
+<p>Estos pequeños detalles transmiten una sensación de <em>baja calidad</em>
+que el usuario percibe subliminalmente, y la aplica no solo a la página web
+sino al total de la empresa. Un detalle aquí significa que también hay detalles
+en, por ejemplo, el mantenimiento de seguridad de los aviones. </p>
+
+<p><strong>Sugerencia</strong>: Elegir un modo de tratamiento y aplicarlo
+<em>en todas partes</em>, con la posible excepción de los términos de uso y
+páginas simi9lares. Si es necesario, confeccionar una guía para publicar
+páginas con un ckecklist (como el que usan los pilotos de los avionas al
+despegar) donde aparezcan controles como por ejemplo esto. </p>
+
+<p><strong>Sugerencia 2</strong>: Reformular la pregunta <em>¿Cuál es el
+principal motivo por el que viajas en avión?</em> de modo que <em>"Por que el
+tren es más lento"</em> no sea una respuesta válida (no voy en tren, voy en
+avión). </p>
+
+<p> </p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
+</body>
+</html>
