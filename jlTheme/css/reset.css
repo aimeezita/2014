@@ -4,13 +4,13 @@
   -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 /** Typographic reset */
-body { /* Use a serif font for nice readability, but not Times */
-  font: 17px/26px Skolar, Tisa, "Chaparral Pro", Merriweather, Georgia, serif; }
+body {  font: 15px/20px "Open Sans", Georgia, sans-serif; }
 
-h1, h2, h3, h4, h5, #logo, #top, .slidey b, .slidey label, .counter, input, textarea, button, .pagination {
-  font-family: "Helvetica Neue", sans-serif; font-weight: 300; }
+h1, h2, h3, h4, h5 { color:#505762; font-family:"Arvo",serif; font-weight:400; }
 
-pre, code, .mono { font: 12px/19px "Anonymous Pro", Consolas, monospace; padding: 0 2px; }
+#logo, #top, .slidey b, .slidey label, .counter, button, .pagination { font-family:"Arvo",serif; font-weight:400; }
+
+pre, code, textarea, input, .mono { font: 12px/19px "Anonymous Pro", Consolas, monospace; padding: 0 2px; }
 
 p { padding-bottom: 15px; }
 
@@ -21,8 +21,8 @@ img { max-width: 100%; height: auto; }
 a { text-decoration: none; }
   a img { border: none; }
 
-/** Layout reset */
-.wrap { min-width: 280px; max-width: 750px; width: 85%; margin: 0 auto; }
+/** Layout reset  JML 20140715: deleted rule max-width: 750px; */
+.wrap { min-width: 280px;  width: 92%; margin: 0 auto; }
 
 /**   Default colours */
 body, .items > li:first-child { color: #6e7886; }

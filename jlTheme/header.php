@@ -5,8 +5,12 @@
     <title><?php echo page_title('Page can’t be found'); ?> - <?php echo site_name(); ?></title>
 
     <meta name="description" content="<?php echo site_description(); ?>">
+
+    <!-- fonts for: headers, copy, code -->
+    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro:400,400italic,700' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" href="<?php echo theme_url('/css/reset.css'); ?>">
     <link rel="stylesheet" href="<?php echo theme_url('/css/style.css'); ?>">
     <link rel="stylesheet" href="<?php echo theme_url('/css/small.css'); ?>" media="(max-width: 400px)">

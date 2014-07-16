@@ -5,7 +5,7 @@
 
       <article>
         <?php echo mytheme_article_content(); ?>  
-        // was: <?php echo article_markdown(); ?>
+        <!-- was:  echo article_markdown(); -->
       </article>
 
       <section class="footnote">
@@ -18,10 +18,11 @@
     <section class="comments">
       <?php if(has_comments()): ?>
       <ul class="commentlist">
+        <h2>comments:</h2>
         <?php $i = 0; while(comments()): $i++; ?>
         <li class="comment" id="comment-<?php echo comment_id(); ?>">
           <div class="wrap">
-            <h2><?php echo comment_name(); ?></h2>
+            <p class="commentName"><?php echo comment_name(); ?></p>
             <time><?php echo relative_time(comment_time()); ?></time>
 
             <div class="content">

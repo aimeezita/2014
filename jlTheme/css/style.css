@@ -1,7 +1,13 @@
 /** */
 
-h1 { padding: 80px 0 40px; font-size: 40px; line-height: 48px; color: #505762; }
-  .search h1 { padding: 60px 0; }
+h1, h2, h3, h4, h5 { color:#505762; }
+
+h1 { font-size:40px; line-height:48px; padding:80px 0 40px; }
+h2 { font-size:32px; line-height:40px; padding:30px 0 20px; }
+h3 { font-size:28px; line-height:36px; padding:20px 0 12px; }
+h4 { font-size:22px; line-height:30px; padding:14px 0 8px; }
+h5 { font-size:20px; line-height:25px; padding:12px 0 8px; }
+h6 { font-size:16px; line-height:21px; padding:12px 0 8px; } 
 
 /* The slide-down panel at the very top of the page. Like literally. It's above the page, hidden. */
 .slidey { overflow: hidden; padding: 30px 0; background: #f3f5f8; border-bottom: 1px solid #e5e8ed; }
@@ -45,7 +51,7 @@ h1 { padding: 80px 0 40px; font-size: 40px; line-height: 48px; color: #505762; }
   .pagination a.next { float: right; }
 
 /** Give some extra space to single-page wrappers */
-.content.wrap { padding-bottom: 50px; }
+.content.wrap { padding-bottom: 50px; max-width: 60em; }
   .content.wrap ul, .content.wrap ol, .items li ul { padding: 20px 30px; }
     .content.wrap ul ul, .content.wrap ol ol, .items li ul ul { padding: 0 20px; }
 
@@ -63,6 +69,7 @@ ul.commentlist { margin-bottom: 40px; list-style: none; border-top: 1px solid rg
     ul.commentlist .counter { position: absolute; right: 0; top: 0; font-size: 25px; font-weight: 300; color: #cdd2da; }
 
 #comment { overflow: hidden; }
+  #comment .commentName {  color: #cdd2da; font-weight:bold; font-size:110%; }
   #comment label[for] { display: none; }
   #comment p { float: left; width: 48%; margin-right: 4%; margin-bottom: 10px; text-indent: 0; }
     #comment p + p { margin-right: 0; }

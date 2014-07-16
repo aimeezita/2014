@@ -1,14 +1,15 @@
-﻿.tocContainer { font-size:110%; margin-top:0.5em; margin-bottom:0.5em; padding:0.5em; padding-top:0px; }
+﻿.tocContainer { font-family:"Arvo",serif; font-weight:400; }
+﻿.tocContainer { font-size:120%; margin-top:0.5em; margin-bottom:0.5em; padding:0.5em; padding-top:0px; }
 .tocContainer a { text-decoration:none; }
 .tocContainer a:hover { text-decoration:underline; }
 .tocEntry { } /* a marker for anything that wants to be a tocEntry */
-.tocContainer a.tocLink { color:#00c; }
-.tocContainer a.tocLink:visited { color:#088; }
+.tocContainer a.tocLink { color:#000080; }
+.tocContainer a.tocLink:visited { color:#008080; }
 a.tocBackLink, a.tocBackLink:visited { display:block; float:right; font-size:12px; font-style:normal; text-decoration:none !important; padding-left:0.5em; font-weight:normal; color:rgb(192,192,192); }
 .tocBackTarget { }
-.tocContainer div.tocLevel1 { padding-top:0.3em; font-size:100%; font-weight:bold; }
-.tocContainer div.tocLevel2 { padding-left:2em; font-size:90%; font-weight:bold; }
-.tocContainer div.tocLevel3 { padding-left:4em; font-size:80%; }
-.tocContainer div.tocLevel4 { padding-left:6em; font-size:70%; }
-.tocContainer div.tocLevel5 { padding-left:8em; font-size:65%; solid blue; }
-.tocContainer div.tocLevel6 { padding-left:10em; font-size:65%; }
+.tocContainer div.tocLevel1 { padding-top:0.3em; font-size:110%; font-weight:bold; line-height: 140%;}
+.tocContainer div.tocLevel2 { padding-left:2em; font-size:100%; font-weight:bold; line-height: 130%;}
+.tocContainer div.tocLevel3 { padding-left:4em; font-size:90%; line-height: 130%; }
+.tocContainer div.tocLevel4 { padding-left:6em; font-size:80%; line-height: 120%;}
+.tocContainer div.tocLevel5 { padding-left:8em; font-size:75%; line-height: 110%; }
+.tocContainer div.tocLevel6 { padding-left:10em; font-size:75%; line-height: 110%;}
