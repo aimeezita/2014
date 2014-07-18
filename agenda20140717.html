@@ -5,49 +5,169 @@
   <meta http-equiv="Content-Language" content="en">
   <title>17Jul2014 Thu</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140716.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140718.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 17Jul2014 Thu </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140716.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140718.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 17Jul2014 Thu </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p>default text editor: set  ~/.local/share/applications/defaults.list</p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>blog</h3>
+<ol>
+  <li><span><img src="res/checkGray.png"> </span>Edited header.php to set the
+    title in line with the logo image</li>
+  <li><span><img src="res/checkGray.png"> </span>Installed FireFTP and
+    configured it to edit remote files with double click </li>
+  <li><span><img src="res/checkGray.png"> </span>Linked Nautilus to the hosting
+    remote folder (too slow: vim creates the swap file in the remote system?)
+    Requires a :set directory setting</li>
+  <li>Need to move some styles left in header.php into the appropriate css
+  files</li>
+  <li>Set wide &lt;pre&gt;s to extend beyond margins when the viewport is
+    narrow, leveraging the margin areas </li>
+  <li>Delete from article copy: 
+    <pre>&lt;div id="tocContainer" class="tocContainer"&gt;&lt;/div&gt;
+&lt;hr&gt;</pre>
+  </li>
+  <li>Checking php files containing "markdown": 
+    <pre style="font-size:80%;">jlanus@juan-T61:/var/www/html/a$ grep -ilR markdown *
+1  anchor/language/en_GB/<strong>pages</strong>.php
+   only contains literal strings 
+
+2  anchor/<strong>helpers</strong>.php
+   the parse() function now does nothing, commented out a section
+   that matched md HTML-like patterns
+
+3  anchor/routes/<strong>posts</strong>.php
+      calls form.php that returns the form controls data
+      form calls Html::element() with the textarea properties in an array
+
+4  anchor/libraries/<strong>markdown</strong>.php
+
+5  anchor/models/<strong>extend</strong>.php
+
+6  anchor/views/assets/js/editor.js
+   restored Zepto instead of jQuery 
+
+7  anchor/views/assets/js/dragdrop.js
+
+8  anchor/functions/<strong>articles</strong>.php
+
+9  themes/default/<strong>posts</strong>.php
+
+10 themes/default/<strong>article</strong>.php
+
+jlanus@juan-T61:/var/www/html/a$ grep -ilR parse *
+11 anchor/<strong>run</strong>.php
+
+12 anchor/<strong>helpers</strong>.php
+
+13 anchor/libraries/<strong>markdown</strong>.php
+
+14 anchor/libraries/<strong>themes</strong>.php
+
+15 anchor/libraries/<strong>events</strong>.php
+
+16 anchor/views/assets/js/zepto.js
+
+17 anchor/functions/<strong>pages</strong>.php
+
+18 anchor/functions/<strong>articles</strong>.php
+
+19 install/<strong>run</strong>.php
+
+20 system/<strong>input</strong>.php
+
+21 system/<strong>uri</strong>.php
+
+
+/* Encode html to entities */
+function e($str) {
+  return <strong>htmlspecialchars</strong>($str, ENT_NOQUOTES, Config::app('encoding'), false);
+}
+anchor/routes/pages.php:$input['title'] = htmlspecialchars($input['title'], ENT_QUOTES, Config::app('encoding'), false);
+anchor/libraries/markdown.php:$codeblock = htmlspecialchars($codeblock, ENT_NOQUOTES);
+anchor/libraries/markdown.php:$code = htmlspecialchars(trim($code), ENT_NOQUOTES);
+anchor/libraries/html.php:return htmlspecialchars($value, ENT_QUOTES, static::encoding(), false);
+system/helpers.php:return htmlspecialchars($str, $quotes, Config::app('encoding'), false);
+
+In: libraries/html.php
+public static function entities($value) {
+  return htmlentities($value, ENT_QUOTES, static::encoding(), false);
+}
+
+public static function decode($value) {
+  return html_entity_decode($value, ENT_QUOTES, static::encoding());
+}
+
+public static function specialchars($value) {
+  return htmlspecialchars($value, ENT_QUOTES, static::encoding(), false);
+}
+
+public static function Markdown($text) {
+  $md = new Markdown;
+  return $md-&gt;transform($text);
+}
+
+    </pre>
+  </li>
+</ol>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>

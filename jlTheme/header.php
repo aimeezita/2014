@@ -70,6 +70,17 @@
         </div>
       </div>
 
+
+
+<style>
+  #top #logo { float:left; margin-right:30px; margin-bottom:26px; }
+  #top #main { float:right; margin-left:20px; }
+  #top #postTitle { display:inline; }
+  #top #tocContainer { clear:both; max-width:700px; margin:auto; }
+  #top #tocContainer a { display:block; }
+  #top a { float:none; }
+</style>
+
       <header id="top">
         <a id="logo" href="<?php echo base_url(); ?>">
           <img src="<?php echo base_url() . "themes/jl/img/tecnosol.png"; ?>" alt="<?php echo site_name(); ?>">
@@ -92,4 +103,13 @@
           </ul>
         </nav>
         <?php endif; ?>
+
+        <h1 id="postTitle"><?php echo page_title('Page can’t be found'); ?></h1>
+
+        <div id="tocContainer" class="tocContainer">
+          <div class="toc"></div>
+        </div>
+
       </header>
+
+
