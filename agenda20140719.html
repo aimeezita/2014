@@ -5,49 +5,163 @@
   <meta http-equiv="Content-Language" content="en">
   <title>19Jul2014 Sat</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140718.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140720.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 19Jul2014 Sat </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140718.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140720.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 19Jul2014 Sat </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p>Packages installed: <code>zcat -f /var/log/dpkg.log* | grep "\ install\ " |
+sort</code>  </p>
+
+<p>Ubuntu: <a
+href="https://help.ubuntu.com/community/InstallingSoftware">InstallingSoftware</a>
+</p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3 id="local">local Anchor (<a href="agenda20140720.html#local">continued</a>)
+</h3>
+<ol>
+  <li><a
+    href="https://help.ubuntu.com/community/ApacheMySQLPHP">ApacheMySQLPHP</a> 
+    <p>A very good instructions set to set up LAMP in Ubuntu. "This is to help
+    people set up and install a LAMP (Linux-Apache-MySQL-PHP) server in Ubuntu,
+    including Apache 2, PHP 5 and MySQL 4.1 or 5.0." </p>
+  </li>
+  <li><code>sudo vi /etc/php5/apache2/php.ini</code> 
+    <p>This is the active php.ini file, checked that short-open-tag was
+    disabled </p>
+  </li>
+  <li>did this: <a
+    href="http://blag.borap.net/2010/05/04/re-enabling-php-in-user-directories-in-ubuntu-10-04/">Re-enabling
+    PHP in User Directories in Ubuntu 10.04</a> 
+    <pre>sudo vi /etc/apache2/mods-enabled/php5.conf
+ ...
+# Running PHP scripts in user directories is disabled by default
+# 
+# To re-enable PHP in user directories comment the following lines
+# (from &lt;IfModule ...&gt; to &lt;/IfModule&gt;.) Do NOT set it to On as it
+# prevents .htaccess files from disabling it.
+#&lt;IfModule mod_userdir.c&gt;
+#    &lt;Directory /home/*/public_html&gt;
+#        php_admin_flag engine Off
+#    &lt;/Directory&gt;
+#&lt;/IfModule&gt;</pre>
+  </li>
+  <li>Tried a full LAMP install: 
+    <pre>sudo apt-get install lamp-server^
+ ...
+The following NEW packages will be installed:
+  apache2-mpm-prefork
+    </pre>
+  </li>
+  <li>restart Apache: 
+    <p><code>sudo service apache2 restart</code></p>
+  </li>
+  <li>In the Apache config file set <code>AllowOverride All</code> in Directory
+    sections, to enable the .htaccess files. </li>
+  <li>In tecnosol the <code>/public_html/juanlanus/.htaccess</code> file has: 
+    <pre># use PHP 5.3
+# AddHandler application/x-httpd-php53 .php .php5 .php4 .php3
+# AddType application/x-httpd-php53 .php
+# SetEnv PHP_VER 5_3
+
+# recursive path:
+suPHP_ConfigPath /home/tecnosol/public_html
+
+# Use PHP 5.3 as default
+# AddHandler application/x-httpd-php5 .php</pre>
+    <p>Seems as needed in the local configurarion to activate PHP. </p>
+  </li>
+  <li>In <code>/public_html/juanlanus/.htaccess/a/.htaccess</code>: 
+    <pre>Options -indexes
+
+&lt;IfModule mod_rewrite.c&gt;
+  RewriteEngine On
+  RewriteBase /a
+
+  # Allow any files or directories that exist to be displayed directly
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Rewrite all other URLs to index.php/URL
+  RewriteRule ^(.*)$ index.php?/$1 [L]
+&lt;/IfModule&gt;
+
+&lt;IfModule !mod_rewrite.c&gt;
+  ErrorDocument 404 index.php
+&lt;/IfModule&gt;</pre>
+  </li>
+  <li>Stopped jobs: 
+    <pre>jlanus@juan-T61:/var/log/apache2$ jobs
+[2]+  Stopped                 vi php-i.txt  (wd: ~)
+[3]   Stopped                 sudo vi /etc/php5/apache2/php.ini  (wd: ~)
+[4]   Stopped                 sudo vi /etc/apache2/apache2.conf
+[5]   Stopped                 sudo vi /etc/apache2/sites-available/0*
+[6]-  Stopped                 sudo apache2ctl -M | greg rewrite</pre>
+  </li>
+  <li>In php.ini: 
+    <pre>; Maximum amount of memory a script may consume (128MB)
+; http://php.net/memory-limit
+memory_limit = 256M // was 128</pre>
+  </li>
+</ol>
+
+<p> </p>
+
+<p></p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
