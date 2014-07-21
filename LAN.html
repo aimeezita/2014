@@ -16,6 +16,11 @@
       $(document).ready(function () {
       });
   </script>
+  <style>
+  #agendaBody p { margin-top:8px; margin-bottom:16px; }
+  #agendaHeader { max-width:44em; }
+  a.tocBackLink  {padding-right: 1.5em; }
+</style>
 </head>
 
 <body>
@@ -48,34 +53,49 @@
 
 <h5>Menú instantáneo</h5>
 
-<p>Al pasar por encima del menú horizontal, las opciones se despliegan muy
-rápido y un usuario que está en la posición [1] y quiere picar en la [2] puede
-terminar seleccionando la "<em>Guía de destinos LAN / Lonely Planet</em>". </p>
+<p>Al pasar el cursor por encima del menú horizontal, las opciones se
+despliegan muy rápido y se produce el efecto de <em>cambio inesperado</em>, que
+le produce al usuario la sensación de haber hecho algo mal. </p>
 
 <p><img alt="menú que se interpone" src="lan04.png"></p>
 
-<p>Al desplegarse el menú, la "<em>Guía de destinos LAN / Lonely Planet</em>"
-ocupa la posición donde el usuario quiere picar, y la testaña
-"<em>Check-in</em>" desciende. </p>
+<div class="imgR" style="margin:0 0 1em 1.5em;">
+<img src="lan05.png" alt="Lonely Planet"> </div>
 
-<p>El resultado es inquietante para el usuario, por que la página se refresca y
-vuelve la misma, un poquito después. </p>
+<p>Un usuario que está en la posición [1] y quiere picar en la [2] puede
+terminar seleccionando la "<em>Guía de destinos LAN / Lonely Planet</em>". </p>
 
-<p><strong>Sugerencia</strong>: No desplegar el menú cuando el usuario pasa el
-cursor por encima (hover), sino cuando lo pica. </p>
+<p>Al desplegarse el menú, las pestañas "Vuelos / <em>Check-in / LANPASS</em>"
+descienden y un link "<em>Guía de destinos LAN / Lonely Planet</em>" pasa a
+ocupar la posición donde el usuario quiere picar. </p>
+
+<p><strong>Sugerencia 1</strong>: No desplegar el menú cuando el usuario pasa
+el cursor por encima (hover), sino cuando lo pica. Así es como funciona en <a
+target="_other"
+href="http://www.aa.com/homePage.do?locale=en_US&amp;pref=true">American
+Airlines</a>, por ejemplo. </p>
+
+<p></p>
 
 <p><strong>Sugerencia 2</strong>: Solo desplegar el menú cuando el usuario
 estacionó el cursor encima por una fracción de segundo, por ejemplo usando la
 técnica "<a
 href="http://cherne.net/brian/resources/jquery.hoverIntent.html">hoverintent</a>"
-para demorar el evento <em>hover</em> unos milisegundos. </p>
+para demorar el evento <em>hover</em> unos milisegundos. <br>
+Así es como funciona en este mismo menú: al retirar el cursor el panel
+desplegado demora un poquito antes de ocultarse. </p>
 
 <p></p>
 
 <h5>Fecha invisible</h5>
 
-<p>En la versión ancha la fecha tiene el mismo valor visual que los links
-"Anterior" y "Siguiente". </p>
+<p>En la versión ancha de "<a target="_other"
+href="http://www.lan.com/cgi-bin/flight_status/paso1.cgi">Estado de
+vuelos</a>", una vez completados los datos de fecha, origen y destino, la fecha
+tiene el mismo valor visual que los links "Anterior" y "Siguiente".</p>
+
+<p>"Anterior" y "Siguiente" son artefactos de navegación, mientras que la fecha
+es información viva y debería desplegarse con un estilo diferente. </p>
 
 <p><strong>Dónde</strong>: Inicio &rarr; Estado de vuelo &rarr; elegir fecha,
 origen y destino &rarr; [Ver estado del vuelo] </p>
@@ -86,10 +106,10 @@ style="width:100%; max-width:785px;"></p>
 <p>En cambio las horas de partida y llegada son mucho más visibles. </p>
 
 <p>De hecho, la fecha tal como está resulta un poco "invisible" y un usuario
-podría no darse cuenta de que eligió una fecha incorrecta e ir a Ezeiza a la
-hora del vuelo del día anterior o el siguiente. </p>
+podría no darse cuenta de que eligió una fecha incorrecta e ir al aeropuerto a
+la hora del vuelo del día anterior o el siguiente.</p>
 
-<p><strong>Sugerencia</strong>: Mostrar la fecha con la misma tipografía que
+<p><strong>Sugerencia 1</strong>: Mostrar la fecha con la misma tipografía que
 las horas. Eso la haría más visible, y además expresaría mejor la relación que
 hay entre ambos datos, que en última instancia los dos son componentes de un
 horario. </p>
@@ -111,6 +131,14 @@ la llegada de un viajero controle el estado de los vuelos varias veces. Cada
 vez debe elegir los aeropuertos de salida y llegada. Si se persistiera esta
 información entre sesiones (cookie) se le ahorraría al usuario el odio de tener
 que entrar los mismos datos una y otra vez. </p>
+
+<p><strong>Sugerencia 5</strong>: Al picar en los links "Anterior" o
+"Siguiente" no sucede nada durante unos segundos, por que la información demora
+antes de aparecer. El usuario debería tener algún feedback que le asegure que
+efectivamente se disparó el proceso, por ejemplo un throbber o un cambio visual
+en el link. En este caso particular el link debería deshabilitarse, por que
+picando reiteradamente sobre el mismo con intervalos de un segundo la página
+nunca cambia (cada vez comienza una nueva espera). </p>
 
 <p></p>
 
