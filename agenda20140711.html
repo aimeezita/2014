@@ -53,11 +53,17 @@ alt="next" src="res/right.gif"></a>
   <li>Check PHP</li>
   <li>Check mySQL</li>
   <li>Created db anchor, user anchor pw marakuta with custom privileges </li>
-  <li><pre>Anchor local version: 
+  <li><pre>Anchor T61 local version: 
 database: 
 anchor  mkt
 publisher:
 admin  mkt</pre>
+  </li>
+  <li><pre>Anchor glb local version: 
+database: 
+anchor  anchor
+publisher:
+jlanus  anchor</pre>
   </li>
 </ul>
 
@@ -82,8 +88,7 @@ admin  mkt</pre>
 &lt;body&gt;
 &lt;p&gt;&lt;?php echo apache_get_version(),"&lt;/p&gt;&lt;p&gt;mod_rewrite $res"; ?&gt;&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-</pre>
+&lt;/html&gt;</pre>
 
 <p></p>
 
@@ -120,7 +125,6 @@ service apache2 restart</pre>
 #   AllowOverride None
 #   Require all granted
 #&lt;/Directory&gt;
-
 </pre>
 
 <p></p>

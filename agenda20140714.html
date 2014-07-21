@@ -46,9 +46,44 @@ alt="next" src="res/right.gif"></a>
 </div>
 
 <div id="agendaBody">
-<h3>binacacus tuto</h3>
+<h3 id="binacacus">binacacus tuto</h3>
 <ol>
-  <li>Typo: "and expandd the ZIP there."</li>
+  <li>Allow a post to belong to more than one category </li>
+  <li>In Anchor editor, set the [Save] button so that it's visible all the time
+  </li>
+  <li>In Anchor editor, clear the [Your article has been updated] banner when
+    the input is changed, set it in the same line as the buttons </li>
+  <li>Delete the post numbering thing </li>
+  <li>The editor still screws the char entities when it reads a post [?] </li>
+  <li>Add an option to the TOC plugin to number the items of selected levels
+    and subtrees </li>
+  <li>Make a static HTML page like a rendered post article, for testing of new
+    posts, with (local?) access to all que supporting files, not needing a PHP
+    run </li>
+  <li>In &lt;div id="binAbacus" ...&gt; set the background to white </li>
+  <li>The first ball of the abacus seems a bit (a pix, in fact) more crammed
+    that the others </li>
+  <li>Check if the &lt;pre&gt; style specifies a shedow and if so, delete it
+  </li>
+  <li>Replace "checked that my computer had Node.js" by "checked Node.js" </li>
+  <li>Try to set the TOC links to display:block, need to control the whole TOC
+    max-width to something like 500px
+    <pre>.tocContainer {
+    font-family:"Arvo", serif;
+    font-weight:400;
+    max-width:500px;
+    width:100%;
+}</pre>
+  </li>
+  <li>Delete the ":" at the end of the "comments:" heading </li>
+  <li>Move the &lt;h1&gt; title to the right of the logo: float the other
+    blocks (logo, nav) and let the &lt;h1&gt; flow with display:inline; - maybe
+    allow the TOC also inside the (white bg) header area and spare the
+    &lt;hr&gt; </li>
+  <li>Don't bold the TOC links </li>
+  <li>Delete the blank space at the end of the article copy </li>
+  <li>Set line-height to 100% for &lt;pre&gt; </li>
+  <li>Typo: "and <strong>expandd</strong> the ZIP there."</li>
   <li><span><img src="res/checkGray.png"> </span>Headers in reset.css: 
     <pre>h1, h2, h3, h4, h5 { color:#505762; font-family:"Arvo",serif; font-weight:400; }
 h1 { font-size:40px; line-height:48px; padding:80px 0 40px; }
@@ -94,7 +129,7 @@ h5 { font-size:16px; line-height:21px; padding:12px 0 8px; }
   <li><span><img src="res/checkGray.png"> </span>Upload doc.css</li>
   <li><span><img src="res/checkGray.png"> </span>Upload binabacus.css</li>
   <li><span><img src="res/checkGray.png"> </span>Edit reset.css: more width,
-    monospace in textarea
+    monospace in textarea 
     <pre>font: 12px/19px "Anonymous Pro", Consolas, monospace; padding: 0 2px; </pre>
   </li>
   <li><span><img src="res/checkGray.png"> </span>No TOC: ¿the target is
