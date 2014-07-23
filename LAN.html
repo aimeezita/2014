@@ -19,8 +19,7 @@
   <style>
   #agendaBody p { margin-top:8px; margin-bottom:16px; }
   #agendaHeader { max-width:44em; }
-  a.tocBackLink  {padding-right: 1.5em; }
-</style>
+  a.tocBackLink  {padding-right: 1.5em; }</style>
 </head>
 
 <body>
@@ -54,34 +53,40 @@
 <h5>Menú instantáneo</h5>
 
 <p>Al pasar el cursor por encima del menú horizontal, las opciones se
-despliegan muy rápido y se produce el efecto de <em>cambio inesperado</em>, que
-le produce al usuario la sensación de haber hecho algo mal. </p>
+despliegan muy rápido y ocurre un <em>cambio inesperado</em>, que le produce al
+usuario la sensación de haber hecho algo mal. </p>
 
-<p><img alt="menú que se interpone" src="lan04.png"></p>
+<p><img alt="menú que se interpone" src="lan04.png"
+style="width:100%; max-width:532px;"></p>
 
 <div class="imgR" style="margin:0 0 1em 1.5em;">
 <img src="lan05.png" alt="Lonely Planet"> </div>
-
-<p>Un usuario que está en la posición [1] y quiere picar en la [2] puede
-terminar seleccionando la "<em>Guía de destinos LAN / Lonely Planet</em>". </p>
 
 <p>Al desplegarse el menú, las pestañas "Vuelos / <em>Check-in / LANPASS</em>"
 descienden y un link "<em>Guía de destinos LAN / Lonely Planet</em>" pasa a
 ocupar la posición donde el usuario quiere picar. </p>
 
+<p>Un usuario que está en la posición [1] y quiere picar en la [2] puede
+terminar seleccionando la "<em>Guía de destinos LAN / Lonely Planet</em>". </p>
+
 <p><strong>Sugerencia 1</strong>: No desplegar el menú cuando el usuario pasa
 el cursor por encima (hover), sino cuando lo pica. Así es como funciona en <a
 target="_other"
 href="http://www.aa.com/homePage.do?locale=en_US&amp;pref=true">American
-Airlines</a>, por ejemplo. </p>
+Airlines</a>, por ejemplo.</p>
 
-<p></p>
+<p>De esta manera se produce el mismo cambio que antes, pero deja de ser
+<em>inesperado</em>. </p>
+
+<p>Adicionalmente, si la página se abriera en un dispositivo touch, seguiría
+funcionando de la misma manera. </p>
 
 <p><strong>Sugerencia 2</strong>: Solo desplegar el menú cuando el usuario
 estacionó el cursor encima por una fracción de segundo, por ejemplo usando la
 técnica "<a
-href="http://cherne.net/brian/resources/jquery.hoverIntent.html">hoverintent</a>"
-para demorar el evento <em>hover</em> unos milisegundos. <br>
+href="http://cherne.net/brian/resources/jquery.hoverIntent.html">hoverintent</a>",
+para demorar el evento <em>hover</em> (detección del cursor flotando sobre un
+elemento de la página) unos milisegundos. <br>
 Así es como funciona en este mismo menú: al retirar el cursor el panel
 desplegado demora un poquito antes de ocultarse. </p>
 
@@ -123,7 +128,7 @@ explícitos si en vez estuvieran rotulados "Domingo" y "Martes" (en el ejemplo).
 fecha del día está resaltada. También se podría preseleccionar el aeropuerto de
 destino más cercano a la ubicación geográfica del usuario. En Buenos Aires,
 Ezeiza es la opción obvia. Pero para un extranjero podría ser una ayuda. Y, en
-todo caso, si el aeropuerto ofrecido tiende a ser el correcto las más de als
+todo caso, si el aeropuerto ofrecido tiende a ser el correcto las más de las
 veces, le ahorra un trabajito al usuario. </p>
 
 <p><strong>Sugerencia 4</strong>: Es posible que un usuario que está esperando
@@ -136,7 +141,7 @@ que entrar los mismos datos una y otra vez. </p>
 "Siguiente" no sucede nada durante unos segundos, por que la información demora
 antes de aparecer. El usuario debería tener algún feedback que le asegure que
 efectivamente se disparó el proceso, por ejemplo un throbber o un cambio visual
-en el link. En este caso particular el link debería deshabilitarse, por que
+en el link. En este caso particular el link debería desactivarse, por que
 picando reiteradamente sobre el mismo con intervalos de un segundo la página
 nunca cambia (cada vez comienza una nueva espera). </p>
 
@@ -150,7 +155,8 @@ usted dentro de los inputs. </p>
 <p><strong>Dónde</strong>: Inicio &rarr; Pestaña "EVALÚE NUESTRO SITIO" que
 aparece por el margen derecho. </p>
 
-<p><img alt="form de evaluación" src="lan02.png"></p>
+<p><img alt="form de evaluación" src="lan02.png"
+style="width:100%; max-width:604px;"></p>
 
 <p>Por ejemplo la última pregunta "<em>¿Cuál es el principal motivo por el que
 viajas en avión?</em>" ofrece una lista de respuestas encabezada con "<em>Elija
@@ -161,11 +167,11 @@ que el usuario percibe subliminalmente, y la aplica no solo a la página web
 sino al total de la empresa. Un detalle aquí significa que también hay detalles
 en, por ejemplo, el mantenimiento de seguridad de los aviones. </p>
 
-<p><strong>Sugerencia</strong>: Elegir un modo de tratamiento y aplicarlo
+<p><strong>Sugerencia</strong> 1: Elegir un modo de tratamiento y aplicarlo
 <em>en todas partes</em>, con la posible excepción de los términos de uso y
-páginas simi9lares. Si es necesario, confeccionar una guía para publicar
-páginas con un ckecklist (como el que usan los pilotos de los avionas al
-despegar) donde aparezcan controles como por ejemplo esto. </p>
+páginas similares. Si es necesario, confeccionar una guía para publicar páginas
+con un ckecklist (como el que usan los pilotos de los aviones al despegar)
+donde aparezcan controles como por ejemplo esto. </p>
 
 <p><strong>Sugerencia 2</strong>: Reformular la pregunta <em>¿Cuál es el
 principal motivo por el que viajas en avión?</em> de modo que <em>"Por que el

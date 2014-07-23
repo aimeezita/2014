@@ -4,7 +4,7 @@
   html,body             { height:100%; margin-top:0px; }
 
   #agendaHeader h1      { margin:0px; line-height:1em; margin-bottom:10px; padding-top:0; }
-  #agendaHeader         { max-width:50em; margin:0px; margin-top:50px; }
+  #agendaHeader         { max-width:54em; margin:0px; margin-top:50px; }
   #agendaHeader span#linkPER { margin-left:8em; }
   #agendaHeader ul      { width:100%; margin:0px; }
   #agendaHeader li img  { vertical-align:bottom; }
@@ -101,7 +101,7 @@
 
 
 @media screen { 
-  #agendaBody           { max-width:44em; }
+  #agendaBody           { max-width:54em; }
   #agendaHeader h1      { text-shadow:0.15em 0.15em 4px #c0c0c0; }
   a                     { text-decoration:underline; color:#000040; }
   a:link                { text-decoration:underline; }
