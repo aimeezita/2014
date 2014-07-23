@@ -5,49 +5,141 @@
   <meta http-equiv="Content-Language" content="en">
   <title>22Jul2014 Tue</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+  </script>
+  <script type="text/javascript" src="res/agenda.js">
+  </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+  </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140721.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140723.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 22Jul2014 Tue </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140721.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140723.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 22Jul2014 Tue </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>character entities in textarea</h3>
+
+<h4>translating character entities</h4>
+
+<p><a
+href="https://www.google.com/search?q=html+character+entities+displayed+in+textarea">Search
+page</a> </p>
+
+<p><a
+href="http://lars.st0ne.at/blog/prevent+decoding+of+html+entities+in+textareas">PHP
+code</a> to encode the ampersands before displaying the text into a textarea:
+</p>
+<pre>&lt;?php
+$raw_html = '&lt;span&gt;&amp;quot;usage: %s &amp;lt;argument1&amp;gt; &amp;lt;argument2&amp;gt;&amp;quot;&lt;/span&gt;';
+$to_textarea = preg_replace('/&amp;(\w+;)/', '&amp;amp;$1', $raw_html );
+echo $to_textarea;
+?&gt;</pre>
+
+<p>In PHP, the correct function would be <code>htmlspecialchars()</code>. </p>
+
+<p></p>
+
+<p>vi anchor/routes/pages.php</p>
+<pre>// encode title
+$input['title'] = <strong>htmlspecialchars</strong>($input['title'], ENT_QUOTES, Config::app('encoding'), false);</pre>
+
+<p>vi anchor/libraries/markdown.php</p>
+<pre>  function _doCodeBlocks_callback($matches) {
+    $codeblock = $matches[1];
+
+    $codeblock = $this-&gt;outdent($codeblock);
+    $codeblock = <strong>htmlspecialchars</strong>($codeblock, ENT_NOQUOTES);
+
+    # trim leading newlines and trailing newlines
+    $codeblock = preg_replace('/\A\n+|\n+\z/', '', $codeblock);
+
+    $codeblock = "&lt;pre&gt;&lt;code&gt;$codeblock\n&lt;/code&gt;&lt;/pre&gt;";
+    return "\n\n".$this-&gt;hashBlock($codeblock)."\n\n";
+  }
+
+  function makeCodeSpan($code) {
+  #
+  # Create a code span markup for $code. Called from handleSpanToken.
+  #
+    $code = <strong>htmlspecialchars</strong>(trim($code), ENT_NOQUOTES);
+    return $this-&gt;hashPart("&lt;code&gt;$code&lt;/code&gt;");
+  }</pre>
+
+<p> vi anchor/libraries/html.php</p>
+<pre>  public static function specialchars($value) {
+    return <strong>htmlspecialchars</strong>($value, ENT_QUOTES, static::encoding(), false);
+  }</pre>
+
+<p>vi anchor/libraries/html.php (not called anywhere)</p>
+<pre>  public static function specialchars($value) {
+    return htmlspecialchars($value, ENT_QUOTES, static::encoding(), false);
+  }</pre>
+
+<p>system/session/selpers.php</p>
+<pre>/**
+ * Encode html to entities
+ */
+function e($str, $quotes = ENT_NOQUOTES) {
+  return htmlspecialchars($str, $quotes, Config::app('encoding'), false);
+}</pre>
+
+<p>The response is sent to the browser at the end of the send() method in class
+response (a/system/response.php)</p>
+<pre>    // output the final content
+    if($this-&gt;output) echo $this-&gt;output;
+NO! if($this-&gt;output) echo htmlspecialchars( $this-&gt;output, ENT_NOQUOTES | ENT_SUBSTITUTE | ENT_HTML5 );
+</pre>
+
+<h4>zepto editor</h4>
+
+<p>The page uses editor.js, a Zepto plugin that provides the MD editor
+functionality (the bold - italic - code - link buttons strip). </p>
+
+<p>This sould be avoided, or replaced with the same functions but for HTML, not
+Markdown. Also, the buttons should have keyboard shortcuts. </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
