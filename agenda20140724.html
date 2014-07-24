@@ -46,7 +46,7 @@ alt="next" src="res/right.gif"></a>
 </div>
 
 <div id="agendaBody">
-<h3>zzz</h3>
+<h3>LAN</h3>
 
 <p></p>
 
@@ -73,8 +73,37 @@ alt="next" src="res/right.gif"></a>
 </div>
 
 <p> </p>
+<hr>
 
-<p> </p>
+<h3>anchor</h3>
+
+<p>And the fix is (in <code>/var/www/html/a/anchor/views/posts/edit.php</code>)
+ ...</p>
+<pre>  &lt;fieldset class="main"&gt;
+    &lt;div class="wrap"&gt;
+      // change suggested by Juan Lanus to fix an issue of character entities being
+      // replaced by the characters they represent when HTML content is rendered again,
+      // after saving the post, or when it's set to be updated
+      <strong>&lt;?php echo Form::textarea(
+        'html',
+        htmlspecialchars(
+          Input::previous('html', $article-&gt;html),
+          ENT_NOQUOTES | ENT_SUBSTITUTE | ENT_HTML5 
+        ),
+        array( 
+          'placeholder' =&gt; __('posts.content_explain')
+        ));
+      ?&gt;</strong>
+
+
+      &lt;?php echo Form::textarea('html', Input::previous('html', $article-&gt;html), array(
+        'placeholder' =&gt; __('posts.content_explain')
+      )); ?&gt;
+
+
+      &lt;?php echo $editor; ?&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;</pre>
 
 <p> </p>
 
