@@ -48,6 +48,17 @@ alt="next" src="res/right.gif"></a>
 <div id="agendaBody">
 <h3>blog</h3>
 <ol>
+  <li>Control width with <code>.main-wrap { max-width:58em; }</code> </li>
+  <li>Implement a "Text has been changed..." dialog </li>
+  <li>Disable the spellchecker in the textarea with <code>&lt;textarea
+    spellcheck="false"&gt;&lt;/textarea&gt;</code> </li>
+  <li>Check the <code>height</code> attribute of the editor textarea </li>
+  <li>Style the HTML input editor to display its boundaries, like for example
+    with <code>background:rgb(248, 248, 240);</code> </li>
+  <li>The &lt;title&gt; of the starting page should be "Juan Lanus blog"
+    instead of "My posts and thoughts"</li>
+  <li>The posts page displays the binabacus post, in full, and nothing else</li>
+  <li>Do not display the article TOCs in the blogs listing page </li>
   <li><span><img src="res/checkGray.png"> </span>Edited header.php to set the
     title in line with the logo image</li>
   <li><span><img src="res/checkGray.png"> </span>Installed FireFTP and
@@ -142,7 +153,6 @@ public static function Markdown($text) {
   $md = new Markdown;
   return $md-&gt;transform($text);
 }
-
     </pre>
   </li>
 </ol>
