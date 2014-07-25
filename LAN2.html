@@ -17,9 +17,10 @@
       });
   </script>
   <style>
-  #agendaBody p { margin-top:8px; margin-bottom:16px; }
-  #agendaHeader { max-width:44em; }
-  a.tocBackLink  {padding-right: 1.5em; }</style>
+#agendaBody p { margin-top:8px; margin-bottom:16px; }
+#agendaHeader { max-width:44em; }
+a.tocBackLink  {padding-right: 1.5em; }
+ .imgR { float:right; margin-left: 2em; }</style>
 </head>
 
 <body>
@@ -63,28 +64,10 @@
   <li>Experiencia anterior. </li>
 </ol>
 
+<h3>Genralidades</h3>
+
 <p>De la investigación de uso (no) realizada surge que los usuarios arriban al
 sitio web de LAN con alguno de los siguientes objetivos: </p>
-
-<div>
-<ul class="iconList sevenCol">
-  <li><a title="Estado de vuelos"
-    href="http://www.lan.com/cgi-bin/flight_status/paso1.cgi"
-    class="estadoVuelo" rel="mx">Estado de vuelos </a> </li>
-  <hr size="90">
-  <li><a title="Check-in" href="http://www.lan.com/cgi-bin/checkin/paso1.cgi"
-    class="checkin" rel="mx">Check-in </a> </li>
-  <hr size="90">
-  <li><a title="Mis viajes"
-    href="http://www.lan.com/cgi-bin/mis_viajes/mis_viajes.cgi"
-    class="misViajes" rel="mx">Mis viajes </a> </li>
-  <hr size="90">
-  <li><a title="Pago de reserva"
-    href="http://www.lan.com/cgi-bin/pago_reserva/paso1.cgi"
-    class="pagoReserva" rel="mx">Pago de reserva </a> </li>
-  <hr size="90">
-</ul>
-</div>
 <ol style="margin-left:2em;">
   <li><img alt="map" src="lanMapB.png" class="imgR"> 
     <p>Investigar sobre la oferta de LAN (destinos, precios y horarios) y
@@ -106,18 +89,87 @@ sitio web de LAN con alguno de los siguientes objetivos: </p>
      <br>
      </p>
   </li>
-  <li><p><img alt="bus" src="lanBusB.png" class="imgR">www<br>
-     <br>
-     </p>
+  <li><p><img alt="bus" src="lanBusB.png" class="imgR">Varios otros objetivos,
+    necesarios pero con audiencia mucho menor</p>
   </li>
 </ol>
 
-<p></p>
+<p>Además se tiene en cuenta que: </p>
+<ul>
+  <li>Un mismo usuario entra al sitio con diversos objetivos, y en distintas
+    oportunidades. Pero cuando entra lo más frecuente es que tenga un único
+    objetivo. </li>
+  <li>Algunos usuarios tienen mucha práctica y dominan la operación del sitio
+    de LAN, mientras que otros no lo conocen. </li>
+  <li>Algunos usuarios son hábiles para la operación de la Internet en general,
+    mientras que otros tienen menos práctica y menos seguridad. </li>
+  <li>Es oportuno considerar la incorporación de características de
+    <em>accesibilidad</em> a la interfase del sitio. Esto se está transformando
+    ya en una exigencia. </li>
+  <li>El sitio está organizado replicando la organización interna de la
+    Empresa. </li>
+</ul>
+
+<h3>Propuesta en general</h3>
+
+<h5>esta es una propuesta para construír encima</h5>
+
+<p>Una primera versión del <em>menú inicial</em>. como para empezar a construír
+consenso, se compone de links a las áreas más frecuentemente accedidas por los
+usuarios mas alguna que sea de interés estratégico para la Empresa. </p>
+
+<h5>menú directo</h5>
+
+<p>La idea central es presentarle al usuario en la página de inicio un
+artefacto de navegación que llamaremos <em>menú inicial</em>, aunque tenga un
+aspecto diferente de lo que el término "menú" sugiere. Es una lista de opciones
+de navegación. </p>
+
+<p>El menú puede ser navegado de manera simple por alguien con poca práctica, y
+rápidamente por los usuarios expertos, con una jerarquía de links que se
+despliegan oportunamente. </p>
+
+<h5>ofertas <em>targeted</em></h5>
+
+<p>Mientras el usuario navega el sitio en pos de sus objetivos, queremos
+mostrarle información sobre la oferta de servicios complementarios que puede
+adquirir. </p>
+
+<p>Un criterio es darle el usuario un camino directo a lo que quiere, y una vez
+que está allí mostrarle ofertas complementarias, dentro de lo posible
+relacionadas con su viaje. Por ejemplo si está buscando vuelos al Caribe no
+mostrarle publicidad de equipos para esquiar y medios de elevación. </p>
+
+<p>Idealmente el sitio tendría un pool de ofertas, tagueadas con diversas
+caracteríasticas como la del ejemplo anterior: Bariloche asociado positivamente
+con medios de elevación y negativamente con tablas de surf. </p>
+
+<p>Hay además una cantidad de otras propiedades que pueden determinar cuáles
+ofertas mostrar. por ejemplo si el usuario busca vuelos de primera clase
+mostrarle hoteles de muchas estrellas y no hostels. O según la temporada:
+mostrar ofertas de servicios para esquiar cuando la fecha del vuelo cae en la
+temporada de esquí. </p>
+
+<h5>información general</h5>
+
+<p>La página de inicio, además del menú inicial, tiene espacio para algula
+información genérica, como por ejemplo que LAN fué premiada nuevamente, o que
+hay un cambio de política que afecta a todos, ... </p>
+
+<h3>Menu inicial</h3>
+
+<div id="menuInicial">
+<style>
+ #menuInicial ul { list-style-type:none; }
+ #menuInicial li { height:3em; margin:6px; border:3px solid gray; border-radius:6px; }
+ #menuInicial li:hover { background-color:rgb(240,240,240); }</style>
+<ul>
+  <li>eee</li>
+  <li>www</li>
+</ul>
 
 <p></p>
 
-<p></p>
-
 <p> </p>
 
 <p> </p>
@@ -135,6 +187,7 @@ sitio web de LAN con alguno de los siguientes objetivos: </p>
 <p> </p>
 
 <p> </p>
+</div>
 </div>
 </body>
 </html>
