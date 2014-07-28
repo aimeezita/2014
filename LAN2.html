@@ -11,11 +11,13 @@
   <link href="res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
   <script type="text/javascript">
       $(document).ready(function () {
+        activateMenu();
       });
   </script>
 
   <style>
-#agendaBody { max-width:48em; margin-left:1.5em; }
+#agendaBody { max-width:inherit; margin-left:1.5em; }
+#agendaBlah { max-width:50em; } 
 #agendaBody p { margin-top:8px; margin-bottom:16px; }
 #agendaHeader { max-width:48em; }
 a.tocBackLink  {padding-right: 1.5em; }
@@ -41,6 +43,7 @@ a.tocBackLink  {padding-right: 1.5em; }
   </div>
 
   <div id="agendaBody">
+  <div id="agendaBlah">
     <h2>Rediseño de la interacción</h2>
 
     <h3>Research</h3>
@@ -163,63 +166,104 @@ a.tocBackLink  {padding-right: 1.5em; }
     una misma sucesión, en vez de hacerle navegar el menú saliendo y volviendo a
     entrar por cada una de las "ventanillas" de la organización de LAN. </p>
 
-    <h3>Menu inicial</h3>
+  </div> 
+    <h3>Menu pasajero</h3>
 
+  <script>
+function activateMenu() {
+  $('.menuMainItem').on(
+    'click', 
+    function( e ) {
+      $this = $( this );
+
+      // display the menu
+      $('.menuMainItem').removeClass( 'menuMainSelected' );
+      $this.addClass( 'menuMainSelected' );
+
+      // the K= attribute contains the id of a div inside #menucontents to display
+      var kontents = $( '#menucontents#' + $this.attr( 'k' )).html();
+      $( '.menuMainTarget' ).html( kontents );
+
+      // display two advertisements, random for now
+      var allAds = [ 'lan101.jpg', 'lan102.jpg', 'lan103.jpg', 'lan104.jpg', 'lan105.jpg', 'lan106.jpg', 'lan107.gif' ];
+      var ads = new Array();
+      ads[0] = ads[1] = allAds[ Math.floor(Math.random() * 7) ];
+      var n = 0;
+      do {
+        ads[1] = allAds[ Math.floor(Math.random() * 7) ];
+        n++;
+      } while( ads[1] == ads[0] || n > 999 );
+      $( '.menuMainAd' ).html( '<img src="' + ads[0] + '" /><br /><img src="' + ads[1] + '" />' );
+    }
+
+
+    )
+};
+  </script>
   <style>
-#menuMainContainer { padding:33px; background-image: url("http://www.lan.com/sitio_personas/country_selector/img/bg_clouds.png"), url("http://www.lan.com/sitio_personas/country_selector/img/bg_sky.jpg"); background-position: center top, center top; background-repeat: no-repeat, repeat-x; }
-.menuMainItems { border-collapse:separate; border-spacing:0; }
-.menuMainItems tr { height:20%; }
-.menuMainItems td.menuMainItem { border:4px solid gray; border-top-left-radius:6px; border-bottom-left-radius:6px; color:rgb(128,128,128); padding:12px; }
-.menuMainItems td.menuMainItem:hover { color:rgb(0,0,0); }
+#menuMainContainer { padding:33px; background-image: url("http://www.lan.com/sitio_personas/country_selector/img/bg_clouds.png"), url("http://www.lan.com/sitio_personas/country_selector/img/bg_sky.jpg"); background-position: center top, center top; background-repeat: no-repeat, repeat-x; border-color:rgb(192,192,192); }
+.menuMainItems { height:600px; border-collapse:separate; border-spacing:0; border-color:rgb(192,192,192); }
+.menuMainItems tr { border-color:rgb(192,192,192); height:20%; }
+.menuMainItems td.menuMainItem { border:4px solid; border-top-left-radius:16px; border-bottom-left-radius:16px; color:rgb(128,128,128); border-color:rgb(192,192,192); padding:12px; }
+.menuMainItems td.menuMainItem:hover { color:rgb(0,0,0); border-color:rgb(192,192,192); }
 .menuMainItem { }
-.menuMainItems td.menuMainItem.menuMainSelected { border-right:0; color:rgb(0,0,0); }
-.menuMainUnselected {  }
+.menuMainTarget { width:390px; text-align:center; border-top:4px solid; border-right:4px solid; border-bottom:4px solid; padding: 12px 12px 4px 12px; border-top-right-radius:16px; border-bottom-right-radius:16px; border-color:rgb(192,192,192); }
+.menuMainItems td.menuMainItem.menuMainSelected { width:9em; border-right:0; color:rgb(0,0,0); border-color:rgb(192,192,192); }
+.menuMainAd { padding-left:2em; }
   </style>
 
   <div id="menuMainContainer">
 
     <table class="menuMainItems borderTableZZZ">
       <tr>
-        <td class="menuMainItem menuMainSelected">
+        <!-- menu sleeve - the initially selected one -->
+        <td class="menuMainItem menuMainSelected"  k="reservaDelVuelo">
           <div class="menuMainItem menuMainSelected">
-            Reserva de vuelos
+            Reserva del vuelo
           </div>
         </td>
-        <td rowspan="6" class="menuMainTarget menuMainSelected">
+
+        <!-- target: the part where the user interacts -->
+        <td rowspan="6" class="menuMainTarget">
           <img src="lan10.png" />
         </td>
-        <td rowspan="6" class="menuMainAd menuMainAdSelected">
+
+        <!-- ads -->
+        <td rowspan="6" class="menuMainAd">
+            <img src="lan101.jpg" /><br />
+            <img src="lan102.jpg" />
         </td>
       </tr>
 
       <tr>
-        <td class="menuMainItem">
-          <div class="menuMainItem menuMainUnselected">
-            blah blah blah blah blah blah blah 
+        <td class="menuMainItem" k="antesDeVolar">
+          <div class="menuMainItem ">
+            Antes de volar
           </div>
         </td>
       </tr>
 
       <tr>
-        <td class="menuMainItem">
-          <div class="menuMainItem menuMainUnselected">
-            blah blah blah blah blah blah blah 
+        <td class="menuMainItem" k="antesDeVolar">
+          <div class="menuMainItem ">
+            Durante el vuelo
           </div>
         </td>
       </tr>
 
       <tr>
-        <td class="menuMainItem">
-          <div class="menuMainItem menuMainUnselected">
-            blah blah blah blah blah blah blah 
+        <td class="menuMainItem" k="antesDeVolar">
+          <div class="menuMainItem ">
+            Después del vuelo
           </div>
         </td>
       </tr>
 
       <tr>
-        <td class="menuMainItem">
-          <div class="menuMainItem menuMainUnselected">
-            blah blah blah blah blah blah blah 
+        <td class="menuMainItem" k="antesDeVolar">
+          <div class="menuMainItem ">
+            etc ...
+            <!-- lan108.png -->
           </div>
         </td>
       </tr>
@@ -227,6 +271,35 @@ a.tocBackLink  {padding-right: 1.5em; }
     </table>
 
   </div> <!-- menu container -->
+
+  <div id="menucontents" style="display:none;">
+    <div id="reservaDelVuelo"><img src="lan10.png"></div>
+    <div id="antesDeVolar">
+    <p>Recomendaciones y acciones previas al vuelo: </p>
+      <ul>
+        <li>Inscribirse en LANPass</li>
+        <li>Reservar el asiento</li>
+        <li>Reservar el traslado al aeropuerto</li>
+        <li>Alquilar un auto en destino</li>
+        <li>Reservar hotel en destino</li>
+        <li>Tomar nota de la franquicia de equipaje</li>
+        <li>Informarse sobre impuestos y tasas adicionales</li>
+        <li>Verificar el lugar y la hora de partida</li>
+      </ul>
+    </div>
+    <div id="duranteElVuelo">
+    <p>Cualquier información que al pasajero le sirva</p>
+    </div>
+    <div id="despuésDelVuelo">
+      <p>Verificar que los Km se hayan acumulado en la cianta de LANPass, ...</p>
+    </div>
+    <div id="etc">
+    <p><img src="lan108.png ">
+    <br>
+    Este es un menú con todas las demás cosas que son de uso eventual, y posiblemente
+    el punto de entrada para los usuarios expertos que no necesitan ser guiados. </p>
+    </div>
+  </div>
 
 </div>
 <div class="verticalPadding">
