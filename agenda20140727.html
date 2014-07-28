@@ -86,7 +86,7 @@ order to detect and check all the changes previously introduced online. </p>
   <li><code>/home/jlanus/blog/a/anchor/views/partials/header.php</code><br>
     Several changes, more to come </li>
   <li><code>/home/jlanus/blog/a/anchor/views/posts/edit.php</code> <br>
-    Online <code>&lt;div class="wrap"&gt;</code> repeated (fixed)
+    Online <code>&lt;div class="wrap"&gt;</code> repeated (fixed) 
     <p>Both contain the fix, local has <code>| ENT_SUBSTITUTE |
     ENT_HTML5</code> that don't work online: </p>
     <pre>      &lt;?php echo Form::textarea(
@@ -204,7 +204,7 @@ set_error_handler(array('System\\Error', 'native'));
     <pre>    &lt;script src="&lt;?php echo asset_url('/js/zepto.js'); ?&gt;"&gt;&lt;/script&gt;
     &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"&gt;&lt;/script&gt;</pre>
   </li>
-  <li><code>/home/jlanus/blog/a/themes/jl/</code>
+  <li><code>/home/jlanus/blog/a/themes/jl/</code> 
     <p>Missing in local, copied. </p>
   </li>
   <li><code>/home/jlanus/blog/a/.htaccess</code><br>
@@ -250,9 +250,70 @@ ErrorDocument 404 index.php
   </li>
 </ul>
 
-<p> </p>
+<h3>Comparing local version vs. fresh files</h3>
 
-<p> </p>
+<p><code>/var/www/html/a/anchor/helpers.php</code></p>
+
+<p>The local has changes, original:  </p>
+<pre>function parse($str, $markdown = true) {
+// process tags
+$pattern = '/[\{\{]{1}([a-z]+)[\}\}]{1}/i';
+
+if(preg_match_all($pattern, $str, $matches)) {
+list($search, $replace) = $matches;
+
+foreach($replace as $index =&gt; $key) {
+$replace[$index] = Config::meta($key);
+}
+
+$str = str_replace($search, $replace, $str);
+}
+
+$str = html_entity_decode($str, ENT_NOQUOTES, System\Config::app('encoding'));
+
+//  Parse Markdown as well?
+if($markdown === true) {
+$md = new Markdown;
+$str = $md-&gt;transform($str);
+}
+
+return $str;
+}</pre>
+
+<p>Changed local: </p>
+<pre>// JML 20140715 was: ... = true
+function parse($str, $markdown = false) {
+  /* JML 20140717 commented out the tags matching section: 
+// process tags
+$pattern = '/[\{\{]{1}([a-z]+)[\}\}]{1}/i';
+
+if(preg_match_all($pattern, $str, $matches)) {
+list($search, $replace) = $matches;
+
+foreach($replace as $index =&gt; $key) {
+$replace[$index] = Config::meta($key);
+}
+
+$str = str_replace($search, $replace, $str);
+  } */
+
+/* this was not in the online version, only in the local one: 
+  $str = html_entity_decode($str, ENT_NOQUOTES, System\Config::app('encoding'));
+  */
+
+//  Parse Markdown as well?
+if($markdown === true) {
+    // Convert all HTML entities to their applicable characters
+    // JML 20140715: don't touch the char entities
+    // $str = html_entity_decode($str, ENT_NOQUOTES, System\Config::app('encoding'));
+
+    // make HTML out of the markdown content
+$md = new Markdown;
+    // JML 20140715 returns the string verbatim, was:  $str = $md-&gt;transform($str);
+}
+
+return $str;
+}</pre>
 
 <p> </p>
 

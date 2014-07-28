@@ -5,197 +5,257 @@
   <meta http-equiv="Content-Language" content="en">
   <title>LAN2</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script type="text/javascript" src="res/jquery/jquery.js">
- </script>
-  <script type="text/javascript" src="res/agenda.js">
- </script>
-  <script type="text/javascript" src="res/tocBuilder.js">
- </script>
+  <script type="text/javascript" src="res/jquery/jquery.js"></script>
+  <script type="text/javascript" src="res/agenda.js"></script>
+  <script type="text/javascript" src="res/tocBuilder.js"></script>
   <link href="res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
   <script type="text/javascript">
       $(document).ready(function () {
       });
   </script>
+
   <style>
 #agendaBody { max-width:48em; margin-left:1.5em; }
 #agendaBody p { margin-top:8px; margin-bottom:16px; }
 #agendaHeader { max-width:48em; }
 a.tocBackLink  {padding-right: 1.5em; }
- .imgR { float:right; margin-left: 2em; }</style>
-</head>
+ .imgR { float:right; margin-left: 2em; }
+  </style>
+  </head>
 
-<body>
+  <body>
 
-<div id="agendaHeader">
+  <div id="agendaHeader">
+    <div class="fixedHeader">
+      <h1 style="display: inline; ">LAN2 </h1>
+    </div>
+    <div id="agendaLinks">
+      <div id="tocContainer" class="tocContainer">
+        <div class="toc"></div>
+      </div>
 
-<div class="fixedHeader">
-<h1 style="display: inline; ">LAN2 </h1>
+      <p> </p> 
+      <p> </p>
+      <hr>
+    </div>
+  </div>
+
+  <div id="agendaBody">
+    <h2>Rediseño de la interacción</h2>
+
+    <h3>Research</h3>
+
+    <p>Este informe (no) está basado en el análisis la siguiente información: </p>
+    <ol style="margin-left:2em;">
+      <li>Registro de accesos al site ("logs"), </li>
+      <li>Encuesta online, </li>
+      <li>Entrevistas con usuarios, y</li>
+      <li>Experiencia anterior. </li>
+    </ol>
+
+    <h3>Consideraciones</h3>
+
+    <p>De la investigación de uso (no) realizada surge que los usuarios arriban al
+    sitio web de LAN con alguno de los siguientes objetivos: </p>
+    <ol style="margin-left:2em;">
+      <li><img alt="map" src="lanMapB.png" class="imgR"> 
+      <p>Investigar sobre la oferta de LAN (destinos, precios y horarios) y
+      eventualmente comprar pasajes y otros productos<br>
+       </p>
+      </li>
+      <li><img alt="$" src="lan$B.png" class="imgR"> 
+      <p>Efectuar reservas y pagarlas<br>
+       <br>
+       </p>
+      </li>
+      <li><img alt="clock" src="lanTimeB.png" class="imgR"> 
+      <p>Averiguar sobre el estado de los vuelos, para viajar o para ir al
+      aeropuerto a recibir a alguien que está viajando <br>
+       </p>
+      </li>
+      <li><img alt="check in" src="lanCheckB.png" class="imgR"> 
+      <p>Hacer el check-in para un vuelo ya comprado<br>
+       <br>
+       </p>
+      </li>
+      <li><p><img alt="bus" src="lanBusB.png" class="imgR">Varios otros objetivos,
+      necesarios pero con audiencia mucho menor</p>
+      </li>
+    </ol>
+
+    <p style="clear:both;">Además se tiene en cuenta que: </p>
+    <ul>
+      <li>De ninguna manera se puede mover de la página de inicio el artefacto de
+      reserva de vuelos. </li>
+      <li>Un mismo usuario entra al sitio con diversos objetivos pero en distintas
+      ocasiones. Cada vez que entra lo más frecuente es que tenga un único
+      objetivo. </li>
+      <li>Algunos usuarios tienen mucha práctica y dominan la operación del sitio,
+      mientras que otros lo usan muy esporádicamente o no lo conocen. </li>
+      <li>Algunos usuarios son hábiles para la operación de la Internet en general,
+      mientras que otros tienen menos práctica y menos seguridad. </li>
+      <li>Es oportuno considerar la incorporación de características de
+      <em>accesibilidad</em> a la interfase del sitio, que se está transformando
+      cada vez más en una exigencia. </li>
+      <li>El sitio está organizado replicando la organización interna de la
+      Empresa, que no refleja necesariamente la conveniencia del usuario. </li>
+    </ul>
+
+    <h3>Propuesta en general</h3>
+
+    <h5>esta es una propuesta para construír encima</h5>
+
+    <p>Una primera versión del <em>menú inicial</em>. como para empezar a construír
+    consenso, se compone de links a las áreas más frecuentemente accedidas por los
+    usuarios mas alguna que sea de interés estratégico para la Empresa. </p>
+
+    <h5>menú directo</h5>
+
+    <p>La idea central es presentarle al usuario en la página de inicio un
+    artefacto de navegación que llamaremos <em>menú inicial</em>, aunque tenga un
+    aspecto diferente de lo que el término "menú" sugiere. Es una lista de opciones
+    de navegación. </p>
+
+    <p>El menú puede ser navegado de manera simple por alguien con poca práctica, y
+    rápidamente por los usuarios expertos, con una jerarquía de links que se
+    despliegan oportunamente. </p>
+
+    <h5>ofertas <em>targeted</em></h5>
+
+    <p>Mientras el usuario navega el sitio en pos de sus objetivos, queremos
+    mostrarle información sobre la oferta de servicios complementarios que puede
+    adquirir. </p>
+
+    <p>Un criterio es darle el usuario un camino directo a lo que quiere, y una vez
+    que está allí mostrarle ofertas complementarias, dentro de lo posible
+    relacionadas con su viaje. Por ejemplo si está buscando vuelos al Caribe no
+    mostrarle publicidad de equipos para esquiar y medios de elevación. </p>
+
+    <p>Idealmente el sitio tendría un pool de ofertas, tagueadas con diversas
+    caracteríasticas como la del ejemplo anterior: Bariloche asociado positivamente
+    con medios de elevación y negativamente con tablas de surf. </p>
+
+    <p>Hay además una cantidad de otras propiedades que pueden determinar cuáles
+    ofertas mostrar. por ejemplo si el usuario busca vuelos de primera clase
+    mostrarle hoteles de muchas estrellas y no hostels. O según la temporada:
+    mostrar ofertas de servicios para esquiar cuando la fecha del vuelo cae en la
+    temporada de esquí. </p>
+
+    <h5>información general</h5>
+
+    <p>La página de inicio, además del menú inicial, tiene espacio para algula
+    información genérica, como por ejemplo que LAN fué premiada nuevamente, o que
+    hay un cambio de política que afecta a todos, ... </p>
+
+    <h5>organizado para la satisfacción</h5>
+
+    <p>Una persona que compra un viaje debe entrar a diversas secciones del sitio
+    para realizar los distintos pasos necesarios. </p>
+
+    <p>Es similar a cuando, en una oficina pública antigua, uno debe pasar por
+    diversas ventanillas para completar un trámite. </p>
+
+    <p>Por ejemplo hacer una reserva, pagarla, hacer el checkin, reservar lugar en
+    el bus al aeropuerto, reservar hotel, comprar traslados en destino, solicitar
+    upgrade. </p>
+
+    <p>La idea es proveer satisfactores para todas las necesidades del usuario en
+    una misma sucesión, en vez de hacerle navegar el menú saliendo y volviendo a
+    entrar por cada una de las "ventanillas" de la organización de LAN. </p>
+
+    <h3>Menu inicial</h3>
+
+  <style>
+#menuMainContainer { padding:33px; background-image: url("http://www.lan.com/sitio_personas/country_selector/img/bg_clouds.png"), url("http://www.lan.com/sitio_personas/country_selector/img/bg_sky.jpg"); background-position: center top, center top; background-repeat: no-repeat, repeat-x; }
+.menuMainItems { border-collapse:separate; border-spacing:0; }
+.menuMainItems tr { height:20%; }
+.menuMainItems td.menuMainItem { border:4px solid gray; border-top-left-radius:6px; border-bottom-left-radius:6px; color:rgb(128,128,128); padding:12px; }
+.menuMainItems td.menuMainItem:hover { color:rgb(0,0,0); }
+.menuMainItem { }
+.menuMainItems td.menuMainItem.menuMainSelected { border-right:0; color:rgb(0,0,0); }
+.menuMainUnselected {  }
+  </style>
+
+  <div id="menuMainContainer">
+
+    <table class="menuMainItems borderTableZZZ">
+      <tr>
+        <td class="menuMainItem menuMainSelected">
+          <div class="menuMainItem menuMainSelected">
+            Reserva de vuelos
+          </div>
+        </td>
+        <td rowspan="6" class="menuMainTarget menuMainSelected">
+          <img src="lan10.png" />
+        </td>
+        <td rowspan="6" class="menuMainAd menuMainAdSelected">
+        </td>
+      </tr>
+
+      <tr>
+        <td class="menuMainItem">
+          <div class="menuMainItem menuMainUnselected">
+            blah blah blah blah blah blah blah 
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="menuMainItem">
+          <div class="menuMainItem menuMainUnselected">
+            blah blah blah blah blah blah blah 
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="menuMainItem">
+          <div class="menuMainItem menuMainUnselected">
+            blah blah blah blah blah blah blah 
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="menuMainItem">
+          <div class="menuMainItem menuMainUnselected">
+            blah blah blah blah blah blah blah 
+          </div>
+        </td>
+      </tr>
+
+    </table>
+
+  </div> <!-- menu container -->
+
 </div>
-
-<div id="agendaLinks">
-
-<div id="tocContainer" class="tocContainer">
-
-<div class="toc">
-</div>
-</div>
-
-<p> </p>
-
-<p> </p>
-<hr>
-</div>
-</div>
-
-<div id="agendaBody">
-<h2>Rediseño de la interacción</h2>
-
-<h3>Research</h3>
-
-<p>Este informe está basado en el análisis la siguiente información (ficticia):
-</p>
-<ol style="margin-left:2em;">
-  <li>Registro de accesos al site ("logs"), </li>
-  <li>Encuesta online, </li>
-  <li>Entrevistas con usuarios, y</li>
-  <li>Experiencia anterior. </li>
-</ol>
-
-<h3>Consideraciones</h3>
-
-<p>De la investigación de uso (no) realizada surge que los usuarios arriban al
-sitio web de LAN con alguno de los siguientes objetivos: </p>
-<ol style="margin-left:2em;">
-  <li><img alt="map" src="lanMapB.png" class="imgR"> 
-    <p>Investigar sobre la oferta de LAN (destinos, precios y horarios) y
-    eventualmente comprar pasajes y otros productos<br>
-     </p>
-  </li>
-  <li><img alt="$" src="lan$B.png" class="imgR"> 
-    <p>Efectuar reservas y pagarlas<br>
-     <br>
-     </p>
-  </li>
-  <li><img alt="clock" src="lanTimeB.png" class="imgR"> 
-    <p>Averiguar sobre el estado de los vuelos, para viajar o para ir al
-    aeropuerto a recibir a alguien que está viajando <br>
-     </p>
-  </li>
-  <li><img alt="check in" src="lanCheckB.png" class="imgR"> 
-    <p>Hacer el check-in para un vuelo ya comprado<br>
-     <br>
-     </p>
-  </li>
-  <li><p><img alt="bus" src="lanBusB.png" class="imgR">Varios otros objetivos,
-    necesarios pero con audiencia mucho menor</p>
-  </li>
-</ol>
-
-<p style="clear:both;">Además se tiene en cuenta que: </p>
-<ul>
-  <li>Un mismo usuario entra al sitio con diversos objetivos pero en distintas
-    ocasiones. Cada vez que entra lo más frecuente es que tenga un único
-    objetivo. </li>
-  <li>Algunos usuarios tienen mucha práctica y dominan la operación del sitio,
-    mientras que otros lo usan muy esporádicamente o no lo conocen. </li>
-  <li>Algunos usuarios son hábiles para la operación de la Internet en general,
-    mientras que otros tienen menos práctica y menos seguridad. </li>
-  <li>Es oportuno considerar la incorporación de características de
-    <em>accesibilidad</em> a la interfase del sitio, que se está transformando
-    cada vez más en una exigencia. </li>
-  <li>El sitio está organizado replicando la organización interna de la
-    Empresa, que no refleja necesariamente la conveniencia del usuario. </li>
-</ul>
-
-<h3>Propuesta en general</h3>
-
-<h5>esta es una propuesta para construír encima</h5>
-
-<p>Una primera versión del <em>menú inicial</em>. como para empezar a construír
-consenso, se compone de links a las áreas más frecuentemente accedidas por los
-usuarios mas alguna que sea de interés estratégico para la Empresa. </p>
-
-<h5>menú directo</h5>
-
-<p>La idea central es presentarle al usuario en la página de inicio un
-artefacto de navegación que llamaremos <em>menú inicial</em>, aunque tenga un
-aspecto diferente de lo que el término "menú" sugiere. Es una lista de opciones
-de navegación. </p>
-
-<p>El menú puede ser navegado de manera simple por alguien con poca práctica, y
-rápidamente por los usuarios expertos, con una jerarquía de links que se
-despliegan oportunamente. </p>
-
-<h5>ofertas <em>targeted</em></h5>
-
-<p>Mientras el usuario navega el sitio en pos de sus objetivos, queremos
-mostrarle información sobre la oferta de servicios complementarios que puede
-adquirir. </p>
-
-<p>Un criterio es darle el usuario un camino directo a lo que quiere, y una vez
-que está allí mostrarle ofertas complementarias, dentro de lo posible
-relacionadas con su viaje. Por ejemplo si está buscando vuelos al Caribe no
-mostrarle publicidad de equipos para esquiar y medios de elevación. </p>
-
-<p>Idealmente el sitio tendría un pool de ofertas, tagueadas con diversas
-caracteríasticas como la del ejemplo anterior: Bariloche asociado positivamente
-con medios de elevación y negativamente con tablas de surf. </p>
-
-<p>Hay además una cantidad de otras propiedades que pueden determinar cuáles
-ofertas mostrar. por ejemplo si el usuario busca vuelos de primera clase
-mostrarle hoteles de muchas estrellas y no hostels. O según la temporada:
-mostrar ofertas de servicios para esquiar cuando la fecha del vuelo cae en la
-temporada de esquí. </p>
-
-<h5>información general</h5>
-
-<p>La página de inicio, además del menú inicial, tiene espacio para algula
-información genérica, como por ejemplo que LAN fué premiada nuevamente, o que
-hay un cambio de política que afecta a todos, ... </p>
-
-<h5>organizado para la satisfacción</h5>
-
-<p>Una persona que compra un viaje debe entrar a diversas secciones del sitio
-para realizar los distintos pasos necesarios. </p>
-
-<p>Es similar a cuando, en una oficina pública antigua, uno debe pasar por
-diversas ventanillas para completar un trámite. </p>
-
-<p>Por ejemplo hacer una reserva, pagarla, hacer el checkin, reservar lugar en
-el bus al aeropuerto, </p>
-
-<h3>Menu inicial</h3>
-
-<div id="menuInicial">
-<style>
- #menuInicial ul { list-style-type:none; }
- #menuInicial li { height:3em; margin:6px; border:3px solid gray; border-radius:6px; }
- #menuInicial li:hover { background-color:rgb(240,240,240); }</style>
-<ul>
-  <li>eee</li>
-  <li>www</li>
-</ul>
-
-<p></p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-</div>
+<div class="verticalPadding">
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
 </div>
 </body>
 </html>
