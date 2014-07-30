@@ -17,7 +17,7 @@
 
   <style>
 #agendaBody { max-width:inherit; margin-left:1.5em; }
-#agendaBlah { max-width:50em; } 
+#agendaBlah { font-size:150%; max-width:50em; } 
 #agendaBody p { margin-top:8px; margin-bottom:16px; }
 #agendaHeader { max-width:48em; }
 a.tocBackLink  {padding-right: 1.5em; }
@@ -88,11 +88,13 @@ a.tocBackLink  {padding-right: 1.5em; }
 
     <p style="clear:both;">Además se tiene en cuenta que: </p>
     <ul>
+      <li>La Empresa tiene interés en que los usuarios realicen determinadas 
+      acciones, o tengan oportunidad de ver información o publicidad. </li>
       <li>De ninguna manera se puede mover de la página de inicio el artefacto de
       reserva de vuelos. </li>
       <li>Un mismo usuario entra al sitio con diversos objetivos pero en distintas
-      ocasiones. Cada vez que entra lo más frecuente es que tenga un único
-      objetivo. </li>
+      ocasiones. Cada vez que entra lo más probable es que lo haga en pos de un
+      único objetivo. </li>
       <li>Algunos usuarios tienen mucha práctica y dominan la operación del sitio,
       mientras que otros lo usan muy esporádicamente o no lo conocen. </li>
       <li>Algunos usuarios son hábiles para la operación de la Internet en general,
@@ -139,14 +141,14 @@ a.tocBackLink  {padding-right: 1.5em; }
     con medios de elevación y negativamente con tablas de surf. </p>
 
     <p>Hay además una cantidad de otras propiedades que pueden determinar cuáles
-    ofertas mostrar. por ejemplo si el usuario busca vuelos de primera clase
+    ofertas mostrar. Por ejemplo si el usuario busca vuelos de primera clase
     mostrarle hoteles de muchas estrellas y no hostels. O según la temporada:
     mostrar ofertas de servicios para esquiar cuando la fecha del vuelo cae en la
     temporada de esquí. </p>
 
     <h5>información general</h5>
 
-    <p>La página de inicio, además del menú inicial, tiene espacio para algula
+    <p>La página de inicio, además del menú inicial, tiene espacio para alguna
     información genérica, como por ejemplo que LAN fué premiada nuevamente, o que
     hay un cambio de política que afecta a todos, ... </p>
 
@@ -181,7 +183,7 @@ function activateMenu() {
       $this.addClass( 'menuMainSelected' );
 
       // the K= attribute contains the id of a div inside #menucontents to display
-      var kontents = $( '#menucontents#' + $this.attr( 'k' )).html();
+      var kontents = $( '#menucontents #' + $this.attr( 'k' )).html();
       $( '.menuMainTarget' ).html( kontents );
 
       // display two advertisements, random for now
@@ -210,6 +212,9 @@ function activateMenu() {
 .menuMainTarget { width:390px; text-align:center; border-top:4px solid; border-right:4px solid; border-bottom:4px solid; padding: 12px 12px 4px 12px; border-top-right-radius:16px; border-bottom-right-radius:16px; border-color:rgb(192,192,192); }
 .menuMainItems td.menuMainItem.menuMainSelected { width:9em; border-right:0; color:rgb(0,0,0); border-color:rgb(192,192,192); }
 .menuMainAd { padding-left:2em; }
+.mainMenuKontent { text-align:left; }
+.mainMenuKontent p { font-size:110%; font-weight:bold; }
+.mainMenuKontent li { margin-left:3em; list-style-type:none; }
   </style>
 
   <div id="menuMainContainer">
@@ -244,7 +249,7 @@ function activateMenu() {
       </tr>
 
       <tr>
-        <td class="menuMainItem" k="antesDeVolar">
+        <td class="menuMainItem" k="duranteElVuelo">
           <div class="menuMainItem ">
             Durante el vuelo
           </div>
@@ -252,7 +257,7 @@ function activateMenu() {
       </tr>
 
       <tr>
-        <td class="menuMainItem" k="antesDeVolar">
+        <td class="menuMainItem" k="despuesDelVuelo">
           <div class="menuMainItem ">
             Después del vuelo
           </div>
@@ -260,7 +265,7 @@ function activateMenu() {
       </tr>
 
       <tr>
-        <td class="menuMainItem" k="antesDeVolar">
+        <td class="menuMainItem" k="etc">
           <div class="menuMainItem ">
             etc ...
             <!-- lan108.png -->
@@ -273,31 +278,47 @@ function activateMenu() {
   </div> <!-- menu container -->
 
   <div id="menucontents" style="display:none;">
-    <div id="reservaDelVuelo"><img src="lan10.png"></div>
+    <div id="reservaDelVuelo">
+      <img src="lan10.png">
+      <div class="mainMenuKontent">
+        <p>Una vez que el vuelo está reservado el usuario vé un
+        menú con los pasos siguientes y ofertas compatibles con
+        el destino que compró, la clase de la cabina, la duración
+        del viaje, etc... </p>
+      </div>
+    </div>
     <div id="antesDeVolar">
-    <p>Recomendaciones y acciones previas al vuelo: </p>
-      <ul>
-        <li>Inscribirse en LANPass</li>
-        <li>Reservar el asiento</li>
-        <li>Reservar el traslado al aeropuerto</li>
-        <li>Alquilar un auto en destino</li>
-        <li>Reservar hotel en destino</li>
-        <li>Tomar nota de la franquicia de equipaje</li>
-        <li>Informarse sobre impuestos y tasas adicionales</li>
-        <li>Verificar el lugar y la hora de partida</li>
-      </ul>
+      <div class="mainMenuKontent">
+        <p>Recomendaciones y acciones previas al vuelo: </p>
+        <ul>
+          <li>Inscribirse en LANPass</li>
+          <li>Reservar el asiento</li>
+          <li>Reservar el traslado al aeropuerto</li>
+          <li>Alquilar un auto en destino</li>
+          <li>Reservar hotel en destino</li>
+          <li>Tomar nota de la franquicia de equipaje</li>
+          <li>Informarse sobre impuestos y tasas adicionales</li>
+          <li>Verificar el lugar y la hora de partida</li>
+        </ul>
+      </div>
     </div>
     <div id="duranteElVuelo">
-    <p>Cualquier información que al pasajero le sirva</p>
+      <div class="mainMenuKontent">
+        <p>Cualquier información que al pasajero le sirva</p>
+      </div>
     </div>
-    <div id="despuésDelVuelo">
-      <p>Verificar que los Km se hayan acumulado en la cianta de LANPass, ...</p>
+    <div id="despuesDelVuelo">
+      <div class="mainMenuKontent">
+        <p>Verificar que los Km se hayan acumulado en la cuenta de LANPass, ...</p>
+      </div>
     </div>
     <div id="etc">
-    <p><img src="lan108.png ">
-    <br>
-    Este es un menú con todas las demás cosas que son de uso eventual, y posiblemente
-    el punto de entrada para los usuarios expertos que no necesitan ser guiados. </p>
+      <div class="mainMenuKontent">
+        <p><img src="lan108.png ">
+        <br>
+        Este es un menú con todas las demás cosas que son de uso eventual, y posiblemente
+        el punto de entrada para los usuarios expertos que no necesitan ser guiados. </p>
+      </div>
     </div>
   </div>
 
