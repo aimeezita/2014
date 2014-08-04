@@ -5,49 +5,111 @@
   <meta http-equiv="Content-Language" content="en">
   <title>31Jul2014 Thu</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140730.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140801.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 31Jul2014 Thu </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140730.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140801.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 31Jul2014 Thu </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a href="https://github.com/visionmedia/debug">node.js debug utility</a> </p>
+
+<p><a
+href="http://stackoverflow.com/questions/8864626/using-routes-in-express-js">Using
+routes in Express-js</a> </p>
+
+<p><a
+href="http://scotch.io/tutorials/javascript/learn-to-use-the-new-router-in-expressjs-4">Learn
+to Use the New Router in ExpressJS 4.0</a>  </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>rt as a jQuery plugin</h3>
+<ol>
+  <li>Expanded jquery-boilerplate ZIP in
+    <code>/home/jlanus/Dropbox/Public/reading/js/rt</code> </li>
+  <li>Renamed files as "<code>rt</code>" </li>
+  <li>Edited <code>rt.jquery.json</code> except for the URLs at the bottom:
+    bogs, docs, download ...</li>
+</ol>
+
+<p> </p>
+
+<p> </p>
+
+<h3>Date.format()</h3>
+<pre>// adds a format() method to the Date object
+Date.prototype.format = function(format) //author: meizz
+{
+  var o = {
+    "M+" : this.getMonth()+1, //month
+    "d+" : this.getDate(),    //day
+    "h+" : this.getHours(),   //hour
+    "m+" : this.getMinutes(), //minute
+    "s+" : this.getSeconds(), //second
+    "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+    "S" : this.getMilliseconds() //millisecond
+  }
+
+  if(/(y+)/.test(format)) format = format.replace(
+    RegExp.$1,
+    (this.getFullYear()+"").substr(4 - RegExp.$1.length)
+  );
+  for(var k in o) if(new RegExp("("+ k +")").test(format))
+  format = format.replace(
+    RegExp.$1,
+    RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length)
+  );
+  return format;
+}</pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
