@@ -5,49 +5,157 @@
   <meta http-equiv="Content-Language" content="en">
   <title>14Aug2014 Thu</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+  </script>
+  <script type="text/javascript" src="res/agenda.js">
+  </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+  </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140813.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140815.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 14Aug2014 Thu </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140813.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140815.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 14Aug2014 Thu </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a
+href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">JavaScript
+Module Pattern: In-Depth</a> </p>
+
+<p><a
+href="http://stackoverflow.com/questions/17268504/requirejs-with-google-apps-script">RequireJS
+with Google Apps Script</a>  </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>bench</h3>
+
+<h4>first meeting</h4>
+
+<p>Reunión con Darío Robak y Diego Perez 16770 / 011 15 5619 0601</p>
+
+<p></p>
+<ul>
+  <li>Es un "sistema" con los datos almecenados en spreadsheets de Google Docs.
+  </li>
+  <li>Convención: en todas las sheets la primera fila contiene los encabezados
+    de las columns, el nombre del dato</li>
+  <li>Si cada fila se considera un objeto, entonces la primera fila contiene
+    los nombres de las properties</li>
+  <li>Library_GlobantUtils.gs:
+    <ul>
+      <li>Funciones de conveniencia, algunas de bajo nivel</li>
+      <li>Puede que haya algunas que no se usan, o que tienen una sola
+        referencia</li>
+      <li>Por ejemplo get/serCellValue(): ¿deprecated?</li>
+    </ul>
+  </li>
+  <li>Estudiar: Module_syncPublicBenchFile 
+    <p>Es el input. Los datos pasan de Glow en emails, como Jasper Reports en
+    attachment, formato CSV.</p>
+    <p>El subject del email es lo que identifica el contenido del archivo.</p>
+    <p>Este módulo hace la captura de los datos.</p>
+  </li>
+  <li>Mejorar: Module:GloberSkills.gs, está sin terminar</li>
+  <li>Dispersión: es una medida de la distancia geográfica entre los miembros
+    de un team. 
+    <p>Tal vez no interese si están lejos, lo interesante es si están juntos o
+    no. </p>
+  </li>
+  <li>Juan: Estudiar Module_ComputeOrgChart.gs 
+    <p>Responde a la pregunta ¿quién es el boss de quién otro, en qué
+    porcentaje?</p>
+    <p>Hay problemas por que algunos tienen varios bosses. </p>
+    <p>Se usa para attrition, dispersion, asking for feedback. </p>
+  </li>
+  <li>Function references: "usa cualquiera que tenga el mismo nombre". 
+    <p>Hay que encapsular las funciones dentro de IIFEs y usar namespacing, el
+    nombre del módulo retornado por la IIFE. </p>
+  </li>
+  <li>Las referencias a las sheets, internamente, son por el Google Drive id.
+    Esto induce fragilidad, hay que usar otro método. </li>
+</ul>
+
+<h4>cross reference</h4>
+
+<p>Project: build a references tree, where a "reference" is a function call,
+for the whole code pack. </p>
+
+<p>Surprisingly, the parser might work as a gs program, which would void the
+need to export the source code. </p>
+
+<p> </p>
+<ol>
+  <li>Run a gs script that exports the source code in a single text file, with
+    a means to know the original source name. Allow for selecting only some of
+    the files. 
+    <p>For example, intermingle comments marking the start of each component.
+    </p>
+  </li>
+  <li>Process the js (actually, gs) sources with the parser (<a
+    href="http://esprima.org/doc/index.html">esprima</a>?) and obtain the
+    syntax tree. </li>
+  <li>Travel the syntax tree and record all the FunctionDeclaration node names,
+    this is the callees list. </li>
+  <li>Travel the syntax tree and record all the calls, both in the caller (a
+    tree) and in the callees list.
+    <p>The laccers tree tells, for each function, what are the other functions
+    it calls. </p>
+    <p>The callee list tels, for each function, from where is it called. </p>
+    <p> Beware of recursion. </p>
+    <p>In this step the tree must recover the names of the members (libraries,
+    modules), that were somehow recorded in the export step. </p>
+  </li>
+  <li>Output the call tree and call references in HTML format. </li>
+  <li>Upload the generated HTML to the drive, with the addition of a quick
+    search filter. </li>
+</ol>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
