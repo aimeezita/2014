@@ -46,7 +46,12 @@ Module Pattern: In-Depth</a> </p>
 
 <p><a
 href="http://stackoverflow.com/questions/17268504/requirejs-with-google-apps-script">RequireJS
-with Google Apps Script</a>  </p>
+with Google Apps Script</a>   </p>
+
+<p><a href="https://github.com/ariya/kinetic">JavaScript Kinetic Scrolling</a>
+Ariya Hidayat</p>
+
+<p><a href="http://esprima.org/doc/index.html">esprima docs</a> </p>
 <hr>
 </div>
 </div>
@@ -115,6 +120,10 @@ need to export the source code. </p>
     the files. 
     <p>For example, intermingle comments marking the start of each component.
     </p>
+    <p>This pass mihjt not be necessary, as esprima runs as a gs program (so
+    far). </p>
+    <p>Also, the .gs files are exported (downloaded) in JSON format with all
+    non-ASCII characters expresses as Unicode escapes. </p>
   </li>
   <li>Process the js (actually, gs) sources with the parser (<a
     href="http://esprima.org/doc/index.html">esprima</a>?) and obtain the
@@ -123,10 +132,12 @@ need to export the source code. </p>
     this is the callees list. </li>
   <li>Travel the syntax tree and record all the calls, both in the caller (a
     tree) and in the callees list.
-    <p>The laccers tree tells, for each function, what are the other functions
+    <p>The callers tree tells, for each function, what are the other functions
     it calls. </p>
-    <p>The callee list tels, for each function, from where is it called. </p>
+    <p>The callee list tells, for each function, from where is it called. </p>
     <p> Beware of recursion. </p>
+    <p>In both cases, it might be of interest to tell if the call is intra- or
+    extra- module. </p>
     <p>In this step the tree must recover the names of the members (libraries,
     modules), that were somehow recorded in the export step. </p>
   </li>
