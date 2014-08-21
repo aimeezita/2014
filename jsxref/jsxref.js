@@ -2,9 +2,11 @@
 // works with all the sources pasted into a single file, commiting and
 // starting to work on a version that processes multiple files in a
 // single directory
+  console.log( 'jsxref: static functions cross reference ' + new Date() );
   var 
     esprima = require('esprima'),
     fs = require('fs'),
+    path = require('path'),
     traverseCalls = 0
   ;
 
@@ -24,18 +26,30 @@
     }
   }
 
-  // read the source in memory
-  var sourceFileName = 'CCPO-20140814.js';
-  var sourceText = fs.readFileSync( sourceFileName, 'utf8'); 
+  // processes one source file
+  var fileUsage = ''; // looking the definitions, or for references
+  function doOneFile( sourceFileName, visitor ) {
+    // isolate the file name
+    sourceBaseName = path.basename(sourceFileName, '.gs');
 
-  // parse the source into an object
-  var syntaxTree = esprima.parse( sourceText, { tolerant: true, loc: true, comment: true });
-  console.log( JSON.stringify( syntaxTree, null, '  ' ));
+    // read the source in memory
+    console.log( '\n' + fileUsage + sourceBaseName );
+    var sourceText = fs.readFileSync( sourceFileName, 'utf8'); 
 
-  // variables using by the visitor functions
+    // parse the source into an object
+    var syntaxTree = esprima.parse( sourceText, { tolerant: true, loc: true, comment: false });
+    if( sourceBaseName === 'ZZZModule_ComputeDispersion' ) {
+      console.log( JSON.stringify( syntaxTree, null, '  ' ));
+    }
+
+    // collect the functions data
+    traverse( syntaxTree, visitor );
+  }
+
+  // variable defs for the visitor functions
   var
-    functionDefs = [],        // list of function definitions
-    functionDefNames = [],    // only the function names of functionDefs[]
+    sourceBaseName = '',      // name of the current source file
+    functionDefs = {},        // list of function definitions, key is function name
     functionDef = {},         // one function definition
     functionReferences = [],  // list of function references
     functionRef = {}          // one function reference
@@ -54,12 +68,23 @@
         if( node.id ) {
           if( node.id.type === 'Identifier' ) {
             functionDef = {};
+            functionDef.sourceFile = sourceBaseName;
             functionDef.type = node.id.type;
             functionDef.name = node.id.name;
             functionDef.loc = node.id.loc;
-            functionDefs.push( functionDef );
-            functionDefNames.push( functionDef.name );
-            console.log( JSON.stringify( functionDef ));
+
+            // prevent repteated function numbers, attach a number to 2nd+ instances
+            var functionNameNumber;
+            functionNameNumber = 0;
+            var functionNameNumbered = functionDef.name; // initially no number attached
+            while( functionDefs[functionNameNumbered] ) {
+              functionNameNumber++;
+              functionNameNumbered =  functionDef.name + '_' + (functionNameNumber + 1);
+            }
+            // insert in function definitions list
+            functionDefs[functionNameNumbered] = functionDef;
+            console.log( '  ' + functionDef.sourceFile + ' ' + functionDef.loc.start.line + ' ' + functionNameNumbered 
+            + ( (functionNameNumber == 0) ? ' ' : '  REPEATED FUNCTION NAME' ));
           }
         }
       }
@@ -79,13 +104,17 @@
         if( node.callee ) {
           if( node.callee.type === 'Identifier' ) {
             // only if it's one of the listed functions
-            if( functionDefNames.indexOf( node.callee.name ) >= 0 ) {
+            var referencedFunction = functionDefs[node.callee.name];
+            if( referencedFunction ) {
+              // console.log( JSON.stringify( referencedFunction ));
               functionRef = {};
+              functionRef.sourceFile = sourceBaseName;
               functionRef.type = node.callee.type;
               functionRef.name = node.callee.name;
               functionRef.loc = node.callee.loc;
               functionReferences.push( functionRef );
-              console.log( JSON.stringify( functionRef ));
+              console.log( '  ' + functionRef.sourceFile + ' ' + functionRef.loc.start.line + ' '
+              + referencedFunction.sourceFile + '.' + referencedFunction.name);
             }
           }
         }
@@ -94,13 +123,21 @@
   };
 
   // enumerate the function definitions
+  var i;
   console.log( '\n\n\nFinding function definitions' );
+  fileUsage = 'functions defined in ';
   traverseCalls = 0;
-  traverse( syntaxTree, visitor1 );
-  console.log( '\nvisits: ' + traverseCalls + ' function definitions: ' + functionDefs.length );
+  for( i = 2; i < process.argv.length; i++ ) { 
+    doOneFile( process.argv[i], visitor1 );
+  }
+  console.log( '\nvisits: ' + traverseCalls + ' function definitions: ' + Object.keys(functionDefs).length );
+
   // find the function references
   console.log( '\n\n\nFinding function references' );
+  fileUsage = 'functions referenced by ';
   traverseCalls = 0;
-  traverse( syntaxTree, visitor2 );
+  for( i = 2; i < process.argv.length; i++ ) { 
+    doOneFile( process.argv[i], visitor2 );
+  }
   console.log( '\nvisits: ' + traverseCalls + ' function references: ' + functionReferences.length );
 
