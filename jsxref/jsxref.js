@@ -72,6 +72,7 @@
             functionDef.type = node.id.type;
             functionDef.name = node.id.name;
             functionDef.loc = node.id.loc;
+            functionDef.references = [];
 
             // prevent repteated function numbers, attach a number to 2nd+ instances
             var functionNameNumber;
@@ -80,6 +81,7 @@
             while( functionDefs[functionNameNumbered] ) {
               functionNameNumber++;
               functionNameNumbered =  functionDef.name + '_' + (functionNameNumber + 1);
+              functionDef.repeated = true;
             }
             // insert in function definitions list
             functionDefs[functionNameNumbered] = functionDef;
@@ -113,6 +115,7 @@
               functionRef.name = node.callee.name;
               functionRef.loc = node.callee.loc;
               functionReferences.push( functionRef );
+              referencedFunction.references.push( functionRef );
               console.log( '  ' + functionRef.sourceFile + ' ' + functionRef.loc.start.line + ' '
               + referencedFunction.sourceFile + '.' + referencedFunction.name);
             }
@@ -141,3 +144,23 @@
   }
   console.log( '\nvisits: ' + traverseCalls + ' function references: ' + functionReferences.length );
 
+  // log the function definitions with references
+  console.log( '\n\n\nCross references' );
+  for( fd in functionDefs ) {
+    var fdef = functionDefs[fd];
+    // console.log( JSON.stringify( fdef ));
+    console.log( '  ' + fdef.sourceFile + ' ' + fdef.loc.start.line + ' ' + fdef.name );
+    + (( fdef.repeated ) ? ' ' : '  REPEATED FUNCTION NAME (refs reported elsewhere)' );
+    if( fdef.references.length === 0 ) {
+      console.log( '    UNREFERENCED FUNCTION' );
+    } else {
+      var fxref = {};
+      for( fr in fdef.references ) {
+        var fref = fdef.references[fr]
+        var frname = fref.sourceFile;
+        if( fxref[ frname ] {
+
+        console.log( '    ' + fref.sourceFile + ' ' + fref.loc.start.line );
+      }
+    }
+  }

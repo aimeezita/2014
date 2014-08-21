@@ -1,4 +1,4 @@
-jsxref: static functions cross reference Wed Aug 20 2014 22:12:28 GMT-0300 (ART)
+jsxref: static functions cross reference Thu Aug 21 2014 09:31:28 GMT-0300 (ART)
 
 
 
@@ -891,3 +891,873 @@ functions referenced by UNUSED_AvailQuery
 functions referenced by UNUSED_Module_syncDatamining
 
 visits: 112163 function references: 538
+
+
+
+Cross references
+  Code 2 myFunction
+    UNREFERENCED FUNCTION
+  GERPE_AllTicketProcessing 2 updateGerpeTicketsFields_cron
+    UNREFERENCED FUNCTION
+  GERPE_AllTicketProcessing 11 GerpeCCPOTicketsProcessingClass_
+    UNREFERENCED FUNCTION
+  Library_AssignmentClass 3 __testAssignmentClass
+    UNREFERENCED FUNCTION
+  Library_AssignmentClass 30 createTableCurrentAssignments
+    UNREFERENCED FUNCTION
+  Library_AssignmentClass 45 CCPOAssignmentClass
+    UNREFERENCED FUNCTION
+  Library_AssignmentClass 53 releasesSortFunction
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 22 getSpreadsheetHandler
+    Library_CCPOFileFinder 37
+    Library_CCPOFileFinder 42
+    Library_CCPOFileFinder 48
+    Library_CCPOFileFinder 72
+    Library_CCPOFileFinder 85
+    Library_CCPOFileFinder 95
+    Library_CCPOFileFinder 110
+    Library_CCPOFileFinder 139
+    Library_CCPOFileFinder 179
+    Library_CCPOFileFinder 184
+    Library_CCPOFileFinder 190
+    Library_CCPOFileFinder 197
+    Library_CCPOFileFinder 214
+    Library_CCPOFileFinder 227
+    Library_CCPOFileFinder 280
+  Library_CCPOFileFinder 35 getGloberSkillsSpreadsheet
+    Module_GloberSkills 34
+    Module_ImportFromEmail 101
+  Library_CCPOFileFinder 40 getReleasesSpreadsheet
+    Library_CCPOFileFinder 54
+    Library_CCPOFileFinder 59
+    Library_CCPOFileFinder 64
+  Library_CCPOFileFinder 45 getHeadCountSpreadsheet
+    Module_ComputeHeadCount 11
+    Module_ComputeHeadCount 14
+    Module_ComputeHeadCount 26
+    Module_ComputeHeadCount 421
+    Module_ComputeHeadCount 426
+  Library_CCPOFileFinder 52 getReleasesSheet
+    Module_ImportFromEmail 81
+  Library_CCPOFileFinder 57 getReleasesResultsSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 62 getReleasesProjectsSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 70 getLogSpreadsheet
+    Library_CCPOFileFinder 78
+    Library_Logs 18
+    Module_ComputeBenchCost 200
+    Module_syncPublicBenchFile 21
+  Library_CCPOFileFinder 76 getAssignmentLogSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 83 getNewHiresSpreadsheet
+    Module_NewHiresProcessing 18
+  Library_CCPOFileFinder 93 getAccountPrioritiesSpreadsheet
+    Library_CCPOFileFinder 101
+  Library_CCPOFileFinder 99 getAccountPrioritiesSheet
+    GERPE_AllTicketProcessing 23
+    Module_TicketProcessing 278
+  Library_CCPOFileFinder 108 getSalariesSpreadsheet
+    Library_CCPOFileFinder 115
+  Library_CCPOFileFinder 113 getSalariesSheet
+    Module_ComputeBenchCost 55
+  Library_CCPOFileFinder 119 getOrgUnitsSheet
+    Module_ComputeOrgChart 25
+  Library_CCPOFileFinder 125 getAvailCheckerSheet
+    Module_ComputeAvailChecker 13
+    Module_ComputeAvailChecker 305
+  Library_CCPOFileFinder 130 getTestingAvailableSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 137 getPublicBenchSpreadsheet
+    Library_CCPOFileFinder 144
+    Library_CCPOFileFinder 149
+    Library_CCPOFileFinder 154
+    Library_CCPOFileFinder 159
+    Library_CCPOFileFinder 164
+  Library_CCPOFileFinder 142 getPublicBenchSheet
+    Module_syncPublicBenchFile 82
+  Library_CCPOFileFinder 147 getPublicPipelineSheet
+    Module_syncPublicBenchFile 93
+  Library_CCPOFileFinder 152 getPublicTicketSheet
+    Module_syncPublicBenchFile 105
+  Library_CCPOFileFinder 157 getPublicStudiosSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 162 getPublicProjectSheet
+    Module_ImportFromEmail 181
+  Library_CCPOFileFinder 170 getBenchSpreadsheetId
+    Library_CCPOFileFinder 179
+    Module_Backup 8
+  Library_CCPOFileFinder 177 getBenchSpreadsheet
+    GERPE_AllTicketProcessing 31
+    Module_AvailableProcessing 13
+    Module_AvailableProcessing 14
+    Module_BestFit 25
+    Module_BestFit 27
+    Module_ComputeAvailChecker 303
+    Module_ComputeAvailChecker 307
+    Module_ComputeBenchCost 118
+    Module_ImportFromEmail 178
+    Module_ImportFromEmail 206
+    Module_OpenPositions 1498
+    Module_OpenPositions 1502
+    Module_syncPublicBenchFile 20
+    Module_syncPublicBenchFile 81
+    Module_syncPublicBenchFile 92
+    Module_syncPublicBenchFile 104
+    Module_TicketProcessing 89
+    Module_TicketProcessing 286
+  Library_CCPOFileFinder 182 getDashboardSpreadsheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 188 getGlowImportSpreadsheet
+    GERPE_AllTicketProcessing 30
+    Module_AvailableProcessing 12
+    Module_ComputeAvailChecker 36
+    Module_ComputeAvailChecker 37
+    Module_ComputeAvailChecker 309
+    Module_ComputeDispersion 16
+    Module_ComputeDispersion 17
+    Module_ComputeHeadCount 79
+    Module_ComputeHeadCount 80
+    Module_ComputeHeadCount 128
+    Module_ComputeHeadCount 129
+    Module_ComputeOrgChart 22
+    Module_ComputeOrgChart 23
+    Module_ComputeOrgChart 24
+    Module_GloberSkills 37
+    Module_GloberSkills 38
+    Module_ImportFromEmail 134
+    Module_ImportFromEmail 171
+    Module_ImportFromEmail 198
+    Module_TicketProcessing 285
+    Module_TicketProcessing 523
+    Module_TicketProcessing 524
+  Library_CCPOFileFinder 194 getGlowImport2Spreadsheet
+    Library_AssignmentClass 36
+    Library_AssignmentClass 48
+    Library_CCPOFileFinder 121
+    Module_ComputeAvailChecker 44
+    Module_ComputeHeadCount 81
+    Module_ComputeHeadCount 153
+    Module_ImportFromEmail 74
+    Module_ImportFromEmail 89
+    Module_ImportFromEmail 112
+    Module_ImportFromEmail 123
+    Module_ImportFromEmail 158
+    Module_TicketProcessing 281
+  Library_CCPOFileFinder 212 getTestingSpreadsheet
+    Library_CCPOFileFinder 127
+    Library_CCPOFileFinder 132
+    Module_ComputeHeadCount 61
+    Module_ComputeOrgChart 9
+    Module_GloberSkills 16
+    Module_NewHiresProcessing 124
+    Module_TicketProcessing 10
+  Library_CCPOFileFinder 222 getOpenPositionsSpreadsheetId
+    Library_CCPOFileFinder 227
+    Module_OpenPositions 1018
+  Library_CCPOFileFinder 225 getOpenPositionsSpreadsheet
+    Library_CCPOFileFinder 231
+    Library_CCPOFileFinder 235
+    Library_CCPOFileFinder 239
+    Library_CCPOFileFinder 243
+    Library_CCPOFileFinder 247
+    Library_CCPOFileFinder 251
+    Library_CCPOFileFinder 255
+    Library_CCPOFileFinder 259
+    Library_CCPOFileFinder 263
+    Library_CCPOFileFinder 267
+    Library_CCPOFileFinder 271
+    Module_OpenPositions 101
+    Module_OpenPositions 106
+    Module_OpenPositions 114
+  Library_CCPOFileFinder 229 getOpenPositionsAvailableSheet
+    Module_OpenPositions 103
+    Module_OpenPositions 263
+    Module_OpenPositions 435
+    Module_OpenPositions 468
+    Module_OpenPositions 481
+    Module_OpenPositions 487
+    Module_OpenPositions 509
+  Library_CCPOFileFinder 233 getOpenPositionsAvailablePreviousSheet
+    Module_OpenPositions 102
+    Module_OpenPositions 1111
+  Library_CCPOFileFinder 237 getOpenPositionsHistoricSheet
+    Module_OpenPositions 32
+  Library_CCPOFileFinder 241 getOpenPositionsClientDescriptionsSheet
+    Module_OpenPositions 1093
+  Library_CCPOFileFinder 245 getOpenPositionsPositionsDescriptionsSheet
+    Module_OpenPositions 1102
+  Library_CCPOFileFinder 249 getOpenPositionsPositionsApplyOPOffshoreSheet
+    Module_OpenPositions 688
+  Library_CCPOFileFinder 253 getOpenPositionsPositionsApplyOPOnsiteSheet
+    Module_OpenPositions 690
+  Library_CCPOFileFinder 257 getOpenPositionsPositionsGlobersSheet
+    Module_OpenPositions 668
+  Library_CCPOFileFinder 261 getOpenPositionsLocationDescriptionsSheet
+    Module_OpenPositions 1120
+  Library_CCPOFileFinder 265 getOpenPositionsHTMLPositionsSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 269 getOpenPositionsStaffingAreaSheet
+    Module_OpenPositions 653
+  Library_CCPOFileFinder 278 getGlobersSuggestionsSpreadsheet
+    Library_CCPOFileFinder 285
+    Library_CCPOFileFinder 290
+    Library_CCPOFileFinder 295
+    Library_CCPOFileFinder 300
+    Library_CCPOFileFinder 305
+    Library_CCPOFileFinder 310
+    Library_CCPOFileFinder 314
+    Library_CCPOFileFinder 319
+    Library_CCPOFileFinder 324
+    Library_CCPOFileFinder 329
+    Library_CCPOFileFinder 334
+    Library_CCPOFileFinder 339
+    Library_CCPOFileFinder 344
+    Library_CCPOFileFinder 349
+  Library_CCPOFileFinder 283 getGlobersSuggestionsMatchingsIgnoredSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 288 getGlobersSuggestionsLogsSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 293 getGlobersSuggestionsBadValuesSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 298 getGlobersSuggestionsParametersSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 303 getGlobersSuggestionsSuggestionsSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 308 getGlobersSuggestionsTicketsSuggestionsSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 312 getGlobersSuggestionsGlobersSuggestionsSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 317 getGlobersSuggestionsSuggestionsDetailsSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 322 getGlobersSuggestionsLocationsMappingSheet
+    Module_OpenPositions 1401
+  Library_CCPOFileFinder 327 getGlobersSuggestionsLocationsClientMappingSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 332 getGlobersSuggestionsSkillsMappingSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 337 getGlobersSuggestionsSenioritiesMappingSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 342 getGlobersSuggestionsEnglishLevelsMappingSheet
+    UNREFERENCED FUNCTION
+  Library_CCPOFileFinder 347 getGlobersSuggestionsSkillsCompatibilityMappingSheet
+    UNREFERENCED FUNCTION
+  Library_computeTicketBucket 3 getDaysOfComputedBucket
+    GERPE_AllTicketProcessing 82
+    Library_computeTicketBucket 23
+    Module_TicketProcessing 358
+  Library_computeTicketBucket 16 test_getDaysOfComputedBucket
+    UNREFERENCED FUNCTION
+  Library_computeTicketBucket 31 callComputeBucket_
+    Library_computeTicketBucket 10
+  Library_computeTicketBucket 93 skillIsMainTech
+    Library_computeTicketBucket 192
+    Library_computeTicketBucket 214
+    Library_computeTicketBucket 272
+    Library_computeTicketBucket 292
+  Library_computeTicketBucket 109 skillIsTechLead
+    Library_computeTicketBucket 225
+    Library_computeTicketBucket 257
+    Library_computeTicketBucket 292
+    Library_computeTicketBucket 319
+  Library_computeTicketBucket 113 positionIsTechLead
+    UNREFERENCED FUNCTION
+  Library_computeTicketBucket 127 skillIsOperations
+    Library_computeTicketBucket 199
+    Library_computeTicketBucket 220
+    Library_computeTicketBucket 278
+  Library_computeTicketBucket 140 skillIsMobileTech
+    Library_computeTicketBucket 240
+    Library_computeTicketBucket 306
+    Library_computeTicketBucket 318
+  Library_computeTicketBucket 182 skillIsSecondary
+    Library_computeTicketBucket 251
+    Library_computeTicketBucket 306
+    Library_computeTicketBucket 318
+  Library_computeTicketBucket 188 matchesBucket1
+    Library_computeTicketBucket 42
+  Library_computeTicketBucket 209 matchesBucket2
+    Library_computeTicketBucket 46
+  Library_computeTicketBucket 235 matchesBucket3
+    Library_computeTicketBucket 52
+  Library_computeTicketBucket 267 matchesBucket4
+    Library_computeTicketBucket 59
+  Library_computeTicketBucket 287 matchesBucket5
+    Library_computeTicketBucket 61
+  Library_computeTicketBucket 301 matchesBucket6
+    Library_computeTicketBucket 63
+  Library_computeTicketBucket 330 isOnsite_
+    Library_computeTicketBucket 216
+    Library_computeTicketBucket 221
+    Library_computeTicketBucket 242
+    Library_computeTicketBucket 247
+    Library_computeTicketBucket 253
+    Library_computeTicketBucket 259
+    Library_computeTicketBucket 274
+    Library_computeTicketBucket 279
+    Library_computeTicketBucket 293
+    Library_computeTicketBucket 308
+    Library_computeTicketBucket 313
+    Library_computeTicketBucket 321
+  Library_computeTicketBucket 331 isAnywhere_
+    Library_computeTicketBucket 195
+    Library_computeTicketBucket 201
+    Library_computeTicketBucket 227
+    Library_computeTicketBucket 258
+  Library_computeTicketBucket 334 getSeniorities
+    Library_computeTicketBucket 189
+    Library_computeTicketBucket 210
+    Library_computeTicketBucket 236
+    Library_computeTicketBucket 268
+    Library_computeTicketBucket 288
+    Library_computeTicketBucket 302
+  Library_computeTicketBucket 339 nobucket
+    Library_computeTicketBucket 66
+  Library_computeTicketBucket 340 bucket1
+    Library_computeTicketBucket 44
+  Library_computeTicketBucket 341 bucket2
+    Library_computeTicketBucket 48
+  Library_computeTicketBucket 342 bucket3
+    Library_computeTicketBucket 54
+  Library_computeTicketBucket 343 bucket4
+    Library_computeTicketBucket 60
+  Library_computeTicketBucket 344 bucket5
+    Library_computeTicketBucket 62
+  Library_computeTicketBucket 345 bucket6
+    Library_computeTicketBucket 64
+  Library_computeTicketBucket 347 bucketN
+    Library_computeTicketBucket 339
+    Library_computeTicketBucket 340
+    Library_computeTicketBucket 341
+    Library_computeTicketBucket 342
+    Library_computeTicketBucket 343
+    Library_computeTicketBucket 344
+    Library_computeTicketBucket 345
+  Library_CSVProcessingFast 7 CSVUtilitiesClass
+    UNREFERENCED FUNCTION
+  Library_CSVProcessingFast 35 chunk
+    Library_CSVProcessingFast 176
+  Library_CSVProcessingFast 50 optimizedCsvToArray
+    Library_CSVProcessingFast 165
+  Library_CSVProcessingFast 93 csvToArray
+    Library_CSVProcessingFast 65
+  Library_CSVProssesing 7 CSVToArray
+    Module_ImportFromEmail 263
+  Library_DateUtils 4 test__CCPODateUtils
+    UNREFERENCED FUNCTION
+  Library_DateUtils 20 CCPODateUtilsClass
+    UNREFERENCED FUNCTION
+  Library_ErrorListClass 4 CCPOErrorListClass
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 4 assert
+    GERPE_AllTicketProcessing 15
+    GERPE_AllTicketProcessing 18
+    Library_CSVProcessingFast 163
+    Library_Logs 19
+    Library_Logs 21
+    Module_BestFit 81
+    Module_CCPOConfigClass 5
+    Module_CCPOConfigClass 10
+    Module_ComputeAvailChecker 282
+    Module_ComputeDispersion 80
+    Module_ComputeHeadCount 15
+    Module_ComputeHeadCount 404
+    Module_ComputeHeadCount 422
+    Module_ComputeHeadCount 427
+    Module_ComputeHeadCount 463
+    Module_ComputeOrgChart 10
+    Module_ComputeOrgChart 39
+    Module_GloberSkills 169
+    Module_GloberSkills 170
+    Module_GloberSkills 177
+    Module_GloberSkills 178
+    Module_ImportFromEmail 235
+    Module_syncPublicBenchFile 156
+    Module_syncPublicBenchFile 157
+    Module_TicketProcessing 421
+    Module_TicketProcessing 531
+  Library_GlobantUtils 11 compareStrings
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 23 compareDates
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 33 obfuscateString
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 43 isEmptyString
+    Library_GlobantUtils 13
+    Library_GlobantUtils 14
+    Library_GlobantUtils 15
+    Library_GlobantUtils 35
+    Module_ComputeHeadCount 224
+    Module_ComputeHeadCount 227
+    Module_ComputeOrgChart 123
+    Module_NewHiresProcessing 54
+    Module_NewHiresProcessing 55
+    Module_TicketProcessing 114
+    Module_TicketProcessing 119
+    Module_TicketProcessing 125
+    Module_TicketProcessing 324
+    Module_TicketProcessing 402
+    Module_TicketProcessing 404
+    Module_TicketProcessing 560
+    Module_TicketProcessing 601
+  Library_GlobantUtils 50 convertDictionaryToArray
+    Module_NewHiresProcessing 120
+    Module_NewHiresProcessing 128
+  Library_GlobantUtils 64 ensureMinimumSize
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 75 cloneSimpleObject
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 87 copyColumns
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 103 findColumnByHeader
+    Library_GlobantUtils 94
+    Library_GlobantUtils 193
+    Library_GlobantUtils 215
+  Library_GlobantUtils 120 copyColumn
+    Library_GlobantUtils 96
+  Library_GlobantUtils 149 getCellValue
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 155 setCellValue
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 161 getHeaderIndexes
+    GERPE_AllTicketProcessing 29
+    Module_AvailableProcessing 22
+    Module_BestFit 80
+    Module_ComputeAvailChecker 331
+    Module_ComputeAvailChecker 332
+    Module_NewHiresProcessing 21
+    Module_OpenPositions 280
+    Module_syncPublicBenchFile 161
+    Module_TicketProcessing 282
+    Module_TicketProcessing 525
+  Library_GlobantUtils 176 getSheetHeaders
+    GERPE_AllTicketProcessing 21
+    Library_AssignmentClass 37
+    Module_AvailableProcessing 16
+    Module_ComputeOrgChart 11
+    Module_GloberSkills 17
+    Module_NewHiresProcessing 20
+    Module_TicketProcessing 91
+  Library_GlobantUtils 185 getRowObject
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 206 getRowsWithHeaders
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 243 getRows
+    GERPE_AllTicketProcessing 20
+    GERPE_AllTicketProcessing 30
+    Library_AssignmentClass 49
+    Library_GlobantUtils 586
+    Module_AvailableProcessing 15
+    Module_BestFit 52
+    Module_BestFit 185
+    Module_CCPOConfigClass 11
+    Module_ComputeAvailChecker 45
+    Module_ComputeAvailChecker 326
+    Module_ComputeAvailChecker 327
+    Module_ComputeAvailChecker 328
+    Module_ComputeBenchCost 57
+    Module_ComputeBenchCost 119
+    Module_ComputeHeadCount 82
+    Module_ComputeHeadCount 155
+    Module_ComputeHeadCount 380
+    Module_ComputeHeadCount 423
+    Module_ComputeHeadCount 428
+    Module_ComputeOrgChart 24
+    Module_GloberSkills 40
+    Module_NewHiresProcessing 19
+    Module_OpenPositions 152
+    Module_OpenPositions 401
+    Module_OpenPositions 436
+    Module_OpenPositions 469
+    Module_OpenPositions 482
+    Module_OpenPositions 488
+    Module_OpenPositions 510
+    Module_OpenPositions 515
+    Module_OpenPositions 564
+    Module_OpenPositions 654
+    Module_OpenPositions 669
+    Module_OpenPositions 689
+    Module_OpenPositions 691
+    Module_OpenPositions 1094
+    Module_OpenPositions 1103
+    Module_OpenPositions 1112
+    Module_OpenPositions 1121
+    Module_OpenPositions 1150
+    Module_OpenPositions 1401
+    Module_TicketProcessing 90
+    Module_TicketProcessing 283
+    Module_TicketProcessing 285
+  Library_GlobantUtils 278 lookForValueInRows
+    Module_ComputeAvailChecker 355
+    Module_ComputeAvailChecker 403
+    Module_ComputeAvailChecker 415
+  Library_GlobantUtils 292 lookForValuesInRows
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 314 replaceText
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 330 copySheet
+    Module_ImportFromEmail 179
+    Module_ImportFromEmail 182
+    Module_ImportFromEmail 207
+    Module_syncPublicBenchFile 22
+  Library_GlobantUtils 347 saveSheetObjs
+    Library_AssignmentClass 38
+    Module_ComputeHeadCount 20
+    Module_ComputeHeadCount 117
+    Module_ComputeOrgChart 12
+    Module_GloberSkills 18
+    Module_NewHiresProcessing 126
+    Module_TicketProcessing 142
+    Module_TicketProcessing 422
+  Library_GlobantUtils 370 saveSheetValues
+    Library_GlobantUtils 343
+    Library_GlobantUtils 366
+    Module_ComputeAvailChecker 258
+    Module_ComputeAvailChecker 442
+    Module_ComputeHeadCount 319
+    Module_syncPublicBenchFile 188
+  Library_GlobantUtils 393 toUpperCase
+    Module_BestFit 218
+    Module_BestFit 220
+  Library_GlobantUtils 420 isAlnum
+    Library_GlobantUtils 402
+  Library_GlobantUtils 427 isDigit
+    Library_GlobantUtils 405
+    Library_GlobantUtils 423
+  Library_GlobantUtils 432 copyFormat
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 440 stripHashTag
+    Library_GlobantUtils 450
+    Library_GlobantUtils 451
+    Module_BestFit 62
+  Library_GlobantUtils 448 testStripHashTag
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 454 toUpper
+    Module_OpenPositions 155
+    Module_OpenPositions 441
+    Module_OpenPositions 532
+    Module_OpenPositions 1133
+    Module_OpenPositions 1197
+    Module_OpenPositions 1201
+    Module_OpenPositions 1205
+  Library_GlobantUtils 462 toLower
+    Library_computeTicketBucket 6
+    Library_computeTicketBucket 7
+    Library_computeTicketBucket 8
+    Library_computeTicketBucket 33
+    Library_computeTicketBucket 34
+    Library_computeTicketBucket 35
+    Library_computeTicketBucket 36
+    Library_computeTicketBucket 37
+  Library_GlobantUtils 470 quitSpaces
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 481 Cache
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 542 addDaysToDate
+    Module_ComputeAvailChecker 183
+    Module_ComputeAvailChecker 217
+    Module_ComputeHeadCount 27
+    Module_ComputeHeadCount 34
+    Module_NewHiresProcessing 75
+    Module_TicketProcessing 462
+    Module_TicketProcessing 632
+  Library_GlobantUtils 550 findWeekday
+    Module_ComputeHeadCount 27
+    Module_ComputeHeadCount 34
+    Module_NewHiresProcessing 42
+  Library_GlobantUtils 561 getDateWeek
+    Module_ComputeHeadCount 365
+    Module_NewHiresProcessing 43
+    Module_NewHiresProcessing 58
+    Module_Scheduler 222
+    Module_Scheduler 222
+    Module_TicketProcessing 304
+  Library_GlobantUtils 573 normalizeDate
+    Library_AssignmentClass 22
+    Library_AssignmentClass 102
+    Library_AssignmentClass 103
+    Library_AssignmentClass 109
+    Module_ComputeAvailChecker 42
+    Module_ComputeAvailChecker 61
+    Module_ComputeAvailChecker 73
+    Module_ComputeAvailChecker 130
+    Module_ComputeAvailChecker 136
+    Module_ComputeAvailChecker 162
+    Module_ComputeAvailChecker 173
+    Module_ComputeAvailChecker 184
+    Module_ComputeAvailChecker 191
+    Module_ComputeAvailChecker 216
+    Module_ComputeAvailChecker 217
+    Module_ComputeAvailChecker 230
+    Module_ComputeAvailChecker 417
+    Module_ComputeAvailChecker 417
+    Module_ComputeBenchCost 222
+    Module_ComputeHeadCount 41
+    Module_ComputeHeadCount 151
+    Module_ComputeHeadCount 164
+    Module_ComputeHeadCount 168
+    Module_ComputeHeadCount 272
+    Module_ComputeHeadCount 273
+    Module_ComputeHeadCount 362
+    Module_ComputeHeadCount 363
+    Module_NewHiresProcessing 75
+    Module_NewHiresProcessing 76
+    Module_NewHiresProcessing 98
+    Module_TicketProcessing 113
+    Module_TicketProcessing 570
+  Library_GlobantUtils 583 computeMap
+    GERPE_AllTicketProcessing 23
+    GERPE_AllTicketProcessing 31
+    Module_AvailableProcessing 12
+    Module_AvailableProcessing 13
+    Module_ComputeAvailChecker 36
+    Module_ComputeAvailChecker 37
+    Module_ComputeAvailChecker 303
+    Module_ComputeDispersion 16
+    Module_ComputeDispersion 17
+    Module_ComputeHeadCount 79
+    Module_ComputeHeadCount 80
+    Module_ComputeHeadCount 128
+    Module_ComputeHeadCount 129
+    Module_ComputeOrgChart 22
+    Module_ComputeOrgChart 23
+    Module_ComputeOrgChart 25
+    Module_GloberSkills 37
+    Module_GloberSkills 38
+    Module_GloberSkills 41
+    Module_TicketProcessing 277
+    Module_TicketProcessing 278
+    Module_TicketProcessing 286
+    Module_TicketProcessing 523
+    Module_TicketProcessing 524
+  Library_GlobantUtils 601 hasElapsedEnoughTime
+    Library_GlobantUtils 619
+    Module_ComputeBenchCost 17
+    Module_ComputeBenchCost 20
+    Module_ComputeBenchCost 23
+    Module_TicketProcessing 146
+    Module_TicketProcessing 427
+  Library_GlobantUtils 614 testhasElapsedEnoughTime
+    UNREFERENCED FUNCTION
+  Library_GlobantUtils 631 sendTableEmailFromObjs
+    Library_AssignmentClass 22
+    Module_NewHiresProcessing 139
+    Module_TicketProcessing 512
+  Library_GlobantUtils 656 convertArrayToHTML
+    Library_GlobantUtils 646
+    Module_TicketProcessing 636
+  Library_Logs 2 test123456_
+    UNREFERENCED FUNCTION
+  Library_Logs 11 CCPOLoggerClass
+    UNREFERENCED FUNCTION
+  Library_Logs 16 getSheet
+    Library_Logs 13
+  Module_AvailableProcessing 1 updateAvailableFields_cron
+    UNREFERENCED FUNCTION
+  Module_AvailableProcessing 9 CCPOAvailableProcessingClass
+    UNREFERENCED FUNCTION
+  Module_Backup 1 backupBenchFile_cron
+    UNREFERENCED FUNCTION
+  Module_Backup 50 backupFile_
+    Module_Backup 8
+    Module_Backup 11
+    Module_Backup 14
+    Module_Backup 18
+    Module_Backup 21
+    Module_Backup 24
+    Module_Backup 27
+    Module_Backup 28
+    Module_Backup 31
+    Module_Backup 32
+  Module_Backup 74 cleanBackupFiles_
+    Module_Backup 38
+  Module_BestFit 2 Datamining_updateBestFits_cron
+    UNREFERENCED FUNCTION
+  Module_BestFit 14 BenchUpdateBestFitsClass
+    UNREFERENCED FUNCTION
+  Module_BestFit 215 automaticSuggestionGloberHash
+    UNREFERENCED FUNCTION
+  Module_BestFit 224 automaticSuggestionTicketHash
+    UNREFERENCED FUNCTION
+  Module_CCPODatabaseClass 23 initCCPODatabase
+    UNREFERENCED FUNCTION
+  Module_ComputeAvailChecker 3 computeAvailChecker_cron
+    UNREFERENCED FUNCTION
+  Module_ComputeAvailChecker 33 CCPOComputeAvailCheckerClass
+    UNREFERENCED FUNCTION
+  Module_ComputeAvailChecker 94 releasesSortFunction
+    UNREFERENCED FUNCTION
+  Module_ComputeAvailChecker 110 handleGlober
+    Module_ComputeAvailChecker 85
+  Module_ComputeAvailChecker 263 resultsSortFunction
+    UNREFERENCED FUNCTION
+  Module_ComputeAvailChecker 280 getProject
+    Module_ComputeAvailChecker 235
+    Module_ComputeDispersion 42
+    Module_ComputeHeadCount 202
+    Module_ComputeOrgChart 97
+  Module_ComputeAvailChecker 287 getGlober
+    Module_ComputeAvailChecker 112
+    Module_ComputeDispersion 37
+    Module_ComputeHeadCount 186
+    Module_ComputeHeadCount 500
+  Module_ComputeAvailChecker 299 CCPOComputeAvailablesClass
+    UNREFERENCED FUNCTION
+  Module_ComputeBenchCost 2 computeBenchCost_cron
+    UNREFERENCED FUNCTION
+  Module_ComputeBenchCost 40 CCPOComputeBenchCostsClass
+    UNREFERENCED FUNCTION
+  Module_ComputeBenchCost 46 addError
+    Module_ComputeBenchCost 67
+    Module_ComputeBenchCost 136
+    Module_ComputeDispersion 33
+    Module_ComputeHeadCount 182
+    Module_ComputeHeadCount 210
+  Module_ComputeBenchCost 53 getCostsByEmailMap
+    Module_ComputeBenchCost 44
+  Module_ComputeBenchCost 75 isNumber
+    Module_ComputeBenchCost 65
+    Module_ComputeDispersion 31
+    Module_ComputeHeadCount 180
+  Module_ComputeBenchCost 81 getCost
+    Module_ComputeBenchCost 132
+  Module_ComputeBenchCost 91 formatCost
+    Module_ComputeBenchCost 189
+    Module_ComputeBenchCost 203
+    Module_ComputeBenchCost 203
+    Module_ComputeBenchCost 203
+    Module_ComputeBenchCost 203
+    Module_ComputeBenchCost 226
+    Module_ComputeBenchCost 228
+  Module_ComputeBenchCost 98 addToProperty
+    Module_ComputeBenchCost 158
+    Module_ComputeBenchCost 159
+  Module_ComputeDispersion 3 computeDispersion_cron
+    UNREFERENCED FUNCTION
+  Module_ComputeDispersion 13 CCPOComputeDispersionClass
+    UNREFERENCED FUNCTION
+  Module_ComputeDispersion 71 isNumber
+    UNREFERENCED FUNCTION
+  Module_ComputeDispersion 78 getProject
+    UNREFERENCED FUNCTION
+  Module_ComputeDispersion 85 getGlober
+    UNREFERENCED FUNCTION
+  Module_ComputeHeadCount 3 compareHeadCountSnapshots_cron
+    UNREFERENCED FUNCTION
+  Module_ComputeHeadCount 24 computeHeadCount_cron
+    UNREFERENCED FUNCTION
+  Module_ComputeHeadCount 59 findReleasesOnWeekEnd_cron
+    UNREFERENCED FUNCTION
+  Module_ComputeHeadCount 67 isGlobantBench
+    Module_ComputeAvailChecker 128
+    Module_ComputeAvailChecker 154
+    Module_ComputeAvailChecker 176
+    Module_ComputeAvailChecker 194
+    Module_ComputeHeadCount 101
+    Module_ComputeHeadCount 203
+  Module_ComputeHeadCount 76 CCPOReleasesProcessingClass
+    UNREFERENCED FUNCTION
+  Module_ComputeHeadCount 124 CCPOComputeHeadCountClass
+    UNREFERENCED FUNCTION
+  Module_ComputeHeadCount 342 isNumber
+    UNREFERENCED FUNCTION
+  Module_ComputeHeadCount 350 addAllValues
+    Module_ComputeHeadCount 369
+  Module_ComputeHeadCount 359 computeSummary
+    Module_ComputeHeadCount 263
+  Module_ComputeHeadCount 377 computeMap
+    UNREFERENCED FUNCTION
+  Module_ComputeHeadCount 394 addError
+    UNREFERENCED FUNCTION
+  Module_ComputeHeadCount 402 getProject
+    UNREFERENCED FUNCTION
+  Module_ComputeHeadCount 409 getGlober
+    UNREFERENCED FUNCTION
+  Module_ComputeHeadCount 483 getComparation
+    Module_ComputeHeadCount 443
+    Module_ComputeHeadCount 448
+    Module_ComputeHeadCount 453
+    Module_ComputeHeadCount 458
+    Module_ComputeHeadCount 464
+  Module_ComputeHeadCount 525 compareGlobantStaffingAtDatesFilter
+    UNREFERENCED FUNCTION
+  Module_ComputeOrgChart 3 computeOrgChart_cron
+    UNREFERENCED FUNCTION
+  Module_ComputeOrgChart 19 CCPOComputeOrgChartClass
+    UNREFERENCED FUNCTION
+  Module_ComputeOrgChart 140 getOrgUnitPath
+    Module_ComputeOrgChart 47
+    Module_ComputeOrgChart 87
+    Module_ComputeOrgChart 150
+  Module_ComputeOrgChart 156 getProject
+    UNREFERENCED FUNCTION
+  Module_ComputeOrgChart 163 useOrgUnitManager
+    Module_ComputeOrgChart 42
+  Module_ComputeOrgChart 179 getGlober
+    UNREFERENCED FUNCTION
+  Module_GloberSkills 1 test_testasdert
+    UNREFERENCED FUNCTION
+  Module_GloberSkills 31 CCPOGloberSkillsClass
+    UNREFERENCED FUNCTION
+  Module_GloberSkills 44 sortGloberSkillsFunction
+    UNREFERENCED FUNCTION
+  Module_GloberSkills 156 CCPOBitArrayClass
+    UNREFERENCED FUNCTION
+  Module_ImportFromEmail 1 importFromEmail_cron
+    UNREFERENCED FUNCTION
+  Module_ImportFromEmail 13 ImporterClass_
+    UNREFERENCED FUNCTION
+  Module_ImportFromEmail 222 importFromEmail
+    Module_ImportFromEmail 75
+    Module_ImportFromEmail 90
+    Module_ImportFromEmail 101
+    Module_ImportFromEmail 112
+    Module_ImportFromEmail 123
+    Module_ImportFromEmail 134
+    Module_ImportFromEmail 158
+    Module_ImportFromEmail 172
+    Module_ImportFromEmail 199
+  Module_NewHiresProcessing 1 computeNewHiresForecast_cron
+    UNREFERENCED FUNCTION
+  Module_NewHiresProcessing 15 CCPONewHiresProcessingClass
+    UNREFERENCED FUNCTION
+  Module_OpenPositions 12 OpenPositions_cron
+    UNREFERENCED FUNCTION
+  Module_OpenPositions 27 OpenPositionProccess
+    UNREFERENCED FUNCTION
+  Module_OpenPositions 1497 getOpenPositionsTicketsSourceSheet
+    Module_OpenPositions 151
+  Module_OpenPositions 1501 getOpenPositionsProjectsSourceSheet
+    Module_OpenPositions 563
+  Module_OpenPositions 1506 testOpenPositionProcess
+    UNREFERENCED FUNCTION
+  Module_Scheduler 2 startScheduler_cron
+    UNREFERENCED FUNCTION
+  Module_syncPublicBenchFile 7 syncAllBench_cron
+    UNREFERENCED FUNCTION
+  Module_syncPublicBenchFile 29 SyncAllBenchClass
+    UNREFERENCED FUNCTION
+  Module_syncPublicBenchFile 154 copySheetColumns
+    Module_syncPublicBenchFile 85
+    Module_syncPublicBenchFile 96
+    Module_syncPublicBenchFile 110
+  Module_TicketProcessing 7 findTicketsWithProblems_cron
+    UNREFERENCED FUNCTION
+  Module_TicketProcessing 24 testsyncTicketsWithGlow
+    UNREFERENCED FUNCTION
+  Module_TicketProcessing 30 generateTicketByBucketReport_cron
+    UNREFERENCED FUNCTION
+  Module_TicketProcessing 39 sendEmailsAboutBucket
+    UNREFERENCED FUNCTION
+  Module_TicketProcessing 84 CCPOTicketsProcessingClass
+    UNREFERENCED FUNCTION
+  Module_TicketProcessing 435 formatDate
+    Module_TicketProcessing 461
+    Module_TicketProcessing 462
+  Module_TicketProcessing 599 addEmailsToArray
+    Module_TicketProcessing 563
+    Module_TicketProcessing 564
+    Module_TicketProcessing 565
+  Module_TicketProcessing 608 sendEmailsAboutBucketToClientStakeholders
+    Module_TicketProcessing 591
