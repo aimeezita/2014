@@ -7,18 +7,9 @@ function backupBenchFile2_cron() {
     EMAIL_RECIPIENTS = 'juan.lanus@globant.com' // DEBUG: 'dario.robak@globant.com, analia.altieri@globant.com, nicolas.gerpe@globant.com'
   ;
 
-  // backup requests: description and drive id of the sources
+  // backup requests: description and drive id of the sources, comes from CCPO configuration sheet
   var backupRequests = [
-    { description: 'bench file', id: (getBenchSpreadsheetId()) },
-    { description: 'THIS script (codebase)', id: '1ORAs5Fi26nz3bJXGveJgwEKGZN5VcksfN9YRDqJMn-qPsIePi91YX2DC' },
-    { description: 'headcount spreadsheet', id: '1CvLiQF3DIOMJNIEItMK7FwxUkyKkwy_oaaKdMDJ2r2s' },
-    { description: 'birthday script (codebase)', id: '1EcW6nsfDfAr-SM_FXQG6yVsmXIckB0aFZWqKu7jGdqUXBZxBQd_Lo8vJ' },
-    { description: 'dashboard tickets', id: '0An-jcFMxy8_ydEdvb0kzQkZtNm1hdVM3cDNPVGFaSkE' },
-    { description: 'dashboard rec& sites', id: '0An-jcFMxy8_ydGhzWl8wc1RsU0V4MmE2SzNXM3NZQ3c' },
-    { description: 'Suggestions Module 1', id: '1U2XW6sLeuGh0IKb_cfRIJAYpKFWb88NiaZve8IVInp6pF2ucInx_Ww3a' },
-    { description: 'Suggestions Module 2', id: '0AiPaPAJepRvRdEdyWGc1UHhSd1pKeXZnNlcyMmxtZXc' },
-    { description: 'Open Positions files 1', id: '0AiPaPAJepRvRdDhOYmhJNk9lbWhjOW9SYS0wV0ZaY0E' },
-    { description: 'Open Positions files 2', id: '1NSA-_FzzvIiiA2qA-Bgcjkh8ua0grO4l-ITLJZrb--C-c6HVstnGYcWq' }
+    { description: 'human readable name', id: 'Google drive file id' },
   ];
 
 
@@ -26,12 +17,11 @@ function backupBenchFile2_cron() {
   // BACKUP MAIN PROCESS:
   Logger.log( 'Starting backup process ' + backupFileDate() + '\r\n') ;
 
+  // get the list of files to backup from CCPO configuration sheet
+  var configSheet =  getBenchSpreadsheet().getSheetByName("FilesToBackup");
+  backupRequests = getRows( configSheet );
+
   // prune destination folder, ignore any failure (not essential to the purpose)
-  /* NOTE: 
-  Albeit the prunning process is enclosed in a try-catch block, the goal is to
-  always move on and make an usable backup. An error trying to prune an outdated
-  file must not interrupt the backup process.
-  */
   pruneBackupFiles( MAX_BACKUP_AGE_DAYS );
 
   // loop over the backup requests doing each file
