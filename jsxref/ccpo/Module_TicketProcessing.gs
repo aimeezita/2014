@@ -40,39 +40,39 @@ function sendEmailsAboutBucket() {
 //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////
 /* Headers Ticket
-Number  
-Name    
-Handler 
-Submit Date     
-Update Date     
-Studio  
-Glow Submitter  
-Client  
-Project 
-Position        
-Seniority       
-Type of Assignment      
-Load    
-Start Date      
-Work Office     
-Estimated Travel Period 
-Replacement     
-Client Interview Required?      
-Handler Team    
-Stage   
-Aging   
-Priority        
-OpenPosition    
-Cluster BU      
-ProjectTag      
-ProjectState    
-Staffing Suggestions    
-TL      
-TD      
-Bucket (Weeks)  
-Days to comply SLA      
-SeniorityRange  
-bucketInformed
+  Number  
+  Name    
+  Handler 
+  Submit Date     
+  Update Date     
+  Studio  
+  Glow Submitter  
+  Client  
+  Project 
+  Position        
+  Seniority       
+  Type of Assignment      
+  Load    
+  Start Date      
+  Work Office     
+  Estimated Travel Period 
+  Replacement     
+  Client Interview Required?      
+  Handler Team    
+  Stage   
+  Aging   
+  Priority        
+  OpenPosition    
+  Cluster BU      
+  ProjectTag      
+  ProjectState    
+  Staffing Suggestions    
+  TL      
+  TD      
+  Bucket (Weeks)  
+  Days to comply SLA      
+  SeniorityRange  
+  bucketInformed
 */
 
 
@@ -426,10 +426,10 @@ function CCPOTicketsProcessingClass() {
         arrayPosition = 1;
       cluster[arrayPosition].push(ticket);
     }
-//    cluster[0].sort(function(a,b){return 10000*(b.bucket-a.bucket)+a.remainingDaysNumber-b.remainingDaysNumber});
-//    cluster[1].sort(function(a,b){return 10000*(b.bucket-a.bucket)+a.remainingDaysNumber-b.remainingDaysNumber});
-//    cluster[0].sort(function(a,b){return compareStrings(a.staffingWindowEnd,b.staffingWindowEnd)});
-//    cluster[1].sort(function(a,b){return compareStrings(a.staffingWindowEnd,b.staffingWindowEnd)});
+    // cluster[0].sort(function(a,b){return 10000*(b.bucket-a.bucket)+a.remainingDaysNumber-b.remainingDaysNumber});
+    // cluster[1].sort(function(a,b){return 10000*(b.bucket-a.bucket)+a.remainingDaysNumber-b.remainingDaysNumber});
+    // cluster[0].sort(function(a,b){return compareStrings(a.staffingWindowEnd,b.staffingWindowEnd)});
+    // cluster[1].sort(function(a,b){return compareStrings(a.staffingWindowEnd,b.staffingWindowEnd)});
     cluster[0].sort(function(a,b){return a.remainingDaysNumber-b.remainingDaysNumber});
     cluster[1].sort(function(a,b){return a.remainingDaysNumber-b.remainingDaysNumber});
     
