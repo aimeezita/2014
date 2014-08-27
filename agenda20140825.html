@@ -5,49 +5,268 @@
   <meta http-equiv="Content-Language" content="en">
   <title>25Aug2014 Mon</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140824.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140826.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 25Aug2014 Mon </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140824.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140826.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 25Aug2014 Mon </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p>drive: <a
+href="https://developers.google.com/drive/v2/reference/files/list">Files: list
+(to get file ids)</a>  </p>
+
+<p>drive: <a
+href="https://developers.google.com/drive/web/search-parameters">Search for
+Files</a> e.g., <code>mimeType = 'application/vnd.google-apps.folder'</code>
+</p>
+
+<p>gas: <a
+href="https://sites.google.com/site/scriptsexamples/learn-by-example">LEARN BY
+EXAMPLE</a> </p>
+
+<p><a href="http://shop.oreilly.com/product/0636920032557.do">Google Apps
+Script, 2nd Edition</a> - Web Application Development Essentials By James
+Ferreira Publisher: O'Reilly Media</p>
+
+<p>gas: <a href="http://ctrlq.org/dev/google-apps-script/">an interesting
+blog</a> (many examples)</p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>vim: automate recognition of .gs files</h3>
+
+<p>Added to gvimrc:</p>
+<pre>" treat .gs (google script) files as javascript programs
+au BufNewFile,BufRead *.gs setlocal ft=javascript</pre>
+
+<p>Ths full glb file has: </p>
+<pre>" Vim
+" The commands in this are executed when the GUI is started.
+"
+" The following five lines replace the Windows CMD shell by the
+" cygwin UNIX-like shell for vim commands
+" set shell=C:\WINNT\system32\CMD.EXE
+" set shell+=\ /D 
+" set shell=C:/cygwin/bin/bash
+" set shellcmdflag=--login\ -c
+" set shellxquote=\"
+
+" Fondo claro, para que se vea bien lo seleccionado en DOS (las
+" opciones son "light" o "dark"
+set background=light
+
+" Otras opciones normales:
+set ignorecase
+set nowrapscan
+set expandtab
+
+" Opciones de edición de siempre, no tan sofisticadas
+set ic
+set ai
+set errorbells
+set lines=60
+set more
+set shiftwidth=4
+set tabstop=8
+set smartcase
+set smarttab
+set nowrapscan
+set columns=120
+set noexpandtab
+set sidescrolloff=1
+set sidescroll=1
+
+" Switch syntax highlighting.
+syntax on
+
+" Switch on search pattern highlighting.
+set hlsearch
+
+" Hide the mouse pointer while typing
+set mousehide
+
+" Set nice colors
+highlight Normal guibg=#fffff8
+highlight NonText guibg=grey80
+highlight Constant gui=NONE guibg=#f0f0f0
+highlight String gui=NONE guibg=#f0f0f0
+highlight Special gui=NONE guibg=grey95
+highlight Search guibg=lightyellow guifg=DarkBlue 
+" highlight Constant guibg=bg guifg=DarkGreen
+highlight Comment guifg=Navy
+" colorscheme shine
+highlight Cursor guibg=blue guifg=white
+highlight LineNr guibg=#f0f0f0 guifg=#404040
+
+" Colores y opciones para diff
+"DiffChange diff mode: Changed line |diff.txt|
+"DiffText   diff mode: Changed text within a changed line |diff.txt|
+"DiffAdd    diff mode: Added line |diff.txt|
+"DiffDelete diff mode: Deleted line |diff.txt|
+highlight DiffChange    guibg=#ffffcc
+highlight DiffTextguibg=LightYellow
+highlight DiffAdd   guibg=#eeffee
+highlight DiffDelete    guibg=#eeeeff
+set diffopt=filler,icase,iwhite,context:999
+set foldcolumn=0
+set highlight=n:FoldColumn
+
+" Colores para syn
+highlight Statementgui=bold guifg=magenta
+highlight Stringgui=bold guifg=magenta
+highlight fortranIOgui=bold guifg=DarkCyan
+highlight constantgui=bold guifg=SeaGreen guibg=#f0f0f0
+highlight Specialgui=bold guifg=DarkBlue guibg=#f0f0f0
+highlight fortranComment guifg=#404040
+highlight fortranContinueMarkguibg=#f8f8ff guifg=#202080
+
+" GUI font and normal colors choice
+set guifont=Consolas:h9
+highlight Normal guibg=#f8f8f0
+highlight Normal guifg=#202020
+
+" Suprime la barra de herramientas
+set guioptions-=T
+
+" Reconoce los pares "&lt;" y "&gt;" como los paréntesis para el comando %
+set matchpairs+=&lt;:&gt;
+
+" Mensajes cortos en cambios de archivo, para evitar "hit return"
+set shortmess=a
+
+" Do smart autoindenting when starting a new line (ej. con "{")
+set smartindent
+
+" When on, a &lt;Tab&gt; in front of a line inserts blanks according to
+" 'shiftwidth'.  'tabstop' is used in other places.
+set smarttab
+
+" FORTRAN syntax options
+let fortran_have_tabs = 1" hay tabs en el formato de las líneas
+let fortran_free_source=1" free-format
+let fortran_fold=1" folds subroutines &amp; functions
+let fortran_fold_conditionals=1" folds if, do, ... ranges
+highlight Folded guibg=#f0f0f0 guifg=darkBlue" gris más claro para los folds
+" let fortran_fold_multilinecomments=1" folds comments with +3 lines
+" let fortran_more_precise=0" slower, better recognizion
+" set foldmethod=syntax
+
+" opciones para FORTRAN:
+" :source C:\vim\vimfiles\ftplugin\fortran.vim
+
+" Switch syntax highlighting (after options)
+" syntax on
+
+" Preferible en inglés
+" language en
+
+" No hacer backup de los archivos en el escritorio
+set backupskip=*/Escritorio/*
+
+" Algunos comandos de uso frecuente
+" F12 para suprimir el resaltado de búsqueda
+
+" Map :noh to &lt;f12&gt; to turn search highlight off
+map &lt;f12&gt; :noh&lt;CR&gt;
+" F8 para abrir la ventana de tags
+nnoremap &lt;silent&gt; &lt;F8&gt; :Tlist&lt;CR&gt; 
+
+" Parametrización del comando %:
+" Reconoce los pares "&lt;" y "&gt;" como los paréntesis para el comando %
+set matchpairs+=&lt;:&gt;
+
+" Comandos y sus terminaciones para matchit.vim:
+" Los del archivo ftplugin/fortran.vim andan OK excepto por if continuados
+"let b:match_words = '^\s*\d*\s*\&lt;if\&gt;\s*(:^\selse\s*if\&gt;:^\s*\&lt;else\&gt;:end\s*if,\&lt;do\&gt;\s\s*\D\D:end *do,function:^\s\s*end\s*,^\s\s*\&lt;subroutine\&gt;\s:^\s*\zs\&lt;end\&gt;\s*$\|^\s*\&lt;end\&gt;\s\s*!,structure:end *structure,map:end *map,union:end *union'
+
+" Showmarks: configuración
+" Highlighting: Setup some nice colours to show the mark position.
+highlight ShowMarksHL ctermfg=blue ctermbg=lightblue cterm=bold guifg=darkblue guibg=lightgreen gui=bold
+" esto no funciona, está modificado dentro del script showmarks.vim:
+let showmarks_textlower="_"
+let showmarks_textupper="-"
+
+" _F muestra el nombre de la subroutine/function 
+" map _F mo?^\s\+subroutine\\|^\s\+function\\|^\s\+program
+"xy$'o:echo @x
+" mapleader reemplaza el string &lt;leader&gt; en algunos comandos, \ en este caso (default)
+let mapleader="\\"
+
+" internal data encoding: 
+set encoding=utf-8
+
+" this is to let ShowFuncs.vim where ctags is, but it never worked
+let g:showfuncctagsbin = "C:\\vim\\vim71\\ctags.exe"
+
+" http://vim.wikia.com/wiki/Fix_errors_that_relate_to_reading_or_creating_files_in_the_temp_or_tmp_environment_on_an_MS_Windows_PC
+let $TMP="c:/tmp"
+
+" comandos para ver y editar el buffer en hexadecimal, y para volver a char
+map &lt;Leader&gt;hon :%!xxd
+map &lt;Leader&gt;hof :%!xxd -r
+
+" activate matchit
+filetype plugin on
+
+" highlight shell scripts as for ksh
+let is_kornshell=1
+
+" treat .gs (google script) files as javascript programs
+au BufNewFile,BufRead *.gs setlocal ft=javascript
+</pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
