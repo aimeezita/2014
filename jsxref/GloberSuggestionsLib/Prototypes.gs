@@ -1,26 +1,16 @@
 // Constructors and convenience methods for glober, Ticket and normalizeException objects
 
-var Glober = function(id, name, email, skill, seniority, location, englishLevel, benchStartDate ) {
-  this.id = id;
-  this.name = name;
-  this.email = email;
-  this.skill = skill; //string
-  this.seniority = seniority; //int
-  this.location = location; //string
-  this.englishLevel = englishLevel; //int
-  this.benchStartDate = benchStartDate; //date
-}
 
-var Ticket = function(name, number, client, project, skill, seniority, location, englishLevel, benchStartDate) {
-  this.name = name;
+var Ticket = function(number, name, clientTAG, projectTAG, skill, seniority, location, englishLevel, benchStartDate) {
   this.number = number;
-  this.client = client;
-  this.project = project;
-  this.skill = skill; //string
-  this.seniority = seniority; //int
-  this.location = location; //string
-  this.englishLevel = englishLevel; //int
-  this.benchStartDate = benchStartDate; //date
+  this.name = name;
+  this.client = clientTAG;
+  this.project = projectTAG;
+  this.skill = skill;
+  this.seniority = seniority;
+  this.location = location;
+  this.englishLevel = englishLevel;
+  this.benchStartDate = benchStartDate;
 }
 
 var normalizeException = function (object_id, column, badValue) {

@@ -1,3 +1,5 @@
+// Glober class: models a glober by containing his/her data and providing
+// a set of obvious methods
 
 var Glober = function(id, name, email, skill, seniority, location, englishLevel, benchStartDate ) {
   this.id = id;
@@ -55,7 +57,7 @@ var Glober = function(id, name, email, skill, seniority, location, englishLevel,
       // AA 26  LastDateSkillsReview
       // AB 27  GloberStudio
       // AC 28  Staff
-      var 
+      var // see getIndexes
         COL_GLOBER_ID = 0,
         COL_FIRST_NAME = 1,
         COL_LAST_NAME = 2,
@@ -63,17 +65,21 @@ var Glober = function(id, name, email, skill, seniority, location, englishLevel,
         COL_SENIORITY = 7,
         COL_ROLE = 6,
         COL_GLOBER_OFFICE = 9,
-        COL_ENGLISH_LEVEL = 11,
-        g = new Glober()
+        COL_ENGLISH_LEVEL = 11
       ;
-      g.id = rowValues[COL_GLOBER_ID];
-      g.name = rowValues[COL_FIRST_NAME] + ' ' + rowValues[COL_LAST_NAME];
-      g.email = rowValues[COL_EMAIL];
-      g.skill = rowValues[COL_LAST_NAMEZZZ];
-      g.seniority = seniority; //int
-      g.location = location; //string
-      g.englishLevel = englishLevel; //int
-      g.benchStartDate = benchStartDate; //date
+      this.id = rowValues[COL_GLOBER_ID];
+      this.name = rowValues[COL_FIRST_NAME] + ' ' + rowValues[COL_LAST_NAME];
+      this.email = rowValues[COL_EMAIL];
+      this.skill = rowValues[COL_LAST_NAMEZZZ];
+      this.seniority = seniority; //int
+      this.location = location; //string
+      this.englishLevel = englishLevel; //int
+      var benchData = getBenchRow( this.email );
+      if( benchData ) {
+      } else [
+        // no bench start date
+      }
+      this.benchStartDate = benchStartDate; //date
       return this;
 
     }
