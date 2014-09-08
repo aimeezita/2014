@@ -1,5 +1,5 @@
  /*
- Comments on the GloberSuggestionsLib code:
+ Comments on the existing GloberSuggestionsLib code:
 
  There is too much programmatic complexity, not proportional to the dimensions
  of the work itself (300 tickets times 3000 globers approx). 

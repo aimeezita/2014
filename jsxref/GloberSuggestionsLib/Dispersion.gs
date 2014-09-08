@@ -40,8 +40,7 @@ var today = new Date(),
         || source["End Date"] < today || globerPosition === "PROGRAM MANAGER" 
         || globerPosition ==="GURU"){
         
-    }
-    else{
+    } else {
     
       if (client){
         hashKey = client;
