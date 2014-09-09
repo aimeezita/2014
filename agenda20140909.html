@@ -5,49 +5,135 @@
   <meta http-equiv="Content-Language" content="en">
   <title>09Sep2014 Tue</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
+  <style>
+pre { font-size:80%; }</style>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140908.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140910.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 09Sep2014 Tue </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140908.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140910.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 09Sep2014 Tue </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a href="http://www.memsql.com">memSQL</a>   </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>staffing suggestions</h3>
+<ol>
+  <li>Tickets sheet has column SeniorityRange - no space between words</li>
+  <li>@ line 325 toUpperCase() instead of toupper()</li>
+  <li>Added English level: Low Intermediate</li>
+  <li>Added number of suggestions stored to log @ 282</li>
+  <li>@140 deleted the top8 truncation</li>
+  <li>Refactored function buildSuggestionsText()</li>
+  <li>If debug buildSuggestionsText() includes all the ticket suggestions, not
+    only the top 8</li>
+</ol>
+
+<p></p>
+
+<h4>set suggestions in available sheet</h4>
+<pre>154326 CP3 (Deloitte USA) match 100%
+154145 M&amp;A Central Phase 2 (Deloitte USA) match 85% (Location: 10, Seniority: 5)</pre>
+
+<p>Tickets: </p>
+
+<p>Data in available is #1: Project, #2: Client, #3 matching%, #4: matching
+reasons</p>
+<pre>Number: #154145
+Name: .Net Developer : SSr : QC Analyst - Jr 
+<strong>Client: Deloitte USA</strong>                           #2
+<strong>Project: M&amp;A Central Phase 2</strong>                   #1
+Position: .Net Developer
+Seniority: SSr
+Load: 100
+Start Date: 9/2/2014
+Work Office: AR/Cordoba/GLB-Capitalinas
+Estimated Travel Period;
+Replacement: Yes
+Client Interview Required?: No
+Stage: Stage 2: week 36
+Aging: -12
+Priority: 6
+Open Position: undefined
+Cluster: A replacement
+BU: Consultants
+ProjectTag: DUS004
+ProjectState: ON_GOING
+Staffing Suggestions: 97236768 Carlos Gonzalez (carlos.gonzalez) at AR/CBA match 91% (Seniority: 5, BenchDate: 4)
+                      135305457 Juan Ricardo Granados Munarth (juan.granados) at AR/CABA match 90% (Location: 10)
+                      97241246 Jose Ignacio Ojeda (jose.ojeda) at AR/CBA <strong>match 89.5%</strong> (Seniority: 3, BenchDate: 7.5)
+                      49010079 Mario Alberto Insegna (mario.insegna) at AR/CBA match 87.5% (Seniority: 5, BenchDate: 7.5)
+                      undefined Juan Sebastian Del Soldato (NH) at AR/LP match 86.5% (Location: 10, Seniority: 3, BenchDate: 0.5)
+                      157946736 Leonardo Gabriel Tolosa (leonardo.tolosa) at AR/CBA match 86% (Seniority: 5, BenchDate: 9)
+                      50348235 Federico Sebastian Lazarte (federico.lazarte) at AR/CBA match 86% (Seniority: 5, BenchDate: 9)
+                      197651577 Ramiro Ezequiel Rivas (ramiro.rivas) at AR/CABA match 85% (Location: 10, Seniority: 5)
+Suggestions: jose.ojeda <strong>100%</strong> 
+TL: Mariano Ezequiel Deluca - Matias Ricardo Paez Yunnissi
+TD: Agustin Pablo Huerta
+Bucket (Weeks)5
+Days to comply SLA: 47
+SeniorityRange:2 - SSr
+bucket Informed: undefined
+Handler: maria.quiroga
+Handler Team: Tri-state area
+Submit Date: 8/11/2014
+Update Date: 8/20/2014
+Studio: Enterprise Consumerization
+Glow Submitter: luis.miranda
+Type of Position: CONFIRMED</pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>

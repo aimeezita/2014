@@ -5,49 +5,353 @@
   <meta http-equiv="Content-Language" content="en">
   <title>01Sep2014 Mon</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20140831.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20140902.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 01Sep2014 Mon </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20140831.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20140902.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 01Sep2014 Mon </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>unusable error message</h3>
+
+<p><img alt="no esplanation!" src="UsernameAndPasswordDoNotMatch.png"></p>
+
+<h3>reading</h3>
+<ul>
+  <li>The mongo <code>C:\Program Files\MongoDB 2.6 Standard\bin</code>
+    directory added to system path</li>
+  <li>Created the <code>C:\w\mongodata</code> directory for database files</li>
+  <li>Start mongo: 
+    <pre>mongod --dbpath C:\w\mongodata</pre>
+  </li>
+  <li>The <code>app.js</code> file has UNIX paths, must parameterize to ba able
+    to run in Windows:
+    <pre>  appPages.use( express.static(path.join('/home/jlanus/Dropbox/Public/reading', '/')) );
+  console.log( "static dir:" + '/home/jlanus/Dropbox/Public/reading' );
+  console.log( "dirname:" + __dirname); // /home/jlanus/Dropbox/Public/reading[/js/rt3</pre>
+    <p>replaced by:</p>
+    <pre>  if( process.platform === 'win32' ) {
+      appPages.use( express.static(path.join('C:\\w\\reading', '\\')) );
+      console.log( "static dir:" + 'C:\\w\\reading' );
+  } else {
+      appPages.use( express.static(path.join('/home/jlanus/Dropbox/Public/reading', '/')) );
+      console.log( "static dir:" + '/home/jlanus/Dropbox/Public/reading' );
+  }</pre>
+  </li>
+  <li>To find out the OS use <code>(<a
+    href="http://nodejs.org/api/process.html#process_process_platform">process.platform</a>
+    === 'win32')</code> in Windows (even 64 bit systems),
+    and<code>...'linux'...</code> in Linux. </li>
+</ul>
+
+<p></p>
+
+<h3>Module_StaffingSuggestions</h3>
+<pre>function computeStaffingSuggestions_cron() 
+{
+  var outputSheet = getTestingSpreadsheet().getSheetByName("StaffingSuggestions");
+  var suggestionsComputer = new CCPOStaffingSuggestionsClass();
+  Logger.log( 'About to run computeSuggestions() method' );
+  suggestionsComputer.computeSuggestions( outputSheet );
+  Logger.log( 'Returned from computeSuggestions() method' );
+}
+
+
+function CCPOStaffingSuggestionsClass()
+{
+  /*************************************** set up *********************************************/
+  var errorList = new CCPOErrorListClass();
+  var config = new CCPOConfigClass();
+  
+  // instantiate various mappers
+  var seniorityMapper = config.getMapper("Seniority");
+  var locationMapper = config.getMapper("Location");
+  var englishLevelMapper = config.getMapper("EnglishLevel");
+  var skillsEquivalenceMapper = config.getMapper("SkillsEquivalence");
+  
+  // load the Tickets and normalize them by overwriting the pertinent columns, the
+  // tickets that have normalizing issues are deleted
+  var ticketsSheet = getBenchSpreadsheet().getSheetByName("Tickets");
+  var ticketsRows = getRows(ticketsSheet);
+  ticketsRows = normalizeTickets( ticketsRows );
+
+  // build a map of the Available sheet (bench) keyed by Email column
+  var availMap = computeMap(getBenchSpreadsheet().getSheetByName("Available"), "Email");
+
+  // load the Globers data and normalize it
+  var globerSheet =  getBenchSpreadsheet().getSheetByName("Globers");
+  var globerRows = getRows(globerSheet);
+  globerRows = normalizeGlobers( globerRows );
+
+
+  /********************************** main function *******************************************/
+  // the suggestions calculation function
+  this.computeSuggestions = function(outputSheet) {
+    var calculationsCount = 0;
+    errorList.clear();
+    var resultHeaders = ['Email', 'Ticket', 'Matching', 'Matching explain'];   // for now
+    var resultValues = [];
+    for( var i = 0; i &lt; globerRows.length; i++ ) {
+      var globerRow = globerRows[i];
+
+      for(var j = 0; j &lt; ticketsRows.length; j++) {
+        var ticketRow = ticketsRows[j];
+        
+        calculationsCount++;
+        if ( (calculationsCount % 100000) === 0 ) { 
+          Logger.log( 'Calculating suggestion #' + calculationsCount +' (' + i + ', ' + j + ')' );
+        };
+        
+        var 
+          matching = 100,
+          matchingLoss = 0,
+          matchingReasons = [],
+          matchingThreshold = 50           // TODO: parameterize this
+        ;
+        
+        // skill
+        var gsk = globerRow['Role'];
+        var tsk = ticketRow['Position'];
+        if( gsk == tsk ) {
+          // good!
+        } else {
+          // enter a table that maps skill pairs into compatibility points
+          var compatibility = skillsEquivalenceMapper.map( tsk + '_' + gsk );
+          if( !! compatibility ) {
+            matching = matching - compatibility;
+            matchingReasons += ' skill: ' + compatibility + ' ' + gsk + ' ' + tsk;     // call matchingExplainAppend(item, number, gvalue, tvalue)
+          } else {
+            matchingReasons += ' skill: ' + matching + ' ' + gsk + ' ' + tsk;
+            matching = 0;
+          }
+        }
+        if( matching &lt; matchingThreshold ) { continue; }
+        
+        // dispersion: -20 if glober's location not contained in ticket's location or viceversa
+        var gl = globerRow['Glober Office'];
+        var tl = ticketRow['Work Office'];
+        if( !( tl === '*' || tl.indexOf(gl) &gt;= 0 || gl.indexOf(tl) &gt;= 0 )) {
+          matching = matching - 20;
+          matchingReasons += ' dispersion: 20 ' + gl + ' ' + tl;          // usar una función para poder controlar debug
+        }
+        if( matching &lt; matchingThreshold ) { continue; }
+        
+        // seniority: 
+        var gs = globerRow['Seniority'];
+        var ts = ticketRow['Seniority Range'];
+        if( ts !== gs ) {
+          if( ts &gt; gs ) {
+            matchingLoss =  10 * ( ts - gs );
+          } else {
+            matchingLoss =  5 * ( gs - ts );
+          }
+          matching = matching - matchingLoss;
+          matchingReasons += ' seniority: ' + matchingLoss + ' ' + gs + ' ' + ts;
+        }
+        if( matching &lt; matchingThreshold ) { continue; }
+        
+        // bench date
+        var millisPerDay = 24 * 60 * 60 * 1000;
+        var startDate = ticketRow['Start Date'];
+        var todayDate = new Date();
+        var daysToProjectDate = Math.round( (startDate.getTime() - todayDate.getTime()) / millisPerDay );
+        if( daysToProjectDate &gt; 7 ) {
+          // project start is 7+ days ahead
+          matchingLoss = daysToProjectDate * 0.5;
+          matching = matching - matchingLoss;
+        };
+        if( matching &lt; matchingThreshold ) { continue; }
+        
+        resultValues.push([ globerRow['Email'], ticketRow['Number'], matching, matchingReasons ]); // must add more values, to make it easy to check
+        Logger.log( globerRow['Email'] + ' ' + i + ' ' + j + ' ticket: ' + ticketRow['Number'] + ' matching: ' + matching + ' ' + matchingReasons );
+      }
+    }
+    
+    if (outputSheet) {
+      saveSheetObjs( resultHeaders, resultValues, outputSheet, 1000 );
+    }
+    
+    errorList.clear();
+  }
+  
+    /*********************************** local subfunction **************************************/
+    // normalize all the globers in globerRows, return an array with only the good ones
+    function normalizeGlobers( globerRows ) {
+      Logger.log( 'about to normalize ' + globerRows.length + ' globers' );
+      var globersRowsOK = [];
+      for( var i = 0; i &lt; globerRows.length; i++ ) {
+        try {
+          var gr = globerRows[i];
+          gr['Seniority'] = normalizeSeniority(gr, 'Seniority');
+          gr['Glober Office'] = normalizeLocation(gr, 'Glober Office');          
+          gr['English level'] = normalizeEnglishLevel(gr, 'English level');
+          var globerAvailable = availMap[gr['Email']];
+          if( !! globerAvailable ) {
+            gr['Bench Start Date'] = globerAvailable['Bench Start Date'];
+            gr['isAvailable'] = true;
+            // get the skill from the possibly more up-to-date info
+            if( gr['Role'] != globerAvailable['Skill'] ) {
+              Logger.log( 'Role not = Skill: ' + gr['Role'] + ' ' + globerAvailable['Skill'] );
+            }
+            gr['Role'] = globerAvailable['Skill'];
+          } else {
+            gr['Bench Start Date'] = new Date().addDays( 60 );
+            gr['isAvailable'] = false;
+          }
+//        gr['Bench Start Date'] = availMap[gr['Email']]['Bench Start Date'];
+          // drop non available globers, for now
+          if( gr['isAvailable'] ) { globersRowsOK.push( gr ); }
+          if( gr['isAvailable'] ) { Logger.log( 'glober ' + gr['Glober ID'] + ' normalized, Sen: ' + gr['Seniority']   // DEBUG
+          + ', Loc: ' + gr['Glober Office'] + ', Eng: ' + gr['English level'] ) };
+        } catch(error) {
+          // log the error
+          Logger.log( error.message + ' in ' + error.fileName + ' line ' + error.lineNumber );
+          // put glober into errors array
+          // delete glober from normal data
+        }
+      }
+      return globersRowsOK;
+      
+      function normalizeLocation(itemRow, itemName) {
+        var from = itemRow[itemName];
+        var to = locationMapper.map( from );
+        if( !! to ) {
+          return to; 
+        } else {
+          // mapping failed: return original value and store error
+          errorList.addError( 'Glober location mapping error: ' + from );
+          return ''; 
+        }
+      }
+      
+      function normalizeSeniority(itemRow, itemName) {
+        var from = itemRow[itemName];
+        var to = seniorityMapper.map( itemRow[itemName] );
+        if( !! to ) {
+          return to; 
+        } else {
+          errorList.addError( 'Glober seniority mapping error: ' + from );
+          return 0; 
+        }
+      }
+      
+      function normalizeEnglishLevel(itemRow, itemName) {
+        var from = itemRow[itemName];
+        var to = englishLevelMapper.map( itemRow[itemName] );
+        if( !! to ) {
+          return to; 
+        } else {
+          errorList.addError( 'Glober english level mapping error: ' + from );
+          return 0; 
+        }
+      }
+
+    }
+
+    /*********************************** local subfunction **************************************/
+    // normalize all the tickets in ticketsRows, returns a new ticketRows array without the 
+    // tickets with normalization issued
+    function normalizeTickets( ticketsRows ) {
+      Logger.log( 'about to normalize ' + ticketsRows.length + ' tickets using ' 
+      + seniorityMapper.getName() + ' and ' + locationMapper.getName() + ' mappers');
+      var ticketsRowsOK = [];
+      for( var i = 0; i &lt; ticketsRows.length; i++) {
+        try {
+          var tr = ticketsRows[i];
+          tr['Seniority'] = normalizeSeniority(tr, 'Seniority');
+          tr['Work Office'] = normalizeLocation(tr, 'Work Office');
+          tr['Staffing Suggestions'] = '';
+          tr['Seniority Range'] = normalizeSeniority(tr, 'Seniority Range');
+          ticketsRowsOK.push ( tr );
+          if( i &lt; 12 ) { Logger.log( '#' + tr['Number'] + ' normalized, Sen: ' + tr['Seniority'] + ', Loc: ' + tr['Work Office'] ) };
+        } catch(error) {
+          // log the error
+          Logger.log( error.message + ' in ' + error.fileName + ' line ' + error.lineNumber );
+          // $$$$ put ticket into errors array
+        }
+      }
+      return ticketsRowsOK;
+    
+      function normalizeLocation(itemRow, itemName) {
+        var from = itemRow[itemName];
+        var to = locationMapper.map( from );
+        if( !! to ) {
+          return to; 
+        } else {
+          errorList.addError( 'Ticket location mapping error: ' + from );
+          return ''; 
+        }
+      }
+      
+      function normalizeSeniority(itemRow, itemName) {
+        var from = itemRow[itemName];
+        var to = seniorityMapper.map( itemRow[itemName] );
+        if( !! to ) {
+          return to; 
+        } else {
+          errorList.addError( 'Ticket seniority mapping error: ' + from );
+          return 0;
+        }
+      }
+      
+    }
+  }</pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>

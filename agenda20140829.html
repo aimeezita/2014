@@ -90,28 +90,35 @@ alt="next" src="res/right.gif"></a>
     (check column header)</li>
   <li class="doneItem">Check the saveSheetObjs( headers, results, outputSheet,
     1000 ) method </li>
-  <li>Automatically add not found "From" values to the appropriate mapping
+  <li>NTH: Automatically add not found "From" values to the appropriate mapping
     table. </li>
-  <li>If a glober or a ticket can't be normalized, move it to an errors object.
-  </li>
-  <li>Issues due to seniority mapping not returning a numeric value: 
+  <li class="doneItem">If a glober or a ticket can't be normalized, move it to
+    an errors object. </li>
+  <li class="doneItem">Issues due to seniority mapping not returning a numeric
+    value: 
     <p><code>bruno.ritagliati@globant.com ticket: #151559 matching: NaN
     seniority: NaN 1 2 - SSr</code></p>
     <p>The seniority mapping returned the From value provoking the error, stop
     doing so. </p>
   </li>
-  <li>In CCPOConfigClass the getMapper method should check that the mappint
-    tables contain the needed column names "From" and "To". </li>
-  <li>If a glober or a ticket fails to normalize, move it to an errors object.
-  </li>
-  <li>There are inconsistent numbers in the log:
+  <li>NTH: In CCPOConfigClass the getMapper method should check that the
+    mapping tables contain the needed column names "From" and "To". </li>
+  <li class="doneItem">If a glober or a ticket fails to normalize, move it to
+    an errors object. NO: delete it</li>
+  <li>CONTROL: There are inconsistent numbers in the log: 
     <pre>[14-08-29 17:12:51:540 ART] about to normalize <strong>345</strong> tickets using Seniority and Location mappers
 [14-08-29 17:12:52:198 ART] End Computing map:Available: <strong>352</strong></pre>
     <p>Maybe they are using different tables. </p>
   </li>
-  <li>Role pasa a ser un array en globers</li>
-  <li>Locations mapping: sacar el edificio</li>
-  <li>Normalilze seniority: all PM (see position) </li>
+  <li>FEATURE: Role pasa a ser un array en globers</li>
+  <li class="doneItem">Locations mapping: sacar el edificio</li>
+  <li>MISSING: Normalilze seniority: all PM (see position) </li>
+  <li class="doneItem">The output suggestions worksheet contains no data (all
+    rows with undefined)</li>
+  <li class="doneItem">In the output sheet, the "Matching explain" column has
+    always "undefined"</li>
+  <li>BUG: The errors email not working (might be that there are no errors
+    recorded)</li>
 </ul>
 
 <p></p>
@@ -127,6 +134,7 @@ alt="next" src="res/right.gif"></a>
     production one '1jClpTtZoAEvkOsn0_Iupd4oDLdRkgj7SM3lCkF51Rs4'</li>
   <li>Script <code>Module_CCPOConfigClass</code> is pointing at a test workbook
     containint test mapping tables.</li>
+  <li>Errors email is sent to juan.lanus@globant.com </li>
 </ol>
 
 <p> </p>
