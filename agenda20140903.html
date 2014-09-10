@@ -52,7 +52,7 @@ tutorial</a>) &radic;&#x2611;&#x2713;&#x2714;</p>
 </div>
 
 <div id="agendaBody">
-<h3>staffing suggestions</h3>
+<h3 id="staffing">staffing suggestions</h3>
 
 <h4>tasks</h4>
 <ol>
@@ -103,11 +103,12 @@ Incorrect range height, was 0 but should be 345 (line 88, file "Module_StaffingS
     "undefined" values: the mapping is acting on Seniority instead of Seniority
     Range columns? </li>
   <li>&#x2714; This error text is hardly useful, would be better with a bit
-    more of context: (this was a program error, it was mapping the wrong column)
+    more of context: (this was a program error, it was mapping the wrong
+    column) 
     <pre>Error: Glober seniority mapping error: undefined</pre>
   </li>
   <li>&#x2714; All NHs have NaN% matching because they fail the seniority
-    mapping: (Use Seniority Range instead of Seniority)
+    mapping: (Use Seniority Range instead of Seniority) 
     <pre>  Mariano Bessone (NH) NH AR/CORDOBA <strong>NaN</strong>% (dispersion:20 AR/CORDOBA US/NEWYORK seniority:<strong>NaN</strong> <strong>NaN</strong> 4) </pre>
   </li>
   <li>&#x2714; The suggestions texts have some multiple spaces, start with a
@@ -684,7 +685,6 @@ function CCPOStaffingSuggestionsClass()
 
   }
 }
-
 </pre>
 
 <p></p>
