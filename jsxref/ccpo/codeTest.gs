@@ -1,7 +1,7 @@
 function computeStaffingSuggestions_cron()
 {
   Logger.log( 'Staffing suggestions calculation process' );
-  var suggestionsOptions = // with values differing from defaults
+  var suggestionsOptions = // only values differing from defaults
   {
     errorsEmailRecipients: 'juan.lanus@globant.com',
     debug: true
@@ -21,7 +21,7 @@ function CCPOStaffingSuggestionsClass( options )
     suggestionsSheetName: 'StaffingSuggestions',
     // discard suggestions with matching percent below this value (0~100)
     minMatchingThreshold: 75,
-    // send the errors log to the followong email(s) - separate with comma
+    // send the errors log to the following email(s) - separate with comma
     errorsEmailRecipients: 'dario.robak@globant.com, nicolas.gerpe@globant.com',
     // debug run: the log will contain additional info
     debug: false
@@ -30,9 +30,9 @@ function CCPOStaffingSuggestionsClass( options )
 
   /**************************************** setup *********************************************/
   var errorList = new CCPOErrorListClass();
-  var config = new CCPOConfigClass();
 
   // instantiate various mappers used for data normalization
+  var config = new CCPOConfigClass();
   var seniorityMapper = config.getMapper("Seniority");
   var locationMapper = config.getMapper("Location");
   var englishLevelMapper = config.getMapper("EnglishLevel");
@@ -40,6 +40,7 @@ function CCPOStaffingSuggestionsClass( options )
 
   // the tickets file
   var ticketsSheet = getBenchSpreadsheet().getSheetByName("Tickets");
+  assert( ticketsSheet, 'The "Tickets" sheet not available' );
   var ticketsRows = getRows(ticketsSheet);
 
   // the globers file
@@ -97,16 +98,16 @@ function CCPOStaffingSuggestionsClass( options )
   /********************************************************************************************/
   // normalize the tickets in ticketsRows, returns a new ticketRows array without the tickets
   // with issues
-  this.normalizeTickets = function ( )
+  this.normalizeTickets = function ()
   {
-    Logger.log( 'about to normalize ' + ticketsRows.length + ' tickets using' );
+    Logger.log( 'about to normalize ' + ticketsRows.length + ' tickets' );
     var ticketsRowsOK = [];
     for( var i = 0; i < ticketsRows.length; i++ ) {
       try {
         var tr = ticketsRows[i];
         tr['Work Office'] = this.normalizeLocation( tr['Work Office'] );
         tr['Suggestions'] = '';
-        ticketsRowsOK.push ( tr );
+        ticketsRowsOK.push( tr );
       } catch( error ) {
         var errorTxt = 'Error normalizing ticket ' + tr['Number'] + ': ' + error;
         Logger.log( errorTxt );
@@ -122,35 +123,33 @@ function CCPOStaffingSuggestionsClass( options )
   {
     Logger.log( 'about to normalize ' + globerRows.length + ' globers' );
     var globersRowsOK = [];
-    for( var i = 0; i < globerRows.length; i++ ) {
+    var millisPerDay = 24 * 60 * 60 * 1000;
+    for( var i = 0; i < globerRows.length; i++ )
+    {
       try {
         var gr = globerRows[i];
         gr['Seniority Range'] = this.normalizeSeniority( gr['Seniority'] );
         gr['Glober Office'] = this.normalizeLocation( gr['Glober Office'] );
         gr['English level'] = this.normalizeEnglishLevel(gr, 'English level');
-        var globerAvailable = availMap[gr['Email']];
+        // find out if the glober is available
         gr['isAvailable'] = false;
+        var globerAvailable = availMap[gr['Email']];
         if( !! globerAvailable ) {
           gr['New Hire'] = ( globerAvailable['Email'] == 'NH' ) ? 'NH' : '';
           gr['Bench Start Date'] = globerAvailable['Bench Start Date'];
-          // get the skill from the possibly more up-to-date info
-          gr['Role'] = globerAvailable['Skill'];
-
-          var plan=globerAvailable['Plan'];
-          if (plan)
-            plan=plan.toUpperCase();
-          else
-            plan="LOW";
-
-          if(  plan!='EXIT' && plan!="TBD"  && plan!="ASSIGNED"  && plan!="CONFIRMED")
+          gr['Role'] = globerAvailable['Skill']; // possibly more up-to-date info
+          var plan = globerAvailable['Plan'].toUpperCase();
+          if( ! plan ) { plan = 'LOW'; }
+          if( plan != 'EXIT' && plan != 'TBD'  && plan != 'ASSIGNED'  && plan != 'CONFIRMED' )
+          {
             gr['isAvailable'] = true;
-
-        } else {
+          }
+        } else {  // the glober is not in the Available roster
           gr['New Hire'] = '';
-          gr['Bench Start Date'] = new Date( new Date().getTime() + 60 * ( 24 * 60 * 60 * 1000 ) ); // + 60 days
+          gr['Bench Start Date'] = new Date( Date.now() + 60 * millisPerDay ); // + 60 days
         }
         // gr['Bench Start Date'] = availMap[gr['Email']]['Bench Start Date'];
-        // only keep available globers, for now
+        // keep only available globers, for now
         if( gr['isAvailable'] ) { globersRowsOK.push( gr ); }
       } catch( error ) {
         var errorTxt = 'Error normalizing glober ' + gr['Email'] + ': ' + error;
@@ -166,39 +165,35 @@ function CCPOStaffingSuggestionsClass( options )
   // the globerRows array
   this.normalizeNewHires = function( )
   {
-    Logger.log( 'about to make normalized globers out of the newhires from Available' );
+    Logger.log( 'About to make normalized globers out of the newhires from Available' );
 
-    // loop over the Available rows making glober rows out of the hewhires
     for( var i = 0; i < availableRows.length; i++ )
     {
       var ar = availableRows[i];
-      if( ar['Email'] == 'NH' )
-      {
-        // is a newhire: build the normalized fake glober row
+      if( ar['Email'] === 'NH' )
+      { // is a newhire: build the normalized fake glober row
         try 
         {
           var gr = {
             'Glober ID': ar['globerId'],
             'First Name': ar['Name'],
-            'Last Name': '', 'Email': 'NH', 'Birthdate': '',
             'Entry Date': ar['Bench Start Date'],
             'Role': ar['Skill'],
             'Seniority': ar['SeniorityRange'],
             'Seniority Range': this.normalizeSeniority( ar['SeniorityRange'] ),
             'Seniority': ar['SeniorityRange'],
-            'LegalID': '',
             'Glober Office': this.normalizeLocation( ar['Location'] ),
-            'Society': '',
             'English level': this.normalizeEnglishLevel( ar['English'] ),
-            'Billable': '',
             'Max Time Abroad': ar['canTravel'],
+            'isAvailable': true,
+            'Bench Start Date': ar['Bench Start Date'],
+            'New Hire': 'NH',
+            // unused columns:
+            'Billable': '', 'Society': '', 'LegalID': '', 'Last Name': '', 'Email': 'NH', 'Birthdate': '',
             'Starting On': '', 'Argentine Passport': '', 'Arg Pass Expiration Date': '', 'European Passport': '',
             'European Passport Expiration Date': '', 'US Passport': '', 'US Passport Expiration Date': '',
             'US Visa': '', 'US VisaType.': '', 'US Visa Exp.': '', 'Organizational Unit': '', 'Upload CV': '',
-            'Last date skills review': '', 'Glober Studio': '', 'Staff': '',
-            'isAvailable': true,
-            'Bench Start Date': ar['Bench Start Date'],
-            'New Hire': 'NH'
+            'Last date skills review': '', 'Glober Studio': '', 'Staff': ''
           };
           // append to the globers roster
           globerRows.push( gr );
@@ -213,12 +208,11 @@ function CCPOStaffingSuggestionsClass( options )
 
   /******************************* suggestions calculation ************************************/
   // the suggestions calculation function: for each ticket loop over the normalized globers
-  // calculating their fit for the ticket, store the results in suggestionsSheet
+  // calculating their fit for the ticket, push the results into the suggestionsSheet
   // columns: Ticket, Glober ID, Name, New Hire, Email, Glober Office, Matching, MatchingReasons, Client, Project
   this.computeSuggestions = function()
   {
-
-    // normalize tickets and globers, rows with normalizing issues are deleted
+    // normalize tickets and globers, rows with normalizing issues are dropped
     ticketsRows = this.normalizeTickets( ticketsRows );
     globerRows = this.normalizeGlobers( globerRows );
     // incorporate the newhires as normalized globers
@@ -241,8 +235,7 @@ function CCPOStaffingSuggestionsClass( options )
         var
           matching = 100,
           matchingLoss = 0,
-          matchingReasons = '',
-          matchingThreshold = settings.minMatchingThreshold
+          matchingReasons = ''
         ;
 
         // skill
@@ -251,7 +244,7 @@ function CCPOStaffingSuggestionsClass( options )
         if( gsk == tsk ) {
           // good!
         } else {
-          // enter a table that maps skill pairs into incompatibility points
+          // enter a table that maps skills pairs into incompatibility points
           var compatibility = skillsEquivalenceMapper.map( tsk + '_' + gsk );
           if( !! compatibility ) {
             matching = matching - compatibility;
@@ -261,9 +254,9 @@ function CCPOStaffingSuggestionsClass( options )
             matching = 0;
           }
         }
-        if( matching < matchingThreshold ) { continue; }
+        if( matching < settings.minMatchingThreshold ) { continue; }
 
-        // dispersion: -20 if glober's location not contained in ticket's location or viceversa
+        // dispersion: -20 if glober's location not contained in ticket's location or vice versa
         var gl = globerRow['Glober Office'];
         var tl = ticketRow['Work Office'];
         if( !( tl === '*' || tl.indexOf(gl) >= 0 || gl.indexOf(tl) >= 0 )) {
@@ -271,7 +264,7 @@ function CCPOStaffingSuggestionsClass( options )
           matching = matching - matchingLoss;
           matchingReasons = matchingExplainAppend( matchingReasons, 'location', matchingLoss, gl, tl );
         }
-        if( matching < matchingThreshold ) { continue; }
+        if( matching < settings.minMatchingThreshold ) { continue; }
 
         // seniority:
         var gs = parseInt(globerRow['Seniority Range']);
@@ -287,22 +280,23 @@ function CCPOStaffingSuggestionsClass( options )
           matching = matching - matchingLoss;
           matchingReasons = matchingExplainAppend( matchingReasons, 'seniority', matchingLoss, gs, ts );
         }
-        if( matching < matchingThreshold ) { continue; }
-
+        if( matching < settings.minMatchingThreshold ) { continue; }
 
         // bench date: 1/2 point per workday lost (all dates in whole days)
         matchingLoss = 0;
         var millisPerDay = 24 * 60 * 60 * 1000;
-        var todayDate =  ~~((new Date).getTime() / millisPerDay);
+        var todayDate =  ~~( Date.now() / millisPerDay );
         // a) se queda con el máximo entre fecha de comienzo del ticket y hoy
         var startDate = Math.max( ~~( ticketRow['Start Date'].getTime() / millisPerDay ), todayDate );
         // b) se queda con el máximo entre fecha de comienzo del glober y hoy
         var globerDate = Math.max( ~~( globerRow['Bench Start Date'].getTime() / millisPerDay ), todayDate );
-        if( startDate > todayDate ) {
+        if( startDate > todayDate )
+        {
           // c) let dif = abs (fecha ticket - fecha glober)
           var diffDays = Math.abs( startDate - globerDate );
           // d) si dif > 7 penalidad = dif / 2
-          if( diffDays > 7) {
+          if( diffDays > 7)
+          {
             matchingLoss = ( diffDays - 7 ) * 0.5;
             matching = matching - matchingLoss;
             matchingReasons = matchingExplainAppend( matchingReasons, 'date', matchingLoss,
@@ -310,7 +304,7 @@ function CCPOStaffingSuggestionsClass( options )
             globerRow['Bench Start Date'].getDate() + '/' + ( globerRow['Bench Start Date'].getMonth() + 1 ));
           }
         }
-        if( matching < matchingThreshold ) { continue; }
+        if( matching < settings.minMatchingThreshold ) { continue; }
 
         resultValues.push({
           'Ticket': ticketRow['Number'],
@@ -324,8 +318,8 @@ function CCPOStaffingSuggestionsClass( options )
           'Client': ticketRow['Client'],
           'Project': ticketRow['Project']
         });
-      }
-    }
+      } // next glober
+    } // next ticket
     Logger.log( 'End after calculating ' + calculationsCount + ' suggestions, saved ' + resultValues.length );
     // store output
     saveSheetObjs( resultHeaders, resultValues, suggestionsSheet, 1000 );
@@ -334,15 +328,15 @@ function CCPOStaffingSuggestionsClass( options )
 
 
       function matchingExplainAppend( explanation, item, number, gvalue, tvalue ) {
-      // Adds another item to the matching reductions explanation, "item" (location,
-      // seniority, ...), the reduction "number", and if debug is on the unmatched
+      // Adds another item to the matching loss explanation, "item" (location,
+      // seniority, ...), the loss "number", and if debug is on the compared
       // values from glober and ticket
         if( ! explanation ) { explanation = ''; }
         explanation += ' ' + item + ':' + number;
         if( settings.debug ) {
           explanation += ' ' + gvalue + ' ' + tvalue;
         }
-        return explanation.replace( /  */g, ' '); // $$$$ .trim();
+        return explanation.replace( /  */g, ' '); // $$$$ WAS: .trim();
       }
   }
 
@@ -350,22 +344,16 @@ function CCPOStaffingSuggestionsClass( options )
   this.storeSuggestions = function()
   {
   // column: Ticket, Glober ID, Name, New Hire, Email, Glober Office, Matching, MatchingReasons, Client, Project
+    Logger.log( 'About to store the staffing suggestions into Tickets and Available sheets' );
 
     // Set suggestions into Tickets ************************************************************
-    // ticket id
-    // Glober ID
-    // First Name + Last Name
-    // (NH) if a new hire -  The Email column of the Available sheet contains "NH"
-    // (Email) without domain
-    // Glober Office quite shortened
-    // matching match xx%
-    // explain (blah)
 
     // loop over the ticket id column setting up to 8 suggestions per ticket, all in one cell
-    // build an array with the new suggestions column
+    // build an map with the new suggestions data
     Logger.log( 'Building a column with the top 8 suggestions texts' );
     var suggestionTexts = {};  // output: the ticket numbers with their suggestions
 
+    // loop over the results grouping by ticket
     var i = 0;
     while ( i < resultValues.length ) {
       var ctrolTicket = resultValues[i]['Ticket']; // current ticket #
@@ -377,46 +365,42 @@ function CCPOStaffingSuggestionsClass( options )
       }
       // output one ticket suggestions data
       suggestionTexts[ctrolTicket] = this.buildSuggestionsText( top8 );
-      Logger.log( 'ticket: ' + ctrolTicket + '\n' + this.buildSuggestionsText( top8 ) );
+      if( settings.debug ) { Logger.log( 'ticket: ' + ctrolTicket + '\n' + this.buildSuggestionsText( top8 ) ); }
     }
 
-    Logger.log( 'Setting the top 8 suggestions in the Tickets sheet' );
-    if( suggestionTexts.length != ( ticketsSheet.getLastRow() - 1 )) { Logger.log("we are in the oven!"); }
-
-    // get the ticket numbers column and build a coherent column with the suggestions
+    // get the ticket number column from Tickets and build a congruent column with the suggestions
     var numberColNum = findColumnByHeader( ticketsSheet, "Number" );
-    assert(numberColNum,"Cannot find column 'Number'");
+    assert(numberColNum,'Cannot find column "Number" in "Tickets" sheet');
     var ticketsCount = ticketsSheet.getLastRow() -1;
     var ticketNumbers = ticketsSheet.getRange( 2, numberColNum, ticketsCount, 1 ).getValues(); // row, col, rows, cols
-    var suggestionColumn = [];
+    var suggestionsColumn = [];
     for( var k = 0; k < ticketNumbers.length; k++ ) {
       var tn = ticketNumbers[k][0];
       if( !! suggestionTexts[tn] ) {
-        suggestionColumn.push( [ suggestionTexts[tn] ] );
+        suggestionsColumn.push( [ suggestionTexts[tn] ] );
       } else {
-        suggestionColumn.push( [ '- - -' ] );
+        suggestionsColumn.push( [ '- - -' ] );
       }
     }
 
     // paste the suggestions column over the Tickets spreadsheet
     var targetColNum = findColumnByHeader( ticketsSheet, "Suggestions" );
-    assert(targetColNum,"Cannot find column 'Suggestions'");
+    assert( targetColNum, 'Cannot find column "Suggestions" in "Tickets" sheet' );
     var targetRange = ticketsSheet.getRange( 2, targetColNum, ticketsCount, 1 ); // row, col, rows, cols
-    targetRange.setValues( suggestionColumn );
+    targetRange.setValues( suggestionsColumn );
 
   // Set suggestions in Available ************************************************************
-  // #1: Project                ['Project']
+  // #1: Project        ['Project']
   // #2: Client         ['Client']
-  // #3 matching%               ['Matching'] + '%'
-  // #4: matching reasons     '(' + ['MatchingReasons'] + ')' or null string
+  // #3 matching%       ['Matching'] + '%'
+  // #4: matching reasons '(' + ['MatchingReasons'] + ')' or null string
 
   // loop over resultValues building a map, keyed by "GloberId", each item containing 
   // the tickets each glober qualifies for in an array
-  Logger.log( 'Building the suggestions per glober map' );
   suggestionsPerGlober = {};
   for( var ii = 0; ii < resultValues.length; ii++ ) 
   {
-    var ticketReference =
+    var ticketReference = // only the needed columns 
     {
       Project: resultValues['Project'],
       Client: resultValues['Client'],
@@ -425,7 +409,7 @@ function CCPOStaffingSuggestionsClass( options )
     };
     // check if the glober (Available) has an entry else create it
     var globerId = resultValues['Glober Id'];
-    var spg = suggestionsPerGlober[ globerId  ];
+    var spg = suggestionsPerGlober[ globerId ];
     if( spg ) 
     {
       spg.push( ticketReference ); 
@@ -434,22 +418,22 @@ function CCPOStaffingSuggestionsClass( options )
     }
   }
 
-  // get the glober id column and build a coherent column with the suggestions
+  // get the glober id column and build a congruent column with the suggestions
   var globerIdColNum = findColumnByHeader( availableSheet, 'globerId' );
-  assert( numberColNum, 'Cannot find column "Number" in "Available" sheet' );
+  assert( numberColNum, 'Cannot find column "globerId" in "Available" sheet' );
   var availablesCount = availableSheet.getLastRow() - 1;
   var globerIds = availableSheet.getRange( 2, globerIdColNum, availablesCount, 1 ).getValues(); // row, col, rows, cols
 
   // build an array with the new Suggestions column content
-  suggestionColumn = [];
+  suggestionsColumn = [];
   for( ii = 0; ii < globerIds.length; ii++ )  
   {
     spg = suggestionsPerGlober[ globerIds[ii] ];
     if( spg ) 
     {
-      suggestionColumn.push( [ buildGloberSuggestionsText(spg) ] );
+      suggestionsColumn.push( [ buildGloberSuggestionsText(spg) ] );
     } else {
-      suggestionColumn.push( [ '- - -' ] );
+      suggestionsColumn.push( [ '- - -' ] );
     }
   }
 
@@ -459,14 +443,14 @@ function CCPOStaffingSuggestionsClass( options )
   assert( targetColNum, 'Cannot find column "Suggestions" in "Available" sheet' );
   // paste the suggestions column over the Avialable spreadsheet
   var targetRange = availableSheet.getRange( 2, targetColNum, availablesCount, 1 ); // row, col, rows, cols
-  targetRange.setValues( suggestionColumn );
+  targetRange.setValues( suggestionsColumn );
 
     buildGloberSuggestionsText = function( globerSuggestions )
     {
       // sort suggestions by matching, highest first
-      globerSuggestions.sort( function(row1, row2) { return( row2['matching'] - row2['matching'] ); })
-      // trim to up to 8 suggestions
-      if( globerSuggestions.length > 8 ) { globerSuggestions.length = 8; }
+      globerSuggestions.sort( function(row1, row2) { return( row2['matching'] - row1['matching'] ); })
+      // trim to up to 8 suggestions (keep all in debugging runs)
+      if( ( globerSuggestions.length > 8) && (! settings.debug) ) { globerSuggestions.length = 8; }
       // loop over the up-to-8 suggestions editing the content
       // #1: Project, #2: Client, #3 matching%, #4: matching reasons or null string
       txt8 = '';
@@ -525,6 +509,5 @@ function CCPOStaffingSuggestionsClass( options )
   };
 
   return this;
-
 }
 
