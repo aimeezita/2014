@@ -327,16 +327,16 @@ function CCPOStaffingSuggestionsClass( options )
     errorList.sendEmailWithErrors( settings.errorsEmailRecipients, 'Staffing suggestions errors' );
 
 
-      function matchingExplainAppend( explanation, item, number, gvalue, tvalue ) {
-      // Adds another item to the matching loss explanation, "item" (location,
-      // seniority, ...), the loss "number", and if debug is on the compared
-      // values from glober and ticket
-        if( ! explanation ) { explanation = ''; }
-        explanation += ' ' + item + ':' + number;
-        if( settings.debug ) {
-          explanation += ' ' + gvalue + ' ' + tvalue;
-        }
-        return explanation.replace( /  */g, ' '); // $$$$ WAS: .trim();
+        function matchingExplainAppend( explanation, item, number, gvalue, tvalue ) {
+        // Adds another item to the matching loss explanation, "item" (location,
+        // seniority, ...), the loss "number", and if debug is on the compared
+        // values from glober and ticket
+          if( ! explanation ) { explanation = ''; }
+          explanation += ' ' + item + ':' + number;
+          if( settings.debug ) {
+            explanation += ' ' + gvalue + ' ' + tvalue;
+          }
+          return explanation.replace( /  */g, ' '); // $$$$ WAS: .trim();
       }
   }
 
@@ -389,130 +389,132 @@ function CCPOStaffingSuggestionsClass( options )
     var targetRange = ticketsSheet.getRange( 2, targetColNum, ticketsCount, 1 ); // row, col, rows, cols
     targetRange.setValues( suggestionsColumn );
 
-  // Set suggestions in Available ************************************************************
-  // #1: Project        ['Project']
-  // #2: Client         ['Client']
-  // #3 matching%       ['Matching'] + '%'
-  // #4: matching reasons '(' + ['MatchingReasons'] + ')' or null string
+    // Set suggestions in Available ************************************************************
+    // #1: Project        ['Project']
+    // #2: Client         ['Client']
+    // #3 matching%       ['Matching'] + '%'
+    // #4: matching reasons '(' + ['MatchingReasons'] + ')' or null string
 
-  // loop over resultValues building a map, keyed by "GloberId", each item containing 
-  // the tickets each glober qualifies for in an array
-  suggestionsPerGlober = {};
-  for( var ii = 0; ii < resultValues.length; ii++ ) 
-  {
-    rv = resultValues[ii];
-    var ticketReference = // only the needed columns 
+    // loop over resultValues building a map, keyed by "GloberId", each item containing 
+    // a glober`s tickets in an array
+    suggestionsPerGlober = {};
+    for( var ii = 0; ii < resultValues.length; ii++ ) 
     {
-      Project: rv['Project'],
-      Client: rv['Client'],
-      Matching: rv['Matching'],
-      MatchingReasons: rv['MatchingReasons']
-    };
-    // check if the glober (Available) has an entry else create it
-    var globerId = rv['Glober ID'];
-    var spg = suggestionsPerGlober[ globerId ];
-    if( spg ) 
-    {
-      spg.push( ticketReference );
-      if( ii < 777 ) { Logger.log( 'suggestion pushed: ' + globerId + ' ' + rv[ 'Project' ] + ' ' + 
-      rv[ 'Client' ] + ' ' + rv[ 'Matching' ] + '%' + ' ' + rv[ 'MatchingReasons' ] ); }
-    } else {
-      suggestionsPerGlober[ globerId ] = [ ticketReference ];
+      rv = resultValues[ii];
+      var ticketReference = // only the needed columns 
+      {
+        Project: rv['Project'],
+        Client: rv['Client'],
+        Matching: rv['Matching'],
+        MatchingReasons: rv['MatchingReasons']
+      };
+      // check if the glober (Available) has an entry else create it
+      var globerId = rv['Glober ID'];
+      var spg = suggestionsPerGlober[ globerId ];
+      if( spg ) 
+      {
+        spg.push( ticketReference );
+        if( ii < 777 ) { Logger.log( 'suggestion pushed: ' + globerId + ' ' + rv[ 'Project' ] + ' ' + 
+        rv[ 'Client' ] + ' ' + rv[ 'Matching' ] + '%' + ' ' + rv[ 'MatchingReasons' ] ); }
+      } else {
+        suggestionsPerGlober[ globerId ] = [ ticketReference ];
+      }
     }
-  }
 
-  // get the glober id column from Available and build a congruent column with the suggestions
-  var globerIdColNum = findColumnByHeader( availableSheet, 'globerId' );
-  assert( numberColNum, 'Cannot find column "globerId" in "Available" sheet' );
-  var availablesCount = availableSheet.getLastRow() - 1;
-  var globerIds = availableSheet.getRange( 2, globerIdColNum, availablesCount, 1 ).getValues(); // row, col, rows, cols
+    // get the glober id column from Available and build a congruent column with the suggestions
+    var globerIdColNum = findColumnByHeader( availableSheet, 'globerId' );
+    assert( numberColNum, 'Cannot find column "globerId" in "Available" sheet' );
+    var availablesCount = availableSheet.getLastRow() - 1;
+    var globerIds = availableSheet.getRange( 2, globerIdColNum, availablesCount, 1 ).getValues(); // row, col, rows, cols
 
-  // build an array with the new Suggestions column content
-  suggestionsColumn = [];
-  for( ii = 0; ii < globerIds.length; ii++ )  
-  {
-    spg = suggestionsPerGlober[ globerIds[ii] ];
-    if( spg ) 
+    // build an array with the new Suggestions column content
+    suggestionsColumn = [];
+    for( ii = 0; ii < globerIds.length; ii++ )  
     {
-      suggestionsColumn.push( [ this.buildGloberSuggestionsText(spg) ] );
-    } else {
-      suggestionsColumn.push( [ '- - -' ] );
+      spg = suggestionsPerGlober[ globerIds[ii] ];
+      if( spg ) 
+      {
+        suggestionsColumn.push( [ this.buildGloberSuggestionsText(spg) ] );
+      } else {
+        suggestionsColumn.push( [ '- - -' ] );
+      }
     }
+
+    // apply the suggestions data to the Suggestions column in the Available sheet
+    // the target column header is "Suggestions"
+    var targetColNum = findColumnByHeader( availableSheet, "Suggestions" );
+    assert( targetColNum, 'Cannot find column "Suggestions" in "Available" sheet' );
+    // paste the suggestions column over the Avialable spreadsheet
+    var targetRange = availableSheet.getRange( 2, targetColNum, availablesCount, 1 ); // row, col, rows, cols
+    targetRange.setValues( suggestionsColumn );
+
   }
 
-  // apply the suggestions data to the Suggestions column in the Available sheet
-  // the target column header is "Suggestions"
-  var targetColNum = findColumnByHeader( availableSheet, "Suggestions" );
-  assert( targetColNum, 'Cannot find column "Suggestions" in "Available" sheet' );
-  // paste the suggestions column over the Avialable spreadsheet
-  var targetRange = availableSheet.getRange( 2, targetColNum, availablesCount, 1 ); // row, col, rows, cols
-  targetRange.setValues( suggestionsColumn );
-
-  }
-
-  this.buildGloberSuggestionsText = function( globerSuggestions )
-  {
-    // sort  a glober's suggestions by matching, highest first
-    globerSuggestions.sort( function(row1, row2) { return( row2['Matching'] - row1['Matching'] ); });
-    // trim to up to 8 suggestions (keep all in debugging runs)
-    if( ( globerSuggestions.length > 8) && (! settings.debug) ) { globerSuggestions.length = 8; }
-    // loop over the up-to-8 suggestions editing the content
-    // #1: Project, #2: Client, #3 matching%, #4: matching reasons or null string
-    txt8 = '';
-    for( i8 = 0; i8 < globerSuggestions.length; i8++ )
-    {
-      gs = globerSuggestions[i];
-      txt8 += '\n' + gs['Project'] + ' ' + '(' + gs['Client'] + ') ' + gs['Matching'] + '%' +
-      ( gs['MatchingReasons'] === '' ) ? '' : ' (' + gs['MatchingReasons'] + ')';
-      Logger.log( txt8 );
-      return txt8.replace( '\n', '' ); // drop initial newline
-    }
-  }
+      this.buildGloberSuggestionsText = function( globerSuggestions )
+      {
+        // sort  a glober's suggestions by matching, highest first
+        globerSuggestions.sort( function(row1, row2) { return( row2['Matching'] - row1['Matching'] ); });
+        // trim to up to 8 suggestions (keep all in debugging runs)
+        if( ( globerSuggestions.length > 8) && (! settings.debug) ) { globerSuggestions.length = 8; }
+        // loop over the up-to-8 suggestions editing the content
+        // #1: Project, #2: Client, #3 matching%, #4: matching reasons or null string
+        txt8 = '';
+        for( i8 = 0; i8 < globerSuggestions.length; i8++ )
+        {
+          gs = globerSuggestions[i8];
+          txt8 += '\n' + gs['Project'] + ' ' + '(' + gs['Client'] + ') ' + gs['Matching'] + '%' +
+          ( gs['MatchingReasons'] === '' ) ? '' : ' (' + gs['MatchingReasons'] + ')';
+          Logger.log( ' project:' + gs['Project'] + ' client:' + gs['Client'] + ' ' + gs['Matching'] + '%' +
+          ' ' + gs['MatchingReasons'] + '\n' + txt8 );
+          return txt8.replace( '\n', '' ); // drop initial newline
+        }
+      }
 
   /***************************** storeSuggestions sub functions *******************************/
 
-  this.checkTop8 = function ( top8, resultRow  ) {
-  // resultRow: ['Ticket', 'Glober ID', 'Name', 'New Hire', 'Email', 'Glober Office', 'Matching', 'MatchingReasons']
-    if( top8.length === 0 ) {
-      top8[0] = resultRow;
-    } else {
-      newMatchingValue = resultRow['Matching'];
-      for( var i8 = 0; i8 < top8.length; i8++ ) {
-        if( newMatchingValue >= top8[i8].Matching ) {        // top8[i8]['Matching'] ) 
-          // newMatchingValue is greater then a top8: insert it and drop the last
-          top8.splice( i8, 0, resultRow );  // insert suggestion before position i8
-          break;
+      this.checkTop8 = function ( top8, resultRow  ) {
+      // resultRow: ['Ticket', 'Glober ID', 'Name', 'New Hire', 'Email', 'Glober Office', 'Matching', 'MatchingReasons']
+        if( top8.length === 0 ) {
+          top8[0] = resultRow;
+        } else {
+          newMatchingValue = resultRow['Matching'];
+          for( var i8 = 0; i8 < top8.length; i8++ ) {
+            if( newMatchingValue >= top8[i8].Matching ) {        // top8[i8]['Matching'] ) 
+              // newMatchingValue is greater then a top8: insert it and drop the last
+              top8.splice( i8, 0, resultRow );  // insert suggestion before position i8
+              break;
+            }
+          }
         }
-      }
-    }
-  };
+      };
 
-  this.buildSuggestionsText = function( top8 ) {
-    // builds the 8-suggestions text from the top-8 suggestions for this ticket
-    // [{'Glober ID', 'Name', 'New Hire', 'Email', 'Glober Office', 'Matching', 'MatchingReasons'}*]
-    var txt8 = '', t8MatchingReasons;
-    for( var i8 = 0; i8 < top8.length; i8++ ) {
-      // stop after 8 suggestions, unless it's a debug run
-      if( i = 8 && (! settings.debug) ) { break; }
-      // t8 is the current suggestion
-      var t8 = top8[i8];
-      if( t8['MatchingReasons'] == '' )
-      {
-        t8MatchingReasons = '';
-      } else {
-        t8MatchingReasons = '(' + t8['MatchingReasons'] + ') ';
-      }
-      txt8 += '\n' +
-      ( t8['New Hire'] == 'NH' ? t8['Name'] + ' (NH) ' : t8['Email'] ) + ' ' + 
-      t8['Matching'] + '% ' +
-      t8MatchingReasons;
-    }
-    txt8 = txt8.replace( / NH /g, ' ').replace( /   */g, ' ').replace( /\n  */g, '\n' );
-    if( txt8 == '' ) { txt8 = '-' }
-    return txt8.replace( '\n', '' ); // drop initial newline
-  };
+      this.buildSuggestionsText = function( top8 ) {
+        // builds the 8-suggestions text from the top-8 suggestions for this ticket
+        // [{'Glober ID', 'Name', 'New Hire', 'Email', 'Glober Office', 'Matching', 'MatchingReasons'}*]
+        var txt8 = '', t8MatchingReasons;
+        for( var i8 = 0; i8 < top8.length; i8++ ) {
+          // stop after 8 suggestions, unless it's a debug run
+          if( i = 8 && (! settings.debug) ) { break; }
+          // t8 is the current suggestion
+          var t8 = top8[i8];
+          if( t8['MatchingReasons'] == '' )
+          {
+            t8MatchingReasons = '';
+          } else {
+            t8MatchingReasons = '(' + t8['MatchingReasons'] + ') ';
+          }
+          txt8 += '\n' +
+          ( t8['New Hire'] == 'NH' ? t8['Name'] + ' (NH) ' : t8['Email'] ) + ' ' + 
+          t8['Matching'] + '% ' +
+          t8MatchingReasons;
+        }
+        txt8 = txt8.replace( / NH /g, ' ').replace( /   */g, ' ').replace( /\n  */g, '\n' );
+        if( txt8 == '' ) { txt8 = '-' }
+        return txt8.replace( '\n', '' ); // drop initial newline
+      };
 
   return this;
 }
+
 
 
