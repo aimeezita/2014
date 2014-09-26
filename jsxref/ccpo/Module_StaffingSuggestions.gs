@@ -1,14 +1,17 @@
 function computeStaffingSuggestions_cron()
 {
   Logger.log( 'Staffing suggestions calculation process' );
+
   var suggestionsOptions = // only values differing from defaults
   {
-    errorsEmailRecipients: 'juan.lanus@globant.com',
+    errorsEmailRecipients: Session.getActiveUser().getEmail(),
     debug: false
   };
+  
   var suggestionsCalculator = new CCPOStaffingSuggestionsClass( suggestionsOptions );
   suggestionsCalculator.computeSuggestions( );
   suggestionsCalculator.storeSuggestions( );
+  Logger.log( 'Staffing suggestions calculation process ended' );
 }
 
 
@@ -23,6 +26,9 @@ function CCPOStaffingSuggestionsClass( options )
     minMatchingThreshold: 75,
     // send the errors log to the following email(s) - separate with comma
     errorsEmailRecipients: 'dario.robak@globant.com, nicolas.gerpe@globant.com',
+    // minimum knowledge level considered in skills data
+    // TODO: this should be an array relating skill levels to requested seniorities
+    minKnowledge: 4,
     // debug run: the log will contain additional info
     debug: false
   };
@@ -54,6 +60,9 @@ function CCPOStaffingSuggestionsClass( options )
   var availableRows = getRows( availableSheet );
   assert( findColumnByHeader( availableSheet, "Email" ), 'The "Email" column not found in "Available"' );
   var availMap = computeMap( getBenchSpreadsheet().getSheetByName("Available"), "Email" );
+
+  // the skills data
+  var skills = new CCPOGloberSkillsClass();
 
   // the computed results (staffing suggestions)
   var resultValues;
@@ -107,6 +116,8 @@ function CCPOStaffingSuggestionsClass( options )
         var tr = ticketsRows[i];
         tr['Work Office'] = this.normalizeLocation( tr['Work Office'] );
         tr['Suggestions'] = '';
+        tr['Skills'] = skills.getSkillIdByName( tr['Position'] );
+        Logger.log( 'ticket:' + tr['Number'] + ' skills:' + tr['Skills'] );
         ticketsRowsOK.push( tr );
       } catch( error ) {
         var errorTxt = 'Error normalizing ticket ' + tr['Number'] + ': ' + error;
@@ -138,9 +149,13 @@ function CCPOStaffingSuggestionsClass( options )
           gr['New Hire'] = ( globerAvailable['Email'] == 'NH' ) ? 'NH' : '';
           gr['Bench Start Date'] = globerAvailable['Bench Start Date'];
           gr['Role'] = globerAvailable['Skill']; // possibly more up-to-date info
+          gr['Skills'] = skills.globerSkillsFilterByLevel(
+            skills.getGloberSkills( ~~( gr['Glober ID'] ) ), 
+            settings.minKnowledge
+          );
           var plan = globerAvailable['Plan'].toUpperCase();
           if( ! plan ) { plan = 'LOW'; }
-          if( plan != 'EXIT' && plan != 'TBD'  && plan != 'ASSIGNED'  && plan != 'CONFIRMED' )
+          if( plan != 'EXIT' && plan != 'TBD' && plan != 'ASSIGNED' && plan != 'CONFIRMED' )
           {
             gr['isAvailable'] = true;
           }
@@ -153,6 +168,7 @@ function CCPOStaffingSuggestionsClass( options )
         if( gr['isAvailable'] ) { globersRowsOK.push( gr ); }
       } catch( error ) {
         var errorTxt = 'Error normalizing glober ' + gr['Email'] + ': ' + error;
+        // Error normalizing glober carlos.crembil@globant.com: TypeError: Cannot read property "2.3990847E7" from undefined.
         Logger.log( errorTxt );
         errorList.addError( errorTxt );
       }
@@ -179,6 +195,7 @@ function CCPOStaffingSuggestionsClass( options )
             'First Name': ar['Name'],
             'Entry Date': ar['Bench Start Date'],
             'Role': ar['Skill'],
+            'Skills': skills.getGloberSkills( ar['globerId'] ), // surely empty
             'Seniority': ar['SeniorityRange'],
             'Seniority Range': this.normalizeSeniority( ar['SeniorityRange'] ),
             'Seniority': ar['SeniorityRange'],
@@ -198,7 +215,7 @@ function CCPOStaffingSuggestionsClass( options )
           // append to the globers roster
           globerRows.push( gr );
         } catch( error ) {
-          var errorTxt = 'Error normalizing newhire ' + tr['Name'] + ': ' + error;
+          var errorTxt = 'Error normalizing newhire ' + ar['Name'] + ': ' + error;
           Logger.log( errorTxt );
           errorList.addError( errorTxt );
         }
@@ -235,21 +252,33 @@ function CCPOStaffingSuggestionsClass( options )
         var
           matching = 100,
           matchingLoss = 0,
-          matchingReasons = ''
+          matchingReasons = '',
+          info = {}
         ;
 
         // skill
         var gsk = globerRow['Role'];
         var tsk = ticketRow['Position'];
         if( gsk == tsk ) {
-          // good!
+          // good! don't even look at the skills data
         } else {
-          // enter a table that maps skills pairs into incompatibility points
+          // enter a table that maps skills pairs into (small) incompatibility points
           var compatibility = skillsEquivalenceMapper.map( tsk + '_' + gsk );
-          if( !! compatibility ) {
+          if( !! compatibility ) 
+          {
+            // glober role ~= ticket position has priority
             matching = matching - compatibility;
             matchingReasons = matchingExplainAppend( matchingReasons, 'skill', compatibility, gsk, tsk );
-          } else {
+          }
+          else if( skills.hasCompatibleSkills( tsk, globerRow['skills'], info ))
+          {
+            // has a skills set compatible with the position requested
+            matching = matching - info.matchingLoss;
+            matchingReasons = info.matchingReasons;
+          }
+          else
+          {
+            // not a match
             matchingReasons = matchingExplainAppend( matchingReasons, 'skill', matching, gsk, tsk );
             matching = 0;
           }
@@ -498,6 +527,7 @@ function CCPOStaffingSuggestionsClass( options )
 
   return this;
 }
+
 
 
 

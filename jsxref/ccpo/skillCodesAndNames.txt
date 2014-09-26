@@ -1,0 +1,1246 @@
+id              name
+7984275         EhCache
+15120631        Memcached
+10037414        Microsoft AppFabric
+10037413        Ncache
+7984274         Terracota
+696             Inter-Process Communication (IPC)
+694             Multi-threaded
+695             POSIX Threads
+697             Matrix
+698             Vector
+7984276         Adobe Flash Access
+7984277         Widevine
+17153068        Accounting Knowledge
+17153069        Audits and compliance
+17153070        Bank reconciliations
+17153071        Business valuations
+17153072        Cash flow management
+17153073        Expense analysis
+17153074        Financial and strategic planning
+17153075        Financial projections
+17153076        Financial statements
+17153077        Fixed asset accounting
+17153078        GAAP
+17153079        General ledger
+17153080        Handling budget and financial
+17153081        IFRS knowledge
+17153082        Knowledge of e-billing and preferably
+17153083        Mergers and acquisitions
+17153084        P&L management
+17153085        Portfolio management
+17153086        Proficient with Visio or Autocad
+17153087        Profit & Loss & NPV
+17153088        Risk management
+17153104        ABAP (Advanced Business Application Programming)
+17153105        BC (Basis Components)
+17153106        CO (Controlling)
+17153107        EC (Enterprise Controlling)
+17153108        FI (Financial Accounting)
+17153109        HR (Human Resources)
+17153110        IM (Investment Manegement)
+17153111        IS (Industry Solutions)
+17153112        LE (Logistics Execution)
+17153113        LO (Logistics)
+17153114        MM (Materials Management)
+17153115        PM (Plant Maintainance)
+17153116        PP (Production Planning)
+17153117        PS (Project System)
+17153118        QM (Quality Management)
+17153119        SD (Sales & Distribution)
+17153120        TR (Treasury)
+17153121        WF (Workflow)
+17153089        Tax knowledge
+17153090        Tax planning
+17153091        Trial balance
+4857250         Backgrounds
+4857251         Drawing
+4857252         Traditional animation
+4857249         UI Design
+4857245         Box modeling
+4857244         Highpoly
+4857243         Lowpoly
+699             Deterministic
+4857190         FSM
+700             Non-Deterministic
+4857189         Pathfinding
+701             IK
+693             Posing & Blending
+702             Rigging
+703             Music Stitching
+704             Speech
+705             Engine Development
+706             Schema
+707             Engine Development Front End
+708             Game Modes
+4857258         Creative documentation
+4857273         Hammer
+4857268         History of video games
+4857280         Microsoft Visio
+4857272         QERadiant
+4857260         Script writing
+4857259         Technical documentation
+4857267         UI Design
+4857269         UnrealED
+709             Cell Processor
+710             AILive
+711             Artificial Contender
+712             HumanIK
+4857218         Real time multiplayer games development
+4857219         Turn based multiplayer games development
+713             Client-Server Gaming
+714             Data Management
+715             Integrated Data Surfacing
+716             Networking
+717             Peer-Peer Gaming
+718             Standard Web Data Surfacing
+719             Wireless(Online)
+720             Collision
+721             Engine Development Physics
+722             Ragdoll
+723             Rigid Body
+724             NDS
+725             PS2
+726             PS3
+727             PSP
+728             Wii
+729             X360
+730             XBOX
+731             Asset Wrangling
+732             Direct X
+736             Geometry
+733             HLSL
+737             Lighting
+734             OpenGL
+738             Particle Systems
+735             Pipeline
+739             Scene
+740             Shaders
+4857230         Facebook Games/Applications
+4857231         Hi5 Games/Applications
+4857232         Orkut Games/Applications
+4857211         APT
+4857192         Flash/AS3
+4857202         iOS/Cocos2D
+4857201         iOS/Objective-C
+4857200         iTorque 2D
+4857195         Lingo
+4857212         Scaleform
+4857210         SDL
+4857199         Torque 3D
+4857193         Unity3D/C#
+4857194         Unity3D/JS
+4857209         Unreal Engine
+4857196         XNA
+741             Asset Editors
+742             Debug Tools
+743             Optimization Tools
+2318632         Action
+2318633         Adventure
+2318634         Construction and management simulation
+2318635         Life simulation
+2318639         Music
+2318640         Puzzle
+2318636         Role-playing
+2318641         Sports
+2318637         Strategy
+2318638         Vehicle simulation
+2318644         Testing Nintendo DS
+2318643         Testing PC
+2318646         Testing PS2
+2318647         Testing PS3
+2318648         Testing PSP
+2318642         Testing Wii
+2318645         Testing XBox 360
+17153054        Able to influence people
+17153055        Achievement orientation
+17              Adaptability
+17153056        Autonomy
+18              Calendar Management worldwide time difference
+19              Coaching Skills
+17153057        Common sense
+532             Communication skills
+17153058        Conflict resolution
+20              Creativity
+17153059        Customer service orientation
+17153060        Detail orientation
+533             Developing People
+17153061        Empowerment
+17153062        Flexibility
+21              Group Coordination
+534             Innovation
+22              Instructor Skills
+23              Interpersonal Communication
+24              Interviewing
+25              Leadership
+535             Market knowledge
+17153063        Negotiation
+536             Organizational sensitivity
+17153064        Outspokenness
+537             Planning & Organization
+26              Presentations to Clients
+17153065        Pressure tolerance
+17153066        Proactivity
+538             Resolution
+27              Sense of Urgency
+539             Stress tolerance
+540             Team working
+541             Tenacity
+28              Understanding client's needs
+14223861        Arabic
+14223863        Chinese
+155             English
+156             French
+157             German
+14223865        Hindi
+158             Italian
+14223864        Japanese
+159             Portuguese
+14223862        Russian
+869754  Spanish
+182             Agile
+183             Aspect Oriented programming
+509             Configuration Management Process
+503             Construction Process
+510             DAR Process
+506             Deployment Process
+502             Design Process
+499             General Planning Process
+184             Globant Process Framework
+6917744         ITIL v2 Process
+6917745         ITIL v3 Process
+513             Measurements - Gathering and Analysis Process
+514             Org Process Management Process
+512             Organizational Training Process
+185             Process Definition skills
+507             Project Closing Process
+500             Project Management Process
+508             Quality Assurance Process
+3939684         Rally
+505             Requirements Management Process
+186             Requirements writing
+187             RUP
+511             Supplier Management Process
+501             System Analysis Process
+504             Testing Process
+188             Use Case writing
+189             User Stories writing
+17153093        Access
+17153094        Excel
+17153095        Excel modeling
+17153096        InfoPath
+17153097        Picture Manager
+17153098        Power Point
+17153099        Project
+17153100        Publisher
+17153101        Visio
+17153102        Word
+80              3D Studio
+2307639         ActionScript 2.0
+2307640         ActionScript 3.0
+81              After Effects
+9427101         Blender
+82              Dreamweaver
+83              Fireworks
+84              Flash
+85              Illustrator
+86              IM tool
+87              InDesign
+88              Maya
+89              Page Maker
+90              Photoshop
+91              Quark-Xpress
+92              Sony Vegas
+124             3D Modeling and Render
+125             Activity Tracking Report
+126             Audio Knowledge
+127             Branding and Logo Design
+128             Content newsletter management
+129             Database Pulling & reporting
+130             Direct Marketing
+131             Editorial Design
+132             Email blast
+133             Information Architecture for the Web
+134             Online event management
+135             Online marketing: advertisements, banner, promotions
+136             SEO
+137             User Interface Knowledge
+138             Video Knowledge
+8123229         Amazon Dynamo
+8123221         Amazon Elasticache
+8123223         Amazon RDS MySQL
+8123222         Amazon RDS Oracle
+8123227         Attenda
+8123226         Joyent
+8123225         Rackspace
+8123224         RightScale
+2309430         Informix Administration
+2309434         Informix Backup/Restore Strategies
+2309431         Informix Configuration & Security
+2309429         Informix Installation
+2309432         Informix Monitoring
+2309435         Informix Store Procedure/Queries programming
+2309433         Informix Tuning
+2309395         MS SQL Replication
+2309397         MS-SQL Administration
+2309403         MS-SQL Backup/Restore Strategies
+2309399         MS-SQL Clustered installations
+2309398         MS-SQL Configuration & Security
+2309396         MS-SQL Installation
+2309400         MS-SQL Log shipping
+2309401         MS-SQL Monitoring
+2309407         MS-SQL Store Procedure/Queries programming
+2309402         MS-SQL Tuning
+2309404         SQL Server 2000
+2309405         SQL Server 2005
+2309406         SQL Server 2008
+2645376         SSIS Components
+8123238         Aspersa
+8123237         Maatkit
+4434935         MySQL 5.0.x
+8123230         MySQL 5.1
+8123231         MySQL 5.5
+2309423         MySQL Administration
+2309427         MySQL Backup/Restore Strategies
+2309424         MySQL Configuration & Security
+2309422         MySQL Installation
+2309425         MySQL Monitoring
+2309428         MySQL Store Procedure/Queries programming
+2309426         MySQL Tuning
+8123235         Percona Benchworks
+8123234         Percona LogJam
+8123233         Percona Toolkit
+8123232         Percona XtraBackup
+8123236         Sql-Bench
+2309393         Oracle 10g
+2309394         Oracle 11g
+2309392         Oracle 9i
+2309384         Oracle Administration
+2309388         Oracle Backup/Restore Strategies
+2309385         Oracle Configuration & Security
+2309390         Oracle Database replication
+2309389         Oracle GRID/RAC
+2309383         Oracle Installation
+2309386         Oracle Monitoring
+2309391         Oracle Store Procedure/Queries programming
+2309387         Oracle Tuning
+2309416         PostgreSQL Administration
+2309420         PostgreSQL Backup/Restore Strategies
+2309417         PostgreSQL Configuration & Security
+2309415         PostgreSQL Installation
+2309418         PostgreSQL Monitoring
+2309421         PostgreSQL Store Procedure/Queries programming
+2309419         PostgreSQL Tuning
+2309409         Progress Administration
+2309413         Progress Backup/Restore Strategies
+2309410         Progress Configuration & Security
+2309408         Progress Installation
+2309411         Progress Monitoring
+2309414         Progress Store Procedure/Queries programming
+2309412         Progress Tuning
+76              HP OpenView
+2307631         MDX
+77              Microsoft Operation Manager (MOM)
+78              Quest Central
+79              Quest Spotlight
+2307632         SQL Server Business Intelligence Development Studio
+2307633         SQL Server Configuration Manager
+2307634         SQL Server Management Studio
+2307635         SQL Server Surface Area Configuration
+2307636         SQLite
+2307637         Sybase
+2307638         Transact-SQL
+115             GRE
+116             IDS
+117             IPSEC
+118             L2TP
+119             NAT
+120             PAT
+121             PPTP
+122             SSL
+123             TLS
+146             ATM
+147             ETHERNET
+148             Frame Relay
+149             LOAD BALANCING
+150             MPLS
+151             RSTP/MSTP
+152             VLAN
+153             WIFI
+154             xDSL
+164             IPTABLES
+165             NMAP
+166             RADIUS
+167             TCPDUMP
+175             Apache James
+176             Exchange Server
+177             hMailServer
+178             Meldware Mail Server
+179             PostFix
+180             SendMail
+181             Zimbra Collaboration Suite
+15332951        MFCobol
+15332950        MicroFocus Enterprise Server Administration
+15332949        MicroFocus Enterprise Server Installation
+190             BIGBROTHER
+191             CACTI
+192             CISCO WORKS
+4434942         Cloud Manager by Globant
+193             MRTG
+4434941         MUNIN
+194             NAGIOS
+195             NETFLOW
+196             NETQoS
+8123241         NewRelic RPM
+8123240         RightScale Monitoring
+197             SMOKEPING
+2985821         SNMPC de Castle Rock
+8123239         Zabbix
+291             802.1Q
+292             ACL
+293             BGP
+294             EIGRP
+295             HSRP/VRRP
+296             OSPF
+297             QinQ
+298             QoS
+299             RIP
+2309448         Hardware
+2309445         Mac
+2309439         Office 2003
+2309440         Office 2007
+2309441         Open Office
+2309443         Outlook
+2309450         PBX Consola
+2309436         Service Desk - Active Directory
+2309446         Service Desk - Networking
+2309438         Service Desk - Windows Vista
+2309437         Service Desk - Windows XP
+2309447         SVN Tortoise
+2309449         Telefonia IP
+2309442         Thunderbird
+2309444         Ubuntu
+313             Active Directory
+314             Terminal Services
+2309462         Backup tools (veritas, etc)
+10037409        Databases Services
+10037411        Databases Services MS-SQL
+2309455         DNS
+2309463         Exchange 2000/2007
+2309451         Installation and configuration
+10037410        MarkLogic Databases
+2309461         MOM/SCOM
+10037412        MS-SQL 2008 Mirroring
+2309452         Security
+2309460         Windows Cluster Service
+2309453         Windows Server Services - Active Directory
+2309454         Windows Server Services - IIS
+2309457         Windows Server Services - Windows Server 2000
+2309458         Windows Server Services - Windows Server 2003
+2309459         Windows Server Services - Windows Server 2008
+2309456         WINS
+522             Event Planning
+521             Organizational Environment
+520             Travel Administration & Logistics
+519             Visas and Work Permits
+13              Communications Closure
+14              Communications Distribution
+15              Communications Planning
+16              Communications Reporting
+46              Cost Control
+47              Cost Estimating
+48              Cost Estimating / Tools / UCP Estimating
+49              Cost Planning
+50              Cost Planning + Control / Tools / P&L
+51              Cost Resource Planning
+139             Human Resources Acquisition
+140             Human Resources Development
+141             Human Resources Planning
+263             Procurement Contract Administration
+264             Procurement Contract Closeout
+265             Procurement Planning
+266             Procurement Solicitation
+267             Procurement Solicitation Planning
+268             Procurement Source Selection
+283             Quality Assurance
+284             Quality Control
+285             Quality QA Planning
+286             Risk Control
+287             Risk Identification
+288             Risk Planning
+289             Risk Qualitative Analysis
+290             Risk Quantitative Analysis
+300             Scope Change Control
+301             Scope Definition
+302             Scope Initiation
+303             Scope Planning
+304             Scope Verification
+13888797        Scrum Master
+349             Time Definition
+350             Time Duration Estimating
+351             Time Schedule Control
+352             Time Schedule Development
+353             Time Schedule Development + Control / Tools / PServer
+354             Time Sequencing
+515             Commercial Proposals
+518             Development of Business Opportunities
+517             Functional Analysis for Presales
+516             Sales Support
+525             Assessment Center
+523             Generation of Recruitment Sources
+687             Negotiation
+524             Resume Analysis
+526             Salary Proposals
+7829174         Infragistics controls (Winforms)
+7829175         Infragistics controls (WPF)
+15120622        Telerik
+610             Compact Framework 1.0
+611             Compact Framework 2.0
+612             Framework 1.0/1.1
+613             Framework 2.0
+614             Framework 3.0/3.5
+15120617        Framework 4.0,Framework 4.5
+615             ADO.NET
+7223807         ASP.NET
+616             Caching Application Block
+14538809        ClosedXML
+7829169         Composite Application Block (CAB)
+617             Cryptography Application Block
+618             Data Access Application Block
+619             Exception Handling Application Block
+620             Logging Application Block
+7829171         Managed Add-InFramework
+14538810        MVVM Light
+7223804         Nails
+14538808        OpenXML
+3055934         Silverlight
+7829172         StructureMap
+7223805         Unity
+17767652        vsto - visual studio tools for office
+621             Windows Communication Foundation (WCF)
+622             Windows Presentation Foundation (WPF)
+623             Windows WorkFlow Foundation (WWF)
+7223806         Winforms
+15120619        ASP.NET Web API
+16700219        Google Mirror API
+16700220        Leap Motion API
+692             Open Social Api
+7829207         BigQuery
+7829208         Business Objects
+7829178         Coherence Grid
+17767646        Flume
+17767645        HBase
+7829199         MongoDB
+7829192         Oracle Coherence
+17767644        Pentaho
+9427110         Qlikview
+7829191         Redis
+13436893        TypePad
+2608169         Boost
+4434927         Amazon Cloud Front
+4434928         Amazon CloudWatch
+4434923         Amazon EBS (Elastic Block Storage)
+4434921         Amazon EC2 (Elastic Compute Cloud)
+4434925         Amazon EIP (Elastic IP)
+4434924         Amazon ELB (Elastic Load Balancer)
+4434926         Amazon S3 (Simple Storage Service)
+13436891        Force.com
+4434922         Globant Custom AMI (Amazon Machine Image)
+14538807        Google AppEngine
+17767648        Machine Learning
+17767649        Mahout
+17767647        R - RevolutionR
+17767650        Stochastic calculus
+17767651        Time Series
+624             Codesmith/.netTiers
+767             PEAR
+766             PECL
+625             Team Foundation Server
+4434918         JBehave
+626             nDoc
+768             phpDocumentor
+2645368         Sand Castle
+93              Eclipse GEF (Graphical Editing Framework)
+94              Eclipse Plugins Development
+95              EMF (Eclipse Modeling Framework)
+96              Celtix M2A
+97              ChainBuilder ESB
+98              LogicBlaze FUSE
+99              Mule
+100             Open ESB
+101             ServiceMix
+2337835         Code Charge Studio
+2307643         CodeGear
+770             Eclipse PDT
+2307644         IntelliJ
+7829205         IntelliJ Idea (IDE)
+2307645         JCreator
+2307646         JDeveloper
+2307647         NetBeans
+771             phpED (NuSphere)
+772             PHPEdit (WaterProof)
+2307648         Pydev
+7829214         Rational Application Developer
+9427114         Ride
+627             Visual InterDev
+628             Visual Studio
+629             Visual Studio .NET 2002/2003
+630             Visual Studio .NET 2005
+744             Visual Studio .NET 2008
+631             Visual Studio .NET IDE object model
+7829176         Visual Studio 2010
+15120618        Visual Studio 2012
+4434913         Jackrabbit
+17767654        3d.js
+9427100         Angular.js
+7223792         Backbone.js
+7223790         Dundas Dashboard
+15120623        Ember.js
+7223793         Express.js
+13436890        Handlebars
+7223794         Jsdom
+9427099         Knockout.js
+15120625        Marionette.js
+15120624        Mustache
+9427098         MVC/CanJs
+7223791         Node.js
+13436889        Underscore
+142             ActiveMQ
+143             Hermes JMS
+144             JORAM
+2307630         MQSeries
+145             OpenJMS
+15120605        Autofac
+160             HiveMind
+161             NanoContainer
+15120606        Ninject
+162             PicoContainer
+163             Spring
+632             Spring.NET
+15120604        StructureMap
+15120603        Unity
+2645365         Windsor Container
+168             Commons Logging
+15120614        Elmah
+169             Just4Log
+171             Log-Bridge
+170             Log4J
+633             log4net
+172             Simple Log
+173             SLF4J
+174             Trace Log
+2608164         Android SDK
+2608165         IPhone SDK
+16700218        Sony Add-on SDK
+198             AppFuse
+16700217        Aura
+760             CakePHP
+2307619         CherryPy
+2307620         Django
+199             Grails
+2645366         MVC ASP.NET
+200             MyFaces
+2608168         Qt
+201             RIFE
+202             Spring MVC
+203             Struts
+204             Struts2
+759             Symfony
+205             Tapestry
+206             Trails
+207             WebWork
+2645363         .NET Entity Framework
+208             Castor
+209             Cayenne
+758             Doctrine
+210             Hibernate
+211             iBATIS
+7984272         JPA
+212             JPOX
+634             NHibernate
+757             Propel
+2307617         SQLAlchemy
+2307618         Storm
+213             Torque
+15120621        Client Side Scripting
+745             Disk Access
+7829209         EMC Captiva
+15120620        HTTP
+746             Memory
+747             Performance
+748             Vectorization
+2307622         Cocoa
+2307621         Cocoa Touch
+2307623         FEng (Front Engine)
+769             Shindig
+230             WAP
+2645373         ANTLR
+2645375         Grammatica
+2645374         Parser Gold
+231             FOP
+764             FPDF
+765             Haru PDF
+2337834         HTMLDOC
+232             iText
+15120615        iTextSharp
+233             JFreeReport
+234             PDF BOX
+635             Report.NET
+636             SharpPDF
+277             PHP
+4434917         Zend
+749             PC
+750             PC - Graphic Intensive
+751             Server
+752             Web Client
+269             .NET
+688             ABAP
+638             ASP -Active Server Pages- (3.0-)
+637             ASP .NET
+270             C
+639             C#
+271             C++
+272             Cobol
+273             Delphi
+274             J2EE Application Development
+275             Java
+4434940         Java 6
+4434934         Java 6.x JRE
+7829206         LiftWeb
+2307616         Objective-C
+276             Perl
+278             Python
+279             Ruby
+7829198         Scala
+280             Scripting Languages (bash, ksh)
+9427115         Shell script
+281             Smalltalk
+640             VBA -Visual Basic for Applications-
+641             VBScript (windows scripting shell)
+282             Visual Basic
+642             Visual Basic .NET
+643             Visual C++
+2307608         Pickle
+2307609         Plone
+2307610         Psycho
+2307611         PyExpect
+2307612         Pyrex
+2307613         Python Imaging Library (PIL)
+2307614         Twisted
+2307615         Zope
+305             Compass
+306             Egothor
+15120612        Elasticsearch
+2667393         FAST ESP
+307             Ferret
+308             Lius
+309             Lucene
+310             Nutch
+311             OpenFTS
+312             Solr
+13436892        SCSS
+4434932         Compass / Lucene
+4434933         Katari Framework
+315             Asterisk
+316             GNU Bayonne
+317             sipX
+318             Yate
+319             Abbot
+320             Cactus
+2608166         CppUnit
+321             DBUnit
+322             DDSteps
+323             EasyMock
+324             HTTPUnit
+325             Jamelon
+326             Jemmy
+327             jMock
+328             JTestCase
+329             JTR Java Test Runner
+330             JUnit
+331             JUnitPerf
+763             Lime
+2608167         Mockito
+15120610        Moq
+7829170         MsTest
+644             Ncover
+645             Nunit
+761             PHPUnit
+2645367         Rhino Mocks
+762             SimpleTest
+332             StrutsTestCase
+646             TDD with VS Team Suite
+333             TestNG
+15120609        Typemock
+17767661        ISTQB-CTAL Advanced
+17767662        ISTQB-CTEL Expert
+17767660        ISTQB-CTFL Foundation
+2667411         Automation Scripts Building
+2667410         Automation Testing Execution
+2667412         Automation Testing Planning
+334             Functional Testing Execution
+335             Functional Testing Planning
+2667403         Integration Test Cases Design
+2667402         Integration Testing Execution
+2667404         Integration Testing Planning
+17767655        Load & Performance Test Cases Design
+336             Load & Performance Testing Execution
+337             Load & Performance Testing Planning
+15628553        Mobile Testing (Android)
+15628552        Mobile Testing (iOS)
+17767657        Mobile Testing (RIM o BB)
+17767658        Mobile Testing (Windows)
+2667401         Performance and Load Test Cases Design
+2667406         Regression Tes Cases Design
+17767656        Regression Test Cases Design
+2667405         Regression Testing Execution
+17767659        Regression Testing Planning
+2667408         Stress Test Cases Design
+2667407         Stress Testing Execution
+2667409         Stress Testing Planning
+15628551        Appium
+338             Bugzilla
+15628549        Calabash
+339             Canoo WebTest
+15628548        Capybara
+9427107         Cucumber
+2318650         DevTest
+2318649         DevTrack
+9427106         Eggplant
+9427108         Frank
+340             Grinder
+2307624         HP Functional Testing Tools Mercury Quality Center
+2307625         HP Functional Testing Tools Quick Test Professional
+2307626         HP Functional Testing Tools Winrunner
+341             HTMLUnit
+2667398         Jira
+342             Jmeter
+343             JWebUnit
+344             Load Runner
+2667396         Microsoft Team System - Team Fundation
+15628550        MonkeyTalk
+345             OpenSTA
+2307627         PyMock
+2307628         PyUnit
+4434919         QUnit
+9427113         Robot
+7829808         Robotium
+346             Sahi
+347             Selenium
+15120611        Siesta
+2667400         SOA Test
+2667399         SOAP UI
+7829811         Squish
+7829812         Telerik test Studio
+7829810         TestComplete
+7829809         TestDroid Recorder
+2667397         TestLink
+9427112         TestRail
+348             TrackStudio Advance Use
+2307629         WATIR
+9427104         Web Driver
+2307649         AccuRev
+2307650         Bazaar
+2307651         ClearCase
+2307652         CVS
+2307653         Git
+2307654         Mercurial
+2307655         Perforce
+2307656         PVCS
+647             SourceSafe
+2307657         SVN
+648             .NET SOAP/binary serialization
+649             .NET Web Services
+650             .NET XML serialization
+362             Apache Axis
+363             Apache Axis2
+364             Caucho Hessian
+365             Crispy
+366             gSOAP
+367             jUDDI
+17767653        Nancy
+7829196         Protobuf
+9427116         RESTful
+2608221         Spring Webservice
+368             UDDI4J
+15120616        Windows Communication Foundation
+15120608        Windows Communication Foundation (WCF)
+369             WSIF
+370             WSS4J
+371             Xfire
+372             XINS
+383             ActiveBPEL
+7223809         Activiti BPM
+384             Apache ODE
+651             Biztalk
+385             Enhydra Shark
+386             Intalio BPMS
+387             jBoss jBPM
+388             ObjectWeb Bonita
+389             OpenSymphony OSWorkflow
+390             OpenWFE
+391             Taverna
+392             WfMOpen
+15120613        Windows Workflow Foundation
+15120607        Windows WorkFlow Foundation (WWF)
+652             .NET XML
+2608222         Digester
+653             DOM
+654             DOM Parsers
+395             DOM4J
+396             JDOM
+7829194         Jersey / JAX-RS
+397             JiBX
+398             JOX
+399             Piccolo XML Parser
+655             SAX Parsers
+400             StAX
+401             WoodStox
+402             Xerces
+2645364         XML Linq
+403             XMLBeans
+404             XStream
+7829195         Xstream
+393             XmlBeans,Jibx or similar (Binding XML to Java Code)
+394             XSLT
+528             Benefits & Bonuses
+527             Career Plans
+529             Induction
+531             Knowledge management
+530             Training
+656             .NET MBI
+1               Application server architecture
+2               Farms, Clusters
+3               Jboss
+4               Jetty
+5               Resin
+6               Roxen
+7               WebSphere Server or Process Coreographer
+8               Ant
+7829190         Bamboo
+9               Continuum
+10              Cruise Control
+9427102         Glu
+9427103         Gradle
+2337833         Hudson
+9427105         Jenkins
+11              LuntBuild
+12              Maven
+657             MSBuild
+658             Nant
+659             Nmaven
+785             Pake
+784             Phing
+29              CVS Administration
+4434939         Maven 2.2
+4434938         Review Board
+4434936         Scrumy for Agile project management
+4434937         Subversion
+30              SVN Administration
+753             Automation
+754             Build Systems
+755             Distributed Builds
+756             Open Source
+7223803         Protocolo SMPP
+660             Sockets TCP/IP
+31              Alfresco
+32              Apache Lenya
+15120630        CQ5
+33              DotCMS
+2667395         DotNetNuke
+777             Drupal
+7829210         EMC Documentum
+34              eXo Platform
+35              Gridsphere
+36              Hippo CMS
+37              InfoGlue
+38              Jakarta JetSpeed-2
+39              Jakarta Pluto
+40              Jboss Portal
+778             Joomla
+661             Kentico CMS
+41              Liferay
+4792319         Magento
+42              Magnolia
+779             Mambo
+43              Nuxeo ECM
+44              OpenCMS
+15120628        Orchard
+780             PHP-Nuke
+781             PostNuke
+5092147         SharePoint 2010
+14642601        SharePoint 2013
+2307642         SharePoint Portal Server 2007
+662             Sharepoint Portal Services
+15120627        Sitecore
+782             Typo3
+15120626        Umbraco
+45              uPortal
+663             Windows Sharepoint Services
+15120629        Wordpress
+783             XOOPS
+52              Apache Derby
+7223796         Apache Hadoop
+7223799         Apache Hive
+7223797         Apache Map Reduce
+7223798         Apache Pig
+53              Berkeley DB
+54              Berkeley DB Java Edition
+55              Berkeley DB XML
+2608224         CouchDb
+2608223         Databases - SQLite
+56              DB2 configuration & administration
+57              DB2 Stored Procs
+58              DB4O
+664             DTS packages
+59              eXist
+60              Firebird
+9427109         Greenplum
+61              HSQLDB
+9427111         Informatica
+62              Informix configuration & administration
+63              Informix Stored Procs
+64              Ingres
+65              MySQL configuration & administration
+66              MySQL Stored Procs
+7829212         Net SQL Azman
+67              Oracle configuration & administration
+68              Oracle PLSQL/Stored Procs
+69              POSTGRESQL configuration & administration
+70              POSTGRESQL Stored Procs
+71              Progress configuration & administration
+72              Progress Stored Procs
+73              SQL
+665             SQL SERVER managed code
+666             SQL Server Triggers
+74              SQLSERVER configuration & administration
+75              SQLSERVER Stored Procs
+667             SSAS (Analysis Services) / OLAP
+668             SSIS packages
+102             Compiere ERP
+103             Cream
+17767664        Dynamics CRM
+17767665        Dynamics ERP (Ax, Solomon, Gp, Nav)
+104             ERP5
+105             Hipergate
+106             OhioEdge CRM Server
+107             OpenBravo
+108             OpenCRX
+109             OpenTaps
+110             People Soft
+689             Remedy
+111             SAP
+7829211         SAP XL reporter
+112             Siebel
+7829189         Solace
+669             SplendidCRM
+113             Stradivarius
+114             Tango
+7984273         gSon
+670             SQL Enterprise Manager (SQL 6.5, 7.0, 2000)
+673             .NET Remoting
+2608225         ACE/TAO Corba
+674             COM+ / DCOM
+675             MSMQ (Message Queue)
+671             SQL Query Analyzer (SQL 6.5, 7.0, 2000)
+676             Win 32 Services
+2608227         JavaMail
+2608228         Subethamail
+214             AIX configuration & administration
+215             Linux configuration & administration
+216             Mac OS
+217             Solaris configuration & administration
+218             Unix
+677             Windows 2000
+219             Windows 2003 server
+678             Windows Vista
+220             Windows XP
+7223800         Apache Zookeeper
+7223801         Cassandra
+691             Citrix
+221             Computer Simulation
+7223795         Forever
+222             Game Programming
+223             Geographical Information Systems (GIS)
+224             Graphic programming (2D, 3D, etc)
+7829193         JMX
+225             Microsoft Office
+226             MySQL Front
+7829197         Quartz
+227             SOA
+228             System Architecture Design (complex enterprise Applications)
+229             UML
+690             Vignette
+17767666        Dynamics RMS
+235             Actions Script
+236             Ajax
+679             ASP.NET AJAX
+2667394         ASP.NET MVC
+7223808         ASP.NET MVC3
+237             CSS
+4434915         CSS3
+238             Div Layout
+239             Dojo
+240             DWR
+7223789         Ext Js
+241             Flex
+2307641         FreeMarker
+242             Google Web Toolkit (GWT)
+243             HTML
+4434914         HTML5
+246             JavaScript
+247             JAXX
+248             jQuery
+244             JSF
+774             JSON
+245             JSP
+249             OpenLaszlo
+250             OpenRico
+251             Prototype
+252             Script.aculo.us
+253             Servlets
+776             Smarty
+254             SwiXml
+255             Thinlet
+7223802         Vaadin
+2608226         Velocity
+256             Wazaabi
+257             WidgetServer
+773             XAJAX
+258             XAMJ
+259             XML
+260             XUI
+261             Yahoo! UI Library (YUI)
+775             YAML
+262             ZK
+680             Crystal Reports
+2307658         iReport
+2307659         Jasper Reports
+672             SQL Server Management Studio (SQL 2005)
+681             SSRS (Reporting Services)
+682             .NET managed code security
+683             ASP.NET security
+7829213         CyberArk
+684             IE - Client certificates
+685             IIS - SSL server certificates
+355             ArgoUML
+356             Enterprise Architect
+357             Fujaba
+358             StarUML
+359             Unimod
+4434930         Apache 2.x+Mods
+360             Apache Server Configuration
+686             IIS
+361             Tomcat
+4434931         Tomcat 5.5.x
+373             ButorWiki
+2328641         Confluence
+374             JAMWiki
+375             JSPWiki
+376             MediaWiki
+377             MoinMoin
+378             PHPWiki
+379             PmWiki
+380             Twiki
+381             VQWiki
+382             Xwiki
+11894833        Customer Experience Maps
+11894834        Flows
+11894832        Task Models
+11894824        Ideation
+11894828        Presentations
+11894827        Prototypes
+11894825        Sketching
+11894826        Wireframes
+11894819        Benchmarking
+11894820        Ethnographic Interviews
+11894822        Personas
+11894821        Quantitative Information Analysis
+11894818        Requirements Workshops
+11894817        Stakeholder Interviews
+11894823        User Journeys
+11894831        Expert Reviews
+11894830        Surveys
+11894829        Usability Testing
+405             Availability to travel
+6346630         Call Center
+6302366         Construction
+6346608         Finance
+450             Asset Management
+452             Retail
+6394033         Checkout
+6394057         In-Store Marketing (POP displays, Brand Awareness)
+6394015         Inventory Management & Fulfillment
+6394037         Payment Gateways
+6394036         Physical POS
+6394039         Promotions system
+6394041         Retail BI
+6394040         Skew (Master Data Management)
+6394052         Store Planning
+6394007         Virtual Store
+453             Wholesale
+6294553         Compliance
+451             Insurance
+457             Commodities
+458             Emerging Markets
+455             Fixed income
+6294373         Futures
+459             Futures & Options
+462             Hedge Funds
+6294416         Quant
+456             Risk Management
+6294403         Securities
+460             Securitized products
+454             Stock - trading platforms
+461             Structured products
+466             Cards
+465             Clearing
+463             Payment solutions
+464             Trade solutions
+6346619         Gaming
+9710242         Justice
+4206887         Health Care
+493             API development
+7189969         Big Data
+498             .NET Compact Framework
+497             J2ME
+495             Operating systems development
+491             Search Engine Optimization (SEO)
+492             Software frameworks development
+496             UI Engineering
+6346626         IT
+470             Broadband
+469             Digital TV - audio/video streaming
+3742946         Game Development
+6388868         Analytics
+6388750         Console
+6388764         Mobile
+6388865         Online Platform
+6388752         PC
+6388738         Social
+6388766         Web
+471             IPTV
+468             Online Marketing
+467             Portal development
+472             Print Media/ publishing
+6346661         Petroleum
+6346589         Retail
+485             Billing
+484             Call Management
+482             PBX/server technology development
+483             Telemarketing solutions
+488             Cable/modem
+490             Quality of Service
+489             Wireless
+7216362         Plataforma SMS
+487             Audio
+486             Video
+477             Cars
+481             Availability
+480             Schedules
+474             Connectivity/Integration
+473             Development
+475             Testing
+479             General connectivity with third party travel suppliers
+478             Hotels
+476             Portals - CMS
