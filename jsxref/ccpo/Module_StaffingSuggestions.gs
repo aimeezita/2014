@@ -4,7 +4,7 @@ function computeStaffingSuggestions_cron()
   var suggestionsOptions = // only values differing from defaults
   {
     errorsEmailRecipients: 'juan.lanus@globant.com',
-    debug: true
+    debug: false
   };
   var suggestionsCalculator = new CCPOStaffingSuggestionsClass( suggestionsOptions );
   suggestionsCalculator.computeSuggestions( );
@@ -343,29 +343,29 @@ function CCPOStaffingSuggestionsClass( options )
   /************************ set suggestions into tickets and availables ***********************/
   this.storeSuggestions = function()
   {
-  // column: Ticket, Glober ID, Name, New Hire, Email, Glober Office, Matching, MatchingReasons, Client, Project
+  // suggestions columns: Ticket, Glober ID, Name, New Hire, Email, Glober Office, Matching, MatchingReasons, Client, Project
     Logger.log( 'About to store the staffing suggestions into Tickets and Available sheets' );
 
     // Set suggestions into Tickets ************************************************************
 
     // loop over the ticket id column setting up to 8 suggestions per ticket, all in one cell
     // build an map with the new suggestions data
-    Logger.log( 'Building a column with the top 8 suggestions texts' );
     var suggestionTexts = {};  // output: the ticket numbers with their suggestions
 
     // loop over the results grouping by ticket
     var i = 0;
     while ( i < resultValues.length ) {
       var ctrolTicket = resultValues[i]['Ticket']; // current ticket #
-      var top8 = []; // array with current ticket top 8 suggestions
+      var top8 = []; // array to store current ticket top 8 suggestions
+      // build the ticket top 8 suggestions array
       while( (i < resultValues.length) && (ctrolTicket == resultValues[i]['Ticket']) ) {
-        // check if this suggestion makes the ticket top 8
-        this.checkTop8( top8, resultValues[i] );
+        top8.push( resultValues[i] );
         i++;
       }
+      top8.sort( function(row1, row2) { return( row2['Matching'] - row1['Matching'] ); });
+      if( top8.length > 8 ) { top8.length = 8; }        
       // output one ticket suggestions data
       suggestionTexts[ctrolTicket] = this.buildSuggestionsText( top8 );
-      // if( settings.debug ) { Logger.log( 'ticket: ' + ctrolTicket + '\n' + this.buildSuggestionsText( top8 ) ); }
     }
 
     // get the ticket number column from Tickets and build a congruent column with the suggestions
@@ -390,10 +390,11 @@ function CCPOStaffingSuggestionsClass( options )
     targetRange.setValues( suggestionsColumn );
 
     // Set suggestions in Available ************************************************************
-    // #1: Project        ['Project']
-    // #2: Client         ['Client']
-    // #3 matching%       ['Matching'] + '%'
-    // #4: matching reasons '(' + ['MatchingReasons'] + ')' or null string
+    // #1: Ticket        ['Ticket']
+    // #2: Project        ['Project']
+    // #3: Client         ['Client']
+    // #4 matching%       ['Matching'] + '%'
+    // #5: matching reasons '(' + ['MatchingReasons'] + ')' or null string
 
     // loop over resultValues building a map, keyed by "GloberId", each item containing 
     // a glober`s tickets in an array
@@ -402,7 +403,8 @@ function CCPOStaffingSuggestionsClass( options )
     {
       rv = resultValues[ii];
       var ticketReference = // only the needed columns 
-      {
+      { 
+        Ticket: rv['Ticket'],
         Project: rv['Project'],
         Client: rv['Client'],
         Matching: rv['Matching'],
@@ -414,8 +416,6 @@ function CCPOStaffingSuggestionsClass( options )
       if( spg ) 
       {
         spg.push( ticketReference );
-        if( ii < 777 ) { Logger.log( 'suggestion pushed: ' + globerId + ' ' + rv[ 'Project' ] + ' ' + 
-        rv[ 'Client' ] + ' ' + rv[ 'Matching' ] + '%' + ' ' + rv[ 'MatchingReasons' ] ); }
       } else {
         suggestionsPerGlober[ globerId ] = [ ticketReference ];
       }
@@ -444,11 +444,13 @@ function CCPOStaffingSuggestionsClass( options )
     // the target column header is "Suggestions"
     var targetColNum = findColumnByHeader( availableSheet, "Suggestions" );
     assert( targetColNum, 'Cannot find column "Suggestions" in "Available" sheet' );
-    // paste the suggestions column over the Avialable spreadsheet
+    // paste the suggestions column over the Available spreadsheet
     var targetRange = availableSheet.getRange( 2, targetColNum, availablesCount, 1 ); // row, col, rows, cols
     targetRange.setValues( suggestionsColumn );
 
   }
+
+  /***************************** storeSuggestions sub functions *******************************/
 
       this.buildGloberSuggestionsText = function( globerSuggestions )
       {
@@ -461,36 +463,14 @@ function CCPOStaffingSuggestionsClass( options )
         txt8 = '';
         for( i8 = 0; i8 < globerSuggestions.length; i8++ )
         {
-          gs = globerSuggestions[i8];
-          txt8 += '\n' + gs['Project'] + ' (' + gs['Client'] + ') ' + gs['Matching'] + '%' +
-          ( gs['MatchingReasons'] == '' ) ? '' : (' (' + gs['MatchingReasons'] + ')');
-          Logger.log( ' project:' + gs['Project'] + ' client:' + gs['Client'] + ' ' + gs['Matching'] + '%' +
-          ' ' + gs['MatchingReasons'] + '\n' + txt8 );
-
-          Logger.log( gs['Project'] + ' (' + gs['Client'] + ') ' + gs['Matching'] + '%' +
-          ( gs['MatchingReasons'] == '' ) ? '' : (' (' + gs['MatchingReasons'] + ')') );
-
-          return txt8.replace( '\n', '' ); // drop initial newline
+          var gs = globerSuggestions[i8];
+          var gsmr = gs['MatchingReasons'];
+          if( gsmr !== '' ) { gsmr = '(' + gsmr.trim() + ')'; }
+          txt8 += '\n' + gs['Ticket'] + ' ' + gs['Project'] + ' (' + gs['Client'] + ') ' + gs['Matching'] + '% ' + gsmr;
         }
+        return txt8.replace( '\n', '' ); // drop initial newline
       }
 
-  /***************************** storeSuggestions sub functions *******************************/
-
-      this.checkTop8 = function ( top8, resultRow  ) {
-      // resultRow: ['Ticket', 'Glober ID', 'Name', 'New Hire', 'Email', 'Glober Office', 'Matching', 'MatchingReasons']
-        if( top8.length === 0 ) {
-          top8[0] = resultRow;
-        } else {
-          newMatchingValue = resultRow['Matching'];
-          for( var i8 = 0; i8 < top8.length; i8++ ) {
-            if( newMatchingValue >= top8[i8].Matching ) {        // top8[i8]['Matching'] ) 
-              // newMatchingValue is greater then a top8: insert it and drop the last
-              top8.splice( i8, 0, resultRow );  // insert suggestion before position i8
-              break;
-            }
-          }
-        }
-      };
 
       this.buildSuggestionsText = function( top8 ) {
         // builds the 8-suggestions text from the top-8 suggestions for this ticket
@@ -498,27 +478,27 @@ function CCPOStaffingSuggestionsClass( options )
         var txt8 = '', t8MatchingReasons;
         for( var i8 = 0; i8 < top8.length; i8++ ) {
           // stop after 8 suggestions, unless it's a debug run
-          if( i = 8 && (! settings.debug) ) { break; }
+          if( i8 === 8 && (! settings.debug) ) { break; }
           // t8 is the current suggestion
           var t8 = top8[i8];
-          if( t8['MatchingReasons'] == '' )
+          if( t8['MatchingReasons'] === '' )
           {
             t8MatchingReasons = '';
           } else {
-            t8MatchingReasons = '(' + t8['MatchingReasons'] + ') ';
+            t8MatchingReasons = '(' + t8['MatchingReasons'].trim() + ') ';
           }
-          txt8 += '\n' +
+          txt8 += '\n' + 
           ( t8['New Hire'] == 'NH' ? t8['Name'] + ' (NH) ' : t8['Email'] ) + ' ' + 
-          t8['Matching'] + '% ' +
-          t8MatchingReasons;
+          t8['Matching'] + '% ' + t8MatchingReasons;
         }
         txt8 = txt8.replace( / NH /g, ' ').replace( /   */g, ' ').replace( /\n  */g, '\n' );
-        if( txt8 == '' ) { txt8 = '-' }
+        if( txt8 === '' ) { txt8 = '-' }
         return txt8.replace( '\n', '' ); // drop initial newline
       };
 
   return this;
 }
+
 
 
 
