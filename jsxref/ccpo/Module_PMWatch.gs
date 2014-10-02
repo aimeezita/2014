@@ -109,9 +109,9 @@ function PMWatchClass( options ) {
   {
     if( p['Project State'] === 'ON_GOING' || p['Project State'] === 'UNKNOWN' )
     {
-      // calculate the project headcount
+      // calculate the project proportional headcount
       // $$$$ INCLUDES THE PMs FOR NOW
-      projectData = { headCount = 0, pms = [] };
+      projectData = { headCount: 0, pms: [] };
       var ass = p['Assignments'];
       var headCount = 0;
       for( i = 0; i < ass.length; i++ ) 
@@ -121,15 +121,23 @@ function PMWatchClass( options ) {
       projectData.headCount = headCount / 100;
 
       // get the PMs information
-      for( var j = 0; j < p['PmEmails'].length; j++ )
+      for( pmEmail in p['PmEmails'] ) // there is at least 1 email, guaranteed
       {
         // get the PM record
-        var pmEmail = p[j];
         var pmRecord = pms[pmEmail];
-        // pmRecord has a map by tag og the PM`s projects
+        // $$$$ check pmRecord
+        // pmRecord has a map by tag of the PM`s projects
         var pmProject = pmRecord['projects'][p['Project Tag']];
+        // pmProject has { 'project', 'percent' }
+        if( pmProject )
+        {
+          // we have this PMs percent on this project
+          // >>>>>>>>>>>>>>>>>>>>>>>>>><<<
+        }
+
         // pms['pmEmail'] = { 'pmEmail': pmEmail, 'projects': {} };
         // $$$$ pmData = pms[carow['E-Mail']];
+        // $$$$ must loop over all PMs to get a sum of proportions
       }
 
     }
@@ -138,11 +146,4 @@ function PMWatchClass( options ) {
 
 }
 
-
-  // the availables file
-  var availableSheet = getBenchSpreadsheet().getSheetByName('Available');
-  assert( availableSheet, 'The "Available" sheet is not available' );
-  var availableRows = getRows( availableSheet );
-  assert( findColumnByHeader( availableSheet, "Email" ), 'The "Email" column not found in "Available"' );
-  var availMap = computeMap( getBenchSpreadsheet().getSheetByName("Available"), "Email" );
 
