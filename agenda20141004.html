@@ -5,49 +5,174 @@
   <meta http-equiv="Content-Language" content="en">
   <title>04Oct2014 Sat</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+  </script>
+  <script type="text/javascript" src="res/agenda.js">
+  </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+  </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20141003.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20141005.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 04Oct2014 Sat </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20141003.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20141005.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 04Oct2014 Sat </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>Semantic text tagging</h3>
+
+<h4>A short example</h4>
+
+<p>The core is the <em>semantic tagging</em> of the texts. Let's illustrate
+with a simple contrived example. The text is: </p>
+
+<blockquote>
+  <p><strong>open windows</strong></p>
+</blockquote>
+
+<p>Both words have more than one meaning. The verb "open" can be one of many
+forms of "to open", like for example the imperative, or an adjective. The
+predicate "windows" can refer to a glassed aperture in the wall or to an
+operating system. </p>
+
+<p>Translating this piece of text into Spanish could yield "abre ventanas", or
+"ventanas abiertas", or "inicia Windows". </p>
+
+<p>We have an opportunity to be amused by those weird automatic translations.
+</p>
+
+<p>If the text was <em>semantically tagged</em> it wouldn't happen that easy.
+For example:</p>
+
+<blockquote>
+  <p><code>&lt;semanticInfo="imperative of to
+  open"&gt;</code><strong>open</strong><code>&lt;/semanticInfo&gt;</code>
+  <code>&lt;semanticInfo="noun: a framework of wood or metal that contains a
+  glass windowpane and is built into a wall or roof to admit light or air,
+  plural"&gt;</code><strong>windows</strong><code>&lt;/semanticInfo&gt;</code></p>
+</blockquote>
+
+<p>This would severely constrain the chances of the translator program to do
+funny things. </p>
+
+<p>In addition to tag the meaning of ambiguous words, we souls especially tag
+idioms and phrasal verbs, sayings that depart from the literal meaning of the
+words. </p>
+
+<h4>Little he knew ...</h4>
+
+<p>This saying, on which the film "Stranger than reality" pivots, is an example
+of a phrase needing cautious translation. The literal translation doesn't work.
+in Spanish there is no equivalent idion, just the plain "Él no sabía que ...".
+</p>
+
+<h4>What are the benefits?</h4>
+
+<h5>A single translation for all languages</h5>
+
+<p>Tagged texts can be automatically translated to <em>any</em> language
+yielding non-embarrasing results. Of course, by means of a modified translator
+program, which is assumed to exist for now. </p>
+
+<p>A text translated from English to <em>tagged English</em> could be used as a
+source for any other language.  </p>
+
+<h5>A companion for readers</h5>
+
+<p>Anyone reading a tagged text and seeking deeper understanding can query it
+to be explained its meaning. </p>
+
+<p>Be it a person reading the news or classic literature; in their mother
+language or a foreign one. Reading for the sake of reading, or while studying
+the language. </p>
+
+<p>We have online dictionaries that can provide us all the meanings of a word;
+this will provide the exact meaning intended for the current instance of the
+word. </p>
+
+<h4>Who would do the text tagging?</h4>
+
+<h5>Professional <em>test taggers</em></h5>
+
+<p>A new profession will be born, somewhere in between copy proofing and
+literary critic. </p>
+
+<h5>Lawyers and poets</h5>
+
+<p>In the future the text of an international contract will need to be tagged
+in order to avoid "lost in translation" issues. The meaning constrains will be
+valuable, and the tagging of legal copy will be done by law and domain experts.
+</p>
+
+<p>Poets will say that the tagging of texts doesn't leave much for the
+imagination, and in some cases this will be the desired outcome. </p>
+
+<p> </p>
+
+<h3>Growth</h3>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<h3>more</h3>
+<ul>
+  <li>Teachers in language classes, displaying a text and grading a particular
+    significate</li>
+  <li>Gamers "taming the translator" earning points by providing semantic hints
+    to a piece of text until the translator does a decent (or excellent)
+  job</li>
+  <li>Between no more and drink a chair </li>
+</ul>
+
+<p></p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
