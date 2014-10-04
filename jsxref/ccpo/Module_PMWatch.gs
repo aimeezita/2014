@@ -8,8 +8,67 @@ function PMWatch() {
 
 function PMWatchClass( options ) {
 
+  function isManager( GloberPosition )
+  {
+    // list of "Glober Position" values considered managerial
+    managers = [
+      'BISManager',
+      'BIS Manager',
+      'BU Director',
+      'Business Development Director',
+      'Chief Financial Officer',
+      'Chief Information Officer',
+      'Chief Operations Officer',
+      'Chief People Officer',
+      'Chief Solutions Officer',
+      'Client Partner',
+      'Communication Manager',
+      'Consultancy Manager',
+      'Contact Center Manager',
+      'Country Manager',
+      'Creative Director',
+      'Customer Loyalty Manager',
+      'Delivery Director',
+      'Delivery Manager',
+      'Delivery Partner',
+      'Director',
+      'Director Human Capital Systems',
+      'Director Software Development',
+      'Engagement Manager',
+      'Executive Director',
+      'Finance & Treasury Manager',
+      'Finance Processes Manager',
+      'Founder',
+      'M&A Manager',
+      'Manager Software Development',
+      'Net Engineer Manager',
+      'Office Manager',
+      'People Care Manager',
+      'People Careers Manager',
+      'People Champions Manager',
+      'Procurement Manager',
+      'Program Manager',
+      'Project Manager',
+      'Project Manager Hc Systems',
+      'Project Manager Technology ',
+      'QCI Manager',
+      'Recruiting Manager',
+      'Senior Manager Global Compensation',
+      'Senior Manager Human Capital Systems',
+      'Senior Manager Project Instructional Des',
+      'Staff Manager',
+      'Sysadmin Engineer Manager',
+      'Tech Director',
+      'Tech Partner',
+      'Transactional Services Manager'
+    ];
+    return ( managers.indexOf( GloberPosition ) >= 0 );
+  }
 
+  var i, j, k;
 
+  /******************************************************************************/
+  Logger.log( 'PMs coverage report\n' );
   // Projects sheet: Project Tag, Project State, Current Project Managers Emails,      
   // Client TAG, Client, Project Tag, Project, Contract Type, Process Type, Studio,
   // Project State, Currency, Current Delivery Directors, Current Delivery Directors Emails,
@@ -20,130 +79,217 @@ function PMWatchClass( options ) {
   assert( projectsSheet, 'The "Projects" sheet is not available' );
   // projectsData: Project Tag, Project State, Current Project Managers Emails
 
-
   // get all projects data, store only the needed cols in projectsData keyed by TAG
   // build a PMs dictionary to hold their assignment percent to the projects
   var projectsData = {}; 
+  var projectsIndex = []; // item n has the nth project´s tag
+  var nProjects = 0;
+  var nProjectsWithPM = 0;
+  var nPMsXProject = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
+  // define the PMs collection, prime with the fake no.PMs collector
   var pms = {};
-  var projectsSheetRows = projectsSheet.getRows();
-  for( var i = 0; i < projectsSheetRows.length; i++ )
+  var pmsEmailsZ = {};
+  var pmEmail;
+  var fakePMEmail = 'NOPM@globant.com';
+  pms[fakePMEmail] = { pmEmail: fakePMEmail, projects: {} };
+  var projectsSheetRows = getRows( projectsSheet );
+  for( i = 0; i < projectsSheetRows.length; i++ )
   {
     var psrow = projectsSheetRows[i];
-    var pmEmails = psrow['Current Project Managers Emails'].split(' - ');
-    for( pmEmail in pmEmails )
+    var projTag = psrow['Project Tag'];
+    projectsIndex.push( projTag );
+    if( psrow['Project State'] === 'ON_GOING' )
     {
-      pms['pmEmail'] = { 'pmEmail': pmEmail, 'projects': {} };
-    }
-    if( pmEmails.length === 0 ) { pmEmails.push( 'NOPM@globant.com' ); }
-    if( true )                           // WAS: psrow['Project State'] === 'ON_GOING' )
-    {
-      projectsData[psrow['Project Tag']] = { 
-        'Project Tag': psrow['Project Tag'], 
+      nProjects++;
+        
+      // build an array with the PM emails
+      var pmEmails = psrow['Current Project Managers Emails'];
+      if( pmEmails ) 
+      { // there is at least one PM email
+        // count as a project that has at least one PM
+        nProjectsWithPM++;
+        // store the emails as an array
+        pmEmails = pmEmails.split(' - '); // .uniq(); // some PMs appear 2+ times
+        // count into PMs per project stats
+        nPMsXProject[ pmEmails.length ]++;
+
+        // add to the PMs map
+	for( j = 0; j < pmEmails.length; j++ )
+        // for( pmEmail in pmEmails )
+        {
+	  pmEmail = pmEmails[j];
+          pmsEmailsZ[pmEmail] = pmEmail;                                     // a list of all PMs
+          var pmsItem = pms['pmEmail'];
+          if( ! pmsItem ) 
+          { 
+            pmsItem = { 'pmEmail': pmEmail, 'projects': {} }; 
+            pms[pmEmail] = pmsItem;
+          }
+          // add the project to the pms item
+          pmsItem['projects'][projTag] = {};
+        }
+      }
+      else
+      { // there are no PMs in this project
+        // count into PMs per project stats
+        nPMsXProject[0]++;
+        // add a collector PM
+        pmEmails = [ fakePMEmail ];        
+      }
+      // add to projects data map
+      projectsData[projTag] = { 
+        'Project Tag': projTag,
         'Project State': psrow['Project State'], 
-        'PmEmails': pmEmails,
+        'PMEmails': pmEmails,
         'Assignments': []
       };
     }
   }
-  projectsSheetRows = undefined;
-  Logger.log( 'Loaded Projects data, ' + projectsData.length + ' items' );
+  // projectsSheetRows = undefined;    not so fast ...
+  Logger.log( 'Loaded Projects data, ' + nProjects + ' ON_GOING projects of which '+  nProjectsWithPM + ' have PMs' );
+  Logger.log( 'PMs per project counters (first is zero PMs): ' + nPMsXProject.toString() );
 
 
-  // CurrentAssignments sheet: 
+  /******************************************************************************/
+  // CurrentAssignments: 
+  // Store assignment data into the 'Assignments' map of each project
   // Glober ID, Glober Position, E-Mail, Client TAG, Client Name, Project TAG, Project Name,
   // Project Studio, Starting Date, End Date, Percentage, Availability, Business Unit, Business Unit Tag
-  var currentAssignmentsSheet = getBenchSpreadsheet().getSheetByName('CurrentAssignments');
-  assert( currentAssignmentsSheet, 'The "CurrentAssignments" sheet is not available' );
-  // currentAssignmentsData: E-Mail, Project TAG, Percentage
-  var currentAssignmentsData = {};
+  var currentAssignmentsClass = new CCPOAssignmentClass();
+  var currentAssignmentsRows = currentAssignmentsClass.getAllAssignmentsForDate( new Date() );
 
-  // get CurrentAssignments data, store only a few columns keyed by email
-  var currentAssignmentsSheetRows = currentAssignmentsSheet.getRows();
-  for( i = 0; i < currentAssignmentsSheetRows.length; i++ )
+  // currentAssignmentsData, store only a few cols keyed by email: E-Mail, Project TAG, Percentage
+  var currentAssignmentsData = {};                                       //     <== NOT NEEDED?
+
+  var pmProject = {};
+  for( i = 0; i < currentAssignmentsRows.length; i++ )
   {
-    var carow = currentAssignmentsSheetRows[i];
-    currentAssignmentsData[carow['E-Mail']] = { 
-      'E-Mail': carow['E-Mail'],
-      'Project TAG': carow['Project TAG'],
-      'Percentage': carow['Percentage']
-    };
-    // store the PMs assignment percent per project in the pms dictionary
-    pmData = pms[carow['E-Mail']];
-    if( pmData ) // this is a PM
-    {
-      pmData['projects'][carow['Project TAG']] =
-      {
-        'project': carow['Project TAG'],
-        'percent': carow['Percentage']
-      };
-    }
-  }
-  currentAssignmentsSheetRows = undefined;
-  Logger.log( 'Loaded CurrentAssignments data, ' + currentAssignmentsData.length + ' items' );
+    var isPM = false;
+    var assRow = currentAssignmentsRows[i];
+    var assEmail = assRow['E-Mail'];
+    var assProject = assRow['Project TAG'];
+    var assData = {};
+    assData['email'] = assEmail;
+    assData['percent'] = assRow['Percentage'];
+    assData['position'] = assRow['Glober Position'];
+    assData['isManager'] = isManager( assData['position'] );
 
+    isPM = !! pmsEmailsZ[assEmail];
+    if( isPM ) { pmProject[assEmail + '_' + assProject] = assRow['Percentage']; }
 
-  // join by project: collect all the assigned into arrays mapped by Project TAG, in the 
-  // 'Assignments' property of projectsData
-  // add any weird project tag to the list, if any
-  for( i = 0; i < currentAssignmentsData.length; i++ )
-  {
-    var assRow =  currentAssignmentsData[i];
-    var theProjectTAG = assRow['Project TAG'];
-    var theProjectRow = projectsPerTAGMap[ theProjectTAG ];
+    // add the assignment data to the project`s data
+    var theProjectRow = projectsData[assProject];
     if( ! theProjectRow )
-    { // weird Project TAG: add it to the map
+    { // rogue Project TAG: add it to the map
       theProjectRow = { 
-        'Project Tag': theProjectTAG,
-        'Project State': 'UNKNOWN',
+        'Project Tag': assProject,
+        'Project State': 'NOT ONGOING',
         'PmEmails': [],
         'Assignments': []
       };
-      projectsData[theProjectTAG] = theProjectRow;
+      projectsData[assProject] = theProjectRow;
     }
-    theProjectRow['Assignments'].push( assRow );
-  }
+    theProjectRow['Assignments'].push( assData );
 
-  // calculate the globers per project and then distribute by PM
-  // only include projects ON_GOING and UNKNOWN
-  for( p in projectsData )
-  {
-    if( p['Project State'] === 'ON_GOING' || p['Project State'] === 'UNKNOWN' )
+
+    currentAssignmentsData[assEmail + '_' + assProject] = {
+      'E-Mail': assEmail,
+      'Project TAG': assProject,
+      'Percentage': assRow['Percentage']
+    };
+    // store the PMs assignment percent per project in the pms dictionary
+    pmData = pms[assEmail];
+    if( pmData ) // this one is a PM
     {
-      // calculate the project proportional headcount
-      // $$$$ INCLUDES THE PMs FOR NOW
-      projectData = { headCount: 0, pms: [] };
-      var ass = p['Assignments'];
-      var headCount = 0;
-      for( i = 0; i < ass.length; i++ ) 
+      // add this project and the assigned percent
+      pmData['projects'][assProject] = 
       {
-        headCount += ass['Percentage'];
+        'project': assProject,
+        'percent': assRow['Percentage']
+      };
+    }
+  }
+  currentAssignmentsRows = undefined;
+  Logger.log( 'Loaded CurrentAssignments data, ' + i + ' items' );
+
+
+  /******************************************************************************/
+  // calculate the globers per project, with and without managers
+  Logger.log( 'Calculate the globers per project' );
+  // var pdk = projectsData.keys;
+  // for( k = 0; k < pdk.length; k++ )
+  var pp;
+  for( pp in projectsData )
+  {
+    pp = projectsData[pp];
+    // calculate and store the project proportional headcount
+
+    var ass = pp['Assignments'];
+    var headCount = 0;
+    var headCountNoManagers = 0;
+    for( i = 0; i < ass.length; i++ ) 
+    {
+      if( ass[i]['percent'] )
+      {
+        headCount += ass[i]['percent'];
+        if( ! (ass[i]['isManager'] === true) ) { headCountNoManagers += ass[i]['percent']; }
       }
-      projectData.headCount = headCount / 100;
+    }
+    pp['headCounts'] = {
+      'headCount': headCount / 100,
+      'headCountNoManagers': headCountNoManagers / 100
+    };
+    Logger.log( 'project: ' + pp['Project Tag'] + ' headcounts: ' + pp['headCounts'][headCount] +
+    ' ' + pp['headCounts'][headCountNoManagers] );
+  }
 
-      // get the PMs information
-      for( pmEmail in p['PmEmails'] ) // there is at least 1 email, guaranteed
+  /******************************************************************************/
+  // integrate per PM
+  for( var aPM in pms ) // loop over all PMs
+  {
+    aPM = pms[aPM];
+    var aPMEmail = aPM['pmEmail'];
+    var aPMProjects = aPM['projects'];
+    var aPMHeadCount = 0;
+    var aPMHeadCountNoManagers = 0;
+    for( var aPMProject in aPMProjects ) // loop over this PM`s projects
+    {
+      aPMProject = aPMProjects[aPMProject];
+      // aPMProject has {project: "ABC001", percent:100}
+      projectData = projectsData[aPMProject['project']];
+      // projectData contains headCounts = { headCount: x, headCountNoManagers: y, pms: [] };
+      var headCounts = projectData['headCounts'];
+      aPMHeadCount += headCounts['headCount'] * aPMProject['percent'];
+      aPMHeadCountNoManagers += headCounts['headCountNoManagers'] * aPMProject['percent'];
+    }
+    // output a PM`s numbers
+    Logger.log( aPMEmail + ', ' + aPMHeadCount + ', ' + aPMHeadCountNoManagers );
+  }
+
+  /******************************************************************************/
+  // enumerate the projects without PM
+  /*
+  Logger.log( '\nPM-less projects:' );
+  for( var pp in projectsData )
+  {
+    pp = projectsData[pp];
+    var ass = pp['Assignments'];
+    if( ! isEmptyObject( ass ) )  IS AN ARRAY ...
+    {
+      // Logger.log( 'project ' + pp['Project Tag'] + ' has assigments ' + pp['pmEmails'].toString() );
+      pmEmails = pp['PMEmails'];
+      pData = pp['projectData'];
+      if( pmEmails[0] === fakePMEmail )
       {
-        // get the PM record
-        var pmRecord = pms[pmEmail];
-        // $$$$ check pmRecord
-        // pmRecord has a map by tag of the PM`s projects
-        var pmProject = pmRecord['projects'][p['Project Tag']];
-        // pmProject has { 'project', 'percent' }
-        if( pmProject )
-        {
-          // we have this PMs percent on this project
-          // >>>>>>>>>>>>>>>>>>>>>>>>>><<<
-        }
-
-        // pms['pmEmail'] = { 'pmEmail': pmEmail, 'projects': {} };
-        // $$$$ pmData = pms[carow['E-Mail']];
-        // $$$$ must loop over all PMs to get a sum of proportions
+        Logger.log( 'project ' + pp['Project Tag'] + ': total globers: ' + pData['headCount'] + ' non-managers: ' + pData['headCountNoManagers'] ); 
       }
 
     }
-  }
-
+  } */
 
 }
+
+
+
 
 
