@@ -5,49 +5,105 @@
   <meta http-equiv="Content-Language" content="en">
   <title>06Oct2014 Mon</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
+  <style>
+  .doneItem { color:silver; }</style>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20141005.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20141007.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 06Oct2014 Mon </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20141005.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20141007.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 06Oct2014 Mon </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p>Verónica Sabaris, PM de JP Morgan</p>
+
+<p><a
+href="https://docs.google.com/a/globant.com/presentation/d/1MWnX2x1ZMKDwgo-6IeFq9ZT1i7GE2O2EM1Cl04okBlg/edit">Introduction
+to JavaScript</a>
+href="https://docs.google.com/a/globant.com/presentation/d/1MWnX2x1ZMKDwgo-6IeFq9ZT1i7GE2O2EM1Cl04okBlg/edit#slide=id.p10" </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>PMs report</h3>
+<ol>
+  <li class="doneItem">Store the result in a sheet in the drive</li>
+  <li class="doneItem">Do percent grossing up so the sum of PMs assignments is
+    100%</li>
+  <li>Include NOPM in the report</li>
+  <li>Report each PM's projects or clients information</li>
+</ol>
+
+<p></p>
+
+<p></p>
+
+<p>Fails at a project with no assigned globers:</p>
+<pre>ROP123:{
+  'Project Tag':"ROP123", 
+  'Project State':"ON_GOING",
+  PMEmails:["nicolas.medina@globant.com"], 
+  Assignments:[], 
+  headCounts:{headCount:0, headCountNoManagers:0}
+},</pre>
+
+<p>Previously <code>aPMProject</code> is empty object<code>{}</code> </p>
+
+<p>This is because <code>aPMProjects</code> has: </p>
+<pre>({
+  <strong>ROP123:{},</strong> 
+  VCD000:{project:"VCD000", percent:59}, 
+  CPX001:{project:"CPX001", percent:40}, 
+  PPS000:{project:"PPS000", percent:1}
+})</pre>
+
+<p>&Sigma;</p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>

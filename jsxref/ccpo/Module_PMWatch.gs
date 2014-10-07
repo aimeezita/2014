@@ -2,11 +2,15 @@ function PMWatch() {
 // Makes reports involving PMs and their related globers
 
   pmWatch = new PMWatchClass();
-  var gxpm = pmWatch.reportGlobersXPM();
+  // var gxpm = pmWatch.reportGlobersXPM();
 
 }
 
 function PMWatchClass( options ) {
+
+  settings = {
+    readOnly: false
+  };
 
   function isManager( GloberPosition )
   {
@@ -82,13 +86,11 @@ function PMWatchClass( options ) {
   // get all projects data, store only the needed cols in projectsData keyed by TAG
   // build a PMs dictionary to hold their assignment percent to the projects
   var projectsData = {}; 
-  var projectsIndex = []; // item n has the nth project´s tag
   var nProjects = 0;
   var nProjectsWithPM = 0;
   var nPMsXProject = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
-  // define the PMs collection, prime with the fake no.PMs collector
+  // define the PMs collection, prime with the fake no-PM collector
   var pms = {};
-  var pmsEmailsZ = {};
   var pmEmail;
   var fakePMEmail = 'NOPM@globant.com';
   pms[fakePMEmail] = { pmEmail: fakePMEmail, projects: {} };
@@ -97,8 +99,7 @@ function PMWatchClass( options ) {
   {
     var psrow = projectsSheetRows[i];
     var projTag = psrow['Project Tag'];
-    projectsIndex.push( projTag );
-    if( psrow['Project State'] === 'ON_GOING' )
+    if( ( psrow['Project State'] === 'ON_GOING' ) && psrow['Billing Flag'] )
     {
       nProjects++;
         
@@ -111,14 +112,13 @@ function PMWatchClass( options ) {
         // store the emails as an array
         pmEmails = pmEmails.split(' - '); // .uniq(); // some PMs appear 2+ times
         // count into PMs per project stats
-        nPMsXProject[ pmEmails.length ]++;
+        nPMsXProject[pmEmails.length]++;
 
         // add to the PMs map
 	for( j = 0; j < pmEmails.length; j++ )
         // for( pmEmail in pmEmails )
         {
 	  pmEmail = pmEmails[j];
-          pmsEmailsZ[pmEmail] = pmEmail;                                     // a list of all PMs
           var pmsItem = pms['pmEmail'];
           if( ! pmsItem ) 
           { 
@@ -141,11 +141,12 @@ function PMWatchClass( options ) {
         'Project Tag': projTag,
         'Project State': psrow['Project State'], 
         'PMEmails': pmEmails,
+        'sumOfPMAss': 0,  // Σ of all PM percents
         'Assignments': []
       };
     }
   }
-  // projectsSheetRows = undefined;    not so fast ...
+  projectsSheetRows = undefined;
   Logger.log( 'Loaded Projects data, ' + nProjects + ' ON_GOING projects of which '+  nProjectsWithPM + ' have PMs' );
   Logger.log( 'PMs per project counters (first is zero PMs): ' + nPMsXProject.toString() );
 
@@ -161,10 +162,8 @@ function PMWatchClass( options ) {
   // currentAssignmentsData, store only a few cols keyed by email: E-Mail, Project TAG, Percentage
   var currentAssignmentsData = {};                                       //     <== NOT NEEDED?
 
-  var pmProject = {};
   for( i = 0; i < currentAssignmentsRows.length; i++ )
   {
-    var isPM = false;
     var assRow = currentAssignmentsRows[i];
     var assEmail = assRow['E-Mail'];
     var assProject = assRow['Project TAG'];
@@ -173,9 +172,6 @@ function PMWatchClass( options ) {
     assData['percent'] = assRow['Percentage'];
     assData['position'] = assRow['Glober Position'];
     assData['isManager'] = isManager( assData['position'] );
-
-    isPM = !! pmsEmailsZ[assEmail];
-    if( isPM ) { pmProject[assEmail + '_' + assProject] = assRow['Percentage']; }
 
     // add the assignment data to the project`s data
     var theProjectRow = projectsData[assProject];
@@ -197,10 +193,14 @@ function PMWatchClass( options ) {
       'Project TAG': assProject,
       'Percentage': assRow['Percentage']
     };
-    // store the PMs assignment percent per project in the pms dictionary
+
+    // check if this is the PM
     pmData = pms[assEmail];
     if( pmData ) // this one is a PM
+    // store the PMs assignment percent
     {
+      // add to the Σ of PM assignment percents
+      theProjectRow['sumOfPMAss'] += assRow['Percentage'];
       // add this project and the assigned percent
       pmData['projects'][assProject] = 
       {
@@ -239,16 +239,51 @@ function PMWatchClass( options ) {
       'headCount': headCount / 100,
       'headCountNoManagers': headCountNoManagers / 100
     };
-    Logger.log( 'project: ' + pp['Project Tag'] + ' headcounts: ' + pp['headCounts'][headCount] +
-    ' ' + pp['headCounts'][headCountNoManagers] );
+    // Logger.log( 'project: ' + pp['Project Tag'] + ' headcounts: ' + pp['headCounts'][headCount] +
+    // ' ' + pp['headCounts'][headCountNoManagers] );
   }
 
   /******************************************************************************/
   // integrate per PM
+
+  // load globers data to join
+  // Glober ID, First Name, Last Name, Email, Birthdate, Entry Date, Role, Seniority, LegalID,
+  // Glober Office, Society, English level, Billable, Max Time Abroad, Starting On, Argentine Passport,
+  // Arg Pass Expiration Date, European Passport, European Passport Expiration Date, US Passport,
+  // US Passport Expiration Date, US Visa, US VisaType., US Visa Exp., Organizational Unit, Upload CV,
+  // Last date skills review, Glober Studio, Staff
+  var rolesToReport = [ 
+    'Program Manager', 
+    'Project Manager', 
+    'Project Manager Hc Systems', 
+    'Project Manager Technology', 
+    'Staff Manager'
+  ];
+  var globersSheet = getBenchSpreadsheet().getSheetByName("Globers");
+  assert( globersSheet, 'The "Globers" sheet is not available' );
+  assert( findColumnByHeader( globersSheet, "Email" ), 'The "Email" column not found in "Globers"' );
+  var globersMap = computeMap( getBenchSpreadsheet().getSheetByName("Globers"), "Email" );
+
+  // the report
+  var headCountPerPMHeaders = [ 'Email', 'Total', 'No managers', 'Glober Office', 'Glober Studio', 'Role' ];
+  var headCountPerPM = [];
+
   for( var aPM in pms ) // loop over all PMs
   {
     aPM = pms[aPM];
     var aPMEmail = aPM['pmEmail'];
+
+    // skip fake placeholder PM
+    if( aPMEmail === fakePMEmail ) { continue; }
+
+    // get the PM`s data from Globers sheet
+    var aPMGloberData = globersMap[aPMEmail];
+    var PMData = ', "' + aPMGloberData['Glober Office'] + '", "' + aPMGloberData['Glober Studio'] + '", "' + aPMGloberData['Role'] + '"';
+
+    // only include the selected roles
+    if( rolesToReport.indexOf( aPMGloberData['Role'] ) < 0 ) { continue; }
+
+    // process the PM`s projects data
     var aPMProjects = aPM['projects'];
     var aPMHeadCount = 0;
     var aPMHeadCountNoManagers = 0;
@@ -256,38 +291,62 @@ function PMWatchClass( options ) {
     {
       aPMProject = aPMProjects[aPMProject];
       // aPMProject has {project: "ABC001", percent:100}
-      projectData = projectsData[aPMProject['project']];
-      // projectData contains headCounts = { headCount: x, headCountNoManagers: y, pms: [] };
-      var headCounts = projectData['headCounts'];
-      aPMHeadCount += headCounts['headCount'] * aPMProject['percent'];
-      aPMHeadCountNoManagers += headCounts['headCountNoManagers'] * aPMProject['percent'];
+      if( aPMProject.hasOwnProperty('project') ) {
+        var projectData = projectsData[aPMProject['project']];
+        // projectData contains headCounts = { headCount: x, headCountNoManagers: y, pms: [] };
+        var headCounts = projectData['headCounts'];
+        aPMHeadCount += headCounts['headCount'] * aPMProject['percent'] / projectData['sumOfPMAss'];
+        aPMHeadCountNoManagers += headCounts['headCountNoManagers'] * aPMProject['percent'] / projectData['sumOfPMAss'];
+      }
     }
     // output a PM`s numbers
-    Logger.log( aPMEmail + ', ' + aPMHeadCount + ', ' + aPMHeadCountNoManagers );
+    Logger.log( aPMEmail + ', ' + ( aPMHeadCount ) + ', ' + ( aPMHeadCountNoManagers ) + PMData );
+    headCountPerPM.push( {
+      'Email': aPMEmail,
+      'Total': aPMHeadCount, 
+      'No managers': aPMHeadCountNoManagers, 
+      'Glober Office': aPMGloberData['Glober Office'], 
+      'Glober Studio': aPMGloberData['Glober Studio'], 
+      'Role': aPMGloberData['Role']
+    } );
+
   }
+  // store the report data in a sheet PMReportSheet
+  // for now until an official definition use this: 
+  // https://docs.google.com/a/globant.com/spreadsheets/d/19IKjuU0Sl0xKUqW_4uYCKXRKMijFjishQPCUyVFO04A/edit#gid=1527109446
+  var outSpreadsheet = SpreadsheetApp.openById( '19IKjuU0Sl0xKUqW_4uYCKXRKMijFjishQPCUyVFO04A' );
+  var PMReportSheet = outSpreadsheet.getSheetByName( 'headCountXPM' );
+  if( ! settings.readOnly ) { saveSheetObjs( headCountPerPMHeaders, headCountPerPM, PMReportSheet, 1000 ); }
+
 
   /******************************************************************************/
   // enumerate the projects without PM
-  /*
-  Logger.log( '\nPM-less projects:' );
+  /* Logger.log( '\nPM-less projects:' );
   for( var pp in projectsData )
   {
     pp = projectsData[pp];
     var ass = pp['Assignments'];
-    if( ! isEmptyObject( ass ) )  IS AN ARRAY ...
+    if( ! ( ass === [] ) ) // has assignments
     {
       // Logger.log( 'project ' + pp['Project Tag'] + ' has assigments ' + pp['pmEmails'].toString() );
-      pmEmails = pp['PMEmails'];
-      pData = pp['projectData'];
+      pmEmails = pp['PMEmails'];  // PMEmails:["NOPM@globant.com"]
       if( pmEmails[0] === fakePMEmail )
       {
-        Logger.log( 'project ' + pp['Project Tag'] + ': total globers: ' + pData['headCount'] + ' non-managers: ' + pData['headCountNoManagers'] ); 
+        headCounts = pp['headCounts'];  // headCounts:{headCount:0, headCountNoManagers:0}},
+        Logger.log( 'project ' + pp['Project Tag'] + ': total globers: ' + headCounts['headCount'] + ' non-managers: ' + headCounts['headCountNoManagers'] ); 
       }
-
     }
   } */
 
 }
+
+
+
+
+
+
+
+
 
 
 
