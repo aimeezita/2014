@@ -69,6 +69,15 @@ function PMWatchClass( options ) {
     return ( managers.indexOf( GloberPosition ) >= 0 );
   }
 
+  function isANumber( n ) {
+    var numStr = /^-?(\d+\.?\d*)$|(\d*\.?\d+)$/;
+    return numStr.test( n.toString() );
+  }
+
+  function logObject( objx ) {
+    Logger.log( JSON.stringify( objx, undefined, 4 ) );
+  }
+
   var i, j, k;
 
   /******************************************************************************/
@@ -99,7 +108,7 @@ function PMWatchClass( options ) {
   {
     var psrow = projectsSheetRows[i];
     var projTag = psrow['Project Tag'];
-    if( ( psrow['Project State'] === 'ON_GOING' ) && psrow['Billing Flag'] )
+    if( psrow['Project State'] === 'ON_GOING' )
     {
       nProjects++;
         
@@ -115,10 +124,10 @@ function PMWatchClass( options ) {
         nPMsXProject[pmEmails.length]++;
 
         // add to the PMs map
-	for( j = 0; j < pmEmails.length; j++ )
+        for( j = 0; j < pmEmails.length; j++ )
         // for( pmEmail in pmEmails )
         {
-	  pmEmail = pmEmails[j];
+          pmEmail = pmEmails[j];
           var pmsItem = pms['pmEmail'];
           if( ! pmsItem ) 
           { 
@@ -140,6 +149,7 @@ function PMWatchClass( options ) {
       projectsData[projTag] = { 
         'Project Tag': projTag,
         'Project State': psrow['Project State'], 
+        'Billing Flag': psrow['Billing Flag'],
         'PMEmails': pmEmails,
         'sumOfPMAss': 0,  // Σ of all PM percents
         'Assignments': []
@@ -158,72 +168,70 @@ function PMWatchClass( options ) {
   // Project Studio, Starting Date, End Date, Percentage, Availability, Business Unit, Business Unit Tag
   var currentAssignmentsClass = new CCPOAssignmentClass();
   var currentAssignmentsRows = currentAssignmentsClass.getAllAssignmentsForDate( new Date() );
-
-  // currentAssignmentsData, store only a few cols keyed by email: E-Mail, Project TAG, Percentage
-  var currentAssignmentsData = {};                                       //     <== NOT NEEDED?
+  var totalAssignments = 0;
 
   for( i = 0; i < currentAssignmentsRows.length; i++ )
   {
     var assRow = currentAssignmentsRows[i];
     var assEmail = assRow['E-Mail'];
     var assProject = assRow['Project TAG'];
-    var assData = {};
-    assData['email'] = assEmail;
-    assData['percent'] = assRow['Percentage'];
-    assData['position'] = assRow['Glober Position'];
-    assData['isManager'] = isManager( assData['position'] );
+    // assginment data to store by project 
+    var assData = {
+      'email': assEmail,
+      'percent': assRow['Percentage'],
+      'position': assRow['Glober Position'],
+      'isManager': isManager( assRow['Glober Position'] )
+    };
 
     // add the assignment data to the project`s data
     var theProjectRow = projectsData[assProject];
     if( ! theProjectRow )
-    { // rogue Project TAG: add it to the map
-      theProjectRow = { 
-        'Project Tag': assProject,
-        'Project State': 'NOT ONGOING',
-        'PmEmails': [],
-        'Assignments': []
-      };
-      projectsData[assProject] = theProjectRow;
-    }
-    theProjectRow['Assignments'].push( assData );
-
-
-    currentAssignmentsData[assEmail + '_' + assProject] = {
-      'E-Mail': assEmail,
-      'Project TAG': assProject,
-      'Percentage': assRow['Percentage']
-    };
-
-    // check if this is the PM
-    pmData = pms[assEmail];
-    if( pmData ) // this one is a PM
-    // store the PMs assignment percent
-    {
-      // add to the Σ of PM assignment percents
-      theProjectRow['sumOfPMAss'] += assRow['Percentage'];
-      // add this project and the assigned percent
-      pmData['projects'][assProject] = 
+    { // not an ON_GOING project TAG: log anomaly
+      if( assData['percent'] > 0 )
       {
-        'project': assProject,
-        'percent': assRow['Percentage']
-      };
+        Logger.log( 'Glober ' + assEmail + ' assigned @ ' + assData['percent'] +
+        '% to not ON_GOING project ' + assProject );
+      }
+    }
+    else
+    {
+      // add this assigned glober to this project
+      theProjectRow['Assignments'].push( assData );
+      totalAssignments += assData['percent'] / 100;
+
+      // check if this is a PM
+      pmData = pms[assEmail];
+      if( pmData ) // this one is a PM
+      // store the PMs assignment percent
+      {
+        // add this project and the percent to PM`s projects
+        pmData['projects'][assProject] = {
+          'project': assProject,
+          'percent': assRow['Percentage'],
+          'client': theProjectRow['Client TAG']
+        };
+
+        // add to the Σ of PM assignment percents for this project
+        theProjectRow['sumOfPMAss'] += ( assRow['Percentage'] );
+
+        // DEBUG:
+        if( assEmail === 'luis.marino@globant.com' ) { logObject( pmData ); }
+      }
     }
   }
   currentAssignmentsRows = undefined;
-  Logger.log( 'Loaded CurrentAssignments data, ' + i + ' items' );
+  Logger.log( 'Loaded CurrentAssignments data, ' + i + ' items, total assigned headcount: ' + totalAssignments );
 
 
   /******************************************************************************/
-  // calculate the globers per project, with and without managers
+  // calculate the globers per project, with and without managers, and store the
+  // info in projectsData.headCounts
   Logger.log( 'Calculate the globers per project' );
-  // var pdk = projectsData.keys;
-  // for( k = 0; k < pdk.length; k++ )
-  var pp;
-  for( pp in projectsData )
+  for( var pp in projectsData )
   {
     pp = projectsData[pp];
-    // calculate and store the project proportional headcount
 
+    // calculate and store the project proportional headcount
     var ass = pp['Assignments'];
     var headCount = 0;
     var headCountNoManagers = 0;
@@ -246,12 +254,6 @@ function PMWatchClass( options ) {
   /******************************************************************************/
   // integrate per PM
 
-  // load globers data to join
-  // Glober ID, First Name, Last Name, Email, Birthdate, Entry Date, Role, Seniority, LegalID,
-  // Glober Office, Society, English level, Billable, Max Time Abroad, Starting On, Argentine Passport,
-  // Arg Pass Expiration Date, European Passport, European Passport Expiration Date, US Passport,
-  // US Passport Expiration Date, US Visa, US VisaType., US Visa Exp., Organizational Unit, Upload CV,
-  // Last date skills review, Glober Studio, Staff
   var rolesToReport = [ 
     'Program Manager', 
     'Project Manager', 
@@ -259,12 +261,20 @@ function PMWatchClass( options ) {
     'Project Manager Technology', 
     'Staff Manager'
   ];
+
+  // load globers data to join
+  // Glober ID, First Name, Last Name, Email, Birthdate, Entry Date, Role, Seniority, LegalID,
+  // Glober Office, Society, English level, Billable, Max Time Abroad, Starting On, Argentine Passport,
+  // Arg Pass Expiration Date, European Passport, European Passport Expiration Date, US Passport,
+  // US Passport Expiration Date, US Visa, US VisaType., US Visa Exp., Organizational Unit, Upload CV,
+  // Last date skills review, Glober Studio, Staff
+
   var globersSheet = getBenchSpreadsheet().getSheetByName("Globers");
   assert( globersSheet, 'The "Globers" sheet is not available' );
   assert( findColumnByHeader( globersSheet, "Email" ), 'The "Email" column not found in "Globers"' );
   var globersMap = computeMap( getBenchSpreadsheet().getSheetByName("Globers"), "Email" );
 
-  // the report
+  // the report: an array to be stored in a sheet
   var headCountPerPMHeaders = [ 'Email', 'Total', 'No managers', 'Glober Office', 'Glober Studio', 'Role' ];
   var headCountPerPM = [];
 
@@ -274,11 +284,24 @@ function PMWatchClass( options ) {
     var aPMEmail = aPM['pmEmail'];
 
     // skip fake placeholder PM
-    if( aPMEmail === fakePMEmail ) { continue; }
+    // if( aPMEmail === fakePMEmail ) { continue; }
 
     // get the PM`s data from Globers sheet
-    var aPMGloberData = globersMap[aPMEmail];
-    var PMData = ', "' + aPMGloberData['Glober Office'] + '", "' + aPMGloberData['Glober Studio'] + '", "' + aPMGloberData['Role'] + '"';
+    if( aPMEmail === fakePMEmail )
+    {
+      PMData = '';
+      var aPMGloberData = {
+        'Role': 'Project Manager',
+        'Glober Office': 'unknown',
+        'Glober Studio': 'unknown'
+      };
+    }
+    else
+    {
+      var aPMGloberData = globersMap[aPMEmail];
+      var PMData = ', "' + aPMGloberData['Glober Office'] + '", "' + aPMGloberData['Glober Studio'] + '", "' + aPMGloberData['Role'] + '"';
+      if( assEmail === 'luis.marino@globant.com' ) { logObject( pmData ); }
+    }
 
     // only include the selected roles
     if( rolesToReport.indexOf( aPMGloberData['Role'] ) < 0 ) { continue; }
@@ -295,6 +318,10 @@ function PMWatchClass( options ) {
         var projectData = projectsData[aPMProject['project']];
         // projectData contains headCounts = { headCount: x, headCountNoManagers: y, pms: [] };
         var headCounts = projectData['headCounts'];
+        if( ! projectData['sumOfPMAss'] ) 
+        {
+          Logger.log( 'no sum of PM assignments for ' + aPMEmail + ' in project ' + aPMProject['project'] );
+        }
         aPMHeadCount += headCounts['headCount'] * aPMProject['percent'] / projectData['sumOfPMAss'];
         aPMHeadCountNoManagers += headCounts['headCountNoManagers'] * aPMProject['percent'] / projectData['sumOfPMAss'];
       }
@@ -339,6 +366,11 @@ function PMWatchClass( options ) {
   } */
 
 }
+
+
+
+
+
 
 
 
