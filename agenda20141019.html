@@ -5,49 +5,94 @@
   <meta http-equiv="Content-Language" content="en">
   <title>19Oct2014 Sun</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20141018.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20141020.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 19Oct2014 Sun </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20141018.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20141020.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 19Oct2014 Sun </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>rt</h3>
+
+<p>Finally the actions data is recorded into the database, after issuing
+command  <code>db.createCollection('actions')</code>:</p>
+<pre style="font-size:70%">&gt; db.actions.find()
+{ "_id" : ObjectId("54445ed2e1a6987323f01718"), "t" : ISODate("2014-10-20T01:01:06.525Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,71", "a" : 1 }
+{ "_id" : ObjectId("54445ed3e1a6987323f01719"), "t" : ISODate("2014-10-20T01:01:07.052Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "undefined", "a" : 1 }
+{ "_id" : ObjectId("54445ed3e1a6987323f0171a"), "t" : ISODate("2014-10-20T01:01:07.369Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "undefined", "a" : 1 }
+{ "_id" : ObjectId("54445ed3e1a6987323f0171b"), "t" : ISODate("2014-10-20T01:01:07.688Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "undefined", "a" : 1 }
+{ "_id" : ObjectId("54445ed3e1a6987323f0171c"), "t" : ISODate("2014-10-20T01:01:07.984Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "undefined", "a" : 1 }
+{ "_id" : ObjectId("54445ed4e1a6987323f0171d"), "t" : ISODate("2014-10-20T01:01:08.221Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,76", "a" : 2 }
+{ "_id" : ObjectId("54445ed4e1a6987323f0171e"), "t" : ISODate("2014-10-20T01:01:08.247Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,76", "a" : 2 }
+{ "_id" : ObjectId("54445ed4e1a6987323f0171f"), "t" : ISODate("2014-10-20T01:01:08.265Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,76", "a" : 2 }
+{ "_id" : ObjectId("54445ed4e1a6987323f01720"), "t" : ISODate("2014-10-20T01:01:08.280Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,76", "a" : 2 }
+{ "_id" : ObjectId("54445ed4e1a6987323f01721"), "t" : ISODate("2014-10-20T01:01:08.289Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,76", "a" : 2 }
+{ "_id" : ObjectId("54445ed4e1a6987323f01722"), "t" : ISODate("2014-10-20T01:01:08.310Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,76", "a" : 2 }
+{ "_id" : ObjectId("54445ed4e1a6987323f01723"), "t" : ISODate("2014-10-20T01:01:08.326Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,76", "a" : 2 }
+{ "_id" : ObjectId("54445ed4e1a6987323f01724"), "t" : ISODate("2014-10-20T01:01:08.350Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,76", "a" : 2 }
+{ "_id" : ObjectId("54445ed4e1a6987323f01725"), "t" : ISODate("2014-10-20T01:01:08.357Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,76", "a" : 2 }
+{ "_id" : ObjectId("54445ed5e1a6987323f01726"), "t" : ISODate("2014-10-20T01:01:09.961Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,80", "a" : 2 }
+{ "_id" : ObjectId("54445ed5e1a6987323f01727"), "t" : ISODate("2014-10-20T01:01:09.981Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,80", "a" : 2 }
+{ "_id" : ObjectId("54445ed6e1a6987323f01728"), "t" : ISODate("2014-10-20T01:01:09.995Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,80", "a" : 2 }
+{ "_id" : ObjectId("54445ed6e1a6987323f01729"), "t" : ISODate("2014-10-20T01:01:10.017Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,80", "a" : 2 }
+{ "_id" : ObjectId("54445ed6e1a6987323f0172a"), "t" : ISODate("2014-10-20T01:01:10.028Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,80", "a" : 2 }
+{ "_id" : ObjectId("54445ed6e1a6987323f0172b"), "t" : ISODate("2014-10-20T01:01:10.041Z"), "doc" : 123457, "rdr" : 7771234, "dp" : "0,1,9,0,0,0,0,80", "a" : 2 }</pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
