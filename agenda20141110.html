@@ -5,49 +5,111 @@
   <meta http-equiv="Content-Language" content="en">
   <title>10Nov2014 Mon</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20141109.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20141111.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 10Nov2014 Mon </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20141109.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20141111.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 10Nov2014 Mon </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a href="http://martinfowler.com/articles/asyncJS.html">Testing Asynchronous
+JavaScript</a> by Pete Hodgson</p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>CP issues</h3>
+<ul>
+  <li>In the expanded clients list the link to open a client is just the client
+    name. 
+    <p>It should be the whole cell (&lt;a style="display:block"&gt;...)</p>
+  </li>
+  <li>In the expanded clients list highlight the client row on hover. </li>
+  <li>The index.html file does not specify the language. </li>
+  <li>The index.html &lt;head&gt; has relative references like
+    <code>href='../common/stylesheets/popupServiceAlert.css'</code> that break
+    the application if the page is moved. 
+    <p>The href URIs should start with "/". </p>
+  </li>
+  <li>The "Search by filter ..." prompt is geek lingo. 
+    <p>It could reflect the choice of the dropdown at the left, like "Search by
+    client name" or "Search by account number", etc. </p>
+  </li>
+  <li>The search artifacts should have tooltips. </li>
+  <li>When searching for clients (by name) clicking the "No results matching
+    search criteria" correctly produces a "There are no results matching search
+    criteria" banner, but the search text is overlaid by another "No results
+    matching search criteria" message. 
+    <p>The user input should be respected, left unchanged. </p>
+  </li>
+  <li>In the clients search dropdown, the mouse left button click should be
+    ignored, it must not trigger the click action. (<code>event.type ===
+    'mousedown' &amp;&amp; event.which === 1</code> )</li>
+  <li>In the selection of clients by name, the cursor pointer should be the
+    lilnk hand when hovering one of the client names in the list (and not the
+    other elements). </li>
+</ul>
+
+<p></p>
+
+<p> </p>
+<pre>documentClickDropdown = function (e, el) {
+if (! $(e.target).attr('data-spn')) { // not a client choice
+  e.stopPropagation();
+  return;
+}
+hideDropdown();
+autocompleteResults.hide();
+}</pre>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>

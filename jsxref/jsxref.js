@@ -158,7 +158,7 @@
       for( fr in fdef.references ) {
         var fref = fdef.references[fr]
         var frname = fref.sourceFile;
-        if( fxref[ frname ] {
+        // if( fxref[ frname ] {
 
         console.log( '    ' + fref.sourceFile + ' ' + fref.loc.start.line );
       }

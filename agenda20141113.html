@@ -5,49 +5,300 @@
   <meta http-equiv="Content-Language" content="en">
   <title>13Nov2014 Thu</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20141112.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20141114.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 13Nov2014 Thu </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20141112.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20141114.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 13Nov2014 Thu </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a
+href="http://www.amazon.com/Art-Agile-Development-James-Shore/dp/1502820900/ref=sr_1_3?s=books&amp;ie=UTF8&amp;qid=1415983535&amp;sr=1-3&amp;keywords=the+art+of+agile+development">The
+Art of Agile Development</a> </p>
+
+<p><a href="http://www.datatables.net/">DataTables | Table plug-in for
+jQuery</a>  </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>building Sencha</h3>
+
+<p>Because <em>sencha app build simply invokes the "build" target of the Ant
+"build.xml" file</em>, you can equivalently invoke a build directly from Ant.
+This can be useful in IDE's like Eclipse and NetBeans for invoking your builds
+but also in a Continuous Integration server that understands Ant (which is just
+about all of them). </p>
+
+<p>The generated "build.xml" is a minimal Ant script that uses an Ant import
+task to import ".sencha/app/build-impl.xml" as well as several other files.
+While "build.xml" is intended to be edited after it is generated, the
+".sencha/app/*-impl.xml" files are not. These files will be replaced bysencha
+app upgrade` and so should be edited unless absolutely necessary. These files
+are, however, an excellent reference but should be modified unless
+necessary.</p>
+
+<p>The targets below define the application build process from start to finish.
+With the exception of init each target has a property that can be set to 1 to
+disable that step.</p>
+<ul>
+  <li>init</li>
+  <li>refresh</li>
+  <li>resolve (defaults to 1; set skip.resolve=0 to enable)</li>
+  <li><strong>js</strong></li>
+  <li>resources</li>
+  <li><strong>sass</strong></li>
+  <li>slice</li>
+  <li>page</li>
+  <li>native-package</li>
+</ul>
+
+<p>With the exception of init each of these targets can be dropped out of the
+default build by use of a build property (see below) with the target name
+prefixed by "skip.". For example, to disable the slice target:
+<code>skip.slice=1</code></p>
+
+<p>These steps <em>can also be run individually</em> if only that piece is
+desired. This is often the useful for rebuilding only the Sass:
+<strong><code>sencha ant sass</code></strong> </p>
+
+<p>Note: Using <code>sencha ant</code> is equivalent to using your own version
+of Ant if you have Ant 1.8 or higher installed.</p>
+
+<h4>x-compress-js</h4>
+
+<p>Compresses JavaScript source according to the following options
+(attributes):</p>
+<ul>
+  <li>srcfile: The source file to compress.</li>
+  <li>outfile: The output file to generate (defaults to srcfile).</li>
+  <li>charset: The charset of the input/output files.</li>
+  <li>header: Optional text to include in a comment block at the start of the
+    file.</li>
+  <li>linebreak: The column number at which to break lines (default is -1, to
+    not break lines).</li>
+  <li>obfuscate: False to not obfuscate local symbols (default is true).</li>
+  <li>disableoptimizations: True to disable all built-in optimizations.</li>
+  <li>preservesemi: True to preserve all semicolons.</li>
+  <li>verbose: True to enable extra diagnostic messages.</li>
+</ul>
+
+<h4>x-compress-css</h4>
+
+<p>We need to manage CSS files too. Compresses CSS source according to the
+following options (attributes):</p>
+<ul>
+  <li>srcfile: The source file to compress.</li>
+  <li>outfile: The output file to generate (defaults to srcfile).</li>
+  <li>charset: The charset of the input/output files.</li>
+  <li>header: Optional text to include in a comment block at the start of the
+    file.</li>
+  <li>linebreak: The column number at which to break lines.</li>
+  <li>verbose: True to enable extra diagnostic messages</li>
+</ul>
+
+<h4>param example</h4>
+<pre>&lt;x-generate...&gt;
+    &lt;param name="bar" value="42" /&gt;
+&lt;/x-generate&gt;</pre>
+
+<p></p>
+<pre>
+function getAjaxResponseErrors (jqXHR, exception) {
+ if (jqXHR.status === 0) {
+  return 'Not connected. Verify Network.';
+ } else if (jqXHR.status == 404) {
+  return 'Requested page not found. [404]';
+ } else if (jqXHR.status == 500) {
+  return 'Internal Server Error [500].';
+ } else if (exception === 'parsererror') {
+  return 'Requested JSON parse failed.';
+ } else if (exception === 'timeout') {
+  return 'Time out error.';
+ } else if (exception === 'abort') {
+  return 'Ajax request aborted.';
+ } else {
+  return 'Uncaught Error.' + jqXHR.responseText;
+ }
+};</pre>
+
+<p></p>
+<hr>
+
+<h3>sencha CMD within grunt</h3>
+
+<p><a
+href="http://github.com/mattgoldspink/grunt-sencha-dependencies#how-to-use-this-with-subsequent-steps">mattgoldspink/grunt-sencha-dependencies</a> </p>
+<ul>
+  <li><strong>grunt-sencha-dependencies</strong><a></a> 
+    <p>A Grunt.js plugin which will figure out the order of Ext classes your
+    Ext.application uses so the list can be passed on to further commands like
+    concat, jshint, etc </p>
+  </li>
+  <li><strong><a
+    href="https://www.npmjs.org/package/grunt-sencha-build">grunt-sencha-build</a></strong> 
+    <p>Grunt plugin wrapper for Sencha CMD</p>
+  </li>
+  <li>"...apps built using Sencha Cmd have a standardized architecture..." 
+    <p>We might end up having th adapt the app's directoryes hierachy to match
+    Sencha's. </p>
+  </li>
+  <li>"Internally, the sencha app build command does basic validation and
+    <em>calls in to the Apache Ant build script</em> found in "build.xml" at
+    the root of the application. Specifically, it calls the "build" target of
+    this script. This means the entire build process can be examined, extended
+    and (if necessary) even modified." </li>
+  <li>"you might know that Sencha Cmd uses YUI Compressor to compress your
+    JavaScript code during a sencha app build native. But did you know that
+    using Google Closure or UglifyJS instead is just as easy?" </li>
+  <li>"... and Sencha Cmd are only available under a Sencha commercial license
+    and are not available under any open source license." (Albeit Senchs CMD
+    has no cost, it isnot free). </li>
+  <li>The Sencha CMD download weights 34MB, while <code>grunt +
+    grunt-cli</code> span 10MB after installed. </li>
+  <li><a target="_other"
+    href="http://www.sencha.com/legal/sencha-cmd-license">Sencha CMD comprises
+    a lot of other software tools</a> to be parameterized and configured, along
+    with their corresponding licenses: 
+
+    <div>
+
+    <div style="margin-left:2em; font-size:80%;">
+    <ul>
+      <li>WebKit (LGPL) Copyright (C) 1991 Free Software Foundation, Inc
+        Site: http://www.webkit.org/ 
+        License: http://www.webkit.org/coding/lgpl-license.html</li>
+      <li>YUI Compressor (BSD licensed) included in Sencha Touch build tools
+        Copyright © 2012 Yahoo! Inc.
+        Site: http://developer.yahoo.com/yui/compressor/  License: <a
+        href="http://developer.yahoo.com/yui/license.html">http://developer.yahoo.com/yui/license.html</a></li>
+      <li>PhantomJS (BSD) Site: http://www.phantomjs.org  License: New BSD
+        License</li>
+      <li>Google Closure Compiler (Apache) Copyright 2009 The Closure Compiler
+        Authors. Site: http://code.google.com/p/closure-compiler/  License: <a
+        href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></li>
+      <li>Open-Vcdiff (Apache) Site: http://code.google.com/p/open-vcdiff/ 
+        License: <a
+        href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></li>
+      <li>Google Closure Compiler (Apache) Copyright 2009 The Closure Compiler
+        Authors. Site: <a
+        href="http://code.google.com/p/closure-compiler/">http://code.google.com/p/closure-compiler/</a>
+        License: <a
+        href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></li>
+      <li>Mozilla Rhino (MPL) Site: <a
+        href="https://developer.mozilla.org/en-US/docs/Rhino">https://developer.mozilla.org/en-US/docs/Rhino</a>
+        License: <a
+        href="http://www.mozilla.org/MPL/2.0/">http://www.mozilla.org/MPL/2.0/</a></li>
+      <li>GSON (Apache) Site: <a
+        href="http://code.google.com/p/google-gson/">http://code.google.com/p/google-gson/</a>
+        License: <a
+        href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></li>
+      <li>JANSI (Apache) Site: <a
+        href="https://github.com/fusesource/jansi">https://github.com/fusesource/jansi</a>
+        License: <a
+        href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></li>
+      <li>Ant-contrib (Apache) Site: <a
+        href="http://ant-contrib.sourceforge.net/">http://ant-contrib.sourceforge.net/</a>
+        License: <a
+        href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></li>
+      <li>Ant (Apache) Site: <a
+        href="http://ant.apache.org/">http://ant.apache.org/</a> License: <a
+        href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></li>
+      <li>Apache Velocity (Apache) Site: <a
+        href="http://velocity.apache.org/">http://velocity.apache.org/</a>
+        License: <a
+        href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></li>
+      <li>Commons-io (Apache) Site: <a
+        href="http://commons.apache.org/io/">http://commons.apache.org/io/</a>
+        License: <a
+        href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></li>
+      <li>slf4j (MIT) Copyright (c) 2004-2011 QOS.ch Site: <a
+        href="http://www.slf4j.org/">http://www.slf4j.org/</a> License: <a
+        href="http://www.slf4j.org/license.html">http://www.slf4j.org/license.html</a></li>
+    </ul>
+    </div>
+    </div>
+  </li>
+  <li>Sencha CMD does not seem to run in UNIX, according to <a
+    href="http://www.sencha.com/products/sencha-cmd/download">its download
+    page</a>. </li>
+  <li>Sencha CMD is tied to a compatible version of Compass (the SASS styles
+    compiler). See <a target="_other&quot;"
+    href="http://www.sencha.com/forum/showthread.php?127967-Compass-version-in-ST-1.1.0">this
+    thread</a>: 
+    <p>"<em>Just wondering what version of Compass Sencha Touch 1.1.0 requires?
+    I can't compile my SCSS anymore after upgrading this morning
+    (inline_image_string is not a method) and I'm running the latest stable
+    build of Compass 0.10.6.</em> "</p>
+    <p>By using Sencha CMD as the primary UI builder we could end up locked
+    into an undesired version of Compass. </p>
+  </li>
+  <li>Searching for "Sencha CMD" with Google returns 221K results; searching
+    for "Grunt JS" returns 784K. </li>
+  <li>In general terms, Sencha CMD does a huge lot of things that we don't need
+    because client-profile is not a Sencha application. 
+    <p>To fulfill all its goals Sencha CMD comes bundled with a munber of
+    applications that we should control and parameterize, at least to turn them
+    off. </p>
+    <p>On the other hand, Grunt is just a bare-bones task runner that does not
+    enforce any specific tooling, allowing us to choose regarding our
+    convenience. </p>
+    <p>In particular, one of the tools that can be plugged into Grunt is
+    SenchaCMD. This way we could build Ext.js as a Grunt task using the Sencha
+    tool via the appropriate Grung plugins. </p>
+  </li>
+</ul>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
