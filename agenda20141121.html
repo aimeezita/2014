@@ -5,49 +5,126 @@
   <meta http-equiv="Content-Language" content="en">
   <title>21Nov2014 Fri</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20141120.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20141122.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 21Nov2014 Fri </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20141120.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20141122.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 21Nov2014 Fri </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p>Check SASS files, clean not used  </p>
+
+<p>Edit <code>~\AppData\Local\Programs\Git\share\vim\vimrc</code> </p>
+
+<p>SID I633475 pin=T.E.</p>
+
+<p>email <a href="http://169.83.87.146/owa">http://169.83.87.146/owa</a> </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>1272 Portlet scroll bar overlaps the email column</h3>
+
+<p>The scrollbar doesn't show, albeit there is a control
+<code>id="mCSB_1_scrollbar_vertical"</code> it has display:none specified. </p>
+
+<p>Anyway, the window width is less than 500px the email icon appears
+truncated.</p>
+
+<p>This is so because the column has a proportional width while its content
+width is fixed: the 20px wide email icon with a 30px heading. </p>
+
+<p>Setting a fixed length: </p>
+<pre>.roleTable &gt; thead th.thLast {
+    padding: 0 2px;
+    width: 30px;
+}
+
+ .roleTable &gt; thead th {
+    font-size: 11px;
+}
+
+body { overflow-y: hidden; }
+#client-results { overflow-y: scroll; }
+#client-results-container { height: 222px; } AUTO SET HEIGHT
+#client-results-container { overflow-y: scroll; }
+#client-results-container
+
+setUpHeight
+
+
+</pre>
+
+<p></p>
+
+<p></p>
+<hr>
+
+<h3>double clear "X" in search input</h3>
+
+<p>C:\w\client-profile\src\main\webapp\static\components\sass\layout.scss</p>
+
+<p>C:\w\client-profile\src\main\webapp\static\components\stylesheets\screen.css
+</p>
+
+<p> </p>
+<pre>/* - - - - MSIE - - - - */
+
+/* prevent the appearance of IE10+ clear [x] */
+input::-ms-clear {
+    display:none;
+}</pre>
+
+<p></p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
