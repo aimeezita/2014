@@ -5,49 +5,139 @@
   <meta http-equiv="Content-Language" content="en">
   <title>10Dec2014 Wed</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20141209.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20141211.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 10Dec2014 Wed </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20141209.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20141211.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 10Dec2014 Wed </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a href="http://www.quirksmode.org/css/condcom.html">PPK on conditional IE
+comments</a> </p>
+
+<p><a href="http://www.mundolatas.com/EMPRESAS%20METALGRAFICAS.htm">latas</a>
+</p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>IE8 rounded corners - portlet</h3>
+
+<p>Slice 6px from each side and set two images that make up the borders. Set
+the top and bottom borders normally. </p>
+
+<p>The width of the button turns too narrow, so pass 3% of the input box width
+to the submit button. </p>
+
+<p>In order to leverage the space taken by the border images a small negative
+left margin in the button's &lt;span&gt; can be used. </p>
+
+<p>disabled</p>
+
+<p>The border color is #cccccc, the background is #eceeed. </p>
+
+<p><a
+href="http://www.generateit.net/rounded-corner/index.php?r=6&amp;w=44&amp;h=26&amp;bw=1&amp;fg=3585CA&amp;bg=ECEEED&amp;bc=233545&amp;f=png&amp;fgt=1&amp;aa=1&amp;submit=Generate+It">enabled</a>
+</p>
+
+<p>The border color is #233545, the background is #3585ca. </p>
+
+<p></p>
+
+<p></p>
+
+<h3>IE8 rounded corners - components</h3>
+
+<p></p>
+
+<p>Solved by setting a background image. There must be two: one for the
+disabled state and the other for the enabled state. </p>
+
+<p>The images are traqnsparent except for the border. </p>
+
+<p>The background images are generated using the <a
+href="http://www.generateit.net/rounded-corner/index.php">Rounded Corner Image
+Generator</a>: </p>
+<ul>
+  <li><a
+    href="http://www.generateit.net/rounded-corner/index.php?r=4&amp;w=300&amp;h=26&amp;bw=1&amp;fg=FFFFFF&amp;bg=FFFFFF&amp;bc=BBBBBB&amp;f=png&amp;bgt=1&amp;fgt=1&amp;aa=1&amp;submit=Generate+It">disabled</a> 
+    <p><img alt="ff vs IE8" src="agenda20141210-ff-ie8-disabled.png"
+    width="364" height="252"></p>
+    <p></p>
+    <pre>{
+    background-image: url(stylesheets/compoDisabled3.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    border-left: 1px solid #bbbbbb;
+}
+
+#cpa-search-submit {
+    /* border: 1px solid #233545; */
+}
+
+ .cpa-search-disabledSubmit {
+    /* border: 0px solid #CCCCCC !important; */
+}</pre>
+  </li>
+  <li><a
+    href="http://www.generateit.net/rounded-corner/index.php?r=4&amp;w=300&amp;h=26&amp;bw=1&amp;fg=FFFFFF&amp;bg=FFFFFF&amp;bc=233545&amp;f=png&amp;bgt=1&amp;fgt=1&amp;aa=1&amp;submit=Generate+It">enabled</a> 
+    <p><img alt="ff vs IE8 - enabled"
+    src="agenda20141210-ff-ie8-enabled.png"></p>
+  </li>
+</ul>
+
+<p></p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
