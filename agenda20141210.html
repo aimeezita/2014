@@ -50,7 +50,7 @@ comments</a> </p>
 </div>
 
 <div id="agendaBody">
-<h3>IE8 rounded corners - portlet</h3>
+<h3>IE8 rounded corners - portlet (326px wide)</h3>
 
 <p>Slice 6px from each side and set two images that make up the borders. Set
 the top and bottom borders normally. </p>
@@ -121,11 +121,57 @@ Generator</a>: </p>
 
 <p> </p>
 
-<p> </p>
+<h3>CSS cascating rules and <a
+href="http://www.smashingmagazine.com/2010/11/02/the-important-css-declaration-how-and-when-to-use-it/">!important</a></h3>
 
-<p> </p>
+<div>
+<ul>
+  <li>Universal selectors</li>
+  <li>Type selectors</li>
+  <li>Class selectors</li>
+  <li>Attributes selectors</li>
+  <li>Pseudo-classes</li>
+  <li>ID selectors</li>
+  <li>Inline style</li>
+</ul>
+</div>
 
-<p> </p>
+<p>When an !important rule is used on a style declaration, this declaration
+overrides any other declaration made in the CSS, wherever it is in the
+declaration list. (<a
+href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">MDN</a>)</p>
+
+<p>  </p>
+
+<div>
+<ul>
+  <li>Find all declarations that apply to the element and property</li>
+  <li>Apply the styling to the element based on importance and origin using the
+    following order, with the first item in the list having the least weight: 
+    <ul>
+      <li>Declarations from the user agent</li>
+      <li>Declarations from the user</li>
+      <li>Declarations from the author</li>
+      <li>Declarations from the author with <code>!important</code> added</li>
+      <li>Declarations from the user with <code>!important</code> added</li>
+    </ul>
+  </li>
+  <li>Apply styling based on specificity, with the more specific selector
+    &ldquo;winning&rdquo; over more general ones</li>
+  <li>Apply styling based on the order in which they appear in the stylesheet
+    (i.e., in the event of a tie, last one &ldquo;wins&rdquo;)</li>
+</ul>
+</div>
+
+<p>In the example below the first rule is applied despite it's less specific
+and also before the other one.  </p>
+<pre>#example {
+font-size: 14px !important;
+}
+
+#container #example {
+font-size: 10px;
+}</pre>
 
 <p> </p>
 
