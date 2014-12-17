@@ -5,49 +5,103 @@
   <meta http-equiv="Content-Language" content="en">
   <title>16Dec2014 Tue</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20141215.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20141217.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 16Dec2014 Tue </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20141215.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20141217.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 16Dec2014 Tue </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a href="http://git.or.cz/course/svn.html">Git - SVN Crash Course</a> </p>
+
+<p>email sent to CCurotto asking for SVN credentials</p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>Jira 1382 - Make mouseover and mouseout work on client results in full
+app</h3>
+
+<p>Portlet client results background: </p>
+<ul>
+  <li>normal: #9d9d9d</li>
+  <li>hover: #939393</li>
+</ul>
+
+<p>Components: </p>
+<ul>
+  <li>normal: lightgray</li>
+  <li>hover: silver?</li>
+</ul>
+
+<p>The class is <code>.cpa-nav-resultHeading</code> @screen.css line 584, from
+line 80, ../sass/_client-results.scss</p>
+
+<p>Resolution: in .sass at the end of .cpa-nav-resultHeading rules (line #92)
+insert:</p>
+<pre>    &amp;:hover {
+        background-color: silver;
+        border-color: silver;
+    }</pre>
+
+<p>and after .cpa-nav-resultHeadingClicked:</p>
+<pre>    &amp;:hover {
+        background-color: #8cadd5;
+    }</pre>
+
+<p> </p>
+
+<p><img alt="Claudio en Sydney" src="agenda20141216-claudio-terrorista.png"
+width="570"></p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>
