@@ -5,49 +5,242 @@
   <meta http-equiv="Content-Language" content="en">
   <title>19Dec2014 Fri</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20141218.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20141220.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 19Dec2014 Fri </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20141218.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20141220.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 19Dec2014 Fri </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a
+href="http://www2.smartbear.com/download-mqi-collaborator-best-kept-secrets-ebook-website.html">book</a>
+ </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>How do we work, and why</h3>
+
+<h4>the workflow</h4>
+<ol>
+  <li>We, as a sub-team, have a set of pending issues that we call "the
+    backlog" following the agile terminology. </li>
+  <li>I short meetings (like 5' long) we choose which issue will start each one
+    of us, our local TL (Andrés) validates the choices. </li>
+  <li>We are using Git on SVN (the git-svn feature) so we create
+    (<em>checkout</em> in Git parlance) a new branch to isolate the forthcoming
+    code changes to a potentially high number of files. The branch is given a
+    significant number, after the Jira card, including its number. Having the
+    changes isolated in a branch allows us to revert then in case we needed to
+    do so, to see the detail in a diff tool, or to stash them locally in case
+    we had half-baked changes and needed to switch to another task. </li>
+  <li>Now comes the easiest part and the most rewarding, which is to do the
+    coding so the issue gets solved. This part <a href="#codingWorkflow">is
+    depicted separately</a>. </li>
+  <li>When the developer thinks the code is ready, after having tested it, he
+    asks for a <em>code review</em>. He asks another developer of the team for
+    the review. 
+    <p>The owner of the changes shows the reviewer the changes made, in great
+    detail, using a diff tool (SVN has a good one). </p>
+    <p>It is the responsibility of the reviewer to get to understand the
+    changes in detail and to suggest changes if he sees that any good practices
+    are vulnerated. </p>
+    <p>The aurhor of the changes is asked to show and explain the code, to show
+    how it works both in a browser and in IE8, and to show any other related
+    files. </p>
+    <p> </p>
+  </li>
+</ol>
+
+<p> </p>
+
+<h4 id="codingWorkflow">Step 4 - coding: </h4>
+<ol>
+  <li>The owner of the issue defines a strategy to solve it.</li>
+  <li>The strategy is validated discussing it with the others, and eventually
+    asking for definitions to other members of the whole team (local and
+    remote), personally or via chat in order to have quick answers because
+    these undefinitions are blocking. </li>
+  <li></li>
+</ol>
+
+<p> </p>
+
+<h4>Step 5 - code review:</h4>
+
+<p>Code reviewing is a QA (Quality Assurance) practice. QA strives to prevent
+defects, as opposed to QC (Quality Control) that detects defects after they
+happened. QA happens <em>before</em> while QC happens <em>after</em>. QA beats
+QC by leaps and bounds, and is's much less expensive because it doesn´t involve
+any rework but in the early development stages. </p>
+
+<p>Below there are some related links. </p>
+<ul>
+  <li><a href="http://en.wikipedia.org/wiki/Code_review">WikipediA on code
+    review</a> </li>
+  <li><a href="http://www.ganssle.com/inspections.pdf">A Guide to Code
+    Inspections</a> 
+    <p>This article is about firmware, the kind of code that needs to be
+    bug-free the most. It's about production quality, very motivating, quick
+    and easy to read. It contains surprising metrics, like what is needed to
+    cut development costs by half. </p>
+  </li>
+  <li><a href="http://www.methodsandtools.com/archive/archive.php?id=66">Four
+    ways to a Practical Code Review</a> </li>
+  <li><a
+    href="http://smartbear.com/resources/whitepapers/best-kept-secrets-of-peer-code-review/">Best
+    Kept Secrets of Peer Code Review</a> </li>
+  <li>Peer Reviews in Software, by Karl E. Wiegers (Addison-Wesley, 2001, ISBN
+    978-0201734850)</li>
+</ul>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+<hr>
+
+<h3>Look darling, I resized the children!</h3>
+
+<p>In web UI development there are may instances when the widths of a set of
+contained items have to be adjusted due to a change in the container's width.
+</p>
+
+<h4>available solutions</h4>
+
+<p>AFAIK there are these approaches: </p>
+<ul>
+  <li>Giving all children a percent width so that the sum of all widths is
+    slightly less than 100%, and</li>
+  <li>Having only two elements, fixing one element's width and floating it, and
+    setting the other elemtn's width to auto in order to create a <em><a
+    href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context">block
+    formatting context</a></em> as in <a
+    href="http://jsfiddle.net/fct87qpn/1/">this example</a>. </li>
+  <li>Bind the resize event to a JavaScript function that recalculates all the
+    widths according to a given policy. </li>
+</ul>
+
+<p>Both of these two methods ensure full tityness on resize. </p>
+
+<p>The percents method is restrictive in that all the contained elements are
+resized proportionally and while this can be desirable in some cases, it won't
+in many others like for example one or more elements have fixed widths, minimum
+widths, or don't look good when widened beyond a number. </p>
+
+<p>The BFC method is restrictive in that it works for two and only two
+elements. Yes, one can create nested BFCs, but it's cumbersome and still
+restrictive. </p>
+
+<p>The third method, using a function, is the most versatile but on the
+downside it requires the function to be written, tested and mantained, which is
+overkill for many small instances of the problem. </p>
+
+<h4>generalizing the problem</h4>
+
+<p>The children resizing scenarios that I can think of are a combination of the
+following methods, where each child can cater from its preferred one: </p>
+<ul>
+  <li>fixed width</li>
+  <li>percent of the container's width (with optional max and min
+  constraints)</li>
+  <li>proportional (same as percent only not 100-based)</li>
+  <li>percent of another's element width</li>
+  <li>largest text in a list</li>
+  <li>largest text in a table column (up to a limit)</li>
+  <li>all the remaining space</li>
+</ul>
+
+<p>It seems possible to write a program implementing all these strategies,
+after getting enough information. </p>
+
+<p>For example the resizing needs of a 3-elements set could be addressed by a
+jQuery plugin parameterized thus: </p>
+<pre>$('#threeItemsContainer').tidyResize([</pre>
+<pre>    {strategy:percent, width:25%, max-width:120px},
+    {strategy:collct},
+    {strategy:fixed, width:50px}   </pre>
+<pre>]);</pre>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>

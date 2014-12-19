@@ -5,49 +5,229 @@
   <meta http-equiv="Content-Language" content="en">
   <title>18Dec2014 Thu</title>
   <link rel="stylesheet" href="res/agenda.css" type="text/css">
-  <script src="res/jquery/jquery.js"></script>
-  <script src="res/agenda.js"></script>
-  <script type="text/javascript" src="./res/tocBuilder.js"></script>
+  <script type="text/javascript" src="res/jquery/jquery.js">
+ </script>
+  <script type="text/javascript" src="res/agenda.js">
+ </script>
+  <script type="text/javascript" src="./res/tocBuilder.js">
+ </script>
   <link href="./res/jquery/tocBuilder.css" rel="stylesheet" type="text/css">
-    <script>
+  <script type="text/javascript">
       $(document).ready(function () {
       });
-      </script>
-
+  </script>
 </head>
 
 <body>
-  <div id="agendaHeader">
-    <div class="fixedHeader">
-      <a href="agenda20141217.html" accesskey="-"><img alt="prev"
-      src="res/left.gif"></a><a href="agenda20141219.html" accesskey="+"><img
-      alt="next" src="res/right.gif"></a>
-      <h1 style="display: inline; ">agenda 18Dec2014 Thu </h1>
-    </div>
 
-    <div id="agendaLinks">
-      <div id="tocContainer" class="tocContainer">
-        <div class="toc"></div>
-      </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <hr>
-    </div>
-  </div>
+<div id="agendaHeader">
 
-  <div id="agendaBody">
-    <h3>zzz</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </div>
+<div class="fixedHeader">
+<a href="agenda20141217.html" accesskey="-"><img alt="prev"
+src="res/left.gif"></a><a href="agenda20141219.html" accesskey="+"><img
+alt="next" src="res/right.gif"></a> 
+
+<h1 style="display: inline; ">agenda 18Dec2014 Thu </h1>
+</div>
+
+<div id="agendaLinks">
+
+<div id="tocContainer" class="tocContainer">
+
+<div class="toc">
+</div>
+</div>
+
+<p> </p>
+
+<p><a href="https://bp-webvpn.jpmorganchase.com/">VPN
+https://bp-webvpn.jpmorganchase.com/</a>  </p>
+<hr>
+</div>
+</div>
+
+<div id="agendaBody">
+<h3>Git &amp; SVN</h3>
+
+<h4>stash</h4>
+<ul>
+  <li><code><strong>git stash</strong></code></li>
+  <li><code><strong>git stash list</strong></code>
+    <p>Lists all stashed groups</p>
+  </li>
+  <li><code><strong>git stash show stash@{0}</strong></code>
+    <p>Lists the files in the specified group</p>
+  </li>
+</ul>
+
+<h4>committing (1382-hover-on-client-results)</h4>
+<ul>
+  <li><code><strong>git svn fetch</strong></code></li>
+  <li><code><strong>git checkout master</strong></code>
+    <p>Move to "master" branch</p>
+  </li>
+  <li><code><strong>git svn rebase</strong></code>
+    <p>Apply fetched changes to local Git branch and move "head", should run
+    fast-forward normally (no conflicts). </p>
+  </li>
+  <li><code><strong>git co 1382-hover-on-client-results</strong></code>
+    <p>Back to the working branch</p>
+  </li>
+  <li><code><strong>git rebase master</strong></code>
+    <p>Sync working branch with new head, applying its modifications into the
+    newly updated master. Conflicts are possible, like for example: </p>
+    <pre>First, rewinding head to replay your work on top of it...
+Applying: 1382-hover-on-client-results
+Using index info to reconstruct a base tree...
+M       src/main/webapp/static/components/stylesheets/screen.css
+Falling back to patching base and 3-way merge...
+Auto-merging src/main/webapp/static/components/stylesheets/screen.css
+CONFLICT (content): Merge conflict in src/main/webapp/static/components/stylesheets/screen.css
+Failed to merge in the changes.
+Patch failed at 0001 1382-hover-on-client-results
+The copy of the patch that failed is found in:
+   c:/w/client-profile/.git/rebase-apply/patch
+
+When you have resolved this problem, run "git rebase --continue".
+If you prefer to skip this patch, run "git rebase --skip" instead.
+To check out the original branch and stop rebasing, run "git rebase --abort".
+
+juan.lanus@GLB-D1300 /c/w/client-profile (1382-hover-on-client-results|REBASE 1/1)</pre>
+    <p><code><strong>git status</strong></code> shows the files in conflict</p>
+    <p>Once the conflict is solved the changed file has to be added to the
+    staging area with git add as usual. Then, <code><strong>git rebase
+    --continue</strong></code></p>
+  </li>
+  <li><strong><code>git co master</code></strong></li>
+  <li><strong><code>git merge --squash --ff-only
+    1382-hover-on-client-results</code></strong>
+    <p>Now master has all my changes staged for commit.</p>
+  </li>
+  <li><strong><code>git commit</code></strong>
+    <p>Requires the [CSWORKSPACE-1382] blah... message, the changes are
+    commited locally.</p>
+  </li>
+  <li><strong><code>git svn dcommit</code></strong>
+    <p>Applies the local commited differences to the (remote) SVN repo. </p>
+  </li>
+  <li><strong>done!</strong>
+    <pre>Committing to http://subversion.ny.jpmorgan.com/svn/repos/CSWORKSPACE/client-profile/trunk ...
+        M       src/main/webapp/static/components/sass/_client-results.scss
+        M       src/main/webapp/static/components/stylesheets/screen.css
+Committed r4528
+        M       src/main/webapp/static/components/sass/_client-results.scss
+        M       src/main/webapp/static/components/stylesheets/screen.css
+r4528 = 257061256c17fa5399540e3ca4a6e0a1a36c659b (refs/remotes/trunk)
+No changes between 284e4d9b4ca5076ada32548d2b1e0e98fcef444d and refs/remotes/trunk
+Resetting to the latest refs/remotes/trunk</pre>
+  </li>
+  <li>The branch can now be deleted: 
+    <pre>$ <strong>git branch</strong>
+  1382-hover-on-client-results
+* master
+  rounded-corners
+
+juan.lanus@GLB-D1300 /c/w/client-profile/src/main/webapp/static/components (master)
+$ <strong>git branch -d rounded-corners 1382-hover-on-client-results</strong>
+error: The branch 'rounded-corners' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D rounded-corners'.
+error: The branch '1382-hover-on-client-results' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D 1382-hover-on-client-results'.
+
+juan.lanus@GLB-D1300 /c/w/client-profile/src/main/webapp/static/components (master)
+$ <strong>git branch -d 1382-hover-on-client-results</strong>
+error: The branch '1382-hover-on-client-results' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D 1382-hover-on-client-results'.
+
+juan.lanus@GLB-D1300 /c/w/client-profile/src/main/webapp/static/components (master)
+$ git branch -D rounded-corners 1382-hover-on-client-results
+Deleted branch rounded-corners (was 5776f32).
+Deleted branch 1382-hover-on-client-results (was b999fa7).</pre>
+  </li>
+  <li><strong><code>git checkout -b 1458-Portlet-Links</code></strong>
+    <p>Create the branch for the new task and move into it</p>
+  </li>
+  <li><strong><code>git stash pop</code></strong>
+    <p>Recover the previously stashed files. </p>
+    <pre>Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+        modified:   ../portlet/sass/screen.scss
+        modified:   ../portlet/stylesheets/screen.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (f0e36a90057c200e1e69758e8fb7ddd83296faab)</pre>
+  </li>
+</ul>
+
+<p></p>
+
+<p></p>
+
+<h3>zzz</h3>
+
+<p>CSW_clientprofile_23jan</p>
+
+<p>due date: Dec19</p>
+
+<p>current status: ready for QA</p>
+
+<p></p>
+
+<div>
+<ol style="margin:0;padding-left:36pt;">
+  <li>Timesheets &ndash; to be completed till the end of the year. 
+    <p><em>How to I fill my timesheet?</em></p>
+  </li>
+  <li>Trainings &ndash; please make sure these are all clean. 
+    <p><em>Check why do Claudio and me have to get a security code each time we
+    open the training cen</em>ter. </p>
+  </li>
+  <li class="doneItem">OOO Outlook setup on when you will be back and emergency
+    contact numbers ( just in case)</li>
+  <li class="doneItem">PROD guidelines &ndash; we need to publish ( again ) the
+    link in confluence on all the server locations, log file locations and some
+    cheat sheet items on how to diagnose items &ndash; Hobey can you please
+    take a lead on this and also review it with Kiran?</li>
+  <li>Please make sure all you code is clean, JIRA updated properly on what was
+    completed and tested.
+    <p><em>For JavaScript, can"Clean" be defined as JSHint-compliant and free
+    of dead code?</em></p>
+  </li>
+  <li class="doneItem">KT &ndash; few items that we are leaving for others to
+    complete &ndash; please make sure that there is proper handover done.
+    Please track it in JIRA.</li>
+  <li>Meaningful comments in the code: This needs to be followed consistently
+    and every time, we will start reviewing if this is not taken seriously.</li>
+  <li>Any work that needs design review or major changes from other teams
+    &ndash; please communicate sooner as other groups are going through the
+    similar drill.
+    <p><em>We the UI team in Globant are reviewing all the JavaScript code to
+    make it JSHint compliant and free of dead or unused code. </em></p>
+  </li>
+</ol>
+</div>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+</div>
 </body>
 </html>

@@ -60,7 +60,7 @@
                           word-wrap:break-word; /* Internet Explorer 5.5+ */
                          }
   .paragraphLabel       { font-weight:700; font-variant:small-caps; font-size:90%; margin-right:1.2em; }
-  pre                   { font-family:Consolas,monospace; font-size:85%; background-color:#f8f8ec; line-height:100%; }
+  pre                   { font-family:Consolas,monospace; font-size:80%; background-color:#f8f8ec; line-height:100%; }
   code                  { font-size:85%; font-family:Consolas,monospace; }
   .small80              { font-size:80%; }
   .small80 th           { font-size:110%; }
