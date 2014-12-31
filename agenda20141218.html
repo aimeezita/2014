@@ -52,10 +52,10 @@ https://bp-webvpn.jpmorganchase.com/</a>  </p>
 <h4>stash</h4>
 <ul>
   <li><code><strong>git stash</strong></code></li>
-  <li><code><strong>git stash list</strong></code>
+  <li><code><strong>git stash list</strong></code> 
     <p>Lists all stashed groups</p>
   </li>
-  <li><code><strong>git stash show stash@{0}</strong></code>
+  <li><code><strong>git stash show stash@{0}</strong></code> 
     <p>Lists the files in the specified group</p>
   </li>
 </ul>
@@ -63,17 +63,17 @@ https://bp-webvpn.jpmorganchase.com/</a>  </p>
 <h4>committing (1382-hover-on-client-results)</h4>
 <ul>
   <li><code><strong>git svn fetch</strong></code></li>
-  <li><code><strong>git checkout master</strong></code>
-    <p>Move to "master" branch</p>
+  <li><code><strong>git checkout &lt;current release&gt;</strong></code> 
+    <p>Move to "master" or whatever is the current branch</p>
   </li>
-  <li><code><strong>git svn rebase</strong></code>
+  <li><code><strong>git svn rebase</strong></code> 
     <p>Apply fetched changes to local Git branch and move "head", should run
     fast-forward normally (no conflicts). </p>
   </li>
-  <li><code><strong>git co 1382-hover-on-client-results</strong></code>
+  <li><code><strong>git co 1382-hover-on-client-results</strong></code> 
     <p>Back to the working branch</p>
   </li>
-  <li><code><strong>git rebase master</strong></code>
+  <li><code><strong>git rebase &lt;current release&gt;</strong></code> 
     <p>Sync working branch with new head, applying its modifications into the
     newly updated master. Conflicts are possible, like for example: </p>
     <pre>First, rewinding head to replay your work on top of it...
@@ -98,19 +98,19 @@ juan.lanus@GLB-D1300 /c/w/client-profile (1382-hover-on-client-results|REBASE 1/
     staging area with git add as usual. Then, <code><strong>git rebase
     --continue</strong></code></p>
   </li>
-  <li><strong><code>git co master</code></strong></li>
+  <li><strong><code>git co &lt;current release&gt;</code></strong></li>
   <li><strong><code>git merge --squash --ff-only
-    1382-hover-on-client-results</code></strong>
+    1382-hover-on-client-results</code></strong> 
     <p>Now master has all my changes staged for commit.</p>
   </li>
-  <li><strong><code>git commit</code></strong>
+  <li><strong><code>git commit</code></strong> 
     <p>Requires the [CSWORKSPACE-1382] blah... message, the changes are
     commited locally.</p>
   </li>
-  <li><strong><code>git svn dcommit</code></strong>
+  <li><strong><code>git svn dcommit</code></strong> 
     <p>Applies the local commited differences to the (remote) SVN repo. </p>
   </li>
-  <li><strong>done!</strong>
+  <li><strong>done!</strong> 
     <pre>Committing to http://subversion.ny.jpmorgan.com/svn/repos/CSWORKSPACE/client-profile/trunk ...
         M       src/main/webapp/static/components/sass/_client-results.scss
         M       src/main/webapp/static/components/stylesheets/screen.css
@@ -144,10 +144,10 @@ $ git branch -D rounded-corners 1382-hover-on-client-results
 Deleted branch rounded-corners (was 5776f32).
 Deleted branch 1382-hover-on-client-results (was b999fa7).</pre>
   </li>
-  <li><strong><code>git checkout -b 1458-Portlet-Links</code></strong>
+  <li><strong><code>git checkout -b 1458-Portlet-Links</code></strong> 
     <p>Create the branch for the new task and move into it</p>
   </li>
-  <li><strong><code>git stash pop</code></strong>
+  <li><strong><code>git stash pop</code></strong> 
     <p>Recover the previously stashed files. </p>
     <pre>Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
@@ -171,7 +171,9 @@ Dropped refs/stash@{0} (f0e36a90057c200e1e69758e8fb7ddd83296faab)</pre>
 
 <p>due date: Dec19</p>
 
-<p>current status: ready for QA</p>
+<p>Resolution: Ready for Test</p>
+
+<p>current status: ready for QA [NO]</p>
 
 <p></p>
 
@@ -191,7 +193,7 @@ Dropped refs/stash@{0} (f0e36a90057c200e1e69758e8fb7ddd83296faab)</pre>
     cheat sheet items on how to diagnose items &ndash; Hobey can you please
     take a lead on this and also review it with Kiran?</li>
   <li>Please make sure all you code is clean, JIRA updated properly on what was
-    completed and tested.
+    completed and tested. 
     <p><em>For JavaScript, can"Clean" be defined as JSHint-compliant and free
     of dead code?</em></p>
   </li>
@@ -202,7 +204,7 @@ Dropped refs/stash@{0} (f0e36a90057c200e1e69758e8fb7ddd83296faab)</pre>
     and every time, we will start reviewing if this is not taken seriously.</li>
   <li>Any work that needs design review or major changes from other teams
     &ndash; please communicate sooner as other groups are going through the
-    similar drill.
+    similar drill. 
     <p><em>We the UI team in Globant are reviewing all the JavaScript code to
     make it JSHint compliant and free of dead or unused code. </em></p>
   </li>
