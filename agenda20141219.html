@@ -53,7 +53,38 @@ pseudoclass</a> </p>
 <div id="agendaBody">
 <h3>1458 - Portlet-Background colour</h3>
 
-<p>As of page 22, the submit button should be quite different. </p>
+<p><em>"Portlet Background colour Style Is currently in line with style guide
+for heirarcle charts but is too heavy for the dashboard. - Remove hex #9d9d9d
+and make it #fff. The divider lines should be #ccc.Text #333"</em></p>
+<ul>
+  <li>background #9d9d9d &rarr; #fff $portlet-background</li>
+  <li>divider lines &rarr; #ccc $portlet-divider</li>
+  <li>text &rarr; #333 $portlet-text</li>
+</ul>
+<pre>// portlet - .expandableBar and result-heading
+$portlet-background: #9d9d9d; // should be #fff
+$portlet-background-hover: #9d9d9d - 10;
+$portlet-divider: 1px solid #ffffff; // should be #ccc;
+$portlet-text: #333;</pre>
+
+<p>Other changes needed: </p>
+<ul>
+  <li>Deleted the background of the jump icon and its border too</li>
+  <li>Made a hover color close to the background color - 10 (#ffffff -&gt;
+    #f6f6f6)</li>
+  <li>For the next hierarchy level I applied the same colors, although I think
+    it should be better to change them somehow. </li>
+  <li>With the data fully expanded, the Name/Role/Phone/Email headers should be
+    given a header look. </li>
+  <li>I removed the background color of the "jump to application" icon too, now
+    the icon is transparent as the guide shows. We should use two icon images,
+    one normal and the other hovered, instead of the silly bg changes I
+    implemented. </li>
+</ul>
+
+<p></p>
+
+<p></p>
 
 <p>The portlet is not style-guide compliant (page 34): </p>
 
@@ -89,6 +120,10 @@ pseudoclass</a> </p>
     </tr>
   </tbody>
 </table>
+
+<p></p>
+
+<p>As of page 22, the submit button should be quite different. </p>
 
 <p></p>
 
