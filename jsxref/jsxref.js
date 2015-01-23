@@ -2,6 +2,7 @@
 // works with all the sources pasted into a single file, commiting and
 // starting to work on a version that processes multiple files in a
 // single directory
+  /* global process, require */
   console.log( 'jsxref: static functions cross reference ' + new Date() );
   var 
     esprima = require('esprima'),
@@ -13,6 +14,7 @@
 
   // recursively executes visitor on the syntax tree
   function traverse(object, visitor) {
+    "use strict";
     traverseCalls++;
     var key, child; 
     visitor.call(null, object);
@@ -30,6 +32,7 @@
   var fileUsage = ''; // looking the definitions, or for references
   function doOneFile( sourceFileName, visitor ) {
     // isolate the file name
+    "use strict";
     sourceBaseName = path.basename(sourceFileName, '.gs');
 
     // read the source in memory
@@ -63,6 +66,7 @@
   //   "name": "copyColumns",
   //   "loc": {"start": {"line":240, "column":9 }, "end":{"line":240, "column":20}}
   // },
+    "use strict";
     if( node.type ) { 
       if( node.type === 'FunctionDeclaration' ) { 
         if( node.id ) {
@@ -85,8 +89,8 @@
             }
             // insert in function definitions list
             functionDefs[functionNameNumbered] = functionDef;
-            console.log( '  ' + functionDef.sourceFile + ' ' + functionDef.loc.start.line + ' ' + functionNameNumbered 
-            + ( (functionNameNumber == 0) ? ' ' : '  REPEATED FUNCTION NAME' ));
+            console.log( '  ' + functionDef.sourceFile + ' ' + functionDef.loc.start.line + ' ' + functionNameNumbered +
+            ( (functionNameNumber === 0) ? ' ' : '  REPEATED FUNCTION NAME' ));
           }
         }
       }
@@ -101,6 +105,7 @@
   //   "name": "cloneObject",
   //   "loc":{"start":{"line":233, "column":17}, "end":{"line":233, "column":28}}
   // },
+    "use strict";
     if( node.type ) { 
       if( node.type === 'CallExpression' ) { 
         if( node.callee ) {
@@ -116,8 +121,8 @@
               functionRef.loc = node.callee.loc;
               functionReferences.push( functionRef );
               referencedFunction.references.push( functionRef );
-              console.log( '  ' + functionRef.sourceFile + ' ' + functionRef.loc.start.line + ' '
-              + referencedFunction.sourceFile + '.' + referencedFunction.name);
+              console.log( '  ' + functionRef.sourceFile + ' ' + functionRef.loc.start.line + ' ' +
+              referencedFunction.sourceFile + '.' + referencedFunction.name);
             }
           }
         }
@@ -146,21 +151,24 @@
 
   // log the function definitions with references
   console.log( '\n\n\nCross references' );
-  for( fd in functionDefs ) {
-    var fdef = functionDefs[fd];
-    // console.log( JSON.stringify( fdef ));
-    console.log( '  ' + fdef.sourceFile + ' ' + fdef.loc.start.line + ' ' + fdef.name );
-    + (( fdef.repeated ) ? ' ' : '  REPEATED FUNCTION NAME (refs reported elsewhere)' );
-    if( fdef.references.length === 0 ) {
-      console.log( '    UNREFERENCED FUNCTION' );
-    } else {
-      var fxref = {};
-      for( fr in fdef.references ) {
-        var fref = fdef.references[fr]
-        var frname = fref.sourceFile;
-        // if( fxref[ frname ] {
-
-        console.log( '    ' + fref.sourceFile + ' ' + fref.loc.start.line );
+  for( var fd in functionDefs ) {
+    if( functionDefs.hasOwnProperty( fd ) ) {
+      var fdef = functionDefs[fd];
+      // console.log( JSON.stringify( fdef ));
+      console.log( '  ' + fdef.sourceFile + ' ' + fdef.loc.start.line + ' ' + fdef.name );
+      // + (( fdef.repeated ) ? ' ' : '  REPEATED FUNCTION NAME (refs reported elsewhere)' );
+      if( fdef.references.length === 0 ) {
+        console.log( '    UNREFERENCED FUNCTION' );
+      } else {
+        // var fxref = {};
+        for( var fr in fdef.references ) {
+          if( fdef.references.hasOwnProperty( fr ) ) {
+            var fref = fdef.references[fr];
+            // var frname = fref.sourceFile;
+            // if( fxref[ frname ] {
+            console.log( '    ' + fref.sourceFile + ' ' + fref.loc.start.line );
+          }
+        }
       }
     }
   }
