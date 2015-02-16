@@ -48,36 +48,6 @@ alt="next" src="res/right.gif"></a>
 </div>
 
 <div id="agendaBody">
-<h3>Jira 1382 - Make mouseover and mouseout work on client results in full
-app</h3>
-
-<p>Portlet client results background: </p>
-<ul>
-  <li>normal: #9d9d9d</li>
-  <li>hover: #939393</li>
-</ul>
-
-<p>Components: </p>
-<ul>
-  <li>normal: lightgray</li>
-  <li>hover: silver?</li>
-</ul>
-
-<p>The class is <code>.cpa-nav-resultHeading</code> @screen.css line 584, from
-line 80, ../sass/_client-results.scss</p>
-
-<p>Resolution: in .sass at the end of .cpa-nav-resultHeading rules (line #92)
-insert:</p>
-<pre>    &amp;:hover {
-        background-color: silver;
-        border-color: silver;
-    }</pre>
-
-<p>and after .cpa-nav-resultHeadingClicked:</p>
-<pre>    &amp;:hover {
-        background-color: #8cadd5;
-    }</pre>
-
 <p> </p>
 
 <p><img alt="Claudio en Sydney" src="agenda20141216-claudio-terrorista.png"
